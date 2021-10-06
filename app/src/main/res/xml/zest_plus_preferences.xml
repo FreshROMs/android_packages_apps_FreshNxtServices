@@ -1,0 +1,13 @@
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditTextPreference
+        app:key="signature"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        app:defaultValue="reply"
+        app:key="reply"
+        app:useSimpleSummaryProvider="true" />
+
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

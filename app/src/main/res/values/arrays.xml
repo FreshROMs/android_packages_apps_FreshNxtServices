@@ -1,0 +1,64 @@
+<resources>
+    <!-- Statusbar data icon options -->
+    <string-array name="data_connection_icon_entries">
+        <item>@string/zest_data_connection_icon_default</item>
+        <item>@string/zest_data_connection_icon_lte</item>
+        <item>@string/zest_data_connection_icon_next</item>
+    </string-array>
+    <string-array name="data_connection_icon_values">
+        <item>default</item>
+        <item>lte</item>
+        <item>next</item>
+    </string-array>
+    <string-array name="data_connection_icon_packages" translatable="false">
+        <item>io.tns.fresh.data.4g</item>
+        <item>io.tns.fresh.data.lte</item>
+        <item>io.tns.fresh.data.next</item>
+    </string-array>
+    <string-array name="data_connection_icon_packages_dex" translatable="false">
+        <item>io.tns.fresh.data.4g</item>
+        <item>io.tns.fresh.data.dex.lte</item>
+        <item>io.tns.fresh.data.dex.next</item>
+    </string-array>
+
+    <!-- Statusbar WLAN icon options -->
+    <string-array name="wlan_signal_icon_entries">
+        <item>@string/zest_wlan_connection_icon_default</item>
+        <item>@string/zest_wlan_connection_icon_uplus</item>
+        <item>@string/zest_wlan_connection_icon_kt</item>
+    </string-array>
+    <string-array name="wlan_signal_icon_values">
+        <item>default</item>
+        <item>uplus</item>
+        <item>kt</item>
+    </string-array>
+    <string-array name="wlan_signal_icon_packages" translatable="false">
+        <item>io.tns.fresh.wlan.default</item>
+        <item>io.tns.fresh.wlan.uplus</item>
+        <item>io.tns.fresh.wlan.kt</item>
+    </string-array>
+    <string-array name="wlan_signal_icon_packages_dex" translatable="false">
+        <item>io.tns.fresh.wlan.default</item>
+        <item>io.tns.fresh.wlan.dex.uplus</item>
+        <item>io.tns.fresh.wlan.dex.kt</item>
+    </string-array>
+
+    <!-- Statusbar VoLTE icon options -->
+    <string-array name="volte_signal_icon_entries">
+        <item>@string/zest_volte_connection_icon_default</item>
+        <item>@string/zest_volte_connection_icon_hdv</item>
+    </string-array>
+    <string-array name="volte_signal_icon_values">
+        <item>default</item>
+        <item>hdv</item>
+    </string-array>
+    <string-array name="volte_signal_icon_packages" translatable="false">
+        <item>io.tns.fresh.volte.default</item>
+        <item>io.tns.fresh.volte.hdv</item>
+    </string-array>
+    <string-array name="volte_signal_icon_packages_dex" translatable="false">
+        <item>io.tns.fresh.volte.default</item>
+        <item>io.tns.fresh.volte.dex.hdv</item>
+    </string-array>
+
+</resources>

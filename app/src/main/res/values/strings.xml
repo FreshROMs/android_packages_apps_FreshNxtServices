@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fresh System Services</string>
+    <string name="title_activity_zest">Zest</string>
+
+    <string name="zest_sb_icon_style_data_title">"Data connection icon style"</string>
+    <string name="zest_data_connection_icon_default">"Default (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+
+    <string name="zest_sb_icon_style_wifi_title">"Wi-Fi signal icon style"</string>
+    <string name="zest_wlan_connection_icon_default">"Default"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+
+    <string name="zest_sb_icon_style_volte_title">"VoLTE icon style"</string>
+    <string name="zest_volte_connection_icon_default">"Default"</string>
+    <string name="zest_volte_connection_icon_hdv">"HD Voice"</string>
+
+    <string name="renoir_settings_title">"Color-matching Theme"</string>
+    <string name="renoir_settings_desc">"Make One UI yours by adapting the device theme with your current wallpaper."</string>
+    <string name="renoir_settings_desc_unavailable">"Color-matching Theme is not available because a third-party theme is applied."</string>
+</resources>
