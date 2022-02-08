@@ -17,7 +17,7 @@ public class RestartTileService extends TileService {
     @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     public void onClick() {
-        AlertDialog qsDialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.OneUI3Theme))
+        AlertDialog qsDialog = new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.OneUITheme))
                 .setTitle(R.string.qs_dialog_title)
                 .setMessage(R.string.qs_dialog_confirmation)
                 .setNegativeButton(R.string.qs_dialog_cancel, null)
