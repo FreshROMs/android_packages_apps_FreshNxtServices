@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:title="AndroidX"
+        android:summary="Google - Apache-2.0">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/androidx" />
+    </Preference>
+    <Preference
+        android:title="Material Components"
+        android:summary="Google - Apache-2.0">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/material-components" />
+    </Preference>
+    <Preference
+        android:title="One UI Design Library"
+        android:summary="Yanndroid - MIT License">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/Yanndroid/OneUI-Design-Library" />
+    </Preference>
+    <Preference
+        android:title="Butterknife"
+        android:summary="Jake Wharton - Apache-2.0">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/JakeWharton/butterknife" />
+    </Preference>
+
+    <PreferenceCategory>
+        <Preference
+            android:title="SecondScreen"
+            android:summary="Braden Farmer - Apache-2.0">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/farmerbb/SecondScreen" />
+        </Preference>
+        <Preference
+            android:title="Easy Resolution Changer"
+            android:summary="Tyler Nijmeh - GPL-3.0">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/tytydraco/Resolution-Changer" />
+        </Preference>
+    </PreferenceCategory>
+
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

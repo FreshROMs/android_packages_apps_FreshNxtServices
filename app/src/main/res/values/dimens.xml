@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Screen Resolution settings -->
+    <dimen name="zest_screen_resolution_setting_img_margin">20.0dip</dimen>
+    <dimen name="zest_screen_resolution_setting_header_margin">20.0dip</dimen>
+    <dimen name="zest_screen_resolution_setting_text_padding">24.0dip</dimen>
+    <dimen name="zest_screen_resolution_setting_margin_land">200dp</dimen>
+</resources>

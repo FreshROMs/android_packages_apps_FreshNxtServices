@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceScreen
+        android:key="fs_color_theme"
+        android:title="@string/zest_renoir_settings_title"
+        android:summary="@string/zest_renoir_settings_summary">
+        <intent
+            android:targetClass="io.tensevntysevn.fresh.zest.sub.RenoirSettingsActivity"
+            android:targetPackage="io.tensevntysevn.fresh" />
+    </SwitchPreferenceScreen>
+
+    <PreferenceCategory>
+        <ListPreference
+            android:key="sb_icon_style_data"
+            android:defaultValue="io.tns.fresh.data.4g:io.tns.fresh.data.4g"
+            android:title="@string/zest_data_connection_icon_title"
+            android:entries="@array/data_connection_icon_entries"
+            android:entryValues="@array/data_connection_icon_packages" />
+
+        <ListPreference
+            android:key="sb_icon_style_wifi"
+            android:defaultValue="io.tns.fresh.wlan.default:io.tns.fresh.wlan.default"
+            android:title="@string/zest_wlan_connection_icon_title"
+            android:entries="@array/wlan_signal_icon_entries"
+            android:entryValues="@array/wlan_signal_icon_packages" />
+    </PreferenceCategory>
+
+    <!--
+    <PreferenceCategory android:key="fs_plus_options">
+        <SwitchPreferenceScreen
+            android:key="fs_plus_darq_service"
+            android:title="@string/zest_darq_setting_title"
+            android:summary="@string/zest_darq_setting_summary">
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </SwitchPreferenceScreen>
+
+        <SwitchPreferenceScreen
+            android:key="fs_plus_usb_security"
+            android:title="@string/zest_maverick_security_setting_title"
+            android:summary="@string/zest_maverick_security_setting_summary">
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.zest.sub.MaverickSettingsActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </SwitchPreferenceScreen>
+    </PreferenceCategory>
+    -->
+    <PreferenceCategory>
+        <Preference
+            android:key="fs_device_resolution"
+            android:title="@string/zest_screen_resolution_setting_title"
+            android:summary="@string/zest_setting_default_summary">
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.zest.sub.ScreenResolutionActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </Preference>
+
+        <SwitchPreferenceScreen
+            android:key="fs_video_brightness"
+            android:title="@string/zest_hdr_effect_setting_title">
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </SwitchPreferenceScreen>
+    </PreferenceCategory>
+
+    <!--
+    <PreferenceCategory>
+        <Preference
+            android:key="fs_addon_management"
+            android:title="@string/zest_addon_management_title"
+            android:summary="@string/zest_setting_default_summary" />
+        <Preference
+            android:key="fs_software_update"
+            android:title="@string/fresh_ota_main_title"
+            android:summary="@string/zest_setting_default_summary" >
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.ota.OtaMainActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </Preference>
+    </PreferenceCategory>
+    -->
+    <PreferenceCategory>
+        <Preference
+            android:key="zs_fresh_version"
+            android:title="@string/fresh_firmware_version"
+            android:summary="@string/zest_setting_default_summary" />
+        <Preference
+            android:key="zs_about_fresh_services"
+            android:title="@string/zest_app_version"
+            android:summary="@string/zest_setting_default_summary">
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </Preference>
+    </PreferenceCategory>
+
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

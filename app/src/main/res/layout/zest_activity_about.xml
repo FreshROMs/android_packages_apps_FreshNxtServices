@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.layout.AboutPage xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/zest_about_header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:update_state="not_updateable">
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonStyle.AboutPage"
+        android:onClick="onTapSourceCode"
+        android:text="@string/zest_about_page_source_code" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonStyle.AboutPage"
+        android:onClick="onTapOpenSource"
+        android:text="@string/zest_about_page_open_source" />
+</de.dlyt.yanndroid.oneui.layout.AboutPage>

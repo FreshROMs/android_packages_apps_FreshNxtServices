@@ -3,14 +3,15 @@ plugins {
 }
 
 android {
-    compileSdk 29
+    compileSdk 31
 
     defaultConfig {
         applicationId "io.tensevntysevn.fresh"
         minSdk 30
-        targetSdk 29
-        versionCode 21092901
-        versionName "3.0.0.0"
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 24
+        versionCode 22020811
+        versionName "3.4.2.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -28,13 +29,12 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
 
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-
-    implementation 'io.github.yanndroid:oneui:2.1.0'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'io.github.yanndroid:oneui:2.3.0'
 
     implementation "com.jakewharton:butterknife:10.2.1"
     annotationProcessor "com.jakewharton:butterknife-compiler:10.2.1"

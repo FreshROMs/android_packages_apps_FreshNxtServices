@@ -1,22 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary strings -->
     <string name="app_name">Fresh System Services</string>
-    <string name="title_activity_zest">Zest</string>
+    <string name="zest_app_version">About Zest</string>
+    <string name="zest_setting_default_summary">Unknown</string>
 
-    <string name="zest_sb_icon_style_data_title">"Data connection icon style"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"Customization  •  Screen resolution"</string>
+
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"Data connection icon style"</string>
     <string name="zest_data_connection_icon_default">"Default (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
     <string name="zest_data_connection_icon_next">"Next (5G)"</string>
 
-    <string name="zest_sb_icon_style_wifi_title">"Wi-Fi signal icon style"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Wi-Fi signal icon style"</string>
     <string name="zest_wlan_connection_icon_default">"Default"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
 
-    <string name="zest_sb_icon_style_volte_title">"VoLTE icon style"</string>
-    <string name="zest_volte_connection_icon_default">"Default"</string>
-    <string name="zest_volte_connection_icon_hdv">"HD Voice"</string>
+    <!-- Software update settings -->
+    <string name="fresh_firmware_version">Fresh version</string>
+    <string name="fresh_ota_main_title">Software update</string>
+    <string name="fresh_ota_check_for_updates_title">Download and install</string>
+    <string name="fresh_ota_check_for_updates_summary">Downloading via mobile networks may result in additional charges. If possible, download via a Wi-Fi network instead.</string>
+    <string name="fresh_ota_auto_download_wlan_title">Auto download over Wi-Fi</string>
+    <string name="fresh_ota_auto_download_wlan_summary">Download software updates automatically when connected to a Wi-Fi network.</string>
+    <string name="fresh_ota_last_successful_update_title">Last update</string>
+    <string name="fresh_ota_last_successful_update_summary">"There's no information about this update."</string>
 
-    <string name="renoir_settings_title">"Color-matching Theme"</string>
-    <string name="renoir_settings_desc">"Make One UI yours by adapting the device theme with your current wallpaper."</string>
-    <string name="renoir_settings_desc_unavailable">"Color-matching Theme is not available because a third-party theme is applied."</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"Color Theme"</string>
+    <string name="zest_renoir_settings_summary">"Customize One UI by adapting the theme with your current wallpaper."</string>
+
+    <string name="zest_renoir_notification_channel_id" translatable="false">"TnsFreshCustomize"</string>
+    <string name="zest_renoir_notification_channel_title">"Ongoing customizations"</string>
+    <string name="zest_renoir_notification_channel_description">"This notification channel allows the app to execute operations needed in the background."</string>
+    <string name="zest_renoir_notification_title">@string/zest_renoir_settings_title</string>
+    <string name="zest_renoir_notification_description">"Changing device theme based on wallpaper…"</string>
+    <string name="zest_renoir_settings_unavailable">"Color-matching Theme is not available because a third-party theme is applied."</string>
+    <string name="zest_renoir_settings_lock_screen">"Use lock screen colors"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"Use colors from your lock screen wallpaper in picking the device theme."</string>
+    <string name="zest_renoir_settings_custom_colors">"Use custom colors"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"Use colors from the color picker for the device theme."</string>
+
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">Screen resolution</string>
+    <string name="zest_screen_resolution_setting_summary">"Some apps may close when you change the resolution."</string>
+
+    <string name="zest_screen_resolution_setting_high" translatable="false">"FHD+"</string>
+    <string name="zest_screen_resolution_setting_medium" translatable="false">"HD+"</string>
+    <string name="zest_screen_resolution_setting_low" translatable="false">"qHD+"</string>
+
+    <string name="zest_screen_resolution_setting_high_main" translatable="false">"FHD+ (2340 x 1080)"</string>
+    <string name="zest_screen_resolution_setting_medium_main" translatable="false">"HD+ (1560 x 720)"</string>
+    <string name="zest_screen_resolution_setting_low_main" translatable="false">"qHD+ (1170 x 540)"</string>
+
+    <string name="zest_screen_resolution_setting_high_summary">"Sharpest visuals, most battery use"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Improved visuals, moderate battery use"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Ugly visuals, lowest battery use"</string>
+
+    <string name="zest_screen_resolution_setting_btn_apply">"Apply"</string>
+
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"Video brightness"</string>
+    <string name="zest_hdr_effect_setting_summary">Enhance the image quality of your videos to enjoy brighter and more vivid colors.</string>
+    <string name="zest_hdr_effect_setting_available_apps">Available apps</string>
+
+    <!-- USB security/Maverick settings -->
+    <string name="zest_maverick_security_setting_title">USB security</string>
+    <string name="zest_maverick_security_setting_summary">Protect your device from malicious USB devices.</string>
+    <string name="zest_maverick_security_setting_activity_summary">Protect your device from malicious USB devices by blocking access while the device is locked.</string>
+    <string name="zest_maverick_security_setting_option_title">Restrict USB devices</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"While screen is off"</string>
+    <string name="zest_maverick_security_setting_option_always">"Always"</string>
+
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">Enhanced dark mode</string>
+    <string name="zest_darq_setting_summary">Enable dark mode for all applications.</string>
+
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">Protect battery</string>
+    <string name="zest_protect_battery_summary">To extend the lifespan of your battery, limit the maximum charge to 85%.</string>
+
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">Manage addons</string>
+
+    <!-- Relative links -->
+    <string name="zest_relative_link_advanced">"Advanced settings"</string>
+    <string name="zest_relative_link_wallpaper">"Home and lock screen wallpaper"</string>
+    <string name="zest_relative_link_themes">"Samsung Themes"</string>
+
+    <!-- Recovery reboot QS tile -->
+    <string name="qs_dialog_title">Reboot to Recovery</string>
+    <string name="qs_dialog_confirmation">Would you like to reboot to Recovery Mode?</string>
+    <string name="qs_dialog_ok">OK</string>
+    <string name="qs_dialog_cancel">Cancel</string>
+
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">Open-source licenses</string>
+    <string name="zest_about_page_source_code">Source code</string>
 </resources>

@@ -20,18 +20,8 @@ package io.tensevntysevn.fresh.system;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemProperties;
-import android.os.SystemPropertiesProto;
 import android.provider.DeviceConfig;
-import android.provider.Settings;
 import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Locale;
 
 import io.tensevntysevn.fresh.R;
 
@@ -41,12 +31,6 @@ public class BootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         new Thread(() -> {
-            // Set virtual memory (RAM Plus) size on Device Care
-            if (getProp("ro.fresh.device.hw.ramplus").equalsIgnoreCase("true")) {
-                Log.i(TAG, "Updating virtual RAM configuration");
-                setVirtMemSize(context, getProp("ro.fresh.device.rp.size"));
-            }
-
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
         }).start();
@@ -75,28 +59,5 @@ public class BootReceiver extends BroadcastReceiver {
 
             DeviceConfig.setProperty(namespace, key, value, true);
         }
-    }
-
-    private void setVirtMemSize(Context context, String size) {
-        int vramSize = (int) Integer.parseInt(size);
-        Settings.Global.putInt(context.getContentResolver(), "BKDEV_UX_KEY", vramSize);
-    }
-
-    public static String getProp(String propName) {
-        Process p;
-        String result = "";
-        try {
-            p = new ProcessBuilder("/system/bin/getprop", propName).redirectErrorStream(true)
-                    .start();
-            BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            String line;
-            while ((line = br.readLine()) != null) {
-                result = line;
-            }
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return result;
     }
 }

@@ -1,64 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Statusbar data icon options -->
+    <!-- Data connection icon settings -->
     <string-array name="data_connection_icon_entries">
         <item>@string/zest_data_connection_icon_default</item>
         <item>@string/zest_data_connection_icon_lte</item>
         <item>@string/zest_data_connection_icon_next</item>
     </string-array>
-    <string-array name="data_connection_icon_values">
-        <item>default</item>
-        <item>lte</item>
-        <item>next</item>
-    </string-array>
     <string-array name="data_connection_icon_packages" translatable="false">
-        <item>io.tns.fresh.data.4g</item>
-        <item>io.tns.fresh.data.lte</item>
-        <item>io.tns.fresh.data.next</item>
-    </string-array>
-    <string-array name="data_connection_icon_packages_dex" translatable="false">
-        <item>io.tns.fresh.data.4g</item>
-        <item>io.tns.fresh.data.dex.lte</item>
-        <item>io.tns.fresh.data.dex.next</item>
+        <item>io.tns.fresh.data.4g:io.tns.fresh.data.4g</item>
+        <item>io.tns.fresh.data.lte:io.tns.fresh.data.dex.lte</item>
+        <item>io.tns.fresh.data.next:io.tns.fresh.data.dex.next</item>
     </string-array>
 
-    <!-- Statusbar WLAN icon options -->
+    <!-- Wi-Fi/WLAN icon settings -->
     <string-array name="wlan_signal_icon_entries">
         <item>@string/zest_wlan_connection_icon_default</item>
         <item>@string/zest_wlan_connection_icon_uplus</item>
         <item>@string/zest_wlan_connection_icon_kt</item>
     </string-array>
-    <string-array name="wlan_signal_icon_values">
-        <item>default</item>
-        <item>uplus</item>
-        <item>kt</item>
-    </string-array>
     <string-array name="wlan_signal_icon_packages" translatable="false">
-        <item>io.tns.fresh.wlan.default</item>
-        <item>io.tns.fresh.wlan.uplus</item>
-        <item>io.tns.fresh.wlan.kt</item>
-    </string-array>
-    <string-array name="wlan_signal_icon_packages_dex" translatable="false">
-        <item>io.tns.fresh.wlan.default</item>
-        <item>io.tns.fresh.wlan.dex.uplus</item>
-        <item>io.tns.fresh.wlan.dex.kt</item>
+        <item>io.tns.fresh.wlan.default:io.tns.fresh.wlan.default</item>
+        <item>io.tns.fresh.wlan.uplus:io.tns.fresh.wlan.dex.uplus</item>
+        <item>io.tns.fresh.wlan.kt:io.tns.fresh.wlan.dex.kt</item>
     </string-array>
 
-    <!-- Statusbar VoLTE icon options -->
-    <string-array name="volte_signal_icon_entries">
-        <item>@string/zest_volte_connection_icon_default</item>
-        <item>@string/zest_volte_connection_icon_hdv</item>
+    <!-- USB security/Maverick settings -->
+    <string-array name="zest_maverick_security_setting_options">
+        <item>@string/zest_maverick_security_setting_option_on_lock</item>
+        <item>@string/zest_maverick_security_setting_option_always</item>
     </string-array>
-    <string-array name="volte_signal_icon_values">
-        <item>default</item>
-        <item>hdv</item>
+    <string-array name="zest_maverick_security_setting_values">
+        <item>1</item>
+        <item>2</item>
     </string-array>
-    <string-array name="volte_signal_icon_packages" translatable="false">
-        <item>io.tns.fresh.volte.default</item>
-        <item>io.tns.fresh.volte.hdv</item>
+
+    <!-- Screen Resolution settings -->
+    <string-array name="zest_screen_resolution_setting_options">
+        <item>@string/zest_screen_resolution_setting_low</item>
+        <item>@string/zest_screen_resolution_setting_medium</item>
+        <item>@string/zest_screen_resolution_setting_high</item>
     </string-array>
-    <string-array name="volte_signal_icon_packages_dex" translatable="false">
-        <item>io.tns.fresh.volte.default</item>
-        <item>io.tns.fresh.volte.dex.hdv</item>
+    <string-array name="zest_screen_resolution_setting_main_summary">
+        <item>@string/zest_screen_resolution_setting_low_main</item>
+        <item>@string/zest_screen_resolution_setting_medium_main</item>
+        <item>@string/zest_screen_resolution_setting_high_main</item>
+    </string-array>
+    <string-array name="zest_screen_resolution_setting_summary">
+        <item>@string/zest_screen_resolution_setting_low_summary</item>
+        <item>@string/zest_screen_resolution_setting_medium_summary</item>
+        <item>@string/zest_screen_resolution_setting_high_summary</item>
+    </string-array>
+    <!-- Reply Preference -->
+    <string-array name="reply_entries">
+        <item>Reply</item>
+        <item>Reply to all</item>
+    </string-array>
+
+    <string-array name="reply_values">
+        <item>reply</item>
+        <item>reply_all</item>
     </string-array>
 
 </resources>

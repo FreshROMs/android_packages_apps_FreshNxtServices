@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:key="ota_check_for_updates"
+        android:title="@string/fresh_ota_check_for_updates_title"
+        android:summary="@string/fresh_ota_check_for_updates_summary">
+        <intent
+            android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
+            android:targetPackage="io.tensevntysevn.fresh" />
+    </Preference>
+    <SwitchPreference
+        android:key="ota_auto_download_wifi"
+        android:title="@string/fresh_ota_auto_download_wlan_title"
+        android:summary="@string/fresh_ota_auto_download_wlan_summary" />
+
+    <PreferenceCategory>
+        <Preference
+            android:key="ota_last_update"
+            android:title="@string/fresh_ota_last_successful_update_title"
+            android:summary="@string/fresh_ota_last_successful_update_summary">
+            <intent
+                android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
+                android:targetPackage="io.tensevntysevn.fresh" />
+        </Preference>
+    </PreferenceCategory>
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

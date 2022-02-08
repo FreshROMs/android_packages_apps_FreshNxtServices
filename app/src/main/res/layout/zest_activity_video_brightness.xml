@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <de.dlyt.yanndroid.oneui.layout.SwitchBarLayout
+        android:id="@+id/zest_switchbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:navigationIcon="@drawable/ic_samsung_back"
+        app:title="@string/zest_hdr_effect_setting_title">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:roundedCorners="all">
+                    <ImageView
+                        android:id="@+id/zest_video_brightness_img"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/hdr_effect_preview_off" />
+                </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginBottom="32dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="?textAppearanceBody2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zest_hdr_effect_setting_summary"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="?android:attr/textAppearanceSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/zest_hdr_effect_setting_available_apps"
+                        android:textAlignment="viewStart"
+                        android:textStyle="bold" />
+
+                    <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        android:background="@color/sesl_background_floating"
+                        android:gravity="start|center"
+                        android:orientation="vertical"
+                        app:roundedCorners="all">
+                        <ListView
+                            android:id="@+id/zest_video_brightness_app_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:divider="@color/background_color"
+                            android:nestedScrollingEnabled="true" />
+                    </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </de.dlyt.yanndroid.oneui.layout.SwitchBarLayout>
+
+    <LinearLayout
+        android:id="@+id/zest_video_brightness_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12.0dp"
+        android:layout_marginBottom="8.0dp"
+        android:orientation="vertical">
+        <ProgressBar
+            style="@style/ProgressBarStyle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="12dp"
+            android:layout_marginBottom="2.0dp" />
+    </LinearLayout>
+</LinearLayout>

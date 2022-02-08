@@ -1,0 +1,13 @@
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        android:key="mv_lock_options"
+        android:defaultValue="0"
+        android:title="@string/zest_maverick_security_setting_option_title"
+        android:entries="@array/zest_maverick_security_setting_options"
+        android:entryValues="@array/zest_maverick_security_setting_values"
+        app:useSimpleSummaryProvider="true" />
+
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

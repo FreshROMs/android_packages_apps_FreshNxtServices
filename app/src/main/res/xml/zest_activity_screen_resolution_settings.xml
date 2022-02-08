@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <HorizontalRadioPreference
+        android:key="fs_screen_resolution_radio"
+        app:entries="@array/zest_screen_resolution_setting_options"
+        app:entriesSubtitle="@array/zest_screen_resolution_setting_options_subtitle"
+        android:defaultValue="2340 x 1080"
+        app:entryValues="@array/zest_screen_resolution_setting_values"
+        app:viewType="noImage" />
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>
