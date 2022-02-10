@@ -31,6 +31,16 @@
 
     <PreferenceCategory>
         <Preference
+            android:title="Simple DeviceConfig (ProtonAOSP)"
+            android:summary="Danny Lin (kdrag0n) - Apache-2.0">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/ProtonAOSP/android_packages_apps_SimpleDeviceConfig" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory>
+        <Preference
             android:title="SecondScreen"
             android:summary="Braden Farmer - Apache-2.0">
             <intent
