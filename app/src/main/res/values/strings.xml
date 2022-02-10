@@ -4,10 +4,12 @@
     <string name="app_name">Fresh System Services</string>
     <string name="zest_app_version">About Zest</string>
     <string name="zest_setting_default_summary">Unknown</string>
+    <string name="zest_setting_default_error">"Something went wrong"</string>
 
     <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_title">"Zest"</string>
     <string name="zest_system_settings_plugin_summary">"Customization  •  Screen resolution"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"Screen resolution  •  Software updates"</string>
 
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Data connection icon style"</string>
@@ -30,6 +32,36 @@
     <string name="fresh_ota_auto_download_wlan_summary">Download software updates automatically when connected to a Wi-Fi network.</string>
     <string name="fresh_ota_last_successful_update_title">Last update</string>
     <string name="fresh_ota_last_successful_update_summary">"There's no information about this update."</string>
+    <string name="fresh_ota_check_frequency_title">"Update check frequency"</string>
+    <string name="fresh_ota_check_frequency_60min">Every hour</string>
+    <string name="fresh_ota_check_frequency_120min">Every 2 hours</string>
+    <string name="fresh_ota_check_frequency_180min">Every 3 hours</string>
+    <string name="fresh_ota_check_frequency_360min">Every 6 hours</string>
+    <string name="fresh_ota_check_frequency_720min">Every 12 hours</string>
+    <string name="fresh_ota_check_frequency_1440min">Every day</string>
+    <string name="fresh_ota_changelog_header_title">"What's New"</string>
+    <string name="fresh_ota_changelog_header_subtitle">"Find out what's included in this Fresh update."</string>
+    <string name="fresh_ota_changelog_detail_version">"Version:"</string>
+    <string name="fresh_ota_changelog_detail_size">"Size:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"Security patch level:"</string>
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s is ready to install"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"Downloading update…"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Time Left: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"Update your phone and get new features"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"Using mobile data to download may result in additional charges. Using Wi-Fi is recommended."</string>
+
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">Manage addons</string>
+    <string name="zest_addon_management_subtitle_none">"No addons installed"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 addon installed"</string>
+    <string name="zest_addon_management_subtitle_multiple">"%1$d addons installed"</string>
+    <string name="zest_addon_management_detail_uninstall">"Uninstall"</string>
+    <string name="zest_addon_management_detail_cancel">"Cancel"</string>
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Are you sure you want to uninstall %1$s?"</string>
+    <string name="zest_addon_management_detail_size">"Size"</string>
+    <string name="zest_addon_management_detail_version">"Version"</string>
+    <string name="zest_addon_management_detail_developer">"Developer"</string>
+    <string name="zest_addon_management_detail_last_updated">"Last updated"</string>
 
     <!-- Color Theme/Fresh Renoir settings -->
     <string name="zest_renoir_settings_title">"Color Theme"</string>
@@ -38,7 +70,7 @@
     <string name="zest_renoir_notification_channel_id" translatable="false">"TnsFreshCustomize"</string>
     <string name="zest_renoir_notification_channel_title">"Ongoing customizations"</string>
     <string name="zest_renoir_notification_channel_description">"This notification channel allows the app to execute operations needed in the background."</string>
-    <string name="zest_renoir_notification_title">@string/zest_renoir_settings_title</string>
+    <string name="zest_renoir_notification_title" translatable="false">@string/zest_renoir_settings_title</string>
     <string name="zest_renoir_notification_description">"Changing device theme based on wallpaper…"</string>
     <string name="zest_renoir_settings_unavailable">"Color-matching Theme is not available because a third-party theme is applied."</string>
     <string name="zest_renoir_settings_lock_screen">"Use lock screen colors"</string>
@@ -80,13 +112,22 @@
     <!-- Enhanced dark mode (DarQ) settings -->
     <string name="zest_darq_setting_title">Enhanced dark mode</string>
     <string name="zest_darq_setting_summary">Enable dark mode for all applications.</string>
+    <string name="zest_darq_service_connecting">"Connecting to service…"</string>
+    <string name="zest_darq_service_sync_success">"Changes synced with service"</string>
+    <string name="zest_darq_service_powered_by">"Powered by"</string>
+    <string name="zest_darq_service_detail_warning">"Enabling enhanced dark mode for some apps may cause layout issues. Some apps may not be supported."</string>
+
+    <!-- Zest Plus settings -->
+    <string name="zest_plus_permission_title">"Welcome to Zest+!"</string>
+    <string name="zest_plus_permission_summary">"Zest+ enables Fresh to be more powerful with additional features and more. However, this requires Zest to have full access to the system using Magisk.
+
+Your data is important. I promise that no data is being accessed and is sent over, and that your important data remains private.
+
+Would you like to enable Zest+?"</string>
 
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">Protect battery</string>
     <string name="zest_protect_battery_summary">To extend the lifespan of your battery, limit the maximum charge to 85%.</string>
-
-    <!-- Addon management settings -->
-    <string name="zest_addon_management_title">Manage addons</string>
 
     <!-- Relative links -->
     <string name="zest_relative_link_advanced">"Advanced settings"</string>
