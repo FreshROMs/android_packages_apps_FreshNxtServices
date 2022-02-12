@@ -51,4 +51,9 @@ public class AboutActivity extends AppCompatActivity {
         Intent intent = new Intent(mContext, OpenSourceActivity.class);
         startActivity(intent);
     }
+
+    public void onTapLocalization(View v) {
+        Intent intent = new Intent(mContext, LocalizationActivity.class);
+        startActivity(intent);
+    }
 }

@@ -76,6 +76,10 @@
             android:exported="false"
             android:label="@string/zest_about_page_open_source" />
         <activity
+            android:name=".zest.LocalizationActivity"
+            android:exported="false"
+            android:label="@string/zest_about_page_translations" />
+        <activity
             android:name=".zest.sub.RenoirSettingsActivity"
             android:exported="false" />
         <activity

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Arabic">
+        <Preference android:title="BasharSYR"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Filipino">
+        <Preference android:title="TenSeventy7"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="German">
+        <Preference android:title="Lucy"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Hindi">
+        <Preference android:title="Sharath Mane"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Indonesian">
+        <Preference android:title="repinger"/>
+        <Preference android:title="imrosyd"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Javanese">=
+        <Preference android:title="imrosyd"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Persian">
+        <Preference android:title="Navid"/>
+        <Preference android:title="Mohuva"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Polish">
+        <Preference android:title="Smuger"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Portuguese (BR)">
+        <Preference android:title="Wellington Silva"/>
+        <Preference android:title="Alexsander Gouveia"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Romanian">
+        <Preference android:title="Cristea Florian Victor"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Russian">
+        <Preference android:title="Denis"/>
+        <Preference android:title="Muzaffar"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Telugu">
+        <Preference android:title="Sharath Mane"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Turkish">
+        <Preference android:title="turancen"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Ukrainian">
+        <Preference android:title="Олександр"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Vietnamese">
+        <Preference android:title="Đức Anh Mai"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="spacing" />
+</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

@@ -11,6 +11,10 @@
         android:text="@string/zest_about_page_source_code" />
     <com.google.android.material.button.MaterialButton
         style="@style/ButtonStyle.AboutPage"
+        android:onClick="onTapLocalization"
+        android:text="@string/zest_about_page_translations" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/ButtonStyle.AboutPage"
         android:onClick="onTapOpenSource"
         android:text="@string/zest_about_page_open_source" />
 </de.dlyt.yanndroid.oneui.layout.AboutPage>
