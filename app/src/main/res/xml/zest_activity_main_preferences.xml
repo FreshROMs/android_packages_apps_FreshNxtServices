@@ -11,14 +11,14 @@
     </SwitchPreferenceScreen>
 
     <PreferenceCategory>
-        <ListPreference
+        <DropDownPreference
             android:key="sb_icon_style_data"
             android:defaultValue="io.tns.fresh.data.4g:io.tns.fresh.data.4g"
             android:title="@string/zest_data_connection_icon_title"
             android:entries="@array/data_connection_icon_entries"
             android:entryValues="@array/data_connection_icon_packages" />
 
-        <ListPreference
+        <DropDownPreference
             android:key="sb_icon_style_wifi"
             android:defaultValue="io.tns.fresh.wlan.default:io.tns.fresh.wlan.default"
             android:title="@string/zest_wlan_connection_icon_title"
@@ -82,7 +82,7 @@
         </Preference>
     </PreferenceCategory>
     -->
-    <PreferenceCategory>
+    <de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
         <Preference
             android:key="zs_fresh_version"
             android:title="@string/fresh_firmware_version"
@@ -95,6 +95,6 @@
                 android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
                 android:targetPackage="io.tensevntysevn.fresh" />
         </Preference>
-    </PreferenceCategory>
+    </de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
 
 </de.dlyt.yanndroid.oneui.preference.PreferenceScreen>
