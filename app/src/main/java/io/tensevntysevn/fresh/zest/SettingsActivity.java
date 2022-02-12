@@ -403,7 +403,8 @@ public class SettingsActivity extends AppCompatActivity {
                 System.arraycopy(mHits, 1, mHits, 0, mHits.length - 1);
                 mHits[mHits.length - 1] = SystemClock.uptimeMillis();
                 if (mHits[0] >= (SystemClock.uptimeMillis() - 500)) {
-                    String url = "https://www.youtube.com/watch?v=XAg1jDDG49Y";
+                    // String url = "https://youtu.be/6omHDfHITZ4?t=7"; // This song talks about death smh
+                    String url = "https://www.youtube.com/watch?v=DtBoAqkIJzI"; // Ayase ftw
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     context.startActivity(intent);
