@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:expanded="false"
-    app:navigationIcon="@drawable/ic_samsung_back"
+    app:navigationIcon="@drawable/ic_oui_back"
     app:title="@string/zest_system_settings_plugin_title">
     <FrameLayout
         android:id="@+id/zest_settings_main_layout"

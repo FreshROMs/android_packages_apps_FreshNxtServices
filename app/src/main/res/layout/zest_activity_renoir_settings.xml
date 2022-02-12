@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        app:navigationIcon="@drawable/ic_samsung_back"
+        app:navigationIcon="@drawable/ic_oui_back"
         app:title="@string/zest_renoir_settings_title">
 
         <androidx.core.widget.NestedScrollView

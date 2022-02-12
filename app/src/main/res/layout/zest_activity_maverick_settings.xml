@@ -11,7 +11,7 @@
         android:layout_weight="1"
         android:id="@+id/zest_maverick_switchbar_layout"
         android:orientation="vertical"
-        app:navigationIcon="@drawable/ic_samsung_back"
+        app:navigationIcon="@drawable/ic_oui_back"
         app:title="@string/zest_maverick_security_setting_title">
 
         <de.dlyt.yanndroid.oneui.widget.NestedScrollView
