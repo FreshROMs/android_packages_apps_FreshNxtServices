@@ -5,15 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import de.dlyt.yanndroid.oneui.preference.Preference;
 import io.tensevntysevn.fresh.R;
 
 public class OpenSourceActivity extends AppCompatActivity {
@@ -24,7 +22,7 @@ public class OpenSourceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.zest_about_open_source_activity);
+        setContentView(R.layout.zest_activity_about_open_source);
         ButterKnife.bind(this);
 
         toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
@@ -34,12 +32,12 @@ public class OpenSourceActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.zest_open_source_fragment, new OpenSourceFragment())
+                    .replace(R.id.zest_localization_fragment, new OpenSourceFragment())
                     .commit();
         }
     }
 
-    public static class OpenSourceFragment extends PreferenceFragment {
+    public static class OpenSourceFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
         private Context mContext;
 
         @Override
@@ -57,6 +55,11 @@ public class OpenSourceActivity extends AppCompatActivity {
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             getView().setBackgroundColor(getResources().getColor(R.color.item_background_color, mContext.getTheme()));
+        }
+
+        @Override
+        public boolean onPreferenceChange(@NonNull Preference preference, Object o) {
+            return false;
         }
     }
 }

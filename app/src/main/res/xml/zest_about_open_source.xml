@@ -55,5 +55,6 @@
                 android:data="https://github.com/tytydraco/Resolution-Changer" />
         </Preference>
     </PreferenceCategory>
-
+    <PreferenceCategory
+        android:key="spacing" />
 </de.dlyt.yanndroid.oneui.preference.PreferenceScreen>
