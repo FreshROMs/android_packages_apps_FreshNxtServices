@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"ఫ్రెష్  సిస్టమ్ సేవలు"</string>
+    <string name="zest_relative_link_advanced">"ఆధునిక అమరికలు"</string>
+    <string name="zest_relative_link_wallpaper">"హోమ్ మరియు లాక్ స్క్రీన్  తెరచిత్రం"</string>
+    <string name="zest_relative_link_themes">"శామ్సంగ్ థీమ్"</string>
+    <string name="zest_data_connection_icon_default">"సాధారణం (4జి)"</string>
+    <string name="zest_data_connection_icon_lte">"ఎల్టిఈ"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"నెక్స్ట్(5జి)"</string>
+    <string name="zest_wlan_connection_icon_default">"సాధారణం"</string>
+    <string name="zest_wlan_connection_icon_uplus">"ఎల్ జి యు+"</string>
+    <string name="zest_wlan_connection_icon_kt">"కే టి"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"జెస్ట్ గురించి"</string>
+    <string name="zest_setting_default_summary">"తెలియని"</string>
+    <string name="zest_setting_default_error">"ఎక్కడో తేడా జరిగింది"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"జెస్ట్"</string>
+    <string name="zest_system_settings_plugin_summary">"అనుకూలీకరణ"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"తెర స్పష్టత • సాఫ్ట్వేర్ నవీకరణ"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"సమాచారం అనుసంధాన చిహ్న శైలి"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"వై-ఫై  సంకేత చిహ్న శైలి"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"ఫ్రెష్ సంస్కరణ"</string>
+    <string name="fresh_ota_main_title">"సాఫ్ట్వేర్ నవీకరణ"</string>
+    <string name="fresh_ota_check_for_updates_title">"డౌన్‌లోడ్ మరియు సంస్థాపించు"</string>
+    <string name="fresh_ota_check_for_updates_summary">"మొబైల్ నెట్‌వర్క్‌ల ద్వారా డౌన్‌లోడ్ చేయడం వలన అదనపు ఛార్జీలు విధించబడవచ్చు. వీలైతే, బదులుగా వై-ఫై నెట్‌వర్క్ ద్వారా డౌన్‌లోడ్ చేసుకోండి"</string>
+    <string name="fresh_ota_auto_download_wlan_title">"వై-ఫై ద్వారా దానంతట అదే డౌన్లోడ్"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"వై-ఫై నెట్‌వర్క్‌కి కనెక్ట్ చేసినప్పుడు సాఫ్ట్‌వేర్ నవీకరణలను స్వయంచాలకంగా డౌన్‌లోడ్ చేయండి."</string>
+    <string name="fresh_ota_last_successful_update_title">"చివరి నవీకరణ"</string>
+    <string name="fresh_ota_last_successful_update_summary">"ఈ నవీకరణ గురించి ఎటువంటి సమాచారం లేదు."</string>
+    <string name="fresh_ota_check_frequency_title">"తనిఖీ తరచుదనంను నవీకరించండి"</string>
+    <string name="fresh_ota_check_frequency_60min">"ప్రతీ గంటకు"</string>
+    <string name="fresh_ota_check_frequency_120min">"ప్రతీ 2 గంటలకు"</string>
+    <string name="fresh_ota_check_frequency_180min">"ప్రతీ 3 గంటలకు"</string>
+    <string name="fresh_ota_check_frequency_360min">"ప్రతీ 6 గంటలకు"</string>
+    <string name="fresh_ota_check_frequency_720min">"ప్రతీ 12 గంటలకు"</string>
+    <string name="fresh_ota_check_frequency_1440min">"ప్రతీ రోజు"</string>
+    <string name="fresh_ota_changelog_header_title">"కొత్తవి ఏమిటి"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"ఈ  ఫ్రెష్ నవీకరణలో  ఏమి చేర్చబడిందో కనుగొనండి."</string>
+    <string name="fresh_ota_changelog_detail_version">"సంస్కరణ:"</string>
+    <string name="fresh_ota_changelog_detail_size">"పరిమాణం:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"భద్రతా పట్టీ స్థాయి:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"ఫ్రెష్ %1$s %2$s ఇన్‌స్టాల్ చేయడానికి సిద్ధంగా ఉంది"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"నవీకరణను డౌన్‌లోడ్ చేస్తోంది…"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"మిగిలి ఉన్న సమయం: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"మీఫోన్‌ను నవీకరనం చేయండి మరియు కొత్త  లక్షణంలను పొందండి"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"డౌన్‌లోడ్ చేయడానికి మొబైల్ డేటాను ఉపయోగించడం వలన అదనపు ఛార్జీలు విధించబడవచ్చు.  వై-ఫైని ఉపయోగించడం సిఫార్సు చేయబడింది"</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"జత చేయుగల వాటిని నిర్వహించండి"</string>
+    <string name="zest_addon_management_subtitle_none">"జత చేయగలవి  సంస్థాపన చేయబడలేదు"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 జత చేయుగలది సంస్థాపన చేయబడినది"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d జత చేయుగలవి సంస్థాపన చేయబడినవి"</string>
+    <string name="zest_addon_management_detail_uninstall">"తొలగించండి"</string>
+    <string name="zest_addon_management_detail_cancel">"రద్దు"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"మీరు ఖచ్చితంగా %1$s ని  తొలగించాలని అనుకుంటున్నారా?"</string>
+    <string name="zest_addon_management_detail_size">"పరిమాణం"</string>
+    <string name="zest_addon_management_detail_version">"సంస్కరణ"</string>
+    <string name="zest_addon_management_detail_developer">"అభివృద్ధి చేయువాడు"</string>
+    <string name="zest_addon_management_detail_last_updated">"చివరిగా నవీకరించబడింది"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"రంగు థీమ్"</string>
+    <string name="zest_renoir_settings_summary">"మీ ప్రస్తుత వాల్‌పేపర్‌తో థీమ్‌ను స్వీకరించడం ద్వారా వన్ యుఐ  ని అనుకూలీకరించండి."</string>
+    <string name="zest_renoir_notification_channel_title">"కొనసాగుతున్న ప్రకటనలు"</string>
+    <string name="zest_renoir_notification_channel_description">"ఈ నోటిఫికేషన్ ఛానెల్ నేపథ్యంలో అవసరమైన ఆపరేషన్‌లను అమలు చేయడానికి యాప్‌ని అనుమతిస్తుంది."</string>
+    <string name="zest_renoir_notification_description">"వాల్‌పేపర్ ఆధారంగా పరికర థీమ్‌ని మారుస్తోంది..."</string>
+    <string name="zest_renoir_settings_unavailable">"మూడవ పక్షం థీమ్ వర్తింపజేయబడినందున రంగు-సరిపోలిక థీమ్ అందుబాటులో లేదు."</string>
+    <string name="zest_renoir_settings_lock_screen">"లాక్ స్క్రీన్ రంగులను ఉపయోగించండి"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"పరికర థీమ్‌ను ఎంచుకోవడంలో మీ లాక్ స్క్రీన్ వాల్‌పేపర్ నుండి రంగులను ఉపయోగించండి."</string>
+    <string name="zest_renoir_settings_custom_colors">"అనుకూల రంగులను ఉపయోగించండి"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"పరికర థీమ్ కోసం కలర్ పికర్ నుండి రంగులను ఉపయోగించండి."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"తెర స్పష్టత"</string>
+    <string name="zest_screen_resolution_setting_summary">"మీరు స్పష్టతను మార్చినప్పుడు కొన్ని యాప్‌లు మూసివేయబడవచ్చు."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"పదునైన విజువల్స్, ఎక్కువ బ్యాటరీ వినియోగం"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"మెరుగైన విజువల్స్, మితమైన బ్యాటరీ వినియోగం"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"అందములేని విజువల్, తక్కువ బ్యాటరీ వినియోగం"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"అనువర్తించు"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"వీడియో ప్రకాశం"</string>
+    <string name="zest_hdr_effect_setting_summary">"ప్రకాశవంతమైన మరియు మరింత స్పష్టమైన రంగులను ఆస్వాదించడానికి మీ వీడియోల చిత్ర నాణ్యతను మెరుగుపరచండి."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"అందుబాటులో ఉన్న యాప్‌లు"</string>
+    <string name="zest_maverick_security_setting_title">"యుఎస్బి భద్రత"</string>
+    <string name="zest_maverick_security_setting_summary">"హానికరమైన యుఎస్బి పరికరాల నుండి మీ పరికరాన్ని రక్షించండి."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"పరికరం లాక్ చేయబడినప్పుడు యాక్సెస్‌ని నిరోధించడం ద్వారా హానికరమైన యుఎస్బి పరికరాల నుండి మీ పరికరాన్ని రక్షించండి."</string>
+    <string name="zest_maverick_security_setting_option_title">"యుఎస్బి పరికరాలను పరిమితం చేయండి"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"తెర మూసి ఉన్నప్పుడు"</string>
+    <string name="zest_maverick_security_setting_option_always">"అన్నివిధాల"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"డార్క్ మోడ్ మెరుగుపరచబడింది"</string>
+    <string name="zest_darq_setting_summary">"అన్ని యాప్ల  కోసం డార్క్ మోడ్‌ను ప్రారంభించండి."</string>
+    <string name="zest_darq_service_connecting">"సేవకు కలుపబడుతుంది…"</string>
+    <string name="zest_darq_service_sync_success">"మార్పులు సేవతో సమకాలీకరించబడ్డాయి"</string>
+    <string name="zest_darq_service_powered_by">"ఆధారితం"</string>
+    <string name="zest_darq_service_detail_warning">"కొన్ని యాప్‌ల కోసం మెరుగుపరచబడిన డార్క్ మోడ్‌ను ప్రారంభించడం వలన లేఅవుట్ సమస్యలు ఏర్పడవచ్చు. కొన్ని యాప్‌లు సపోర్ట్ చేయకపోవచ్చు."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"జెస్ట్+ కి స్వాగతం!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"జెస్ట్+ అదనపు ఫీచర్లు మరియు మరిన్నింటితో మరింత శక్తివంతంగా ఉండటానికి ఫ్రెష్‌ని అనుమతిస్తుంది. అయితే, దీనికి జెస్ట్+ మాజిస్కని     ఉపయోగించి సిస్టమ్‌కు పూర్తి ప్రాప్యతను కలిగి ఉండాలి.
+మీ డేటా ముఖ్యం. డేటా ఏదీ యాక్సెస్ చేయబడదని మరియు పంపబడదని మరియు మీ ముఖ్యమైన డేటా ప్రైవేట్‌గా ఉంటుందని నేను వాగ్దానం చేస్తున్నాను.
+మీరు జెస్ట్+ని ప్రారంభించాలనుకుంటున్నారా?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"బ్యాటరీని రక్షించండి"</string>
+    <string name="zest_protect_battery_summary">"మీ బ్యాటరీ జీవితకాలం పొడిగించడానికి, గరిష్ట ఛార్జీని 85%కి పరిమితం చేయండి."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"రికవరీకి రీబూట్ చేయండి"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"మీరు రికవరీ మోడ్‌కి రీబూట్ చేయాలనుకుంటున్నారా?"</string>
+    <string name="qs_dialog_ok">"అలాగే"</string>
+    <string name="qs_dialog_cancel">"రద్దు చేయండి"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"ఓపెన్ సోర్స్ లైసెన్స్‌లు"</string>
+    <string name="zest_about_page_source_code">"సోర్స్ కోడ్"</string>
+    <string name="zest_about_page_translations">"స్థానికీకరణ"</string>
+</resources>

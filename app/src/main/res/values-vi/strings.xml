@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Dịch vụ hệ thống Fresh"</string>
+    <string name="zest_relative_link_advanced">"Cài đặt nâng cao"</string>
+    <string name="zest_relative_link_wallpaper">"Hình nền ở màn hình chính và màn hình khóa"</string>
+    <string name="zest_relative_link_themes">"Samsung Themes"</string>
+    <string name="zest_data_connection_icon_default">"Mặc định (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Mới (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"Mặc định"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Về Zest"</string>
+    <string name="zest_setting_default_summary">"Không rõ"</string>
+    <string name="zest_setting_default_error">"Đã xảy ra lỗi"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"Tùy biến  •  Độ phân giải"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"Độ phân giải  •  Cập nhật phần mềm"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"Kiểu biểu tượng kết nối dữ liệu"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Kiểu biểu tượng kết nối Wi-Fi"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Phiên bản Fresh"</string>
+    <string name="fresh_ota_main_title">"Cập nhật phần mềm"</string>
+    <string name="fresh_ota_check_for_updates_title">"Tải về và cài đặt"</string>
+    <string name="fresh_ota_check_for_updates_summary">"Tải xuống qua mạng di động có thể phát sinh thêm phí. Nếu có thể, hãy tải xuống qua mạng Wi-Fi."</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Tự động tải xuống qua Wi-Fi"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"Tự động tải xuống các bản cập nhật phần mềm khi được kết nối với mạng Wi-Fi."</string>
+    <string name="fresh_ota_last_successful_update_title">"Cập nhật lần cuối"</string>
+    <string name="fresh_ota_last_successful_update_summary">"Không có thông tin gì về bản cập nhật này."</string>
+    <string name="fresh_ota_check_frequency_title">"Tần suất kiểm tra cập nhật"</string>
+    <string name="fresh_ota_check_frequency_60min">"Mỗi giờ"</string>
+    <string name="fresh_ota_check_frequency_120min">"Mỗi 2 giờ"</string>
+    <string name="fresh_ota_check_frequency_180min">"Mỗi 3 giờ"</string>
+    <string name="fresh_ota_check_frequency_360min">"Mỗi 6 giờ"</string>
+    <string name="fresh_ota_check_frequency_720min">"Mỗi 12 giờ"</string>
+    <string name="fresh_ota_check_frequency_1440min">"Mỗi ngày"</string>
+    <string name="fresh_ota_changelog_header_title">"Có gì mới"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Tìm hiểu những gì được bao gồm trong bản cập nhật Fresh này."</string>
+    <string name="fresh_ota_changelog_detail_version">"Phiên bản:"</string>
+    <string name="fresh_ota_changelog_detail_size">"Kích thước:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"Mức độ bản vá bảo mật:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s đã sẵn sàng để cài đặt"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"Đang tải xuống bản cập nhật..."</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Thời gian còn lại: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"Cập nhật điện thoại của bạn và nhận các tính năng mới"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"Việc sử dụng dữ liệu di động để tải xuống có thể dẫn đến các khoản phí bổ sung. Khuyến khích sử dụng Wi-Fi."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"Quản lý tiện ích mở rộng"</string>
+    <string name="zest_addon_management_subtitle_none">"Không có tiện ích mở rộng nào được cài đặt"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 tiện ích mở rộng đã được cài đặt"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d tiện ích mở rộng đã được cài đặt"</string>
+    <string name="zest_addon_management_detail_uninstall">"Gỡ cài đặt"</string>
+    <string name="zest_addon_management_detail_cancel">"Hủy"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Bạn có chắc muốn gỡ cài đặt %1$s?"</string>
+    <string name="zest_addon_management_detail_size">"Kích thước"</string>
+    <string name="zest_addon_management_detail_version">"Phiên bản"</string>
+    <string name="zest_addon_management_detail_developer">"Lập trình viên"</string>
+    <string name="zest_addon_management_detail_last_updated">"Lần cuối cập nhật"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"Chủ đề màu sắc"</string>
+    <string name="zest_renoir_settings_summary">"Tùy chỉnh One UI bằng cách điều chỉnh chủ đề với hình nền hiện tại của bạn."</string>
+    <string name="zest_renoir_notification_channel_title">"Thông báo đang diễn ra"</string>
+    <string name="zest_renoir_notification_channel_description">"Kênh thông báo này cho phép ứng dụng thực thi các hoạt động cần thiết trong nền."</string>
+    <string name="zest_renoir_notification_description">"Thay đổi chủ đề thiết bị dựa trên hình nền…"</string>
+    <string name="zest_renoir_settings_unavailable">"Theme hợp màu không khả dụng vì theme của bên thứ ba được áp dụng."</string>
+    <string name="zest_renoir_settings_lock_screen">"Sử dụng màu màn hình khóa"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"Sử dụng màu sắc từ hình nền màn hình khóa của bạn khi chọn chủ đề thiết bị."</string>
+    <string name="zest_renoir_settings_custom_colors">"Sử dụng màu tùy chỉnh"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"Sử dụng màu từ bộ chọn màu cho chủ đề thiết bị."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"Độ phân giải màn hình"</string>
+    <string name="zest_screen_resolution_setting_summary">"Một số ứng dụng có thể bị đóng khi bạn đổi độ phân giải."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"Hình ảnh đẹp nhất, dùng nhiều pin nhất"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Hình ảnh trung bình, dùng pin trung bình"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Hình ảnh xấu xí, dùng pin ít nhất"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"Áp dụng"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"Độ sáng video"</string>
+    <string name="zest_hdr_effect_setting_summary">"Nâng cao chất lượng hình ảnh của video để tận hưởng màu sắc tươi sáng và sống động hơn."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"Ứng dụng có sẵn"</string>
+    <string name="zest_maverick_security_setting_title">"Bảo mật USB"</string>
+    <string name="zest_maverick_security_setting_summary">"Bảo vệ thiết bị của bạn khỏi các thiết bị USB độc hại."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"Bảo vệ thiết bị của bạn khỏi các thiết bị USB độc hại bằng cách chặn quyền truy cập trong khi thiết bị bị khóa."</string>
+    <string name="zest_maverick_security_setting_option_title">"Hạn chế thiết bị USB"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"Trong lúc màn hình tắt"</string>
+    <string name="zest_maverick_security_setting_option_always">"Luôn luôn"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"Chế độ tối nâng cao"</string>
+    <string name="zest_darq_setting_summary">"Bật chế độ tối cho tất cả ứng dụng."</string>
+    <string name="zest_darq_service_connecting">"Đang kết nối với dịch vụ..."</string>
+    <string name="zest_darq_service_sync_success">"Các thay đổi đã được đồng bộ hóa với dịch vụ"</string>
+    <string name="zest_darq_service_powered_by">"Cung cấp bởi"</string>
+    <string name="zest_darq_service_detail_warning">"Việc bật chế độ tối nâng cao cho một số ứng dụng có thể gây ra sự cố về bố cục. Một số ứng dụng có thể không được hỗ trợ."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Chào mừng đến với Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ cho phép Fresh trở nên mạnh mẽ hơn với các tính năng bổ sung và hơn thế nữa. Tuy nhiên, điều này đòi hỏi Zest phải có toàn quyền truy cập vào hệ thống bằng Magisk.
+
+Dữ liệu của bạn là quan trọng. Tôi cam kết rằng không có dữ liệu nào đang bị truy cập và được gửi đi, và dữ liệu quan trọng của bạn vẫn ở chế độ riêng tư.
+
+Bạn có muốn bật Zest+ không?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"Bảo vệ pin"</string>
+    <string name="zest_protect_battery_summary">"Để kéo dài tuổi thọ của pin, hãy giới hạn mức sạc tối đa ở 85%."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Khởi động vào Recovery"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Bạn có muốn khởi động vào Recovery không?"</string>
+    <string name="qs_dialog_ok">"OK"</string>
+    <string name="qs_dialog_cancel">"Hủy"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"Giấy phép nguồn mở"</string>
+    <string name="zest_about_page_source_code">"Mã nguồn"</string>
+    <string name="zest_about_page_translations">"Localization"</string>
+</resources>

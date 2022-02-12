@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Layanan Sistem Fresh"</string>
+    <string name="zest_relative_link_advanced">"Pengaturan lanjutan"</string>
+    <string name="zest_relative_link_wallpaper">"Wallpaper layar utama dan layar kunci"</string>
+    <string name="zest_relative_link_themes">"Tema Samsung"</string>
+    <string name="zest_data_connection_icon_default">"Default (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"Bawaan"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Tentang Zest"</string>
+    <string name="zest_setting_default_summary">"Tidak diketahui"</string>
+    <string name="zest_setting_default_error">"Ada yang salah"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"Kustomisasi  •  Resolusi layar"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"Resolusi layar  • Pembaruan perangkat lunak"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"Gaya ikon koneksi data"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Gaya ikon sinyal Wi-Fi"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Versi Fresh"</string>
+    <string name="fresh_ota_main_title">"Pembaruan perangkat lunak"</string>
+    <string name="fresh_ota_check_for_updates_title">"Unduhan dan pasang"</string>
+    <string name="fresh_ota_check_for_updates_summary">"Mengunduh melalui jaringan seluler dapat dikenakan biaya tambahan.  Jika memungkinkan, unduh melalui jaringan Wi-Fi"</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Unduh otomatis lewat Wi-Fi"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"Unduh pembaruan perangkat lunak secara otomatis saat terhubung ke jaringan Wi-Fi."</string>
+    <string name="fresh_ota_last_successful_update_title">"Pembaharuan terakhir"</string>
+    <string name="fresh_ota_last_successful_update_summary">"Tidak ada informasi tentang pembaruan ini."</string>
+    <string name="fresh_ota_check_frequency_title">"Frekuensi pengecekan pembaruan"</string>
+    <string name="fresh_ota_check_frequency_60min">"Setiap jam"</string>
+    <string name="fresh_ota_check_frequency_120min">"Setiap 2 jam"</string>
+    <string name="fresh_ota_check_frequency_180min">"Setiap 3 jam"</string>
+    <string name="fresh_ota_check_frequency_360min">"Setiap 6 jam"</string>
+    <string name="fresh_ota_check_frequency_720min">"Setiap 12 jam"</string>
+    <string name="fresh_ota_check_frequency_1440min">"Setiap hari"</string>
+    <string name="fresh_ota_changelog_header_title">"Apa yang baru"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Temukan apa yang baru di pembaruan Fresh ini."</string>
+    <string name="fresh_ota_changelog_detail_version">"Versi:"</string>
+    <string name="fresh_ota_changelog_detail_size">"Ukuran:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"Level patch keamanan:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s siap untuk dipasang"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"Mengunduh pembaruan..."</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Waktu tersisa: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"Perbarui ponsel Anda dan dapatkan fitur baru"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"Menggunakan data seluler untuk mengunduh dapat dikenakan biaya tambahan.  Disarankan menggunakan Wi-Fi."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"Mengelola peraturan tambahan"</string>
+    <string name="zest_addon_management_subtitle_none">"Tidak ada peraturan tambahan yang terpasang"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 peraturan tambahan terpasang"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d peraturan tambahan terpasang"</string>
+    <string name="zest_addon_management_detail_uninstall">"Copot pemasangan"</string>
+    <string name="zest_addon_management_detail_cancel">"Batalkan"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Apakah Anda yakin untuk menghapus %1$s?"</string>
+    <string name="zest_addon_management_detail_size">"Ukuran"</string>
+    <string name="zest_addon_management_detail_version">"Versi"</string>
+    <string name="zest_addon_management_detail_developer">"Pengembang"</string>
+    <string name="zest_addon_management_detail_last_updated">"Terakhir diperbarui"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"Tema warna"</string>
+    <string name="zest_renoir_settings_summary">"Kustomisasi One UI dengan mengadaptasi tema wallpaper Anda saat ini."</string>
+    <string name="zest_renoir_notification_channel_title">"Pemberitahuan yang sedang berlangsung"</string>
+    <string name="zest_renoir_notification_channel_description">"Saluran notifikasi ini memungkinkan aplikasi untuk menjalankan operasi yang diperlukan di latar belakang."</string>
+    <string name="zest_renoir_notification_description">"Mengubah tema perangkat berdasarkan wallpaper…"</string>
+    <string name="zest_renoir_settings_unavailable">"Pencocokan warna tema tidak tersedia karena tema pihak ketiga diterapkan."</string>
+    <string name="zest_renoir_settings_lock_screen">"Gunakan warna layar kunci"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"Gunakan warna dari wallpaper layar kunci Anda dalam memilih tema perangkat."</string>
+    <string name="zest_renoir_settings_custom_colors">"Gunakan warna khusus"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"Gunakan warna dari pemilih warna untuk tema perangkat."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"Resolusi layar"</string>
+    <string name="zest_screen_resolution_setting_summary">"Beberapa aplikasi mungkin ditutup saat Anda mengubah resolusi."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"Kecerahan tinggi, menggunakan sebagian besar baterai"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Kecerahan sedang, menggunakan lebih banyak baterai"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Kecerahan rendah, menggunakan baterai lebih sedikit"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"Menerapkan"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"Kecerahan video"</string>
+    <string name="zest_hdr_effect_setting_summary">"Tingkatkan kualitas gambar video Anda untuk menikmati warna yang lebih cerah dan lebih hidup."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"Aplikasi yang tersedia"</string>
+    <string name="zest_maverick_security_setting_title">"Keamanan USB"</string>
+    <string name="zest_maverick_security_setting_summary">"Melindung perangkat Anda dari perangkat-perangkat USB yang membahayakan."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"Melindung perangkat Anda dari perangkat-perangkat USB yang membahayakan dengan memblokir akses ketika perangkat dikunci."</string>
+    <string name="zest_maverick_security_setting_option_title">"Membatasi perangkat USB"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"Ketika layar mati"</string>
+    <string name="zest_maverick_security_setting_option_always">"Selalu"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"Mode gelap yang ditingkatkan"</string>
+    <string name="zest_darq_setting_summary">"Aktifkan mode gelap untuk semua aplikasi."</string>
+    <string name="zest_darq_service_connecting">"Menghubungkan ke layanan..."</string>
+    <string name="zest_darq_service_sync_success">"Perubahan disinkronkan dengan layanan"</string>
+    <string name="zest_darq_service_powered_by">"Dipersembahkan oleh"</string>
+    <string name="zest_darq_service_detail_warning">"Mengaktifkan mode gelap yang disempurnakan untuk beberapa aplikasi dapat menyebabkan masalah tata letak.  Beberapa aplikasi mungkin tidak didukung."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Selamat datang di Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ memungkinkan Fresh menjadi lebih kuat dengan fitur tambahan dan lain-lain. Tetapi, Zest+ membutuhkan akses penuh ke sistem menggunakan Magisk.
+
+Data Anda sangatlah penting. Saya janji untuk tidak menyebarluaskan dan data Anda tetap pribadi.
+
+Apakah Anda ingin mengaktifkan Zest+?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"Lindungi baterai"</string>
+    <string name="zest_protect_battery_summary">"Untuk memperpanjang umur baterai Anda, batasi pengisian daya ke 85%."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Nyalakan ulang ke Pemulihan"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Apakah Anda ingin untuk menyalakan ulang ke mode Recovery?"</string>
+    <string name="qs_dialog_ok">"OK"</string>
+    <string name="qs_dialog_cancel">"Batal"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"Lisensi sumber terbuka"</string>
+    <string name="zest_about_page_source_code">"Kode sumber"</string>
+    <string name="zest_about_page_translations">"Lokalisasi"</string>
+</resources>

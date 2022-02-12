@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- Fuzzy -->
+    <string name="app_name">"سرویس‌های سیستمی Fresh"</string>
+    <!-- Fuzzy -->
+    <string name="zest_relative_link_advanced">"تنظیمات پیشرفته"</string>
+    <!-- Fuzzy -->
+    <string name="zest_relative_link_wallpaper">"پس‌زمینه خانه و صفحه قفل"</string>
+    <!-- Fuzzy -->
+    <string name="zest_relative_link_themes">"تم‌های سامسونگ"</string>
+    <!-- Fuzzy -->
+    <string name="zest_data_connection_icon_default">"پیش‌فرض (4G)"</string>
+    <!-- Fuzzy -->
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <!-- Fuzzy -->
+    <string name="zest_data_connection_icon_next">"آینده (5G)"</string>
+    <!-- Fuzzy -->
+    <string name="zest_wlan_connection_icon_default">"پیش‌فرض"</string>
+    <!-- Fuzzy -->
+    <string name="zest_wlan_connection_icon_uplus">"ال‌جی U+"</string>
+    <!-- Fuzzy -->
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <!-- Fuzzy -->
+    <string name="zest_app_version">"درباره مزه"</string>
+    <!-- Fuzzy -->
+    <string name="zest_setting_default_summary">"ناشناخته"</string>
+    <!-- Fuzzy -->
+    <string name="zest_setting_default_error">"مشکلی پیش آمده"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <!-- Fuzzy -->
+    <string name="zest_system_settings_plugin_title">"مزه"</string>
+    <!-- Fuzzy -->
+    <string name="zest_system_settings_plugin_summary">"شخصی‌سازی • رزولوشن صفحه نمایش"</string>
+    <!-- Fuzzy -->
+    <string name="zest_system_settings_plugin_summary_snowcone">"رزولوشن صفحه نمایش • به‌روزرسانی‌های نرم‌افزار"</string>
+    <!-- Data connection icon settings -->
+    <!-- Fuzzy -->
+    <string name="zest_data_connection_icon_title">"شکل نمایشگر ارتباط داده"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <!-- Fuzzy -->
+    <string name="zest_wlan_connection_icon_title">"شکل نمایشگر سیگنال Wi-Fi"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- Fuzzy -->
+    <string name="fresh_firmware_version">"نسخه Fresh"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_main_title">"به‌روزرسانی نرم‌افزار"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_for_updates_title">"دانلود و نصب"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_for_updates_summary">"دانلود با اینترنت داده ممکن است هزینه اضافی داشته باشد. اگر ممکن است، به‌جای آن از شبکه Wi-Fi استفاده کنید."</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_auto_download_wlan_title">"دانلود خودکار از طریق Wi-Fi"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_auto_download_wlan_summary">"دانلود خودکار به‌روزرسانی نرم‌افزار وقتی که به Wi-Fi وصل شوید."</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_last_successful_update_title">"آخرین به‌روزرسانی"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_last_successful_update_summary">"اطلاعاتی درباره این به‌روزرسانی موجود نیست."</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_title">"بررسی مکرر به‌روزرسانی"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_60min">"هر ساعت"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_120min">"هر ۲ ساعت"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_180min">"هر ۳ ساعت"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_360min">"هر ۶ ساعت"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_720min">"هر ۱۲ ساعت"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_check_frequency_1440min">"هر روز"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_header_title">"ویژگی‌های جدید"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_header_subtitle">"از محتویات این به‌روزرسانی Fresh مطلع شوید."</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_detail_version">"نسخه:"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_detail_size">"اندازه:"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_detail_security_patch_level">"سطح وصله امنیتی:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_appbar_install">"به‌روزرسانی Fresh %1$s %2$s آماده نصب است."</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_appbar_downloading">"در حال دانلود به‌روزرسانی..."</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"زمان باقی مانده: %s"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_appbar_detail">"تلفن خود را به‌روز کنید و ویژگی‌های جدید دریافت کنید"</string>
+    <!-- Fuzzy -->
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"استفاده از اینترنت داده ممکن است هزینه اضافی داشته باشد. پیشنهاد می‌شود به‌جای آن از Wi-Fi استفاده کنید."</string>
+    <!-- Addon management settings -->
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_title">"مدیریت افزونه‌ها"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_subtitle_none">"افزونه ای نصب نشده است"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_subtitle_singular">"۱ افزونه نصب شد"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d افزونه نصب شد"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_uninstall">"حذف"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_cancel">"لغو"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"آیا از حذف %1$s اطمینان دارید؟"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_size">"اندازه"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_version">"نسخه"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_developer">"توسعه‌دهنده"</string>
+    <!-- Fuzzy -->
+    <string name="zest_addon_management_detail_last_updated">"آخرین به‌روزرسانی"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_title">"رنگ تم"</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_summary">"با تطبیق تم با پس‌زمینه فعلی خود، One UI را سفارشی کنید."</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_notification_channel_title">"اعلان‌های جاری"</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_notification_channel_description">"این کانال اعلان به برنامه اجازه می‌دهد تا عملیات مورد نیاز را در پس‌زمینه اجرا کند."</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_notification_description">"درحال تغییر تم دستگاه بر اساس تصویر پس‌زمینه..."</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_unavailable">"تم منطبق با رنگ در دسترس نیست زیرا یک تم شخص ثالث اعمال شده است."</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_lock_screen">"استفاده از رنگ‌های صفحه قفل"</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_lock_screen_description">"از رنگ‌های پس‌زمینه صفحه قفل در تم دستگاه استفاده شود."</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_custom_colors">"استفاده از رنگ‌های سفارشی"</string>
+    <!-- Fuzzy -->
+    <string name="zest_renoir_settings_custom_colors_desc">"استفاده از رنگ‌های شناخته شده توسط رنگ شناس برای تم دستگاه."</string>
+    <!-- Screen Resolution settings -->
+    <!-- Fuzzy -->
+    <string name="zest_screen_resolution_setting_title">"رزولوشن صفحه نمایش"</string>
+    <!-- Fuzzy -->
+    <string name="zest_screen_resolution_setting_summary">"هنگام تغییر رزولوشن صفحه نمایش ممکن است بعضی از برنامه‌ها بسته شوند."</string>
+    <!-- Fuzzy -->
+    <string name="zest_screen_resolution_setting_high_summary">"واضح‌ترین تصاویر، بیشترین مصرف باتری"</string>
+    <!-- Fuzzy -->
+    <string name="zest_screen_resolution_setting_medium_summary">"تصاویر بهبود یافته، مصرف باتری متوسط"</string>
+    <!-- Fuzzy -->
+    <string name="zest_screen_resolution_setting_low_summary">"تصاویر کم وضوح، کمترین مصرف باتری"</string>
+    <!-- Fuzzy -->
+    <string name="zest_screen_resolution_setting_btn_apply">"اعمال"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <!-- Fuzzy -->
+    <string name="zest_hdr_effect_setting_title">"روشنایی ویدیو"</string>
+    <!-- Fuzzy -->
+    <string name="zest_hdr_effect_setting_summary">"کیفیت تصویر ویدیوهای خود را افزایش دهید تا از رنگ‌های روشن‌تر و زنده‌تر لذت ببرید."</string>
+    <!-- Fuzzy -->
+    <string name="zest_hdr_effect_setting_available_apps">"برنامه‌های در دسترس"</string>
+    <!-- Fuzzy -->
+    <string name="zest_maverick_security_setting_title">"امنیت USB"</string>
+    <!-- Fuzzy -->
+    <string name="zest_maverick_security_setting_summary">"محافظت از دستگاه در برابر دستگاه‌های USB مخرب."</string>
+    <!-- Fuzzy -->
+    <string name="zest_maverick_security_setting_activity_summary">"با مسدود کردن دسترسی هنگام قفل بودن دستگاه از آن در برابر دستگاه‌های USB مخرب محافظت کنید."</string>
+    <!-- Fuzzy -->
+    <string name="zest_maverick_security_setting_option_title">"محدود کردن دستگاه‌های USB"</string>
+    <!-- Fuzzy -->
+    <string name="zest_maverick_security_setting_option_on_lock">"هنگام خاموش بودن صفحه نمایش"</string>
+    <!-- Fuzzy -->
+    <string name="zest_maverick_security_setting_option_always">"همیشه"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <!-- Fuzzy -->
+    <string name="zest_darq_setting_title">"حالت تاریک پیشرفته"</string>
+    <!-- Fuzzy -->
+    <string name="zest_darq_setting_summary">"فعال کردن حالت تاریک برای همه برنامه‌ها."</string>
+    <!-- Fuzzy -->
+    <string name="zest_darq_service_connecting">"در حال اتصال به سرویس…"</string>
+    <!-- Fuzzy -->
+    <string name="zest_darq_service_sync_success">"تغییرات با سرویس همگام‌سازی شد"</string>
+    <string name="zest_darq_service_powered_by">"نیرو گرفته از"</string>
+    <!-- Fuzzy -->
+    <string name="zest_darq_service_detail_warning">"ممکن است فعال کردن حالت تاریک پیشرفته برای بعضی برنامه‌ها مشکل ساز شود. ممکن است بعضی از برنامه‌ها از این حالت پشتیبانی نکنند."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <!-- Fuzzy -->
+    <string name="zest_plus_permission_title">"به مزه+ خوش آمدید!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <!-- Fuzzy -->
+    <string name="zest_plus_permission_summary">"مزه+ به Fresh امکان می‌دهد تا با ویژگی‌های بیشتر و موارد دیگر قدرتمندتر باشد. با این حال، نیاز است که مزه با استفاده از Magisk به سیستم دسترسی کامل داشته باشد.
+
+داده‌های شما مهم است. قول می‌دهم که هیچ داده ای در دسترس من نیست و ارسال نمی‌شود و داده‌های مهم شما خصوصی باقی می‌مانند.
+
+ آیا مایل هستید مزه+ را فعال کنید؟"</string>
+    <!-- Protect Battery -->
+    <!-- Fuzzy -->
+    <string name="zest_protect_battery_title">"محافظت باتری"</string>
+    <!-- Fuzzy -->
+    <string name="zest_protect_battery_summary">"برای افزایش طول عمر باتری، سقف میزان شارژ شدن باتری به ۸۵٪ محدود می‌شود."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <!-- Fuzzy -->
+    <string name="qs_dialog_title">"رفتن به ریکاوری"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <!-- Fuzzy -->
+    <string name="qs_dialog_confirmation">"آیا می‌خواهید با راه‌اندازی مجدد به حالت ریکاوری بروید؟"</string>
+    <string name="qs_dialog_ok">"باشه"</string>
+    <!-- Fuzzy -->
+    <string name="qs_dialog_cancel">"لغو"</string>
+    <!-- About Page -->
+    <!-- Fuzzy -->
+    <string name="zest_about_page_open_source">"مجوزهای منبع باز"</string>
+    <!-- Fuzzy -->
+    <string name="zest_about_page_source_code">"کد منبع"</string>
+    <!-- Fuzzy -->
+    <string name="zest_about_page_translations">"ترجمه"</string>
+</resources>
