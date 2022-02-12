@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.hyperdevs.poeditor'
 }
 
 android {
@@ -27,6 +28,9 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+// POEditor Config
+apply from: '../../poeditor.gradle'
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
