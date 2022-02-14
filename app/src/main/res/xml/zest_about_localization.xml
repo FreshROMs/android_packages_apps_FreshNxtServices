@@ -4,8 +4,25 @@
         <Preference android:title="BasharSYR"/>
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="Arabic (LB)">
+        <Preference android:title="Gary"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Arabic (SY)">
+        <Preference android:title="Louay Mohamad"/>
+        <Preference android:title="Gary"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Chinese (Simplified)">
+        <Preference android:title="Songyuan Wei"/>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Filipino">
         <Preference android:title="TenSeventy7"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Finnish">
+        <Preference android:title="Songyuan Wei"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="German">
