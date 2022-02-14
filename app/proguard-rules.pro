@@ -21,5 +21,6 @@
 #-renamesourcefileattribute SourceFile
 
 # One UI Design Library (de.dlyt.yanndroid.oneui)
--keep class de.dlyt.yanndroid.oneui.sesl.appbar.** { *; }
+-keep class de.dlyt.yanndroid.oneui.** { *; }
+-keep class androidx.appcompat.widget.Sesl** { *; }
 -keep class android.view.WindowInsetsController { *; }

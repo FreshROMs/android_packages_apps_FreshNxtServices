@@ -11,15 +11,16 @@ android {
         minSdk 30
         //noinspection ExpiredTargetSdkVersion
         targetSdk 24
-        versionCode 22021401
-        versionName "3.4.3.1"
+        versionCode 22021402
+        versionName "3.4.3.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
