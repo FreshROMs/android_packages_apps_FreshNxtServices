@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Fresh系统服务"</string>
+    <string name="zest_relative_link_advanced">"高级设置"</string>
+    <string name="zest_relative_link_wallpaper">"主页面与锁屏壁纸"</string>
+    <string name="zest_relative_link_themes">"三星主题"</string>
+    <string name="zest_data_connection_icon_default">"默认(4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"默认"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"关于Zest"</string>
+    <string name="zest_setting_default_summary">"未知"</string>
+    <string name="zest_setting_default_error">"出现了错误"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"自定义 • 屏幕分辨率"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"屏幕分辨率 • 软件更新"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"移动网络图标样式"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Wi-Fi图标样式"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Fresh版本"</string>
+    <string name="fresh_ota_main_title">"软件更新"</string>
+    <string name="fresh_ota_check_for_updates_title">"下载与安装"</string>
+    <string name="fresh_ota_check_for_updates_summary">"以移动网络下载会增加额外费用。如果可能，请连接Wi-Fi网络。"</string>
+    <string name="fresh_ota_auto_download_wlan_title">"在Wi-Fi下自动下载"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"自动下载更新当已连接到Wi-Fi网络"</string>
+    <string name="fresh_ota_last_successful_update_title">"最新更新"</string>
+    <string name="fresh_ota_last_successful_update_summary">"无信息。"</string>
+    <string name="fresh_ota_check_frequency_title">"检查更新频率"</string>
+    <string name="fresh_ota_check_frequency_60min">"每小时"</string>
+    <string name="fresh_ota_check_frequency_120min">"每两小时"</string>
+    <string name="fresh_ota_check_frequency_180min">"每三小时"</string>
+    <string name="fresh_ota_check_frequency_360min">"每六小时"</string>
+    <string name="fresh_ota_check_frequency_720min">"每十二小时"</string>
+    <string name="fresh_ota_check_frequency_1440min">"每天"</string>
+    <string name="fresh_ota_changelog_header_title">"新消息"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"了解Fresh的更新内容"</string>
+    <string name="fresh_ota_changelog_detail_version">"版本:"</string>
+    <string name="fresh_ota_changelog_detail_size">"大小:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"安全补丁级别:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s 已准备安装"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"下载更新中..."</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"剩余时间: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"更新你的手机并获得新功能"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"以移动网络下载会增加额外费用。推荐使用Wi-Fi网络。"</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"管理插件"</string>
+    <string name="zest_addon_management_subtitle_none">"没有插件被安装"</string>
+    <string name="zest_addon_management_subtitle_singular">"1个插件已经安装"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d个插件已经安装"</string>
+    <string name="zest_addon_management_detail_uninstall">"卸载"</string>
+    <string name="zest_addon_management_detail_cancel">"取消"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"确定要删除%1$s?"</string>
+    <string name="zest_addon_management_detail_size">"大小"</string>
+    <string name="zest_addon_management_detail_version">"版本"</string>
+    <string name="zest_addon_management_detail_developer">"开发者"</string>
+    <string name="zest_addon_management_detail_last_updated">"上次安装更新时间"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"主题颜色"</string>
+    <string name="zest_renoir_settings_summary">"自定义One UI以使用当前壁纸为基础"</string>
+    <string name="zest_renoir_notification_channel_title">"持续通知"</string>
+    <string name="zest_renoir_notification_channel_description">"此通知通道允许应用程序在后台执行指令。"</string>
+    <string name="zest_renoir_notification_description">"根据壁纸更改设备主题…"</string>
+    <string name="zest_renoir_settings_unavailable">"颜色匹配主题不可用，因为使用了第三方主题。"</string>
+    <string name="zest_renoir_settings_lock_screen">"使用锁屏颜色"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"在选择设备主题时使用锁屏壁纸中的颜色。"</string>
+    <string name="zest_renoir_settings_custom_colors">"自定义颜色"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"从颜色选择器中的颜色作为设备主题。"</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"屏幕分辨率"</string>
+    <string name="zest_screen_resolution_setting_summary">"当您更改分辨率时，某些应用程序可能会关闭。"</string>
+    <string name="zest_screen_resolution_setting_high_summary">"最清晰的视觉效果，高度的电池使用"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"比较好视觉效果，中度的电池使用"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"最粗糙的视觉效果，也是低的电池使用量"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"应用"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"视频亮度"</string>
+    <string name="zest_hdr_effect_setting_summary">"提高视频的图像质量，比如说更明亮、更鲜艳的色彩。"</string>
+    <string name="zest_hdr_effect_setting_available_apps">"可用的应用程序"</string>
+    <string name="zest_maverick_security_setting_title">"USB 安全"</string>
+    <string name="zest_maverick_security_setting_summary">"保护您的设备免受恶意 USB 设备的侵害。"</string>
+    <string name="zest_maverick_security_setting_activity_summary">"在设备锁定时阻止访问来保护您的设备免受恶意 USB 设备的侵害。"</string>
+    <string name="zest_maverick_security_setting_option_title">"限制 USB 设备"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"屏幕关闭时"</string>
+    <string name="zest_maverick_security_setting_option_always">"总是"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"增强版黑暗模式"</string>
+    <string name="zest_darq_setting_summary">"为所有应用程序启用黑暗模式。"</string>
+    <string name="zest_darq_service_connecting">"正在连接服务…"</string>
+    <string name="zest_darq_service_sync_success">"与服务同步的更改"</string>
+    <string name="zest_darq_service_powered_by">"Powered by"</string>
+    <string name="zest_darq_service_detail_warning">"为某些应用启用增强型暗模式可能会导致布局问题。 某些应用程序可能不受支持。"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"欢迎来到Zest+！"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"启用Zest+可以实现更多强大的Fresh附加功能。但是Zest需要获得通过Magisk获得最高权限。
+
+您的数据很重要。 我保证不会访问和发送任何数据，并且您的数据保持私密。
+
+你想要启用Zest+吗?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"电池保护"</string>
+    <string name="zest_protect_battery_summary">"要延长电池的使用寿命，请将最大电量限制为 85%。"</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"重启到Recovery"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"您想重启到恢复模式(Recovery)吗？"</string>
+    <string name="qs_dialog_ok">"确定"</string>
+    <string name="qs_dialog_cancel">"取消"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"开源许可证"</string>
+    <string name="zest_about_page_source_code">"源代码"</string>
+    <string name="zest_about_page_translations">"本地化"</string>
+</resources>

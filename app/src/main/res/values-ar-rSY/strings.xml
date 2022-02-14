@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"خدمات نظام فريش"</string>
+    <string name="zest_relative_link_advanced">"إعدادات متقدمة"</string>
+    <string name="zest_relative_link_wallpaper">"خلفية شاشة القفل والرئيسية"</string>
+    <string name="zest_relative_link_themes">"سمات سامسونغ"</string>
+    <string name="zest_data_connection_icon_default">"الأساسي"</string>
+    <string name="zest_data_connection_icon_lte">"أيقونة LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"أيقونة 5G الجيل الخامس"</string>
+    <string name="zest_wlan_connection_icon_default">"الأساسية"</string>
+    <string name="zest_wlan_connection_icon_uplus">"أيقونة LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"أيقونة KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"عن زيست"</string>
+    <string name="zest_setting_default_summary">"مجهول"</string>
+    <string name="zest_setting_default_error">"شيئ ما حدث بشكل خاطئ"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"زيست"</string>
+    <string name="zest_system_settings_plugin_summary">"تعديلات • دقة الشاشة"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"دقة لشاشة • تحديثات النظام"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"أيقونة البيانات"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"أيقونة الشبكة"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"نسخة فريش"</string>
+    <string name="fresh_ota_main_title">"تحديث النظام"</string>
+    <string name="fresh_ota_check_for_updates_title">"تنزبل وتحميل"</string>
+    <string name="fresh_ota_check_for_updates_summary">"التحميل على بيانات الهاتف قد تسبب استهلاك للرصيد. اذا امكن يرجى التحميل على الشبكة."</string>
+    <string name="fresh_ota_auto_download_wlan_title">"تحميل تلقائي على الشبكة"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"تحميل وتحديث النظام تلقائيا عند الاتصال بالشبكة."</string>
+    <string name="fresh_ota_last_successful_update_title">"آخر تحديث"</string>
+    <string name="fresh_ota_last_successful_update_summary">"لا يوجد معلومات حول هذا التحديث."</string>
+    <string name="fresh_ota_check_frequency_title">"تكرار التحقق من التحديثات"</string>
+    <string name="fresh_ota_check_frequency_60min">"كل ساعة"</string>
+    <string name="fresh_ota_check_frequency_120min">"كل ساعتين"</string>
+    <string name="fresh_ota_check_frequency_180min">"كل ٣ ساعات"</string>
+    <string name="fresh_ota_check_frequency_360min">"كل ٦ ساعات"</string>
+    <string name="fresh_ota_check_frequency_720min">"كل ١٢ ساعة"</string>
+    <string name="fresh_ota_check_frequency_1440min">"كل يوم"</string>
+    <string name="fresh_ota_changelog_header_title">"ما الجديد"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"ما الجديد بتحديث فريش."</string>
+    <string name="fresh_ota_changelog_detail_version">"النسخة:"</string>
+    <string name="fresh_ota_changelog_detail_size">"الحجم:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"مستوى الحماية:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"فريش %1$s %2$s جاهز للتثبيت"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"جاري تحميل التحديث..."</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"الوقت المتبقي: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"حدث هاتفك واحصل على مميزات جديدة"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"قد يؤدي استخدام بيانات الجوال للتنزيل إلى فرض رسوم إضافية. يوصى باستخدام Wi-Fi."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"التحكم بالاضافات"</string>
+    <string name="zest_addon_management_subtitle_none">"لا يوجد اضافات مثبتة"</string>
+    <string name="zest_addon_management_subtitle_singular">"اضافة واحدة مثبتة"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d اضافة مثبتة"</string>
+    <string name="zest_addon_management_detail_uninstall">"الغاء التثبيت"</string>
+    <string name="zest_addon_management_detail_cancel">"يلغي"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"هل أنت متأكد من أنك تريد إلغاء تثبيت ٪1$s؟"</string>
+    <string name="zest_addon_management_detail_size">"الحجم"</string>
+    <string name="zest_addon_management_detail_version">"النسخة"</string>
+    <string name="zest_addon_management_detail_developer">"المطور"</string>
+    <string name="zest_addon_management_detail_last_updated">"آخر تحديث"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"سمة اللون"</string>
+    <string name="zest_renoir_settings_summary">"قم بتخصيص One UI عن طريق تكييف السمة مع ورق الحائط الحالي الخاص بك."</string>
+    <string name="zest_renoir_notification_channel_title">"الإخطارات الجارية"</string>
+    <string name="zest_renoir_notification_channel_description">"تسمح قناة الإعلام هذه للتطبيق بتنفيذ العمليات المطلوبة في الخلفية."</string>
+    <string name="zest_renoir_notification_description">"تغيير مظهر الجهاز بناءً على الخلفية ..."</string>
+    <string name="zest_renoir_settings_unavailable">"سمة مطابقة الألوان غير متاحة بسبب تطبيق سمة جهة خارجية."</string>
+    <string name="zest_renoir_settings_lock_screen">"استخدم ألوان شاشة القفل"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"استخدم الألوان من خلفية شاشة القفل في اختيار سمة الجهاز."</string>
+    <string name="zest_renoir_settings_custom_colors">"استخدم ألوانًا مخصصة"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"استخدم ألوانًا من منتقي الألوان لموضوع الجهاز."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"دقة الشاشة"</string>
+    <string name="zest_screen_resolution_setting_summary">"قد يتم إغلاق بعض التطبيقات عند تغيير الدقة."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"صور أكثر حدة ، معظم استخدام البطارية"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"صور محسنة ، استخدام معتدل للبطارية"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"مرئيات قبيحة ، استخدام أقل للبطارية"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"تطبيق"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"إضاءة الفيديو"</string>
+    <string name="zest_hdr_effect_setting_summary">"قم بتحسين جودة صورة مقاطع الفيديو الخاصة بك للاستمتاع بألوان أكثر إشراقًا وحيوية."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"التطبيقات الموجودة"</string>
+    <string name="zest_maverick_security_setting_title">"حماية الUSB"</string>
+    <string name="zest_maverick_security_setting_summary">"احم جهازك من أجهزة الUSB الخطرة."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"احم جهازك من أجهزة الUSB الخطرة بمنع الوصول عند قفل الهاتف."</string>
+    <string name="zest_maverick_security_setting_option_title">"منع أجهزة الUSB"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"عندما تكون الشاشة مطفأة"</string>
+    <string name="zest_maverick_security_setting_option_always">"دائما"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"مود داكن محسن"</string>
+    <string name="zest_darq_setting_summary">"قم بتمكين الوضع المظلم لجميع التطبيقات."</string>
+    <string name="zest_darq_service_connecting">"يتم الاتصال بالخدمة..."</string>
+    <string name="zest_darq_service_sync_success">"التغييرات متزامنة مع الخدمة"</string>
+    <string name="zest_darq_service_powered_by">"طور بواسطة"</string>
+    <string name="zest_darq_service_detail_warning">"قد يؤدي تمكين الوضع الداكن المحسن لبعض التطبيقات إلى حدوث مشكلات في التخطيط. قد لا يتم دعم بعض التطبيقات."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"اهلاً بكم إلى زيست+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"يمكّن Zest + Fresh ليكون أكثر قوة مع ميزات إضافية والمزيد. ومع ذلك ، يتطلب هذا أن تتمتع Zest بوصول كامل إلى النظام باستخدام Magisk.
+
+بياناتك مهمة. أعدك بعدم الوصول إلى أي بيانات وإرسالها ، وأن بياناتك المهمة تظل سرية.
+
+هل ترغب في تمكين Zest +؟"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"احم البطارية "</string>
+    <string name="zest_protect_battery_summary">"لإطالة العمر الافتراضي للبطارية ، حدد الحد الأقصى للشحن بنسبة 85٪."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"إعادة التشغيل إلى الاسترداد"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"هل ترغب في إعادة التشغيل إلى وضع الاسترداد؟"</string>
+    <string name="qs_dialog_ok">"أوك"</string>
+    <string name="qs_dialog_cancel">"إلغاء"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"رخصة الكود المفتوح"</string>
+    <string name="zest_about_page_source_code">"كود المصدر"</string>
+    <string name="zest_about_page_translations">"التوطين"</string>
+</resources>

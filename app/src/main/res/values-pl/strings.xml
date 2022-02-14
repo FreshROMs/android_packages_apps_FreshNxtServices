@@ -126,11 +126,11 @@ Czy chcesz włączyć Zest+?"</string>
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
     <string name="qs_dialog_title">"Uruchom ponownie do Recovery"</string>
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Czy chcesz ponownie uruchomić komputer w trybie Recovery?"</string>
+    <string name="qs_dialog_confirmation">"Czy chcesz ponownie uruchomić w trybie odzyskiwania (Recovery)?"</string>
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Anuluj"</string>
     <!-- About Page -->
     <string name="zest_about_page_open_source">"Licencje open source"</string>
     <string name="zest_about_page_source_code">"Kod źródłowy"</string>
-    <string name="zest_about_page_translations">"Lokalizacja"</string>
+    <string name="zest_about_page_translations">"Tłumaczenia"</string>
 </resources>

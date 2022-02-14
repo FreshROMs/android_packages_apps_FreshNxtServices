@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Freshin Järjestelmäpalvelut"</string>
+    <string name="zest_relative_link_advanced">"Lisäasetukset"</string>
+    <string name="zest_relative_link_wallpaper">"Aloitus- ja lukitusnäytön taustakuva"</string>
+    <string name="zest_relative_link_themes">"Samsung teemat"</string>
+    <string name="zest_data_connection_icon_default">"Oletus (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"Oletus"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Tietoja Zestistä"</string>
+    <string name="zest_setting_default_summary">"Tuntematon"</string>
+    <string name="zest_setting_default_error">"Jotain meni pieleen"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"Mukauttaminen • Näytön resoluution"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"Näytön resoluution • Ohjelmistopäivitykset"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"Datayhteyskuvakkeen tyyli"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Wi-Fi-signaalin kuvakkeen tyyli"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Freshin versio"</string>
+    <string name="fresh_ota_main_title">"Ohjelmistopäivitys"</string>
+    <string name="fresh_ota_check_for_updates_title">"Lataa ja asenna"</string>
+    <string name="fresh_ota_check_for_updates_summary">"Lataaminen mobiiliverkon kautta voi aiheuttaa lisäkuluja. Jos mahdollista, lataa sen sijaan Wi-Fi-verkon kautta."</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Automaattinen lataus Wi-Fin kautta"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"Lataa ohjelmistopäivitykset automaattisesti, kun olet yhteydessä Wi-Fi-verkkoon."</string>
+    <string name="fresh_ota_last_successful_update_title">"Viimeisin päivitys"</string>
+    <string name="fresh_ota_last_successful_update_summary">"Ei ole tietoa tästä päivityksestä."</string>
+    <string name="fresh_ota_check_frequency_title">"Päivityksen tarkistus aikaväli"</string>
+    <string name="fresh_ota_check_frequency_60min">"Joka tunti"</string>
+    <string name="fresh_ota_check_frequency_120min">"2 tunnin välein"</string>
+    <string name="fresh_ota_check_frequency_180min">"3 tunnin välein"</string>
+    <string name="fresh_ota_check_frequency_360min">"6 tunnin välein"</string>
+    <string name="fresh_ota_check_frequency_720min">"12 tunnin välein"</string>
+    <string name="fresh_ota_check_frequency_1440min">"Joka päivä"</string>
+    <string name="fresh_ota_changelog_header_title">"Mikä on uutta"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Ota selvää, mitä tämä Fresh-päivitys sisältää."</string>
+    <string name="fresh_ota_changelog_detail_version">"Versio:"</string>
+    <string name="fresh_ota_changelog_detail_size">"Koko:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"Suojauskorjauksen taso:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s on valmis asennettavaksi"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"Ladataan päivitystä…"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Aikaa jäljellä: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"Päivitä puhelimesi ja hanki uusia ominaisuuksia"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"Mobiilidatan käyttäminen lataamiseen voi aiheuttaa lisäkuluja. Wi-Fin käyttöä suositellaan."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"Hallitse lisäosia"</string>
+    <string name="zest_addon_management_subtitle_none">"Lisäosia ei ole asennettu"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 lisäosa asennettu"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d lisäosaa asennettu"</string>
+    <string name="zest_addon_management_detail_uninstall">"Poista asennus"</string>
+    <string name="zest_addon_management_detail_cancel">"Peruuttaa"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Haluatko varmasti poistaa sovelluksen %1$s?"</string>
+    <string name="zest_addon_management_detail_size">"Koko"</string>
+    <string name="zest_addon_management_detail_version">"Versio"</string>
+    <string name="zest_addon_management_detail_developer">"Kehittäjä"</string>
+    <string name="zest_addon_management_detail_last_updated">"Viimeksi päivitetty"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"Väriteema"</string>
+    <string name="zest_renoir_settings_summary">"Mukauta One UI mukauttamalla teema nykyisen taustakuvasi kanssa."</string>
+    <string name="zest_renoir_notification_channel_title">"Jatkuvat ilmoitukset"</string>
+    <string name="zest_renoir_notification_channel_description">"Tämän ilmoituskanavan avulla sovellus voi suorittaa tarvittavia toimintoja taustalla."</string>
+    <string name="zest_renoir_notification_description">"Vaihdetaan laitteen teemaa taustakuvan perusteella…"</string>
+    <string name="zest_renoir_settings_unavailable">"Väriä vastaava teema ei ole käytettävissä, koska käytössä on kolmannen osapuolen teema."</string>
+    <string name="zest_renoir_settings_lock_screen">"Käytä lukitusnäytön värejä"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"Käytä lukitusnäytön taustakuvan värejä laitteen teeman valinnassa."</string>
+    <string name="zest_renoir_settings_custom_colors">"Käytä mukautettuja värejä"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"Käytä värivalitsimen värejä laiteteemassa."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"Näytön resoluutio"</string>
+    <string name="zest_screen_resolution_setting_summary">"Jotkut sovellukset voivat sulkeutua, kun muutat resoluutiota."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"Paras kuvanlaatu, eniten akkua kulutettu"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Parannettu kuvanlaatu, kohtuullinen akun käyttö"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Ruma kuvanlaatu, pienin akun kulutus"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"Käytä"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"Videon kirkkaus"</string>
+    <string name="zest_hdr_effect_setting_summary">"Paranna videoidesi kuvanlaatua nauttiaksesi kirkkaammista ja eloisammista väreistä."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"Käytettävissä olevat sovellukset"</string>
+    <string name="zest_maverick_security_setting_title">"USB security"</string>
+    <string name="zest_maverick_security_setting_summary">"Suojaa laitettasi haitallisilta USB-laitteilta."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"Suojaa laitettasi haitallisilta USB-laitteilta estämällä pääsyn laitteen ollessa lukittuna."</string>
+    <string name="zest_maverick_security_setting_option_title">"Rajoita USB-laitteita"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"Kun näyttö on pois päältä"</string>
+    <string name="zest_maverick_security_setting_option_always">"Aina"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"Tehostettu tumma tila"</string>
+    <string name="zest_darq_setting_summary">"Ota tumma tila käyttöön kaikissa sovelluksissa."</string>
+    <string name="zest_darq_service_connecting">"Yhdistetään palveluun…"</string>
+    <string name="zest_darq_service_sync_success">"Muutokset synkronoitu palvelun kanssa"</string>
+    <string name="zest_darq_service_powered_by">"Powered by"</string>
+    <string name="zest_darq_service_detail_warning">"Tehostetun tumman tilan ottaminen käyttöön joissakin sovelluksissa voi aiheuttaa asetteluongelmia. Joitakin sovelluksia ei ehkä tueta."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Tervetuloa Zest+:aan!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ mahdollistaa Freshistä tehokkaamman lisäominaisuuksien ja muiden kanssa. Tämä edellyttää kuitenkin, että Zestillä on täysi pääsy järjestelmään Magiskin avulla.
+
+Tietosi ovat tärkeitä. Mitään tietoja ei käsitellä eikä niitä lähetetä ja että tärkeät tietosi pysyvät yksityisinä.
+
+Haluatko ottaa Zest+:n käyttöön?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"Suojaa akkua"</string>
+    <string name="zest_protect_battery_summary">"Pidennä akun käyttöikää rajoittamalla enimmäislataus 85 prosenttiin."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Käynnistä Recovery:iin"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Haluatko käynnistää Recovery:iin tilaan?"</string>
+    <string name="qs_dialog_ok">"OK"</string>
+    <string name="qs_dialog_cancel">"Peruuttaa"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"Avoimen lähdekoodin lisenssit"</string>
+    <string name="zest_about_page_source_code">"Lähdekoodi"</string>
+    <string name="zest_about_page_translations">"Lokalisointi"</string>
+</resources>
