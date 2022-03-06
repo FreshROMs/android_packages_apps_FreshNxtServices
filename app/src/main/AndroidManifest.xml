@@ -71,9 +71,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
 
+        <!-- Feature requirements for the app -->
+        <uses-feature
+            android:name="io.tenseventyseven.fresh.four"
+            android:required="true" /> <!-- Fresh 4 Release -->
+        <uses-feature
+            android:name="io.tenseventyseven.fresh.hikari"
+            android:required="true" /> <!-- Zest -->
+        <uses-feature
+            android:name="io.tenseventyseven.fresh.hikari.lan"
+            android:required="false" /> <!-- ZestNxt -->
+        <uses-feature
+            android:name="io.tenseventyseven.fresh.security.maverick"
+            android:required="false" /> <!-- MaverickService - USB security -->
+        <uses-feature
+            android:name="io.tenseventyseven.fresh.avatar"
+            android:required="true" /> <!-- FreshNxt OTA -->
+        <uses-feature
+            android:name="io.tenseventyseven.fresh.avatar.aang"
+            android:required="false" /> <!-- FreshNxt Native OTA -->
+
         <uses-library
             android:name="fresh_platform_library_nxt"
-            android:required="true" />
+            android:required="true" /> <!-- FreshNxt - BaSingSe -->
+        <uses-library
+            android:name="fresh_republic_city_library"
+            android:required="true" /> <!-- FreshROMs4 - RepublicCity -->
 
         <activity
             android:name=".zest.OpenSourceActivity"
