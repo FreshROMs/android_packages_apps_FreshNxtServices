@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.zest;
+package io.tenseventyseven.fresh.zest;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -37,12 +37,12 @@ import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
 import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
-import io.tensevntysevn.fresh.ExperienceUtils;
-import io.tensevntysevn.fresh.R;
-import io.tensevntysevn.fresh.services.OverlayService;
-import io.tensevntysevn.fresh.utils.Preferences;
-import io.tensevntysevn.fresh.zest.sub.MaverickSettingsActivity;
-import io.tensevntysevn.fresh.zest.sub.ScreenResolutionActivity;
+import io.tenseventyseven.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.services.OverlayService;
+import io.tenseventyseven.fresh.utils.Preferences;
+import io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity;
+import io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 

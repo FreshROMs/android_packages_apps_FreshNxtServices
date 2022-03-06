@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.zest.sub;
+package io.tenseventyseven.fresh.zest.sub;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -20,7 +20,7 @@ import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
 import de.dlyt.yanndroid.oneui.preference.ListPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import de.dlyt.yanndroid.oneui.widget.SwitchBar;
-import io.tensevntysevn.fresh.R;
+import io.tenseventyseven.fresh.R;
 
 public class MaverickSettingsActivity extends AppCompatActivity {
     private Context mContext;

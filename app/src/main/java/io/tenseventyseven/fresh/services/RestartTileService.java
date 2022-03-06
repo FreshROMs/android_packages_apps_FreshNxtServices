@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.services;
+package io.tenseventyseven.fresh.services;
 
 import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
 
@@ -9,8 +9,8 @@ import android.view.ContextThemeWrapper;
 
 import androidx.annotation.RequiresApi;
 
-import io.tensevntysevn.fresh.R;
-import io.tensevntysevn.fresh.utils.Tools;
+import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.utils.Tools;
 
 public class RestartTileService extends TileService {
 

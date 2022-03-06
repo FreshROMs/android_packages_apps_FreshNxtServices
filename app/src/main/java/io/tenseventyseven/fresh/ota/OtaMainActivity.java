@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.ota;
+package io.tenseventyseven.fresh.ota;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.Preference;
-import io.tensevntysevn.fresh.R;
+import io.tenseventyseven.fresh.R;
 
 public class OtaMainActivity extends AppCompatActivity {
 

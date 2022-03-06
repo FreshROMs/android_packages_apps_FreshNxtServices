@@ -7,8 +7,8 @@
         android:title="@string/fresh_ota_check_for_updates_title"
         android:summary="@string/fresh_ota_check_for_updates_summary">
         <intent
-            android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
-            android:targetPackage="io.tensevntysevn.fresh" />
+            android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
+            android:targetPackage="io.tenseventyseven.fresh" />
     </Preference>
     <SwitchPreference
         android:key="ota_auto_download_wifi"
@@ -21,8 +21,8 @@
             android:title="@string/fresh_ota_last_successful_update_title"
             android:summary="@string/fresh_ota_last_successful_update_summary">
             <intent
-                android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
     </PreferenceCategory>
 </de.dlyt.yanndroid.oneui.preference.PreferenceScreen>

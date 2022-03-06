@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.zest;
+package io.tenseventyseven.fresh.zest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +14,7 @@ import android.view.View;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.AboutPage;
-import io.tensevntysevn.fresh.R;
+import io.tenseventyseven.fresh.R;
 
 public class AboutActivity extends AppCompatActivity {
     Context mContext;
@@ -31,8 +31,8 @@ public class AboutActivity extends AppCompatActivity {
 
         try {
             PackageManager pm = mContext.getPackageManager();
-            PackageInfo packageInfoExp = pm.getPackageInfo("io.tensevntysevn.fresh.framework", 0);
-            ApplicationInfo appInfoExp = pm.getApplicationInfo("io.tensevntysevn.fresh.framework", 0);
+            PackageInfo packageInfoExp = pm.getPackageInfo("io.tenseventyseven.fresh.framework", 0);
+            ApplicationInfo appInfoExp = pm.getApplicationInfo("io.tenseventyseven.fresh.framework", 0);
             String fwVersion = pm.getApplicationLabel(appInfoExp) + " " + packageInfoExp.versionName;
             aboutPage.setOptionalText(fwVersion);
         } catch (PackageManager.NameNotFoundException e) {

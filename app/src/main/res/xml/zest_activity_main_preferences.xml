@@ -24,8 +24,8 @@
             android:title="@string/zest_darq_setting_title"
             android:summary="@string/zest_darq_setting_summary">
             <intent
-                android:targetClass="io.tensevntysevn.fresh.zest.sub.VideoBrightnessActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
 
         <SwitchPreferenceScreen
@@ -33,8 +33,8 @@
             android:title="@string/zest_maverick_security_setting_title"
             android:summary="@string/zest_maverick_security_setting_summary">
             <intent
-                android:targetClass="io.tensevntysevn.fresh.zest.sub.MaverickSettingsActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
     </PreferenceCategory>
     -->
@@ -44,16 +44,16 @@
             android:title="@string/zest_screen_resolution_setting_title"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tensevntysevn.fresh.zest.sub.ScreenResolutionActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
 
         <SwitchPreferenceScreen
             android:key="fs_video_brightness"
             android:title="@string/zest_hdr_effect_setting_title">
             <intent
-                android:targetClass="io.tensevntysevn.fresh.zest.sub.VideoBrightnessActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
     </PreferenceCategory>
 
@@ -68,8 +68,8 @@
             android:title="@string/fresh_ota_main_title"
             android:summary="@string/zest_setting_default_summary" >
             <intent
-                android:targetClass="io.tensevntysevn.fresh.ota.OtaMainActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.ota.OtaMainActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
     </PreferenceCategory>
     -->
@@ -83,8 +83,8 @@
             android:title="@string/zest_app_version"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tensevntysevn.fresh.zest.AboutActivity"
-                android:targetPackage="io.tensevntysevn.fresh" />
+                android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
     </de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
 

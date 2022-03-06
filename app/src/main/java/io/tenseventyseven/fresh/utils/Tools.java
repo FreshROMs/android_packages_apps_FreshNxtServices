@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.utils;
+package io.tenseventyseven.fresh.utils;
 
 import android.app.Activity;
 import android.content.Context;

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package io.tensevntysevn.fresh.system;
+package io.tenseventyseven.fresh.system;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -23,7 +23,7 @@ import android.content.Intent;
 import android.provider.DeviceConfig;
 import android.util.Log;
 
-import io.tensevntysevn.fresh.R;
+import io.tenseventyseven.fresh.R;
 
 public class BootReceiver extends BroadcastReceiver {
     private static final String TAG = "FRSH/DeviceConfig";

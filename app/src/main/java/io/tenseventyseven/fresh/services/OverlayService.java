@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.services;
+package io.tenseventyseven.fresh.services;
 
 import android.content.Context;
 import android.util.Log;
@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import io.tensevntysevn.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.ExperienceUtils;
 
 public class OverlayService {
 

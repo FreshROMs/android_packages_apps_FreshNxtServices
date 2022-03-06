@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.zest.sub;
+package io.tenseventyseven.fresh.zest.sub;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -29,8 +29,8 @@ import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.widget.SwitchBar;
-import io.tensevntysevn.fresh.R;
-import io.tensevntysevn.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.ExperienceUtils;
 
 public class VideoBrightnessActivity extends AppCompatActivity {
 

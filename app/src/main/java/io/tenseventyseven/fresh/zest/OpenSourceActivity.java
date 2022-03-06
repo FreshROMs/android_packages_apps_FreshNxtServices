@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.zest;
+package io.tenseventyseven.fresh.zest;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.Preference;
-import io.tensevntysevn.fresh.R;
+import io.tenseventyseven.fresh.R;
 
 public class OpenSourceActivity extends AppCompatActivity {
 

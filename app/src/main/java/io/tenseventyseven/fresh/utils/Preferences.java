@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.utils;
+package io.tenseventyseven.fresh.utils;
 
 import android.content.Context;
 import android.provider.Settings;

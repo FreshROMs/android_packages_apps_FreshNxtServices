@@ -1,4 +1,4 @@
-package io.tensevntysevn.fresh.zest.sub;
+package io.tenseventyseven.fresh.zest.sub;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -26,8 +26,8 @@ import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.HorizontalRadioPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
-import io.tensevntysevn.fresh.ExperienceUtils;
-import io.tensevntysevn.fresh.R;
+import io.tenseventyseven.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.R;
 
 public class ScreenResolutionActivity extends AppCompatActivity {
     public static String SCREEN_RESOLUTION = "device_screen_resolution_int";
