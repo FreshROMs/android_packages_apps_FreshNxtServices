@@ -31,6 +31,13 @@
 
     <PreferenceCategory>
         <Preference
+            android:title="Updater (LineageOS)"
+            android:summary="LineageOS - Apache-2.0">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/LineageOS/android_packages_apps_Updater/tree/lineage-19.0" />
+        </Preference>
+        <Preference
             android:title="Simple DeviceConfig (ProtonAOSP)"
             android:summary="Danny Lin (kdrag0n) - Apache-2.0">
             <intent
