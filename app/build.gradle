@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "io.tensevntysevn.fresh"
+        applicationId "io.tenseventyseven.fresh"
         minSdk 30
         //noinspection ExpiredTargetSdkVersion
         targetSdk 24
