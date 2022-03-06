@@ -84,9 +84,6 @@
             android:exported="false"
             android:label="@string/zest_about_page_translations" />
         <activity
-            android:name=".zest.sub.RenoirSettingsActivity"
-            android:exported="false" />
-        <activity
             android:name=".zest.SettingsActivity"
             android:exported="true"
             android:icon="@drawable/system_settings_zest_plugin_icon"
@@ -145,23 +142,6 @@
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".renoir.RenoirReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.WALLPAPER_CHANGED" />
-            </intent-filter>
-            <intent-filter android:priority="900">
-                <action android:name="com.samsung.android.theme.themecenter.THEME_APPLY" />
-                <action android:name="com.samsung.android.theme.themecenter.THEME_APPLY_START" />
-            </intent-filter>
-        </receiver>
-
-        <service
-            android:name=".renoir.RenoirService"
-            android:enabled="true"
-            android:exported="false" />
 
         <service android:name=".controller.UpdaterService" />
         <service android:name=".ExportUpdateService" />

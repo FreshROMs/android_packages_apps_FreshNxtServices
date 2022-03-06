@@ -39,8 +39,6 @@ import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
 import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
 import io.tensevntysevn.fresh.ExperienceUtils;
 import io.tensevntysevn.fresh.R;
-import io.tensevntysevn.fresh.renoir.RenoirService;
-import io.tensevntysevn.fresh.zest.sub.RenoirSettingsActivity;
 import io.tensevntysevn.fresh.services.OverlayService;
 import io.tensevntysevn.fresh.utils.Preferences;
 import io.tensevntysevn.fresh.zest.sub.MaverickSettingsActivity;
@@ -62,7 +60,6 @@ public class SettingsActivity extends AppCompatActivity {
         toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
-        RenoirService.setupCustomizationNotifChannel(this);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
@@ -114,9 +111,6 @@ public class SettingsActivity extends AppCompatActivity {
         private static boolean mBackground = false;
         private static Handler mHandler;
 
-        boolean setRenoir = false;
-        boolean disableRenoir = false;
-
         @Override
         public void onAttach(@NonNull Context context) {
             super.onAttach(context);
@@ -148,15 +142,8 @@ public class SettingsActivity extends AppCompatActivity {
             String romVersion = getRomVersion();
             String appVersion = getAppVersion(mContext);
             boolean vbEnabled = ExperienceUtils.isVideoEnhancerEnabled(mContext);
-            setRenoir = RenoirService.getRenoirEnabled(mContext);
             boolean mvEnabled = MaverickSettingsActivity.getMaverickState(mContext);
             Preference.OnPreferenceClickListener easterEgg = getVersionEgg(mContext);
-
-            // Color theme
-            if (ExperienceUtils.isGalaxyThemeApplied(mContext)) findPreference("fs_color_theme").setSummary(R.string.zest_renoir_settings_unavailable);
-            findPreference("fs_color_theme").setEnabled(!ExperienceUtils.isGalaxyThemeApplied(mContext));
-            ((SwitchPreferenceScreen) findPreference("fs_color_theme")).setChecked(setRenoir);
-            findPreference("fs_color_theme").setOnPreferenceChangeListener(this);
 
             // System UI icons
             setIconSummary();
@@ -188,20 +175,6 @@ public class SettingsActivity extends AppCompatActivity {
             Handler mHandler = new Handler(Looper.getMainLooper());
 
             switch (prefKey) {
-                case "fs_color_theme":
-                    boolean isChecked = (boolean) newValue;
-                    if (!(isChecked == setRenoir) && !mBackground) {
-                        mBackground = true;
-                        preference.setEnabled(false);
-
-                        RenoirService.setRenoirEnabled(mContext, isChecked);
-
-                        mHandler.postDelayed(() -> {
-                            mBackground = false;
-                            preference.setEnabled(true);
-                        }, 1500);
-                    }
-                    return true;
                 case "sb_icon_style_data":
                 case "sb_icon_style_wifi":
                     String[] dataIconPackages = this.getResources().getStringArray(R.array.data_connection_icon_packages);
@@ -279,8 +252,6 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onResume() {
             super.onResume();
-            // Color theme
-            ((SwitchPreferenceScreen) findPreference("fs_color_theme")).setChecked(setRenoir);
             makeRelatedCard(mContext);
         }
 
