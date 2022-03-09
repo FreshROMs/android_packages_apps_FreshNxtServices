@@ -27,6 +27,7 @@
 
     <PreferenceCategory android:title="German">
         <Preference android:title="Lucy"/>
+        <Preference android:title="Yanndroid"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Hindi">

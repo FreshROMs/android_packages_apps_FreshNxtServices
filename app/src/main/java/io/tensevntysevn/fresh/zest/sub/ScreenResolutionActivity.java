@@ -59,7 +59,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
     }
 
     public static int getResolutionInt(Context context) {
-        return Settings.System.getInt(context.getContentResolver(), SCREEN_RESOLUTION, 2);
+        return Settings.System.getInt(context.getContentResolver(), SCREEN_RESOLUTION, 3);
     }
 
     @SuppressLint("PrivateApi")
@@ -201,9 +201,12 @@ public class ScreenResolutionActivity extends AppCompatActivity {
             if (str.equals(mResolutionValues[1])) {
                 mResolutionSummary.setText(resSummary[1]);
                 mResolution = 1;
-            }  else if (str.equals(mResolutionValues[2])) {
+            } else if (str.equals(mResolutionValues[2])) {
                 mResolutionSummary.setText(resSummary[2]);
                 mResolution = 2;
+            } else if (str.equals(mResolutionValues[3])) {
+                mResolutionSummary.setText(resSummary[3]);
+                mResolution = 3;
             } else {
                 mResolutionSummary.setText(resSummary[0]);
                 mResolution = 0;

@@ -38,16 +38,19 @@
     <string-array name="zest_screen_resolution_setting_options">
         <item>@string/zest_screen_resolution_setting_low</item>
         <item>@string/zest_screen_resolution_setting_medium</item>
+        <item>@string/zest_screen_resolution_setting_custom</item>
         <item>@string/zest_screen_resolution_setting_high</item>
     </string-array>
     <string-array name="zest_screen_resolution_setting_main_summary">
         <item>@string/zest_screen_resolution_setting_low_main</item>
         <item>@string/zest_screen_resolution_setting_medium_main</item>
+        <item>@string/zest_screen_resolution_setting_custom_main</item>
         <item>@string/zest_screen_resolution_setting_high_main</item>
     </string-array>
     <string-array name="zest_screen_resolution_setting_summary">
         <item>@string/zest_screen_resolution_setting_low_summary</item>
         <item>@string/zest_screen_resolution_setting_medium_summary</item>
+        <item>@string/zest_screen_resolution_setting_custom_summary</item>
         <item>@string/zest_screen_resolution_setting_high_summary</item>
     </string-array>
     <!-- Reply Preference -->

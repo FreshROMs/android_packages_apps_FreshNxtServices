@@ -83,12 +83,15 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_renoir_settings_unavailable">"Color-matching Theme is not available because a third-party theme is applied."</string>
     <string name="zest_renoir_settings_lock_screen">"Use lock screen colors"</string>
     <string name="zest_renoir_settings_lock_screen_description">"Use colors from your lock screen wallpaper in picking the device theme."</string>
+    <string name="renoir_settings_custom_colors">"Use custom colors"</string>
+    <string name="renoir_settings_custom_colors_desc">"Use colors from the color picker for the device theme."</string>
     <string name="zest_renoir_settings_custom_colors">"Use custom colors"</string>
     <string name="zest_renoir_settings_custom_colors_desc">"Use colors from the color picker for the device theme."</string>
     <!-- Screen Resolution settings -->
     <string name="zest_screen_resolution_setting_title">"Screen resolution"</string>
     <string name="zest_screen_resolution_setting_summary">"Some apps may close when you change the resolution."</string>
     <string name="zest_screen_resolution_setting_high_summary">"Sharpest visuals, most battery use"</string>
+    <string name="zest_screen_resolution_setting_custom_summary">"Sharp visuals, high battery use"</string>
     <string name="zest_screen_resolution_setting_medium_summary">"Improved visuals, moderate battery use"</string>
     <string name="zest_screen_resolution_setting_low_summary">"Ugly visuals, lowest battery use"</string>
     <string name="zest_screen_resolution_setting_btn_apply">"Apply"</string>

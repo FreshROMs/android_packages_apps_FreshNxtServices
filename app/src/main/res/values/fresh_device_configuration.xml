@@ -35,11 +35,13 @@
     <string-array name="zest_screen_resolution_setting_options_subtitle" translatable="false">
         <item>1170 x 540</item>
         <item>1560 x 720</item>
+        <item>1950 x 900</item>
         <item>2340 x 1080</item>
     </string-array>
     <string-array name="zest_screen_resolution_setting_values" translatable="false">
         <item>1170x540:210</item>
         <item>1560x720:280</item>
+        <item>1950x900:350</item>
         <!-- ALWAYS keep max resolution 'reset:reset' to apply actual defaults -->
         <item>reset:reset</item>
     </string-array>

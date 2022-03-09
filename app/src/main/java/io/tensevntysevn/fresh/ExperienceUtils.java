@@ -33,7 +33,7 @@ public class ExperienceUtils {
 
     public static boolean isLsWallpaperUnavailable(Context context) {
         int pluginWallpaperType = Settings.Secure.getInt(context.getContentResolver(),
-                    "plugin_lock_wallpaper_type", 0);
+                "plugin_lock_wallpaper_type", 0);
 
         return pluginWallpaperType > 0;
     }
@@ -55,14 +55,16 @@ public class ExperienceUtils {
         activity.getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
         int width = displayMetrics.widthPixels;
 
-       if (width >= 1080) {
+        if (width >= 1080) {
+            realScreenResolution = 3;
+        } else if (width >= 900) {
             realScreenResolution = 2;
-        } else if (width >= 720) {
-           realScreenResolution = 1;
-       }
+        }else if (width >= 720) {
+            realScreenResolution = 1;
+        }
 
-       Settings.System.putInt(context.getContentResolver(), SCREEN_RESOLUTION, realScreenResolution);
-       return realScreenResolution;
+        Settings.System.putInt(context.getContentResolver(), SCREEN_RESOLUTION, realScreenResolution);
+        return realScreenResolution;
     }
 
     public static void setVideoEnhancerEnabled(Context context, Boolean bool) {

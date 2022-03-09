@@ -32,6 +32,8 @@ public class RenoirService extends Service {
     public static String RENOIR_SERVICE_ENABLED = "renoir_enabled";
     public static String RENOIR_DEFAULT_THEME = "io.tns.fresh.theme.one";
     public static String RENOIR_WALLPAPER_BASED_ON_LOCK = "renoir_color_based_on_lock_screen";
+    public static String RENOIR_BASED_ON_CUSTOM = "renoir_color_based_on_custom_color";
+    public static String RENOIR_COLOR_FOR_BASED_ON_CUSTOM = "renoir_color_for_based_on_custom_color";
     public static String RENOIR_SAMSUNG_THEME_APPLIED = "renoir_third_party_theme_applied";
 
     public static String getColorScheme(Context context, WallpaperColors wallpaperDrawable) {
@@ -54,6 +56,26 @@ public class RenoirService extends Service {
         } else {
             colorToCompare = primaryColor.toArgb(); // use primary color if it is determinant
         }
+
+        for (int i = 0; i < mRenoirColors.length; i++) {
+            int renoirColor = Color.valueOf(mRenoirColors[i]).toArgb();
+            renoirScore = getRenoirScore(renoirColor, colorToCompare);
+
+            if (renoirScore < currentBestScore) {
+                currentBestScore = renoirScore;
+                bestRenoirPackage = i;
+            }
+        }
+
+        return mRenoirPackages[bestRenoirPackage];
+    }
+
+    public static String getColorScheme(Context context, int colorToCompare) {
+        int[] mRenoirColors = context.getResources().getIntArray(R.array.renoir_color_resources);
+        String[] mRenoirPackages = context.getResources().getStringArray(R.array.renoir_package_resources);
+        int bestRenoirPackage = 0; // package with the best score; set to default
+        float renoirScore; // current score
+        float currentBestScore = Float.MAX_VALUE; // current best score
 
         for (int i = 0; i < mRenoirColors.length; i++) {
             int renoirColor = Color.valueOf(mRenoirColors[i]).toArgb();
@@ -173,12 +195,31 @@ public class RenoirService extends Service {
 
     public static void setColorBasedOnLock(Context context, Boolean bool) {
         Settings.System.putInt(context.getContentResolver(), RENOIR_WALLPAPER_BASED_ON_LOCK, bool ? 1 : 0);
+        setRenoirEnabled(context, getRenoirEnabled(context));
     }
 
     public static Boolean getColorBasedOnLock(Context context) {
         int isColorBasedOnLock = Settings.System.getInt(context.getContentResolver(),
                 RENOIR_WALLPAPER_BASED_ON_LOCK, 0);
         return isColorBasedOnLock == 1;
+    }
+
+    public static void setColorBasedOnCustom(Context context, Boolean bool, int color) {
+        Settings.System.putInt(context.getContentResolver(), RENOIR_BASED_ON_CUSTOM, bool ? 1 : 0);
+        Settings.System.putInt(context.getContentResolver(), RENOIR_COLOR_FOR_BASED_ON_CUSTOM, color);
+        setRenoirEnabled(context, getRenoirEnabled(context));
+    }
+
+    public static Boolean getColorBasedOnCustom(Context context) {
+        int isColorBasedCustom = Settings.System.getInt(context.getContentResolver(),
+                RENOIR_BASED_ON_CUSTOM, 0);
+        return isColorBasedCustom == 1;
+    }
+
+    public static int getColorForBasedOnCustom(Context context) {
+        int color = Settings.System.getInt(context.getContentResolver(),
+                RENOIR_COLOR_FOR_BASED_ON_CUSTOM, context.getResources().getColor(R.color.primary_color));
+        return color;
     }
 
     public static void setRenoirEnabled(Context context, Boolean bool) {
@@ -239,24 +280,29 @@ public class RenoirService extends Service {
         if (getRenoirEnabled(this)) {
             if (ExperienceUtils.isGalaxyThemeApplied(this)) {
                 // Skip everything if a third-party theme is applied. Just apply default then finish
-                // 2022: Also disable Color theme now when Galaxy Theme is applied.
-                Settings.System.putInt(getContentResolver(), RENOIR_SERVICE_ENABLED, 0);
                 if (!isGalaxyThemeCached(this))
                     setSystemColorTheme(this, "disable", true); // Only apply overlay if status is not cached
                 return START_NOT_STICKY;
             }
 
-            /* Get the wallpaper */
-            final WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
-            WallpaperColors wallpaperDrawable = wallpaperManager.getWallpaperColors(WallpaperManager.FLAG_SYSTEM);
+            String nextOverlay;
 
-            SystemClock.sleep(900);
+            if (getColorBasedOnCustom(this)) {
+                nextOverlay = getColorScheme(this, getColorForBasedOnCustom(this));
+            } else {
+                /* Get the wallpaper */
+                final WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
+                WallpaperColors wallpaperDrawable = wallpaperManager.getWallpaperColors(WallpaperManager.FLAG_SYSTEM);
 
-            if (getColorBasedOnLock(this) && !ExperienceUtils.isLsWallpaperUnavailable(this)) {
-                wallpaperDrawable = wallpaperManager.getWallpaperColors(WallpaperManager.FLAG_LOCK);
+                SystemClock.sleep(900);
+
+                if (getColorBasedOnLock(this) && !ExperienceUtils.isLsWallpaperUnavailable(this)) {
+                    wallpaperDrawable = wallpaperManager.getWallpaperColors(WallpaperManager.FLAG_LOCK);
+                }
+
+                nextOverlay = getColorScheme(this, wallpaperDrawable);
             }
 
-            String nextOverlay = getColorScheme(this, wallpaperDrawable);
             String currentOverlay = getSystemColorTheme(this);
 
             if (!currentOverlay.equals(nextOverlay))

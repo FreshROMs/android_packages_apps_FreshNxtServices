@@ -65,7 +65,7 @@
         android:requiredForAllUsers="true"
         android:roundIcon="@mipmap/ic_launcher_fresh"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Zest">
+        android:theme="@style/OneUITheme">
 
         <uses-library
             android:name="fresh_platform_library_nxt"
@@ -105,7 +105,7 @@
             android:name=".zest.AboutActivity"
             android:exported="false"
             android:label="@string/app_name"
-            android:theme="@style/OneUI4AboutTheme" />
+            android:theme="@style/OneUIAboutTheme" />
         <activity
             android:name=".ota.OtaMainActivity"
             android:exported="true"
