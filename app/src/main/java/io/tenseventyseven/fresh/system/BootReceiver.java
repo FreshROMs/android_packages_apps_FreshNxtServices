@@ -38,11 +38,12 @@ public class BootReceiver extends BroadcastReceiver {
     }
 
     private void updateDefaultConfigs(Context context) {
-        updateConfig(context, R.array.configs_base);
-        updateConfig(context, R.array.configs_device);
+        updateConfig(context, R.array.configs_base, false);
+        updateConfig(context, R.array.configs_base_soft, true);
+        updateConfig(context, R.array.configs_device, false);
     }
 
-    private void updateConfig(Context context, int configArray) {
+    private void updateConfig(Context context, int configArray, boolean isSoft) {
         // Set current properties
         String[] rawProperties = context.getResources().getStringArray(configArray);
         for (String property : rawProperties) {
@@ -58,7 +59,10 @@ public class BootReceiver extends BroadcastReceiver {
                 value = kv[1];
             }
 
-            DeviceConfig.setProperty(namespace, key, value, true);
+            // Skip soft configs that already have values
+            if (!isSoft || DeviceConfig.getString(namespace, key, null) == null) {
+                DeviceConfig.setProperty(namespace, key, value, true);
+            }
         }
     }
 }
