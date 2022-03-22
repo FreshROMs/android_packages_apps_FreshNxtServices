@@ -3,11 +3,11 @@
     <!-- Untranslatable strings -->
     <string name="zest_screen_resolution_setting_high" translatable="false">"FHD+"</string>
     <string name="zest_screen_resolution_setting_medium" translatable="false">"HD+"</string>
-    <string name="zest_screen_resolution_setting_low" translatable="false">"qHD+"</string>
+    <string name="zest_screen_resolution_setting_low" translatable="false">"HD"</string>
 
     <string name="zest_screen_resolution_setting_high_main" translatable="false">"FHD+ (2340 x 1080)"</string>
-    <string name="zest_screen_resolution_setting_medium_main" translatable="false">"HD+ (1560 x 720)"</string>
-    <string name="zest_screen_resolution_setting_low_main" translatable="false">"qHD+ (1170 x 540)"</string>
+    <string name="zest_screen_resolution_setting_medium_main" translatable="false">"HD+ (1950 x 900)"</string>
+    <string name="zest_screen_resolution_setting_low_main" translatable="false">"HD (1560 x 720)"</string>
     
     <string name="zest_renoir_notification_channel_id" translatable="false">"TnsFreshCustomize"</string>
     <string name="zest_renoir_notification_title" translatable="false">@string/zest_renoir_settings_title</string>
