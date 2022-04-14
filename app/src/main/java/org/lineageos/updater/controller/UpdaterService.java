@@ -34,7 +34,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.updater.R;
+import io.tenseventyseven.fresh.R;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;

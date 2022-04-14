@@ -18,7 +18,7 @@ package org.lineageos.updater.misc;
 import android.content.Context;
 import android.content.res.Resources;
 
-import org.lineageos.updater.R;
+import io.tenseventyseven.fresh.R;
 
 import java.text.DateFormat;
 import java.util.Date;
