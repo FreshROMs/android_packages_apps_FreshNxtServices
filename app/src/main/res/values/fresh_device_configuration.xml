@@ -461,5 +461,7 @@
         <item>com.newin.nplayer.pro</item>
         <item>com.globo.globotv</item>
         <item>com.skb.smartrc</item>
+        <item>pl.locon.br.pc</item>
+        <item>com.disney.disneyplus</item>
     </string-array>
 </resources>
