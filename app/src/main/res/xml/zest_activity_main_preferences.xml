@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory>
-        <DropDownPreference
-            android:key="sb_icon_style_data"
-            android:defaultValue="io.tns.fresh.data.4g:io.tns.fresh.data.4g"
-            android:title="@string/zest_data_connection_icon_title"
-            android:entries="@array/data_connection_icon_entries"
-            android:entryValues="@array/data_connection_icon_packages" />
+    <DropDownPreference
+        android:key="sb_icon_style_data"
+        android:defaultValue="io.tns.fresh.data.4g:io.tns.fresh.data.4g"
+        android:title="@string/zest_data_connection_icon_title"
+        android:entries="@array/data_connection_icon_entries"
+        android:entryValues="@array/data_connection_icon_packages" />
 
-        <DropDownPreference
-            android:key="sb_icon_style_wifi"
-            android:defaultValue="io.tns.fresh.wlan.default:io.tns.fresh.wlan.default"
-            android:title="@string/zest_wlan_connection_icon_title"
-            android:entries="@array/wlan_signal_icon_entries"
-            android:entryValues="@array/wlan_signal_icon_packages" />
-    </PreferenceCategory>
+    <DropDownPreference
+        android:key="sb_icon_style_wifi"
+        android:defaultValue="io.tns.fresh.wlan.default:io.tns.fresh.wlan.default"
+        android:title="@string/zest_wlan_connection_icon_title"
+        android:entries="@array/wlan_signal_icon_entries"
+        android:entryValues="@array/wlan_signal_icon_packages" />
 
     <!--
     <PreferenceCategory android:key="fs_plus_options">
@@ -53,6 +51,14 @@
             android:title="@string/zest_hdr_effect_setting_title">
             <intent
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
+        </SwitchPreferenceScreen>
+
+        <SwitchPreferenceScreen
+            android:key="fs_extra_dim"
+            android:title="@string/zest_extra_dim_setting_title">
+            <intent
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
     </PreferenceCategory>
