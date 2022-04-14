@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="io.tenseventyseven.fresh">
 
+    <uses-permission
+        android:name="android.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -151,6 +154,16 @@
             android:name=".services.RestartTileService"
             android:icon="@drawable/ic_qs_tile_restart"
             android:label="@string/qs_dialog_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".services.ExtraDimTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_qs_tile_extra_dim"
+            android:label="@string/zest_extra_dim_setting_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />

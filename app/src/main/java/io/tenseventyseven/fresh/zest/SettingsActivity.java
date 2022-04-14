@@ -41,6 +41,7 @@ import io.tenseventyseven.fresh.ExperienceUtils;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.services.OverlayService;
 import io.tenseventyseven.fresh.utils.Preferences;
+import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 import io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity;
 import io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
 
@@ -154,6 +155,10 @@ public class SettingsActivity extends AppCompatActivity {
             ((SwitchPreferenceScreen) findPreference("fs_video_brightness")).setChecked(vbEnabled);
             findPreference("fs_video_brightness").setOnPreferenceChangeListener(this);
 
+            // Extra Dim
+            ((SwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
+            findPreference("fs_extra_dim").setOnPreferenceChangeListener(this);
+
             /*
             // USB protection
             ((SwitchPreferenceScreen) findPreference("fs_plus_usb_security")).setChecked(mvEnabled);
@@ -238,6 +243,9 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 case "fs_video_brightness":
                     ExperienceUtils.setVideoEnhancerEnabled(mContext, (boolean) newValue);
+                    return true;
+                case "fs_extra_dim":
+                    ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
                     return true;
                     /*
                 case "fs_plus_usb_security":

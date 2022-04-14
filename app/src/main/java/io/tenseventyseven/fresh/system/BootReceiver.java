@@ -24,6 +24,7 @@ import android.provider.DeviceConfig;
 import android.util.Log;
 
 import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 
 public class BootReceiver extends BroadcastReceiver {
     private static final String TAG = "FRSH/DeviceConfig";
@@ -33,6 +34,11 @@ public class BootReceiver extends BroadcastReceiver {
         new Thread(() -> {
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
+
+            Log.i(TAG, "Checking Extra Dim Reboot status");
+            if (ExtraDimSettingsActivity.getExtraDimState(context) && ExtraDimSettingsActivity.getExtraDimRebootState(context)) {
+                ExtraDimSettingsActivity.setExtraDimState(context, false);
+            }
         }).start();
     }
 
