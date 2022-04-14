@@ -12,6 +12,8 @@
     <string name="zest_wlan_connection_icon_default">"Default"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"Six"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"Six Advanced"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_app_version">"About Zest"</string>
     <string name="zest_setting_default_summary">"Unknown"</string>
