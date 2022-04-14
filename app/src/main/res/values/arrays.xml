@@ -7,9 +7,9 @@
         <item>@string/zest_data_connection_icon_next</item>
     </string-array>
     <string-array name="data_connection_icon_packages" translatable="false">
-        <item>io.tns.fresh.data.4g:io.tns.fresh.data.4g</item>
-        <item>io.tns.fresh.data.lte:io.tns.fresh.data.dex.lte</item>
-        <item>io.tns.fresh.data.next:io.tns.fresh.data.dex.next</item>
+        <item>io.tns.fresh.data.4g</item>
+        <item>io.tns.fresh.data.lte</item>
+        <item>io.tns.fresh.data.next</item>
     </string-array>
 
     <!-- Wi-Fi/WLAN icon settings -->
@@ -17,11 +17,15 @@
         <item>@string/zest_wlan_connection_icon_default</item>
         <item>@string/zest_wlan_connection_icon_uplus</item>
         <item>@string/zest_wlan_connection_icon_kt</item>
+        <item>@string/zest_wlan_connection_icon_wifi6</item>
+        <item>@string/zest_wlan_connection_icon_wifi6e</item>
     </string-array>
     <string-array name="wlan_signal_icon_packages" translatable="false">
-        <item>io.tns.fresh.wlan.default:io.tns.fresh.wlan.default</item>
-        <item>io.tns.fresh.wlan.uplus:io.tns.fresh.wlan.dex.uplus</item>
-        <item>io.tns.fresh.wlan.kt:io.tns.fresh.wlan.dex.kt</item>
+        <item>io.tns.fresh.wlan.default</item>
+        <item>io.tns.fresh.wlan.uplus</item>
+        <item>io.tns.fresh.wlan.kt</item>
+        <item>io.tns.fresh.wlan.wifi6</item>
+        <item>io.tns.fresh.wlan.wifi6e</item>
     </string-array>
 
     <!-- USB security/Maverick settings -->
