@@ -51,48 +51,61 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
-        tools:ignore="ProtectedPermissions" />
+        tools:ignore="ProtectedPermissions,QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission
         android:name="android.permission.INSTALL_PACKAGES"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM"
+    <uses-permission
+        android:name="android.permission.ACCESS_CACHE_FILESYSTEM"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <meta-data
-        android:name="SamsungBasicInteraction"
-        android:value="SEP10" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Feature requirements for the app -->
+    <uses-feature
+        android:name="io.tenseventyseven.fresh.four"
+        android:required="true" /> <!-- Fresh 4 Release -->
+    <uses-feature
+        android:name="io.tenseventyseven.fresh.hikari"
+        android:required="true" /> <!-- Zest -->
+    <uses-feature
+        android:name="io.tenseventyseven.fresh.hikari.lan"
+        android:required="false" /> <!-- ZestNxt -->
+    <uses-feature
+        android:name="io.tenseventyseven.fresh.security.maverick"
+        android:required="false" /> <!-- MaverickService - USB security -->
+    <uses-feature
+        android:name="io.tenseventyseven.fresh.avatar"
+        android:required="true" /> <!-- FreshNxt OTA -->
+    <uses-feature
+        android:name="io.tenseventyseven.fresh.avatar.aang"
+        android:required="false" />
 
     <application
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher_fresh"
+        android:icon="@mipmap/fresh_ic_launcher"
         android:label="@string/app_name"
         android:requiredForAllUsers="true"
-        android:roundIcon="@mipmap/ic_launcher_fresh"
+        android:roundIcon="@mipmap/fresh_ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
+        <activity
+            android:name=".zest.QsTileHandler"
+            android:exported="true"
+            android:enabled="true"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zest.sub.ExtraDimSettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ota.UpdateAvailableActivity"
+            android:exported="false" />
 
-        <!-- Feature requirements for the app -->
-        <uses-feature
-            android:name="io.tenseventyseven.fresh.four"
-            android:required="true" /> <!-- Fresh 4 Release -->
-        <uses-feature
-            android:name="io.tenseventyseven.fresh.hikari"
-            android:required="true" /> <!-- Zest -->
-        <uses-feature
-            android:name="io.tenseventyseven.fresh.hikari.lan"
-            android:required="false" /> <!-- ZestNxt -->
-        <uses-feature
-            android:name="io.tenseventyseven.fresh.security.maverick"
-            android:required="false" /> <!-- MaverickService - USB security -->
-        <uses-feature
-            android:name="io.tenseventyseven.fresh.avatar"
-            android:required="true" /> <!-- FreshNxt OTA -->
-        <uses-feature
-            android:name="io.tenseventyseven.fresh.avatar.aang"
-            android:required="false" /> <!-- FreshNxt Native OTA -->
+        <meta-data
+            android:name="SamsungBasicInteraction"
+            android:value="SEP10" />
 
         <uses-library
             android:name="fresh_platform_library_nxt"
@@ -100,7 +113,6 @@
         <uses-library
             android:name="fresh_republic_city_library"
             android:required="true" /> <!-- FreshROMs4 - RepublicCity -->
-
         <activity
             android:name=".zest.OpenSourceActivity"
             android:exported="false"
@@ -121,6 +133,9 @@
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/system_settings_zest_plugin_icon" />
             <meta-data
                 android:name="com.android.settings.title"
                 android:resource="@string/zest_system_settings_plugin_title" />
@@ -152,6 +167,7 @@
 
         <service
             android:name=".services.RestartTileService"
+            android:exported="true"
             android:icon="@drawable/ic_qs_tile_restart"
             android:label="@string/qs_dialog_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -176,21 +192,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <service android:name=".controller.UpdaterService" />
-        <service android:name=".ExportUpdateService" />
-
-        <receiver android:name=".UpdaterReceiver" android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".UpdatesCheckReceiver" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
     </application>
