@@ -184,56 +184,42 @@ public class SettingsActivity extends AppCompatActivity {
                 case "sb_icon_style_wifi":
                     String[] dataIconPackages = this.getResources().getStringArray(R.array.data_connection_icon_packages);
                     String[] wlanIconPackages = this.getResources().getStringArray(R.array.data_connection_icon_packages);
-                    String setIcon;
+                    String oldPackage;
 
                     if (prefKey.equals("sb_icon_style_data")) {
-                        setIcon = Preferences.getDataConnectionIconPackage(mContext);
-                        if (setIcon == null)
-                            setIcon = dataIconPackages[0];
+                        oldPackage = Preferences.getDataConnectionIconPackage(mContext);
+                        if (oldPackage == null)
+                            oldPackage = dataIconPackages[0];
                     } else {
-                        setIcon = Preferences.getWlanConnectionIconPackage(mContext);
-                        if (setIcon == null)
-                            setIcon = wlanIconPackages[0];
+                        oldPackage = Preferences.getWlanConnectionIconPackage(mContext);
+                        if (oldPackage == null)
+                            oldPackage = wlanIconPackages[0];
                     }
 
-                    Scanner oldScanner = new Scanner(setIcon);
-                    Scanner newScanner = new Scanner(newValue.toString());
-                    String scannerDelimit = ":";
-                    oldScanner.useDelimiter(scannerDelimit);
-                    newScanner.useDelimiter(scannerDelimit);
-
-                    String oldPackage = oldScanner.next();
-                    String oldPackageDeX = oldScanner.next();
-
-                    String newPackage = newScanner.next();
-                    String newPackageDeX = newScanner.next();
+                    String newPackage = newValue.toString();
 
                     if (prefKey.equals("sb_icon_style_data") && !newPackage.equals(oldPackage)) {
                         Preferences.setDataConnectionIconPackage(mContext, newValue.toString());
-
+                        String finalDataOldPackage = oldPackage;
                         mExecutor.execute(() -> {
                             if (!dataIconPackages[0].contains(newPackage)) {
                                 OverlayService.setOverlayState(newPackage, true);
-                                OverlayService.setOverlayState(newPackageDeX, true);
                             }
 
-                            if (!dataIconPackages[0].contains(oldPackage)) {
-                                OverlayService.setOverlayState(oldPackage, false);
-                                OverlayService.setOverlayState(oldPackageDeX, false);
+                            if (!dataIconPackages[0].contains(finalDataOldPackage)) {
+                                OverlayService.setOverlayState(finalDataOldPackage, false);
                             }
                         });
                     } else if (prefKey.equals("sb_icon_style_wifi") && !newPackage.equals(oldPackage)) {
                         Preferences.setWlanConnectionIconPackage(mContext, newValue.toString());
-
+                        String finalOldWlanPackage = oldPackage;
                         mExecutor.execute(() -> {
                             if (!wlanIconPackages[0].contains(newPackage)) {
                                 OverlayService.setOverlayState(newPackage, true);
-                                OverlayService.setOverlayState(newPackageDeX, true);
                             }
 
-                            if (!wlanIconPackages[0].contains(oldPackage)) {
-                                OverlayService.setOverlayState(oldPackage, false);
-                                OverlayService.setOverlayState(oldPackageDeX, false);
+                            if (!wlanIconPackages[0].contains(finalOldWlanPackage)) {
+                                OverlayService.setOverlayState(finalOldWlanPackage, false);
                             }
                         });
 
