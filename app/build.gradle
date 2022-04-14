@@ -8,11 +8,11 @@ android {
 
     defaultConfig {
         applicationId "io.tenseventyseven.fresh"
-        minSdk 30
+        minSdk 31
         //noinspection ExpiredTargetSdkVersion
-        targetSdk 24
-        versionCode 22021402
-        versionName "3.4.3.2"
+        targetSdk 28
+        versionCode 22040901
+        versionName "4.0.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
