@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns2="http://schemas.android.com/apk/res-auto">
+    <color name="primary_color">@android:color/system_accent1_400</color>
+    <color name="primary_dark_color">@android:color/system_accent1_300</color>
+    <color name="secondary_color">@android:color/system_accent2_400</color>
+
+    <color name="background_color">@android:color/system_accent2_10</color>
+    <color name="sesl4_action_bar_background_color">@android:color/system_accent2_10</color>
+    <color name="sesl4_round_and_bgcolor">@android:color/system_accent2_10</color>
+
+    <color name="sesl_loading_progress_color1">@android:color/system_accent1_400</color>
+    <color name="sesl_loading_progress_color2">@android:color/system_accent2_400</color>
+</resources>
