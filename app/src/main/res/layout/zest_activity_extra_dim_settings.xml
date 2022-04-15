@@ -27,15 +27,36 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="24dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="24dp"
                     android:orientation="vertical">
+
+                    <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@color/item_background_color">
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/zest_extra_dim_banner_animation"
+                            android:layout_width="412dp"
+                            android:layout_height="300dp"
+                            android:padding="20.0dip"
+                            android:layout_gravity="center"
+                            android:importantForAccessibility="no"
+                            app:lottie_fileName="extra_dim_banner.json"
+                            app:lottie_repeatMode="reverse"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"/>
+                    </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
 
                     <com.google.android.material.textview.MaterialTextView
                         style="?textAppearanceBody2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
+                        android:layout_marginTop="@dimen/sesl_list_divider_inset"
+                        android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
+                        android:layout_marginBottom="@dimen/sesl_list_divider_inset"
                         android:text="@string/zest_extra_dim_setting_summary"
                         android:textSize="15sp" />
                 </LinearLayout>
