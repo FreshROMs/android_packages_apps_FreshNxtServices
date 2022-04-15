@@ -111,11 +111,11 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
     }
 
     public static void setExtraDimRebootState(Context context, boolean state) {
-        Settings.Secure.putInt(context.getContentResolver(), "reduce_bright_colors_disable_on_boot", state ? 1 : 0);
+        Settings.Secure.putInt(context.getContentResolver(), "reduce_bright_colors_persist_across_reboots", state ? 1 : 0);
     }
 
     public static boolean getExtraDimRebootState(Context context) {
-        return Settings.Secure.getInt(context.getContentResolver(), "reduce_bright_colors_disable_on_boot", 0) > 0;
+        return Settings.Secure.getInt(context.getContentResolver(), "reduce_bright_colors_persist_across_reboots", 0) > 0;
     }
 
     private boolean setExtraDimIntensity(int position) {

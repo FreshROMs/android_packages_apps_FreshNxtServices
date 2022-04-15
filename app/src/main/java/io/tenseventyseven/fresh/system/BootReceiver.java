@@ -34,11 +34,6 @@ public class BootReceiver extends BroadcastReceiver {
         new Thread(() -> {
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
-
-            Log.i(TAG, "Checking Extra Dim Reboot status");
-            if (ExtraDimSettingsActivity.getExtraDimState(context) && ExtraDimSettingsActivity.getExtraDimRebootState(context)) {
-                ExtraDimSettingsActivity.setExtraDimState(context, false);
-            }
         }).start();
     }
 
