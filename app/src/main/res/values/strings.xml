@@ -142,7 +142,7 @@ Would you like to enable Zest+?"</string>
     <string name="zest_about_page_translations">"Localization"</string>
 
     <!-- Extra Dim -->
-    <string name="zest_extra_dim_setting_title">Extra Dim</string>
+    <string name="zest_extra_dim_setting_title">Extra dim</string>
     <string name="zest_extra_dim_setting_summary">Dim the screen beyond the minimum brightness setting for more comfortable viewing.</string>
     <string name="zest_extra_dim_setting_intensity">Intensity</string>
     <string name="zest_extra_dim_setting_turn_off_reboot">Turn off after restart</string>
