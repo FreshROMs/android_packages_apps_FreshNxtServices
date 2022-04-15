@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,10 +28,8 @@ import java.util.concurrent.Executors;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.widget.SwitchBar;
 import io.tenseventyseven.fresh.R;
-import io.tenseventyseven.fresh.ExperienceUtils;
 
 public class VideoBrightnessActivity extends AppCompatActivity {
 
@@ -58,17 +57,25 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         setSupportActionBar(sbLayout.getToolbar());
 
         SwitchBar mHDReffectSwitch = sbLayout.getSwitchBar();
-        boolean mHDReffectEnabled = ExperienceUtils.isVideoEnhancerEnabled(mContext);
+        boolean mHDReffectEnabled = getVideoBrightnessState(mContext);
 
         mHDReffectSwitch.setChecked(mHDReffectEnabled);
         updatePreviewImg(mHDReffectEnabled);
 
         mHDReffectSwitch.addOnSwitchChangeListener((switchCompat, bool) -> {
-            ExperienceUtils.setVideoEnhancerEnabled(mContext, bool);
+            setVideoBrightnessState(mContext, bool);
             updatePreviewImg(bool);
         });
 
         populateAppList(mContext);
+    }
+
+    public static boolean getVideoBrightnessState(Context context) {
+        return Settings.System.getInt(context.getContentResolver(),"hdr_effect", 0) == 1;
+    }
+
+    public static void setVideoBrightnessState(Context context, Boolean bool) {
+        Settings.System.putInt(context.getContentResolver(), "hdr_effect", bool ? 1 : 0);
     }
 
     private void updatePreviewImg(Boolean bool) {

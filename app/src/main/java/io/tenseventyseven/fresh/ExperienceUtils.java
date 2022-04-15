@@ -38,13 +38,6 @@ public class ExperienceUtils {
         return pluginWallpaperType > 0;
     }
 
-    public static boolean isVideoEnhancerEnabled(Context context) {
-        int enhancerEnabled = Settings.System.getInt(context.getContentResolver(),
-                "hdr_effect", 0);
-
-        return enhancerEnabled == 1;
-    }
-
     public static int getRealScreenWidth(Context context, Activity activity) {
         String PREF_NAME = "fresh_system_settings";
         String SCREEN_RESOLUTION = "device_screen_resolution_int";
@@ -63,10 +56,6 @@ public class ExperienceUtils {
 
        Settings.System.putInt(context.getContentResolver(), SCREEN_RESOLUTION, realScreenResolution);
        return realScreenResolution;
-    }
-
-    public static void setVideoEnhancerEnabled(Context context, Boolean bool) {
-        Settings.System.putInt(context.getContentResolver(), "hdr_effect", bool ? 1 : 0);
     }
 
     public static void setBypassBlacklist(Context context, boolean bool) {

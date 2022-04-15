@@ -12,20 +12,13 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.switchmaterial.SwitchMaterial;
-
-import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -44,6 +37,7 @@ import io.tenseventyseven.fresh.utils.Preferences;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 import io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity;
 import io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
+import io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -142,7 +136,7 @@ public class SettingsActivity extends AppCompatActivity {
             String setResolution = getResolution(mContext);
             String romVersion = getRomVersion();
             String appVersion = getAppVersion(mContext);
-            boolean vbEnabled = ExperienceUtils.isVideoEnhancerEnabled(mContext);
+            boolean vbEnabled = VideoBrightnessActivity.getVideoBrightnessState(mContext);
             boolean mvEnabled = MaverickSettingsActivity.getMaverickState(mContext);
             Preference.OnPreferenceClickListener easterEgg = getVersionEgg(mContext);
 
@@ -228,7 +222,7 @@ public class SettingsActivity extends AppCompatActivity {
                     setIconSummary();
                     return true;
                 case "fs_video_brightness":
-                    ExperienceUtils.setVideoEnhancerEnabled(mContext, (boolean) newValue);
+                    VideoBrightnessActivity.setVideoBrightnessState(mContext, (boolean) newValue);
                     return true;
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
