@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="12dp"
                     android:orientation="vertical">
 
                     <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
@@ -52,7 +52,6 @@
                         android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
                         android:layout_marginTop="@dimen/sesl_list_divider_inset"
                         android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
-                        android:layout_marginBottom="@dimen/sesl_list_divider_inset"
                         android:text="@string/zest_hdr_effect_setting_summary"
                         android:textSize="15sp" />
                 </LinearLayout>
