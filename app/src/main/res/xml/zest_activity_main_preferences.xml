@@ -26,13 +26,15 @@
         app:useSimpleSummaryProvider="true" />
 
     <PreferenceCategory android:key="fs_plus_options">
-        <DropDownPreference
+        <Preference
             android:key="fs_plus_performance_mode"
             android:defaultValue="Default"
-            android:title="Performance mode"
-            android:entries="@array/zest_performance_setting_options"
-            android:entryValues="@array/zest_performance_setting_values"
-            app:useSimpleSummaryProvider="true" />
+            android:title="@string/zest_performance_mode_title"
+            android:summary="@string/zest_setting_default_summary">
+            <intent
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.PerformanceModeActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
+        </Preference>
     <!--
         <SwitchPreferenceScreen
             android:key="fs_plus_darq_service"

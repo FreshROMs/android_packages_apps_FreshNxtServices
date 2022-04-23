@@ -124,7 +124,7 @@ public class SettingsActivity extends AppCompatActivity {
             DropDownPreference mDataPreference = findPreference("sb_icon_style_data");
             DropDownPreference mWifiPreference = findPreference("sb_icon_style_wifi");
             DropDownPreference mVoltePreference = findPreference("sb_icon_style_volte");
-            DropDownPreference mPerformancePreference = findPreference("fs_plus_performance_mode");
+            Preference mPerformancePreference = findPreference("fs_plus_performance_mode");
             Preference mDeviceResolution = findPreference("fs_device_resolution");
 
             // Get activated color from attr, so it changes based on the app's theme
@@ -166,10 +166,6 @@ public class SettingsActivity extends AppCompatActivity {
             ((SwitchPreferenceScreen) findPreference("fs_plus_usb_security")).setChecked(mvEnabled);
             findPreference("fs_plus_usb_security").setOnPreferenceChangeListener(this);
              */
-
-            // Performance mode
-            mPerformancePreference.setValue(PerformanceUtils.getPerformanceMode(mContext));
-            mPerformancePreference.setOnPreferenceChangeListener(this);
 
             // Screen resolution
             mDeviceResolution.setSummary(setResolution);
@@ -245,9 +241,6 @@ public class SettingsActivity extends AppCompatActivity {
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
                     return true;
-                case "fs_plus_performance_mode":
-                    PerformanceUtils.setPerformanceMode(mContext, (String) newValue);
-                    return true;
                 case "fs_plus_usb_security":
                     MaverickSettingsActivity.setMaverickState(mContext, (boolean) newValue);
                     return true;
@@ -259,6 +252,9 @@ public class SettingsActivity extends AppCompatActivity {
         public void onResume() {
             super.onResume();
             makeRelatedCard(mContext);
+
+            // Performance mode
+            findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));
         }
 
         @Override

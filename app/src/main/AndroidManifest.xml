@@ -91,6 +91,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
         <activity
+            android:name=".zest.sub.PerformanceModeActivity"
+            android:exported="false" />
+        <activity
             android:name=".zest.QsTileHandler"
             android:enabled="true"
             android:excludeFromRecents="true"
@@ -109,14 +112,12 @@
         <meta-data
             android:name="SamsungBasicInteraction"
             android:value="SEP10" />
-
         <meta-data
             android:name="com.samsung.android.multiuser.disallowed_managed_profile"
             android:value="true" />
         <meta-data
             android:name="com.samsung.android.multiuser.install_only_owner"
             android:value="true" />
-
 
         <uses-library
             android:name="fresh_platform_library_nxt"

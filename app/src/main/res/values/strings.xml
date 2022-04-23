@@ -165,4 +165,9 @@ Would you like to enable Zest+?"</string>
 
     <string name="zest_performance_setting_option_gaming">"Gaming"</string>
     <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
+    <string name="zest_performance_mode_title">Performance mode</string>
+    <string name="zest_performance_mode_summary">Choose the best performance mode that works for what you do.</string>
+    <string name="zest_performance_setting_option_gaming_summary">Boost the CPU and optimize memory management to enhance your gaming experience.</string>
+    <string name="zest_performance_setting_option_default_summary">Balances performance and battery life to provide an experience that works for everyone.</string>
+    <string name="zest_performance_setting_option_multitasking_summary">Enhance performance and memory management to allow more apps to run in the background.</string>
 </resources>

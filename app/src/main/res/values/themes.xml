@@ -2,4 +2,20 @@
 <resources xmlns:ns2="http://schemas.android.com/apk/res-auto">
     <!-- Base application theme. -->
     <style name="Theme.Zest" parent="@style/OneUITheme" />
+
+    <style name="ZestPerformanceMode">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:minHeight">46.5dip</item>
+    </style>
+    <style name="RadioButtonListDivider">
+        <item name="android:background">@color/sesl_list_divider_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">2.0px</item>
+        <item name="android:layout_marginStart">68.0dip</item>
+        <item name="android:layout_marginEnd">20.0dip</item>
+    </style>
 </resources>

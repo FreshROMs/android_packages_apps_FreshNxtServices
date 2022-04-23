@@ -6,6 +6,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 
+import java.util.Objects;
+
 public class PerformanceUtils {
     public static final Uri perfContentProvider = Uri.parse("content://com.android.server.chimera.provider/v1");
     public static String mPerformanceMode;
@@ -38,7 +40,19 @@ public class PerformanceUtils {
         if (queryPerformanceModes(context))
             return mPerformanceMode;
         else
-            return null;
+            return "Default";
+    }
+
+    public static String getPerformanceModeString(Context context) {
+        String currentMode = getPerformanceMode(context);
+        switch (Objects.requireNonNull(currentMode)) {
+            case "Aggressive":
+                return context.getString(R.string.zest_performance_setting_option_gaming);
+            case "Conservative":
+                return context.getString(R.string.zest_performance_setting_option_multitasking);
+            default:
+                return context.getString(R.string.zest_performance_setting_option_default);
+        }
     }
 
     public static void setPerformanceMode(Context context, String str) {
