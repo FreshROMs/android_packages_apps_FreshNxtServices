@@ -24,31 +24,35 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    app:roundedCorners="all">
-                    <ImageView
-                        android:id="@+id/zest_video_brightness_img"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/hdr_effect_preview_off" />
-                </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="24dp"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginBottom="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="24dp"
                     android:orientation="vertical">
+
+                    <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@color/item_background_color">
+                        <ImageView
+                            android:id="@+id/zest_video_brightness_img"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/hdr_effect_preview_off" />
+                    </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
 
                     <com.google.android.material.textview.MaterialTextView
                         style="?textAppearanceBody2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
+                        android:layout_marginTop="@dimen/sesl_list_divider_inset"
+                        android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
+                        android:layout_marginBottom="@dimen/sesl_list_divider_inset"
                         android:text="@string/zest_hdr_effect_setting_summary"
                         android:textSize="15sp" />
                 </LinearLayout>
