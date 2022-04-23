@@ -15,8 +15,15 @@
         android:entries="@array/wlan_signal_icon_entries"
         android:entryValues="@array/wlan_signal_icon_packages" />
 
-    <!--
     <PreferenceCategory android:key="fs_plus_options">
+        <DropDownPreference
+            android:key="fs_plus_performance_mode"
+            android:defaultValue="Default"
+            android:title="Performance mode"
+            android:entries="@array/zest_performance_setting_options"
+            android:entryValues="@array/zest_performance_setting_values"
+            app:useSimpleSummaryProvider="true" />
+    <!--
         <SwitchPreferenceScreen
             android:key="fs_plus_darq_service"
             android:title="@string/zest_darq_setting_title"
@@ -34,8 +41,9 @@
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
-    </PreferenceCategory>
     -->
+    </PreferenceCategory>
+
     <PreferenceCategory>
         <Preference
             android:key="fs_device_resolution"
