@@ -4,12 +4,26 @@
     <string-array name="data_connection_icon_entries">
         <item>@string/zest_data_connection_icon_default</item>
         <item>@string/zest_data_connection_icon_lte</item>
+        <item>@string/zest_data_connection_icon_usc</item>
+        <item>@string/zest_data_connection_icon_tmo</item>
+        <item>@string/zest_data_connection_icon_vzw</item>
+        <item>@string/zest_data_connection_icon_att</item>
         <item>@string/zest_data_connection_icon_next</item>
+        <item>@string/zest_data_connection_icon_next_outline</item>
+        <item>@string/zest_data_connection_icon_next_alt</item>
+        <item>@string/zest_data_connection_icon_next_att</item>
     </string-array>
     <string-array name="data_connection_icon_packages" translatable="false">
         <item>io.tns.fresh.data.4g</item>
         <item>io.tns.fresh.data.lte</item>
+        <item>io.tns.fresh.data.usc</item>
+        <item>io.tns.fresh.data.tmo</item>
+        <item>io.tns.fresh.data.vzw</item>
+        <item>io.tns.fresh.data.att</item>
         <item>io.tns.fresh.data.next</item>
+        <item>io.tns.fresh.data.next.outline</item>
+        <item>io.tns.fresh.data.next.alt</item>
+        <item>io.tns.fresh.data.next.att</item>
     </string-array>
 
     <!-- Wi-Fi/WLAN icon settings -->
@@ -28,6 +42,22 @@
         <item>io.tns.fresh.wlan.wifi6e</item>
     </string-array>
 
+    <!-- VoLTE icon settings -->
+    <string-array name="volte_signal_icon_entries">
+        <item>@string/zest_wlan_connection_icon_default</item>
+        <item>@string/zest_volte_icon_telcel</item>
+        <item>@string/zest_volte_icon_dcm</item>
+        <item>@string/zest_volte_icon_telenor</item>
+        <item>@string/zest_volte_icon_voz</item>
+    </string-array>
+    <string-array name="volte_signal_icon_packages" translatable="false">
+        <item>io.tns.fresh.volte.default</item>
+        <item>io.tns.fresh.volte.amx</item>
+        <item>io.tns.fresh.volte.dcm</item>
+        <item>io.tns.fresh.volte.telenor</item>
+        <item>io.tns.fresh.volte.voz</item>
+    </string-array>
+
     <!-- USB security/Maverick settings -->
     <string-array name="zest_maverick_security_setting_options">
         <item>@string/zest_maverick_security_setting_option_on_lock</item>
@@ -36,6 +66,18 @@
     <string-array name="zest_maverick_security_setting_values">
         <item>1</item>
         <item>2</item>
+    </string-array>
+
+    <!-- Performance settings -->
+    <string-array name="zest_performance_setting_options">
+        <item>@string/zest_performance_setting_option_gaming</item>
+        <item>@string/zest_performance_setting_option_default</item>
+        <item>@string/zest_performance_setting_option_multitasking</item>
+    </string-array>
+    <string-array name="zest_performance_setting_values" translatable="false">
+        <item>Aggressive</item>
+        <item>Default</item>
+        <item>Conservative</item>
     </string-array>
 
     <!-- Screen Resolution settings -->

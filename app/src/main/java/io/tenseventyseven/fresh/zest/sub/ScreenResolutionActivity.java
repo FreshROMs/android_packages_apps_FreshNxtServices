@@ -36,6 +36,12 @@ public class ScreenResolutionActivity extends AppCompatActivity {
     @BindView(R.id.toolbar_layout)
     ToolbarLayout toolbar;
 
+    public static String getResolution(Context context) {
+        String[] mResolutionValues = context.getResources().getStringArray(R.array.zest_screen_resolution_setting_main_summary);
+        int setResolution = getResolutionInt(context);
+        return mResolutionValues[setResolution];
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

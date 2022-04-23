@@ -92,9 +92,9 @@
         android:theme="@style/Theme.Zest">
         <activity
             android:name=".zest.QsTileHandler"
-            android:exported="true"
             android:enabled="true"
-            android:excludeFromRecents="true">
+            android:excludeFromRecents="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
@@ -109,6 +109,14 @@
         <meta-data
             android:name="SamsungBasicInteraction"
             android:value="SEP10" />
+
+        <meta-data
+            android:name="com.samsung.android.multiuser.disallowed_managed_profile"
+            android:value="true" />
+        <meta-data
+            android:name="com.samsung.android.multiuser.install_only_owner"
+            android:value="true" />
+
 
         <uses-library
             android:name="fresh_platform_library_nxt"

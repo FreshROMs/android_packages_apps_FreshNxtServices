@@ -6,6 +6,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.SystemProperties;
@@ -148,5 +149,42 @@ public class ExperienceUtils {
         }
 
         return null;
+    }
+
+    public static String getRomVersion() {
+        String romPropVersion = getProp("ro.fresh.version");
+        String romPropBuild = getProp("ro.fresh.build.version");
+        String romPropBranch = getProp("ro.fresh.build.branch");
+        String romPropBuildDate = getProp("ro.fresh.build.date");
+
+        String romVersionBranch = "";
+        String buildDate = getProp("ro.system.build.date");
+
+        if (!romPropBuildDate.equals("")) {
+            buildDate = getProp("ro.fresh.build.date");
+        }
+
+        if (!romPropBranch.isEmpty()) {
+            romVersionBranch = romPropBranch.substring(0, 1).toUpperCase() +
+                    romPropBranch.substring(1).toLowerCase();
+        }
+
+        String romVersion = romPropVersion + " " + romVersionBranch + " " + "(" + romPropBuild + ")";
+
+        return romVersion + "\n" + buildDate;
+    }
+
+    public static String getAppVersion(Context context) {
+        String appVersion;
+        try {
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            String versionName = packageInfo.versionName;
+            @SuppressWarnings("deprecation") int versionCode = packageInfo.versionCode;
+            appVersion = versionName + " (" + versionCode + ")";
+        } catch (PackageManager.NameNotFoundException e) {
+            appVersion = "Unknown";
+        }
+
+        return appVersion;
     }
 }

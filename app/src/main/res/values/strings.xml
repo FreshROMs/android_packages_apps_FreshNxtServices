@@ -4,6 +4,7 @@
     <string name="app_name">"Fresh System Services"</string>
     <string name="zest_relative_link_advanced">"Advanced settings"</string>
     <string name="zest_relative_link_wallpaper">"Home and lock screen wallpaper"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Wallpaper and style"</string>
     <string name="zest_relative_link_themes">"Samsung Themes"</string>
     <string name="zest_data_connection_icon_default">"Default (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
@@ -143,7 +144,25 @@ Would you like to enable Zest+?"</string>
 
     <!-- Extra Dim -->
     <string name="zest_extra_dim_setting_title">Extra dim</string>
+    <string name="zest_extra_dim_setting_summary_main">Dim the screen beyond the minimum brightness setting.</string>
     <string name="zest_extra_dim_setting_summary">Dim the screen beyond the minimum brightness setting for more comfortable viewing.</string>
     <string name="zest_extra_dim_setting_intensity">Intensity</string>
     <string name="zest_extra_dim_setting_turn_off_reboot">Turn off after restart</string>
+
+    <string name="zest_volte_icon_title">Voice-over-LTE icon style</string>
+    <string name="zest_volte_icon_telcel">Telcel</string>
+    <string name="zest_volte_icon_dcm">Docomo</string>
+    <string name="zest_volte_icon_telenor">Telenor</string>
+    <string name="zest_volte_icon_voz">Voz</string>
+
+    <string name="zest_data_connection_icon_usc">"U.S. Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verizon"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_data_connection_icon_next_outline">"Next Outline"</string>
+    <string name="zest_data_connection_icon_next_alt">"Next Alt"</string>
+    <string name="zest_data_connection_icon_next_att">"Next AT&amp;T"</string>
+
+    <string name="zest_performance_setting_option_gaming">"Gaming"</string>
+    <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
 </resources>

@@ -11,4 +11,7 @@
     
     <string name="zest_renoir_notification_channel_id" translatable="false">"TnsFreshCustomize"</string>
     <string name="zest_renoir_notification_title" translatable="false">@string/zest_renoir_settings_title</string>
+
+    <!-- Const strings held by another string -->
+    <string name="zest_performance_setting_option_default" translatable="false">@string/zest_wlan_connection_icon_default</string>
 </resources>

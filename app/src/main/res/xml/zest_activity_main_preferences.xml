@@ -3,17 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <DropDownPreference
         android:key="sb_icon_style_data"
-        android:defaultValue="io.tns.fresh.data.4g:io.tns.fresh.data.4g"
+        android:defaultValue="io.tns.fresh.data.4g"
         android:title="@string/zest_data_connection_icon_title"
         android:entries="@array/data_connection_icon_entries"
-        android:entryValues="@array/data_connection_icon_packages" />
+        android:entryValues="@array/data_connection_icon_packages"
+        app:useSimpleSummaryProvider="true" />
 
     <DropDownPreference
         android:key="sb_icon_style_wifi"
-        android:defaultValue="io.tns.fresh.wlan.default:io.tns.fresh.wlan.default"
+        android:defaultValue="io.tns.fresh.wlan.default"
         android:title="@string/zest_wlan_connection_icon_title"
         android:entries="@array/wlan_signal_icon_entries"
-        android:entryValues="@array/wlan_signal_icon_packages" />
+        android:entryValues="@array/wlan_signal_icon_packages"
+        app:useSimpleSummaryProvider="true" />
+
+    <DropDownPreference
+        android:key="sb_icon_style_volte"
+        android:defaultValue="io.tns.fresh.volte.default"
+        android:title="@string/zest_volte_icon_title"
+        android:entries="@array/volte_signal_icon_entries"
+        android:entryValues="@array/volte_signal_icon_packages"
+        app:useSimpleSummaryProvider="true" />
 
     <PreferenceCategory android:key="fs_plus_options">
         <DropDownPreference
@@ -56,7 +66,8 @@
 
         <SwitchPreferenceScreen
             android:key="fs_video_brightness"
-            android:title="@string/zest_hdr_effect_setting_title">
+            android:title="@string/zest_hdr_effect_setting_title"
+            android:summary="@string/zest_hdr_effect_setting_summary">
             <intent
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
@@ -64,7 +75,8 @@
 
         <SwitchPreferenceScreen
             android:key="fs_extra_dim"
-            android:title="@string/zest_extra_dim_setting_title">
+            android:title="@string/zest_extra_dim_setting_title"
+            android:summary="@string/zest_extra_dim_setting_summary_main">
             <intent
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
