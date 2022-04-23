@@ -11,7 +11,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import io.tenseventyseven.fresh.services.ExtraDimTileService;
+import io.tenseventyseven.fresh.services.PerformanceModeTileService;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
+import io.tenseventyseven.fresh.zest.sub.PerformanceModeActivity;
 
 public class QsTileHandler extends AppCompatActivity {
 
@@ -26,8 +28,12 @@ public class QsTileHandler extends AppCompatActivity {
         }
         ComponentName cn = intent.getParcelableExtra(Intent.EXTRA_COMPONENT_NAME);
         if (cn != null) {
+            Intent settings;
             if (cn.getClassName().equals(ExtraDimTileService.class.getName())) {
-                Intent settings = new Intent(this, ExtraDimSettingsActivity.class);
+                settings = new Intent(this, ExtraDimSettingsActivity.class);
+                startActivity(settings);
+            } else if (cn.getClassName().equals(PerformanceModeTileService.class.getName())) {
+                settings = new Intent(this, PerformanceModeActivity.class);
                 startActivity(settings);
             }
         }
