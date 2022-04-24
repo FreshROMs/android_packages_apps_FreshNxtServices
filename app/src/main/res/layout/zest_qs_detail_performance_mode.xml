@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/zest_qs_detail_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:breakStrategy="simple"
+        android:minLines="2"
+        android:paddingStart="24.0dip"
+        android:paddingEnd="24.0dip"
+        android:paddingBottom="10.0dip"
+        android:layout_marginBottom="8.0dip"
+        android:text="@string/zest_performance_mode_summary"
+        android:textColor="@color/sesl4_primary_text"
+        android:textSize="16.0sp"
+        android:visibility="visible" />
+
+    <RadioGroup
+        android:id="@+id/zest_qs_detail_performance_group"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:theme="@android:style/Theme.DeviceDefault.Light">
+
+        <RadioButton
+            android:id="@+id/zest_qs_detail_performance_gaming"
+            style="@style/ZestQsDetailRadioButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="15dp"
+            android:text="@string/zest_performance_setting_option_gaming"
+            android:theme="@android:style/Theme.DeviceDefault.Light" />
+
+        <RadioButton
+            android:id="@+id/zest_qs_detail_performance_default"
+            style="@style/ZestQsDetailRadioButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="15dp"
+            android:text="@string/zest_performance_setting_option_default"
+            android:theme="@android:style/Theme.DeviceDefault.Light" />
+
+        <RadioButton
+            android:id="@+id/zest_qs_detail_performance_multitasking"
+            style="@style/ZestQsDetailRadioButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingHorizontal="11dp"
+            android:paddingVertical="15dp"
+            android:text="@string/zest_performance_setting_option_multitasking"
+            android:theme="@android:style/Theme.DeviceDefault.Light" />
+    </RadioGroup>
+</LinearLayout>
