@@ -163,6 +163,8 @@ Would you like to enable Zest+?"</string>
     <string name="zest_data_connection_icon_next_alt">"Next Alt"</string>
     <string name="zest_data_connection_icon_next_att">"Next AT&amp;T"</string>
 
+
+    <string name="zest_performance_setting_option_default">Balanced</string>
     <string name="zest_performance_setting_option_gaming">"Gaming"</string>
     <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
     <string name="zest_performance_mode_title">Performance mode</string>
