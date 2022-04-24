@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/zest_qs_detail_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:breakStrategy="simple"
+        android:minLines="2"
+        android:paddingStart="24.0dip"
+        android:paddingEnd="24.0dip"
+        android:paddingBottom="10.0dip"
+        android:layout_marginBottom="8.0dip"
+        android:text="@string/zest_extra_dim_setting_summary"
+        android:textColor="@color/sesl4_primary_text"
+        android:textSize="16.0sp"
+        android:visibility="visible" />
+</LinearLayout>
