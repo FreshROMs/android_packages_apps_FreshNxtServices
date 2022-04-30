@@ -8,13 +8,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.hardware.display.ColorDisplayManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,6 +49,8 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
 
     private static final int INVERSE_PERCENTAGE_BASE = 100;
     private ColorDisplayManager mColorDisplayManager;
+    private ExtraDimSettingsObserver mSettingsObserver;
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +65,9 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
         sbLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         sbLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(sbLayout.getToolbar());
+
+        mHandler = new Handler(Looper.getMainLooper());
+        mSettingsObserver = new ExtraDimSettingsObserver(mHandler);
 
         SwitchBar mExtraDimSwitch = sbLayout.getSwitchBar();
         boolean mExtraDimEnabled = getExtraDimState(mContext);
@@ -100,6 +110,19 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
                 - ColorDisplayManager.getMinimumReduceBrightColorsStrength(mContext));
         skExtraDim.setMin(INVERSE_PERCENTAGE_BASE
                 - ColorDisplayManager.getMaximumReduceBrightColorsStrength(mContext));
+
+        if (mSettingsObserver != null) {
+            mSettingsObserver.setListening(true);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        if (mSettingsObserver != null) {
+            mSettingsObserver.setListening(false);
+        }
+
+        super.onPause();
     }
 
     public static void setExtraDimState(Context context, boolean state) {
@@ -121,4 +144,27 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
     private boolean setExtraDimIntensity(int position) {
         return mColorDisplayManager.setReduceBrightColorsStrength(INVERSE_PERCENTAGE_BASE - position);
     }
+
+    private final class ExtraDimSettingsObserver extends ContentObserver {
+        private final Uri SETTING_URI = Settings.Secure.getUriFor("reduce_bright_colors_activated");
+
+        public ExtraDimSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean z, Uri uri) {
+            boolean bool = Settings.Secure.getInt(getContentResolver(), "reduce_bright_colors_activated", 0) == 1;
+            sbLayout.getSwitchBar().setChecked(bool);
+        }
+
+        public void setListening(boolean z) {
+            if (z) {
+                getContentResolver().registerContentObserver(this.SETTING_URI, false, this);
+            } else {
+                getContentResolver().unregisterContentObserver(this);
+            }
+        }
+    }
+
 }
