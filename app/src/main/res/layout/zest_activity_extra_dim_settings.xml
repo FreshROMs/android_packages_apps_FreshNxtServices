@@ -149,6 +149,7 @@
                                     android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
 
                                     <TextView
+                                        android:id="@+id/zest_extra_dim_reboot_textview"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:ellipsize="end"

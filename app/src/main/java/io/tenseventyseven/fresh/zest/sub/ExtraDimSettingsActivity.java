@@ -47,6 +47,12 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
     @BindView(R.id.zest_extra_dim_reboot_switch_layout)
     LinearLayout lyDisableOnReboot;
 
+    @BindView(R.id.zest_extra_dim_seekbar_title)
+    TextView tvIntensity;
+
+    @BindView(R.id.zest_extra_dim_reboot_textview)
+    TextView tvDisableOnReboot;
+
     private static final int INVERSE_PERCENTAGE_BASE = 100;
     private ColorDisplayManager mColorDisplayManager;
     private ExtraDimSettingsObserver mSettingsObserver;
@@ -73,6 +79,7 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
         boolean mExtraDimEnabled = getExtraDimState(mContext);
 
         mExtraDimSwitch.setChecked(mExtraDimEnabled);
+        refreshSubSettings(mExtraDimEnabled);
         mExtraDimSwitch.addOnSwitchChangeListener((switchCompat, bool) -> {
             setExtraDimState(mContext, bool);
         });
@@ -125,6 +132,16 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    private void refreshSubSettings(boolean state) {
+        tvIntensity.setEnabled(state);
+        tvDisableOnReboot.setEnabled(state);
+        lyDisableOnReboot.setClickable(state);
+        lyDisableOnReboot.setFocusable(state);
+        lyDisableOnReboot.setEnabled(state);
+        swDisableOnReboot.setEnabled(state);
+        skExtraDim.setEnabled(state);
+    }
+
     public static void setExtraDimState(Context context, boolean state) {
         Settings.Secure.putInt(context.getContentResolver(), "reduce_bright_colors_activated", state ? 1 : 0);
     }
@@ -156,6 +173,7 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
         public void onChange(boolean z, Uri uri) {
             boolean bool = Settings.Secure.getInt(getContentResolver(), "reduce_bright_colors_activated", 0) == 1;
             sbLayout.getSwitchBar().setChecked(bool);
+            refreshSubSettings(bool);
         }
 
         public void setListening(boolean z) {
