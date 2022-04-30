@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.provider.Settings;
 
 import java.util.Objects;
 
@@ -60,6 +61,7 @@ public class PerformanceUtils {
             ContentValues values = new ContentValues();
             values.put("MODE", str);
             context.getContentResolver().update(perfContentProvider, values, null, null);
+            Settings.System.putString(context.getContentResolver(), "zest_system_performance_mode", str);
         } catch (Exception unused) {
             // Unused
         }

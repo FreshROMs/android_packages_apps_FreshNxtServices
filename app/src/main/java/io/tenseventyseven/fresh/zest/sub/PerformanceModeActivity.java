@@ -4,9 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.ContentObserver;
+import android.hardware.display.ColorDisplayManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -40,6 +45,9 @@ public class PerformanceModeActivity extends AppCompatActivity {
     @BindView(R.id.radio_performance_mode_multitasking)
     RadioButton mPerformanceRadioMultitasking;
 
+    private PerformanceModeSettingsObserver mSettingsObserver;
+    private Handler mHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +59,32 @@ public class PerformanceModeActivity extends AppCompatActivity {
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
 
+        mHandler = new Handler(Looper.getMainLooper());
+        mSettingsObserver = new PerformanceModeSettingsObserver(mHandler);
+
         refreshRadioButtons(PerformanceUtils.getPerformanceMode(this));
 
         mPerformanceGaming.setOnClickListener(onTapOption(this, "Aggressive"));
         mPerformanceDefault.setOnClickListener(onTapOption(this, "Default"));
         mPerformanceMultitasking.setOnClickListener(onTapOption(this, "Conservative"));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (mSettingsObserver != null) {
+            mSettingsObserver.setListening(true);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        if (mSettingsObserver != null) {
+            mSettingsObserver.setListening(false);
+        }
+
+        super.onPause();
     }
 
     private void refreshRadioButtons(String mode) {
@@ -83,5 +112,29 @@ public class PerformanceModeActivity extends AppCompatActivity {
             refreshRadioButtons(mode);
             PerformanceUtils.setPerformanceMode(context, mode);
         };
+    }
+
+    private final class PerformanceModeSettingsObserver extends ContentObserver {
+        private final Uri SETTING_URI = Settings.System.getUriFor("zest_system_performance_mode");
+
+        public PerformanceModeSettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean z, Uri uri) {
+            String mode = Settings.System.getString(getContentResolver(), "zest_system_performance_mode");
+            if (mode == null || mode.isEmpty())
+                mode = "Default";
+            refreshRadioButtons(mode);
+        }
+
+        public void setListening(boolean z) {
+            if (z) {
+                getContentResolver().registerContentObserver(this.SETTING_URI, false, this);
+            } else {
+                getContentResolver().unregisterContentObserver(this);
+            }
+        }
     }
 }
