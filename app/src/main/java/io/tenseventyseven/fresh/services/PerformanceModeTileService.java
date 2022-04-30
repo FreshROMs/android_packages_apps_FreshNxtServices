@@ -77,6 +77,7 @@ public class PerformanceModeTileService extends TileService {
         RemoteViews view = new RemoteViews(getPackageName(), R.layout.zest_qs_detail_performance_mode);
         setPerformanceModeOnClick(view);
         refreshRadioButtons(view, PerformanceUtils.getPerformanceMode(this));
+
         return view;
     }
 
@@ -110,6 +111,10 @@ public class PerformanceModeTileService extends TileService {
                 view.setRadioGroupChecked(R.id.zest_qs_detail_performance_group, R.id.zest_qs_detail_performance_default);
                 break;
         }
+
+        view.setTextColor(R.id.zest_qs_detail_performance_gaming, getColor(R.color.sesl4_primary_text_color));
+        view.setTextColor(R.id.zest_qs_detail_performance_multitasking, getColor(R.color.sesl4_primary_text_color));
+        view.setTextColor(R.id.zest_qs_detail_performance_default, getColor(R.color.sesl4_primary_text_color));
     }
 
     public CharSequence semGetDetailViewTitle() {
