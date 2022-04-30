@@ -87,34 +87,10 @@
         android:roundIcon="@mipmap/fresh_ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
-        <activity
-            android:name=".zest.sub.PerformanceModeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".zest.QsTileHandler"
-            android:enabled="true"
-            android:excludeFromRecents="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".zest.sub.ExtraDimSettingsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ota.UpdateAvailableActivity"
-            android:exported="false" />
 
         <meta-data
             android:name="SamsungBasicInteraction"
             android:value="SEP10" />
-        <meta-data
-            android:name="com.samsung.android.multiuser.disallowed_managed_profile"
-            android:value="true" />
-        <meta-data
-            android:name="com.samsung.android.multiuser.install_only_owner"
-            android:value="true" />
 
         <uses-library
             android:name="fresh_platform_library_nxt"
@@ -122,6 +98,27 @@
         <uses-library
             android:name="fresh_republic_city_library"
             android:required="true" /> <!-- FreshROMs4 - RepublicCity -->
+
+        <activity
+            android:name=".zest.sub.PerformanceModeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".zest.QsTileHandler"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zest.sub.ExtraDimSettingsActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings" />
+        <activity
+            android:name=".ota.UpdateAvailableActivity"
+            android:exported="false"
+            android:icon="@mipmap/fresh_ic_launcher_settings" />
         <activity
             android:name=".zest.OpenSourceActivity"
             android:exported="false"
@@ -133,7 +130,7 @@
         <activity
             android:name=".zest.SettingsActivity"
             android:exported="true"
-            android:icon="@drawable/system_settings_zest_plugin_icon"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_system_settings_plugin_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -160,19 +157,18 @@
         <activity
             android:name=".ota.OtaMainActivity"
             android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/fresh_ota_main_title" />
         <activity
             android:name=".zest.sub.ScreenResolutionActivity"
             android:exported="false"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_screen_resolution_setting_title" />
         <activity
             android:name=".zest.sub.VideoBrightnessActivity"
             android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_hdr_effect_setting_title" />
-        <activity
-            android:name=".zest.sub.MaverickSettingsActivity"
-            android:exported="true"
-            android:label="@string/zest_maverick_security_setting_title" />
 
         <service
             android:name=".services.RestartTileService"
