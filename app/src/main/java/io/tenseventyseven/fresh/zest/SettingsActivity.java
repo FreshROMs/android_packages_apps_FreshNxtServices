@@ -33,7 +33,6 @@ import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.services.OverlayService;
 import io.tenseventyseven.fresh.utils.Preferences;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
-import io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity;
 import io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
 import io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity;
 
@@ -143,7 +142,6 @@ public class SettingsActivity extends AppCompatActivity {
             String romVersion = ExperienceUtils.getRomVersion();
             String appVersion = ExperienceUtils.getAppVersion(mContext);
             boolean vbEnabled = VideoBrightnessActivity.getVideoBrightnessState(mContext);
-            boolean mvEnabled = MaverickSettingsActivity.getMaverickState(mContext);
 
             // System UI icons
             mDataPreference.setValue(Preferences.getDataConnectionIconPackage(mContext));
@@ -160,12 +158,6 @@ public class SettingsActivity extends AppCompatActivity {
             // Extra Dim
             ((SwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
             findPreference("fs_extra_dim").setOnPreferenceChangeListener(this);
-
-            /*
-            // USB protection
-            ((SwitchPreferenceScreen) findPreference("fs_plus_usb_security")).setChecked(mvEnabled);
-            findPreference("fs_plus_usb_security").setOnPreferenceChangeListener(this);
-             */
 
             // Screen resolution
             mDeviceResolution.setSummary(setResolution);
@@ -240,9 +232,6 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
-                    return true;
-                case "fs_plus_usb_security":
-                    MaverickSettingsActivity.setMaverickState(mContext, (boolean) newValue);
                     return true;
             }
             return false;

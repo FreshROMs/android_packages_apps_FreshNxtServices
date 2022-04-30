@@ -44,15 +44,6 @@
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
-
-        <SwitchPreferenceScreen
-            android:key="fs_plus_usb_security"
-            android:title="@string/zest_maverick_security_setting_title"
-            android:summary="@string/zest_maverick_security_setting_summary">
-            <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.MaverickSettingsActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
-        </SwitchPreferenceScreen>
     -->
     </PreferenceCategory>
 

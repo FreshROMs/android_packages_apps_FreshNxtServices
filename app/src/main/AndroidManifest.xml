@@ -74,9 +74,6 @@
         android:name="io.tenseventyseven.fresh.hikari.lan"
         android:required="false" /> <!-- ZestNxt -->
     <uses-feature
-        android:name="io.tenseventyseven.fresh.security.maverick"
-        android:required="false" /> <!-- MaverickService - USB security -->
-    <uses-feature
         android:name="io.tenseventyseven.fresh.avatar"
         android:required="true" /> <!-- FreshNxt OTA -->
     <uses-feature
