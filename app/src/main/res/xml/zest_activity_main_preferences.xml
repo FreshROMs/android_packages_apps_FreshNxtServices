@@ -57,14 +57,14 @@
                 android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
 
-        <SwitchPreferenceScreen
+        <Preference
             android:key="fs_video_brightness"
             android:title="@string/zest_hdr_effect_setting_title"
-            android:summary="@string/zest_hdr_effect_setting_summary">
+            android:summary="@string/zest_setting_default_summary">
             <intent
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
-        </SwitchPreferenceScreen>
+        </Preference>
 
         <SwitchPreferenceScreen
             android:key="fs_extra_dim"

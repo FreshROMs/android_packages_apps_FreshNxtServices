@@ -125,6 +125,7 @@ public class SettingsActivity extends AppCompatActivity {
             DropDownPreference mVoltePreference = findPreference("sb_icon_style_volte");
             Preference mPerformancePreference = findPreference("fs_plus_performance_mode");
             Preference mDeviceResolution = findPreference("fs_device_resolution");
+            Preference mVideoBrightness = findPreference("fs_video_brightness");
 
             // Get activated color from attr, so it changes based on the app's theme
             TypedValue typedValue = new TypedValue();
@@ -137,11 +138,11 @@ public class SettingsActivity extends AppCompatActivity {
             mVoltePreference.seslSetSummaryColor(summaryColor);
             mPerformancePreference.seslSetSummaryColor(summaryColor);
             mDeviceResolution.seslSetSummaryColor(summaryColor);
+            mVideoBrightness.seslSetSummaryColor(summaryColor);
 
             String setResolution = ScreenResolutionActivity.getResolution(mContext);
             String romVersion = ExperienceUtils.getRomVersion();
             String appVersion = ExperienceUtils.getAppVersion(mContext);
-            boolean vbEnabled = VideoBrightnessActivity.getVideoBrightnessState(mContext);
 
             // System UI icons
             mDataPreference.setValue(Preferences.getDataConnectionIconPackage(mContext));
@@ -150,10 +151,6 @@ public class SettingsActivity extends AppCompatActivity {
             mDataPreference.setOnPreferenceChangeListener(this);
             mWifiPreference.setOnPreferenceChangeListener(this);
             mVoltePreference.setOnPreferenceChangeListener(this);
-
-            // Video preferences
-            ((SwitchPreferenceScreen) findPreference("fs_video_brightness")).setChecked(vbEnabled);
-            findPreference("fs_video_brightness").setOnPreferenceChangeListener(this);
 
             // Extra Dim
             ((SwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
@@ -227,9 +224,6 @@ public class SettingsActivity extends AppCompatActivity {
                         });
                     }
                     return true;
-                case "fs_video_brightness":
-                    VideoBrightnessActivity.setVideoBrightnessState(mContext, (boolean) newValue);
-                    return true;
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
                     return true;
@@ -241,6 +235,11 @@ public class SettingsActivity extends AppCompatActivity {
         public void onResume() {
             super.onResume();
             makeRelatedCard(mContext);
+
+            // Video brightness
+            findPreference("fs_video_brightness").setSummary(VideoBrightnessActivity.getVideoBrightnessState(mContext) ?
+                    mContext.getString(R.string.zest_video_brightness_setting_bright) :
+                    mContext.getString(R.string.zest_video_brightness_setting_normal));
 
             // Performance mode
             findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));

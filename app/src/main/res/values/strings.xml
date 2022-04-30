@@ -172,4 +172,10 @@ Would you like to enable Zest+?"</string>
     <string name="zest_performance_setting_option_gaming_summary">Boost performance and optimize memory management to enhance gaming experience.</string>
     <string name="zest_performance_setting_option_default_summary">Balances performance and battery life for an experience that works for everyone.</string>
     <string name="zest_performance_setting_option_multitasking_summary">Enhance performance and memory management to allow more apps to run in the background.</string>
+
+    <string name="zest_video_brightness_summary_normal">"Play videos using your phone's normal screen brightness and color settings."</string>
+    <string name="zest_video_brightness_summary_bright">Temporarily increase the screen brightness and make colors more vibrant when you watch videos.</string>
+    <string name="zest_video_brightness_setting_normal">Normal</string>
+    <string name="zest_video_brightness_setting_bright">Bright</string>
+    <string name="zest_video_brightness_supported_apps_header">Supported apps</string>
 </resources>
