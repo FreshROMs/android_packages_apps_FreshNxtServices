@@ -463,5 +463,46 @@
         <item>com.skb.smartrc</item>
         <item>pl.locon.br.pc</item>
         <item>com.disney.disneyplus</item>
+
+        <!-- Additional Video Apps - tenseventyseven -->
+        <item>com.absi.tfctv</item> <!-- iWantTFC -->
+        <item>com.viva.vivamax</item> <!-- VivaMax -->
+        <item>sg.hbo.hbogo</item> <!-- HBO Go SEA -->
+        <item>com.tencent.qqlivei18n</item> <!-- WeTV -->
+        <item>com.iqiyi.i18n</item> <!-- iQiyi -->
+        <item>com.mpndbash.poptv</item> <!-- POPTV Pinas -->
+        <item>tv.cignal.cignalplay</item> <!-- Cignal Play -->
+        <item>com.discovery.discoveryplus.mobile</item> <!-- Discovery Plus -->
+        <item>com.discovery.discoveryplus.mobile.apac</item> <!-- Discovery Plus APAC -->
+        <item>com.discovery.discoveryplus.mobile.android</item> <!-- Discovery Plus India -->
+        <item>com.tapgo.app</item> <!-- Tap Go -->
+        <item>tv.standard.nebula</item> <!-- Nebula -->
+        <item>com.bstar.intl</item> <!-- BiliBili Intl -->
+        <item>com.abide.magellantv</item> <!-- MagellanTV -->
+        <item>com.real.RealPlayerMobile</item> <!-- RealPlayer New -->
+        <item>com.kmp.video</item> <!-- KMP -->
+        <item>com.motorvision.ott</item> <!-- Motorvision OTT -->
+        <item>sg.mediacorp.android</item> <!-- meWATCH - MediaCorp SG -->
+        <item>com.tvb.ott.overseas.sg</item> <!-- TVBAnywhere+ -->
+        <item>com.upst.hayu</item> <!-- Hayu -->
+        <item>dk.dr.webplayer</item> <!-- DRTV -->
+        <item>sk.o2.tv</item> <!-- O2 TV SK -->
+        <item>com.zte.iptvclient.android.idmnc</item> <!-- Vision+ OTT MY -->
+        <item>ie.bytes.tg4.tg4videoapp</item> <!-- TG4 Player -->
+        <item>air.RTE.OSMF.Minimal</item> <!-- RTE Player IR -->
+        <item>air.ITVMobilePlayer</item> <!-- ITV Hub UK -->
+        <item>com.cw.fullepisodes.android</item> <!-- The CW -->
+        <item>com.TWCableTV</item> <!-- Charter/Spectrum -->
+        <item>com.cbs.app</item> <!-- Paramount+ -->
+        <item>com.cbs.ca</item> <!-- Paramount+ CA -->
+        <item>com.viacom.paramountplus</item> <!-- Paramount+ Intl -->
+        <item>com.peacocktv.peacockandroid</item> <!-- Peacock -->
+        <item>tv.pluto.android</item> <!-- Pluto TV -->
+        <item>fr.m6.m6replay</item> <!-- 6play -->
+        <item>com.samsung.android.tvplus</item> <!-- Samsung TV Plus -->
+        <item>tv.tolka.airial</item> <!-- Tolka AlRial/TVPlus GO -->
+        <item>com.gmanmi.digitv</item> <!-- GMA Now -->
+        <item>com.google.android.apps.youtube.unplugged</item> <!-- YouTube TV -->
+        <item>com.nashi.kamyroll</item> <!-- Kamyroll -->
     </string-array>
 </resources>
