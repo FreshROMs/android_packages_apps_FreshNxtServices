@@ -147,7 +147,7 @@
                 android:resource="@string/zest_system_settings_plugin_title" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/zest_system_settings_plugin_summary" />
+                android:resource="@string/zest_system_settings_plugin_summary_four" />
         </activity>
         <activity
             android:name=".zest.AboutActivity"
