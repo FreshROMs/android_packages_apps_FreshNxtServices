@@ -183,5 +183,5 @@ Would you like to enable Zest+?"</string>
     <string name="zest_customization_reboot_required_title">"Restart phone?"</string>
     <string name="zest_customization_reboot_required_description">"To fully apply icon style changes, your phone needs to restart."</string>
     <string name="zest_customization_reboot_required_btn_ok">"Restart now"</string>
-    <string name="zest_customization_reboot_required_btn_cancel">"Reboot later"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Restart later"</string>
 </resources>
