@@ -9,7 +9,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:breakStrategy="simple"
-        android:minLines="2"
         android:paddingStart="24.0dip"
         android:paddingEnd="24.0dip"
         android:paddingBottom="10.0dip"
