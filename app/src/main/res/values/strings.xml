@@ -181,7 +181,7 @@ Would you like to enable Zest+?"</string>
     <string name="zest_system_settings_plugin_summary_four">"Icon style  •  Performance  •  Screen resolution"</string>
 
     <string name="zest_customization_reboot_required_title">"Restart phone?"</string>
-    <string name="zest_customization_reboot_required_description">"To apply icon style changes, your phone needs to restart."</string>
+    <string name="zest_customization_reboot_required_description">"To fully apply icon style changes, your phone needs to restart."</string>
     <string name="zest_customization_reboot_required_btn_ok">"Restart now"</string>
-    <string name="zest_customization_reboot_required_btn_cancel" translatable="false">@string/sesl_cancel</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Reboot later"</string>
 </resources>
