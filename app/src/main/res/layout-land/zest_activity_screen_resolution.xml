@@ -149,14 +149,13 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/resolution_apply"
                         style="@style/ButtonStyle.Colored"
-                        android:layout_width="200dp"
+                        android:layout_width="260dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="18dp"
                         android:layout_marginBottom="20dp"
-                        android:fontFamily="sec-roboto-light"
-                        android:paddingVertical="8dp"
-                        android:text="@string/zest_screen_resolution_setting_btn_apply"
-                        android:textStyle="bold" />
+                        android:fontFamily="sec-medium"
+                        android:paddingVertical="10dp"
+                        android:text="@string/zest_screen_resolution_setting_btn_apply" />
 
                 </LinearLayout>
 
