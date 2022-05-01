@@ -2,6 +2,7 @@ package io.tenseventyseven.fresh.zest;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.TypedValue;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.View;
 
@@ -21,6 +23,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
 import de.dlyt.yanndroid.oneui.preference.DropDownPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
@@ -32,6 +35,7 @@ import io.tenseventyseven.fresh.ExperienceUtils;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.services.OverlayService;
 import io.tenseventyseven.fresh.utils.Preferences;
+import io.tenseventyseven.fresh.utils.Tools;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 import io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
 import io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity;
@@ -187,6 +191,7 @@ public class SettingsActivity extends AppCompatActivity {
                             }
                         });
                     }
+                    showRebootDialog(mContext);
                     return true;
                 case "sb_icon_style_wifi":
                     String[] wifiIconPackages = this.getResources().getStringArray(R.array.data_connection_icon_packages);
@@ -205,6 +210,7 @@ public class SettingsActivity extends AppCompatActivity {
                             }
                         });
                     }
+                    showRebootDialog(mContext);
                     return true;
                 case "sb_icon_style_volte":
                     String[] volteIconPackages = this.getResources().getStringArray(R.array.volte_signal_icon_packages);
@@ -223,6 +229,7 @@ public class SettingsActivity extends AppCompatActivity {
                             }
                         });
                     }
+                    showRebootDialog(mContext);
                     return true;
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
@@ -249,6 +256,20 @@ public class SettingsActivity extends AppCompatActivity {
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             getView().setBackgroundColor(getResources().getColor(R.color.item_background_color, mContext.getTheme()));
+        }
+
+        private void showRebootDialog(Context context) {
+            AlertDialog rebootDialog = new AlertDialog.Builder(context)
+                    .setCancelable(false)
+                    .setTitle(R.string.zest_customization_reboot_required_title)
+                    .setMessage(R.string.zest_customization_reboot_required_description)
+                    .setPositiveButton(R.string.zest_customization_reboot_required_btn_ok,
+                            (dialog, which) -> Tools.rebootNormal(context))
+                    .setNegativeButton(R.string.zest_customization_reboot_required_btn_cancel,
+                            (dialog, which) -> {
+                                // None
+                            }).create();
+            rebootDialog.show();
         }
 
         private void makeRelatedCard(Context context) {

@@ -16,6 +16,11 @@ public class Tools {
         powerManager.reboot("recovery");
     }
 
+    public static void rebootNormal(Context context) {
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        powerManager.reboot("reboot,userrequested");
+    }
+
     public static Activity getActivity(Context context) {
         if (context == null) {
             return null;
