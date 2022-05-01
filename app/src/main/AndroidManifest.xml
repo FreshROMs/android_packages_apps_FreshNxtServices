@@ -63,7 +63,9 @@
         android:name="android.permission.ACCESS_CACHE_FILESYSTEM"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Feature requirements for the app -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Feature requirements for the app -->
     <uses-feature
         android:name="io.tenseventyseven.fresh.four"
         android:required="true" /> <!-- Fresh 4 Release -->
@@ -100,9 +102,6 @@
             android:required="true" /> <!-- FreshROMs4 - RepublicCity -->
 
         <activity
-            android:name=".zest.sub.PerformanceModeActivity"
-            android:exported="false" />
-        <activity
             android:name=".zest.QsTileHandler"
             android:enabled="true"
             android:exported="true"
@@ -111,10 +110,6 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".zest.sub.ExtraDimSettingsActivity"
-            android:exported="true"
-            android:icon="@mipmap/fresh_ic_launcher_settings" />
         <activity
             android:name=".ota.UpdateAvailableActivity"
             android:exported="false"
@@ -135,7 +130,6 @@
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
-
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />
@@ -151,17 +145,16 @@
         </activity>
         <activity
             android:name=".zest.AboutActivity"
-            android:exported="false"
-            android:label="@string/app_name"
+            android:exported="true"
             android:theme="@style/OneUI4AboutTheme" />
         <activity
             android:name=".ota.OtaMainActivity"
-            android:exported="true"
+            android:exported="false"
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/fresh_ota_main_title" />
         <activity
             android:name=".zest.sub.ScreenResolutionActivity"
-            android:exported="false"
+            android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_screen_resolution_setting_title" />
         <activity
@@ -169,6 +162,16 @@
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_hdr_effect_setting_title" />
+        <activity
+            android:name=".zest.sub.ExtraDimSettingsActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
+            android:label="@string/zest_extra_dim_setting_title" />
+        <activity
+            android:name=".zest.sub.PerformanceModeActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
+            android:label="@string/zest_performance_mode_title" />
 
         <service
             android:name=".services.RestartTileService"
@@ -191,6 +194,16 @@
             </intent-filter>
         </service>
         <service
+            android:name=".services.PerformanceModeTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_qs_tile_performance_default"
+            android:label="@string/zest_performance_mode_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
             android:name=".services.VideoBrightnessTileService"
             android:exported="true"
             android:icon="@drawable/ic_qs_tile_video_brightness"
@@ -201,18 +214,6 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name=".services.PerformanceModeTileService"
-            android:exported="true"
-            android:icon="@drawable/ic_qs_tile_performance_default"
-            android:label="@string/zest_performance_mode_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
-
-
         <receiver
             android:name=".system.BootReceiver"
             android:directBootAware="true"
@@ -222,5 +223,4 @@
             </intent-filter>
         </receiver>
     </application>
-
 </manifest>
