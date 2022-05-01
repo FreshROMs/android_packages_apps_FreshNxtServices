@@ -83,18 +83,18 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                style="?android:attr/textAppearanceSmall"
+                style="?android:textAppearanceListItem"
+                android:fontFamily="sec"
+                android:lineSpacingExtra="4sp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/zest_screen_resolution_setting_text_padding"
                 android:layout_marginTop="@dimen/zest_screen_resolution_setting_header_margin"
                 android:layout_marginBottom="10.0dip"
-                android:fontFamily="sec-roboto-light"
-                android:lineSpacingExtra="4.0sp"
                 android:text="@string/zest_screen_resolution_setting_summary"
                 android:textAlignment="viewStart"
                 android:textColor="@color/sesl_primary_text"
-                android:textSize="15.0sp" />
+                android:textSize="14.0sp" />
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -114,17 +114,17 @@
 
                 <TextView
                     android:id="@+id/resolution_summary"
-                    style="?android:attr/textAppearanceSmall"
+                    style="?android:textAppearanceListItem"
+                    android:fontFamily="sec-medium"
+                    android:lineSpacingExtra="4sp"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/zest_screen_resolution_setting_text_padding"
                     android:layout_marginTop="@dimen/zest_screen_resolution_setting_header_margin"
-                    android:fontFamily="sec-roboto-light"
                     android:text="@string/zest_setting_default_summary"
                     android:textAlignment="viewStart"
                     android:textColor="@color/sesl_secondary_text"
-                    android:textSize="15.0sp"
-                    android:textStyle="bold" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton

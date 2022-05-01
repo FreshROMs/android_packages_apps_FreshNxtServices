@@ -25,15 +25,17 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="?textAppearanceBody2"
+                    style="?android:textAppearanceListItem"
+                    android:fontFamily="sec"
+                    android:lineSpacingExtra="4sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
-                    android:layout_marginTop="@dimen/sesl_list_divider_inset"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
-                    android:layout_marginBottom="@dimen/sesl_list_divider_inset"
+                    android:layout_marginBottom="10dp"
                     android:text="@string/zest_performance_mode_summary"
-                    android:textSize="15sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView

@@ -135,14 +135,16 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/zest_video_brightness_summary"
-                        style="?textAppearanceBody2"
+                        style="?android:textAppearanceListItem"
+                        android:fontFamily="sec"
+                        android:lineSpacingExtra="4sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
                         android:layout_marginTop="@dimen/sesl_list_divider_inset"
                         android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
                         android:text="@string/zest_video_brightness_summary_normal"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
