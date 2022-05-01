@@ -288,14 +288,10 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         TextView mAppName;
         @BindView(R.id.hdr_effect_app_icon)
         ImageView mAppIcon;
-        @BindView(R.id.hdr_effect_divider)
-        LinearLayout mAppDivider;
         @BindView(R.id.hdr_effect_switch)
         Switch mAppSwitch;
         @BindView(R.id.hdr_effect_layout)
         LinearLayout mLayout;
-
-        Boolean mFirstUp = false;
 
         public AppListAdapter(Context context, List<ApplicationInfo> appList) {
             super(context, R.layout.zest_activity_video_brightness_list_item, appList);
@@ -315,11 +311,6 @@ public class VideoBrightnessActivity extends AppCompatActivity {
             assert item != null;
             mAppName.setText(item.mAppName);
             mAppIcon.setImageDrawable(item.mAppIcon);
-
-            if (position == 0 && !mFirstUp) {
-                mAppDivider.setVisibility(View.GONE);
-                mFirstUp = true;
-            }
 
             item.mSwitch = mAppSwitch;
             mAppSwitch.setChecked(getAppEnabled(mContext, item.mPackageName));

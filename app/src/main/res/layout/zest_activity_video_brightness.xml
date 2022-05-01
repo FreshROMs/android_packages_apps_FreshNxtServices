@@ -186,8 +186,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:divider="@color/background_color"
+                                android:divider="@drawable/zest_video_brightness_item_divider"
                                 android:nestedScrollingEnabled="true"
+                                android:dividerHeight="1dp"
                                 android:visibility="gone" />
                         </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>

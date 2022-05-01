@@ -1,85 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="60dp">
+    android:layout_height="59dp">
+
     <LinearLayout
+        android:id="@+id/hdr_effect_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="59dp"
+        android:layout_gravity="center_vertical"
+        android:background="?selectableItemBackground"
         android:baselineAligned="false"
-        android:gravity="start|center_vertical"
-        android:orientation="vertical">
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:paddingVertical="10dp">
 
         <LinearLayout
-            android:id="@+id/hdr_effect_divider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="78dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
-            android:orientation="vertical"
-            android:gravity="top|center_horizontal">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#35808080" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/hdr_effect_layout"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:background="?selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
             android:baselineAligned="false"
-            android:layout_gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingVertical="10dp">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/hdr_effect_app_icon"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="18dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@color/divider_color" />
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/hdr_effect_app_name"
+                    style="?textAppearanceBody1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
+                android:layout_weight="0"
                 android:baselineAligned="false"
-                android:gravity="center_vertical"
+                android:gravity="start|center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/hdr_effect_app_icon"
-                    android:layout_width="38dp"
-                    android:layout_height="38dp"
-                    android:layout_marginEnd="18dp"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitXY"
-                    android:src="@color/divider_color" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/hdr_effect_app_name"
-                        style="?textAppearanceBody1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="viewStart"
-                        android:textSize="18sp" />
-                </LinearLayout>
-                <LinearLayout
+                <de.dlyt.yanndroid.oneui.widget.Switch
+                    android:id="@+id/hdr_effect_switch"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="24dp"
-                    android:baselineAligned="false"
-                    android:gravity="start|center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_weight="0">
-                    <de.dlyt.yanndroid.oneui.widget.Switch
-                        android:id="@+id/hdr_effect_switch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
