@@ -186,4 +186,7 @@ Enabling extra dim may break some apps, resulting in a black screen. This is an 
     <string name="zest_customization_reboot_required_description">"To fully apply icon style changes, your phone needs to restart."</string>
     <string name="zest_customization_reboot_required_btn_ok">"Restart now"</string>
     <string name="zest_customization_reboot_required_btn_cancel">"Restart later"</string>
+
+    <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
+    <string name="zest_performance_kit_version">"Fresh Performance Kit %s"</string>
 </resources>
