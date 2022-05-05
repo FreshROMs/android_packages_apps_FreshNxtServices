@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/hdr_effect_app_icon"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginEnd="18dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
@@ -43,11 +43,9 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/hdr_effect_app_name"
-                    style="?textAppearanceBody1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="viewStart"
-                    android:textSize="18sp" />
+                    android:textAppearance="?android:attr/textAppearanceListItem" />
             </LinearLayout>
 
             <LinearLayout

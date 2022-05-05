@@ -10,19 +10,23 @@
             android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
             android:targetPackage="io.tenseventyseven.fresh" />
     </Preference>
-    <SwitchPreference
+
+    <SwitchPreferenceCompat
         android:key="ota_auto_download_wifi"
         android:title="@string/fresh_ota_auto_download_wlan_title"
         android:summary="@string/fresh_ota_auto_download_wlan_summary" />
 
-    <PreferenceCategory>
-        <Preference
-            android:key="ota_last_update"
-            android:title="@string/fresh_ota_last_successful_update_title"
-            android:summary="@string/fresh_ota_last_successful_update_summary">
-            <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
-        </Preference>
-    </PreferenceCategory>
+    <PreferenceCategory />
+
+    <Preference
+        android:key="ota_last_update"
+        android:title="@string/fresh_ota_last_successful_update_title"
+        android:summary="@string/fresh_ota_last_successful_update_summary">
+        <intent
+            android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
+            android:targetPackage="io.tenseventyseven.fresh" />
+    </Preference>
+
+    <PreferenceCategory />
+
 </de.dlyt.yanndroid.oneui.preference.PreferenceScreen>
