@@ -147,7 +147,7 @@ Vuoi abilitare Zest+?"</string>
     <string name="zest_extra_dim_setting_summary_main">Consente di attenuare la luminosità dello schermo oltre l\'impostazione minima.</string>
     <string name="zest_extra_dim_setting_summary">"Consente di attenuare la luminosità dello schermo oltre l\'impostazione minima per un maggiore comfort di visione.
 
-Attivando queta funzionalità alcune app potrebbero non funzionare correttamente."</string>
+Attivando questa funzionalità alcune app potrebbero non funzionare correttamente."</string>
     <string name="zest_extra_dim_setting_intensity">Intensità</string>
     <string name="zest_extra_dim_setting_turn_off_reboot">Disattiva dopo il riavvio</string>
 
