@@ -29,6 +29,8 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_about);
         ButterKnife.bind(this);
 
+        aboutPage.setToolbarExpandable(true);
+
         try {
             PackageManager pm = mContext.getPackageManager();
             PackageInfo packageInfoExp = pm.getPackageInfo("io.tensevntysevn.fresh.framework", 0);
