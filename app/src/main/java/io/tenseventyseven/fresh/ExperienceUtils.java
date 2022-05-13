@@ -49,11 +49,11 @@ public class ExperienceUtils {
         activity.getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
         int width = displayMetrics.widthPixels;
 
-       if (width >= 1080) {
+        if (width >= 1080) {
             realScreenResolution = 2;
-        } else if (width >= 720) {
+        } else if (width >= 900) {
            realScreenResolution = 1;
-       }
+        }
 
        Settings.System.putInt(context.getContentResolver(), SCREEN_RESOLUTION, realScreenResolution);
        return realScreenResolution;
