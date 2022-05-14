@@ -8,19 +8,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.tenseventyseven.fresh.zest.AboutActivityClass;
+import de.dlyt.yanndroid.oneui.layout.AboutPage;
 import io.tenseventyseven.fresh.R;
 
 public class AboutActivity extends AppCompatActivity {
     Context mContext;
 
     @BindView(R.id.zest_about_header)
-    AboutActivityClass aboutPage;
+    AboutPage aboutPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,12 @@ public class AboutActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         aboutPage.setToolbarExpandable(true);
+        TextView about_optional_text = aboutPage.findViewById(R.id.about_optional_text);
+        TextView about_optional_text_2 = new TextView(this);
+        about_optional_text_2.setLayoutParams(about_optional_text.getLayoutParams());
+        about_optional_text_2.setTextSize(about_optional_text.getScaledTextSize());
+        about_optional_text_2.setTextColor(about_optional_text.getCurrentTextColor());
+        ((LinearLayout) about_optional_text.getParent()).addView(about_optional_text_2, 3);
 
         try {
             PackageManager pm = mContext.getPackageManager();
@@ -40,7 +48,7 @@ public class AboutActivity extends AppCompatActivity {
             String perfModeFormat = String.format(getString(R.string.zest_performance_kit_version), perfModeVersion);
 
             aboutPage.setOptionalText(expVersionFormat);
-            aboutPage.setOptionalText2(perfModeFormat);
+            about_optional_text_2.setText(perfModeFormat);
         } catch (PackageManager.NameNotFoundException e) {
             aboutPage.setOptionalText(" ");
         }
@@ -50,7 +58,7 @@ public class AboutActivity extends AppCompatActivity {
 
     public void onTapSourceCode(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        String url = "https://github.com/TenSeventy7/FreshNxtServices";
+        String url = "https://github.com/FreshROMs/android_packages_apps_FreshNxtServices";
         intent.setData(Uri.parse(url));
         startActivity(intent);
     }
