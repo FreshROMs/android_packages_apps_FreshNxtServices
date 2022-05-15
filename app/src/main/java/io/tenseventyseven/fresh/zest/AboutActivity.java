@@ -35,7 +35,7 @@ public class AboutActivity extends AppCompatActivity {
         TextView about_optional_text = aboutPage.findViewById(R.id.about_optional_text);
         TextView about_optional_text_2 = new TextView(this);
         about_optional_text_2.setLayoutParams(about_optional_text.getLayoutParams());
-        about_optional_text_2.setTextSize(about_optional_text.getScaledTextSize());
+        about_optional_text_2.setTextSize(0, this.getResources().getDimension(R.dimen.sesl4_about_secondary_text_size));
         about_optional_text_2.setTextColor(about_optional_text.getCurrentTextColor());
         ((LinearLayout) about_optional_text.getParent()).addView(about_optional_text_2, 3);
 
