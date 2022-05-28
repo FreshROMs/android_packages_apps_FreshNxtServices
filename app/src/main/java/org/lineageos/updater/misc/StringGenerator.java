@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ package org.lineageos.updater.misc;
 import android.content.Context;
 import android.content.res.Resources;
 
-import io.tenseventyseven.fresh.R;
+import org.lineageos.updater.R;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -36,13 +36,6 @@ public final class StringGenerator {
         return f.format(date);
     }
 
-    public static String getTimeLocalizedUTC(Context context, long unixTimestamp) {
-        DateFormat f = DateFormat.getTimeInstance(DateFormat.SHORT, getCurrentLocale(context));
-        f.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date date = new Date(unixTimestamp * 1000);
-        return f.format(date);
-    }
-
     public static String getDateLocalized(Context context, int dateFormat, long unixTimestamp) {
         DateFormat f = DateFormat.getDateInstance(dateFormat, getCurrentLocale(context));
         Date date = new Date(unixTimestamp * 1000);
@@ -54,17 +47,6 @@ public final class StringGenerator {
         f.setTimeZone(TimeZone.getTimeZone("UTC"));
         Date date = new Date(unixTimestamp * 1000);
         return f.format(date);
-    }
-
-    public static String getDateTimeLocalized(Context context, long unixTimestamp) {
-        DateFormat f = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT,
-                getCurrentLocale(context));
-        Date date = new Date(unixTimestamp * 1000);
-        return f.format(date);
-    }
-
-    public static String bytesToMegabytes(Context context, long bytes) {
-        return String.format(getCurrentLocale(context), "%.0f", bytes / 1024.f / 1024.f);
     }
 
     public static String formatETA(Context context, long millis) {

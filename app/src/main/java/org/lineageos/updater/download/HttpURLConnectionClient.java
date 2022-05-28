@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,10 +51,6 @@ public class HttpURLConnectionClient implements DownloadClient {
             return mClient.getHeaderField(name);
         }
 
-        @Override
-        public Map<String, List<String>> getAll() {
-            return mClient.getHeaderFields();
-        }
     }
 
     HttpURLConnectionClient(String url, File destination,
@@ -144,8 +140,20 @@ public class HttpURLConnectionClient implements DownloadClient {
             mResume = resume;
         }
 
-        private void calculateSpeed() {
+        private void calculateSpeed(boolean justResumed) {
             final long millis = SystemClock.elapsedRealtime();
+            if (justResumed) {
+                // If we don't start over with these after resumption, we get huge numbers for
+                // ETA since the delta will grow, resulting in a very low speed
+                mLastMillis = millis;
+                mSpeed = -1; // we don't want the moving avg with values from who knows when
+
+                // need to do this as well, otherwise the second time we call calculateSpeed(),
+                // the difference (mTotalBytesRead - mCurSampleBytes) will be larger than expected,
+                // resulting in a higher speed calculation
+                mCurSampleBytes = mTotalBytesRead;
+                return;
+            }
             final long delta = millis - mLastMillis;
             if (delta > 500) {
                 final long curSpeed = ((mTotalBytesRead - mCurSampleBytes) * 1000) / delta;
@@ -179,8 +187,8 @@ public class HttpURLConnectionClient implements DownloadClient {
             String protocol = mClient.getURL().getProtocol();
 
             class DuplicateLink {
-                private String mUrl;
-                private int mPriority;
+                private final String mUrl;
+                private final int mPriority;
                 private DuplicateLink(String url, int priority) {
                     mUrl = url;
                     mPriority = priority;
@@ -233,9 +241,11 @@ public class HttpURLConnectionClient implements DownloadClient {
                 } catch (IOException e) {
                     if (duplicates != null && !duplicates.isEmpty()) {
                         DuplicateLink link = duplicates.poll();
-                        duplicates.remove(link);
-                        newUrl = link.mUrl;
-                        Log.e(TAG, "Using duplicate link " + link.mUrl, e);
+                        if (link != null) {
+                            duplicates.remove(link);
+                            newUrl = link.mUrl;
+                            Log.e(TAG, "Using duplicate link " + link.mUrl, e);
+                        }
                     } else {
                         throw e;
                     }
@@ -245,6 +255,7 @@ public class HttpURLConnectionClient implements DownloadClient {
 
         @Override
         public void run() {
+            boolean justResumed = false;
             try {
                 mClient.setInstanceFollowRedirects(!mUseDuplicateLinks);
                 mClient.connect();
@@ -255,9 +266,10 @@ public class HttpURLConnectionClient implements DownloadClient {
                     responseCode = mClient.getResponseCode();
                 }
 
-                mCallback.onResponse(responseCode, mClient.getURL().toString(), new Headers());
+                mCallback.onResponse(new Headers());
 
                 if (mResume && isPartialContentCode(responseCode)) {
+                    justResumed = true;
                     mTotalBytesRead = mDestination.length();
                     Log.d(TAG, "The server fulfilled the partial content request");
                 } else if (mResume || !isSuccessCode(responseCode)) {
@@ -276,15 +288,15 @@ public class HttpURLConnectionClient implements DownloadClient {
                     while (!isInterrupted() && (count = inputStream.read(b)) > 0) {
                         outputStream.write(b, 0, count);
                         mTotalBytesRead += count;
-                        calculateSpeed();
+                        calculateSpeed(justResumed);
                         calculateEta();
+                        justResumed = false; // otherwise we will never get speed and ETA again
                         if (mProgressListener != null) {
-                            mProgressListener.update(mTotalBytesRead, mTotalBytes, mSpeed, mEta,
-                                    false);
+                            mProgressListener.update(mTotalBytesRead, mTotalBytes, mSpeed, mEta);
                         }
                     }
                     if (mProgressListener != null) {
-                        mProgressListener.update(mTotalBytesRead, mTotalBytes, mSpeed, mEta, true);
+                        mProgressListener.update(mTotalBytesRead, mTotalBytes, mSpeed, mEta);
                     }
 
                     outputStream.flush();
@@ -292,7 +304,7 @@ public class HttpURLConnectionClient implements DownloadClient {
                     if (isInterrupted()) {
                         mCallback.onFailure(true);
                     } else {
-                        mCallback.onSuccess(mDestination);
+                        mCallback.onSuccess();
                     }
                 }
             } catch (IOException e) {

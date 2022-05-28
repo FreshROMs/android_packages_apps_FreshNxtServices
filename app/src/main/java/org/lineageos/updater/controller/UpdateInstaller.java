@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,10 @@ import org.lineageos.updater.model.UpdateStatus;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.Files;
+import java.util.HashSet;
+import java.util.Set;
 
 class UpdateInstaller {
 
@@ -113,7 +117,7 @@ class UpdateInstaller {
         Runnable copyUpdateRunnable = new Runnable() {
             private long mLastUpdate = -1;
 
-            FileUtils.ProgressCallBack mProgressCallBack = new FileUtils.ProgressCallBack() {
+            final FileUtils.ProgressCallBack mProgressCallBack = new FileUtils.ProgressCallBack() {
                 @Override
                 public void update(int progress) {
                     long now = SystemClock.elapsedRealtime();
@@ -131,18 +135,29 @@ class UpdateInstaller {
                 try {
                     mCanCancel = true;
                     FileUtils.copyFile(update.getFile(), uncryptFile, mProgressCallBack);
+                    try {
+                        Set<PosixFilePermission> perms = new HashSet<>();
+                        perms.add(PosixFilePermission.OWNER_READ);
+                        perms.add(PosixFilePermission.OWNER_WRITE);
+                        perms.add(PosixFilePermission.OTHERS_READ);
+                        perms.add(PosixFilePermission.GROUP_READ);
+                        Files.setPosixFilePermissions(uncryptFile.toPath(), perms);
+                    } catch (IOException exception) {}
+
                     mCanCancel = false;
                     if (mPrepareUpdateThread.isInterrupted()) {
                         mUpdaterController.getActualUpdate(update.getDownloadId())
                                 .setStatus(UpdateStatus.INSTALLATION_CANCELLED);
                         mUpdaterController.getActualUpdate(update.getDownloadId())
                                 .setInstallProgress(0);
+                        //noinspection ResultOfMethodCallIgnored
                         uncryptFile.delete();
                     } else {
                         installPackage(uncryptFile, update.getDownloadId());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Could not copy update", e);
+                    //noinspection ResultOfMethodCallIgnored
                     uncryptFile.delete();
                     mUpdaterController.getActualUpdate(update.getDownloadId())
                             .setStatus(UpdateStatus.INSTALLATION_FAILED);

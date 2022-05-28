@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
-import io.tenseventyseven.fresh.R;
+import org.lineageos.updater.R;
 import org.lineageos.updater.UpdaterReceiver;
 import org.lineageos.updater.UpdatesActivity;
 import org.lineageos.updater.misc.BuildInfoUtils;
@@ -85,7 +85,7 @@ public class UpdaterService extends Service {
 
         mUpdaterController = UpdaterController.getInstance(this);
 
-        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mNotificationManager = getSystemService(NotificationManager.class);
         NotificationChannel notificationChannel = new NotificationChannel(
                 ONGOING_NOTIFICATION_CHANNEL,
                 getString(R.string.ongoing_channel_title),
@@ -123,8 +123,7 @@ public class UpdaterService extends Service {
                     handleInstallProgress(update);
                 } else if (UpdaterController.ACTION_UPDATE_REMOVED.equals(intent.getAction())) {
                     Bundle extras = mNotificationBuilder.getExtras();
-                    if (extras != null && downloadId.equals(
-                            extras.getString(UpdaterController.EXTRA_DOWNLOAD_ID))) {
+                    if (downloadId.equals(extras.getString(UpdaterController.EXTRA_DOWNLOAD_ID))) {
                         mNotificationBuilder.setExtras(null);
                         UpdateInfo update = mUpdaterController.getUpdate(downloadId);
                         if (update.getStatus() != UpdateStatus.INSTALLED) {
@@ -492,7 +491,7 @@ public class UpdaterService extends Service {
         String buildDate = StringGenerator.getDateLocalizedUTC(this,
                 DateFormat.MEDIUM, update.getTimestamp());
         String buildInfo = getString(R.string.list_build_version_date,
-                BuildInfoUtils.getBuildVersion(), buildDate);
+                update.getVersion(), buildDate);
         mNotificationStyle.setBigContentTitle(buildInfo);
         mNotificationBuilder.setContentTitle(buildInfo);
     }
