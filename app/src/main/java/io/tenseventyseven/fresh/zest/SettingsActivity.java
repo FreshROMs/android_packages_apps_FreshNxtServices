@@ -250,6 +250,15 @@ public class SettingsActivity extends AppCompatActivity {
 
             // Performance mode
             findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));
+
+            // Disable these settings if app is opened in Samsung DeX
+            if (ExperienceUtils.isDesktopMode(mContext)) {
+                findPreference("fs_video_brightness").setEnabled(false);
+                findPreference("sb_icon_style_data").setEnabled(false);
+                findPreference("sb_icon_style_wifi").setEnabled(false);
+                findPreference("sb_icon_style_volte").setEnabled(false);
+                findPreference("fs_device_resolution").setEnabled(false);
+            }
         }
 
         @Override
