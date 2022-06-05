@@ -25,6 +25,15 @@
         android:entryValues="@array/volte_signal_icon_packages"
         app:useSimpleSummaryProvider="true" />
 
+    <Preference
+        android:key="fs_fp_style"
+        android:title="@string/zest_fp_style_title">
+        <intent
+            android:targetClass="io.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity"
+            android:targetPackage="io.tenseventyseven.fresh" />
+    </Preference>
+
+
     <PreferenceCategory android:key="fs_plus_options">
         <Preference
             android:key="fs_plus_performance_mode"

@@ -189,4 +189,9 @@ Enabling extra dim may break some apps, resulting in a black screen. This is an 
 
     <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
     <string name="zest_performance_kit_version">"Fresh Performance Kit %s"</string>
+
+    <string name="zest_fp_style_title">Fingerprint Style</string>
+    <string name="zest_apply_fp_anim_failed">Failed to apply</string>
+    <string name="zest_fp_anim_cancel">Cancel</string>
+    <string name="zest_fp_anim_apply">Apply</string>
 </resources>

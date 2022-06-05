@@ -43,6 +43,8 @@ android {
 apply from: '../../poeditor.gradle'
 
 dependencies {
+    compileOnly files('libs/framework.jar')
+
     implementation 'androidx.appcompat:appcompat:1.4.1'
 
     implementation 'androidx.preference:preference:1.2.0'

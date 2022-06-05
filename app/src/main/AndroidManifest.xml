@@ -64,6 +64,11 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.samsung.systemui.permission.KEYGUARD_IMAGE" />
+    <uses-permission android:name="com.android.homescreen.home.permission.preview_image" />
+    <uses-permission android:name="android.permission.MANAGE_BIOMETRIC"
+        tools:ignore="ProtectedPermissions" />
 
     <!-- Feature requirements for the app -->
     <uses-feature
@@ -130,6 +135,7 @@
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />
@@ -172,6 +178,12 @@
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_performance_mode_title" />
+        <activity
+            android:name=".zest.sub.FingerprintStyleActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
+            android:label="@string/zest_fp_style_title"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".services.RestartTileService"
