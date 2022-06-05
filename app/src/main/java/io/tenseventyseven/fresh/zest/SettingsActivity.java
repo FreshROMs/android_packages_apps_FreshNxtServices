@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.provider.DeviceConfig;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
@@ -28,6 +29,7 @@ import de.dlyt.yanndroid.oneui.preference.DropDownPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import de.dlyt.yanndroid.oneui.preference.SwitchPreference;
 import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
 import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
 import io.tenseventyseven.fresh.PerformanceUtils;
@@ -234,6 +236,10 @@ public class SettingsActivity extends AppCompatActivity {
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
                     return true;
+                case "fs_plus_location_indicator":
+                    DeviceConfig.setProperty(DeviceConfig.NAMESPACE_PRIVACY,
+                            "location_indicators_enabled", Boolean.toString((boolean) newValue), true);
+                    return true;
             }
             return false;
         }
@@ -250,6 +256,11 @@ public class SettingsActivity extends AppCompatActivity {
 
             // Performance mode
             findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));
+
+            // Location indicator
+            ((SwitchPreference) findPreference("fs_plus_location_indicator")).setChecked(DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
+                    "location_indicators_enabled", false));
+            findPreference("fs_plus_location_indicator").setOnPreferenceChangeListener(this);
 
             // Disable these settings if app is opened in Samsung DeX
             if (ExperienceUtils.isDesktopMode(mContext)) {
