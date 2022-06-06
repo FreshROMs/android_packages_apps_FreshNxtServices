@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array translatable="false" name="udfps_animation_identifiers">
+        <item>default</item>
+        <item>water</item>
+        <item>alpenglow</item>
+        <item>aurora</item>
+        <item>bloom</item>
+        <item>cyberpunk</item>
+        <item>dna</item>
+        <item>electronic</item>
+        <item>energy</item>
+        <item>futuristic</item>
+        <item>halo_ring</item>
+        <item>magic</item>
+        <item>mclaren</item>
+        <item>molecular</item>
+        <item>pop</item>
+        <item>pulsar</item>
+        <item>pulse</item>
+        <item>rhythm</item>
+        <item>ripple</item>
+        <item>star</item>
+        <item>stripe</item>
+        <item>supernova</item>
+        <item>wave</item>
+    </string-array>
+
+    <string-array translatable="false" name="udfps_animation_titles">
+        <item>Default</item>
+        <item>Water</item>
+        <item>Alpenglow</item>
+        <item>Aurora</item>
+        <item>Bloom</item>
+        <item>Cyberpunk</item>
+        <item>DNA</item>
+        <item>Electronic</item>
+        <item>Energy</item>
+        <item>Futuristic</item>
+        <item>Halo Ring</item>
+        <item>Magic</item>
+        <item>McLaren</item>
+        <item>Molecular</item>
+        <item>Pop</item>
+        <item>Pulsar</item>
+        <item>Pulse</item>
+        <item>Rhythm</item>
+        <item>Ripple</item>
+        <item>Star</item>
+        <item>Stripe</item>
+        <item>Supernova</item>
+        <item>Wave</item>
+    </string-array>
+</resources>

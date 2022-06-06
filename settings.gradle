@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Fresh Services"
 include ':app'
+include ':udfps_res'
