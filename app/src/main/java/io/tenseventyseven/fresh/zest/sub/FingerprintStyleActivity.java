@@ -18,7 +18,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
-import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,6 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,26 +34,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.airbnb.lottie.LottieAnimationView;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.widget.RoundFrameLayout;
-import de.dlyt.yanndroid.oneui.widget.Switch;
 import io.tenseventyseven.fresh.R;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
 
     private static final int sensorPositionY = 2065;
-    private static final String animDirPath = "/sdcard/Animations";
 
     /**
      * add to /etc/permissions :
@@ -90,7 +82,6 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     String[] mFodAnimationIds;
     String[] mFodAnimationNames;
     private final String mFodAnimationPackage = "io.tenseventyseven.fresh.udfps.res";
-    private File mAnimationFile;
     private final String mAnimationFileName = "user_fingerprint_touch_effect.json";
 
     Context mContext;
@@ -104,7 +95,6 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         mContext = this;
 
         getAnimations();
-        mAnimationFile = new File(getFilesDir(), mAnimationFileName);
 
         selectedPosition = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
 
@@ -179,7 +169,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
         File file = new File(getAnimDir() + mAnimationFileName);
         try (OutputStream output = new FileOutputStream(file)) {
-            byte[] buffer = new byte[4 * 1024]; // or other buffer size
+            byte[] buffer = new byte[4096];
             int read;
 
             while ((read = input.read(buffer)) != -1) {
@@ -210,7 +200,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         }
 
         mFodAnimationIds = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_identifiers",
-                        "array", mFodAnimationPackage));
+                "array", mFodAnimationPackage));
         mFodAnimationNames = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_titles",
                 "array", mFodAnimationPackage));
     }
@@ -221,8 +211,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             PackageManager pm = context.getPackageManager();
             Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
             return res.getDrawable(res.getIdentifier("zest_fod_animation_" + fodIdentifier, "drawable", mFodAnimationPackage));
-        }
-        catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         return null;
@@ -234,8 +223,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             PackageManager pm = context.getPackageManager();
             Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
             return res.openRawResource(res.getIdentifier("zest_fod_animation_" + fodIdentifier, "raw", mFodAnimationPackage));
-        }
-        catch (PackageManager.NameNotFoundException e) {
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         return null;
