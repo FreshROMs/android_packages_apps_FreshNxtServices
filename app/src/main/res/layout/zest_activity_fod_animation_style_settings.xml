@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <de.dlyt.yanndroid.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/zest_fingerprint_style_toolbar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:expandable="false"
-    app:navigationIcon="@drawable/ic_oui_back"
-    app:title="@string/zest_fp_style_title">
+    app:expandable="false">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,9 +15,9 @@
         app:layout_location="main_content">
 
         <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
-            android:id="@+id/preview_frame"
+            android:id="@+id/zest_fod_animation_style_preview_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:animateLayoutChanges="true">
 
@@ -27,47 +26,50 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/preview_lock_background"
+                    android:id="@+id/zest_fod_animation_style_preview_bg_lockscreen"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop" />
 
                 <ImageView
-                    android:id="@+id/preview_lock_foreground"
+                    android:id="@+id/zest_fod_animation_style_preview_fg_lockscreen"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
             </FrameLayout>
 
             <ImageView
-                android:id="@+id/preview_fp_icon"
+                android:id="@+id/zest_fod_animation_style_preview_fod_icon"
                 android:layout_width="100px"
                 android:layout_height="100px"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_oui4_biometric_fingerprint"
-                app:tint="@color/white" />
+                app:tint="@color/white"
+                tools:ignore="ContentDescription,PxUsage" />
 
             <FrameLayout
-                android:id="@+id/preview_homescreen"
+                android:id="@+id/zest_fod_animation_style_preview_bg_homescreen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone">
 
                 <ImageView
-                    android:id="@+id/preview_home_background"
+                    android:id="@+id/zest_fod_animation_style_preview_bg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
 
                 <ImageView
-                    android:id="@+id/preview_home_foreground"
+                    android:id="@+id/zest_fod_animation_style_preview_fg"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    tools:ignore="ContentDescription" />
 
             </FrameLayout>
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/preview_animation"
+                android:id="@+id/zest_fod_animation_style_preview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal" />
@@ -81,7 +83,7 @@
             android:background="@color/item_background_color">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/preview_listView"
+                android:id="@+id/zest_fod_animation_style_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -101,21 +103,21 @@
 
         <Button
             android:id="@+id/cancel_button"
-            style="?attr/buttonBarNegativeButtonStyle"
+            style="@style/OneUI4.DialogButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:onClick="onTapCancel"
-            android:text="@string/zest_fp_anim_cancel" />
+            android:text="@string/zest_plus_fod_animation_style_cancel" />
 
         <Button
             android:id="@+id/done_button"
-            style="?attr/buttonBarNegativeButtonStyle"
+            style="@style/OneUI4.DialogButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:onClick="onTapDone"
-            android:text="@string/zest_fp_anim_apply" />
+            android:text="@string/zest_plus_fod_animation_style_apply" />
 
     </LinearLayout>
 

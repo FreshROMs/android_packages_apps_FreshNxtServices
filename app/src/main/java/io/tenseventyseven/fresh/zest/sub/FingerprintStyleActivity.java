@@ -3,22 +3,23 @@ package io.tenseventyseven.fresh.zest.sub;
 import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.app.WallpaperManager;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.ImageDecoder;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
-import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
-import android.os.RemoteException;
+import android.provider.DeviceConfig;
+import android.provider.Settings;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -33,19 +34,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.airbnb.lottie.LottieAnimationView;
-import com.samsung.android.biometrics.ISemBiometricSysUiService;
 
 import java.io.File;
-import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.widget.RoundFrameLayout;
+import de.dlyt.yanndroid.oneui.widget.Switch;
 import io.tenseventyseven.fresh.R;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
@@ -64,42 +68,50 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
     @BindView(R.id.zest_fingerprint_style_toolbar)
     ToolbarLayout toolbar;
-    @BindView(R.id.preview_frame)
+    @BindView(R.id.zest_fod_animation_style_preview_frame)
     RoundFrameLayout preview_frame;
-    @BindView(R.id.preview_homescreen)
+    @BindView(R.id.zest_fod_animation_style_preview_bg_homescreen)
     FrameLayout preview_homescreen;
-    @BindView(R.id.preview_lock_background)
+    @BindView(R.id.zest_fod_animation_style_preview_bg_lockscreen)
     ImageView preview_lock_background;
-    @BindView(R.id.preview_lock_foreground)
+    @BindView(R.id.zest_fod_animation_style_preview_fg_lockscreen)
     ImageView preview_lock_foreground;
-    @BindView(R.id.preview_home_background)
+    @BindView(R.id.zest_fod_animation_style_preview_bg)
     ImageView preview_home_background;
-    @BindView(R.id.preview_home_foreground)
+    @BindView(R.id.zest_fod_animation_style_preview_fg)
     ImageView preview_home_foreground;
-    @BindView(R.id.preview_animation)
+    @BindView(R.id.zest_fod_animation_style_preview)
     LottieAnimationView preview_animation;
-    @BindView(R.id.preview_fp_icon)
+    @BindView(R.id.zest_fod_animation_style_preview_fod_icon)
     ImageView preview_fp_icon;
-    @BindView(R.id.preview_listView)
+    @BindView(R.id.zest_fod_animation_style_listview)
     RecyclerView preview_listView;
 
-    private File[] animFiles;
+    String[] mFodAnimationIds;
+    String[] mFodAnimationNames;
+    private final String mFodAnimationPackage = "io.tenseventyseven.fresh.udfps.res";
+    private File mAnimationFile;
+    private final String mAnimationFileName = "user_fingerprint_touch_effect.json";
+
+    Context mContext;
     private int selectedPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.zest_activity_fingerprint_style_settings);
+        setContentView(R.layout.zest_activity_fod_animation_style_settings);
         ButterKnife.bind(this);
+        mContext = this;
 
-        animFiles = new File(animDirPath).listFiles((file, s) -> s.endsWith(".json"));
-        if (animFiles == null) animFiles = new File[0];
+        getAnimations();
+        mAnimationFile = new File(getFilesDir(), mAnimationFileName);
 
-        selectedPosition = 0; //todo: get current
+        selectedPosition = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
 
         toolbar.setExpanded(false, false);
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
-        toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
+        toolbar.setNavigationButtonVisible(false);
+        toolbar.setTitle("");
+        toolbar.setBackgroundResource(R.drawable.sesl4_action_bar_background);
         setSupportActionBar(toolbar.getToolbar());
 
         Point size = new Point();
@@ -114,9 +126,9 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         });
 
         preview_lock_background.setImageBitmap(getWallpaper(false));
-        preview_lock_foreground.setImageBitmap(getLockScreenPreview(true));
+        preview_lock_foreground.setImageBitmap(getLockScreenPreview());
         preview_home_background.setImageBitmap(getWallpaper(true));
-        preview_home_foreground.setImageBitmap(getHomeScreenPreview(true));
+        preview_home_foreground.setImageBitmap(getHomeScreenPreview());
 
         Handler handler = new Handler();
         preview_animation.addAnimatorListener(new AnimatorListenerAdapter() {
@@ -133,8 +145,8 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 preview_animation.setAlpha(0F);
-                handler.postDelayed(() -> preview_homescreen.setVisibility(View.GONE), 600);
-                handler.postDelayed(() -> preview_animation.playAnimation(), 1200);
+                handler.postDelayed(() -> preview_homescreen.setVisibility(View.GONE), 1000);
+                handler.postDelayed(() -> preview_animation.playAnimation(), 2000);
             }
         });
 
@@ -144,14 +156,11 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
         preview_listView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         preview_listView.setAdapter(new PreviewAdapter());
+        preview_listView.scrollToPosition(selectedPosition);
 
-        if (animFiles.length > selectedPosition) {
-            try {
-                preview_animation.setAnimation(new FileInputStream(animFiles[selectedPosition]), null);
-                preview_animation.playAnimation();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+        if (mFodAnimationIds.length > selectedPosition) {
+            preview_animation.setAnimation(getLottieJson(mContext, mFodAnimationIds[selectedPosition]), null);
+            preview_animation.playAnimation();
         }
     }
 
@@ -159,54 +168,77 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         onBackPressed();
     }
 
-    public void onTapDone(View v) { //todo: apply fingerprint animation and save current position
-        if (animFiles.length <= selectedPosition) {
-            Toast.makeText(this, R.string.zest_apply_fp_anim_failed, Toast.LENGTH_SHORT).show();
-            return;
-        }
+    public void onTapDone(View v) {
+        Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", selectedPosition);
+        Settings.System.putString(getContentResolver(), "zest_fod_animation_name", mFodAnimationNames[selectedPosition]);
+        InputStream input = getLottieJson(mContext, mFodAnimationIds[selectedPosition]);
 
-        if (checkSelfPermission("android.permission.MANAGE_BIOMETRIC") == PackageManager.PERMISSION_GRANTED) {
-            //doesn't work cuz 'android.permission.MANAGE_BIOMETRIC' not granted
-            Intent intent = new Intent();
-            intent.setComponent(new ComponentName("com.samsung.android.biometrics.app.setting", "com.samsung.android.biometrics.app.setting.BiometricsUIService"));
-            bindService(intent, new ServiceConnection() {
-                @Override
-                public void onServiceConnected(ComponentName name, IBinder service) {
-                    try {
-                        FileDescriptor fd = new FileInputStream(animFiles[selectedPosition]).getFD();
-                        ((ISemBiometricSysUiService) service).setBiometricTheme(10000, "animation", null, fd);
-                    } catch (RemoteException | IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+        File folder = new File(getAnimDir());
+        if (!folder.exists())
+            folder.mkdir();
 
-                @Override
-                public void onServiceDisconnected(ComponentName name) {
-                }
-            }, Context.BIND_AUTO_CREATE);
-        } else {
-            //use symlink to /sdcard/Animations/current/user_fingerprint_touch_effect.json
+        File file = new File(getAnimDir() + mAnimationFileName);
+        try (OutputStream output = new FileOutputStream(file)) {
+            byte[] buffer = new byte[4 * 1024]; // or other buffer size
+            int read;
 
-            try {
-                File outputFile = new File("/sdcard/Animations/current/user_fingerprint_touch_effect.json");
-                outputFile.getParentFile().mkdirs();
-                FileInputStream inputStream = new FileInputStream(animFiles[selectedPosition]);
-                FileOutputStream outputStream = new FileOutputStream(outputFile);
-                byte[] buffer = new byte[1024];
-                int read;
-                while ((read = inputStream.read(buffer)) != -1) {
-                    outputStream.write(buffer, 0, read);
-                }
-                inputStream.close();
-                outputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                Toast.makeText(this, R.string.zest_apply_fp_anim_failed, Toast.LENGTH_SHORT).show();
-                return;
+            while ((read = input.read(buffer)) != -1) {
+                output.write(buffer, 0, read);
             }
+
+            output.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         onBackPressed();
+    }
+
+    public static String getAnimDir() {
+        return Environment.getExternalStorageDirectory().getPath() + "/.fresh/";
+    }
+
+    private void getAnimations() {
+        Resources fodRes;
+
+        try {
+            PackageManager pm = getApplicationContext().getPackageManager();
+            fodRes = pm.getResourcesForApplication(mFodAnimationPackage);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return;
+        }
+
+        mFodAnimationIds = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_identifiers",
+                        "array", mFodAnimationPackage));
+        mFodAnimationNames = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_titles",
+                "array", mFodAnimationPackage));
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    public Drawable getPreviewDrawable(Context context, String fodIdentifier) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
+            return res.getDrawable(res.getIdentifier("zest_fod_animation_" + fodIdentifier, "drawable", mFodAnimationPackage));
+        }
+        catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    public InputStream getLottieJson(Context context, String fodIdentifier) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
+            return res.openRawResource(res.getIdentifier("zest_fod_animation_" + fodIdentifier, "raw", mFodAnimationPackage));
+        }
+        catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private Bitmap getWallpaper(boolean homeScreen) {
@@ -218,12 +250,12 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         return BitmapFactory.decodeFileDescriptor(wallpaperFile.getFileDescriptor());
     }
 
-    private Bitmap getHomeScreenPreview(boolean portrait) {
+    private Bitmap getHomeScreenPreview() {
         if (checkSelfPermission("com.android.homescreen.home.permission.preview_image") != PackageManager.PERMISSION_GRANTED)
             return null;
 
         try {
-            String uri = "content://com.android.homescreen.home.WallpaperPreview/" + (portrait ? "portrait" : "landscape");
+            String uri = "content://com.android.homescreen.home.WallpaperPreview/portrait";
             return ImageDecoder.decodeBitmap(ImageDecoder.createSource(getContentResolver(), Uri.parse(uri)));
         } catch (IOException e) {
             e.printStackTrace();
@@ -231,12 +263,12 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         }
     }
 
-    private Bitmap getLockScreenPreview(boolean portrait) {
+    private Bitmap getLockScreenPreview() {
         if (checkSelfPermission("com.samsung.systemui.permission.KEYGUARD_IMAGE") != PackageManager.PERMISSION_GRANTED)
             return null;
 
         try {
-            String uri = "content://com.android.systemui.keyguard.image/" + (portrait ? "portrait" : "landscape") + "?white_theme=off";
+            String uri = "content://com.android.systemui.keyguard.image/portrait?white_theme=off";
             return ImageDecoder.decodeBitmap(ImageDecoder.createSource(getContentResolver(), Uri.parse(uri)));
         } catch (IOException e) {
             e.printStackTrace();
@@ -245,45 +277,36 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     }
 
     public class PreviewAdapter extends RecyclerView.Adapter<PreviewAdapter.ViewHolder> {
-
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(getLayoutInflater().inflate(R.layout.zest_fp_preview_list_item, parent, false));
+            return new ViewHolder(getLayoutInflater().inflate(R.layout.zest_fod_animation_list_item, parent, false));
         }
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            try {
-                holder.list_item_lottie.setAnimation(new FileInputStream(animFiles[position]), null);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            holder.list_item_lottie.setSelected(selectedPosition == position);
-            holder.list_item_lottie.setOnClickListener(v -> {
+            holder.list_item_image.setImageDrawable(getPreviewDrawable(mContext, mFodAnimationIds[position]));
+            holder.list_item_image.setSelected(selectedPosition == position);
+            holder.list_item_image.setOnClickListener(v -> {
                 notifyItemChanged(selectedPosition);
                 preview_animation.cancelAnimation();
-                try {
-                    preview_animation.setAnimation(new FileInputStream(animFiles[selectedPosition = holder.getAdapterPosition()]), null);
-                    preview_animation.playAnimation();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                preview_animation.setAnimation(getLottieJson(mContext, mFodAnimationIds[selectedPosition = holder.getAdapterPosition()]), null);
+                preview_animation.playAnimation();
                 notifyItemChanged(selectedPosition);
             });
         }
 
         @Override
         public int getItemCount() {
-            return animFiles.length;
+            return mFodAnimationIds.length;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            private LottieAnimationView list_item_lottie;
+            private ImageView list_item_image;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                list_item_lottie = itemView.findViewById(R.id.list_item_lottie);
+                list_item_image = itemView.findViewById(R.id.zest_fod_animation_list_image);
             }
         }
     }

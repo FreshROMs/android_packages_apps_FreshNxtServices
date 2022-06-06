@@ -13,4 +13,6 @@
     <string name="zest_renoir_notification_title" translatable="false">@string/zest_renoir_settings_title</string>
 
     <!-- Const strings held by another string -->
+    <string name="zest_plus_fod_animation_style_cancel" translatable="false">@string/sesl_picker_cancel</string>
+    <string name="zest_plus_fod_animation_style_apply" translatable="false">@string/sesl_picker_done</string>
 </resources>

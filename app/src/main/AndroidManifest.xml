@@ -182,7 +182,8 @@
             android:name=".zest.sub.FingerprintStyleActivity"
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
-            android:label="@string/zest_fp_style_title"
+            android:label="@string/zest_plus_fod_animation_style_title"
+            android:theme="@style/OneUI3Theme"
             android:screenOrientation="portrait" />
 
         <service

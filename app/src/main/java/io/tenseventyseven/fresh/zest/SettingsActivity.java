@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.provider.DeviceConfig;
+import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
@@ -132,6 +133,7 @@ public class SettingsActivity extends AppCompatActivity {
             Preference mPerformancePreference = findPreference("fs_plus_performance_mode");
             Preference mDeviceResolution = findPreference("fs_device_resolution");
             Preference mVideoBrightness = findPreference("fs_video_brightness");
+            Preference mFingerprintAnimation = findPreference("fs_plus_fod_animation_style");
 
             // Get activated color from attr, so it changes based on the app's theme
             TypedValue typedValue = new TypedValue();
@@ -145,6 +147,7 @@ public class SettingsActivity extends AppCompatActivity {
             mPerformancePreference.seslSetSummaryColor(summaryColor);
             mDeviceResolution.seslSetSummaryColor(summaryColor);
             mVideoBrightness.seslSetSummaryColor(summaryColor);
+            mFingerprintAnimation.seslSetSummaryColor(summaryColor);
 
             String setResolution = ScreenResolutionActivity.getResolution(mContext);
             String romVersion = ExperienceUtils.getRomVersion();
@@ -253,6 +256,13 @@ public class SettingsActivity extends AppCompatActivity {
             findPreference("fs_video_brightness").setSummary(VideoBrightnessActivity.getVideoBrightnessState(mContext) ?
                     mContext.getString(R.string.zest_video_brightness_setting_bright) :
                     mContext.getString(R.string.zest_video_brightness_setting_normal));
+
+            // Fingerprint animation
+            String fodAnimationName = Settings.System.getString(mContext.getContentResolver(), "zest_fod_animation_name");
+            if (fodAnimationName == null || fodAnimationName.isEmpty())
+                fodAnimationName = getString(R.string.zest_wlan_connection_icon_default);
+
+            findPreference("fs_plus_fod_animation_style").setSummary(fodAnimationName);
 
             // Performance mode
             findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));
