@@ -25,30 +25,3 @@
         <item>supernova</item>
         <item>wave</item>
     </string-array>
-
-    <string-array translatable="false" name="udfps_animation_titles">
-        <item>Default</item>
-        <item>Water</item>
-        <item>Alpenglow</item>
-        <item>Aurora</item>
-        <item>Bloom</item>
-        <item>Cyberpunk</item>
-        <item>DNA</item>
-        <item>Electronic</item>
-        <item>Energy</item>
-        <item>Futuristic</item>
-        <item>Halo Ring</item>
-        <item>Magic</item>
-        <item>McLaren</item>
-        <item>Molecular</item>
-        <item>Pop</item>
-        <item>Pulsar</item>
-        <item>Pulse</item>
-        <item>Rhythm</item>
-        <item>Ripple</item>
-        <item>Star</item>
-        <item>Stripe</item>
-        <item>Supernova</item>
-        <item>Wave</item>
-    </string-array>
-</resources>
