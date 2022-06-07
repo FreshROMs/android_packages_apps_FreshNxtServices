@@ -48,6 +48,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.github.rubensousa:gravitysnaphelper:2.2.2'
 
     // One UI Design Library
     implementation 'io.github.yanndroid:oneui:2.4.0'

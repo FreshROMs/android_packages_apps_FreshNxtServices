@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
 import android.provider.Settings;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -29,9 +30,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -149,8 +153,12 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         int bgLength = (int) (size.x * (double) (lockBG.getHeight() / size.y));
         Bitmap listItemBG = Bitmap.createBitmap(lockBG, (lockBG.getWidth() - bgLength) / 2, lockBG.getHeight() - bgLength, bgLength, bgLength);*/
 
-        mPickerRecylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         mPickerRecylerView.setAdapter(new PreviewAdapter());
+        mPickerRecylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        SnapHelper snapHelper = new GravitySnapHelper(Gravity.START);
+        snapHelper.attachToRecyclerView(mPickerRecylerView);
+
         mPickerRecylerView.scrollToPosition(mSelectedAnim);
 
         if (mFodAnimationIdentifiers.length > mSelectedAnim) {
