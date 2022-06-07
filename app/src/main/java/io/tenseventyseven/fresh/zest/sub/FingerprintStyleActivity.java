@@ -85,8 +85,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     @BindView(R.id.zest_fod_animation_style_listview)
     RecyclerView mPickerRecylerView;
 
-    String[] mFodAnimationIds;
-    String[] mFodAnimationNames;
+    String[] mFodAnimationIdentifiers;
     private final static String mFodAnimationPackage = "io.tenseventyseven.fresh.udfps.res";
 
     Context mContext;
@@ -99,7 +98,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mContext = this;
 
-        if (!getAnimations() && mFodAnimationIds.length > mFodAnimationNames.length)
+        if (!getAnimations())
             finish();
 
         mSelectedAnim = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
@@ -154,8 +153,8 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         mPickerRecylerView.setAdapter(new PreviewAdapter());
         mPickerRecylerView.scrollToPosition(mSelectedAnim);
 
-        if (mFodAnimationIds.length > mSelectedAnim) {
-            mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIds[mSelectedAnim]), null);
+        if (mFodAnimationIdentifiers.length > mSelectedAnim) {
+            mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIdentifiers[mSelectedAnim]), null);
             mPreviewLottieAnim.playAnimation();
         }
     }
@@ -169,7 +168,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         String oldString = Settings.System.getString(getContentResolver(), "zest_fod_animation_id");
 
         Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", mSelectedAnim);
-        Settings.System.putString(getContentResolver(), "zest_fod_animation_id", mFodAnimationIds[mSelectedAnim]);
+        Settings.System.putString(getContentResolver(), "zest_fod_animation_id", mFodAnimationIdentifiers[mSelectedAnim]);
 
         new Thread(() -> {
             File folder = ExperienceUtils.getFreshDir();
@@ -179,7 +178,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
             File file = new File(folder, "user_fingerprint_touch_effect.tmp");
             File animJson = new File(folder, "user_fingerprint_touch_effect.json");
-            InputStream input = getLottieJson(mContext, mFodAnimationIds[mSelectedAnim]);
+            InputStream input = getLottieJson(mContext, mFodAnimationIdentifiers[mSelectedAnim]);
 
             try (OutputStream output = new FileOutputStream(file)) {
                 byte[] buffer = new byte[4096];
@@ -222,9 +221,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             return false;
         }
 
-        mFodAnimationIds = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_identifiers",
-                "array", mFodAnimationPackage));
-        mFodAnimationNames = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_titles",
+        mFodAnimationIdentifiers = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_identifiers",
                 "array", mFodAnimationPackage));
 
         return true;
@@ -298,12 +295,12 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            holder.itemImgView.setImageDrawable(getPreviewDrawable(mContext, mFodAnimationIds[position]));
+            holder.itemImgView.setImageDrawable(getPreviewDrawable(mContext, mFodAnimationIdentifiers[position]));
             holder.itemImgView.setSelected(mSelectedAnim == position);
             holder.itemImgView.setOnClickListener(v -> {
                 notifyItemChanged(mSelectedAnim);
                 mPreviewLottieAnim.cancelAnimation();
-                mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIds[mSelectedAnim = holder.getAdapterPosition()]), null);
+                mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIdentifiers[mSelectedAnim = holder.getAdapterPosition()]), null);
                 mPreviewLottieAnim.playAnimation();
                 notifyItemChanged(mSelectedAnim);
             });
@@ -311,7 +308,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return mFodAnimationIds.length;
+            return mFodAnimationIdentifiers.length;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
