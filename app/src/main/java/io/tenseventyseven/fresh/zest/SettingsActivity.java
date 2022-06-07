@@ -40,6 +40,7 @@ import io.tenseventyseven.fresh.services.OverlayService;
 import io.tenseventyseven.fresh.utils.Preferences;
 import io.tenseventyseven.fresh.utils.Tools;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
+import io.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity;
 import io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
 import io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity;
 
@@ -258,11 +259,11 @@ public class SettingsActivity extends AppCompatActivity {
                     mContext.getString(R.string.zest_video_brightness_setting_normal));
 
             // Fingerprint animation
-            String fodAnimationName = Settings.System.getString(mContext.getContentResolver(), "zest_fod_animation_name");
-            if (fodAnimationName == null || fodAnimationName.isEmpty())
-                fodAnimationName = getString(R.string.zest_wlan_connection_icon_default);
+            String fodAnimationId = Settings.System.getString(mContext.getContentResolver(), "zest_fod_animation_id");
+            if (fodAnimationId == null || fodAnimationId.isEmpty())
+                fodAnimationId = "default";
 
-            findPreference("fs_plus_fod_animation_style").setSummary(fodAnimationName);
+            findPreference("fs_plus_fod_animation_style").setSummary(FingerprintStyleActivity.getAnimString(mContext, fodAnimationId));
 
             // Performance mode
             findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));

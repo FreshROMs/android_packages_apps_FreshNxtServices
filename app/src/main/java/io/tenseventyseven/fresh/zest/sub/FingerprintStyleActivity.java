@@ -87,7 +87,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
     String[] mFodAnimationIds;
     String[] mFodAnimationNames;
-    private final String mFodAnimationPackage = "io.tenseventyseven.fresh.udfps.res";
+    private final static String mFodAnimationPackage = "io.tenseventyseven.fresh.udfps.res";
 
     Context mContext;
     private int mSelectedAnim;
@@ -166,10 +166,10 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
     public void onTapDone(View v) {
         int oldInt = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
-        String oldString = Settings.System.getString(getContentResolver(), "zest_fod_animation_name");
+        String oldString = Settings.System.getString(getContentResolver(), "zest_fod_animation_id");
 
         Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", mSelectedAnim);
-        Settings.System.putString(getContentResolver(), "zest_fod_animation_name", mFodAnimationNames[mSelectedAnim]);
+        Settings.System.putString(getContentResolver(), "zest_fod_animation_id", mFodAnimationIds[mSelectedAnim]);
 
         new Thread(() -> {
             File folder = ExperienceUtils.getFreshDir();
@@ -198,7 +198,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             if (!file.exists()) {
                 Toast.makeText(mContext, R.string.zest_plus_fod_animation_style_toast_failed, Toast.LENGTH_SHORT).show();
                 Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", oldInt);
-                Settings.System.putString(getContentResolver(), "zest_fod_animation_name", oldString);
+                Settings.System.putString(getContentResolver(), "zest_fod_animation_id", oldString);
                 return;
             }
 
@@ -231,7 +231,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    public Drawable getPreviewDrawable(Context context, String fodIdentifier) {
+    private Drawable getPreviewDrawable(Context context, String fodIdentifier) {
         try {
             PackageManager pm = context.getPackageManager();
             Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
@@ -243,7 +243,20 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    public InputStream getLottieJson(Context context, String fodIdentifier) {
+    public static String getAnimString(Context context, String fodIdentifier) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
+            return res.getString(res.getIdentifier("zest_fod_animation_" + fodIdentifier, "string", mFodAnimationPackage));
+        } catch (PackageManager.NameNotFoundException | Resources.NotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private InputStream getLottieJson(Context context, String fodIdentifier) {
         try {
             PackageManager pm = context.getPackageManager();
             Resources res = pm.getResourcesForApplication(mFodAnimationPackage);
