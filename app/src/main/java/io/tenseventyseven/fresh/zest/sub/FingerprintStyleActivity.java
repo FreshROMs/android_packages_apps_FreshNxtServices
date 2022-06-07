@@ -27,6 +27,7 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,7 +43,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.view.Toast;
-import de.dlyt.yanndroid.oneui.widget.RoundFrameLayout;
 import io.tenseventyseven.fresh.ExperienceUtils;
 import io.tenseventyseven.fresh.R;
 
@@ -63,7 +63,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     ToolbarLayout toolbar;
 
     @BindView(R.id.zest_fod_animation_style_preview_frame)
-    RoundFrameLayout mPreviewFrame;
+    CardView mPreviewFrame;
     @BindView(R.id.zest_fod_animation_style_preview)
     FrameLayout mPreview;
 

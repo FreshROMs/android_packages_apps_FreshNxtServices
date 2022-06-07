@@ -14,12 +14,14 @@
         android:orientation="vertical"
         app:layout_location="main_content">
 
-        <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
+        <androidx.cardview.widget.CardView
             android:id="@+id/zest_fod_animation_style_preview_frame"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:animateLayoutChanges="true">
+            android:animateLayoutChanges="true"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -74,7 +76,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal" />
 
-        </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
+        </androidx.cardview.widget.CardView>
 
         <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
             android:layout_width="match_parent"
