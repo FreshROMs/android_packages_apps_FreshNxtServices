@@ -25,20 +25,21 @@
         android:entryValues="@array/volte_signal_icon_packages"
         app:useSimpleSummaryProvider="true" />
 
-    <SwitchPreference
-        android:key="fs_plus_location_indicator"
-        android:title="@string/zest_plus_location_indicators_title"
-        android:summary="@string/zest_plus_location_indicators_summary" />
+    <PreferenceCategory>
+        <Preference
+            android:key="fs_plus_fod_animation_style"
+            android:title="@string/zest_plus_fod_animation_style_title"
+            android:summary="@string/zest_setting_default_summary">
+            <intent
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
+        </Preference>
 
-    <Preference
-        android:key="fs_plus_fod_animation_style"
-        android:title="@string/zest_plus_fod_animation_style_title"
-        android:summary="@string/zest_setting_default_summary">
-        <intent
-            android:targetClass="io.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity"
-            android:targetPackage="io.tenseventyseven.fresh" />
-    </Preference>
-
+        <SwitchPreference
+            android:key="fs_plus_location_indicator"
+            android:title="@string/zest_plus_location_indicators_title"
+            android:summary="@string/zest_plus_location_indicators_summary" />
+    </PreferenceCategory>
 
     <PreferenceCategory android:key="fs_plus_options">
         <Preference
