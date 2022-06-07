@@ -15,7 +15,6 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
 import android.provider.Settings;
@@ -42,7 +41,9 @@ import java.io.OutputStream;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import de.dlyt.yanndroid.oneui.view.Toast;
 import de.dlyt.yanndroid.oneui.widget.RoundFrameLayout;
+import io.tenseventyseven.fresh.ExperienceUtils;
 import io.tenseventyseven.fresh.R;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
@@ -60,32 +61,36 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
     @BindView(R.id.zest_fingerprint_style_toolbar)
     ToolbarLayout toolbar;
+
     @BindView(R.id.zest_fod_animation_style_preview_frame)
-    RoundFrameLayout preview_frame;
-    @BindView(R.id.zest_fod_animation_style_preview_bg_homescreen)
-    FrameLayout preview_homescreen;
-    @BindView(R.id.zest_fod_animation_style_preview_bg_lockscreen)
-    ImageView preview_lock_background;
-    @BindView(R.id.zest_fod_animation_style_preview_fg_lockscreen)
-    ImageView preview_lock_foreground;
-    @BindView(R.id.zest_fod_animation_style_preview_bg)
-    ImageView preview_home_background;
-    @BindView(R.id.zest_fod_animation_style_preview_fg)
-    ImageView preview_home_foreground;
+    RoundFrameLayout mPreviewFrame;
     @BindView(R.id.zest_fod_animation_style_preview)
-    LottieAnimationView preview_animation;
+    FrameLayout mPreview;
+
+    @BindView(R.id.zest_fod_animation_style_preview_lock_bg)
+    ImageView mPreviewLockBG;
+    @BindView(R.id.zest_fod_animation_style_preview_lock_fg)
+    ImageView mPreviewLockFG;
+
+    @BindView(R.id.zest_fod_animation_style_preview_home_bg)
+    ImageView mPreviewHomeBG;
+    @BindView(R.id.zest_fod_animation_style_preview_home_fg)
+    ImageView mPreviewHomeFG;
+
+    @BindView(R.id.zest_fod_animation_style_preview_anim)
+    LottieAnimationView mPreviewLottieAnim;
     @BindView(R.id.zest_fod_animation_style_preview_fod_icon)
-    ImageView preview_fp_icon;
+    ImageView mPreviewFpIcon;
+
     @BindView(R.id.zest_fod_animation_style_listview)
-    RecyclerView preview_listView;
+    RecyclerView mPickerRecylerView;
 
     String[] mFodAnimationIds;
     String[] mFodAnimationNames;
     private final String mFodAnimationPackage = "io.tenseventyseven.fresh.udfps.res";
-    private final String mAnimationFileName = "user_fingerprint_touch_effect.json";
 
     Context mContext;
-    private int selectedPosition;
+    private int mSelectedAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,13 +99,13 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mContext = this;
 
-        getAnimations();
+        if (!getAnimations() && mFodAnimationIds.length > mFodAnimationNames.length)
+            finish();
 
-        selectedPosition = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
+        mSelectedAnim = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
 
         toolbar.setExpanded(false, false);
         toolbar.setNavigationButtonVisible(false);
-        toolbar.setTitle("");
         toolbar.setBackgroundResource(R.drawable.sesl4_action_bar_background);
         setSupportActionBar(toolbar.getToolbar());
 
@@ -108,35 +113,36 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealSize(size);
         double screenRatio = (double) size.x / (double) size.y;
 
-        preview_frame.post(() -> {
-            preview_frame.setLayoutParams(new LinearLayout.LayoutParams((int) (preview_frame.getHeight() * screenRatio), ViewGroup.LayoutParams.MATCH_PARENT, 1));
-            double previewScale = (double) preview_frame.getHeight() / (double) size.y;
-            preview_animation.post(() -> preview_animation.setTranslationY((float) ((sensorPositionY * previewScale) - (preview_animation.getHeight() / 2))));
-            preview_fp_icon.post(() -> preview_fp_icon.setTranslationY((float) ((sensorPositionY * previewScale) - (preview_fp_icon.getHeight() / 2))));
+        mPreviewFrame.post(() -> {
+            mPreviewFrame.setLayoutParams(new LinearLayout.LayoutParams((int) (mPreviewFrame.getHeight() * screenRatio), ViewGroup.LayoutParams.MATCH_PARENT, 1));
+            double previewScale = (double) mPreviewFrame.getHeight() / (double) size.y;
+            mPreviewLottieAnim.post(() -> mPreviewLottieAnim.setTranslationY((float) ((sensorPositionY * previewScale) - (mPreviewLottieAnim.getHeight() / 2))));
+            mPreviewFpIcon.post(() -> mPreviewFpIcon.setTranslationY((float) ((sensorPositionY * previewScale) - (mPreviewFpIcon.getHeight() / 2))));
         });
 
-        preview_lock_background.setImageBitmap(getWallpaper(false));
-        preview_lock_foreground.setImageBitmap(getLockScreenPreview());
-        preview_home_background.setImageBitmap(getWallpaper(true));
-        preview_home_foreground.setImageBitmap(getHomeScreenPreview());
+        mPreviewLockBG.setImageBitmap(getWallpaper(false));
+        mPreviewLockFG.setImageBitmap(getPreview(false));
+
+        mPreviewHomeBG.setImageBitmap(getWallpaper(true));
+        mPreviewHomeFG.setImageBitmap(getPreview(true));
 
         Handler handler = new Handler();
-        preview_animation.addAnimatorListener(new AnimatorListenerAdapter() {
+        mPreviewLottieAnim.addAnimatorListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
                 handler.removeCallbacksAndMessages(null);
-                preview_animation.setAlpha(1F);
-                preview_homescreen.setVisibility(View.GONE);
+                mPreviewLottieAnim.setAlpha(1F);
+                mPreview.setVisibility(View.GONE);
                 handler.postDelayed(() -> {
-                    preview_homescreen.setVisibility(View.VISIBLE);
-                }, (long) (preview_animation.getDuration() * 0.7));
+                    mPreview.setVisibility(View.VISIBLE);
+                }, (long) (mPreviewLottieAnim.getDuration() * 0.7));
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                preview_animation.setAlpha(0F);
-                handler.postDelayed(() -> preview_homescreen.setVisibility(View.GONE), 1000);
-                handler.postDelayed(() -> preview_animation.playAnimation(), 2000);
+                mPreviewLottieAnim.setAlpha(0F);
+                handler.postDelayed(() -> mPreview.setVisibility(View.GONE), 1000);
+                handler.postDelayed(() -> mPreviewLottieAnim.playAnimation(), 2000);
             }
         });
 
@@ -144,13 +150,13 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         int bgLength = (int) (size.x * (double) (lockBG.getHeight() / size.y));
         Bitmap listItemBG = Bitmap.createBitmap(lockBG, (lockBG.getWidth() - bgLength) / 2, lockBG.getHeight() - bgLength, bgLength, bgLength);*/
 
-        preview_listView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        preview_listView.setAdapter(new PreviewAdapter());
-        preview_listView.scrollToPosition(selectedPosition);
+        mPickerRecylerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mPickerRecylerView.setAdapter(new PreviewAdapter());
+        mPickerRecylerView.scrollToPosition(mSelectedAnim);
 
-        if (mFodAnimationIds.length > selectedPosition) {
-            preview_animation.setAnimation(getLottieJson(mContext, mFodAnimationIds[selectedPosition]), null);
-            preview_animation.playAnimation();
+        if (mFodAnimationIds.length > mSelectedAnim) {
+            mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIds[mSelectedAnim]), null);
+            mPreviewLottieAnim.playAnimation();
         }
     }
 
@@ -159,36 +165,53 @@ public class FingerprintStyleActivity extends AppCompatActivity {
     }
 
     public void onTapDone(View v) {
-        Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", selectedPosition);
-        Settings.System.putString(getContentResolver(), "zest_fod_animation_name", mFodAnimationNames[selectedPosition]);
-        InputStream input = getLottieJson(mContext, mFodAnimationIds[selectedPosition]);
+        int oldInt = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
+        String oldString = Settings.System.getString(getContentResolver(), "zest_fod_animation_name");
 
-        File folder = new File(getAnimDir());
-        if (!folder.exists())
-            folder.mkdir();
+        Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", mSelectedAnim);
+        Settings.System.putString(getContentResolver(), "zest_fod_animation_name", mFodAnimationNames[mSelectedAnim]);
 
-        File file = new File(getAnimDir() + mAnimationFileName);
-        try (OutputStream output = new FileOutputStream(file)) {
-            byte[] buffer = new byte[4096];
-            int read;
+        new Thread(() -> {
+            File folder = ExperienceUtils.getFreshDir();
 
-            while ((read = input.read(buffer)) != -1) {
-                output.write(buffer, 0, read);
+            if (!folder.exists())
+                folder.mkdir();
+
+            File file = new File(folder, "user_fingerprint_touch_effect.tmp");
+            File animJson = new File(folder, "user_fingerprint_touch_effect.json");
+            InputStream input = getLottieJson(mContext, mFodAnimationIds[mSelectedAnim]);
+
+            try (OutputStream output = new FileOutputStream(file)) {
+                byte[] buffer = new byte[4096];
+                int read;
+
+                while ((read = input.read(buffer)) != -1) {
+                    output.write(buffer, 0, read);
+                }
+
+                output.flush();
+            } catch (IOException e) {
+                file.delete();
+                e.printStackTrace();
             }
 
-            output.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            if (!file.exists()) {
+                Toast.makeText(mContext, R.string.zest_plus_fod_animation_style_toast_failed, Toast.LENGTH_SHORT).show();
+                Settings.System.putInt(getContentResolver(), "zest_fod_animation_selected", oldInt);
+                Settings.System.putString(getContentResolver(), "zest_fod_animation_name", oldString);
+                return;
+            }
+
+            if (animJson.exists())
+                animJson.delete();
+
+            file.renameTo(animJson);
+        }).start();
 
         onBackPressed();
     }
 
-    public static String getAnimDir() {
-        return Environment.getExternalStorageDirectory().getPath() + "/.fresh/";
-    }
-
-    private void getAnimations() {
+    private boolean getAnimations() {
         Resources fodRes;
 
         try {
@@ -196,13 +219,15 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             fodRes = pm.getResourcesForApplication(mFodAnimationPackage);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-            return;
+            return false;
         }
 
         mFodAnimationIds = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_identifiers",
                 "array", mFodAnimationPackage));
         mFodAnimationNames = fodRes.getStringArray(fodRes.getIdentifier("udfps_animation_titles",
                 "array", mFodAnimationPackage));
+
+        return true;
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -229,34 +254,21 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         return null;
     }
 
-    private Bitmap getWallpaper(boolean homeScreen) {
+    private Bitmap getWallpaper(boolean isHomeScreen) {
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
             return null;
 
-        ParcelFileDescriptor wallpaperFile = WallpaperManager.getInstance(this).getWallpaperFile(homeScreen ? WallpaperManager.FLAG_SYSTEM : WallpaperManager.FLAG_LOCK);
+        ParcelFileDescriptor wallpaperFile = WallpaperManager.getInstance(this).getWallpaperFile(isHomeScreen ? WallpaperManager.FLAG_SYSTEM : WallpaperManager.FLAG_LOCK);
         if (wallpaperFile == null) return null;
         return BitmapFactory.decodeFileDescriptor(wallpaperFile.getFileDescriptor());
     }
 
-    private Bitmap getHomeScreenPreview() {
-        if (checkSelfPermission("com.android.homescreen.home.permission.preview_image") != PackageManager.PERMISSION_GRANTED)
+    private Bitmap getPreview(boolean isHomeScreen) {
+        if (checkSelfPermission(isHomeScreen ? "com.android.homescreen.home.permission.preview_image" : "com.samsung.systemui.permission.KEYGUARD_IMAGE") != PackageManager.PERMISSION_GRANTED)
             return null;
 
         try {
-            String uri = "content://com.android.homescreen.home.WallpaperPreview/portrait";
-            return ImageDecoder.decodeBitmap(ImageDecoder.createSource(getContentResolver(), Uri.parse(uri)));
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private Bitmap getLockScreenPreview() {
-        if (checkSelfPermission("com.samsung.systemui.permission.KEYGUARD_IMAGE") != PackageManager.PERMISSION_GRANTED)
-            return null;
-
-        try {
-            String uri = "content://com.android.systemui.keyguard.image/portrait?white_theme=off";
+            String uri = isHomeScreen ? "content://com.android.homescreen.home.WallpaperPreview/portrait" : "content://com.android.systemui.keyguard.image/portrait?white_theme=off";
             return ImageDecoder.decodeBitmap(ImageDecoder.createSource(getContentResolver(), Uri.parse(uri)));
         } catch (IOException e) {
             e.printStackTrace();
@@ -273,14 +285,14 @@ public class FingerprintStyleActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-            holder.list_item_image.setImageDrawable(getPreviewDrawable(mContext, mFodAnimationIds[position]));
-            holder.list_item_image.setSelected(selectedPosition == position);
-            holder.list_item_image.setOnClickListener(v -> {
-                notifyItemChanged(selectedPosition);
-                preview_animation.cancelAnimation();
-                preview_animation.setAnimation(getLottieJson(mContext, mFodAnimationIds[selectedPosition = holder.getAdapterPosition()]), null);
-                preview_animation.playAnimation();
-                notifyItemChanged(selectedPosition);
+            holder.itemImgView.setImageDrawable(getPreviewDrawable(mContext, mFodAnimationIds[position]));
+            holder.itemImgView.setSelected(mSelectedAnim == position);
+            holder.itemImgView.setOnClickListener(v -> {
+                notifyItemChanged(mSelectedAnim);
+                mPreviewLottieAnim.cancelAnimation();
+                mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIds[mSelectedAnim = holder.getAdapterPosition()]), null);
+                mPreviewLottieAnim.playAnimation();
+                notifyItemChanged(mSelectedAnim);
             });
         }
 
@@ -290,11 +302,11 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            private ImageView list_item_image;
+            private ImageView itemImgView;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                list_item_image = itemView.findViewById(R.id.zest_fod_animation_list_image);
+                itemImgView = itemView.findViewById(R.id.zest_fod_animation_list_image);
             }
         }
     }

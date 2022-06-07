@@ -26,13 +26,13 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/zest_fod_animation_style_preview_bg_lockscreen"
+                    android:id="@+id/zest_fod_animation_style_preview_lock_bg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop" />
 
                 <ImageView
-                    android:id="@+id/zest_fod_animation_style_preview_fg_lockscreen"
+                    android:id="@+id/zest_fod_animation_style_preview_lock_fg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -48,20 +48,20 @@
                 tools:ignore="ContentDescription,PxUsage" />
 
             <FrameLayout
-                android:id="@+id/zest_fod_animation_style_preview_bg_homescreen"
+                android:id="@+id/zest_fod_animation_style_preview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone">
 
                 <ImageView
-                    android:id="@+id/zest_fod_animation_style_preview_bg"
+                    android:id="@+id/zest_fod_animation_style_preview_home_bg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     tools:ignore="ContentDescription" />
 
                 <ImageView
-                    android:id="@+id/zest_fod_animation_style_preview_fg"
+                    android:id="@+id/zest_fod_animation_style_preview_home_fg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:ignore="ContentDescription" />
@@ -69,7 +69,7 @@
             </FrameLayout>
 
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/zest_fod_animation_style_preview"
+                android:id="@+id/zest_fod_animation_style_preview_anim"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal" />

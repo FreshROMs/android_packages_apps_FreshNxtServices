@@ -9,10 +9,12 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.os.Environment;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.util.DisplayMetrics;
 
+import java.io.File;
 import java.lang.reflect.Method;
 
 public class ExperienceUtils {
@@ -186,5 +188,9 @@ public class ExperienceUtils {
         }
 
         return appVersion;
+    }
+
+    public static File getFreshDir() {
+        return new File(Environment.getExternalStorageDirectory().getPath() + "/.fresh/");
     }
 }
