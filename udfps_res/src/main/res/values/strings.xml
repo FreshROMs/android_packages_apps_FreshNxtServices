@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zest_fod_animation_alpenglow">Alpenglow</string>
+    <string name="zest_fod_animation_aurora">Aurora</string>
+    <string name="zest_fod_animation_bloom">Bloom</string>
+    <string name="zest_fod_animation_cyberpunk">Cyberpunk</string>
+    <string name="zest_fod_animation_default">Default</string>
+    <string name="zest_fod_animation_dna">DNA</string>
+    <string name="zest_fod_animation_electronic">Electronic</string>
+    <string name="zest_fod_animation_energy">Energy</string>
+    <string name="zest_fod_animation_futuristic">Futuristic</string>
+    <string name="zest_fod_animation_halo_ring">Halo Ring</string>
+    <string name="zest_fod_animation_magic">Magic</string>
+    <string name="zest_fod_animation_mclaren">Mclaren</string>
+    <string name="zest_fod_animation_molecular">Molecular</string>
+    <string name="zest_fod_animation_pop">Pop</string>
+    <string name="zest_fod_animation_pulsar">Pulsar</string>
+    <string name="zest_fod_animation_pulse">Pulse</string>
+    <string name="zest_fod_animation_rhythm">Rhythm</string>
+    <string name="zest_fod_animation_ripple">Ripple</string>
+    <string name="zest_fod_animation_star">Star</string>
+    <string name="zest_fod_animation_stripe">Stripe</string>
+    <string name="zest_fod_animation_supernova">Supernova</string>
+    <string name="zest_fod_animation_water">Water</string>
+    <string name="zest_fod_animation_wave">Wave</string>
+</resources>
