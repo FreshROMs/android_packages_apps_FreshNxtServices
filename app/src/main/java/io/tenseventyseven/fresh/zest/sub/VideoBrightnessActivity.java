@@ -3,6 +3,7 @@ package io.tenseventyseven.fresh.zest.sub;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -204,7 +205,25 @@ public class VideoBrightnessActivity extends AppCompatActivity {
 
     private void populateAppList() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        String[] mCompatibleList = getResources().getStringArray(R.array.hdr_effect_app_compatible_list);
+        String resPackage = "io.tensevntysevn.fresh.framework";
+        Resources resArray;
+
+        PackageManager pm = getPackageManager();
+
+        try {
+            resArray = pm.getResourcesForApplication(resPackage);
+        } catch (PackageManager.NameNotFoundException e) {
+            resPackage = "android";
+            try {
+                resArray = pm.getResourcesForApplication(resPackage);
+            } catch (PackageManager.NameNotFoundException ex) {
+                ex.printStackTrace();
+                return;
+            }
+        }
+
+        String[] mCompatibleList = resArray.getStringArray(resArray.getIdentifier("config_Video_App_Launcher",
+                "array", resPackage));
         mAppArray = new ArrayList<>();
 
         mListview.setVisibility(View.GONE);
@@ -213,7 +232,6 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         executor.execute(() -> {
             for (String s : mCompatibleList) {
                 try {
-                    PackageManager pm = getPackageManager();
                     android.content.pm.ApplicationInfo info = pm.getApplicationInfo(s, 0);
                     Drawable icon = pm.getApplicationIcon(s);
                     String name = pm.getApplicationLabel(info).toString();
