@@ -66,11 +66,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.samsung.systemui.permission.KEYGUARD_IMAGE" />
-    <uses-permission android:name="com.android.homescreen.home.permission.preview_image" />
-    <uses-permission android:name="android.permission.MANAGE_BIOMETRIC"
-        tools:ignore="ProtectedPermissions" />
-
-    <!-- Feature requirements for the app -->
+    <uses-permission android:name="com.android.homescreen.home.permission.preview_image" /> <!-- Feature requirements for the app -->
     <uses-feature
         android:name="io.tenseventyseven.fresh.four"
         android:required="true" /> <!-- Fresh 4 Release -->
@@ -95,6 +91,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
 
+        <provider
+            android:name=".ota.SoftwareUpdateProvider"
+            android:authorities="io.tenseventyseven.fresh.ota.SoftwareUpdateProvider"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+        <activity
+            android:name=".ota.activity.UpdateCheckActivity"
+            android:noHistory="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="SamsungBasicInteraction"
             android:value="SEP10" />
@@ -105,7 +118,6 @@
         <uses-library
             android:name="fresh_republic_city_library"
             android:required="true" /> <!-- FreshROMs4 - RepublicCity -->
-
         <activity
             android:name=".zest.QsTileHandler"
             android:enabled="true"
@@ -116,9 +128,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ota.UpdateAvailableActivity"
+            android:name=".ota.activity.UpdateAvailableActivity"
             android:exported="false"
             android:icon="@mipmap/fresh_ic_launcher_settings" />
+        <activity
+            android:name=".ota.activity.DeviceUpdatedActivity"
+            android:exported="false"
+            android:icon="@mipmap/fresh_ic_launcher_settings" />
+        <activity
+            android:name=".ota.activity.LastUpdateActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings">
+            <intent-filter>
+                <action android:name="io.tenseventyseven.fresh.ota.activity.LastUpdateActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".zest.OpenSourceActivity"
             android:exported="false"
@@ -154,11 +179,6 @@
             android:exported="true"
             android:theme="@style/OneUI4AboutTheme" />
         <activity
-            android:name=".ota.OtaMainActivity"
-            android:exported="false"
-            android:icon="@mipmap/fresh_ic_launcher_settings"
-            android:label="@string/fresh_ota_main_title" />
-        <activity
             android:name=".zest.sub.ScreenResolutionActivity"
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
@@ -183,8 +203,9 @@
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_plus_fod_animation_style_title"
+            android:screenOrientation="portrait"
             android:theme="@style/OneUI3Theme"
-            android:screenOrientation="portrait" />
+            tools:ignore="LockedOrientationActivity" />
 
         <service
             android:name=".services.RestartTileService"
@@ -236,4 +257,5 @@
             </intent-filter>
         </receiver>
     </application>
+
 </manifest>

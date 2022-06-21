@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <de.dlyt.yanndroid.oneui.layout.ToolbarLayout
+        android:id="@+id/fresh_ota_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        app:navigationIcon="@drawable/ic_oui_back"
+        app:title="@string/fresh_ota_main_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fresh_ota_appbar_title"
+                    style="@style/TextAppearance.AppCompat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fresh_ota_changelog_appbar_detail"
+                    android:textAlignment="viewStart"
+                    android:textSize="22sp" />
+
+                <de.dlyt.yanndroid.oneui.widget.ProgressBar
+                    android:id="@+id/fresh_ota_appbar_progressbar"
+                    style="@style/ProgressBarStyle.Horizontal.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="11dp"
+                    android:indeterminate="false" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fresh_ota_appbar_subtitle"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginVertical="12.0dip"
+                    android:freezesText="true"
+                    android:text="@string/fresh_ota_changelog_appbar_detail_subtitle"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/sesl_badge_background_color"
+                    android:textSize="15.0sp"
+                    tools:ignore="SmallSp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fresh_ota_appbar_remaining"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="0.0dip"
+                    android:freezesText="true"
+                    android:textAlignment="viewStart"
+                    android:textSize="15.0sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:roundedCorners="all">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/fresh_ota_changelog_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:baselineAligned="false"
+                                    android:background="@drawable/fresh_update_header_card_background">
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="24.0dip"
+                                        android:layout_marginStart="26.0dip"
+                                        android:layout_weight="2.0"
+                                        android:orientation="vertical">
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            style="@style/TextAppearance.AppCompat.Body1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="@string/fresh_ota_changelog_header_title"
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/sesl4_primary_text_color"
+                                            android:textFontWeight="500"
+                                            android:textSize="26.0sp" />
+
+                                        <com.google.android.material.textview.MaterialTextView
+                                            style="?textAppearanceBody1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/fresh_ota_changelog_header_subtitle"
+                                            android:textAlignment="viewStart"
+                                            android:textColor="@color/sesl_secondary_text_color"
+                                            android:textSize="14.0sp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:layout_marginEnd="12.0dip"
+                                        android:layout_weight="3.0"
+                                        android:gravity="end">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+                                            android:adjustViewBounds="true"
+                                            android:src="@drawable/tns_ota_drawable_feature" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/fresh_ota_changelog"
+                                    android:textSize="15sp"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:singleLine="false"
+                                    android:layout_marginHorizontal="26dp"
+                                    android:layout_marginVertical="24dp"
+                                    android:paddingBottom="8dp"
+                                    android:text="@string/zest_setting_default_summary"
+                                    android:textAlignment="viewStart" />
+                            </LinearLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/fresh_ota_app_updates"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="24dp"
+                                android:clickable="false"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/TextAppearance.AppCompat"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/fresh_ota_changelog_app_header"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginHorizontal="26dp"
+                                    android:textAlignment="viewStart" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/fresh_ota_changelog_app_subheader"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginHorizontal="26dp"
+                                    android:textAlignment="viewStart" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/fresh_ota_app_updates_text"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/app_name"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:textAlignment="viewStart" />
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="26dp"
+                                android:layout_marginVertical="24dp"
+                                android:clickable="false"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    style="@style/TextAppearance.AppCompat"
+                                    android:textSize="14sp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/fresh_ota_changelog_detail_header"
+                                    android:layout_marginBottom="10dp"
+                                    android:textAlignment="viewStart" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/fresh_ota_detail_version"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/fresh_ota_changelog_detail_version"
+                                    android:textAlignment="viewStart" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/fresh_ota_detail_size"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/fresh_ota_changelog_detail_size"
+                                    android:textAlignment="viewStart" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/fresh_ota_detail_security_patch_level"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:textSize="14sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/fresh_ota_changelog_detail_security_patch_level"
+                                    android:textAlignment="viewStart" />
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+
+        </LinearLayout>
+    </de.dlyt.yanndroid.oneui.layout.ToolbarLayout>
+
+    <LinearLayout
+        android:id="@+id/fresh_ota_btnbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="12.0dp"
+        android:layout_marginBottom="12.0dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/fresh_ota_btnbar_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fresh_ota_btn_download"
+                style="@style/ButtonStyle.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:layout_marginVertical="4dp"
+                android:text="@string/fresh_ota_changelog_btn_download"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fresh_ota_btn_cancel"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:layout_marginVertical="4dp"
+                android:text="@string/fresh_ota_changelog_btn_cancel" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fresh_ota_btnbar_install"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fresh_ota_btn_install"
+                style="@style/ButtonStyle.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:layout_marginVertical="4dp"
+                android:text="@string/fresh_ota_changelog_btn_install"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fresh_ota_btn_install_later"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:layout_marginVertical="4dp"
+                android:text="@string/fresh_ota_changelog_btn_install_later" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

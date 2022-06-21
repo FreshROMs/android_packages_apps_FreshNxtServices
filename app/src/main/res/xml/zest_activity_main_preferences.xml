@@ -92,22 +92,6 @@
         </SwitchPreferenceScreen>
     </PreferenceCategory>
 
-    <!--
-    <PreferenceCategory>
-        <Preference
-            android:key="fs_addon_management"
-            android:title="@string/zest_addon_management_title"
-            android:summary="@string/zest_setting_default_summary" />
-        <Preference
-            android:key="fs_software_update"
-            android:title="@string/fresh_ota_main_title"
-            android:summary="@string/zest_setting_default_summary" >
-            <intent
-                android:targetClass="io.tenseventyseven.fresh.ota.OtaMainActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
-        </Preference>
-    </PreferenceCategory>
-    -->
     <de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
         <Preference
             android:key="zs_fresh_version"

@@ -21,6 +21,8 @@ public class ExperienceUtils {
     public static String PREF_NAME = "fresh_system_settings";
     public static String RESTRICTED_API = "device_restricted_api";
 
+    public static String FRESH_OTA_DATABASE = "fresh_ota_db";
+
     public static boolean isGalaxyThemeApplied(Context context) {
         String themePackage = Settings.System.getString(context.getContentResolver(),
                 "current_sec_active_themepackage");
@@ -135,10 +137,6 @@ public class ExperienceUtils {
         }
     }
 
-    public static String getProp(String propName) {
-        return SystemProperties.get(propName);
-    }
-
     public static Activity getActivity(Context context) {
         if (context == null) {
             return null;
@@ -154,16 +152,16 @@ public class ExperienceUtils {
     }
 
     public static String getRomVersion() {
-        String romPropVersion = getProp("ro.fresh.version");
-        String romPropBuild = getProp("ro.fresh.build.version");
-        String romPropBranch = getProp("ro.fresh.build.branch");
-        String romPropBuildDate = getProp("ro.fresh.build.date");
+        String romPropVersion = SystemProperties.get("ro.fresh.version");
+        String romPropBuild = SystemProperties.get("ro.fresh.build.version");
+        String romPropBranch = SystemProperties.get("ro.fresh.build.branch");
+        String romPropBuildDate = SystemProperties.get("ro.fresh.build.date");
 
         String romVersionBranch = "";
-        String buildDate = getProp("ro.system.build.date");
+        String buildDate = SystemProperties.get("ro.system.build.date");
 
         if (!romPropBuildDate.equals("")) {
-            buildDate = getProp("ro.fresh.build.date");
+            buildDate = SystemProperties.get("ro.fresh.build.date");
         }
 
         if (!romPropBranch.isEmpty()) {
