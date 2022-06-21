@@ -31,6 +31,13 @@
 
     <PreferenceCategory>
         <Preference
+            android:title="OTA Updates"
+            android:summary="Matthew Booth - Creative Commons BY-NC-SA 4.0">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/MatthewBooth/OTAUpdates/tree/develop" />
+        </Preference>
+        <Preference
             android:title="Updater (LineageOS)"
             android:summary="LineageOS - Apache-2.0">
             <intent
