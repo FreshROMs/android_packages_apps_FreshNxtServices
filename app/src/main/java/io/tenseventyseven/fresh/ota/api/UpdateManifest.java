@@ -16,165 +16,179 @@ package io.tenseventyseven.fresh.ota.api;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkCapabilities;
-import android.net.NetworkInfo;
-import android.os.Build;
-
-import androidx.annotation.IntRange;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemProperties;
+import android.provider.Settings;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.lineageos.updater.download.DownloadClient;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.URL;
-import java.net.URLConnection;
 
 import io.tenseventyseven.fresh.ota.Utils;
+import io.tenseventyseven.fresh.ota.activity.DeviceUpdatedActivity;
+import io.tenseventyseven.fresh.ota.activity.UpdateAvailableActivity;
+import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
 
 public class UpdateManifest {
-    public static int MANIFEST_SUCCESS = 0;
-    public static int MANIFEST_FAILED_NO_CONNECTION = 1;
-    public static int MANIFEST_FAILED_INVALID = 2;
-    public static int MANIFEST_FAILED_UNSUPPORTED = 3;
-    public static int MANIFEST_FAILED_FILE_NOT_FOUND = 4;
-    public static int MANIFEST_FAILED_UNKNOWN = -1;
+    public static final int MANIFEST_SUCCESS = 0;
+    public static final int MANIFEST_FAILED_NO_CONNECTION = 1;
+    public static final int MANIFEST_SKIP_PENDING_UPDATE = 2;
+    public static final int MANIFEST_FAILED_UNKNOWN = -1;
 
-    public static int downloadManifest(Context context) {
-        if (getConnectionType(context) <= 0)
+    private static final String MANIFEST_SETTING_USE_MIRROR = "fresh_ota_use_mirror_api";
+
+    public static int checkForUpdates(Context context) {
+        if (!Utils.isDeviceOnline(context)) {
+            Utils.scheduleUpdatesCheck(context);
             return MANIFEST_FAILED_NO_CONNECTION;
+        }
 
-        try {
-            InputStream input;
+        if (Utils.getUpdateAvailability(context)) {
+            Utils.showNewUpdateNotification(context);
+            Utils.scheduleUpdatesCheck(context);
+            return MANIFEST_SKIP_PENDING_UPDATE;
+        }
 
-            String urlFormat = String.format("%s/%s/%s/", Utils.PROP_FRESH_OTA_API, Utils.PROP_FRESH_DEVICE_PRODUCT, Utils.PROP_FRESH_ROM_VERSION_CODE);
-            URL url = new URL(urlFormat);
-            URLConnection connection = url.openConnection();
-            connection.connect();
+        // Show checking notification
+        Utils.showOngoingCheckNotification(context);
 
-            input = new BufferedInputStream(url.openStream());
-            File manifestFile = new File(context.getFilesDir(), "manifest.json");
+        final File json = new File(context.getFilesDir(), "manifest.json");
+        String url = String.format("%s/%s/%s/",
+                SystemProperties.get(Utils.PROP_FRESH_OTA_API),
+                SystemProperties.get(Utils.PROP_FRESH_DEVICE_PRODUCT),
+                SystemProperties.get(Utils.PROP_FRESH_ROM_VERSION_CODE));
 
-            if (manifestFile.exists())
-                manifestFile.delete();
-
-            try (OutputStream output = new FileOutputStream(manifestFile)) {
-                byte[] buffer = new byte[4096];
-                int read;
-
-                while ((read = input.read(buffer)) != -1) {
-                    output.write(buffer, 0, read);
-                }
-
-                output.flush();
-            } catch (IOException e) {
-                manifestFile.delete();
-                e.printStackTrace();
+        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
+            @Override
+            public void onFailure(boolean cancelled) {
+                Utils.scheduleUpdatesCheck(context);
+                Utils.cancelOngoingCheckNotification(context);
             }
 
-            input.close();
-            return MANIFEST_SUCCESS;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return MANIFEST_FAILED_UNKNOWN;
+            @Override
+            public void onResponse(DownloadClient.Headers headers) {
+            }
+
+            @Override
+            public void onSuccess() {
+                try {
+                    if (!json.exists())
+                        return;
+
+                    if (!parseManifest(context, json))
+                        return;
+
+                    if (Utils.getUpdateAvailability(context)) {
+                        Utils.updateRepeatingUpdatesCheck(context);
+                    }
+
+                    // In case we set a one-shot check because of a previous failure
+                    Utils.cancelUpdatesCheck(context);
+                } catch (IOException | JSONException e) {
+                    Utils.scheduleUpdatesCheck(context);
+                }
+            }
+        };
+
+        try {
+            DownloadClient downloadClient = new DownloadClient.Builder()
+                    .setUrl(url)
+                    .setDestination(json)
+                    .setDownloadCallback(callback)
+                    .build();
+            downloadClient.start();
+        } catch (IOException e) {
+            try {
+                url = String.format("%s/%s/%s/",
+                        SystemProperties.get(Utils.PROP_FRESH_OTA_API_MIRROR),
+                        SystemProperties.get(Utils.PROP_FRESH_DEVICE_PRODUCT),
+                        SystemProperties.get(Utils.PROP_FRESH_ROM_VERSION_CODE));
+                DownloadClient downloadClient = new DownloadClient.Builder()
+                        .setUrl(url)
+                        .setDestination(json)
+                        .setDownloadCallback(callback)
+                        .build();
+                downloadClient.start();
+            } catch (IOException x) {
+                x.printStackTrace();
+                Utils.scheduleUpdatesCheck(context);
+                return MANIFEST_FAILED_UNKNOWN;
+            }
         }
+
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(() -> {
+            if (Utils.getUpdateAvailability(context))
+                Utils.showNewUpdateNotification(context);
+
+            Utils.cancelOngoingCheckNotification(context);
+            Settings.System.putInt(context.getContentResolver(), "badge_for_fota", Utils.getUpdateAvailability(context) ? 1 : 0);
+            Settings.System.putLong(context.getContentResolver(), "SOFTWARE_UPDATE_LAST_CHECKED_DATE", System.currentTimeMillis());
+        }, 2000);
+
+        return MANIFEST_SUCCESS;
     }
 
-    public static int parseManifest(Context context) {
+    public static boolean parseManifest(Context context, File json) throws IOException, JSONException {
         SoftwareUpdate update = new SoftwareUpdate();
-        File manifestFile = new File(context.getFilesDir(), "manifest.json");
         StringBuilder sb;
 
-        try {
-            FileInputStream is = new FileInputStream(manifestFile);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            sb = new StringBuilder();
+        FileInputStream is = new FileInputStream(json);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        sb = new StringBuilder();
 
-            String line;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-
-            reader.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            return MANIFEST_FAILED_FILE_NOT_FOUND;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return MANIFEST_FAILED_INVALID;
+        String line;
+        while ((line = reader.readLine()) != null) {
+            sb.append(line).append("\n");
         }
 
-        try {
-            if (sb.toString().isEmpty())
-                return MANIFEST_FAILED_INVALID;
+        reader.close();
 
-            JSONObject jObj = new JSONObject(sb.toString());
-            JSONObject romObj = jObj.getJSONObject("response");
+        if (sb.toString().isEmpty())
+            return false;
 
-            update.setDateTime(romObj.getLong("datetime"));
-            update.setVersionCode(romObj.getLong("versionCode"));
-            update.setVersionName(romObj.getString("versionName"));
-            update.setSpl(romObj.getString("spl"));
-            update.setMd5Hash(romObj.getString("hash"));
-            update.setReleaseType(romObj.getString("romtype"));
-            update.setFileUrl(romObj.getString("url"));
-            update.setFileSize(romObj.getLong("size"));
-            update.setChangelog(romObj.getString("changelog"));
+        JSONObject jObj = new JSONObject(sb.toString());
+        JSONObject romObj = jObj.getJSONObject("response");
 
-            PackageManager pm = context.getPackageManager();
-            JSONArray updatedApps = romObj.getJSONArray("updatedapps");
-            JSONArray packageArray = new JSONArray();
+        update.setDateTime(romObj.getLong("datetime"));
+        update.setVersionCode(romObj.getLong("versionCode"));
+        update.setVersionName(romObj.getString("versionName"));
+        update.setSpl(romObj.getString("spl"));
+        update.setMd5Hash(romObj.getString("hash"));
+        update.setReleaseType(romObj.getString("romtype"));
+        update.setFileUrl(romObj.getString("url"));
+        update.setFileSize(romObj.getLong("size"));
+        update.setChangelog(romObj.getString("changelog"));
 
-            for (int i = 0; i < updatedApps.length(); i++) {
-                try {
-                    ApplicationInfo info = pm.getApplicationInfo(updatedApps.getString(i), 0);
-                    packageArray.put(pm.getApplicationLabel(info).toString());
-                } catch (PackageManager.NameNotFoundException ignored) {
-                    // App not found
-                }
-            }
+        PackageManager pm = context.getPackageManager();
+        JSONArray updatedApps = romObj.getJSONArray("updatedapps");
+        JSONArray packageArray = new JSONArray();
 
-            update.setUpdatedApps(packageArray.toString());
-            CurrentSoftwareUpdate.setSoftwareUpdate(context, update);
-
-            return MANIFEST_SUCCESS;
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return MANIFEST_FAILED_INVALID;
-        }
-
-    }
-
-    @IntRange(from = 0, to = 3)
-    public static int getConnectionType(Context context) {
-        int result = 0; // Returns connection type. 0: none; 1: mobile data; 2: wifi
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (cm != null) {
-            NetworkCapabilities capabilities = cm.getNetworkCapabilities(cm.getActiveNetwork());
-            if (capabilities != null) {
-                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                    result = 2;
-                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                    result = 1;
-                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN)) {
-                    result = 3;
-                }
+        for (int i = 0; i < updatedApps.length(); i++) {
+            try {
+                ApplicationInfo info = pm.getApplicationInfo(updatedApps.getString(i), 0);
+                packageArray.put(pm.getApplicationLabel(info).toString());
+            } catch (PackageManager.NameNotFoundException ignored) {
+                // App not found
             }
         }
-        return result;
+
+        update.setUpdatedApps(packageArray.toString());
+        CurrentSoftwareUpdate.setSoftwareUpdate(context, update);
+
+        return true;
     }
 }

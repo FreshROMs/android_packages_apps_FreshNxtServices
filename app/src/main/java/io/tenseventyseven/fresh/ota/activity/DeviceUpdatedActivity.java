@@ -97,7 +97,7 @@ public class DeviceUpdatedActivity extends AppCompatActivity {
         mAppBarProgress.setVisibility(View.GONE);
         mAppBarTimeRemaining.setVisibility(View.GONE);
 
-        mDetailVersion.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_version), update.getVersionName()));
+        mDetailVersion.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_version), update.getFormattedVersion()));
         mDetailSize.setVisibility(View.GONE);
         mDetailSecurityPatch.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_security_patch_level), update.getSplString()));
 

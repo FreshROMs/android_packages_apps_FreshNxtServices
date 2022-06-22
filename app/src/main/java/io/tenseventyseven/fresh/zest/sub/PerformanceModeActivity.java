@@ -3,27 +3,20 @@ package io.tenseventyseven.fresh.zest.sub;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.ContentObserver;
-import android.hardware.display.ColorDisplayManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.SystemClock;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
-import java.util.Objects;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.preference.Preference;
-import io.tenseventyseven.fresh.PerformanceUtils;
+import io.tenseventyseven.fresh.utils.Performance;
 import io.tenseventyseven.fresh.R;
 
 public class PerformanceModeActivity extends AppCompatActivity {
@@ -62,7 +55,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
         mHandler = new Handler(Looper.getMainLooper());
         mSettingsObserver = new PerformanceModeSettingsObserver(mHandler);
 
-        refreshRadioButtons(PerformanceUtils.getPerformanceMode(this));
+        refreshRadioButtons(Performance.getPerformanceMode(this));
 
         mPerformanceGaming.setOnClickListener(onTapOption(this, "Aggressive"));
         mPerformanceDefault.setOnClickListener(onTapOption(this, "Default"));
@@ -110,7 +103,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
     private View.OnClickListener onTapOption(Context context, String mode) {
         return v -> {
             refreshRadioButtons(mode);
-            PerformanceUtils.setPerformanceMode(context, mode);
+            Performance.setPerformanceMode(context, mode);
         };
     }
 

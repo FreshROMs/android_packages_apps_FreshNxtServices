@@ -12,7 +12,7 @@ import android.widget.RemoteViews;
 
 import java.util.Objects;
 
-import io.tenseventyseven.fresh.PerformanceUtils;
+import io.tenseventyseven.fresh.utils.Performance;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.zest.sub.PerformanceModeActivity;
 
@@ -34,7 +34,7 @@ public class PerformanceModeTileService extends TileService {
         super.onStartListening();
 
         if (getQsTile() != null) {
-            setTileState(this, PerformanceUtils.getPerformanceMode(this));
+            setTileState(this, Performance.getPerformanceMode(this));
         }
 
         if (mBroadcastReceiver != null) {
@@ -69,14 +69,14 @@ public class PerformanceModeTileService extends TileService {
                 break;
         }
 
-        PerformanceUtils.setPerformanceMode(this, mPerformanceModes[newMode]);
+        Performance.setPerformanceMode(this, mPerformanceModes[newMode]);
         setTileState(this, mPerformanceModes[newMode]);
     }
 
     public RemoteViews semGetDetailView() {
         RemoteViews view = new RemoteViews(getPackageName(), R.layout.zest_qs_detail_performance_mode);
         setPerformanceModeOnClick(view);
-        refreshRadioButtons(view, PerformanceUtils.getPerformanceMode(this));
+        refreshRadioButtons(view, Performance.getPerformanceMode(this));
 
         return view;
     }
@@ -184,7 +184,7 @@ public class PerformanceModeTileService extends TileService {
                             mode = "Default";
                             break;
                     }
-                    PerformanceUtils.setPerformanceMode(context, mode);
+                    Performance.setPerformanceMode(context, mode);
                     setTileState(context, mode);
                 }
             }

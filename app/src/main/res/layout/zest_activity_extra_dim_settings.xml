@@ -1,188 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<de.dlyt.yanndroid.oneui.layout.SwitchBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/zest_extra_dim_switchbar_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_weight="1"
+    android:orientation="vertical"
+    app:navigationIcon="@drawable/ic_oui_back"
+    app:title="@string/zest_extra_dim_setting_title">
 
-    <de.dlyt.yanndroid.oneui.layout.SwitchBarLayout
-        android:id="@+id/zest_extra_dim_switchbar_layout"
+    <de.dlyt.yanndroid.oneui.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        app:navigationIcon="@drawable/ic_oui_back"
-        app:title="@string/zest_extra_dim_setting_title">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
 
-        <de.dlyt.yanndroid.oneui.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="24dp"
-                    android:orientation="vertical">
+                    android:gravity="center"
+                    android:background="@color/item_background_color">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/zest_extra_dim_banner_animation"
+                        android:layout_width="412dp"
+                        android:layout_height="300dp"
+                        android:padding="20.0dip"
+                        android:layout_gravity="center"
+                        android:importantForAccessibility="no"
+                        app:lottie_fileName="extra_dim_banner.json"
+                        app:lottie_repeatMode="reverse"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
+                </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
 
-                    <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:background="@color/item_background_color">
-                        <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/zest_extra_dim_banner_animation"
-                            android:layout_width="412dp"
-                            android:layout_height="300dp"
-                            android:padding="20.0dip"
-                            android:layout_gravity="center"
-                            android:importantForAccessibility="no"
-                            app:lottie_fileName="extra_dim_banner.json"
-                            app:lottie_repeatMode="reverse"
-                            app:lottie_autoPlay="true"
-                            app:lottie_loop="true"/>
-                    </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
-
-                    <com.google.android.material.textview.MaterialTextView
-                        style="?android:textAppearanceListItem"
-                        android:fontFamily="sec"
-                        android:lineSpacingExtra="4sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
-                        android:layout_marginTop="@dimen/sesl_list_divider_inset"
-                        android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
-                        android:layout_marginBottom="4dp"
-                        android:text="@string/zest_extra_dim_setting_summary"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
+                <com.google.android.material.textview.MaterialTextView
+                    style="?android:textAppearanceListItem"
+                    android:fontFamily="sec"
+                    android:lineSpacingExtra="4sp"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sesl_list_item_padding_horizontal"
+                    android:layout_marginTop="@dimen/sesl_list_divider_inset"
+                    android:layout_marginEnd="@dimen/sesl_list_item_padding_horizontal"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/zest_extra_dim_setting_summary"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
-                    <com.google.android.material.card.MaterialCardView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:minHeight="?listPreferredItemHeight"
+                            android:paddingStart="?android:listPreferredItemPaddingStart"
+                            android:paddingEnd="?android:listPreferredItemPaddingEnd">
 
-                            <LinearLayout
-                                android:layout_width="fill_parent"
+                            <RelativeLayout
+                                android:layout_width="0.0dip"
                                 android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:minHeight="?listPreferredItemHeight"
-                                android:paddingStart="?android:listPreferredItemPaddingStart"
-                                android:paddingEnd="?android:listPreferredItemPaddingEnd">
+                                android:layout_weight="1.0"
+                                android:paddingTop="@dimen/sesl_preference_item_padding_vertical"
+                                android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
 
-                                <RelativeLayout
-                                    android:layout_width="0.0dip"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1.0"
-                                    android:paddingTop="@dimen/sesl_preference_item_padding_vertical"
-                                    android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
-
-                                    <TextView
-                                        android:id="@+id/zest_extra_dim_seekbar_title"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="6.0dip"
-                                        android:ellipsize="marquee"
-                                        android:fadingEdge="horizontal"
-                                        android:singleLine="true"
-                                        android:text="@string/zest_extra_dim_setting_intensity"
-                                        android:textAppearance="?textAppearanceListItem" />
-
-                                    <TextView
-                                        android:id="@+id/zest_extra_dim_seekbar_value"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_below="@id/zest_extra_dim_seekbar_title"
-                                        android:gravity="center_horizontal"
-                                        android:singleLine="true"
-                                        android:textAppearance="?android:textAppearanceListItemSecondary"
-                                        android:textColor="?colorPrimaryDark"
-                                        android:visibility="gone" />
-
-                                    <de.dlyt.yanndroid.oneui.widget.SeekBar
-                                        android:id="@+id/zest_extra_dim_seekbar"
-                                        android:layout_width="fill_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_below="@id/zest_extra_dim_seekbar_value"
-                                        android:layout_alignParentEnd="true"
-                                        app:seslSeekBarMode="expand"/>
-                                </RelativeLayout>
-                            </LinearLayout>
-
-                            <View
-                                android:layout_width="fill_parent"
-                                android:layout_height="@dimen/sesl_list_divider_height"
-                                android:layout_marginHorizontal="@dimen/sesl_list_divider_inset"
-                                android:background="@color/sesl_list_divider_color" />
-
-                            <LinearLayout
-                                android:id="@+id/zest_extra_dim_reboot_switch_layout"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:background="?selectableItemBackground"
-                                android:clickable="true"
-                                android:focusable="true"
-                                android:gravity="center_vertical"
-                                android:minHeight="?listPreferredItemHeightSmall"
-                                android:orientation="horizontal"
-                                android:paddingStart="?android:listPreferredItemPaddingStart"
-                                android:paddingEnd="?android:listPreferredItemPaddingEnd">
-
-                                <RelativeLayout
+                                <TextView
+                                    android:id="@+id/zest_extra_dim_seekbar_title"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="fill_parent"
-                                    android:paddingTop="@dimen/sesl_preference_item_padding_vertical"
-                                    android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
-
-                                    <TextView
-                                        android:id="@+id/zest_extra_dim_reboot_textview"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:ellipsize="end"
-                                        android:maxLines="5"
-                                        android:text="@string/zest_extra_dim_setting_turn_off_reboot"
-                                        android:textAlignment="viewStart"
-                                        android:textAppearance="?textAppearanceListItem" />
-
-                                </RelativeLayout>
-
-                                <LinearLayout
-                                    android:layout_width="0dp"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_weight="1.0"
-                                    android:gravity="end|center"
-                                    android:minWidth="32.0dip"
-                                    android:orientation="vertical">
+                                    android:layout_marginBottom="6.0dip"
+                                    android:ellipsize="marquee"
+                                    android:fadingEdge="horizontal"
+                                    android:singleLine="true"
+                                    android:text="@string/zest_extra_dim_setting_intensity"
+                                    android:textAppearance="?textAppearanceListItem" />
 
-                                    <de.dlyt.yanndroid.oneui.widget.Switch
-                                        android:id="@+id/zest_extra_dim_reboot_switch"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:focusable="false" />
-                                </LinearLayout>
+                                <TextView
+                                    android:id="@+id/zest_extra_dim_seekbar_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/zest_extra_dim_seekbar_title"
+                                    android:gravity="center_horizontal"
+                                    android:singleLine="true"
+                                    android:textAppearance="?android:textAppearanceListItemSecondary"
+                                    android:textColor="?colorPrimaryDark"
+                                    android:visibility="gone" />
+
+                                <de.dlyt.yanndroid.oneui.widget.SeekBar
+                                    android:id="@+id/zest_extra_dim_seekbar"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/zest_extra_dim_seekbar_value"
+                                    android:layout_alignParentEnd="true"
+                                    app:seslSeekBarMode="expand"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/sesl_list_divider_height"
+                            android:layout_marginHorizontal="@dimen/sesl_list_divider_inset"
+                            android:background="@color/sesl_list_divider_color" />
+
+                        <LinearLayout
+                            android:id="@+id/zest_extra_dim_reboot_switch_layout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="?selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center_vertical"
+                            android:minHeight="?listPreferredItemHeightSmall"
+                            android:orientation="horizontal"
+                            android:paddingStart="?android:listPreferredItemPaddingStart"
+                            android:paddingEnd="?android:listPreferredItemPaddingEnd">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:paddingTop="@dimen/sesl_preference_item_padding_vertical"
+                                android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
+
+                                <TextView
+                                    android:id="@+id/zest_extra_dim_reboot_textview"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:maxLines="5"
+                                    android:text="@string/zest_extra_dim_setting_turn_off_reboot"
+                                    android:textAlignment="viewStart"
+                                    android:textAppearance="?textAppearanceListItem" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1.0"
+                                android:gravity="end|center"
+                                android:minWidth="32.0dip"
+                                android:orientation="vertical">
+
+                                <de.dlyt.yanndroid.oneui.widget.Switch
+                                    android:id="@+id/zest_extra_dim_reboot_switch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false" />
                             </LinearLayout>
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
             </LinearLayout>
-        </de.dlyt.yanndroid.oneui.widget.NestedScrollView>
-    </de.dlyt.yanndroid.oneui.layout.SwitchBarLayout>
-</LinearLayout>
+        </LinearLayout>
+    </de.dlyt.yanndroid.oneui.widget.NestedScrollView>
+</de.dlyt.yanndroid.oneui.layout.SwitchBarLayout>

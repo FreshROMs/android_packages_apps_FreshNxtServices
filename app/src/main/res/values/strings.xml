@@ -60,7 +60,7 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_changelog_btn_install">"Install"</string>
     <string name="fresh_ota_changelog_btn_cancel">"Cancel"</string>
     <string name="fresh_ota_changelog_btn_install_later">"Install later"</string>
-    <string name="fresh_ota_checking_for_updates">Checking for updates</string>
+    <string name="fresh_ota_checking_for_updates">Checking for updates…</string>
     <string name="fresh_permissions_storage_title">"Storage permission not granted"</string>
     <string name="fresh_permissions_storage_description">"Fresh System Services requires storage permissions to be able to receive software and app updates."</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
@@ -74,8 +74,27 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_changelog_appbar_detail_success">"Last successful update"</string>
     <string name="fresh_ota_changelog_appbar_detail_subtitle">"Using mobile data to download may result in additional charges. Using Wi-Fi is recommended."</string>
     <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s at %2$s"</string>
-    <string name="fresh_ota_toast_check_failed_generic">"Failed to check for updates."</string>
-    <string name="fresh_ota_toast_check_failed_offline">"No internet connection."</string>
+    <string name="fresh_ota_toast_check_failed_generic">"An unknown error has occurred. Try again later."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"Network not available. Try again later."</string>
+
+    <string name="fresh_ota_notification_group_name">"Software updates"</string>
+    <string name="fresh_ota_notification_channel_name">"Firmware updates"</string>
+    <string name="fresh_ota_notification_channel_description">"This notification channel allows the app to notify you about firmware updates available for your device"</string>
+    <string name="fresh_app_notification_channel_name">"App updates"</string>
+    <string name="fresh_app_notification_channel_description">"This notification channel is used to notify you about system app updates."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"Ongoing notifications"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"This notification channel is used for ongoing updates and notifications."</string>
+
+    <string name="fresh_ota_notification_update_available_title">"Software update available"</string>
+    <string name="fresh_ota_notification_update_available_description">"A new version of Fresh is available for your device."</string>
+
+    <string name="fresh_ota_notification_update_failed_title">"Failed to update software"</string>
+    <string name="fresh_ota_notification_update_failed_description">"Installation of Fresh %1$s has failed. Try downloading updates directly from the FreshROMs website or get support."</string>
+
+    <string name="fresh_ota_notification_update_success_title">"Your device has been updated"</string>
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s has been successfully installed. Enjoy a fresher device!"</string>
+
+
     <!-- Addon management settings -->
     <string name="zest_addon_management_title">"Manage addons"</string>
     <string name="zest_addon_management_subtitle_none">"No addons installed"</string>

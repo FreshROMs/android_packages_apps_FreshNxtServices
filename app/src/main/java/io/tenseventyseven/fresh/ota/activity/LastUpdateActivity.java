@@ -101,7 +101,7 @@ public class LastUpdateActivity extends AppCompatActivity {
         final Spanned markdown = markwon.render(node);
 
         markwon.setParsedMarkdown(mDetailChangelog, markdown);
-        mDetailVersion.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_version), update.getVersionName()));
+        mDetailVersion.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_version), update.getFormattedVersion()));
         mDetailSize.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_size), update.getFileSizeFormat()));
         mDetailSecurityPatch.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_security_patch_level), update.getSplString()));
 
@@ -114,10 +114,12 @@ public class LastUpdateActivity extends AppCompatActivity {
                 mCardAppUpdates.setVisibility(View.GONE);
             } else {
                 for (int i = 0; i < jArray.length(); i++){
-                    appList.append("<li>").append(jArray.getString(i)).append("</li>\n");
+                    appList.append("- ").append(jArray.getString(i)).append("\n");
                 }
 
-                mDetailAppUpdates.setText(appList);
+                final Node appNode = markwon.parse(appList.toString());
+                final Spanned appMarkdown = markwon.render(appNode);
+                markwon.setParsedMarkdown(mDetailAppUpdates, appMarkdown);
             }
         } catch (JSONException e) {
             e.printStackTrace();

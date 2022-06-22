@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import io.tenseventyseven.fresh.utils.Tools;
+
 public class SoftwareUpdate {
     private long dateTime;
     private long versionCode;
@@ -114,6 +116,10 @@ public class SoftwareUpdate {
         return String.format("%s/%s/%s", versionCode, dateTime, releaseType);
     }
 
+    public String getFormattedVersion() {
+        return String.format("%s %s", versionName, Tools.capitalizeString(releaseType));
+    }
+
     @SuppressLint("SimpleDateFormat")
     public String getSplString() {
         if (!"".equals(spl)) {
@@ -132,9 +138,6 @@ public class SoftwareUpdate {
     }
 
     public String getFileSizeFormat() {
-        if (fileSize <= 0) return "0B";
-        final String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
-        int digitGroups = (int) (Math.log10(fileSize)/Math.log10(1024));
-        return new DecimalFormat("#,##0.#").format(fileSize/Math.pow(1000, digitGroups)) + " " + units[digitGroups];
+        return Utils.getFormattedFileSize(fileSize);
     }
 }

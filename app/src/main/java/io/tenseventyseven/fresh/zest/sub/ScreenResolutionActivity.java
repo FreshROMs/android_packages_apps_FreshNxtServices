@@ -26,7 +26,7 @@ import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.HorizontalRadioPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
-import io.tenseventyseven.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
 
 public class ScreenResolutionActivity extends AppCompatActivity {
@@ -53,8 +53,8 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
 
-        ExperienceUtils.checkDefaultApiSetting(this);
-        ExperienceUtils.getRealScreenWidth(this, ExperienceUtils.getActivity(this));
+        Experience.checkDefaultApiSetting(this);
+        Experience.getRealScreenWidth(this, Experience.getActivity(this));
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
@@ -133,7 +133,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         @Override
         public void onConfigurationChanged(@NonNull Configuration newConfig) {
             super.onConfigurationChanged(newConfig);
-            mResolution = ExperienceUtils.getRealScreenWidth(mContext, ExperienceUtils.getActivity(mContext));
+            mResolution = Experience.getRealScreenWidth(mContext, Experience.getActivity(mContext));
             mSetResolution = mResolution;
             setResolutionSummary(preference.getValue());
             mApplyButton.setEnabled(false);
@@ -162,17 +162,17 @@ public class ScreenResolutionActivity extends AppCompatActivity {
                 Settings.System.putInt(mContext.getContentResolver(), SCREEN_RESOLUTION, mResolution);
                 mApplyButton.setEnabled(false);
                 mSetResolution = mResolution;
-                ExperienceUtils.checkDefaultApiSetting(mContext);
+                Experience.checkDefaultApiSetting(mContext);
                 try {
-                    ExperienceUtils.setBypassBlacklist(mContext, true);
+                    Experience.setBypassBlacklist(mContext, true);
                     setResolution(preference.getValue());
 
                     // Re-lock APIs for security
-                    ExperienceUtils.setBypassBlacklist(mContext, false);
+                    Experience.setBypassBlacklist(mContext, false);
 
                     mExecutor.execute(() -> {
-                        ExperienceUtils.stopPackage(mContext, "com.sec.android.app.launcher");
-                        ExperienceUtils.stopPackage(mContext, "com.samsung.android.honeyboard");
+                        Experience.stopPackage(mContext, "com.sec.android.app.launcher");
+                        Experience.stopPackage(mContext, "com.samsung.android.honeyboard");
                     });
                 } catch (Exception e) {
                     Log.e("ScreenResolutionService", "Fail!", e);

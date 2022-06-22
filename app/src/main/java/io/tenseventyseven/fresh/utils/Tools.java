@@ -8,6 +8,8 @@ import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.PowerManager;
 
+import java.util.Locale;
+
 public class Tools {
     public static final String TAG = "FreshHubTools";
 
@@ -44,5 +46,15 @@ public class Tools {
                 || actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)
                 || actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
                 || actNw.hasTransport(NetworkCapabilities.TRANSPORT_BLUETOOTH));
+    }
+
+    public static String capitalizeString(String name) {
+        String str = "";
+
+        if (!name.trim().equals("")) {
+            str = name.substring(0, 1).toUpperCase(Locale.getDefault()) + name.substring(1).toLowerCase(Locale.getDefault());
+        }
+
+        return str;
     }
 }

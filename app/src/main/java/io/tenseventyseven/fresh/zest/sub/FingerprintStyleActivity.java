@@ -30,7 +30,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
@@ -47,7 +46,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.view.Toast;
-import io.tenseventyseven.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
@@ -179,7 +178,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         Settings.System.putString(getContentResolver(), "zest_fod_animation_id", mFodAnimationIdentifiers[mSelectedAnim]);
 
         new Thread(() -> {
-            File folder = ExperienceUtils.getFreshDir();
+            File folder = Experience.getFreshDir();
 
             if (!folder.exists())
                 folder.mkdir();

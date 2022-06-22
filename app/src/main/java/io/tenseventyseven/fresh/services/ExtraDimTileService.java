@@ -5,7 +5,6 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import android.widget.RemoteViews;
 
-import io.tenseventyseven.fresh.PerformanceUtils;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 

@@ -41,17 +41,13 @@ public class SoftwareUpdateProvider extends ContentProvider {
         if (uriMatcher.match(uri) == 1) {
             SoftwareUpdate update = LastSoftwareUpdate.getSoftwareUpdate(mContext);
             MatrixCursor matrixCursor = new MatrixCursor(strArr);
-            matrixCursor.addRow(new Object[]{LastSoftwareUpdate.getLastDate(mContext), update.getFullVersion(), update.getResponse()});
+
+            if (update.getResponse() == 200) // Only return a valid one if update is successful
+                matrixCursor.addRow(new Object[]{LastSoftwareUpdate.getLastDate(mContext), update.getFullVersion(), update.getResponse()});
+
             return matrixCursor;
         } else {
             throw new IllegalArgumentException("query not implemented : " + uri.getPath());
         }
-    }
-
-    private String getVersion() {
-        String versionCode = SystemProperties.get("ro.fresh.build.version");
-        String dateTime = SystemProperties.get("ro.fresh.build.date.utc");
-        String releaseType = SystemProperties.get("ro.fresh.build.branch");
-        return versionCode + "/" + dateTime + "/" + releaseType;
     }
 }

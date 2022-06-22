@@ -1,4 +1,4 @@
-package io.tenseventyseven.fresh;
+package io.tenseventyseven.fresh.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -17,11 +17,10 @@ import android.util.DisplayMetrics;
 import java.io.File;
 import java.lang.reflect.Method;
 
-public class ExperienceUtils {
+public class Experience {
     public static String PREF_NAME = "fresh_system_settings";
     public static String RESTRICTED_API = "device_restricted_api";
-
-    public static String FRESH_OTA_DATABASE = "fresh_ota_db";
+    public static String FRESH_DEVICE_PROVISION_KEY = "fresh_device_provisioned";
 
     public static boolean isGalaxyThemeApplied(Context context) {
         String themePackage = Settings.System.getString(context.getContentResolver(),

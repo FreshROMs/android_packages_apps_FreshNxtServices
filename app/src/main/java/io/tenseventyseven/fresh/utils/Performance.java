@@ -1,4 +1,4 @@
-package io.tenseventyseven.fresh;
+package io.tenseventyseven.fresh.utils;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -9,7 +9,9 @@ import android.provider.Settings;
 
 import java.util.Objects;
 
-public class PerformanceUtils {
+import io.tenseventyseven.fresh.R;
+
+public class Performance {
     public static final Uri perfContentProvider = Uri.parse("content://com.android.server.chimera.provider/v1");
     public static String mPerformanceMode;
 

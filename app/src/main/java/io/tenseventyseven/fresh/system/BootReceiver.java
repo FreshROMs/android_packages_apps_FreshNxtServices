@@ -21,19 +21,33 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.DeviceConfig;
+import android.provider.Settings;
 import android.util.Log;
 
+import java.io.File;
+
 import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.ota.Utils;
+import io.tenseventyseven.fresh.ota.api.UpdateManifest;
+import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 
 public class BootReceiver extends BroadcastReceiver {
-    private static final String TAG = "FRSH/DeviceConfig";
+    private static final String TAG = "FRSH/BootReceiver";
 
     @Override
     public void onReceive(Context context, Intent intent) {
         new Thread(() -> {
+            Log.i(TAG, "Checking device provisioning");
+            checkInstallProvisioning(context);
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
+            Log.i(TAG, "Setting up notification channels for services");
+            Utils.setupNotificationChannels(context);
+
+            Log.i(TAG, "Successfully booted. Welcome to FreshROMs!");
+            Utils.cleanupDownloadsDir();
+            Utils.scheduleRepeatingUpdatesCheck(context);
         }).start();
     }
 
@@ -63,6 +77,20 @@ public class BootReceiver extends BroadcastReceiver {
             if (!isSoft || DeviceConfig.getString(namespace, key, null) == null) {
                 DeviceConfig.setProperty(namespace, key, value, true);
             }
+        }
+    }
+
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    private void checkInstallProvisioning(Context context) {
+        File folder = Experience.getFreshDir();
+        boolean isProvisioned = Settings.System.getInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 0) == 1;
+
+        // If we are not provisioned, delete the Fresh folder and make it again
+        // so we don't transfer over old settings (i.e. fingerprint animation style) to a new installation.
+        if (!isProvisioned && folder.exists()) {
+            folder.delete();
+            folder.mkdir();
+            Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
         }
     }
 }

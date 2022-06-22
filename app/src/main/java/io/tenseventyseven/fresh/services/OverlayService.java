@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import io.tenseventyseven.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.utils.Experience;
 
 public class OverlayService {
 
@@ -34,7 +34,7 @@ public class OverlayService {
         int read;
         String shellResp;
 
-        boolean packageInstalled = ExperienceUtils.isPackageInstalled(context, packageName);
+        boolean packageInstalled = Experience.isPackageInstalled(context, packageName);
 
         if (packageInstalled) {
             try {

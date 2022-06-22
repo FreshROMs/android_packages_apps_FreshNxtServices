@@ -2,7 +2,6 @@ package io.tenseventyseven.fresh.zest;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
@@ -12,7 +11,6 @@ import android.os.SystemClock;
 import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.util.TypedValue;
-import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.View;
 
@@ -33,8 +31,8 @@ import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.SwitchPreference;
 import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
 import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
-import io.tenseventyseven.fresh.PerformanceUtils;
-import io.tenseventyseven.fresh.ExperienceUtils;
+import io.tenseventyseven.fresh.utils.Performance;
+import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.services.OverlayService;
 import io.tenseventyseven.fresh.utils.Preferences;
@@ -151,8 +149,8 @@ public class SettingsActivity extends AppCompatActivity {
             mFingerprintAnimation.seslSetSummaryColor(summaryColor);
 
             String setResolution = ScreenResolutionActivity.getResolution(mContext);
-            String romVersion = ExperienceUtils.getRomVersion();
-            String appVersion = ExperienceUtils.getAppVersion(mContext);
+            String romVersion = Experience.getRomVersion();
+            String appVersion = Experience.getAppVersion(mContext);
 
             // System UI icons
             mDataPreference.setValue(Preferences.getDataConnectionIconPackage(mContext));
@@ -266,7 +264,7 @@ public class SettingsActivity extends AppCompatActivity {
             findPreference("fs_plus_fod_animation_style").setSummary(FingerprintStyleActivity.getAnimString(mContext, fodAnimationId));
 
             // Performance mode
-            findPreference("fs_plus_performance_mode").setSummary(PerformanceUtils.getPerformanceModeString(mContext));
+            findPreference("fs_plus_performance_mode").setSummary(Performance.getPerformanceModeString(mContext));
 
             // Location indicator
             ((SwitchPreference) findPreference("fs_plus_location_indicator")).setChecked(DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
@@ -274,7 +272,7 @@ public class SettingsActivity extends AppCompatActivity {
             findPreference("fs_plus_location_indicator").setOnPreferenceChangeListener(this);
 
             // Disable these settings if app is opened in Samsung DeX
-            if (ExperienceUtils.isDesktopMode(mContext)) {
+            if (Experience.isDesktopMode(mContext)) {
                 findPreference("fs_video_brightness").setEnabled(false);
                 findPreference("sb_icon_style_data").setEnabled(false);
                 findPreference("sb_icon_style_wifi").setEnabled(false);
@@ -332,7 +330,7 @@ public class SettingsActivity extends AppCompatActivity {
                 mRelatedCard.addButton(advancedTitle, advancedIntent)
                         .addButton(dressroomTitle, dressroomIntent);
 
-                if (!ExperienceUtils.isDesktopMode(mContext)) {
+                if (!Experience.isDesktopMode(mContext)) {
                     mRelatedCard.addButton(themesTitle, themesIntent);
                 }
 

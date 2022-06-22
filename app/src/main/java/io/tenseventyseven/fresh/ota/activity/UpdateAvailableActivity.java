@@ -100,7 +100,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         final Spanned markdown = markwon.render(node);
 
         markwon.setParsedMarkdown(mDetailChangelog, markdown);
-        mDetailVersion.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_version), update.getVersionName()));
+        mDetailVersion.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_version), update.getFormattedVersion()));
         mDetailSize.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_size), update.getFileSizeFormat()));
         mDetailSecurityPatch.setText(String.format("%s %s", getString(R.string.fresh_ota_changelog_detail_security_patch_level), update.getSplString()));
 
