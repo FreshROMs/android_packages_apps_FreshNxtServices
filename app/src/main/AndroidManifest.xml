@@ -91,6 +91,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
 
+        <service
+            android:name=".ota.UpdateCheckJobService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
         <provider
             android:name=".ota.SoftwareUpdateProvider"
             android:authorities="io.tenseventyseven.fresh.ota.SoftwareUpdateProvider"
@@ -100,11 +106,12 @@
 
         <activity
             android:name=".ota.activity.UpdateCheckActivity"
-            android:noHistory="true"
-            android:exported="false">
+            android:exported="false"
+            android:noHistory="true">
             <intent-filter>
-                <action android:name="io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
@@ -140,8 +147,9 @@
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings">
             <intent-filter>
-                <action android:name="io.tenseventyseven.fresh.ota.activity.LastUpdateActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="io.tenseventyseven.fresh.ota.activity.LastUpdateActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity

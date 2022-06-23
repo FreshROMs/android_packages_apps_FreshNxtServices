@@ -7,16 +7,19 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.provider.Settings;
 import android.view.ContextThemeWrapper;
 
+import org.json.JSONException;
+import org.lineageos.updater.download.DownloadClient;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -26,9 +29,9 @@ import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.view.Toast;
 import io.tenseventyseven.fresh.R;
-import io.tenseventyseven.fresh.ota.Utils;
+import io.tenseventyseven.fresh.ota.UpdateCheckJobService;
+import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.api.UpdateManifest;
-import io.tenseventyseven.fresh.utils.Notifications;
 
 public class UpdateCheckActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_check_toolbar_layout)
@@ -47,7 +50,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbarLayout.getToolbar());
 
-        Utils.setupNotificationChannels(this);
+        UpdateNotifications.setupNotificationChannels(this);
 
         // But check permissions first - download will be started in the callback
         int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
@@ -68,7 +71,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
         super.onBackPressed();
 
         // Re-schedule updates check.
-        Utils.scheduleUpdatesCheck(this);
+        UpdateCheckJobService.setupCheckJob(this);
         UpdateCheckActivity.this.finish();
     }
 
@@ -85,40 +88,82 @@ public class UpdateCheckActivity extends AppCompatActivity {
     private void checkForUpdates(Context context) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
+        int ret = -1;
 
-        // Cancel existing one-shot check
-        Utils.cancelUpdatesCheck(context);
-
-        // Close immediately if we have no internet connection.
-        if (!Utils.isDeviceOnline(context)) {
-            showErrorToast(context, true);
-            Utils.scheduleUpdatesCheck(context);
-            handler.postDelayed(UpdateCheckActivity.this::finish, 1500);
-            return;
-        }
-
-        // Go straight to UpdateAvailableActivity if we have a pending update.
-        if (Utils.getUpdateAvailability(context)) {
-            Intent intent = new Intent(context, UpdateAvailableActivity.class);
-            startActivity(intent);
-            UpdateCheckActivity.this.finish();
-            return;
-        }
-
+        UpdateCheckJobService.cancelCheckJob(context);
         executor.execute(() -> {
-            int retCode = UpdateManifest.checkForUpdates(context);
+            String server = UpdateManifest.whichServiceReachable(context);
 
-            handler.postDelayed(() -> {
-                if (retCode == UpdateManifest.MANIFEST_SUCCESS) {
-                    Intent intent = Utils.getUpdateAvailability(context) ? new Intent(context, UpdateAvailableActivity.class) : new Intent(context, DeviceUpdatedActivity.class);
+            if (server == null) {
+                showErrorToast(context, true);
+
+                // Re-schedule
+                UpdateCheckJobService.setupCheckJob(context);
+                handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                return;
+            }
+
+            if (UpdateManifest.getUpdateAvailability(context)) {
+                UpdateNotifications.showNewUpdateNotification(context);
+                UpdateCheckJobService.setupCheckJob(context);
+
+                handler.post(() -> {
+                    Intent intent = new Intent(context, UpdateAvailableActivity.class);
                     startActivity(intent);
                     UpdateCheckActivity.this.finish();
-                    return;
+                });
+                return;
+            }
+
+            UpdateNotifications.showOngoingCheckNotification(context);
+            final File json = new File(context.getFilesDir(), UpdateManifest.MANIFEST_FILE_NAME);
+
+            DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
+                @Override
+                public void onFailure(boolean cancelled) {
+                    UpdateCheckJobService.setupCheckJob(context);
+                    showErrorToast(context, false);
                 }
 
-                showErrorToast(context, retCode == UpdateManifest.MANIFEST_FAILED_NO_CONNECTION);
-                handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
-            }, 2000);
+                @Override
+                public void onResponse(DownloadClient.Headers headers) {
+                }
+
+                @Override
+                public void onSuccess() {
+                    try {
+                        if (!json.exists() || !UpdateManifest.parseManifest(context, json)) {
+                            showErrorToast(context, false);
+                        }
+
+                        UpdateCheckJobService.setupCheckJob(context);
+
+                        handler.postDelayed(() -> {
+                            UpdateNotifications.cancelOngoingCheckNotification(context);
+                            Intent intent = new Intent(context,
+                                    UpdateManifest.getUpdateAvailability(context) ? UpdateAvailableActivity.class : DeviceUpdatedActivity.class);
+                            startActivity(intent);
+                            UpdateCheckActivity.this.finish();
+                        }, 2000);
+                    } catch (IOException | JSONException e) {
+                        UpdateCheckJobService.setupCheckJob(context);
+                        showErrorToast(context, false);
+                    }
+                }
+            };
+
+            try {
+                DownloadClient downloadClient = new DownloadClient.Builder()
+                        .setUrl(server)
+                        .setDestination(json)
+                        .setDownloadCallback(callback)
+                        .build();
+                downloadClient.start();
+            } catch (IOException e) {
+                e.printStackTrace();
+                showErrorToast(context, false);
+                UpdateCheckJobService.setupCheckJob(context);
+            }
         });
     }
 

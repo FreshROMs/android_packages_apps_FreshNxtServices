@@ -3,7 +3,6 @@ package io.tenseventyseven.fresh.ota;
 import android.annotation.SuppressLint;
 import android.text.format.DateFormat;
 
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -138,6 +137,6 @@ public class SoftwareUpdate {
     }
 
     public String getFileSizeFormat() {
-        return Utils.getFormattedFileSize(fileSize);
+        return UpdateUtils.getFormattedFileSize(fileSize);
     }
 }

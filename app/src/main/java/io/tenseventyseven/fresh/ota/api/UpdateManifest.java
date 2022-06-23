@@ -16,133 +16,67 @@ package io.tenseventyseven.fresh.ota.api;
  */
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.SystemProperties;
-import android.provider.Settings;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.lineageos.updater.download.DownloadClient;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 
-import io.tenseventyseven.fresh.ota.Utils;
-import io.tenseventyseven.fresh.ota.activity.DeviceUpdatedActivity;
-import io.tenseventyseven.fresh.ota.activity.UpdateAvailableActivity;
-import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
+import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
 
 public class UpdateManifest {
-    public static final int MANIFEST_SUCCESS = 0;
-    public static final int MANIFEST_FAILED_NO_CONNECTION = 1;
-    public static final int MANIFEST_SKIP_PENDING_UPDATE = 2;
-    public static final int MANIFEST_FAILED_UNKNOWN = -1;
+    public static String MANIFEST_FILE_NAME = "manifest.json";
 
-    private static final String MANIFEST_SETTING_USE_MIRROR = "fresh_ota_use_mirror_api";
+    public static String whichServiceReachable(Context context) {
+        String manifest_main_url = String.format("%s/%s/%s/",
+                SystemProperties.get(UpdateUtils.PROP_FRESH_OTA_API),
+                SystemProperties.get(UpdateUtils.PROP_FRESH_DEVICE_PRODUCT),
+                SystemProperties.get(UpdateUtils.PROP_FRESH_ROM_VERSION_CODE));
 
-    public static int checkForUpdates(Context context) {
-        if (!Utils.isDeviceOnline(context)) {
-            Utils.scheduleUpdatesCheck(context);
-            return MANIFEST_FAILED_NO_CONNECTION;
-        }
+        String manifest_mirror_url = String.format("%s/%s/%s/",
+                SystemProperties.get(UpdateUtils.PROP_FRESH_OTA_API_MIRROR),
+                SystemProperties.get(UpdateUtils.PROP_FRESH_DEVICE_PRODUCT),
+                SystemProperties.get(UpdateUtils.PROP_FRESH_ROM_VERSION_CODE));
 
-        if (Utils.getUpdateAvailability(context)) {
-            Utils.showNewUpdateNotification(context);
-            Utils.scheduleUpdatesCheck(context);
-            return MANIFEST_SKIP_PENDING_UPDATE;
-        }
+        // Just bail out immediately if we are not connected
+        if (!UpdateUtils.isDeviceOnline(context))
+            return null;
 
-        // Show checking notification
-        Utils.showOngoingCheckNotification(context);
+        URL url;
+        URLConnection connection;
 
-        final File json = new File(context.getFilesDir(), "manifest.json");
-        String url = String.format("%s/%s/%s/",
-                SystemProperties.get(Utils.PROP_FRESH_OTA_API),
-                SystemProperties.get(Utils.PROP_FRESH_DEVICE_PRODUCT),
-                SystemProperties.get(Utils.PROP_FRESH_ROM_VERSION_CODE));
-
-        DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
-            @Override
-            public void onFailure(boolean cancelled) {
-                Utils.scheduleUpdatesCheck(context);
-                Utils.cancelOngoingCheckNotification(context);
-            }
-
-            @Override
-            public void onResponse(DownloadClient.Headers headers) {
-            }
-
-            @Override
-            public void onSuccess() {
-                try {
-                    if (!json.exists())
-                        return;
-
-                    if (!parseManifest(context, json))
-                        return;
-
-                    if (Utils.getUpdateAvailability(context)) {
-                        Utils.updateRepeatingUpdatesCheck(context);
-                    }
-
-                    // In case we set a one-shot check because of a previous failure
-                    Utils.cancelUpdatesCheck(context);
-                } catch (IOException | JSONException e) {
-                    Utils.scheduleUpdatesCheck(context);
-                }
-            }
-        };
-
+        // Try connecting to both main API and mirror API
         try {
-            DownloadClient downloadClient = new DownloadClient.Builder()
-                    .setUrl(url)
-                    .setDestination(json)
-                    .setDownloadCallback(callback)
-                    .build();
-            downloadClient.start();
+            url = new URL(manifest_main_url);
+            connection = url.openConnection();
+            connection.setConnectTimeout(10 * 1000);
+            connection.connect();
+            return manifest_main_url;
         } catch (IOException e) {
             try {
-                url = String.format("%s/%s/%s/",
-                        SystemProperties.get(Utils.PROP_FRESH_OTA_API_MIRROR),
-                        SystemProperties.get(Utils.PROP_FRESH_DEVICE_PRODUCT),
-                        SystemProperties.get(Utils.PROP_FRESH_ROM_VERSION_CODE));
-                DownloadClient downloadClient = new DownloadClient.Builder()
-                        .setUrl(url)
-                        .setDestination(json)
-                        .setDownloadCallback(callback)
-                        .build();
-                downloadClient.start();
-            } catch (IOException x) {
-                x.printStackTrace();
-                Utils.scheduleUpdatesCheck(context);
-                return MANIFEST_FAILED_UNKNOWN;
+                url = new URL(manifest_mirror_url);
+                connection = url.openConnection();
+                connection.setConnectTimeout(10 * 1000);
+                connection.connect();
+                return manifest_mirror_url;
+            } catch (IOException unused) {
+                return null;
             }
         }
-
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(() -> {
-            if (Utils.getUpdateAvailability(context))
-                Utils.showNewUpdateNotification(context);
-
-            Utils.cancelOngoingCheckNotification(context);
-            Settings.System.putInt(context.getContentResolver(), "badge_for_fota", Utils.getUpdateAvailability(context) ? 1 : 0);
-            Settings.System.putLong(context.getContentResolver(), "SOFTWARE_UPDATE_LAST_CHECKED_DATE", System.currentTimeMillis());
-        }, 2000);
-
-        return MANIFEST_SUCCESS;
     }
-
-    public static boolean parseManifest(Context context, File json) throws IOException, JSONException {
+    public static SoftwareUpdate getUpdateFromManifest(Context context, File json) throws IOException, JSONException {
         SoftwareUpdate update = new SoftwareUpdate();
         StringBuilder sb;
 
@@ -158,7 +92,7 @@ public class UpdateManifest {
         reader.close();
 
         if (sb.toString().isEmpty())
-            return false;
+            return null;
 
         JSONObject jObj = new JSONObject(sb.toString());
         JSONObject romObj = jObj.getJSONObject("response");
@@ -187,8 +121,38 @@ public class UpdateManifest {
         }
 
         update.setUpdatedApps(packageArray.toString());
-        CurrentSoftwareUpdate.setSoftwareUpdate(context, update);
+        return update;
+    }
 
+    public static boolean parseManifest(Context context, File json) throws IOException, JSONException {
+        SoftwareUpdate update = getUpdateFromManifest(context, json);
+
+        if (update == null)
+            return false;
+
+        CurrentSoftwareUpdate.setSoftwareUpdate(context, update);
         return true;
+    }
+
+    public static boolean getUpdateAvailability(Context context) {
+        SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
+        String current = SystemProperties.get(UpdateUtils.PROP_FRESH_ROM_VERSION_CODE);
+        String manifest = Long.toString(update.getVersionCode());
+
+        if (current.length() > manifest.length()) {
+            StringBuilder manifestBuilder = new StringBuilder(manifest);
+            for (int i = 0; i < current.length() - manifestBuilder.length(); i++) {
+                manifestBuilder.append("0");
+            }
+            manifest = manifestBuilder.toString();
+        } else if (manifest.length() > current.length()) {
+            StringBuilder currentBuilder = new StringBuilder(current);
+            for (int i = 0; i < manifest.length() - currentBuilder.length(); i++) {
+                currentBuilder.append("0");
+            }
+            current = currentBuilder.toString();
+        }
+
+        return Long.parseLong(current) < Long.parseLong(manifest);
     }
 }
