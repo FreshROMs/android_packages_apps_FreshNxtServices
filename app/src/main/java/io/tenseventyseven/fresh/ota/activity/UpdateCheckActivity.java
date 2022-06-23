@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.Settings;
 import android.view.ContextThemeWrapper;
 
 import org.json.JSONException;
@@ -31,6 +32,7 @@ import de.dlyt.yanndroid.oneui.view.Toast;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.UpdateCheckJobService;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
+import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.api.UpdateManifest;
 
 public class UpdateCheckActivity extends AppCompatActivity {
@@ -149,9 +151,14 @@ public class UpdateCheckActivity extends AppCompatActivity {
                         UpdateCheckJobService.setupCheckJob(context);
 
                         handler.postDelayed(() -> {
+                            boolean isUpdateAvailable = UpdateManifest.getUpdateAvailability(context);
+
+                            UpdateUtils.setSettingAppBadge(context, isUpdateAvailable);
+                            UpdateUtils.setLastCheckedDate(context);
+
                             UpdateNotifications.cancelOngoingCheckNotification(context);
                             Intent intent = new Intent(context,
-                                    UpdateManifest.getUpdateAvailability(context) ? UpdateAvailableActivity.class : DeviceUpdatedActivity.class);
+                                    isUpdateAvailable ? UpdateAvailableActivity.class : DeviceUpdatedActivity.class);
                             startActivity(intent);
                             UpdateCheckActivity.this.finish();
                         }, 2000);

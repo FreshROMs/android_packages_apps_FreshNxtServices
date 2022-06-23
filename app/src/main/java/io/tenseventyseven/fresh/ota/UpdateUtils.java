@@ -77,4 +77,12 @@ public class UpdateUtils {
         if (otaFile.exists())
             otaFile.delete();
     }
+
+    public static void setLastCheckedDate(Context context) {
+        Settings.System.putLong(context.getContentResolver(), "SOFTWARE_UPDATE_LAST_CHECKED_DATE", System.currentTimeMillis());
+    }
+
+    public static void setSettingAppBadge(Context context, boolean isUpdateAvailable) {
+        Settings.System.putInt(context.getContentResolver(), "badge_for_fota", isUpdateAvailable ? 1 : 0);
+    }
 }

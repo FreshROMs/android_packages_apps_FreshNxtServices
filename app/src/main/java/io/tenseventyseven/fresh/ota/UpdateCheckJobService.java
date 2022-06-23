@@ -100,8 +100,8 @@ public class UpdateCheckJobService extends JobService {
                         UpdateNotifications.showNewUpdateNotification(context);
 
                     UpdateNotifications.cancelOngoingCheckNotification(context);
-                    Settings.System.putInt(context.getContentResolver(), "badge_for_fota", UpdateManifest.getUpdateAvailability(context) ? 1 : 0);
-                    Settings.System.putLong(context.getContentResolver(), "SOFTWARE_UPDATE_LAST_CHECKED_DATE", System.currentTimeMillis());
+                    UpdateUtils.setSettingAppBadge(context, UpdateManifest.getUpdateAvailability(context));
+                    UpdateUtils.setLastCheckedDate(context);
                 }, 2000);
             }
         }).start();
