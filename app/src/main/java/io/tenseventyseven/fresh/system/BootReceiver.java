@@ -90,13 +90,16 @@ public class BootReceiver extends BroadcastReceiver {
         File animJson = new File(folder, "user_fingerprint_touch_effect.json");
         File animJsonTmp = new File(folder, "user_fingerprint_touch_effect.tmp");
 
-        if (!isProvisioned)
-            Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
+        // Skip if we are already provisioned
+        if (isProvisioned)
+            return;
 
         if (animJson.exists())
             animJson.delete();
 
         if (animJsonTmp.exists())
             animJsonTmp.delete();
+
+        Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
     }
 }
