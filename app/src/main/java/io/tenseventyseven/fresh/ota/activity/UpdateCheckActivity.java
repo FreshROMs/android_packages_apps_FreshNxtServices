@@ -88,18 +88,19 @@ public class UpdateCheckActivity extends AppCompatActivity {
     private void checkForUpdates(Context context) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
-        int ret = -1;
 
         UpdateCheckJobService.cancelCheckJob(context);
         executor.execute(() -> {
             String server = UpdateManifest.whichServiceReachable(context);
 
             if (server == null) {
-                showErrorToast(context, true);
+                handler.post(() -> {
+                    showErrorToast(context, true);
 
-                // Re-schedule
-                UpdateCheckJobService.setupCheckJob(context);
-                handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                    // Re-schedule
+                    UpdateCheckJobService.setupCheckJob(context);
+                    handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                });
                 return;
             }
 
@@ -121,8 +122,13 @@ public class UpdateCheckActivity extends AppCompatActivity {
             DownloadClient.DownloadCallback callback = new DownloadClient.DownloadCallback() {
                 @Override
                 public void onFailure(boolean cancelled) {
-                    UpdateCheckJobService.setupCheckJob(context);
-                    showErrorToast(context, false);
+                    handler.post(() -> {
+                        showErrorToast(context, false);
+
+                        // Re-schedule
+                        UpdateCheckJobService.setupCheckJob(context);
+                        handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                    });
                 }
 
                 @Override
@@ -133,7 +139,11 @@ public class UpdateCheckActivity extends AppCompatActivity {
                 public void onSuccess() {
                     try {
                         if (!json.exists() || !UpdateManifest.parseManifest(context, json)) {
-                            showErrorToast(context, false);
+                            handler.postDelayed(() -> {
+                                showErrorToast(context, false);
+                                handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                            }, 2000);
+                            return;
                         }
 
                         UpdateCheckJobService.setupCheckJob(context);
@@ -146,8 +156,13 @@ public class UpdateCheckActivity extends AppCompatActivity {
                             UpdateCheckActivity.this.finish();
                         }, 2000);
                     } catch (IOException | JSONException e) {
-                        UpdateCheckJobService.setupCheckJob(context);
-                        showErrorToast(context, false);
+                        handler.post(() -> {
+                            showErrorToast(context, false);
+
+                            // Re-schedule
+                            UpdateCheckJobService.setupCheckJob(context);
+                            handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                        });
                     }
                 }
             };
@@ -161,8 +176,13 @@ public class UpdateCheckActivity extends AppCompatActivity {
                 downloadClient.start();
             } catch (IOException e) {
                 e.printStackTrace();
-                showErrorToast(context, false);
-                UpdateCheckJobService.setupCheckJob(context);
+                handler.post(() -> {
+                    showErrorToast(context, false);
+
+                    // Re-schedule
+                    UpdateCheckJobService.setupCheckJob(context);
+                    handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
+                });
             }
         });
     }
@@ -178,5 +198,6 @@ public class UpdateCheckActivity extends AppCompatActivity {
 
     private static void showErrorToast(Context context, boolean noConnection) {
         Toast.makeText(context, noConnection ? R.string.fresh_ota_toast_check_failed_offline : R.string.fresh_ota_toast_check_failed_generic, Toast.LENGTH_SHORT).show();
+        UpdateNotifications.cancelOngoingCheckNotification(context);
     }
 }
