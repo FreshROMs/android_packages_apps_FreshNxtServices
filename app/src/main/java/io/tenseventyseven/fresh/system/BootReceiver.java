@@ -27,10 +27,10 @@ import android.util.Log;
 import java.io.File;
 
 import io.tenseventyseven.fresh.R;
-import io.tenseventyseven.fresh.ota.Utils;
-import io.tenseventyseven.fresh.ota.api.UpdateManifest;
+import io.tenseventyseven.fresh.ota.UpdateCheckJobService;
+import io.tenseventyseven.fresh.ota.UpdateNotifications;
+import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.utils.Experience;
-import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 
 public class BootReceiver extends BroadcastReceiver {
     private static final String TAG = "FRSH/BootReceiver";
@@ -42,12 +42,15 @@ public class BootReceiver extends BroadcastReceiver {
             checkInstallProvisioning(context);
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
+
             Log.i(TAG, "Setting up notification channels for services");
-            Utils.setupNotificationChannels(context);
+            UpdateNotifications.setupNotificationChannels(context);
+
+            Log.i(TAG, "Setting up software update jobs");
+            UpdateCheckJobService.setupCheckJob(context);
 
             Log.i(TAG, "Successfully booted. Welcome to FreshROMs!");
-            Utils.cleanupDownloadsDir();
-            Utils.scheduleRepeatingUpdatesCheck(context);
+            UpdateUtils.cleanupDownloadsDir();
         }).start();
     }
 
@@ -84,13 +87,16 @@ public class BootReceiver extends BroadcastReceiver {
     private void checkInstallProvisioning(Context context) {
         File folder = Experience.getFreshDir();
         boolean isProvisioned = Settings.System.getInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 0) == 1;
+        File animJson = new File(folder, "user_fingerprint_touch_effect.json");
+        File animJsonTmp = new File(folder, "user_fingerprint_touch_effect.tmp");
 
-        // If we are not provisioned, delete the Fresh folder and make it again
-        // so we don't transfer over old settings (i.e. fingerprint animation style) to a new installation.
-        if (!isProvisioned && folder.exists()) {
-            folder.delete();
-            folder.mkdir();
+        if (!isProvisioned)
             Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
-        }
+
+        if (animJson.exists())
+            animJson.delete();
+
+        if (animJsonTmp.exists())
+            animJsonTmp.delete();
     }
 }

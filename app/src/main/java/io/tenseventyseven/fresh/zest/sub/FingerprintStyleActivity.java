@@ -212,6 +212,7 @@ public class FingerprintStyleActivity extends AppCompatActivity {
                 animJson.delete();
 
             file.renameTo(animJson);
+            Settings.System.putInt(getContentResolver(), "fresh_device_fingerprint_provisioned", 1);
         }).start();
 
         onBackPressed();

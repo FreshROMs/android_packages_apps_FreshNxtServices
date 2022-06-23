@@ -258,7 +258,9 @@ public class SettingsActivity extends AppCompatActivity {
 
             // Fingerprint animation
             String fodAnimationId = Settings.System.getString(mContext.getContentResolver(), "zest_fod_animation_id");
-            if (fodAnimationId == null || fodAnimationId.isEmpty())
+            boolean fodAnimProvisioned = Settings.System.getInt(mContext.getContentResolver(), "fresh_device_fingerprint_provisioned", 0) == 1;
+
+            if (!fodAnimProvisioned || fodAnimationId == null || fodAnimationId.isEmpty())
                 fodAnimationId = "default";
 
             findPreference("fs_plus_fod_animation_style").setSummary(FingerprintStyleActivity.getAnimString(mContext, fodAnimationId));
