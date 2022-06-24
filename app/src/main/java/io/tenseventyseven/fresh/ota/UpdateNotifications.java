@@ -12,6 +12,7 @@ import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.db.LastSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Notifications;
+import io.tenseventyseven.fresh.utils.Tools;
 
 public class UpdateNotifications {
     public static void showOngoingCheckNotification(Context context) {
@@ -22,7 +23,7 @@ public class UpdateNotifications {
         String notificationContent = context.getString(R.string.fresh_ota_checking_for_updates);
 
         Notification notification = builder.setPriority(NotificationCompat.PRIORITY_LOW)
-                .setColor(context.getResources().getColor(R.color.primary_color))
+                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
                 .setSmallIcon(R.drawable.ic_notification_software_update)
                 .setContentTitle(notificationTitle)
                 .setContentText(notificationContent)
@@ -42,13 +43,31 @@ public class UpdateNotifications {
         String notificationContent = context.getString(R.string.fresh_ota_notification_update_available_description);
 
         Notification notification = builder.setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setColor(context.getResources().getColor(R.color.primary_color))
+                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
                 .setSmallIcon(R.drawable.ic_notification_software_update)
                 .setContentTitle(notificationTitle)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
                 .build();
 
         notificationManager.notify(UpdateUtils.NOTIFICATION_AVAILABLE_UPDATE_ID, notification);
+    }
+
+    public static void showPreUpdateNotification(Context context) {
+        NotificationManager notificationManager = Notifications.getNotificationManager(context);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, UpdateUtils.NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);
+        SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
+
+        String notificationTitle = context.getString(R.string.fresh_ota_notification_update_available_title);
+        String notificationContent = context.getString(R.string.fresh_ota_changelog_appbar_install, update.getVersionName(), Tools.capitalizeString(update.getReleaseType()));
+
+        Notification notification = builder.setPriority(NotificationCompat.PRIORITY_LOW)
+                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
+                .setSmallIcon(R.drawable.ic_notification_software_update)
+                .setContentTitle(notificationTitle)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
+                .build();
+
+        notificationManager.notify(UpdateUtils.NOTIFICATION_POST_UPDATE_ID, notification);
     }
 
     public static void showPostUpdateNotification(Context context, boolean success) {
@@ -68,7 +87,7 @@ public class UpdateNotifications {
         }
 
         Notification notification = builder.setPriority(NotificationCompat.PRIORITY_LOW)
-                .setColor(context.getResources().getColor(R.color.primary_color))
+                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
                 .setSmallIcon(R.drawable.ic_notification_software_update)
                 .setContentTitle(notificationTitle)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))

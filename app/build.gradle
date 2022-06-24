@@ -55,6 +55,9 @@ dependencies {
     implementation "com.jakewharton:butterknife:10.2.3"
     annotationProcessor "com.jakewharton:butterknife-compiler:10.2.3"
 
+    // Fetch
+    implementation "androidx.tonyodev.fetch2:xfetch2:3.1.6"
+
     // Lottie
     implementation "com.airbnb.android:lottie:5.0.3"
 

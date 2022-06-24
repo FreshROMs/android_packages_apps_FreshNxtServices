@@ -1,5 +1,6 @@
 package io.tenseventyseven.fresh.ota;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -10,10 +11,19 @@ import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.os.SystemClock;
 import android.os.SystemProperties;
+import android.provider.Settings;
+import android.text.TextUtils;
 
 import androidx.core.app.NotificationCompat;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
 
 import io.tenseventyseven.fresh.R;
@@ -39,7 +49,7 @@ public class UpdateUtils {
     public static String NOTIFICATION_CHANNEL_APP_ID = "tns_fresh_notification_channel_app";
     public static String NOTIFICATION_ONGOING_CHANNEL_ID = "tns_fresh_notification_channel_ongoing_ota";
 
-    private static final String DAILY_CHECK_ACTION = "daily_check_action";
+    public static final String SW_UPDATE_FILE_NAME = "update.zip";
     private static final String ONESHOT_CHECK_ACTION = "oneshot_check_action";
 
     public static int NOTIFICATION_CHECK_UPDATE_ID = 1077500;
@@ -49,7 +59,7 @@ public class UpdateUtils {
     public static int JOB_UPDATE_CHECK_ID = 1077601;
 
     public static File getUpdatePackageFile() {
-        return new File(Experience.getFreshDir(), "update.zip");
+        return new File(Experience.getFreshDir(), SW_UPDATE_FILE_NAME);
     }
 
     public static boolean isDeviceOnline(Context context) {
@@ -65,6 +75,16 @@ public class UpdateUtils {
                 capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET);
     }
 
+    public static boolean isConnectionUnmetered(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm == null) return false;
+
+        NetworkCapabilities capabilities = cm.getNetworkCapabilities(cm.getActiveNetwork());
+        if (capabilities == null) return false;
+
+        return isDeviceOnline(context) && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED);
+    }
+
     public static String getFormattedFileSize(long fileSize) {
         if (fileSize <= 0) return "0B";
         final String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
@@ -76,6 +96,76 @@ public class UpdateUtils {
         File otaFile = new File(Experience.getFreshDir(), "update.zip");
         if (otaFile.exists())
             otaFile.delete();
+    }
+
+    @SuppressLint("SetWorldReadable")
+    public static void verifyUpdateAsync(Context context) {
+        new Thread(() -> {
+            SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
+            File file = UpdateUtils.getUpdatePackageFile();
+            if (file.exists() && verifyPackage(context, file)) {
+                //noinspection ResultOfMethodCallIgnored
+                file.setReadable(true, false);
+                CurrentSoftwareUpdate.setOtaDownloadVerified(context, true);
+            } else {
+                CurrentSoftwareUpdate.setOtaDownloadVerified(context, false);
+            }
+        }).start();
+    }
+
+    public static boolean verifyPackage(Context context, File updateFile) {
+        SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
+        String md5 = update.getMd5Hash();
+
+        if (TextUtils.isEmpty(md5) || updateFile == null)
+            return false;
+
+        String calculatedDigest = calculateMD5(updateFile);
+        if (calculatedDigest == null)
+            return false;
+
+        return calculatedDigest.equalsIgnoreCase(md5);
+    }
+
+    private static String calculateMD5(File updateFile) {
+        MessageDigest digest;
+
+        try {
+            digest = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        InputStream is;
+        try {
+            is = new FileInputStream(updateFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        byte[] buffer = new byte[8192];
+        int read;
+        try {
+            while ((read = is.read(buffer)) > 0) {
+                digest.update(buffer, 0, read);
+            }
+            byte[] md5sum = digest.digest();
+            BigInteger bigInt = new BigInteger(1, md5sum);
+            String output = bigInt.toString(16);
+            // Fill to 32 chars
+            output = String.format("%32s", output).replace(' ', '0');
+            return output;
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to process file for MD5", e);
+        } finally {
+            try {
+                is.close();
+            } catch (IOException e) {
+                // Unused
+            }
+        }
     }
 
     public static void setLastCheckedDate(Context context) {

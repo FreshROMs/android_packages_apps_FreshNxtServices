@@ -21,6 +21,7 @@ public class SoftwareUpdate {
     private long fileSize;
     private String changelog;
     private String updatedApps;
+    private String downloadId;
     private int response = 0;
 
     public int getResponse() {
@@ -119,6 +120,10 @@ public class SoftwareUpdate {
         return String.format("%s %s", versionName, Tools.capitalizeString(releaseType));
     }
 
+    public String getReleaseName() {
+        return String.format("%s %s %s", "Fresh" ,versionName, Tools.capitalizeString(releaseType));
+    }
+
     @SuppressLint("SimpleDateFormat")
     public String getSplString() {
         if (!"".equals(spl)) {
@@ -138,5 +143,13 @@ public class SoftwareUpdate {
 
     public String getFileSizeFormat() {
         return UpdateUtils.getFormattedFileSize(fileSize);
+    }
+
+    public String getDownloadId() {
+        return downloadId;
+    }
+
+    public void setDownloadId(String downloadId) {
+        this.downloadId = downloadId;
     }
 }

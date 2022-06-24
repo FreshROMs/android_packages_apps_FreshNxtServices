@@ -26,6 +26,20 @@ public class CurrentSoftwareUpdate {
     private static final String OTA_CHANGELOG = "ota_changelog";
     private static final String OTA_UPDATED_APPS = "ota_updated_apps";
 
+    private static final String OTA_DOWNLOAD_ID = "ota_download_id";
+    private static final String OTA_DOWNLOAD_ETA = "ota_download_eta";
+    private static final String OTA_DOWNLOAD_PROGRESS = "ota_download_progress";
+    private static final String OTA_DOWNLOAD_VERIFIED = "ota_download_verified";
+
+    private static final String OTA_DOWNLOAD_STATE = "ota_download_state";
+    public static final int OTA_DOWNLOAD_STATE_NOT_STARTED = -1;
+    public static final int OTA_DOWNLOAD_STATE_COMPLETE = 0;
+    public static final int OTA_DOWNLOAD_STATE_DOWNLOADING = 1;
+    public static final int OTA_DOWNLOAD_STATE_FAILED = 2;
+    public static final int OTA_DOWNLOAD_STATE_PAUSED = 3;
+    public static final int OTA_DOWNLOAD_STATE_CANCELLED = 4;
+    public static final int OTA_DOWNLOAD_STATE_UNKNOWN = 5;
+
     private static final String DEFAULT_VALUE = "null";
 
     private static SharedPreferences getPreferenceDb(Context context) {
@@ -45,6 +59,10 @@ public class CurrentSoftwareUpdate {
         editor.putString(OTA_FILE_HASH, update.getMd5Hash());
         editor.putString(OTA_CHANGELOG, update.getChangelog());
         editor.putString(OTA_UPDATED_APPS, update.getUpdatedApps());
+        editor.putInt(OTA_DOWNLOAD_STATE, OTA_DOWNLOAD_STATE_NOT_STARTED);
+        editor.putBoolean(OTA_DOWNLOAD_VERIFIED, false);
+        editor.putInt(OTA_DOWNLOAD_PROGRESS, 0);
+        editor.putInt(OTA_DOWNLOAD_ETA, 0);
         editor.commit();
     }
 
@@ -80,5 +98,65 @@ public class CurrentSoftwareUpdate {
         }
 
         return apps;
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public static void setOtaDownloadId(Context context, int id) {
+        SharedPreferences.Editor editor = getPreferenceDb(context).edit();
+        editor.putInt(OTA_DOWNLOAD_ID, id);
+        editor.commit();
+    }
+
+    public static int getOtaDownloadId(Context context) {
+        SharedPreferences prefs = getPreferenceDb(context);
+        return prefs.getInt(OTA_DOWNLOAD_ID, 0);
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public static void setOtaDownloadState(Context context, int state) {
+        SharedPreferences.Editor editor = getPreferenceDb(context).edit();
+        editor.putInt(OTA_DOWNLOAD_STATE, state);
+        editor.commit();
+    }
+
+    public static int getOtaDownloadState(Context context) {
+        SharedPreferences prefs = getPreferenceDb(context);
+        return prefs.getInt(OTA_DOWNLOAD_STATE, OTA_DOWNLOAD_STATE_UNKNOWN);
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public static void setOtaDownloadVerified(Context context, boolean verified) {
+        SharedPreferences.Editor editor = getPreferenceDb(context).edit();
+        editor.putBoolean(OTA_DOWNLOAD_VERIFIED, verified);
+        editor.commit();
+    }
+
+    public static boolean getOtaDownloadVerified(Context context) {
+        SharedPreferences prefs = getPreferenceDb(context);
+        return prefs.getBoolean(OTA_DOWNLOAD_VERIFIED, false);
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public static void setOtaDownloadProgress(Context context, int val) {
+        SharedPreferences.Editor editor = getPreferenceDb(context).edit();
+        editor.putInt(OTA_DOWNLOAD_PROGRESS, val);
+        editor.commit();
+    }
+
+    public static int getOtaDownloadProgress(Context context) {
+        SharedPreferences prefs = getPreferenceDb(context);
+        return prefs.getInt(OTA_DOWNLOAD_PROGRESS, 0);
+    }
+
+    @SuppressLint("ApplySharedPref")
+    public static void setOtaDownloadEta(Context context, long val) {
+        SharedPreferences.Editor editor = getPreferenceDb(context).edit();
+        editor.putLong(OTA_DOWNLOAD_ETA, val);
+        editor.commit();
+    }
+
+    public static long getOtaDownloadEta(Context context) {
+        SharedPreferences prefs = getPreferenceDb(context);
+        return prefs.getLong(OTA_DOWNLOAD_ETA, 0);
     }
 }
