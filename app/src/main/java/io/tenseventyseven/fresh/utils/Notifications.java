@@ -36,7 +36,7 @@ public class Notifications {
         return builder;
     }
 
-    public static void cancelOngoingNotification(Context context, int notificationId) {
+    public static void cancelNotification(Context context, int notificationId) {
         getNotificationManager(context).cancel(notificationId);
     }
 

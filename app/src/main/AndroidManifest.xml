@@ -92,10 +92,18 @@
         android:theme="@style/Theme.Zest">
 
         <service
+            android:name=".ota.api.UpdateDownloadService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
             android:name=".ota.UpdateCheckJobService"
             android:enabled="true"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".ota.receivers.DownloadCancelReceiver" />
+        <receiver android:name=".ota.receivers.DownloadPauseReceiver" />
+        <receiver android:name=".ota.receivers.DownloadResumeReceiver" />
 
         <provider
             android:name=".ota.SoftwareUpdateProvider"

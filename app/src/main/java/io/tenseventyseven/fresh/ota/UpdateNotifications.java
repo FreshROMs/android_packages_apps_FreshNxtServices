@@ -15,9 +15,19 @@ import io.tenseventyseven.fresh.utils.Notifications;
 import io.tenseventyseven.fresh.utils.Tools;
 
 public class UpdateNotifications {
+    public static String NOTIFICATION_GROUP_ID = "tns_fresh_notification_group_ota";
+    public static String NOTIFICATION_CHANNEL_ID = "tns_fresh_notification_channel_ota";
+    public static String NOTIFICATION_CHANNEL_APP_ID = "tns_fresh_notification_channel_app";
+    public static String NOTIFICATION_ONGOING_CHANNEL_ID = "tns_fresh_notification_channel_ongoing_ota";
+
+    public static int NOTIFICATION_CHECK_UPDATE_ID = 1077500;
+    public static int NOTIFICATION_AVAILABLE_UPDATE_ID = 1077501;
+    public static int NOTIFICATION_POST_UPDATE_ID = 1077502;
+    public static int NOTIFICATION_DOWNLOADING_UPDATE_ID = 1077503;
+
     public static void showOngoingCheckNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, UpdateUtils.NOTIFICATION_ONGOING_CHANNEL_ID, UpdateCheckActivity.class);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_ONGOING_CHANNEL_ID, UpdateCheckActivity.class);
 
         String notificationTitle = context.getString(R.string.fresh_ota_main_title);
         String notificationContent = context.getString(R.string.fresh_ota_checking_for_updates);
@@ -32,12 +42,12 @@ public class UpdateNotifications {
                 .setShowWhen(false)
                 .build();
 
-        notificationManager.notify(UpdateUtils.NOTIFICATION_CHECK_UPDATE_ID, notification);
+        notificationManager.notify(NOTIFICATION_CHECK_UPDATE_ID, notification);
     }
 
     public static void showNewUpdateNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, UpdateUtils.NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);
 
         String notificationTitle = context.getString(R.string.fresh_ota_notification_update_available_title);
         String notificationContent = context.getString(R.string.fresh_ota_notification_update_available_description);
@@ -49,12 +59,12 @@ public class UpdateNotifications {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
                 .build();
 
-        notificationManager.notify(UpdateUtils.NOTIFICATION_AVAILABLE_UPDATE_ID, notification);
+        notificationManager.notify(NOTIFICATION_AVAILABLE_UPDATE_ID, notification);
     }
 
     public static void showPreUpdateNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, UpdateUtils.NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
 
         String notificationTitle = context.getString(R.string.fresh_ota_notification_update_available_title);
@@ -67,13 +77,13 @@ public class UpdateNotifications {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
                 .build();
 
-        notificationManager.notify(UpdateUtils.NOTIFICATION_POST_UPDATE_ID, notification);
+        notificationManager.notify(NOTIFICATION_POST_UPDATE_ID, notification);
     }
 
     public static void showPostUpdateNotification(Context context, boolean success) {
         Class<?> cls = success ? LastSoftwareUpdate.class : UpdateCheckActivity.class;
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, UpdateUtils.NOTIFICATION_CHANNEL_ID, cls);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, cls);
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
 
         String notificationTitle = context.getString(R.string.fresh_ota_notification_update_failed_title);
@@ -93,25 +103,25 @@ public class UpdateNotifications {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
                 .build();
 
-        notificationManager.notify(UpdateUtils.NOTIFICATION_POST_UPDATE_ID, notification);
+        notificationManager.notify(NOTIFICATION_POST_UPDATE_ID, notification);
     }
 
     public static void setupNotificationChannels(Context context) {
         // Setup notifications
-        Notifications.setupNotificationGroup(context, UpdateUtils.NOTIFICATION_GROUP_ID, R.string.fresh_ota_notification_group_name);
+        Notifications.setupNotificationGroup(context, NOTIFICATION_GROUP_ID, R.string.fresh_ota_notification_group_name);
         Notifications.setupNotificationChannel(context,
-                UpdateUtils.NOTIFICATION_GROUP_ID, UpdateUtils.NOTIFICATION_CHANNEL_ID,
+                NOTIFICATION_GROUP_ID, NOTIFICATION_CHANNEL_ID,
                 R.string.fresh_ota_notification_channel_name, R.string.fresh_ota_notification_channel_description, NotificationManager.IMPORTANCE_HIGH);
         Notifications.setupNotificationChannel(context,
-                UpdateUtils.NOTIFICATION_GROUP_ID, UpdateUtils.NOTIFICATION_CHANNEL_APP_ID,
+                NOTIFICATION_GROUP_ID, NOTIFICATION_CHANNEL_APP_ID,
                 R.string.fresh_app_notification_channel_name, R.string.fresh_app_notification_channel_description, NotificationManager.IMPORTANCE_HIGH);
         Notifications.setupNotificationChannel(context,
-                UpdateUtils.NOTIFICATION_GROUP_ID, UpdateUtils.NOTIFICATION_ONGOING_CHANNEL_ID,
+                NOTIFICATION_GROUP_ID, NOTIFICATION_ONGOING_CHANNEL_ID,
                 R.string.fresh_ota_ongoing_notification_channel_name, R.string.fresh_ota_ongoing_notification_channel_description, NotificationManager.IMPORTANCE_LOW);
 
     }
 
     public static void cancelOngoingCheckNotification(Context context) {
-        Notifications.cancelOngoingNotification(context, UpdateUtils.NOTIFICATION_CHECK_UPDATE_ID);
+        Notifications.cancelNotification(context, NOTIFICATION_CHECK_UPDATE_ID);
     }
 }

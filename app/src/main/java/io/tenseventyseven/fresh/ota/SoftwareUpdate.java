@@ -121,7 +121,7 @@ public class SoftwareUpdate {
     }
 
     public String getReleaseName() {
-        return String.format("%s %s %s", "Fresh" ,versionName, Tools.capitalizeString(releaseType));
+        return String.format("%s %s %s", "Fresh", versionName, Tools.capitalizeString(releaseType));
     }
 
     @SuppressLint("SimpleDateFormat")

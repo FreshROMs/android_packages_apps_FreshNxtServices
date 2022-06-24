@@ -13,6 +13,7 @@ import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
@@ -29,6 +30,7 @@ import java.text.DecimalFormat;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.activity.UpdateAvailableActivity;
 import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
+import io.tenseventyseven.fresh.ota.api.UpdateDownloadService;
 import io.tenseventyseven.fresh.ota.db.LastSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
@@ -44,17 +46,8 @@ public class UpdateUtils {
     public static String PROP_FRESH_ROM_VERSION_NAME = SystemProperties.get("ro.fresh.version");
     public static String PROP_FRESH_ROM_VERSION_UTC = SystemProperties.get("ro.fresh.build.date.utc");
 
-    public static String NOTIFICATION_GROUP_ID = "tns_fresh_notification_group_ota";
-    public static String NOTIFICATION_CHANNEL_ID = "tns_fresh_notification_channel_ota";
-    public static String NOTIFICATION_CHANNEL_APP_ID = "tns_fresh_notification_channel_app";
-    public static String NOTIFICATION_ONGOING_CHANNEL_ID = "tns_fresh_notification_channel_ongoing_ota";
-
     public static final String SW_UPDATE_FILE_NAME = "update.zip";
     private static final String ONESHOT_CHECK_ACTION = "oneshot_check_action";
-
-    public static int NOTIFICATION_CHECK_UPDATE_ID = 1077500;
-    public static int NOTIFICATION_AVAILABLE_UPDATE_ID = 1077501;
-    public static int NOTIFICATION_POST_UPDATE_ID = 1077502;
 
     public static int JOB_UPDATE_CHECK_ID = 1077601;
 
@@ -90,6 +83,13 @@ public class UpdateUtils {
         final String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
         int digitGroups = (int) (Math.log10(fileSize)/Math.log10(1000));
         return new DecimalFormat("#,##0.#").format(fileSize/Math.pow(1000, digitGroups)) + " " + units[digitGroups];
+    }
+
+    public static String getFormattedSpeed(long fileSize) {
+        if (fileSize <= 0) return "0B/s";
+        final String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
+        int digitGroups = (int) (Math.log10(fileSize)/Math.log10(1000));
+        return String.format("%s/s", new DecimalFormat("#,##0.#").format(fileSize/Math.pow(1000, digitGroups)) + " " + units[digitGroups]);
     }
 
     public static void cleanupDownloadsDir() {
@@ -174,5 +174,23 @@ public class UpdateUtils {
 
     public static void setSettingAppBadge(Context context, boolean isUpdateAvailable) {
         Settings.System.putInt(context.getContentResolver(), "badge_for_fota", isUpdateAvailable ? 1 : 0);
+    }
+
+    public static void startUpdateService(Context context) {
+        try {
+            if (!UpdateDownloadService.isAvailable())
+                context.startService(new Intent(context, UpdateDownloadService.class));
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void tryStopUpdateService(Context context) {
+        try {
+            if (!UpdateDownloadService.isAvailable())
+                context.stopService(new Intent(context, UpdateDownloadService.class));
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -31,8 +31,15 @@
 
     <PreferenceCategory>
         <Preference
+            android:title="Aurora Droid"
+            android:summary="Rahul Patel - GPL-3.0">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://gitlab.com/AuroraOSS/auroradroid" />
+        </Preference>
+        <Preference
             android:title="OTA Updates"
-            android:summary="Matthew Booth - Creative Commons BY-NC-SA 4.0">
+            android:summary="Matthew Booth - CC BY-NC-SA 4.0">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://github.com/MatthewBooth/OTAUpdates/tree/develop" />
@@ -44,6 +51,9 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://github.com/LineageOS/android_packages_apps_Updater/tree/lineage-19.0" />
         </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory>
         <Preference
             android:title="Simple DeviceConfig (ProtonAOSP)"
             android:summary="Danny Lin (kdrag0n) - Apache-2.0">

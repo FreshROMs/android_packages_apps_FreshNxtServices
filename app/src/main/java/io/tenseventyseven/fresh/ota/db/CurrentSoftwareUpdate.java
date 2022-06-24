@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
+import io.tenseventyseven.fresh.ota.api.UpdateDownload;
 
 public class CurrentSoftwareUpdate {
 
@@ -32,13 +33,6 @@ public class CurrentSoftwareUpdate {
     private static final String OTA_DOWNLOAD_VERIFIED = "ota_download_verified";
 
     private static final String OTA_DOWNLOAD_STATE = "ota_download_state";
-    public static final int OTA_DOWNLOAD_STATE_NOT_STARTED = -1;
-    public static final int OTA_DOWNLOAD_STATE_COMPLETE = 0;
-    public static final int OTA_DOWNLOAD_STATE_DOWNLOADING = 1;
-    public static final int OTA_DOWNLOAD_STATE_FAILED = 2;
-    public static final int OTA_DOWNLOAD_STATE_PAUSED = 3;
-    public static final int OTA_DOWNLOAD_STATE_CANCELLED = 4;
-    public static final int OTA_DOWNLOAD_STATE_UNKNOWN = 5;
 
     private static final String DEFAULT_VALUE = "null";
 
@@ -59,7 +53,7 @@ public class CurrentSoftwareUpdate {
         editor.putString(OTA_FILE_HASH, update.getMd5Hash());
         editor.putString(OTA_CHANGELOG, update.getChangelog());
         editor.putString(OTA_UPDATED_APPS, update.getUpdatedApps());
-        editor.putInt(OTA_DOWNLOAD_STATE, OTA_DOWNLOAD_STATE_NOT_STARTED);
+        editor.putInt(OTA_DOWNLOAD_STATE, UpdateDownload.OTA_DOWNLOAD_STATE_NOT_STARTED);
         editor.putBoolean(OTA_DOWNLOAD_VERIFIED, false);
         editor.putInt(OTA_DOWNLOAD_PROGRESS, 0);
         editor.putInt(OTA_DOWNLOAD_ETA, 0);
@@ -121,7 +115,7 @@ public class CurrentSoftwareUpdate {
 
     public static int getOtaDownloadState(Context context) {
         SharedPreferences prefs = getPreferenceDb(context);
-        return prefs.getInt(OTA_DOWNLOAD_STATE, OTA_DOWNLOAD_STATE_UNKNOWN);
+        return prefs.getInt(OTA_DOWNLOAD_STATE, UpdateDownload.OTA_DOWNLOAD_STATE_UNKNOWN);
     }
 
     @SuppressLint("ApplySharedPref")
