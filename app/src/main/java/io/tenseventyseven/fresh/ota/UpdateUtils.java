@@ -9,6 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.provider.Settings;
@@ -30,6 +32,7 @@ import java.text.DecimalFormat;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.activity.UpdateAvailableActivity;
 import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
+import io.tenseventyseven.fresh.ota.api.UpdateDownload;
 import io.tenseventyseven.fresh.ota.api.UpdateDownloadService;
 import io.tenseventyseven.fresh.ota.db.LastSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Experience;
@@ -92,38 +95,21 @@ public class UpdateUtils {
     }
 
     public static String getFormattedSpeed(long fileSize) {
-        if (fileSize <= 0) return "0B/s";
-        final String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
-        int digitGroups = (int) (Math.log10(fileSize)/Math.log10(1000));
-        return String.format("%s/s", new DecimalFormat("#,##0.#").format(fileSize/Math.pow(1000, digitGroups)) + " " + units[digitGroups]);
-    }
-
-    public static void cleanupDownloadsDir() {
-        File otaFile = new File(Experience.getFreshDir(), "update.zip");
-        if (otaFile.exists())
-            otaFile.delete();
+        return String.format("%s/s", getFormattedFileSize(fileSize));
     }
 
     @SuppressLint("SetWorldReadable")
     public static void verifyUpdateAsync(Context context) {
         new Thread(() -> {
-            SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
-            File file = UpdateUtils.getUpdatePackageFile();
-            if (file.exists() && verifyPackage(context, file)) {
-                //noinspection ResultOfMethodCallIgnored
-                file.setReadable(true, false);
-                CurrentSoftwareUpdate.setOtaDownloadVerified(context, true);
-            } else {
-                CurrentSoftwareUpdate.setOtaDownloadVerified(context, false);
-            }
         }).start();
     }
 
-    public static boolean verifyPackage(Context context, File updateFile) {
+    public static boolean verifyPackage(Context context) {
+        File updateFile = UpdateUtils.getUpdatePackageFile();
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
         String md5 = update.getMd5Hash();
 
-        if (TextUtils.isEmpty(md5) || updateFile == null)
+        if (TextUtils.isEmpty(md5))
             return false;
 
         String calculatedDigest = calculateMD5(updateFile);
@@ -182,21 +168,4 @@ public class UpdateUtils {
         Settings.System.putInt(context.getContentResolver(), "badge_for_fota", isUpdateAvailable ? 1 : 0);
     }
 
-    public static void startUpdateService(Context context) {
-        try {
-            if (!UpdateDownloadService.isAvailable())
-                context.startService(new Intent(context, UpdateDownloadService.class));
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void tryStopUpdateService(Context context) {
-        try {
-            if (!UpdateDownloadService.isAvailable())
-                context.stopService(new Intent(context, UpdateDownloadService.class));
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
-    }
 }
