@@ -47,6 +47,7 @@ public class UpdateDownloadService extends Service {
     private Fetch fetch;
     private AbstractFetchGroupListener fetchListener;
     private NotificationManager notificationManager;
+    private PowerManager.WakeLock mWakeLock;
 
     public static boolean isAvailable() {
         try {
@@ -78,7 +79,7 @@ public class UpdateDownloadService extends Service {
 
         UpdateNotifications.setupNotificationChannels(this);
 
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager = Notifications.getNotificationManager(this);
         fetch = UpdateDownload.getFetchInstance(this);
         fetchListener = new AbstractFetchGroupListener() {
             @Override
