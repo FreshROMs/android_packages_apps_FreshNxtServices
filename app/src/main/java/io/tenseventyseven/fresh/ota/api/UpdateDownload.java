@@ -33,29 +33,23 @@ public class UpdateDownload {
     private static volatile UpdateDownload instance;
     private static Fetch fetch;
 
-    // Download possibility checking
-    public static final int DOWNLOAD_POSSIBLE = 0;
-    public static final int NOT_POSSIBLE_NO_CONNECTION = 1;
-    public static final int NOT_POSSIBLE_UNREACHABLE = 2;
-    public static final int NOT_POSSIBLE_METERED = 2;
-    public static final int NOT_POSSIBLE_UNKNOWN = -1;
-
     // OTA download state
     public static final int OTA_DOWNLOAD_STATE_NOT_STARTED = -1;
-    public static final int OTA_DOWNLOAD_STATE_COMPLETE = 0;
-    public static final int OTA_DOWNLOAD_STATE_DOWNLOADING = 1;
-    public static final int OTA_DOWNLOAD_STATE_FAILED = 2;
-    public static final int OTA_DOWNLOAD_STATE_PAUSED = 3;
-    public static final int OTA_DOWNLOAD_STATE_CANCELLED = 4;
-    public static final int OTA_DOWNLOAD_STATE_UNKNOWN = 5;
-
-    private static final long UPDATE_STATUS_INTERVAL = 1000;
+    public static final int OTA_DOWNLOAD_STATE_COMPLETE = 1;
+    public static final int OTA_DOWNLOAD_STATE_DOWNLOADING = 2;
+    public static final int OTA_DOWNLOAD_STATE_FAILED = 3;
+    public static final int OTA_DOWNLOAD_STATE_PAUSED = 4;
+    public static final int OTA_DOWNLOAD_STATE_CANCELLED = 5;
+    public static final int OTA_DOWNLOAD_STATE_VERIFYING = 6;
+    public static final int OTA_DOWNLOAD_STATE_FAILED_VERIFICATION = 7;
+    public static final int OTA_DOWNLOAD_STATE_UNKNOWN = 8;
 
     public UpdateDownload() {
         if (instance != null) {
             throw new RuntimeException("Uh-oh! Use getFetchInstance() method to get the single instance of UpdateDownload");
         }
     }
+
     public static Fetch getFetchInstance(Context context) {
         if (instance == null) {
             synchronized (UpdateDownload.class) {
@@ -74,30 +68,11 @@ public class UpdateDownload {
                 .setAutoRetryMaxAttempts(3)
                 .setNamespace(FETCH_INSTANCE_NAME)
                 .setProgressReportingInterval(500)
+                .enableRetryOnNetworkGain(true)
+                .enableAutoStart(true)
                 .enableHashCheck(true);
 
         return Fetch.Impl.getInstance(fc.build());
-    }
-
-    public static int isDownloadPossible(Context context, String downloadUrl) {
-        // Just bail out immediately if there's no internet connection.
-        if (!UpdateUtils.isDeviceOnline(context))
-            return NOT_POSSIBLE_NO_CONNECTION;
-
-        if (!UpdateUtils.isConnectionUnmetered(context))
-            return NOT_POSSIBLE_METERED;
-
-        // Test connection to the server
-        try {
-            URL url = new URL(downloadUrl);
-            URLConnection connection = url.openConnection();
-            connection.setConnectTimeout(10 * 1000);
-            connection.connect();
-            return DOWNLOAD_POSSIBLE;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return NOT_POSSIBLE_UNREACHABLE;
-        }
     }
 
     public static void downloadUpdate(Context context, Func<Request> success, Func<Error> error) {
@@ -110,5 +85,25 @@ public class UpdateDownload {
         CurrentSoftwareUpdate.setOtaDownloadId(context, request.getId());
 
         fetch.enqueue(request, success, error);
+    }
+
+    public static void startService(Context context) {
+        try {
+            if (!UpdateDownloadService.isAvailable())
+                context.startService(new Intent(context, UpdateDownloadService.class));
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void tryStopService(Context context) {
+        try {
+            if (UpdateDownloadService.isAvailable()) {
+                context.stopService(new Intent(context, UpdateDownloadService.class));
+                instance = null;
+            }
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
     }
 }
