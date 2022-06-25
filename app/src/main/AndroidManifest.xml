@@ -94,11 +94,13 @@
         <service
             android:name=".ota.api.UpdateDownloadService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:stopWithTask="true" />
         <service
             android:name=".ota.api.UpdateCheckService"
             android:enabled="true"
             android:exported="true"
+            android:stopWithTask="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <receiver android:name=".ota.receivers.DownloadCancelReceiver" />
