@@ -72,6 +72,10 @@ public class UpdateDownloadService extends Service {
         super.onCreate();
         INSTANCE = this;
 
+        PowerManager powerManager = getSystemService(PowerManager.class);
+        mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "UpdateDownloadService:wakelock");
+        mWakeLock.setReferenceCounted(false);
+
         UpdateNotifications.setupNotificationChannels(this);
 
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -260,7 +264,13 @@ public class UpdateDownloadService extends Service {
     @Override
     public void onDestroy() {
         fetch.removeListener(fetchListener);
+        fetch.close();
+        fetch = null;
         INSTANCE = null;
+
+        if (mWakeLock != null)
+            mWakeLock.release();
+
         super.onDestroy();
     }
 }
