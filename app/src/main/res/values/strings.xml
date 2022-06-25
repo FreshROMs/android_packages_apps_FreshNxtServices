@@ -63,6 +63,7 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_changelog_btn_cancel">"Cancel"</string>
     <string name="fresh_ota_changelog_btn_install_later">"Install later"</string>
     <string name="fresh_ota_checking_for_updates">Checking for updates…</string>
+    <string name="fresh_ota_verifying_update">Verifying update…</string>
     <string name="fresh_permissions_storage_title">"Storage permission not granted"</string>
     <string name="fresh_permissions_storage_description">"Fresh System Services requires storage permissions to be able to receive software and app updates."</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
@@ -92,8 +93,11 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_ongoing_notification_channel_name">"Ongoing notifications"</string>
     <string name="fresh_ota_ongoing_notification_channel_description">"This notification channel is used for ongoing updates and notifications."</string>
 
+    <string name="fresh_ota_notification_update_install_title">"Software update ready to install"</string>
     <string name="fresh_ota_notification_update_available_title">"Software update available"</string>
     <string name="fresh_ota_notification_update_available_description">"A new version of Fresh is available for your device."</string>
+
+    <string name="fresh_ota_notification_verification_failed_description">"Software update verification failed. Try again later."</string>
 
     <string name="fresh_ota_notification_download_failed_title">"Failed to download software"</string>
     <string name="fresh_ota_notification_update_failed_title">"Failed to update software"</string>

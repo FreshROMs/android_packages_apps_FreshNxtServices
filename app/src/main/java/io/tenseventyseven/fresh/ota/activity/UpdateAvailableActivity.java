@@ -4,15 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
 import android.text.Spanned;
-import android.view.ContextThemeWrapper;
 import android.view.View;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -33,6 +36,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,7 +52,6 @@ import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.api.UpdateDownload;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Notifications;
-import io.tenseventyseven.fresh.utils.Tools;
 
 public class UpdateAvailableActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_toolbar_layout)
@@ -153,9 +157,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
 
         @Override
         public void onCompleted(@NonNull Download download) {
-            CurrentSoftwareUpdate.setOtaDownloadId(mContext, 0);
-            updateState(UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE);
-            mFetch.removeListener(mFetchListener);
+            updateState(UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING);
         }
 
         @Override
@@ -172,6 +174,8 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     private long mEta;
     private int mProgress;
 
+    private static Dialog mLoadingDialog = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -180,7 +184,6 @@ public class UpdateAvailableActivity extends AppCompatActivity {
 
         mContext = this;
         final Markwon markwon = Markwon.create(mContext);
-        UpdateUtils.startUpdateService(mContext);
 
         toolbarLayout.setExpanded(false);
         toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
@@ -190,7 +193,6 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         mButtonBarInstall.setVisibility(View.GONE);
 
         mUpdate = CurrentSoftwareUpdate.getSoftwareUpdate(mContext);
-        mFetch = UpdateDownload.getFetchInstance(mContext);
 
         mAppBarProgress.setVisibility(View.GONE);
         mAppBarTimeRemaining.setVisibility(View.GONE);
@@ -230,16 +232,22 @@ public class UpdateAvailableActivity extends AppCompatActivity {
             e.printStackTrace();
             mCardAppUpdates.setVisibility(View.GONE);
         }
-
-        updateState(CurrentSoftwareUpdate.getOtaDownloadState(mContext));
     }
 
     @Override
     public void onResume() {
         super.onResume();
+
         mAppBarProgress.setProgress(CurrentSoftwareUpdate.getOtaDownloadProgress(mContext));
         updateSubtitleText(CurrentSoftwareUpdate.getOtaDownloadEta(mContext), 0);
-        mFetch.addListener(mFetchListener);
+
+        if (mFetch == null || mFetch.isClosed()) {
+            mFetch = UpdateDownload.getFetchInstance(mContext);
+            mFetch.addListener(mFetchListener);
+        }
+
+        setupLoadingDialog();
+        updateState(0);
     }
 
     @Override
@@ -249,14 +257,16 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         CurrentSoftwareUpdate.setOtaDownloadEta(mContext, mEta);
         CurrentSoftwareUpdate.setOtaDownloadProgress(mContext, mProgress);
 
+        if (!mFetch.isClosed())
+            mFetch.removeListener(mFetchListener);
+
         if (state == UpdateDownload.OTA_DOWNLOAD_STATE_FAILED ||
+                state == UpdateDownload.OTA_DOWNLOAD_STATE_FAILED_VERIFICATION ||
                 state == UpdateDownload.OTA_DOWNLOAD_STATE_CANCELLED ||
                 state == UpdateDownload.OTA_DOWNLOAD_STATE_NOT_STARTED ||
                 state == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE ||
                 state == UpdateDownload.OTA_DOWNLOAD_STATE_UNKNOWN)
-            UpdateUtils.tryStopUpdateService(mContext);
-
-        mFetch.removeListener(mFetchListener);
+            UpdateDownload.tryStopService(mContext);
     }
 
     private void updateSubtitleText(long eta, long speed) {
@@ -290,8 +300,12 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     }
 
     private void downloadUpdate() {
-        // Cancel 'available' notification
         Notifications.cancelNotification(mContext, UpdateNotifications.NOTIFICATION_AVAILABLE_UPDATE_ID);
+        Notifications.cancelNotification(mContext, UpdateNotifications.NOTIFICATION_POST_UPDATE_ID);
+
+        UpdateDownload.startService(mContext);
+        mFetch = UpdateDownload.getFetchInstance(mContext);
+        mFetch.addListener(mFetchListener);
 
         UpdateDownload.downloadUpdate(mContext, success -> {
             updateState(UpdateDownload.OTA_DOWNLOAD_STATE_DOWNLOADING);
@@ -327,10 +341,6 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     }
 
     private void pauseUpdate() {
-        // Save current progress to db
-        CurrentSoftwareUpdate.setOtaDownloadProgress(mContext, mProgress);
-        CurrentSoftwareUpdate.setOtaDownloadEta(mContext, mEta);
-
         Toast.makeText(mContext, R.string.fresh_ota_changelog_appbar_paused, Toast.LENGTH_SHORT).show();
         mFetch.pause(CurrentSoftwareUpdate.getOtaDownloadId(mContext));
     }
@@ -342,8 +352,6 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     private void cancelUpdate() {
         Toast.makeText(mContext, R.string.fresh_ota_notification_download_cancelled, Toast.LENGTH_SHORT).show();
         mFetch.cancel(CurrentSoftwareUpdate.getOtaDownloadId(mContext));
-        mFetch.delete(CurrentSoftwareUpdate.getOtaDownloadId(mContext));
-        mFetch.remove(CurrentSoftwareUpdate.getOtaDownloadId(mContext));
     }
 
     private void cancelUpdateExit() {
@@ -360,14 +368,23 @@ public class UpdateAvailableActivity extends AppCompatActivity {
 
     private void updateState(int state) {
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(mContext);
-        CurrentSoftwareUpdate.setOtaDownloadState(mContext, state);
+        if (state == 0)
+            state = CurrentSoftwareUpdate.getOtaDownloadState(mContext);
+
+        if (state != UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING)
+            CurrentSoftwareUpdate.setOtaDownloadState(mContext, state);
 
         // Show button bar based on state
         mButtonBarInstall.setVisibility(state == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE ? View.VISIBLE : View.GONE);
         mButtonBarDownload.setVisibility(state == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE ? View.GONE : View.VISIBLE);
 
+        if (state == UpdateDownload.OTA_DOWNLOAD_STATE_FAILED_VERIFICATION) {
+            Toast.makeText(mContext, R.string.fresh_ota_notification_verification_failed_description, Toast.LENGTH_SHORT).show();
+        }
+
         switch (state) {
             case UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE:
+                mLoadingDialog.hide();
                 mAppBarTitle.setText(mContext.getString(R.string.fresh_ota_changelog_appbar_install,
                         update.getVersionName(), update.getFormattedReleaseType()));
                 mAppBarSubtitle.setVisibility(View.VISIBLE);
@@ -381,10 +398,15 @@ public class UpdateAvailableActivity extends AppCompatActivity {
                 mBtnDownload.setText(R.string.fresh_ota_changelog_btn_download);
                 mBtnDownload.setOnClickListener(v -> downloadUpdateWithWarning());
                 mBtnCancel.setOnClickListener(v -> onBackPressed());
+                mBtnInstall.setEnabled(true);
+                mBtnLater.setEnabled(true);
+
+                UpdateDownload.tryStopService(this);
                 break;
             case UpdateDownload.OTA_DOWNLOAD_STATE_FAILED:
             case UpdateDownload.OTA_DOWNLOAD_STATE_NOT_STARTED:
             case UpdateDownload.OTA_DOWNLOAD_STATE_CANCELLED:
+            case UpdateDownload.OTA_DOWNLOAD_STATE_FAILED_VERIFICATION:
                 mAppBarTitle.setText(R.string.fresh_ota_changelog_appbar_detail);
                 mAppBarSubtitle.setVisibility(View.VISIBLE);
                 mAppBarSubtitle.setText(R.string.fresh_ota_check_for_updates_summary);
@@ -421,6 +443,44 @@ public class UpdateAvailableActivity extends AppCompatActivity {
                 mBtnDownload.setOnClickListener(v -> resumeUpdate());
                 mBtnCancel.setOnClickListener(v -> cancelUpdate());
                 break;
+            case UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING:
+                ExecutorService executor = Executors.newSingleThreadExecutor();
+                Handler handler = new Handler(Looper.getMainLooper());
+
+                mLoadingDialog.show();
+                mAppBarTitle.setText(mContext.getString(R.string.fresh_ota_changelog_appbar_install,
+                        update.getVersionName(), update.getReleaseType()));
+                mAppBarSubtitle.setVisibility(View.VISIBLE);
+                mAppBarSubtitle.setText(R.string.fresh_ota_changelog_appbar_install_summary);
+                mAppBarProgress.setVisibility(View.GONE);
+                mAppBarTimeRemaining.setVisibility(View.GONE);
+
+                mAppBarProgress.setProgress(100, true);
+                updateSubtitleText(0, 0);
+
+                mBtnDownload.setText(R.string.fresh_ota_changelog_btn_download);
+                mBtnDownload.setOnClickListener(v -> downloadUpdateWithWarning());
+                mBtnCancel.setOnClickListener(v -> onBackPressed());
+                mBtnInstall.setEnabled(false);
+                mBtnLater.setEnabled(false);
+
+                executor.execute(() -> {
+                    while (CurrentSoftwareUpdate.getOtaDownloadState(mContext) == UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING) {
+                        SystemClock.sleep(500);
+                    }
+                    handler.post(() -> updateState(0));
+                });
         }
+    }
+
+    private void setupLoadingDialog() {
+        if (mLoadingDialog != null)
+            return;
+
+        final View layout = getLayoutInflater().inflate(R.layout.dialog_full_loading, null);
+        mLoadingDialog = new Dialog(mContext, R.style.LargeProgressDialog);
+        mLoadingDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mLoadingDialog.setCancelable(false);
+        mLoadingDialog.setContentView(layout);
     }
 }

@@ -1,13 +1,16 @@
 package io.tenseventyseven.fresh.ota.api;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.os.PowerManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,11 +26,15 @@ import com.tonyodev.fetch2.Status;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -89,7 +96,8 @@ public class UpdateDownloadService extends Service {
 
             @Override
             public void onCompleted(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                Notifications.cancelNotification(INSTANCE, UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID);
+                verifyUpdate();
             }
 
             @Override
@@ -167,7 +175,7 @@ public class UpdateDownloadService extends Service {
         final int progress = download.getProgress();
         final NotificationCompat.BigTextStyle progressBigText = new NotificationCompat.BigTextStyle();
 
-        //Set Notification data
+        // Set Notification data
         switch (status) {
             case QUEUED:
                 builder.setProgress(100, 0, true);
@@ -240,6 +248,30 @@ public class UpdateDownloadService extends Service {
             UpdateUtils.deleteUpdatePackageFile();
             UpdateDownload.tryStopService(this);
         }
+    }
+
+    @SuppressLint("SetWorldReadable")
+    private void verifyUpdate() {
+        UpdateNotifications.showOngoingVerificationNotification(INSTANCE);
+        CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING);
+        File file = UpdateUtils.getUpdatePackageFile();
+        Handler handler = new Handler(Looper.getMainLooper());
+
+        handler.postDelayed(() -> {
+            if (file.exists() && UpdateUtils.verifyPackage(this)) {
+                //noinspection ResultOfMethodCallIgnored
+                file.setReadable(true, false);
+                CurrentSoftwareUpdate.setOtaDownloadVerified(this, true);
+                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE);
+                UpdateNotifications.showPreUpdateNotification(this);
+            } else {
+                CurrentSoftwareUpdate.setOtaDownloadVerified(this, false);
+                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_FAILED_VERIFICATION);
+                UpdateNotifications.showFailedVerificationNotification(this);
+            }
+
+            UpdateNotifications.cancelOngoingVerificationNotification(this);
+        }, 7000);
     }
 
     private PendingIntent getPauseIntent(int groupId) {
