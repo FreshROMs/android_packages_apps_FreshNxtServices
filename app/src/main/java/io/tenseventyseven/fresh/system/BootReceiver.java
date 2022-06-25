@@ -27,7 +27,7 @@ import android.util.Log;
 import java.io.File;
 
 import io.tenseventyseven.fresh.R;
-import io.tenseventyseven.fresh.ota.UpdateCheckJobService;
+import io.tenseventyseven.fresh.ota.api.UpdateCheckService;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.utils.Experience;
@@ -47,10 +47,10 @@ public class BootReceiver extends BroadcastReceiver {
             UpdateNotifications.setupNotificationChannels(context);
 
             Log.i(TAG, "Setting up software update jobs");
-            UpdateCheckJobService.setupCheckJob(context);
+            UpdateCheckService.setupCheckJob(context);
 
             Log.i(TAG, "Successfully booted. Welcome to FreshROMs!");
-            UpdateUtils.cleanupDownloadsDir();
+            UpdateUtils.deleteUpdatePackageFile();
         }).start();
     }
 

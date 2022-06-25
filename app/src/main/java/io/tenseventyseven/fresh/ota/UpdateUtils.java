@@ -55,6 +55,12 @@ public class UpdateUtils {
         return new File(Experience.getFreshDir(), SW_UPDATE_FILE_NAME);
     }
 
+    public static void deleteUpdatePackageFile() {
+        File otaFile = new File(Experience.getFreshDir(), "update.zip");
+        if (otaFile.exists())
+            otaFile.delete();
+    }
+
     public static boolean isDeviceOnline(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm == null) return false;

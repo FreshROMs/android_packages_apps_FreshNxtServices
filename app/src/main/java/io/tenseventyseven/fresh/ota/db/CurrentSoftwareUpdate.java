@@ -56,7 +56,7 @@ public class CurrentSoftwareUpdate {
         editor.putInt(OTA_DOWNLOAD_STATE, UpdateDownload.OTA_DOWNLOAD_STATE_NOT_STARTED);
         editor.putBoolean(OTA_DOWNLOAD_VERIFIED, false);
         editor.putInt(OTA_DOWNLOAD_PROGRESS, 0);
-        editor.putInt(OTA_DOWNLOAD_ETA, 0);
+        editor.putLong(OTA_DOWNLOAD_ETA, 0);
         editor.commit();
     }
 

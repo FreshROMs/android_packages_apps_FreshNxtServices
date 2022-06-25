@@ -16,9 +16,18 @@ package io.tenseventyseven.fresh.ota.api;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.SystemProperties;
+
+import com.tonyodev.fetch2.Error;
+import com.tonyodev.fetch2.Fetch;
+import com.tonyodev.fetch2.FetchConfiguration;
+import com.tonyodev.fetch2.NetworkType;
+import com.tonyodev.fetch2.Priority;
+import com.tonyodev.fetch2.Request;
+import com.tonyodev.fetch2core.Func;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,8 +45,49 @@ import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
 
-public class UpdateManifest {
+public class UpdateCheck {
+    private static final String FETCH_INSTANCE_NAME = "UpdateCheck";
+    private static volatile UpdateCheck instance;
+    private static Fetch fetch;
+
     public static String MANIFEST_FILE_NAME = "manifest.json";
+
+    // Download possibility checking
+    public static final int FAILED_NO_CONNECTION = 1;
+    public static final int SUCCESS_QUEUED = 1;
+
+    public UpdateCheck() {
+        if (instance != null) {
+            throw new RuntimeException("Uh-oh! Use getFetchInstance() method to get the single instance of UpdateCheck");
+        }
+    }
+
+    public static Fetch getFetchInstance(Context context) {
+        if (instance == null) {
+            synchronized (UpdateCheck.class) {
+                if (instance == null) {
+                    instance = new UpdateCheck();
+                    fetch = getFetch(context);
+                }
+            }
+        }
+        return fetch;
+    }
+
+    public static Fetch getFetch(Context context) {
+        FetchConfiguration.Builder fc = new FetchConfiguration.Builder(context)
+                .setDownloadConcurrentLimit(1)
+                .setAutoRetryMaxAttempts(5)
+                .setNamespace(FETCH_INSTANCE_NAME)
+                .enableLogging(true)
+                .enableAutoStart(true);
+
+        return Fetch.Impl.getInstance(fc.build());
+    }
+
+    public static File getManifestFile(Context context) {
+        return new File(context.getFilesDir(), UpdateCheck.MANIFEST_FILE_NAME);
+    }
 
     public static String whichServiceReachable(Context context) {
         String manifest_main_url = String.format("%s/%s/%s/",
@@ -76,6 +126,26 @@ public class UpdateManifest {
             }
         }
     }
+
+    public static void downloadManifest(Context context, Func<Request> success, Func<Error> error) {
+        String service = whichServiceReachable(context);
+        File file = getManifestFile(context);
+
+        if (file.exists())
+            file.delete();
+
+        if (service == null)
+            return;
+
+        Fetch fetch = getFetchInstance(context);
+        final Request request = new Request(service, file.getPath());
+
+        request.setPriority(Priority.HIGH);
+        request.setNetworkType(NetworkType.ALL);
+
+        fetch.enqueue(request, success, error);
+    }
+
     public static SoftwareUpdate getUpdateFromManifest(Context context, File json) throws IOException, JSONException {
         SoftwareUpdate update = new SoftwareUpdate();
         StringBuilder sb;
@@ -154,5 +224,25 @@ public class UpdateManifest {
         }
 
         return Long.parseLong(current) < Long.parseLong(manifest);
+    }
+
+    public static void startService(Context context) {
+        try {
+            if (!UpdateCheckService.isAvailable())
+                context.startService(new Intent(context, UpdateCheckService.class));
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void tryStopService(Context context) {
+        try {
+            if (UpdateCheckService.isAvailable()) {
+                context.stopService(new Intent(context, UpdateCheckService.class));
+                instance = null;
+            }
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        }
     }
 }
