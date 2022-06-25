@@ -154,10 +154,7 @@ public class UpdateDownloadService extends Service {
                 break;
             case COMPLETED:
                 if (fetchGroup.getGroupDownloadProgress() == 100) {
-                    CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE);
                     builder.setOngoing(false);
-                    UpdateNotifications.showPreUpdateNotification(this);
-                    stopSelf();
                     return;
                 }
                 break;
@@ -239,7 +236,9 @@ public class UpdateDownloadService extends Service {
         if (status == Status.CANCELLED || status == Status.FAILED) {
             Handler handler = new Handler(Looper.getMainLooper());
             handler.postDelayed(() -> Notifications.cancelNotification(this, UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID), 3000);
-            stopSelf();
+            fetch.remove(CurrentSoftwareUpdate.getOtaDownloadId(this));
+            UpdateUtils.deleteUpdatePackageFile();
+            UpdateDownload.tryStopService(this);
         }
     }
 
