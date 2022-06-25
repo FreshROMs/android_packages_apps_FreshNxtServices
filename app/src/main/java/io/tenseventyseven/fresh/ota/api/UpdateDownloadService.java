@@ -109,6 +109,10 @@ public class UpdateDownloadService extends Service {
 
             @Override
             public void onPaused(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
+                // Save current progress to db
+                CurrentSoftwareUpdate.setOtaDownloadProgress(INSTANCE, download.getProgress());
+                CurrentSoftwareUpdate.setOtaDownloadEta(INSTANCE, download.getEtaInMilliSeconds());
+
                 updateNotification(groupId, download, fetchGroup);
             }
         };
