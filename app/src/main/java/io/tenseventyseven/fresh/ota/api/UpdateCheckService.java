@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
+import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 
 public class UpdateCheckService extends JobService {
     public static UpdateCheckService INSTANCE = null;
@@ -146,6 +147,13 @@ public class UpdateCheckService extends JobService {
 
             @Override
             public void run() {
+                // Bail immediately if there's a pending install
+                if (CurrentSoftwareUpdate.getOtaDownloadState(context) == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE) {
+                    UpdateNotifications.showPreUpdateNotification(context);
+                    jobFinished(params, true);
+                    return;
+                }
+
                 // Bail immediately if there's a pending update
                 if (UpdateCheck.getUpdateAvailability(context)) {
                     UpdateNotifications.showNewUpdateNotification(context);

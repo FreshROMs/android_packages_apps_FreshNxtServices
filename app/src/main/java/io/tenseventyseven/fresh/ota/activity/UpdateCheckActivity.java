@@ -40,6 +40,8 @@ import io.tenseventyseven.fresh.ota.api.UpdateCheckService;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.api.UpdateCheck;
+import io.tenseventyseven.fresh.ota.api.UpdateDownload;
+import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 
 public class UpdateCheckActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_check_toolbar_layout)
@@ -217,6 +219,19 @@ public class UpdateCheckActivity extends AppCompatActivity {
                     UpdateCheckService.setupCheckJob(context);
                     handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
                 });
+                return;
+            }
+
+            if (CurrentSoftwareUpdate.getOtaDownloadState(context) == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE) {
+                UpdateNotifications.showPreUpdateNotification(context);
+                UpdateCheckService.setupCheckJob(context);
+
+                handler.post(() -> {
+                    Intent intent = new Intent(context, UpdateAvailableActivity.class);
+                    startActivity(intent);
+                    UpdateCheckActivity.this.finish();
+                });
+
                 return;
             }
 
