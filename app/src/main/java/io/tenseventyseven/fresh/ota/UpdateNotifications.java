@@ -68,7 +68,7 @@ public class UpdateNotifications {
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
 
         String notificationTitle = context.getString(R.string.fresh_ota_notification_update_available_title);
-        String notificationContent = context.getString(R.string.fresh_ota_changelog_appbar_install, update.getVersionName(), Tools.capitalizeString(update.getReleaseType()));
+        String notificationContent = context.getString(R.string.fresh_ota_changelog_appbar_install, update.getVersionName(), update.getFormattedReleaseType());
 
         Notification notification = builder.setPriority(NotificationCompat.PRIORITY_LOW)
                 .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))

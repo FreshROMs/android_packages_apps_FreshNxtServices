@@ -369,7 +369,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         switch (state) {
             case UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE:
                 mAppBarTitle.setText(mContext.getString(R.string.fresh_ota_changelog_appbar_install,
-                        update.getVersionName(), update.getReleaseType()));
+                        update.getVersionName(), update.getFormattedReleaseType()));
                 mAppBarSubtitle.setVisibility(View.VISIBLE);
                 mAppBarSubtitle.setText(R.string.fresh_ota_changelog_appbar_install_summary);
                 mAppBarProgress.setVisibility(View.GONE);

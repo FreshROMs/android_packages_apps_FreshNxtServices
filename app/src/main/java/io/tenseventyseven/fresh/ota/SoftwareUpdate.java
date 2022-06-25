@@ -116,12 +116,16 @@ public class SoftwareUpdate {
         return String.format("%s/%s/%s", versionCode, dateTime, releaseType);
     }
 
+    public String getFormattedReleaseType() {
+        return Tools.capitalizeString(releaseType);
+    }
+
     public String getFormattedVersion() {
-        return String.format("%s %s", versionName, Tools.capitalizeString(releaseType));
+        return String.format("%s %s", versionName, getFormattedReleaseType());
     }
 
     public String getReleaseName() {
-        return String.format("%s %s %s", "Fresh", versionName, Tools.capitalizeString(releaseType));
+        return String.format("%s %s %s", "Fresh", versionName, getFormattedReleaseType());
     }
 
     @SuppressLint("SimpleDateFormat")
