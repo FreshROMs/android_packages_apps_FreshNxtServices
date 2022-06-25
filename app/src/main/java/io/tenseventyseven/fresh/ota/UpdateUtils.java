@@ -164,6 +164,11 @@ public class UpdateUtils {
         Settings.System.putLong(context.getContentResolver(), "SOFTWARE_UPDATE_LAST_CHECKED_DATE", System.currentTimeMillis());
     }
 
+    public static boolean isWlanAutoDownload(Context context) {
+        int setting = Settings.System.getInt(context.getContentResolver(), "SOFTWARE_UPDATE_WIFI_ONLY2", 1);
+        return setting == 1;
+    }
+
     public static void setSettingAppBadge(Context context, boolean isUpdateAvailable) {
         Settings.System.putInt(context.getContentResolver(), "badge_for_fota", isUpdateAvailable ? 1 : 0);
     }
