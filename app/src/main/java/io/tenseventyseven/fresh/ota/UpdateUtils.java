@@ -59,7 +59,7 @@ public class UpdateUtils {
     }
 
     public static void deleteUpdatePackageFile() {
-        File otaFile = new File(Experience.getFreshDir(), "update.zip");
+        File otaFile = getUpdatePackageFile();
         if (otaFile.exists())
             otaFile.delete();
     }

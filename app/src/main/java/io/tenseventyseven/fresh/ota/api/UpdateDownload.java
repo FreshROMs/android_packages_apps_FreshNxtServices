@@ -78,6 +78,7 @@ public class UpdateDownload {
     public static void downloadUpdate(Context context, Func<Request> success, Func<Error> error) {
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
         Fetch fetch = getFetchInstance(context);
+        UpdateUtils.deleteUpdatePackageFile();
         final Request request = new Request(update.getFileUrl(), UpdateUtils.getUpdatePackageFile().getPath());
 
         request.setPriority(Priority.HIGH);
