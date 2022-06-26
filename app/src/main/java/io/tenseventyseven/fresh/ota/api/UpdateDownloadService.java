@@ -91,7 +91,7 @@ public class UpdateDownloadService extends Service {
         fetchListener = new AbstractFetchGroupListener() {
             @Override
             public void onCancelled(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
@@ -102,17 +102,18 @@ public class UpdateDownloadService extends Service {
 
             @Override
             public void onError(int groupId, @NonNull Download download, @NonNull Error error, @Nullable Throwable throwable, FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onProgress(int groupId, @NotNull Download download, long etaInMilliSeconds, long downloadedBytesPerSecond, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onQueued(int groupId, @NotNull Download download, boolean waitingNetwork, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
@@ -121,7 +122,7 @@ public class UpdateDownloadService extends Service {
                 CurrentSoftwareUpdate.setOtaDownloadProgress(INSTANCE, download.getProgress());
                 CurrentSoftwareUpdate.setOtaDownloadEta(INSTANCE, download.getEtaInMilliSeconds());
 
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
             }
         };
 
@@ -167,7 +168,7 @@ public class UpdateDownloadService extends Service {
                 }
                 break;
             default:
-                builder.setContentText(getString(R.string.fresh_ota_changelog_appbar_downloading));
+                builder.setContentText(waitingNetwork ? getString(R.string.fresh_ota_changelog_appbar_waiting) : getString(R.string.fresh_ota_changelog_appbar_downloading));
                 builder.setOngoing(true);
                 break;
         }
@@ -179,7 +180,7 @@ public class UpdateDownloadService extends Service {
         switch (status) {
             case QUEUED:
                 builder.setProgress(100, 0, true);
-                progressBigText.bigText(getString(R.string.fresh_ota_changelog_appbar_downloading));
+                progressBigText.bigText(waitingNetwork ? getString(R.string.fresh_ota_changelog_appbar_waiting) : getString(R.string.fresh_ota_changelog_appbar_downloading));
                 builder.setStyle(progressBigText);
                 break;
 

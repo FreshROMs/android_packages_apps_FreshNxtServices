@@ -104,7 +104,11 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     private final FetchListener mFetchListener = new FetchListener() {
         @Override
         public void onWaitingNetwork(@NonNull Download download) {
-
+            if (download.getProgress() > 0) {
+                mProgress = download.getProgress();
+                mEta = download.getEtaInMilliSeconds();
+                updateState(UpdateDownload.OTA_DOWNLOAD_STATE_LOST_CONNECTION);
+            }
         }
 
         @Override
@@ -433,6 +437,20 @@ public class UpdateAvailableActivity extends AppCompatActivity {
                 mBtnDownload.setOnClickListener(v -> pauseUpdate());
                 mBtnCancel.setOnClickListener(v -> cancelUpdate());
                 break;
+            case UpdateDownload.OTA_DOWNLOAD_STATE_LOST_CONNECTION:
+                mAppBarTitle.setText(R.string.fresh_ota_changelog_appbar_waiting);
+                mAppBarSubtitle.setVisibility(View.GONE);
+                mAppBarSubtitle.setText(R.string.fresh_ota_check_for_updates_summary);
+                mAppBarProgress.setVisibility(View.VISIBLE);
+                mAppBarTimeRemaining.setVisibility(View.VISIBLE);
+                mAppBarProgress.setProgress(mProgress, true);
+                updateSubtitleText(mEta, 0);
+
+                mBtnDownload.setText(R.string.fresh_ota_changelog_btn_pause);
+                mBtnDownload.setOnClickListener(v -> pauseUpdate());
+                mBtnCancel.setOnClickListener(v -> cancelUpdate());
+                showDownloadLostDialog();
+                break;
             case UpdateDownload.OTA_DOWNLOAD_STATE_PAUSED:
                 mAppBarTitle.setText(R.string.fresh_ota_changelog_appbar_paused);
                 mAppBarSubtitle.setVisibility(View.GONE);
@@ -482,5 +500,15 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         mLoadingDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mLoadingDialog.setCancelable(false);
         mLoadingDialog.setContentView(layout);
+    }
+
+    private void showDownloadLostDialog() {
+        AlertDialog dialog = new AlertDialog.Builder(mContext)
+                .setCancelable(false)
+                .setTitle(R.string.fresh_ota_download_block_dialog_title)
+                .setMessage(R.string.fresh_ota_download_block_dialog_description)
+                .setPositiveButton(R.string.qs_dialog_ok, (d, w) -> {onBackPressed();})
+                .create();
+        dialog.show();
     }
 }
