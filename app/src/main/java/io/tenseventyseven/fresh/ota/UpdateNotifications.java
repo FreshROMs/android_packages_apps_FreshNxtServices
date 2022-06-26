@@ -48,7 +48,7 @@ public class UpdateNotifications {
 
     public static void showOngoingVerificationNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_ONGOING_CHANNEL_ID, UpdateCheckActivity.class);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_ONGOING_CHANNEL_ID, UpdateAvailableActivity.class);
 
         String notificationTitle = context.getString(R.string.fresh_ota_main_title);
         String notificationContent = context.getString(R.string.fresh_ota_verifying_update);
