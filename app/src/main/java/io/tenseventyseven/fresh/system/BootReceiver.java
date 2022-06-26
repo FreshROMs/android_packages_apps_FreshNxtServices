@@ -20,6 +20,8 @@ package io.tenseventyseven.fresh.system;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.util.Log;
@@ -39,8 +41,18 @@ public class BootReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         new Thread(() -> {
+            long bootTime = SystemProperties.getLong("persist.sys.fresh.boot_time", 1);
+            long storedTime = Settings.System.getLong(context.getContentResolver(), "fresh_device_boot_time", 0);
+
+            // Don't run the boot time service twice
+            if (bootTime == storedTime) {
+                Log.i(TAG, "Skipping boot service, we already ran it this session");
+                return;
+            }
+
             Log.i(TAG, "Checking device provisioning");
             checkInstallProvisioning(context);
+
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
 
@@ -52,6 +64,9 @@ public class BootReceiver extends BroadcastReceiver {
 
             Log.i(TAG, "Setting performance mode on boot");
             setPerformanceOnBoot(context);
+
+            // Set current boot time
+            Settings.System.putLong(context.getContentResolver(), "fresh_device_boot_time", bootTime);
 
             Log.i(TAG, "Successfully booted. Welcome to FreshROMs!");
             UpdateUtils.deleteUpdatePackageFile();
