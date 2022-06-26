@@ -31,6 +31,7 @@ import io.tenseventyseven.fresh.ota.api.UpdateCheckService;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.utils.Experience;
+import io.tenseventyseven.fresh.utils.Performance;
 
 public class BootReceiver extends BroadcastReceiver {
     private static final String TAG = "FRSH/BootReceiver";
@@ -48,6 +49,9 @@ public class BootReceiver extends BroadcastReceiver {
 
             Log.i(TAG, "Setting up software update jobs");
             UpdateCheckService.setupCheckJob(context);
+
+            Log.i(TAG, "Setting performance mode on boot");
+            setPerformanceOnBoot(context);
 
             Log.i(TAG, "Successfully booted. Welcome to FreshROMs!");
             UpdateUtils.deleteUpdatePackageFile();
@@ -101,5 +105,20 @@ public class BootReceiver extends BroadcastReceiver {
             animJsonTmp.delete();
 
         Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
+    }
+
+    private void setPerformanceOnBoot(Context context) {
+        String perfMode = Settings.System.getString(context.getContentResolver(), "zest_system_performance_mode");
+        String tempMode = "Aggressive";
+
+        if (perfMode == null) // If null, it's default
+            perfMode = "Default";
+
+        if (perfMode.equals("Aggressive")) // Set to default if we're already on aggressive
+            tempMode = "Default";
+
+        Performance.setPerformanceMode(context, tempMode);
+        SystemClock.sleep(500);
+        Performance.setPerformanceMode(context, perfMode);
     }
 }
