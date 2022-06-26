@@ -23,6 +23,7 @@ import com.tonyodev.fetch2.Error;
 import com.tonyodev.fetch2.Fetch;
 import com.tonyodev.fetch2.FetchGroup;
 import com.tonyodev.fetch2.Status;
+import com.tonyodev.fetch2core.DownloadBlock;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -30,6 +31,7 @@ import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.Executor;
@@ -90,45 +92,62 @@ public class UpdateDownloadService extends Service {
         fetch = UpdateDownload.getFetchInstance(this);
         fetchListener = new AbstractFetchGroupListener() {
             @Override
+            public void onWaitingNetwork(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
+                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_LOST_CONNECTION);
+                updateNotification(groupId, download, fetchGroup, true);
+            }
+
+            @Override
             public void onCancelled(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_CANCELLED);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onCompleted(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
                 Notifications.cancelNotification(INSTANCE, UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID);
+                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING);
                 verifyUpdate();
             }
 
             @Override
             public void onError(int groupId, @NonNull Download download, @NonNull Error error, @Nullable Throwable throwable, FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_FAILED);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onProgress(int groupId, @NotNull Download download, long etaInMilliSeconds, long downloadedBytesPerSecond, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onQueued(int groupId, @NotNull Download download, boolean waitingNetwork, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup);
+                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_DOWNLOADING);
+                updateNotification(groupId, download, fetchGroup, false);
+            }
+
+            @Override
+            public void onStarted(int groupId, @NonNull Download download, @NonNull List<? extends DownloadBlock> downloadBlocks, int totalBlocks, @NonNull FetchGroup fetchGroup) {
+                updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onPaused(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
+                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_PAUSED);
+
                 // Save current progress to db
                 CurrentSoftwareUpdate.setOtaDownloadProgress(INSTANCE, download.getProgress());
                 CurrentSoftwareUpdate.setOtaDownloadEta(INSTANCE, download.getEtaInMilliSeconds());
 
-                updateNotification(groupId, download, fetchGroup);
+                updateNotification(groupId, download, fetchGroup, false);
             }
         };
 
         fetch.addListener(fetchListener);
     }
 
-    private void updateNotification(int groupId, Download download, FetchGroup fetchGroup) {
+    private void updateNotification(int groupId, Download download, FetchGroup fetchGroup, boolean waitingNetwork) {
         final Status status = download.getStatus();
         final SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(this);
 
@@ -148,17 +167,14 @@ public class UpdateDownloadService extends Service {
             case PAUSED:
                 builder.setContentText(getString(R.string.fresh_ota_changelog_appbar_paused));
                 builder.setOngoing(true);
-                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_PAUSED);
                 break;
             case FAILED:
                 builder.setContentText(getString(R.string.fresh_ota_notification_download_failed_title));
                 builder.setOngoing(false);
-                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_FAILED);
                 break;
             case CANCELLED:
                 builder.setContentText(getString(R.string.fresh_ota_notification_download_cancelled));
                 builder.setOngoing(false);
-                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_CANCELLED);
                 break;
             case COMPLETED:
                 if (fetchGroup.getGroupDownloadProgress() == 100) {
@@ -167,7 +183,7 @@ public class UpdateDownloadService extends Service {
                 }
                 break;
             default:
-                builder.setContentText(getString(R.string.fresh_ota_changelog_appbar_downloading));
+                builder.setContentText(waitingNetwork ? getString(R.string.fresh_ota_changelog_appbar_waiting) : getString(R.string.fresh_ota_changelog_appbar_downloading));
                 builder.setOngoing(true);
                 break;
         }
@@ -179,7 +195,7 @@ public class UpdateDownloadService extends Service {
         switch (status) {
             case QUEUED:
                 builder.setProgress(100, 0, true);
-                progressBigText.bigText(getString(R.string.fresh_ota_changelog_appbar_downloading));
+                progressBigText.bigText(waitingNetwork ? getString(R.string.fresh_ota_changelog_appbar_waiting) : getString(R.string.fresh_ota_changelog_appbar_downloading));
                 builder.setStyle(progressBigText);
                 break;
 
@@ -253,7 +269,6 @@ public class UpdateDownloadService extends Service {
     @SuppressLint("SetWorldReadable")
     private void verifyUpdate() {
         UpdateNotifications.showOngoingVerificationNotification(INSTANCE);
-        CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING);
         File file = UpdateUtils.getUpdatePackageFile();
         Handler handler = new Handler(Looper.getMainLooper());
 

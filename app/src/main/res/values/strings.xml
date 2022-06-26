@@ -72,6 +72,7 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s is ready to install"</string>
     <string name="fresh_ota_changelog_appbar_install_summary">"You won't be able to use your phone during the update, even for emergency calls."</string>
     <string name="fresh_ota_changelog_appbar_downloading">"Downloading update…"</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"Waiting for network"</string>
     <string name="fresh_ota_changelog_appbar_paused">"Download paused"</string>
     <string name="fresh_ota_notification_download_cancelled">"Download cancelled"</string>
     <string name="fresh_ota_notification_update_cancelled">"Update cancelled"</string>
@@ -107,11 +108,13 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_notification_update_success_description">"Fresh %1$s has been successfully installed. Enjoy a fresher device!"</string>
 
     <string name="fresh_ota_download_block_dialog_title">"Mobile data warning"</string>
-    <string name="fresh_ota_download_block_dialog_description">"You're about to download the update using mobile data, which can cause high data usage.
+    <string name="fresh_ota_download_block_dialog_description">"Downloading via a mobile network may result in additional charges. If possible, download via a Wi-Fi network.
 
-Continue downloading update?"</string>
+Continue downloading this update?"</string>
     <string name="fresh_ota_download_block_dialog_download">"Continue"</string>
     <string name="fresh_ota_download_block_dialog_later">"Download later"</string>
+
+    <string name="fresh_ota_network_lost_dialog_description">"Your phone was disconnected from the network before the download was complete. The download will continue when your phone reconnects to a network."</string>
 
     <string name="fresh_ota_toast_failed_download_generic">"Unable to update the software. A network or server error occurred. Try again later."</string>
     <string name="fresh_ota_toast_failed_download_network">"A network error occurred. Try again later."</string>
