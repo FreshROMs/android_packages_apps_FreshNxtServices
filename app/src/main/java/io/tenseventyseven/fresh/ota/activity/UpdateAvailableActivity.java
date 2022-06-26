@@ -494,9 +494,6 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     }
 
     private void setupLoadingDialog() {
-        if (mLoadingDialog != null)
-            return;
-        
         final View layout = getLayoutInflater().inflate(R.layout.dialog_full_loading, null);
 
         mLoadingDialog = new Dialog(mContext, R.style.LargeProgressDialog);
