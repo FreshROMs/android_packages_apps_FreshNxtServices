@@ -118,6 +118,8 @@ Continue downloading update?"</string>
     <string name="fresh_ota_toast_failed_download_server">"A server error occurred. Try again later."</string>
     <string name="fresh_ota_toast_failed_no_space">"To install this update, you need more free space in your phone's internal storage. Free up some space by uninstalling apps or deleting files, then try again."</string>
 
+    <string name="fresh_network_connect_is_not_stable">"Couldn't connect. Check your network connection and try again."</string>
+
     <!-- Addon management settings -->
     <string name="zest_addon_management_title">"Manage addons"</string>
     <string name="zest_addon_management_subtitle_none">"No addons installed"</string>

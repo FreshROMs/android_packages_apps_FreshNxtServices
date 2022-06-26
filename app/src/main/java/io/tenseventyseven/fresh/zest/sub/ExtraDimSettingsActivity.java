@@ -24,7 +24,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
+import dev.oneuiproject.oneui.layout.SwitchBarLayout;
 import de.dlyt.yanndroid.oneui.preference.ListPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import de.dlyt.yanndroid.oneui.widget.SeekBar;
@@ -68,7 +68,7 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
         mColorDisplayManager = getSystemService(ColorDisplayManager.class);
 
         sbLayout.setExpanded(false, false);
-        sbLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        sbLayout.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         sbLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(sbLayout.getToolbar());
 

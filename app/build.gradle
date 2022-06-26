@@ -31,15 +31,26 @@ android {
     }
 }
 
+configurations.all {
+    exclude group: 'androidx.appcompat', module: 'appcompat'
+    exclude group: 'androidx.core', module: 'core'
+}
+
 // POEditor Config
 apply from: '../../poeditor.gradle'
 
 dependencies {
+    /*
     implementation 'androidx.appcompat:appcompat:1.4.2'
 
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.android.material:material:1.6.1'
+    */
+
+    implementation 'io.github.oneuiproject.sesl:appcompat:1.2.2'
+    implementation 'io.github.oneuiproject.sesl:material:1.2.1'
+
     implementation 'com.github.rubensousa:gravitysnaphelper:2.2.2'
 
     // Room
@@ -50,7 +61,8 @@ dependencies {
     implementation "io.noties.markwon:core:4.6.2"
 
     // One UI Design Library
-    implementation 'io.github.yanndroid:oneui:2.4.0'
+    // implementation 'io.github.yanndroid:oneui:2.4.0'
+    implementation 'io.github.oneuiproject:design:1.0.0'
 
     implementation "com.jakewharton:butterknife:10.2.3"
     annotationProcessor "com.jakewharton:butterknife-compiler:10.2.3"

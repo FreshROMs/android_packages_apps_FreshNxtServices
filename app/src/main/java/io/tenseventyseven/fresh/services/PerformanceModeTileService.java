@@ -112,9 +112,9 @@ public class PerformanceModeTileService extends TileService {
                 break;
         }
 
-        view.setTextColor(R.id.zest_qs_detail_performance_gaming, getColor(R.color.sesl4_primary_text_color));
-        view.setTextColor(R.id.zest_qs_detail_performance_multitasking, getColor(R.color.sesl4_primary_text_color));
-        view.setTextColor(R.id.zest_qs_detail_performance_default, getColor(R.color.sesl4_primary_text_color));
+        view.setTextColor(R.id.zest_qs_detail_performance_gaming, getColor(R.color.oui_primary_text_color_color));
+        view.setTextColor(R.id.zest_qs_detail_performance_multitasking, getColor(R.color.oui_primary_text_color_color));
+        view.setTextColor(R.id.zest_qs_detail_performance_default, getColor(R.color.oui_primary_text_color_color));
     }
 
     public CharSequence semGetDetailViewTitle() {

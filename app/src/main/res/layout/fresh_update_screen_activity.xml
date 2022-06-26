@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<de.dlyt.yanndroid.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<dev.oneuiproject.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fresh_ota_toolbar_layout"
@@ -9,7 +9,7 @@
     app:navigationIcon="@drawable/ic_oui_back"
     app:title="@string/fresh_ota_main_title"
     app:expanded="false">
-    <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+    <dev.oneuiproject.oneui.widget.RoundLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -30,9 +30,9 @@
                 android:textAlignment="viewStart"
                 android:textSize="22sp" />
 
-            <de.dlyt.yanndroid.oneui.widget.ProgressBar
+            <androidx.appcompat.widget.SeslProgressBar
                 android:id="@+id/fresh_ota_appbar_progressbar"
-                style="@style/ProgressBarStyle.Horizontal.Large"
+                style="@style/Fresh.OTA.ProgressBar.Large"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="12dp"
@@ -67,15 +67,15 @@
                 tools:ignore="SmallSp" />
         </LinearLayout>
 
-        <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+        <dev.oneuiproject.oneui.widget.RoundLinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
 
-            <de.dlyt.yanndroid.oneui.widget.NestedScrollView
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                                         android:fontFamily="sans-serif-medium"
                                         android:text="@string/fresh_ota_changelog_header_title"
                                         android:textAlignment="viewStart"
-                                        android:textColor="@color/sesl4_primary_text_color"
+                                        android:textColor="@color/oui_primary_text_color"
                                         android:textFontWeight="500"
                                         android:textSize="24.0sp" />
 
@@ -125,7 +125,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="@string/fresh_ota_changelog_header_subtitle"
                                         android:textAlignment="viewStart"
-                                        android:textColor="@color/sesl_secondary_text_color"
+                                        android:textColor="@color/fresh_secondary_text_color"
                                         android:textSize="13.0sp" />
                                 </LinearLayout>
 
@@ -263,8 +263,8 @@
 
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
-            </de.dlyt.yanndroid.oneui.widget.NestedScrollView>
-        </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </dev.oneuiproject.oneui.widget.RoundLinearLayout>
 
         <LinearLayout
             android:id="@+id/fresh_ota_btnbar"
@@ -320,5 +320,5 @@
 
             </LinearLayout>
         </LinearLayout>
-    </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
-</de.dlyt.yanndroid.oneui.layout.ToolbarLayout>
+    </dev.oneuiproject.oneui.widget.RoundLinearLayout>
+</dev.oneuiproject.oneui.layout.ToolbarLayout>

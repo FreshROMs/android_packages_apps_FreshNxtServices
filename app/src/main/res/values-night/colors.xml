@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fresh_secondary_text_color">@color/sesl_secondary_text_color_dark</color>
+    <color name="fresh_background_color_fg">@color/sesl_background_floating_dark</color>
+    <color name="fresh_widget_multi_button_unselected_color">#ffa8a9a9</color>
+</resources>

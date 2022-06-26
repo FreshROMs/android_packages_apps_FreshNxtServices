@@ -14,7 +14,7 @@
         android:paddingBottom="8.0dip"
         android:layout_marginBottom="8.0dip"
         android:text="@string/zest_extra_dim_setting_summary"
-        android:textColor="@color/sesl4_primary_text"
+        android:textColor="@color/oui_primary_text_color"
         android:textSize="16.0sp"
         android:visibility="visible" />
 </LinearLayout>

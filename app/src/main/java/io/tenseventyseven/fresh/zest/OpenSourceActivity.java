@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import io.tenseventyseven.fresh.R;
 
@@ -25,7 +25,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_about_open_source);
         ButterKnife.bind(this);
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbar.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
 
@@ -54,7 +54,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            getView().setBackgroundColor(getResources().getColor(R.color.item_background_color, mContext.getTheme()));
+            getView().setBackgroundColor(getResources().getColor(R.color.fresh_background_color_fg, mContext.getTheme()));
         }
 
         @Override

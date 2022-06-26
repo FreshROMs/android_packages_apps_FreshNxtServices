@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.HorizontalRadioPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import io.tenseventyseven.fresh.utils.Experience;
@@ -49,7 +49,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_screen_resolution);
         ButterKnife.bind(this);
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbar.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
 

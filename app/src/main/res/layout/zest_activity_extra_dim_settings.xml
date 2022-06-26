@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<de.dlyt.yanndroid.oneui.layout.SwitchBarLayout
+<dev.oneuiproject.oneui.layout.SwitchBarLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/zest_extra_dim_switchbar_layout"
@@ -10,10 +10,10 @@
     app:navigationIcon="@drawable/ic_oui_back"
     app:title="@string/zest_extra_dim_setting_title">
 
-    <de.dlyt.yanndroid.oneui.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,11 +27,11 @@
                 android:layout_marginBottom="24dp"
                 android:orientation="vertical">
 
-                <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
+                <dev.oneuiproject.oneui.widget.RoundFrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:background="@color/item_background_color">
+                    android:background="@color/fresh_background_color_fg">
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/zest_extra_dim_banner_animation"
                         android:layout_width="412dp"
@@ -43,7 +43,7 @@
                         app:lottie_repeatMode="reverse"
                         app:lottie_autoPlay="true"
                         app:lottie_loop="true"/>
-                </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
+                </dev.oneuiproject.oneui.widget.RoundFrameLayout>
 
                 <com.google.android.material.textview.MaterialTextView
                     style="?android:textAppearanceListItem"
@@ -65,14 +65,15 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <com.google.android.material.card.MaterialCardView
+                <dev.oneuiproject.oneui.widget.RoundLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@color/fresh_background_color_fg">
 
                         <LinearLayout
                             android:layout_width="fill_parent"
@@ -86,8 +87,8 @@
                                 android:layout_width="0.0dip"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.0"
-                                android:paddingTop="@dimen/sesl_preference_item_padding_vertical"
-                                android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
+                                android:paddingTop="@dimen/fresh_preference_item_padding_vertical"
+                                android:paddingBottom="@dimen/fresh_preference_item_padding_vertical">
 
                                 <TextView
                                     android:id="@+id/zest_extra_dim_seekbar_title"
@@ -111,7 +112,7 @@
                                     android:textColor="?colorPrimaryDark"
                                     android:visibility="gone" />
 
-                                <de.dlyt.yanndroid.oneui.widget.SeekBar
+                                <androidx.appcompat.widget.SeslSeekBar
                                     android:id="@+id/zest_extra_dim_seekbar"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
@@ -125,7 +126,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="@dimen/sesl_list_divider_height"
                             android:layout_marginHorizontal="@dimen/sesl_list_divider_inset"
-                            android:background="@color/sesl_list_divider_color" />
+                            android:background="@color/oui_list_divider_color" />
 
                         <LinearLayout
                             android:id="@+id/zest_extra_dim_reboot_switch_layout"
@@ -143,8 +144,8 @@
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="fill_parent"
-                                android:paddingTop="@dimen/sesl_preference_item_padding_vertical"
-                                android:paddingBottom="@dimen/sesl_preference_item_padding_vertical">
+                                android:paddingTop="@dimen/fresh_preference_item_padding_vertical"
+                                android:paddingBottom="@dimen/fresh_preference_item_padding_vertical">
 
                                 <TextView
                                     android:id="@+id/zest_extra_dim_reboot_textview"
@@ -167,7 +168,7 @@
                                 android:minWidth="32.0dip"
                                 android:orientation="vertical">
 
-                                <de.dlyt.yanndroid.oneui.widget.Switch
+                                <com.google.android.material.switchmaterial.SwitchMaterial
                                     android:id="@+id/zest_extra_dim_reboot_switch"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -175,9 +176,9 @@
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
+                </dev.oneuiproject.oneui.widget.RoundLinearLayout>
 
             </LinearLayout>
         </LinearLayout>
-    </de.dlyt.yanndroid.oneui.widget.NestedScrollView>
-</de.dlyt.yanndroid.oneui.layout.SwitchBarLayout>
+    </androidx.core.widget.NestedScrollView>
+</dev.oneuiproject.oneui.layout.SwitchBarLayout>

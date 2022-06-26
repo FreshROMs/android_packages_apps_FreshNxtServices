@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <de.dlyt.yanndroid.oneui.layout.ToolbarLayout
+    <dev.oneuiproject.oneui.layout.ToolbarLayout
         android:id="@+id/zest_video_brightness_toolbar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -17,7 +17,7 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+                    <dev.oneuiproject.oneui.widget.RoundLinearLayout
                         android:id="@+id/zest_video_brightness_radio_layout_normal"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -41,7 +41,7 @@
                         app:roundedCorners="bottom_left|bottom_right|top_left"
                         android:orientation="vertical">
 
-                        <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
+                        <dev.oneuiproject.oneui.widget.RoundFrameLayout
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -54,7 +54,7 @@
                                 android:minHeight="152dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/zest_video_brightness_preview_before" />
-                        </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
+                        </dev.oneuiproject.oneui.widget.RoundFrameLayout>
 
                         <TextView
                             android:id="@+id/zest_video_brightness_text_normal"
@@ -64,7 +64,7 @@
                             android:focusable="false"
                             android:gravity="center"
                             android:text="@string/zest_video_brightness_setting_normal"
-                            android:textColor="@color/oui_radio_preference_text_color"
+                            android:textColor="@color/fresh_radio_preference_text_color"
                             android:textSize="15sp" />
 
                         <RadioButton
@@ -76,9 +76,9 @@
                             android:clickable="false"
                             android:focusable="false"
                             android:gravity="center" />
-                    </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+                    </dev.oneuiproject.oneui.widget.RoundLinearLayout>
 
-                    <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+                    <dev.oneuiproject.oneui.widget.RoundLinearLayout
                         android:id="@+id/zest_video_brightness_radio_layout_bright"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -89,7 +89,7 @@
                         app:roundedCorners="bottom_left|bottom_right|top_right"
                         android:orientation="vertical">
 
-                        <de.dlyt.yanndroid.oneui.widget.RoundFrameLayout
+                        <dev.oneuiproject.oneui.widget.RoundFrameLayout
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
@@ -102,7 +102,7 @@
                                 android:minHeight="152dp"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/zest_video_brightness_preview_after" />
-                        </de.dlyt.yanndroid.oneui.widget.RoundFrameLayout>
+                        </dev.oneuiproject.oneui.widget.RoundFrameLayout>
 
                         <TextView
                             android:id="@+id/zest_video_brightness_text_bright"
@@ -112,7 +112,7 @@
                             android:focusable="false"
                             android:gravity="center"
                             android:text="@string/zest_video_brightness_setting_bright"
-                            android:textColor="@color/oui_radio_preference_text_color"
+                            android:textColor="@color/fresh_radio_preference_text_color"
                             android:textSize="15sp" />
 
                         <RadioButton
@@ -124,7 +124,7 @@
                             android:clickable="false"
                             android:focusable="false"
                             android:gravity="center" />
-                    </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+                    </dev.oneuiproject.oneui.widget.RoundLinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -165,11 +165,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <de.dlyt.yanndroid.oneui.widget.RoundLinearLayout
+                        <dev.oneuiproject.oneui.widget.RoundLinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:animateLayoutChanges="true"
-                            android:background="@color/sesl_background_floating"
+                            android:background="@color/fresh_background_color_fg"
                             android:gravity="start|center"
                             android:orientation="vertical"
                             app:layout_constrainedHeight="true"
@@ -187,13 +187,13 @@
                                 android:nestedScrollingEnabled="true"
                                 android:dividerHeight="1dp"
                                 android:visibility="gone" />
-                        </de.dlyt.yanndroid.oneui.widget.RoundLinearLayout>
+                        </dev.oneuiproject.oneui.widget.RoundLinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-    </de.dlyt.yanndroid.oneui.layout.ToolbarLayout>
+    </dev.oneuiproject.oneui.layout.ToolbarLayout>
 
     <LinearLayout
         android:id="@+id/zest_video_brightness_progress"
@@ -204,7 +204,7 @@
         android:gravity="bottom|center_horizontal">
 
         <ProgressBar
-            style="@style/OneUI4.ProgressBarStyle"
+            style="@style/Widget.AppCompat.ProgressBar.Circle"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"

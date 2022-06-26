@@ -1,4 +1,4 @@
-<de.dlyt.yanndroid.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<dev.oneuiproject.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar_layout"
     android:layout_width="match_parent"
@@ -7,10 +7,10 @@
     app:navigationIcon="@drawable/ic_oui_back"
     app:title="Screen resolution">
 
-    <de.dlyt.yanndroid.oneui.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/sesl_appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                 android:layout_marginBottom="10.0dip"
                 android:text="@string/zest_screen_resolution_setting_summary"
                 android:textAlignment="viewStart"
-                android:textColor="@color/sesl_primary_text"
+                android:textColor="@color/oui_primary_text_color"
                 android:textSize="14.0sp" />
 
             <com.google.android.material.card.MaterialCardView
@@ -123,13 +123,13 @@
                     android:layout_marginTop="@dimen/zest_screen_resolution_setting_header_margin"
                     android:text="@string/zest_setting_default_summary"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/sesl_secondary_text"
+                    android:textColor="@color/fresh_secondary_text_color"
                     android:textSize="14sp" />
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/resolution_apply"
-                style="@style/ButtonStyle.Colored"
+                style="@style/Fresh.Button.Colored"
                 android:layout_width="fill_parent"
                 android:layout_marginHorizontal="98dp"
                 android:layout_height="wrap_content"
@@ -138,5 +138,5 @@
                 android:paddingVertical="10dp"
                 android:text="@string/zest_screen_resolution_setting_btn_apply" />
         </LinearLayout>
-    </de.dlyt.yanndroid.oneui.widget.NestedScrollView>
-</de.dlyt.yanndroid.oneui.layout.ToolbarLayout>
+    </androidx.core.widget.NestedScrollView>
+</dev.oneuiproject.oneui.layout.ToolbarLayout>

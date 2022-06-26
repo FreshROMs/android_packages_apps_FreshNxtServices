@@ -16,8 +16,8 @@ import org.commonmark.node.Node;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.widget.ProgressBar;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
+import androidx.appcompat.widget.SeslProgressBar;
 import io.noties.markwon.Markwon;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -31,7 +31,7 @@ public class DeviceUpdatedActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_appbar_title)
     TextView mAppBarTitle;
     @BindView(R.id.fresh_ota_appbar_progressbar)
-    ProgressBar mAppBarProgress;
+    SeslProgressBar mAppBarProgress;
     @BindView(R.id.fresh_ota_appbar_subtitle)
     TextView mAppBarSubtitle;
     @BindView(R.id.fresh_ota_appbar_remaining)
@@ -82,7 +82,7 @@ public class DeviceUpdatedActivity extends AppCompatActivity {
         mContext = this;
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbarLayout.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbarLayout.getToolbar());
 

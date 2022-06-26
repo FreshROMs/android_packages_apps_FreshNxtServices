@@ -12,6 +12,7 @@ import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.ColorInt;
@@ -23,14 +24,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.preference.DropDownPreference;
-import de.dlyt.yanndroid.oneui.preference.Preference;
-import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.preference.SwitchPreference;
-import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
-import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import io.tenseventyseven.fresh.utils.Performance;
 import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
@@ -55,7 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_main);
         ButterKnife.bind(this);
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbar.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
 
@@ -86,12 +80,12 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        toolbar.inflateToolbarMenu(R.menu.settings_search);
+        toolbar.inflateMenu(R.menu.settings_search);
         toolbar.setOnToolbarMenuItemClickListener(this::onOptionsItemSelected);
         return true;
     }
 
-    private boolean onOptionsItemSelected(de.dlyt.yanndroid.oneui.menu.MenuItem menuItem) {
+    private boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.zest_settings_shortcut) {
             ComponentName cn = new ComponentName("com.android.settings.intelligence", "com.android.settings.intelligence.search.SearchActivity");
             Intent intent = new Intent();
@@ -286,7 +280,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            getView().setBackgroundColor(getResources().getColor(R.color.item_background_color, mContext.getTheme()));
+            getView().setBackgroundColor(getResources().getColor(R.color.fresh_background_color_fg, mContext.getTheme()));
         }
 
         private void showRebootDialog(Context context) {

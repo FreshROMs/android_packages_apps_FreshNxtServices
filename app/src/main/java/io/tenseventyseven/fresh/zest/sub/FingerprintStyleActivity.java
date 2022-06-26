@@ -44,7 +44,7 @@ import java.io.OutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.view.Toast;
 import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;

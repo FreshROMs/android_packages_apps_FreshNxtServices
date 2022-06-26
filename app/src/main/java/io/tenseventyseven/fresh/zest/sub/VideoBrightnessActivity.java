@@ -40,8 +40,8 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.layout.SwitchBarLayout;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.widget.Switch;
 import de.dlyt.yanndroid.oneui.widget.SwitchBar;
 import io.tenseventyseven.fresh.R;
@@ -95,7 +95,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         mContext = this;
 
         toolbar.setExpanded(false, false);
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbar.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbar.getToolbar());
 
@@ -144,7 +144,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
             mTextViewBright.setTypeface(Typeface.DEFAULT_BOLD);
 
             mRadioNormal.setChecked(false);
-            mTextViewNormal.setTextColor(getColor(R.color.sesl4_primary_text));
+            mTextViewNormal.setTextColor(getColor(R.color.oui_primary_text_color));
             mTextViewNormal.setTypeface(Typeface.DEFAULT);
             mTextViewSummary.setText(R.string.zest_video_brightness_summary_bright);
         } else {
@@ -153,7 +153,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
             mTextViewNormal.setTypeface(Typeface.DEFAULT_BOLD);
 
             mRadioBright.setChecked(false);
-            mTextViewBright.setTextColor(getColor(R.color.sesl4_primary_text));
+            mTextViewBright.setTextColor(getColor(R.color.oui_primary_text_color));
             mTextViewBright.setTypeface(Typeface.DEFAULT);
             mTextViewSummary.setText(R.string.zest_video_brightness_summary_normal);
         }

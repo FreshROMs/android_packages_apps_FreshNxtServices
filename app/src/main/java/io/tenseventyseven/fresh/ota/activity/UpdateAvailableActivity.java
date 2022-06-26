@@ -2,7 +2,9 @@ package io.tenseventyseven.fresh.ota.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SeslProgressBar;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -41,9 +43,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.widget.ProgressBar;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import io.noties.markwon.Markwon;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -60,7 +60,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_appbar_title)
     TextView mAppBarTitle;
     @BindView(R.id.fresh_ota_appbar_progressbar)
-    ProgressBar mAppBarProgress;
+    SeslProgressBar mAppBarProgress;
     @BindView(R.id.fresh_ota_appbar_subtitle)
     TextView mAppBarSubtitle;
     @BindView(R.id.fresh_ota_appbar_remaining)
@@ -186,7 +186,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         final Markwon markwon = Markwon.create(mContext);
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbarLayout.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbarLayout.getToolbar());
 
@@ -282,7 +282,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
 
     private void downloadUpdateWithWarning() {
         if (!UpdateUtils.isDeviceOnline(mContext)) {
-            Toast.makeText(mContext, R.string.network_connect_is_not_stable, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, R.string.fresh_network_connect_is_not_stable, Toast.LENGTH_SHORT).show();
             return;
         }
 

@@ -2,6 +2,7 @@ package io.tenseventyseven.fresh.ota.activity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -15,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.ContextThemeWrapper;
+import android.widget.Toast;
 
 import com.tonyodev.fetch2.Download;
 import com.tonyodev.fetch2.Error;
@@ -32,9 +34,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.view.Toast;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.api.UpdateCheckService;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
@@ -151,7 +151,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
         mContext = this;
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+        toolbarLayout.setNavigationButtonTooltip(getString(R.string.abc_action_bar_up_description));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
         setSupportActionBar(toolbarLayout.getToolbar());
 
