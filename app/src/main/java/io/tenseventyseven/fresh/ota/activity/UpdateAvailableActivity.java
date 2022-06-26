@@ -11,8 +11,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.Spanned;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -494,12 +496,18 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     private void setupLoadingDialog() {
         if (mLoadingDialog != null)
             return;
-
+        
         final View layout = getLayoutInflater().inflate(R.layout.dialog_full_loading, null);
+
         mLoadingDialog = new Dialog(mContext, R.style.LargeProgressDialog);
         mLoadingDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mLoadingDialog.setCancelable(false);
         mLoadingDialog.setContentView(layout);
+
+        Window window = mLoadingDialog.getWindow();
+        WindowManager.LayoutParams wlp = window.getAttributes();
+        wlp.gravity = Gravity.CENTER;
+        window.setAttributes(wlp);
     }
 
     private void showDownloadLostDialog() {
