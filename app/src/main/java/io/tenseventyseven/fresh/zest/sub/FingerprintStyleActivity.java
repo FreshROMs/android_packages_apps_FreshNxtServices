@@ -59,7 +59,6 @@ public class FingerprintStyleActivity extends AppCompatActivity {
      * <permission name="com.samsung.systemui.permission.KEYGUARD_IMAGE"/>
      * <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
      * <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
-     * <permission name="android.permission.MANAGE_BIOMETRIC"/>
      */
 
     @BindView(R.id.zest_fingerprint_style_toolbar)

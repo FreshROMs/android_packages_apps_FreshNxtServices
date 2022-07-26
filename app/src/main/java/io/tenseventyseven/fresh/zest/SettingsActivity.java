@@ -280,6 +280,7 @@ public class SettingsActivity extends AppCompatActivity {
                 findPreference("sb_icon_style_wifi").setEnabled(false);
                 findPreference("sb_icon_style_volte").setEnabled(false);
                 findPreference("fs_device_resolution").setEnabled(false);
+                findPreference("fs_plus_fod_animation_style").setEnabled(false);
             }
         }
 
