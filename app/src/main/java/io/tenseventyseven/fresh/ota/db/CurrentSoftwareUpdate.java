@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
-import io.tenseventyseven.fresh.ota.api.UpdateDownload;
 
 public class CurrentSoftwareUpdate {
 
@@ -30,9 +29,8 @@ public class CurrentSoftwareUpdate {
     private static final String OTA_DOWNLOAD_ID = "ota_download_id";
     private static final String OTA_DOWNLOAD_ETA = "ota_download_eta";
     private static final String OTA_DOWNLOAD_PROGRESS = "ota_download_progress";
-    private static final String OTA_DOWNLOAD_VERIFIED = "ota_download_verified";
 
-    private static final String OTA_DOWNLOAD_STATE = "ota_download_state";
+    private static final String OTA_INSTALL_STATE = "ota_install_state";
 
     private static final String DEFAULT_VALUE = "null";
 
@@ -53,8 +51,7 @@ public class CurrentSoftwareUpdate {
         editor.putString(OTA_FILE_HASH, update.getMd5Hash());
         editor.putString(OTA_CHANGELOG, update.getChangelog());
         editor.putString(OTA_UPDATED_APPS, update.getUpdatedApps());
-        editor.putInt(OTA_DOWNLOAD_STATE, UpdateDownload.OTA_DOWNLOAD_STATE_NOT_STARTED);
-        editor.putBoolean(OTA_DOWNLOAD_VERIFIED, false);
+        editor.putInt(OTA_INSTALL_STATE, SoftwareUpdate.OTA_INSTALL_STATE_NOT_STARTED);
         editor.putInt(OTA_DOWNLOAD_PROGRESS, 0);
         editor.putLong(OTA_DOWNLOAD_ETA, 0);
         editor.commit();
@@ -107,27 +104,15 @@ public class CurrentSoftwareUpdate {
     }
 
     @SuppressLint("ApplySharedPref")
-    public static void setOtaDownloadState(Context context, int state) {
+    public static void setOtaState(Context context, int state) {
         SharedPreferences.Editor editor = getPreferenceDb(context).edit();
-        editor.putInt(OTA_DOWNLOAD_STATE, state);
+        editor.putInt(OTA_INSTALL_STATE, state);
         editor.commit();
     }
 
-    public static int getOtaDownloadState(Context context) {
+    public static int getOtaState(Context context) {
         SharedPreferences prefs = getPreferenceDb(context);
-        return prefs.getInt(OTA_DOWNLOAD_STATE, UpdateDownload.OTA_DOWNLOAD_STATE_UNKNOWN);
-    }
-
-    @SuppressLint("ApplySharedPref")
-    public static void setOtaDownloadVerified(Context context, boolean verified) {
-        SharedPreferences.Editor editor = getPreferenceDb(context).edit();
-        editor.putBoolean(OTA_DOWNLOAD_VERIFIED, verified);
-        editor.commit();
-    }
-
-    public static boolean getOtaDownloadVerified(Context context) {
-        SharedPreferences prefs = getPreferenceDb(context);
-        return prefs.getBoolean(OTA_DOWNLOAD_VERIFIED, false);
+        return prefs.getInt(OTA_INSTALL_STATE, SoftwareUpdate.OTA_INSTALL_STATE_UNKNOWN);
     }
 
     @SuppressLint("ApplySharedPref")

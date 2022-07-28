@@ -15,6 +15,9 @@ package io.tenseventyseven.fresh.ota.api;
  * limitations under the License.
  */
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -41,6 +44,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -62,6 +66,7 @@ public class UpdateCheck {
         }
     }
 
+    @SuppressWarnings("InstantiationOfUtilityClass")
     public static Fetch getFetchInstance(Context context) {
         if (instance == null) {
             synchronized (UpdateCheck.class) {
@@ -74,7 +79,7 @@ public class UpdateCheck {
         return fetch;
     }
 
-    public static Fetch getFetch(Context context) {
+    private static Fetch getFetch(Context context) {
         FetchConfiguration.Builder fc = new FetchConfiguration.Builder(context)
                 .setDownloadConcurrentLimit(1)
                 .setAutoRetryMaxAttempts(5)
@@ -144,6 +149,10 @@ public class UpdateCheck {
         request.setNetworkType(NetworkType.ALL);
 
         fetch.enqueue(request, success, error);
+    }
+
+    public static void downloadManifest(Context context, Func<Error> error) {
+        downloadManifest(context, complete -> {}, error);
     }
 
     public static SoftwareUpdate getUpdateFromManifest(Context context, File json) throws IOException, JSONException {
@@ -229,7 +238,7 @@ public class UpdateCheck {
     public static void startService(Context context) {
         try {
             if (!UpdateCheckService.isAvailable())
-                context.startService(new Intent(context, UpdateCheckService.class));
+                context.startForegroundService(new Intent(context, UpdateCheckService.class));
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
@@ -244,5 +253,16 @@ public class UpdateCheck {
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void finishCheck(Context context, boolean available, boolean success) {
+        UpdateNotifications.cancelOngoingCheckNotification(context);
+
+        if (available)
+            UpdateNotifications.showNewUpdateNotification(context);
+
+        UpdateUtils.setSettingAppBadge(context, available);
+        if (success)
+            UpdateUtils.setLastCheckedDate(context);
     }
 }

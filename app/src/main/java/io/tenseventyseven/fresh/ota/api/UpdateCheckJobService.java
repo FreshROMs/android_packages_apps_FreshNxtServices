@@ -14,6 +14,7 @@ import org.lineageos.updater.download.DownloadClient;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
@@ -96,8 +97,18 @@ public class UpdateCheckJobService extends JobService {
             @Override
             public void run() {
                 handler.postDelayed(() -> {
-                    if (UpdateCheck.getUpdateAvailability(context))
-                        UpdateNotifications.showNewUpdateNotification(context);
+                    if (UpdateCheck.getUpdateAvailability(context)) {
+                        if (UpdateUtils.isWlanAutoDownload(context)) {
+                            UpdateDownload.startService(context);
+                            UpdateDownload.downloadUpdate(context,  success -> {}, fail -> {
+                                // Show a notification instead if we fail
+                                UpdateNotifications.showNewUpdateNotification(context);
+                                UpdateDownload.tryStopService(context);
+                            });
+                        } else {
+                            UpdateNotifications.showNewUpdateNotification(context);
+                        }
+                    }
 
                     UpdateNotifications.cancelOngoingCheckNotification(context);
                     UpdateUtils.setSettingAppBadge(context, UpdateCheck.getUpdateAvailability(context));

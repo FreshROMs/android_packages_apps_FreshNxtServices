@@ -90,17 +90,20 @@
         android:roundIcon="@mipmap/fresh_ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
-
+        <service
+            android:name=".ota.api.UpdateInstallService"
+            android:enabled="true"
+            android:exported="true" />
         <service
             android:name=".ota.api.UpdateDownloadService"
             android:enabled="true"
             android:exported="true"
-            android:stopWithTask="true" />
+            android:stopWithTask="false" />
         <service
             android:name=".ota.api.UpdateCheckService"
             android:enabled="true"
             android:exported="true"
-            android:stopWithTask="true"
+            android:stopWithTask="false" />
         <service
             android:name=".ota.api.UpdateCheckJobService"
             android:enabled="true"

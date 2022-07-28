@@ -5,7 +5,6 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
@@ -34,9 +33,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -93,26 +89,26 @@ public class UpdateDownloadService extends Service {
         fetchListener = new AbstractFetchGroupListener() {
             @Override
             public void onWaitingNetwork(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_LOST_CONNECTION);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_LOST_CONNECTION);
                 updateNotification(groupId, download, fetchGroup, true);
             }
 
             @Override
             public void onCancelled(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_CANCELLED);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_CANCELLED);
                 updateNotification(groupId, download, fetchGroup, false);
             }
 
             @Override
             public void onCompleted(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
                 Notifications.cancelNotification(INSTANCE, UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID);
-                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_VERIFYING);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_VERIFYING);
                 verifyUpdate();
             }
 
             @Override
             public void onError(int groupId, @NonNull Download download, @NonNull Error error, @Nullable Throwable throwable, FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_FAILED);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
                 updateNotification(groupId, download, fetchGroup, false);
             }
 
@@ -123,7 +119,7 @@ public class UpdateDownloadService extends Service {
 
             @Override
             public void onQueued(int groupId, @NotNull Download download, boolean waitingNetwork, @NotNull FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_DOWNLOADING);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING);
                 updateNotification(groupId, download, fetchGroup, false);
             }
 
@@ -134,7 +130,7 @@ public class UpdateDownloadService extends Service {
 
             @Override
             public void onPaused(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaDownloadState(INSTANCE, UpdateDownload.OTA_DOWNLOAD_STATE_PAUSED);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_PAUSED);
 
                 // Save current progress to db
                 CurrentSoftwareUpdate.setOtaDownloadProgress(INSTANCE, download.getProgress());
@@ -276,12 +272,10 @@ public class UpdateDownloadService extends Service {
             if (file.exists() && UpdateUtils.verifyPackage(this)) {
                 //noinspection ResultOfMethodCallIgnored
                 file.setReadable(true, false);
-                CurrentSoftwareUpdate.setOtaDownloadVerified(this, true);
-                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE);
+                CurrentSoftwareUpdate.setOtaState(this, SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED);
                 UpdateNotifications.showPreUpdateNotification(this);
             } else {
-                CurrentSoftwareUpdate.setOtaDownloadVerified(this, false);
-                CurrentSoftwareUpdate.setOtaDownloadState(this, UpdateDownload.OTA_DOWNLOAD_STATE_FAILED_VERIFICATION);
+                CurrentSoftwareUpdate.setOtaState(this, SoftwareUpdate.OTA_INSTALL_STATE_FAILED_VERIFICATION);
                 UpdateNotifications.showFailedVerificationNotification(this);
             }
 

@@ -11,6 +11,20 @@ import java.util.Locale;
 import io.tenseventyseven.fresh.utils.Tools;
 
 public class SoftwareUpdate {
+    // OTA install state
+    public static final int OTA_INSTALL_STATE_NOT_STARTED = -1;
+    public static final int OTA_INSTALL_STATE_DOWNLOADED = 1;
+    public static final int OTA_INSTALL_STATE_DOWNLOADING = 2;
+    public static final int OTA_INSTALL_STATE_FAILED = 3;
+    public static final int OTA_INSTALL_STATE_PAUSED = 4;
+    public static final int OTA_INSTALL_STATE_CANCELLED = 5;
+    public static final int OTA_INSTALL_STATE_VERIFYING = 6;
+    public static final int OTA_INSTALL_STATE_FAILED_VERIFICATION = 7;
+    public static final int OTA_INSTALL_STATE_LOST_CONNECTION = 8;
+    public static final int OTA_INSTALL_STATE_INSTALLING = 9;
+    public static final int OTA_INSTALL_STATE_SUCCESS = 10;
+    public static final int OTA_INSTALL_STATE_UNKNOWN = 11;
+
     private long dateTime;
     private long versionCode;
     private String versionName;

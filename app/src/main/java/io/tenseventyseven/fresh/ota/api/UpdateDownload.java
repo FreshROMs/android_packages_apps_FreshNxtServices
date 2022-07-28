@@ -33,24 +33,13 @@ public class UpdateDownload {
     private static volatile UpdateDownload instance;
     private static Fetch fetch;
 
-    // OTA download state
-    public static final int OTA_DOWNLOAD_STATE_NOT_STARTED = -1;
-    public static final int OTA_DOWNLOAD_STATE_COMPLETE = 1;
-    public static final int OTA_DOWNLOAD_STATE_DOWNLOADING = 2;
-    public static final int OTA_DOWNLOAD_STATE_FAILED = 3;
-    public static final int OTA_DOWNLOAD_STATE_PAUSED = 4;
-    public static final int OTA_DOWNLOAD_STATE_CANCELLED = 5;
-    public static final int OTA_DOWNLOAD_STATE_VERIFYING = 6;
-    public static final int OTA_DOWNLOAD_STATE_FAILED_VERIFICATION = 7;
-    public static final int OTA_DOWNLOAD_STATE_LOST_CONNECTION = 8;
-    public static final int OTA_DOWNLOAD_STATE_UNKNOWN = 9;
-
     public UpdateDownload() {
         if (instance != null) {
             throw new RuntimeException("Uh-oh! Use getFetchInstance() method to get the single instance of UpdateDownload");
         }
     }
 
+    @SuppressWarnings("InstantiationOfUtilityClass")
     public static Fetch getFetchInstance(Context context) {
         if (instance == null) {
             synchronized (UpdateDownload.class) {
@@ -92,7 +81,7 @@ public class UpdateDownload {
     public static void startService(Context context) {
         try {
             if (!UpdateDownloadService.isAvailable())
-                context.startService(new Intent(context, UpdateDownloadService.class));
+                context.startForegroundService(new Intent(context, UpdateDownloadService.class));
         } catch (IllegalStateException e) {
             e.printStackTrace();
         }

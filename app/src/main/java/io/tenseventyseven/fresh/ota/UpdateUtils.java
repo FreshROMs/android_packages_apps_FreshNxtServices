@@ -11,6 +11,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.RecoverySystem;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.provider.Settings;
@@ -28,6 +29,8 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.activity.UpdateAvailableActivity;
@@ -53,15 +56,32 @@ public class UpdateUtils {
     private static final String ONESHOT_CHECK_ACTION = "oneshot_check_action";
 
     public static int JOB_UPDATE_CHECK_ID = 1077601;
+    public static int JOB_INSTALL_LATER_ID = 1077602;
 
     public static File getUpdatePackageFile() {
         return new File(Experience.getFreshDir(), SW_UPDATE_FILE_NAME);
     }
 
     public static void deleteUpdatePackageFile() {
-        File otaFile = getUpdatePackageFile();
-        if (otaFile.exists())
-            otaFile.delete();
+        File packageFile = getUpdatePackageFile();
+        if (packageFile.exists())
+            //noinspection ResultOfMethodCallIgnored
+            packageFile.delete();
+    }
+
+    public static void installUpdate(Context context) {
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        File packageFile = getUpdatePackageFile();
+
+        executor.execute(() -> {
+            CurrentSoftwareUpdate.setOtaState(context, SoftwareUpdate.OTA_INSTALL_STATE_INSTALLING);
+            try {
+                RecoverySystem.installPackage(context, packageFile);
+            } catch (IOException e) {
+                CurrentSoftwareUpdate.setOtaState(context, SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
+                e.printStackTrace();
+            }
+        });
     }
 
     public static boolean isDeviceOnline(Context context) {
@@ -171,6 +191,13 @@ public class UpdateUtils {
 
     public static void setSettingAppBadge(Context context, boolean isUpdateAvailable) {
         Settings.System.putInt(context.getContentResolver(), "badge_for_fota", isUpdateAvailable ? 1 : 0);
+    }
+
+    public static String getCurrentVersion() {
+        String versionCode = SystemProperties.get("ro.fresh.build.version");
+        String dateTime = SystemProperties.get("ro.fresh.build.date.utc");
+        String releaseType = SystemProperties.get("ro.fresh.build.branch");
+        return versionCode + "/" + dateTime + "/" + releaseType;
     }
 
 }

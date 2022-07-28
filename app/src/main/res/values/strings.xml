@@ -114,6 +114,12 @@ Continue downloading this update?"</string>
     <string name="fresh_ota_download_block_dialog_download">"Continue"</string>
     <string name="fresh_ota_download_block_dialog_later">"Download later"</string>
 
+    <string name="fresh_ota_install_dialog_description">"This update shouldn't affect your personal data, but it's always a good idea to back up your data just in case.
+
+Continue installing this update?"</string>
+    <string name="fresh_ota_install_dialog_continue">"Install now"</string>
+    <string name="fresh_ota_install_later_toast">"Update will be installed automatically at %1$s on %2$s."</string>
+
     <string name="fresh_ota_network_lost_dialog_description">"Your phone was disconnected from the network before the download was complete. The download will continue when your phone reconnects to a network."</string>
 
     <string name="fresh_ota_toast_failed_download_generic">"Unable to update the software. A network or server error occurred. Try again later."</string>

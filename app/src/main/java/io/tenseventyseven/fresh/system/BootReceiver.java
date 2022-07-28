@@ -29,9 +29,12 @@ import android.util.Log;
 import java.io.File;
 
 import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.ota.SoftwareUpdate;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.api.UpdateCheckJobService;
+import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
+import io.tenseventyseven.fresh.ota.db.LastSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.utils.Performance;
 
@@ -58,6 +61,9 @@ public class BootReceiver extends BroadcastReceiver {
 
             Log.i(TAG, "Setting up notification channels for services");
             UpdateNotifications.setupNotificationChannels(context);
+
+            Log.i(TAG, "Checking if proceeding update is successful");
+            checkOtaInstall(context);
 
             Log.i(TAG, "Setting up software update jobs");
             UpdateCheckJobService.setupCheckJob(context);
@@ -120,6 +126,24 @@ public class BootReceiver extends BroadcastReceiver {
             animJsonTmp.delete();
 
         Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
+    }
+
+    private void checkOtaInstall(Context context) {
+        int state = CurrentSoftwareUpdate.getOtaState(context);
+
+        // Finish immediately if we're not installing an update
+        if (state != SoftwareUpdate.OTA_INSTALL_STATE_INSTALLING)
+            return;
+
+        SoftwareUpdate current = CurrentSoftwareUpdate.getSoftwareUpdate(context);
+        String systemVersion = UpdateUtils.getCurrentVersion();
+        String currentUpdate = current.getFullVersion();
+        boolean isSuccessful = systemVersion.equalsIgnoreCase(currentUpdate);
+
+        CurrentSoftwareUpdate.setOtaState(context, isSuccessful ? SoftwareUpdate.OTA_INSTALL_STATE_SUCCESS : SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
+        UpdateNotifications.showPostUpdateNotification(context, isSuccessful);
+        if (isSuccessful)
+            LastSoftwareUpdate.setSoftwareUpdate(context, current);
     }
 
     private void setPerformanceOnBoot(Context context) {
