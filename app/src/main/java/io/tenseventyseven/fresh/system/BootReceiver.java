@@ -29,9 +29,9 @@ import android.util.Log;
 import java.io.File;
 
 import io.tenseventyseven.fresh.R;
-import io.tenseventyseven.fresh.ota.api.UpdateCheckService;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
 import io.tenseventyseven.fresh.ota.UpdateUtils;
+import io.tenseventyseven.fresh.ota.api.UpdateCheckJobService;
 import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.utils.Performance;
 
@@ -60,7 +60,7 @@ public class BootReceiver extends BroadcastReceiver {
             UpdateNotifications.setupNotificationChannels(context);
 
             Log.i(TAG, "Setting up software update jobs");
-            UpdateCheckService.setupCheckJob(context);
+            UpdateCheckJobService.setupCheckJob(context);
 
             Log.i(TAG, "Setting performance mode on boot");
             setPerformanceOnBoot(context);

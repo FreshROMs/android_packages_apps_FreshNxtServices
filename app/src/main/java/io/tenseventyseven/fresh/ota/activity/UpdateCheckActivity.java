@@ -36,11 +36,10 @@ import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.view.Toast;
 import io.tenseventyseven.fresh.R;
-import io.tenseventyseven.fresh.ota.api.UpdateCheckService;
+import io.tenseventyseven.fresh.ota.SoftwareUpdate;
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
-import io.tenseventyseven.fresh.ota.UpdateUtils;
 import io.tenseventyseven.fresh.ota.api.UpdateCheck;
-import io.tenseventyseven.fresh.ota.api.UpdateDownload;
+import io.tenseventyseven.fresh.ota.api.UpdateCheckJobService;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 
 public class UpdateCheckActivity extends AppCompatActivity {
@@ -87,7 +86,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
                 showErrorToast(mContext, false);
 
                 // Re-schedule
-                UpdateCheckService.setupCheckJob(mContext);
+                UpdateCheckJobService.setupCheckJob(mContext);
                 handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
             });
         }
@@ -114,7 +113,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
                     return;
                 }
 
-                UpdateCheckService.setupCheckJob(mContext);
+                UpdateCheckJobService.setupCheckJob(mContext);
 
                 handler.postDelayed(() -> {
                     Intent intent = new Intent(mContext,
@@ -127,7 +126,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
                     showErrorToast(mContext, false);
 
                     // Re-schedule
-                    UpdateCheckService.setupCheckJob(mContext);
+                    UpdateCheckJobService.setupCheckJob(mContext);
                     handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
                 });
             }
@@ -176,7 +175,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
         super.onBackPressed();
 
         // Re-schedule updates check.
-        UpdateCheckService.setupCheckJob(this);
+        UpdateCheckJobService.setupCheckJob(this);
         UpdateCheckActivity.this.finish();
     }
 
@@ -203,8 +202,8 @@ public class UpdateCheckActivity extends AppCompatActivity {
     private void checkForUpdates(Context context) {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
-        UpdateCheckService.cancelCheckJob(context);
-        mFetch = UpdateCheck.getFetch(context);
+        UpdateCheckJobService.cancelCheckJob(context);
+        mFetch = UpdateCheck.getFetchInstance(context);
         UpdateCheck.startService(this);
         mFetch.addListener(mFetchListener);
 
@@ -216,15 +215,15 @@ public class UpdateCheckActivity extends AppCompatActivity {
                     showErrorToast(context, true);
 
                     // Re-schedule
-                    UpdateCheckService.setupCheckJob(context);
+                    UpdateCheckJobService.setupCheckJob(context);
                     handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
                 });
                 return;
             }
 
-            if (CurrentSoftwareUpdate.getOtaDownloadState(context) == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE) {
+            if (CurrentSoftwareUpdate.getOtaState(context) == SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED) {
                 UpdateNotifications.showPreUpdateNotification(context);
-                UpdateCheckService.setupCheckJob(context);
+                UpdateCheckJobService.setupCheckJob(context);
 
                 handler.post(() -> {
                     Intent intent = new Intent(context, UpdateAvailableActivity.class);
@@ -237,7 +236,7 @@ public class UpdateCheckActivity extends AppCompatActivity {
 
             if (UpdateCheck.getUpdateAvailability(context)) {
                 UpdateNotifications.showNewUpdateNotification(context);
-                UpdateCheckService.setupCheckJob(context);
+                UpdateCheckJobService.setupCheckJob(context);
 
                 handler.post(() -> {
                     Intent intent = new Intent(context, UpdateAvailableActivity.class);
@@ -248,13 +247,12 @@ public class UpdateCheckActivity extends AppCompatActivity {
                 return;
             }
 
-            UpdateCheck.downloadManifest(context, success -> {
-            }, error -> {
+            UpdateCheck.downloadManifest(context, error -> {
                 handler.post(() -> {
                     showErrorToast(mContext, false);
 
                     // Re-schedule
-                    UpdateCheckService.setupCheckJob(mContext);
+                    UpdateCheckJobService.setupCheckJob(mContext);
                     handler.postDelayed(UpdateCheckActivity.this::finish, 1000);
                 });
             });

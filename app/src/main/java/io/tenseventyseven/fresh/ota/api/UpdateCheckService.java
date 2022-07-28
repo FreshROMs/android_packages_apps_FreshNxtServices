@@ -1,13 +1,11 @@
 package io.tenseventyseven.fresh.ota.api;
 
-import android.app.job.JobInfo;
+import android.app.Service;
 import android.app.job.JobParameters;
-import android.app.job.JobScheduler;
-import android.app.job.JobService;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
 
@@ -27,12 +25,9 @@ import java.io.File;
 import java.io.IOException;
 
 import io.tenseventyseven.fresh.ota.UpdateNotifications;
-import io.tenseventyseven.fresh.ota.UpdateUtils;
-import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 
-public class UpdateCheckService extends JobService {
+public class UpdateCheckService extends Service {
     public static UpdateCheckService INSTANCE = null;
-    public static Context mContext = null;
     public static JobParameters mParams = null;
 
     private Fetch fetch;
@@ -47,6 +42,12 @@ public class UpdateCheckService extends JobService {
         }
     }
 
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return null;
+    }
+
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return START_NOT_STICKY;
@@ -55,7 +56,6 @@ public class UpdateCheckService extends JobService {
     @Override
     public void onCreate() {
         INSTANCE = this;
-        mContext = this;
 
         PowerManager powerManager = getSystemService(PowerManager.class);
         mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "UpdateCheckService:wakelock");
@@ -67,7 +67,8 @@ public class UpdateCheckService extends JobService {
         fetchListener = new AbstractFetchGroupListener() {
             @Override
             public void onCancelled(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                finishJob(mParams, true);
+                Handler handler = new Handler(Looper.getMainLooper());
+                handler.postDelayed(() -> UpdateCheck.finishCheck(INSTANCE, false, false), 2000);
             }
 
             @Override
@@ -76,36 +77,18 @@ public class UpdateCheckService extends JobService {
                 Handler handler = new Handler(Looper.getMainLooper());
                 try {
                     if (!json.exists() || !UpdateCheck.parseManifest(INSTANCE, json)) {
-                        finishJob(mParams, true);
+                        handler.postDelayed(() -> UpdateCheck.finishCheck(INSTANCE, false, false), 2000);
                         return;
                     }
 
-                    boolean updateAvailable = UpdateCheck.getUpdateAvailability(mContext);
-                    handler.postDelayed(() -> {
-
-                        if (updateAvailable)
-                            UpdateNotifications.showNewUpdateNotification(mContext);
-
-                        UpdateNotifications.cancelOngoingCheckNotification(mContext);
-                        UpdateUtils.setSettingAppBadge(mContext, updateAvailable);
-                        UpdateUtils.setLastCheckedDate(mContext);
-                    }, 2000);
-
-                    finishJob(mParams, updateAvailable);
+                    handler.postDelayed(() -> UpdateCheck.finishCheck(INSTANCE, UpdateCheck.getUpdateAvailability(INSTANCE), true), 2000);
                 } catch (IOException | JSONException e) {
-                    finishJob(mParams, true);
-                    handler.postDelayed(() -> {
-
-                        UpdateNotifications.cancelOngoingCheckNotification(mContext);
-                        UpdateUtils.setSettingAppBadge(mContext, false);
-                        UpdateUtils.setLastCheckedDate(mContext);
-                    }, 2000);
+                    handler.postDelayed(() -> UpdateCheck.finishCheck(INSTANCE, false, false), 2000);
                 }
             }
 
             @Override
             public void onError(int groupId, @NonNull Download download, @NonNull Error error, @Nullable Throwable throwable, FetchGroup fetchGroup) {
-                finishJob(mParams, true);
             }
 
             @Override
@@ -114,7 +97,7 @@ public class UpdateCheckService extends JobService {
 
             @Override
             public void onQueued(int groupId, @NotNull Download download, boolean waitingNetwork, @NotNull FetchGroup fetchGroup) {
-                UpdateNotifications.showOngoingCheckNotification(mContext);
+                UpdateNotifications.showOngoingCheckNotification(INSTANCE);
             }
 
             @Override
@@ -136,83 +119,5 @@ public class UpdateCheckService extends JobService {
             mWakeLock.release();
 
         super.onDestroy();
-    }
-
-    @Override
-    public boolean onStartJob(JobParameters params) {
-        mParams = params;
-
-        new Thread(new Runnable() {
-            final Context context = UpdateCheckService.this;
-
-            @Override
-            public void run() {
-                // Bail immediately if there's a pending install
-                if (CurrentSoftwareUpdate.getOtaDownloadState(context) == UpdateDownload.OTA_DOWNLOAD_STATE_COMPLETE) {
-                    UpdateNotifications.showPreUpdateNotification(context);
-                    jobFinished(params, true);
-                    return;
-                }
-
-                // Bail immediately if there's a pending update
-                if (UpdateCheck.getUpdateAvailability(context)) {
-                    UpdateNotifications.showNewUpdateNotification(context);
-                    jobFinished(params, true);
-                    return;
-                }
-
-                UpdateCheck.startService(context);
-
-                UpdateCheck.downloadManifest(context, success -> {
-                }, error -> finishJob(params, true));
-            }
-        });
-
-        return true;
-    }
-
-    @Override
-    public boolean onStopJob(JobParameters params) {
-        new Thread(new Runnable() {
-            final Context context = UpdateCheckService.this;
-
-            @Override
-            public void run() {
-                UpdateCheck.tryStopService(context);
-            }
-        }).start();
-
-        return true;
-    }
-
-    private void finishJob(JobParameters params, boolean wantsReschedule) {
-        if (params != null)
-            jobFinished(params, wantsReschedule);
-    }
-
-    public static void setupCheckJob(Context context) {
-        ComponentName serviceName = new ComponentName(context, UpdateCheckService.class);
-        JobScheduler jobScheduler = (JobScheduler) context.getSystemService(JOB_SCHEDULER_SERVICE);
-
-        int jobInterval = 14400; // Every 4 hours
-
-        JobInfo jobInfo = new JobInfo.Builder(UpdateUtils.JOB_UPDATE_CHECK_ID, serviceName)
-                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
-                .setRequiresStorageNotLow(true)
-                .setRequiresDeviceIdle(false)
-                .setRequiresCharging(false)
-                .setPeriodic(jobInterval * 1000, jobInterval * 500)
-                .build();
-
-        jobScheduler.schedule(jobInfo);
-    }
-
-    public static void cancelCheckJob(Context context) {
-        JobScheduler jobScheduler = (JobScheduler) context.getSystemService(JOB_SCHEDULER_SERVICE);
-
-        if (jobScheduler == null)
-            return;
-
-        jobScheduler.cancel(UpdateUtils.JOB_UPDATE_CHECK_ID);
     }
 }

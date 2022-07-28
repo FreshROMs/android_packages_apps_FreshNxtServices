@@ -101,6 +101,10 @@
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="true"
+        <service
+            android:name=".ota.api.UpdateCheckJobService"
+            android:enabled="true"
+            android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <receiver android:name=".ota.receivers.DownloadCancelReceiver" />
