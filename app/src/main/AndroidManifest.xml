@@ -98,11 +98,13 @@
             android:name=".ota.api.UpdateDownloadService"
             android:enabled="true"
             android:exported="true"
+            android:foregroundServiceType="dataSync"
             android:stopWithTask="false" />
         <service
             android:name=".ota.api.UpdateCheckService"
             android:enabled="true"
             android:exported="true"
+            android:foregroundServiceType="dataSync"
             android:stopWithTask="false" />
         <service
             android:name=".ota.api.UpdateCheckJobService"

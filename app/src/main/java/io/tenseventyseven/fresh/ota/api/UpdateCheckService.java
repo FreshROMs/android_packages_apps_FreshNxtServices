@@ -4,6 +4,7 @@ import android.app.Service;
 import android.app.job.JobParameters;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -62,6 +63,9 @@ public class UpdateCheckService extends Service {
         mWakeLock.setReferenceCounted(false);
 
         UpdateNotifications.setupNotificationChannels(this);
+        startForeground(UpdateNotifications.NOTIFICATION_CHECK_UPDATE_ID,
+                UpdateNotifications.getOngoingCheckNotification(INSTANCE),
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC);
 
         fetch = UpdateCheck.getFetchInstance(this);
         fetchListener = new AbstractFetchGroupListener() {

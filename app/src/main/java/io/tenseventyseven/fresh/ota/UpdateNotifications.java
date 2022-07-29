@@ -12,7 +12,6 @@ import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.db.LastSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Notifications;
-import io.tenseventyseven.fresh.utils.Tools;
 
 public class UpdateNotifications {
     public static String NOTIFICATION_GROUP_ID = "tns_fresh_notification_group_ota";
@@ -26,14 +25,13 @@ public class UpdateNotifications {
     public static int NOTIFICATION_DOWNLOADING_UPDATE_ID = 1077503;
     public static int NOTIFICATION_VERIFY_UPDATE_ID = 1077504;
 
-    public static void showOngoingCheckNotification(Context context) {
-        NotificationManager notificationManager = Notifications.getNotificationManager(context);
+    public static Notification getOngoingCheckNotification(Context context) {
         NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_ONGOING_CHANNEL_ID, UpdateCheckActivity.class);
 
         String notificationTitle = context.getString(R.string.fresh_ota_main_title);
         String notificationContent = context.getString(R.string.fresh_ota_checking_for_updates);
 
-        Notification notification = builder.setPriority(NotificationCompat.PRIORITY_LOW)
+        return builder.setPriority(NotificationCompat.PRIORITY_LOW)
                 .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
                 .setSmallIcon(R.drawable.ic_notification_software_update)
                 .setContentTitle(notificationTitle)
@@ -42,7 +40,28 @@ public class UpdateNotifications {
                 .setOngoing(true)
                 .setShowWhen(false)
                 .build();
+    }
 
+    public static Notification getOngoingDownloadNotification(Context context) {
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_ONGOING_CHANNEL_ID, UpdateCheckActivity.class);
+
+        String notificationTitle = context.getString(R.string.fresh_ota_main_title);
+        String notificationContent = context.getString(R.string.fresh_ota_changelog_appbar_downloading);
+
+        return builder.setPriority(NotificationCompat.PRIORITY_LOW)
+                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
+                .setSmallIcon(R.drawable.ic_notification_software_update)
+                .setContentTitle(notificationTitle)
+                .setContentText(notificationContent)
+                .setAutoCancel(false)
+                .setOngoing(true)
+                .setShowWhen(false)
+                .build();
+    }
+
+    public static void showOngoingCheckNotification(Context context) {
+        NotificationManager notificationManager = Notifications.getNotificationManager(context);
+        Notification notification = getOngoingCheckNotification(context);
         notificationManager.notify(NOTIFICATION_CHECK_UPDATE_ID, notification);
     }
 

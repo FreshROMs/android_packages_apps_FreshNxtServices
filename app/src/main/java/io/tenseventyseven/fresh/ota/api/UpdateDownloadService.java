@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -83,6 +84,9 @@ public class UpdateDownloadService extends Service {
         mWakeLock.setReferenceCounted(false);
 
         UpdateNotifications.setupNotificationChannels(this);
+        startForeground(UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID,
+                UpdateNotifications.getOngoingDownloadNotification(INSTANCE),
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC);
 
         notificationManager = Notifications.getNotificationManager(this);
         fetch = UpdateDownload.getFetchInstance(this);

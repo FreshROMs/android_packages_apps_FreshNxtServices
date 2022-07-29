@@ -203,8 +203,9 @@ public class UpdateCheckActivity extends AppCompatActivity {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
         UpdateCheckJobService.cancelCheckJob(context);
-        mFetch = UpdateCheck.getFetchInstance(context);
+
         UpdateCheck.startService(this);
+        mFetch = UpdateCheck.getFetchInstance(context);
         mFetch.addListener(mFetchListener);
 
         executor.execute(() -> {
