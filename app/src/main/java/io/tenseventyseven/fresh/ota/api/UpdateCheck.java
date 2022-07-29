@@ -116,14 +116,14 @@ public class UpdateCheck {
         try {
             url = new URL(manifest_main_url);
             connection = url.openConnection();
-            connection.setConnectTimeout(10 * 1000);
+            connection.setConnectTimeout(5 * 1000);
             connection.connect();
             return manifest_main_url;
         } catch (IOException e) {
             try {
                 url = new URL(manifest_mirror_url);
                 connection = url.openConnection();
-                connection.setConnectTimeout(10 * 1000);
+                connection.setConnectTimeout(5 * 1000);
                 connection.connect();
                 return manifest_mirror_url;
             } catch (IOException unused) {
