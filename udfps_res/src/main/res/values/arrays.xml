@@ -3,24 +3,14 @@
     <string-array translatable="false" name="udfps_animation_identifiers">
         <item>default</item>
         <item>water</item>
-        <item>alpenglow</item>
         <item>aurora</item>
-        <item>bloom</item>
         <item>cyberpunk</item>
-        <item>dna</item>
-        <item>electronic</item>
         <item>energy</item>
-        <item>futuristic</item>
-        <item>halo_ring</item>
-        <item>magic</item>
         <item>mclaren</item>
-        <item>molecular</item>
         <item>pop</item>
         <item>pulsar</item>
-        <item>pulse</item>
         <item>rhythm</item>
         <item>ripple</item>
-        <item>star</item>
         <item>stripe</item>
         <item>supernova</item>
         <item>wave</item>
