@@ -10,8 +10,8 @@ android {
         applicationId "io.tenseventyseven.fresh.udfps.res"
         minSdk 31
         targetSdk 31
-        versionCode 22060602
-        versionName "13.1.1.2"
+        versionCode 22073002
+        versionName "13.2.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
