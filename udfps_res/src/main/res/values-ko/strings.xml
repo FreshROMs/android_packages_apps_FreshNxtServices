@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"알펜글로우"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"오로라"</string>
+    <string name="zest_fod_animation_bloom">"꽃"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"사이버펑크"</string>
+    <string name="zest_fod_animation_default">"기본"</string>
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <string name="zest_fod_animation_electronic">"전자"</string>
+    <string name="zest_fod_animation_energy">"에너지"</string>
+    <string name="zest_fod_animation_futuristic">"미래 지향적인"</string>
+    <string name="zest_fod_animation_halo_ring">"헤일로 링"</string>
+    <string name="zest_fod_animation_magic">"마법"</string>
+    <string name="zest_fod_animation_mclaren">"맥라렌"</string>
+    <string name="zest_fod_animation_molecular">"분자"</string>
+    <string name="zest_fod_animation_pop">"팝"</string>
+    <string name="zest_fod_animation_pulsar">"펄서"</string>
+    <string name="zest_fod_animation_pulse">"맥박"</string>
+    <string name="zest_fod_animation_rhythm">"율"</string>
+    <string name="zest_fod_animation_ripple">"리플"</string>
+    <string name="zest_fod_animation_star">"별"</string>
+    <string name="zest_fod_animation_stripe">"줄무늬"</string>
+    <string name="zest_fod_animation_supernova">"초신성"</string>
+    <string name="zest_fod_animation_water">"물"</string>
+    <string name="zest_fod_animation_wave">"파도"</string>
+</resources>

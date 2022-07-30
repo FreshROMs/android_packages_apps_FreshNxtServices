@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Poświata"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Zorza polarna"</string>
+    <string name="zest_fod_animation_bloom">"Kwiat"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Domyślne"</string>
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <string name="zest_fod_animation_electronic">"Elektronika"</string>
+    <string name="zest_fod_animation_energy">"Energia"</string>
+    <string name="zest_fod_animation_futuristic">"Futurystyka"</string>
+    <string name="zest_fod_animation_halo_ring">"Pierścień Halo"</string>
+    <string name="zest_fod_animation_magic">"Magia"</string>
+    <string name="zest_fod_animation_mclaren">"Mclaren"</string>
+    <string name="zest_fod_animation_molecular">"Molekularne"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsar"</string>
+    <string name="zest_fod_animation_pulse">"Puls"</string>
+    <string name="zest_fod_animation_rhythm">"Rytm"</string>
+    <string name="zest_fod_animation_ripple">"Rozdarcie"</string>
+    <string name="zest_fod_animation_star">"Gwiazda"</string>
+    <string name="zest_fod_animation_stripe">"Pas"</string>
+    <string name="zest_fod_animation_supernova">"Supernowa"</string>
+    <string name="zest_fod_animation_water">"Woda"</string>
+    <string name="zest_fod_animation_wave">"Fala"</string>
+</resources>

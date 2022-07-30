@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Hào quang lớn"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Cực quang"</string>
+    <string name="zest_fod_animation_bloom">"Nở rộ"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Mặc định"</string>
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <string name="zest_fod_animation_electronic">"Điện tử"</string>
+    <string name="zest_fod_animation_energy">"Năng lượng"</string>
+    <string name="zest_fod_animation_futuristic">"Tương lai"</string>
+    <string name="zest_fod_animation_halo_ring">"Vòng Halo"</string>
+    <string name="zest_fod_animation_magic">"Ma thuật"</string>
+    <string name="zest_fod_animation_mclaren">"Mclaren"</string>
+    <string name="zest_fod_animation_molecular">"Phân tử"</string>
+    <string name="zest_fod_animation_pop">"Bong bóng"</string>
+    <string name="zest_fod_animation_pulsar">"Sao xung"</string>
+    <string name="zest_fod_animation_pulse">"Xung động"</string>
+    <string name="zest_fod_animation_rhythm">"Nhịp điệu"</string>
+    <string name="zest_fod_animation_ripple">"Lăn tăn"</string>
+    <string name="zest_fod_animation_star">"Ngôi sao"</string>
+    <string name="zest_fod_animation_stripe">"Kẻ sọc"</string>
+    <string name="zest_fod_animation_supernova">"Siêu tân tinh"</string>
+    <string name="zest_fod_animation_water">"Nước"</string>
+    <string name="zest_fod_animation_wave">"Sóng"</string>
+</resources>

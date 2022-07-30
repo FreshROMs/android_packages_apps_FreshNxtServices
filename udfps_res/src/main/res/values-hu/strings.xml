@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Alpesi fény"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Hajnalfény"</string>
+    <string name="zest_fod_animation_bloom">"Virág
+"</string>
+    <!-- I don't think there is a Hungarian word for it -->
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Alap"</string>
+    <string name="zest_fod_animation_dna">"DNS"</string>
+    <string name="zest_fod_animation_electronic">"Elektromos"</string>
+    <string name="zest_fod_animation_energy">"Energia"</string>
+    <string name="zest_fod_animation_futuristic">"Jövőbeli"</string>
+    <string name="zest_fod_animation_halo_ring">"Halo Gyűrű"</string>
+    <string name="zest_fod_animation_magic">"Varázslat"</string>
+    <string name="zest_fod_animation_mclaren">"Mclaren"</string>
+    <string name="zest_fod_animation_molecular">"Molekuláris"</string>
+    <string name="zest_fod_animation_pop">"Pukkanás"</string>
+    <string name="zest_fod_animation_pulsar">"Pulzár"</string>
+    <string name="zest_fod_animation_pulse">"Pulzus"</string>
+    <string name="zest_fod_animation_rhythm">"Ritmus"</string>
+    <string name="zest_fod_animation_ripple">"Fodrozódás"</string>
+    <string name="zest_fod_animation_star">"Csillag"</string>
+    <string name="zest_fod_animation_stripe">"Vonal"</string>
+    <string name="zest_fod_animation_supernova">"Szupernova"</string>
+    <string name="zest_fod_animation_water">"Víz"</string>
+    <string name="zest_fod_animation_wave">"Hullám"</string>
+</resources>

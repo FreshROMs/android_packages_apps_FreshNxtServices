@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"ألبينجلو"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"أورورا"</string>
+    <string name="zest_fod_animation_bloom">"يزدهر"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"تقصير"</string>
+    <string name="zest_fod_animation_dna">"الحمض النووي"</string>
+    <string name="zest_fod_animation_electronic">"إلكتروني"</string>
+    <string name="zest_fod_animation_energy">"طاقة"</string>
+    <string name="zest_fod_animation_futuristic">"مستقبلي"</string>
+    <string name="zest_fod_animation_halo_ring">"خاتم هالو"</string>
+    <string name="zest_fod_animation_magic">"سحر"</string>
+    <string name="zest_fod_animation_mclaren">"مكلارين"</string>
+    <string name="zest_fod_animation_molecular">"جزيئي"</string>
+    <string name="zest_fod_animation_pop">"فرقعة"</string>
+    <string name="zest_fod_animation_pulsar">"بولسار"</string>
+    <string name="zest_fod_animation_pulse">"نبض"</string>
+    <string name="zest_fod_animation_rhythm">"إيقاع"</string>
+    <string name="zest_fod_animation_ripple">"تموج"</string>
+    <string name="zest_fod_animation_star">"نجمة"</string>
+    <string name="zest_fod_animation_stripe">"شريط"</string>
+    <string name="zest_fod_animation_supernova">"سوبرنوفا"</string>
+    <string name="zest_fod_animation_water">"ماء"</string>
+    <string name="zest_fod_animation_wave">"لوح"</string>
+</resources>

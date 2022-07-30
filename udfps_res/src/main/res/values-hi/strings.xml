@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"गुलाबी किरण"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"अरोड़ा"</string>
+    <string name="zest_fod_animation_bloom">"पुष्प"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"साइबरपंक"</string>
+    <!-- पहला -->
+    <string name="zest_fod_animation_default">"पहला"</string>
+    <string name="zest_fod_animation_dna">"डीएनए"</string>
+    <string name="zest_fod_animation_electronic">"इलेक्ट्रोनिक"</string>
+    <!-- ऊर्जा -->
+    <string name="zest_fod_animation_energy">"ऊर्जा"</string>
+    <string name="zest_fod_animation_futuristic">"भविष्य"</string>
+    <string name="zest_fod_animation_halo_ring">"प्रकाश की अंगूठी"</string>
+    <string name="zest_fod_animation_magic">"जादू"</string>
+    <string name="zest_fod_animation_mclaren">"मैकलारेन"</string>
+    <!-- परमाणु -->
+    <string name="zest_fod_animation_molecular">"परमाणु"</string>
+    <string name="zest_fod_animation_pop">"पॉप"</string>
+    <string name="zest_fod_animation_pulsar">"पलसर"</string>
+    <string name="zest_fod_animation_pulse">"धड़कन"</string>
+    <string name="zest_fod_animation_rhythm">"ताल"</string>
+    <string name="zest_fod_animation_ripple">"लहर"</string>
+    <string name="zest_fod_animation_star">"सितारा"</string>
+    <string name="zest_fod_animation_stripe">"आदिथ"</string>
+    <string name="zest_fod_animation_supernova">"सुपरनोवा"</string>
+    <string name="zest_fod_animation_water">"पानी"</string>
+    <!-- लहर -->
+    <string name="zest_fod_animation_wave">"लहर"</string>
+</resources>

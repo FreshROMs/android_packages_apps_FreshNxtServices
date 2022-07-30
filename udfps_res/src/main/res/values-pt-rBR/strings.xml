@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Alpenglow"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Aurora"</string>
+    <string name="zest_fod_animation_bloom">"Florescer"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Original"</string>
+    <string name="zest_fod_animation_dna">"ADN"</string>
+    <string name="zest_fod_animation_electronic">"Eletrônico"</string>
+    <string name="zest_fod_animation_energy">"Energia"</string>
+    <string name="zest_fod_animation_futuristic">"Futurista"</string>
+    <string name="zest_fod_animation_halo_ring">"Anel de auréola"</string>
+    <string name="zest_fod_animation_magic">"Magia"</string>
+    <string name="zest_fod_animation_mclaren">"McLaren"</string>
+    <string name="zest_fod_animation_molecular">"Molecular"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsar"</string>
+    <string name="zest_fod_animation_pulse">"Pulso"</string>
+    <string name="zest_fod_animation_rhythm">"Ritmo"</string>
+    <string name="zest_fod_animation_ripple">"Ondulação"</string>
+    <string name="zest_fod_animation_star">"Estrela"</string>
+    <string name="zest_fod_animation_stripe">"Listra"</string>
+    <string name="zest_fod_animation_supernova">"Super Nova"</string>
+    <string name="zest_fod_animation_water">"Água"</string>
+    <string name="zest_fod_animation_wave">"Onda"</string>
+</resources>

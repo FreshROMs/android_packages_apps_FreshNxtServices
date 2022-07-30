@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Альпийское сияние"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Аврора"</string>
+    <string name="zest_fod_animation_bloom">"Расцвет"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Киберпанк"</string>
+    <string name="zest_fod_animation_default">"По умолчанию"</string>
+    <string name="zest_fod_animation_dna">"ДНК"</string>
+    <!-- Может лучше электроника? Хм -->
+    <string name="zest_fod_animation_electronic">"Электронный"</string>
+    <string name="zest_fod_animation_energy">"Энергия"</string>
+    <string name="zest_fod_animation_futuristic">"Футуристический"</string>
+    <string name="zest_fod_animation_halo_ring">"Кольцо Ореола "</string>
+    <string name="zest_fod_animation_magic">"Магия "</string>
+    <string name="zest_fod_animation_mclaren">"Макларен"</string>
+    <string name="zest_fod_animation_molecular">"Молекулярный"</string>
+    <string name="zest_fod_animation_pop">"Поп"</string>
+    <string name="zest_fod_animation_pulsar">"Пульсар"</string>
+    <string name="zest_fod_animation_pulse">"Пульс"</string>
+    <string name="zest_fod_animation_rhythm">"Ритм"</string>
+    <string name="zest_fod_animation_ripple">"Рябь"</string>
+    <string name="zest_fod_animation_star">"Звезда"</string>
+    <string name="zest_fod_animation_stripe">"Полоса"</string>
+    <string name="zest_fod_animation_supernova">"Сверхновая"</string>
+    <string name="zest_fod_animation_water">"Вода"</string>
+    <string name="zest_fod_animation_wave">"Волна"</string>
+</resources>

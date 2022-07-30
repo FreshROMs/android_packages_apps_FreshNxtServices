@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Lumière des Alpes"</string>
+    <!-- Aurore is a synonym for sunrise or dawn, I guess it matches the requested translation for Aurora? -->
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Aurore"</string>
+    <string name="zest_fod_animation_bloom">"Floraison"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Par défaut"</string>
+    <string name="zest_fod_animation_dna">"ADN"</string>
+    <string name="zest_fod_animation_electronic">"électronique"</string>
+    <string name="zest_fod_animation_energy">"Energie"</string>
+    <string name="zest_fod_animation_futuristic">"Futuriste"</string>
+    <!-- Sounds kind of weird in that way in French -->
+    <string name="zest_fod_animation_halo_ring">"anneau de halo"</string>
+    <string name="zest_fod_animation_magic">"Magique"</string>
+    <string name="zest_fod_animation_mclaren">"Mclaren"</string>
+    <string name="zest_fod_animation_molecular">"Moléculaire"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsar"</string>
+    <string name="zest_fod_animation_pulse">"pulsation ; battement"</string>
+    <string name="zest_fod_animation_rhythm">"Rythme"</string>
+    <string name="zest_fod_animation_ripple">"vague ; ondulation"</string>
+    <string name="zest_fod_animation_star">"étoile"</string>
+    <string name="zest_fod_animation_stripe">"Rayure"</string>
+    <string name="zest_fod_animation_supernova">"Supernova"</string>
+    <string name="zest_fod_animation_water">"Eau"</string>
+    <string name="zest_fod_animation_wave">"Vague ; onde"</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Alpenglühen"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Aurora"</string>
+    <string name="zest_fod_animation_bloom">"Blühen"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Standard"</string>
+    <string name="zest_fod_animation_dna">"DNS"</string>
+    <string name="zest_fod_animation_electronic">"Elektronisch"</string>
+    <string name="zest_fod_animation_energy">"Energie"</string>
+    <string name="zest_fod_animation_futuristic">"Futuristisch"</string>
+    <string name="zest_fod_animation_halo_ring">"Lichtring"</string>
+    <string name="zest_fod_animation_magic">"Magisch"</string>
+    <string name="zest_fod_animation_mclaren">"Mclaren"</string>
+    <string name="zest_fod_animation_molecular">"Molekular"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsar"</string>
+    <string name="zest_fod_animation_pulse">"Puls"</string>
+    <string name="zest_fod_animation_rhythm">"Rythmus"</string>
+    <string name="zest_fod_animation_ripple">"Welleneffekt"</string>
+    <string name="zest_fod_animation_star">"Stern"</string>
+    <string name="zest_fod_animation_stripe">"Streifen"</string>
+    <string name="zest_fod_animation_supernova">"Supernova"</string>
+    <string name="zest_fod_animation_water">"Wasser"</string>
+    <string name="zest_fod_animation_wave">"Welle"</string>
+</resources>
