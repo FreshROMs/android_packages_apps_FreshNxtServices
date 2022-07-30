@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
 import android.provider.Settings;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,8 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
@@ -44,22 +47,17 @@ import java.io.OutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.view.Toast;
+import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
 import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
 
     private static final int sensorPositionY = 2065;
-
-    /**
-     * add to /etc/permissions :
-     * <permission name="com.android.homescreen.home.permission.preview_image"/>
-     * <permission name="com.samsung.systemui.permission.KEYGUARD_IMAGE"/>
-     * <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-     * <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
-     */
+    private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
     @BindView(R.id.zest_fingerprint_style_toolbar)
     ToolbarLayout toolbar;
@@ -99,6 +97,14 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_fod_animation_style_settings);
         ButterKnife.bind(this);
         mContext = this;
+
+        int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
+                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+        }
 
         if (!getAnimations())
             finish();
@@ -163,6 +169,35 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIdentifiers[mSelectedAnim]), null);
             mPreviewLottieAnim.playAnimation();
         }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        if (requestCode == PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE && (grantResults.length <= 0
+                || grantResults[0] != PackageManager.PERMISSION_GRANTED)) {
+            showPermissionDialog();
+        }
+
+        if (requestCode == PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE && (grantResults.length <= 0
+                || grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+            // Reload
+            mPreviewLockBG.setImageBitmap(getWallpaper(false));
+            mPreviewLockFG.setImageBitmap(getPreview(false));
+
+            mPreviewHomeBG.setImageBitmap(getWallpaper(true));
+            mPreviewHomeFG.setImageBitmap(getPreview(true));
+        }
+    }
+
+    private void showPermissionDialog() {
+        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.OneUITheme))
+                .setTitle(R.string.fresh_permissions_storage_title)
+                .setMessage(R.string.fresh_permissions_fp_storage_description)
+                .setPositiveButton(R.string.qs_dialog_ok, (dialog, which) -> FingerprintStyleActivity.this.finish())
+                .create()
+                .show();
     }
 
     public void onTapCancel(View v) {

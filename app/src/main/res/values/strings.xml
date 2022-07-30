@@ -66,6 +66,7 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_verifying_update">Verifying update…</string>
     <string name="fresh_permissions_storage_title">"Storage permission not granted"</string>
     <string name="fresh_permissions_storage_description">"Fresh System Services requires storage permissions to be able to receive software and app updates."</string>
+    <string name="fresh_permissions_fp_storage_description">"Fresh System Services requires storage permissions to be able to customize fingerprint animation."</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
 
 Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
