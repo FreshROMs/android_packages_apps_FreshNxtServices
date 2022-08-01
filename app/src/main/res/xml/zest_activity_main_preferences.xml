@@ -65,6 +65,16 @@
 
     <PreferenceCategory>
         <Preference
+            android:key="fs_fresh_updates"
+            android:title="@string/zest_fresh_updates_title">
+            <intent
+                android:targetClass="io.tenseventyseven.fresh.zest.store.FreshUpdatesActivity"
+                android:targetPackage="io.tenseventyseven.fresh" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory>
+        <Preference
             android:key="fs_device_resolution"
             android:title="@string/zest_screen_resolution_setting_title"
             android:summary="@string/zest_setting_default_summary">

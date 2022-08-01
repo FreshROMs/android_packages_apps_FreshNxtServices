@@ -257,4 +257,13 @@ Enabling extra dim may break some apps, resulting in a black screen. This is an 
 
     <string name="zest_plus_location_indicators_title">"Use new location indicator"</string>
     <string name="zest_plus_location_indicators_summary">"Use the new status bar location indicator used by the camera and microphone."</string>
+
+    <!-- Face Widgets -->
+    <!--<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>-->
+
+    <!-- Fresh Updates -->
+    <string name="zest_fresh_updates_title">Fresh Updates</string>
+
 </resources>

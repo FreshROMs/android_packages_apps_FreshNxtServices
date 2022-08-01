@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.dlyt.yanndroid.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/zest_fresh_updates_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:expanded="false"
+    app:navigationIcon="@drawable/ic_oui_back"
+    app:title="@string/zest_fresh_updates_title">
+
+    <de.dlyt.yanndroid.oneui.view.RecyclerView
+        android:id="@+id/zest_fresh_updates_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/item_background_color" />
+
+</de.dlyt.yanndroid.oneui.layout.ToolbarLayout>

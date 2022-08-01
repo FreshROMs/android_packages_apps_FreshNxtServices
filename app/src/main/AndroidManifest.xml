@@ -56,6 +56,9 @@
         android:name="com.samsung.android.permission.CHIMERA_PREFERENCE"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+    <uses-permission android:name="android.permission.DELETE_PACKAGES"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.INSTALL_PACKAGES"
         tools:ignore="ProtectedPermissions" />
@@ -231,8 +234,22 @@
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_plus_fod_animation_style_title"
             android:screenOrientation="portrait"
-            android:theme="@style/OneUI3Theme"
-            tools:ignore="LockedOrientationActivity" />
+            android:theme="@style/OneUI3Theme" />
+        <!--<activity
+            android:name=".zest.sub.FaceWidgetActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
+            android:label="@string/zest_face_widget_title">
+            <intent-filter>
+                <action android:name="io.tenseventyseven.fresh.SELECT_FACE_WIDGET" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+        <activity
+            android:name=".zest.store.FreshUpdatesActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
+            android:label="@string/zest_fresh_updates_title" />
 
         <service
             android:name=".services.RestartTileService"

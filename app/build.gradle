@@ -59,7 +59,10 @@ dependencies {
     implementation "androidx.tonyodev.fetch2:xfetch2:3.1.6"
 
     // Lottie
-    implementation "com.airbnb.android:lottie:5.0.3"
+    implementation "com.airbnb.android:lottie:5.2.0"
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
