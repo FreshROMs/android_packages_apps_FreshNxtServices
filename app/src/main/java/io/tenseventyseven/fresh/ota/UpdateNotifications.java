@@ -9,6 +9,7 @@ import androidx.core.app.NotificationCompat;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.ota.activity.UpdateAvailableActivity;
 import io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity;
+import io.tenseventyseven.fresh.ota.activity.LastUpdateActivity;
 import io.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import io.tenseventyseven.fresh.ota.db.LastSoftwareUpdate;
 import io.tenseventyseven.fresh.utils.Notifications;
@@ -138,7 +139,7 @@ public class UpdateNotifications {
     }
 
     public static void showPostUpdateNotification(Context context, boolean success) {
-        Class<?> cls = success ? LastSoftwareUpdate.class : UpdateCheckActivity.class;
+        Class<?> cls = success ? LastUpdateActivity.class : UpdateCheckActivity.class;
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
         NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, cls);
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
