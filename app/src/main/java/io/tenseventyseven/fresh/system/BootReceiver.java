@@ -142,8 +142,11 @@ public class BootReceiver extends BroadcastReceiver {
 
         CurrentSoftwareUpdate.setOtaState(context, isSuccessful ? SoftwareUpdate.OTA_INSTALL_STATE_SUCCESS : SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
         UpdateNotifications.showPostUpdateNotification(context, isSuccessful);
-        if (isSuccessful)
+        if (isSuccessful) {
+            UpdateUtils.setSettingAppBadge(context, false);
             LastSoftwareUpdate.setSoftwareUpdate(context, current);
+            LastSoftwareUpdate.setSoftwareUpdateResponse(context, true);
+        }
     }
 
     private void setPerformanceOnBoot(Context context) {
