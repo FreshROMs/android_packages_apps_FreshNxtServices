@@ -129,6 +129,7 @@ public class FreshUpdatesActivity extends AppCompatActivity {
             holder.uSummary.setText(update.summary);
 
             if (update.versionCode > FreshUpdates.getPackageVersionCode(mContext, update.packageName)) {
+                holder.aDownload.setImageResource(FreshUpdates.isPackageInstalled(mContext, update.packageName) ? R.drawable.ic_oui_refresh : R.drawable.ic_oui_download);
                 holder.aDownload.setVisibility(View.VISIBLE);
                 holder.aDownload.setOnClickListener(v -> {
                     holder.aContainer.setVisibility(View.GONE);
@@ -189,8 +190,7 @@ public class FreshUpdatesActivity extends AppCompatActivity {
             holder.aLaunch.setVisibility(FreshUpdates.canLaunchApp(mContext, update.packageName) ? View.VISIBLE : View.GONE);
             holder.aLaunch.setOnClickListener(v -> FreshUpdates.launchApp(mContext, update.packageName));
 
-            // TODO: *Never* allow the user to uninstall, even just update, system apps.
-            holder.aDelete.setVisibility(FreshUpdates.isPackageInstalled(mContext, update.packageName) ? View.VISIBLE : View.GONE);
+            holder.aDelete.setVisibility((FreshUpdates.isPackageInstalled(mContext, update.packageName) && !FreshUpdates.isPackageSystem(mContext, update.packageName)) ? View.VISIBLE : View.GONE);
             holder.aDelete.setOnClickListener(v -> {
                 holder.aContainer.setVisibility(View.GONE);
                 FreshUpdates.deletePackage(mContext, update.packageName, new FreshUpdates.ResultListener() {

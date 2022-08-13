@@ -3,16 +3,14 @@ package io.tenseventyseven.fresh.zest.store;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.IPackageDeleteObserver;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInstaller;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.net.Uri;
 import android.os.Handler;
-import android.os.IBinder;
 import android.os.Looper;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +35,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
@@ -192,6 +189,15 @@ public class FreshUpdates {
         return context.getPackageManager().isPackageAvailable(packageName);
     }
 
+    public static boolean isPackageSystem(Context context, String packageName) {
+        try {
+            return (context.getPackageManager().getApplicationInfo(packageName, 0).flags & ApplicationInfo.FLAG_SYSTEM) != 0;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static long getPackageVersionCode(Context context, String packageName) {
         try {
             return context.getPackageManager().getPackageInfo(packageName, 0).getLongVersionCode();
@@ -254,7 +260,7 @@ public class FreshUpdates {
     }
 
     public static void deletePackage(Context context, String packageName, ResultListener listener) {
-        //todo: Option 1 - this works without package installer | requires android.permission.DELETE_PACKAGES
+        //todo: Option 1 - this works without package installer | requires android.permission.DELETE_PACKAGES | no confirm dialog
         /*try {
             PackageManager pm = context.getPackageManager();
             pm.getClass().getMethod("deletePackage", String.class, IPackageDeleteObserver.class, int.class)
