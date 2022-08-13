@@ -100,7 +100,7 @@ public class LastSoftwareUpdate {
     @SuppressLint("SimpleDateFormat")
     public static String getLastDateFormat(Context context) {
         SharedPreferences prefs = getPreferenceDb(context);
-        Date date = new Date(prefs.getLong(OTA_SUCCESS_DATE, 0) * 1000L);
+        Date date = new Date(prefs.getLong(OTA_SUCCESS_DATE, 0));
         String formatDate = DateFormat.getBestDateTimePattern(Locale.getDefault(), "dd MMMM yyyy");
         String formatTime = DateFormat.getBestDateTimePattern(Locale.getDefault(), "hh:mm");
 
