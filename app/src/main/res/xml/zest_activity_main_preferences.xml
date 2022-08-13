@@ -51,16 +51,24 @@
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.PerformanceModeActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
-    <!--
-        <SwitchPreferenceScreen
-            android:key="fs_plus_darq_service"
-            android:title="@string/zest_darq_setting_title"
-            android:summary="@string/zest_darq_setting_summary">
+        <!--<Preference
+            android:defaultValue="Default"
+            android:key="fs_plus_face_widgets"
+            android:title="@string/zest_face_widget_title">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetClass="io.tenseventyseven.fresh.zest.sub.FaceWidgetActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
-        </SwitchPreferenceScreen>
-    -->
+        </Preference>-->
+        <!--
+            <SwitchPreferenceScreen
+                android:key="fs_plus_darq_service"
+                android:title="@string/zest_darq_setting_title"
+                android:summary="@string/zest_darq_setting_summary">
+                <intent
+                    android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                    android:targetPackage="io.tenseventyseven.fresh" />
+            </SwitchPreferenceScreen>
+        -->
     </PreferenceCategory>
 
     <PreferenceCategory>
@@ -82,6 +90,14 @@
                 android:targetClass="io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
+
+        <ListPreference
+            android:defaultValue="reset"
+            android:entries="@array/zest_screen_ratio_setting_options"
+            android:entryValues="@array/zest_screen_ratio_setting_values"
+            android:key="fs_device_screen_ratio"
+            android:summary="@string/zest_setting_default_summary"
+            android:title="@string/zest_screen_ratio_setting_title" />
 
         <Preference
             android:key="fs_video_brightness"

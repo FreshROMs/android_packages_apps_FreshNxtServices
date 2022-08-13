@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,30 +12,35 @@ import android.os.SystemClock;
 import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View;
+import android.view.WindowManager;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.preference.DropDownPreference;
-import de.dlyt.yanndroid.oneui.preference.Preference;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
+import de.dlyt.yanndroid.oneui.preference.DropDownPreference;
+import de.dlyt.yanndroid.oneui.preference.ListPreference;
+import de.dlyt.yanndroid.oneui.preference.Preference;
 import de.dlyt.yanndroid.oneui.preference.SwitchPreference;
 import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
 import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
-import io.tenseventyseven.fresh.utils.Performance;
-import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.services.OverlayService;
+import io.tenseventyseven.fresh.utils.Experience;
+import io.tenseventyseven.fresh.utils.Performance;
 import io.tenseventyseven.fresh.utils.Preferences;
 import io.tenseventyseven.fresh.utils.Tools;
 import io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
@@ -131,6 +137,7 @@ public class SettingsActivity extends AppCompatActivity {
             DropDownPreference mVoltePreference = findPreference("sb_icon_style_volte");
             Preference mPerformancePreference = findPreference("fs_plus_performance_mode");
             Preference mDeviceResolution = findPreference("fs_device_resolution");
+            ListPreference mDeviceScreenRatio = findPreference("fs_device_screen_ratio");
             Preference mVideoBrightness = findPreference("fs_video_brightness");
             Preference mFingerprintAnimation = findPreference("fs_plus_fod_animation_style");
 
@@ -145,6 +152,7 @@ public class SettingsActivity extends AppCompatActivity {
             mVoltePreference.seslSetSummaryColor(summaryColor);
             mPerformancePreference.seslSetSummaryColor(summaryColor);
             mDeviceResolution.seslSetSummaryColor(summaryColor);
+            mDeviceScreenRatio.seslSetSummaryColor(summaryColor);
             mVideoBrightness.seslSetSummaryColor(summaryColor);
             mFingerprintAnimation.seslSetSummaryColor(summaryColor);
 
@@ -166,6 +174,10 @@ public class SettingsActivity extends AppCompatActivity {
 
             // Screen resolution
             mDeviceResolution.setSummary(setResolution);
+
+            // Screen ratio
+            mDeviceScreenRatio.setSummary(mDeviceScreenRatio.getEntry());
+            mDeviceScreenRatio.setOnPreferenceChangeListener(this);
 
             // Fresh and Fresh Services versions
             findPreference("zs_fresh_version").setSummary(romVersion);
@@ -242,8 +254,52 @@ public class SettingsActivity extends AppCompatActivity {
                     DeviceConfig.setProperty(DeviceConfig.NAMESPACE_PRIVACY,
                             "location_indicators_enabled", Boolean.toString((boolean) newValue), true);
                     return true;
+                case "fs_device_screen_ratio":
+                    handleRatioChange(newValue.toString());
+                    return true;
             }
             return false;
+        }
+
+        private void handleRatioChange(String newValue) {
+            try {
+                Object wms = Class.forName("android.view.WindowManagerGlobal").getMethod("getWindowManagerService").invoke(null);
+                Class<?> iwm = Class.forName("android.view.IWindowManager");
+
+                int sWidth, sHeight;
+                int resIndex = Settings.System.getInt(mContext.getContentResolver(), ScreenResolutionActivity.SCREEN_RESOLUTION, 2);
+                String resolution = mContext.getResources().getStringArray(R.array.zest_screen_resolution_setting_values)[resIndex];
+                Scanner resScanner = new Scanner(resolution);
+                resScanner.useDelimiter(":");
+                String wmSize = resScanner.next();
+
+                if (wmSize.equals("reset")) {
+                    if (newValue.equals("reset")) {
+                        iwm.getMethod("clearForcedDisplaySize", int.class).invoke(wms, Display.DEFAULT_DISPLAY);
+                        return;
+                    }
+                    Point size = new Point();
+                    ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealSize(size);
+                    sWidth = size.x;
+                    sHeight = size.y;
+                } else {
+                    Scanner scanner = new Scanner(wmSize);
+                    scanner.useDelimiter("x");
+                    sHeight = scanner.nextInt();
+                    sWidth = scanner.nextInt();
+                }
+
+                if (!newValue.equals("reset")) {
+                    Scanner scanner = new Scanner(newValue);
+                    scanner.useDelimiter(":");
+                    sHeight = sWidth * scanner.nextInt() / scanner.nextInt();
+                }
+
+                iwm.getMethod("setForcedDisplaySize", int.class, int.class, int.class)
+                        .invoke(wms, Display.DEFAULT_DISPLAY, sWidth, sHeight);
+            } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override

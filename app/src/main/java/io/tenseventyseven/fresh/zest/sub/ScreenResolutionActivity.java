@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -26,8 +27,8 @@ import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.preference.HorizontalRadioPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
-import io.tenseventyseven.fresh.utils.Experience;
 import io.tenseventyseven.fresh.R;
+import io.tenseventyseven.fresh.utils.Experience;
 
 public class ScreenResolutionActivity extends AppCompatActivity {
     public static String SCREEN_RESOLUTION = "device_screen_resolution_int";
@@ -159,6 +160,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
             mApplyButton.setEnabled(false);
 
             mApplyButton.setOnClickListener(v -> {
+                PreferenceManager.getDefaultSharedPreferences(mContext).edit().putString("fs_device_screen_ratio", "reset").apply();
                 Settings.System.putInt(mContext.getContentResolver(), SCREEN_RESOLUTION, mResolution);
                 mApplyButton.setEnabled(false);
                 mSetResolution = mResolution;
