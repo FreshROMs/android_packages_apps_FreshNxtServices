@@ -47,7 +47,7 @@ import java.util.concurrent.Executors;
 public class FreshUpdates {
 
     private static final String FETCH_INSTANCE_NAME = "FreshUpdates";
-    private static final String LIST_URL = "https://yanndroid.github.io/fresh-updates-test/updates.json"; //"https://ota.fresh.tenseventyseven.cf/a50/fresh_updates/";
+    private static final String FETCH_API_URL = "https://ota.fresh.tenseventyseven.cf/apps/";
 
     public static class Update {
         public String name, packageName, summary, changelog, versionName, fileUrl, iconUrl;
@@ -68,7 +68,7 @@ public class FreshUpdates {
         Handler handler = new Handler(Looper.getMainLooper());
         Executors.newSingleThreadExecutor().execute(() -> {
             try {
-                URLConnection connection = new URL(LIST_URL).openConnection();
+                URLConnection connection = new URL(FETCH_API_URL).openConnection();
                 connection.connect();
                 InputStream inputStream = connection.getInputStream();
                 StringBuffer buffer = new StringBuffer();

@@ -63,7 +63,6 @@ public class FreshUpdatesActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 ArrayList<FreshUpdates.Update> list = (ArrayList<FreshUpdates.Update>) o;
                 initListView(list);
-                toolbar.setSubtitle(String.valueOf(list.size()));
             }
 
             @Override
@@ -190,6 +189,7 @@ public class FreshUpdatesActivity extends AppCompatActivity {
             holder.aLaunch.setVisibility(FreshUpdates.canLaunchApp(mContext, update.packageName) ? View.VISIBLE : View.GONE);
             holder.aLaunch.setOnClickListener(v -> FreshUpdates.launchApp(mContext, update.packageName));
 
+            // TODO: *Never* allow the user to uninstall, even just update, system apps.
             holder.aDelete.setVisibility(FreshUpdates.isPackageInstalled(mContext, update.packageName) ? View.VISIBLE : View.GONE);
             holder.aDelete.setOnClickListener(v -> {
                 holder.aContainer.setVisibility(View.GONE);
