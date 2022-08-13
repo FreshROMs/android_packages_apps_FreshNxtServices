@@ -101,11 +101,15 @@
     <string-array name="zest_screen_ratio_setting_options">
         <item>@string/zest_screen_ratio_setting_default</item>
         <item>16:9</item>
+        <item>16:10</item>
+        <item>3:2</item>
         <item>4:3</item>
     </string-array>
     <string-array name="zest_screen_ratio_setting_values">
         <item>reset</item>
         <item>16:9</item>
+        <item>16:10</item>
+        <item>3:2</item>
         <item>4:3</item>
     </string-array>
 

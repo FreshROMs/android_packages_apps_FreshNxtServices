@@ -280,8 +280,8 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     Point size = new Point();
                     ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealSize(size);
-                    sWidth = size.x;
-                    sHeight = size.y;
+                    sWidth = Math.min(size.x, size.y);
+                    sHeight = Math.max(size.x, size.y);
                 } else {
                     Scanner scanner = new Scanner(wmSize);
                     scanner.useDelimiter("x");
