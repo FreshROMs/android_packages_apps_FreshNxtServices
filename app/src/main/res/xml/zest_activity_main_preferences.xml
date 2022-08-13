@@ -71,7 +71,7 @@
         -->
     </PreferenceCategory>
 
-    <PreferenceCategory>
+    <!--<PreferenceCategory>
         <Preference
             android:key="fs_fresh_updates"
             android:title="@string/zest_fresh_updates_title">
@@ -79,7 +79,7 @@
                 android:targetClass="io.tenseventyseven.fresh.zest.store.FreshUpdatesActivity"
                 android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory>
         <Preference
