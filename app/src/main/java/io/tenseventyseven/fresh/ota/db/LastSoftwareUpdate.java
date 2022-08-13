@@ -94,7 +94,7 @@ public class LastSoftwareUpdate {
 
     public static long getLastDate(Context context) {
         SharedPreferences prefs = getPreferenceDb(context);
-        return Long.parseLong(prefs.getLong(OTA_SUCCESS_DATE, 0) + "000");
+        return Long.parseLong(prefs.getLong(OTA_SUCCESS_DATE, 0) + "");
     }
 
     @SuppressLint("SimpleDateFormat")
