@@ -1,7 +1,11 @@
 package io.tenseventyseven.fresh.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
+
+import java.util.Scanner;
 
 public class Preferences {
 
@@ -37,13 +41,33 @@ public class Preferences {
         return setting;
     }
 
-    public static String getCurrentAspectRatio(Context context) {
-        String setting = Settings.System.getString(context.getContentResolver(), Experience.isDesktopMode(context) ? "zest_display_aspect_ratio_desktop" : "zest_display_aspect_ratio_mobile");
-        return (setting == null || setting.isEmpty()) ? "reset" : setting;
+    public static String getCurrentAspectRatio(Context context, Activity activity) {
+        String setting = Settings.System.getString(context.getContentResolver(), "zest_display_aspect_ratio");
+
+        if (setting == null || setting.isEmpty() || setting.equalsIgnoreCase("reset"))
+            return "reset";
+
+        Scanner valueScan = new Scanner(setting);
+        String scannerDelimit = ":";
+        valueScan.useDelimiter(scannerDelimit);
+        int heightRatio = Integer.parseInt(valueScan.next());
+        int widthRatio = Integer.parseInt(valueScan.next());
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
+        int width = Math.min(displayMetrics.widthPixels, displayMetrics.heightPixels);
+        int height = Math.max(displayMetrics.widthPixels, displayMetrics.heightPixels);
+
+        if ((width / widthRatio) != (height / heightRatio)) {
+            setCurrentAspectRatio(context, "reset");
+            return "reset";
+        }
+
+        return setting;
     }
 
     public static void setCurrentAspectRatio(Context context, String ratio) {
-        Settings.System.putString(context.getContentResolver(), Experience.isDesktopMode(context) ? "zest_display_aspect_ratio_desktop" : "zest_display_aspect_ratio_mobile", ratio);
+        Settings.System.putString(context.getContentResolver(), "zest_display_aspect_ratio", ratio);
     }
 
     public static void setVolteConnectionIconPackage(Context context, String selection) {

@@ -176,7 +176,7 @@ public class SettingsActivity extends AppCompatActivity {
             mDeviceResolution.setSummary(setResolution);
 
             // Screen ratio
-            mDeviceScreenRatio.setValue(Preferences.getCurrentAspectRatio(mContext));
+            mDeviceScreenRatio.setValue(Preferences.getCurrentAspectRatio(mContext, Experience.getActivity(mContext)));
             mDeviceScreenRatio.setOnPreferenceChangeListener(this);
 
             // Fresh and Fresh Services versions
@@ -255,6 +255,7 @@ public class SettingsActivity extends AppCompatActivity {
                             "location_indicators_enabled", Boolean.toString((boolean) newValue), true);
                     return true;
                 case "fs_device_screen_ratio":
+                    Preferences.setCurrentAspectRatio(mContext, newValue.toString());
                     handleRatioChange(newValue.toString());
                     return true;
             }
@@ -262,8 +263,6 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         private void handleRatioChange(String newValue) {
-            Preferences.setCurrentAspectRatio(mContext, newValue);
-
             try {
                 Object wms = Class.forName("android.view.WindowManagerGlobal").getMethod("getWindowManagerService").invoke(null);
                 Class<?> iwm = Class.forName("android.view.IWindowManager");
