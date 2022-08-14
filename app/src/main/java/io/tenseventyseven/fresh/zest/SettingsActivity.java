@@ -176,7 +176,7 @@ public class SettingsActivity extends AppCompatActivity {
             mDeviceResolution.setSummary(setResolution);
 
             // Screen ratio
-            mDeviceScreenRatio.setSummary(mDeviceScreenRatio.getEntry());
+            mDeviceScreenRatio.setValue(Preferences.getCurrentAspectRatio(mContext));
             mDeviceScreenRatio.setOnPreferenceChangeListener(this);
 
             // Fresh and Fresh Services versions
@@ -262,6 +262,8 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         private void handleRatioChange(String newValue) {
+            Preferences.setCurrentAspectRatio(mContext, newValue);
+
             try {
                 Object wms = Class.forName("android.view.WindowManagerGlobal").getMethod("getWindowManagerService").invoke(null);
                 Class<?> iwm = Class.forName("android.view.IWindowManager");
