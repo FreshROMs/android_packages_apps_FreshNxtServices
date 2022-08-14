@@ -91,13 +91,13 @@
                 android:targetPackage="io.tenseventyseven.fresh" />
         </Preference>
 
-        <ListPreference
+        <DropDownPreference
             android:defaultValue="reset"
             android:entries="@array/zest_screen_ratio_setting_options"
             android:entryValues="@array/zest_screen_ratio_setting_values"
             android:key="fs_device_screen_ratio"
-            android:summary="@string/zest_setting_default_summary"
-            android:title="@string/zest_screen_ratio_setting_title" />
+            android:title="@string/zest_screen_ratio_setting_title"
+            app:useSimpleSummaryProvider="true" />
 
         <Preference
             android:key="fs_video_brightness"
