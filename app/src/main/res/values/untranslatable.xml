@@ -15,4 +15,5 @@
     <!-- Const strings held by another string -->
     <string name="zest_plus_fod_animation_style_cancel" translatable="false">@string/sesl_picker_cancel</string>
     <string name="zest_plus_fod_animation_style_apply" translatable="false">@string/sesl_picker_done</string>
+    <string name="zest_screen_ratio_setting_default" translatable="false">@string/zest_wlan_connection_icon_default</string>
 </resources>

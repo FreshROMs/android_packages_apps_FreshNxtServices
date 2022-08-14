@@ -162,9 +162,10 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_screen_resolution_setting_medium_summary">"Improved visuals, moderate battery use"</string>
     <string name="zest_screen_resolution_setting_low_summary">"Ugly visuals, lowest battery use"</string>
     <string name="zest_screen_resolution_setting_btn_apply">"Apply"</string>
+
     <!-- Screen Ratio settings -->
-    <string name="zest_screen_ratio_setting_title">"Screen ratio"</string>
-    <string name="zest_screen_ratio_setting_default">"Default"</string>
+    <string name="zest_screen_ratio_setting_title">"Aspect ratio"</string>
+
     <!-- Video brightness/HDR effect settings -->
     <string name="zest_hdr_effect_setting_title">"Video brightness"</string>
     <string name="zest_hdr_effect_setting_summary">"Enhance the image quality of your videos to enjoy brighter and more vivid colors."</string>
