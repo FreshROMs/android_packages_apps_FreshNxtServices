@@ -15,7 +15,7 @@ public class DownloadPauseReceiver extends BroadcastReceiver {
         Bundle extras = intent.getExtras();
         if ((extras != null)) {
             final int requestId = extras.getInt(FETCH_GROUP_ID, -1);
-            UpdateDownload.getFetchInstance(context).pauseGroup(requestId);
+            UpdateDownload.getFetchInstance(context).pause(requestId);
         }
     }
 }

@@ -118,12 +118,6 @@ public class UpdateUtils {
         return String.format("%s/s", getFormattedFileSize(fileSize));
     }
 
-    @SuppressLint("SetWorldReadable")
-    public static void verifyUpdateAsync(Context context) {
-        new Thread(() -> {
-        }).start();
-    }
-
     public static boolean verifyPackage(Context context) {
         File updateFile = UpdateUtils.getUpdatePackageFile();
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);

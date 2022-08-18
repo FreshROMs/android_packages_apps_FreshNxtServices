@@ -31,6 +31,7 @@ import io.tenseventyseven.fresh.utils.Experience;
 public class UpdateDownload {
     private static final String FETCH_INSTANCE_NAME = "UpdateDownload";
     private static volatile UpdateDownload instance;
+    private static boolean isForeground = false;
     private static Fetch fetch;
 
     public UpdateDownload() {
@@ -50,6 +51,15 @@ public class UpdateDownload {
             }
         }
         return fetch;
+    }
+
+    public static void setIsForeground(Boolean bool) {
+        if (instance != null)
+            isForeground = bool;
+    }
+
+    public static boolean getIsForeground() {
+        return instance != null && isForeground;
     }
 
     public static Fetch getFetch(Context context) {

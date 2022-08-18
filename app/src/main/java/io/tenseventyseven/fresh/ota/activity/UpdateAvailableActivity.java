@@ -11,6 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -130,6 +131,8 @@ public class UpdateAvailableActivity extends AppCompatActivity {
 
         @Override
         public void onQueued(@NonNull Download download, boolean b) {
+            if (download.getProgress() == 100)
+                updateState(SoftwareUpdate.OTA_INSTALL_STATE_VERIFYING);
         }
 
         @Override
@@ -244,15 +247,12 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
+        setupFetch();
+
         mAppBarProgress.setProgress(CurrentSoftwareUpdate.getOtaDownloadProgress(mContext));
         updateSubtitleText(CurrentSoftwareUpdate.getOtaDownloadEta(mContext), 0);
         mBtnInstall.setOnClickListener(v -> installUpdate());
         mBtnLater.setOnClickListener(v -> cancelUpdateExit());
-
-        if (mFetch == null || mFetch.isClosed()) {
-            mFetch = UpdateDownload.getFetchInstance(mContext);
-            mFetch.addListener(mFetchListener);
-        }
 
         setupLoadingDialog();
         updateState(0);
@@ -265,6 +265,8 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         CurrentSoftwareUpdate.setOtaDownloadEta(mContext, mEta);
         CurrentSoftwareUpdate.setOtaDownloadProgress(mContext, mProgress);
 
+        UpdateDownload.setIsForeground(false);
+
         if (!mFetch.isClosed())
             mFetch.removeListener(mFetchListener);
 
@@ -275,6 +277,16 @@ public class UpdateAvailableActivity extends AppCompatActivity {
                 state == SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED ||
                 state == SoftwareUpdate.OTA_INSTALL_STATE_UNKNOWN)
             UpdateDownload.tryStopService(mContext);
+    }
+
+    private void setupFetch() {
+        if (mFetch == null || mFetch.isClosed()) {
+            mFetch = UpdateDownload.getFetchInstance(mContext);
+            UpdateDownload.setIsForeground(true);
+        }
+
+        mFetch.removeListener(mFetchListener);
+        mFetch.addListener(mFetchListener);
     }
 
     private void updateSubtitleText(long eta, long speed) {
@@ -312,8 +324,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         Notifications.cancelNotification(mContext, UpdateNotifications.NOTIFICATION_POST_UPDATE_ID);
 
         UpdateDownload.startService(mContext);
-        mFetch = UpdateDownload.getFetchInstance(mContext);
-        mFetch.addListener(mFetchListener);
+        setupFetch();
 
         UpdateDownload.downloadUpdate(mContext, success -> {
             updateState(SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING);

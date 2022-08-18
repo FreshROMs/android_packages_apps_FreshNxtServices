@@ -15,7 +15,7 @@ public class DownloadResumeReceiver extends BroadcastReceiver {
         Bundle extras = intent.getExtras();
         if ((extras != null)) {
             final int requestId = extras.getInt(FETCH_GROUP_ID, -1);
-            UpdateDownload.getFetchInstance(context).resumeGroup(requestId);
+            UpdateDownload.getFetchInstance(context).resume(requestId);
         }
     }
 }

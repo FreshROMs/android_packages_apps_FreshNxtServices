@@ -66,26 +66,6 @@ public class UpdateNotifications {
         notificationManager.notify(NOTIFICATION_CHECK_UPDATE_ID, notification);
     }
 
-    public static void showOngoingVerificationNotification(Context context) {
-        NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_ONGOING_CHANNEL_ID, UpdateAvailableActivity.class);
-
-        String notificationTitle = context.getString(R.string.fresh_ota_main_title);
-        String notificationContent = context.getString(R.string.fresh_ota_verifying_update);
-
-        Notification notification = builder.setPriority(NotificationCompat.PRIORITY_LOW)
-                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
-                .setSmallIcon(R.drawable.ic_notification_software_update)
-                .setContentTitle(notificationTitle)
-                .setContentText(notificationContent)
-                .setAutoCancel(false)
-                .setOngoing(true)
-                .setShowWhen(false)
-                .build();
-
-        notificationManager.notify(NOTIFICATION_VERIFY_UPDATE_ID, notification);
-    }
-
     public static void showFailedVerificationNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
         NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);

@@ -5,12 +5,15 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ServiceInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
+import android.os.SystemClock;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,12 +25,14 @@ import com.tonyodev.fetch2.Download;
 import com.tonyodev.fetch2.Error;
 import com.tonyodev.fetch2.Fetch;
 import com.tonyodev.fetch2.FetchGroup;
+import com.tonyodev.fetch2.FetchListener;
 import com.tonyodev.fetch2.Status;
 import com.tonyodev.fetch2core.DownloadBlock;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -45,13 +50,14 @@ import io.tenseventyseven.fresh.ota.receivers.DownloadCancelReceiver;
 import io.tenseventyseven.fresh.ota.receivers.DownloadPauseReceiver;
 import io.tenseventyseven.fresh.ota.receivers.DownloadResumeReceiver;
 import io.tenseventyseven.fresh.utils.Notifications;
+import okio.Okio;
 
 public class UpdateDownloadService extends Service {
     public static UpdateDownloadService INSTANCE = null;
     public static final String FETCH_GROUP_ID = "fetch_group_id";
 
     private Fetch fetch;
-    private AbstractFetchGroupListener fetchListener;
+    private FetchListener fetchListener;
     private NotificationManager notificationManager;
     private PowerManager.WakeLock mWakeLock;
 
@@ -90,69 +96,125 @@ public class UpdateDownloadService extends Service {
 
         notificationManager = Notifications.getNotificationManager(this);
         fetch = UpdateDownload.getFetchInstance(this);
-        fetchListener = new AbstractFetchGroupListener() {
+        fetchListener = new FetchListener() {
             @Override
-            public void onWaitingNetwork(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_LOST_CONNECTION);
-                updateNotification(groupId, download, fetchGroup, true);
-            }
-
-            @Override
-            public void onCancelled(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_CANCELLED);
-                updateNotification(groupId, download, fetchGroup, false);
-            }
-
-            @Override
-            public void onCompleted(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
-                Notifications.cancelNotification(INSTANCE, UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID);
-                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_VERIFYING);
-                verifyUpdate();
-            }
-
-            @Override
-            public void onError(int groupId, @NonNull Download download, @NonNull Error error, @Nullable Throwable throwable, FetchGroup fetchGroup) {
-                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
-                updateNotification(groupId, download, fetchGroup, false);
-            }
-
-            @Override
-            public void onProgress(int groupId, @NotNull Download download, long etaInMilliSeconds, long downloadedBytesPerSecond, @NotNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup, false);
-            }
-
-            @Override
-            public void onQueued(int groupId, @NotNull Download download, boolean waitingNetwork, @NotNull FetchGroup fetchGroup) {
+            public void onResumed(@NonNull Download download) {
                 CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING);
-                updateNotification(groupId, download, fetchGroup, false);
+                syncService(download, true);
             }
 
             @Override
-            public void onStarted(int groupId, @NonNull Download download, @NonNull List<? extends DownloadBlock> downloadBlocks, int totalBlocks, @NonNull FetchGroup fetchGroup) {
-                updateNotification(groupId, download, fetchGroup, false);
+            public void onRemoved(@NonNull Download download) {
+                syncService(download, false);
             }
 
             @Override
-            public void onPaused(int groupId, @NotNull Download download, @NotNull FetchGroup fetchGroup) {
+            public void onDownloadBlockUpdated(@NonNull Download download, @NonNull DownloadBlock downloadBlock, int i) {
+                syncService(download, true);
+            }
+
+            @Override
+            public void onDeleted(@NonNull Download download) {
+                syncService(download, false);
+            }
+
+            @Override
+            public void onAdded(@NonNull Download download) {
+                syncService(download, true);
+            }
+
+            @Override
+            public void onWaitingNetwork(@NonNull Download download) {
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_LOST_CONNECTION);
+                syncService(download, true);
+            }
+
+            @Override
+            public void onCancelled(@NonNull Download download) {
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_CANCELLED);
+                syncService(download, false);
+            }
+
+            @Override
+            public void onCompleted(@NonNull Download download) {
+                syncService(download, false);
+
+                Notifications.cancelNotification(INSTANCE, UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID);
+                if (!UpdateDownload.getIsForeground())
+                    UpdateDownload.tryStopService(INSTANCE);
+            }
+
+            @Override
+            public void onError(@NonNull Download download, @NonNull Error error, @Nullable Throwable throwable) {
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
+                syncService(download, false);
+            }
+
+            @Override
+            public void onProgress(@NonNull Download download, long l, long l1) {
+                syncService(download, false);
+            }
+
+            @Override
+            public void onQueued(@NonNull Download download, boolean waiting) {
+                syncService(download, waiting);
+                CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING);
+            }
+
+            @Override
+            public void onStarted(@NonNull Download download, @NonNull List<? extends DownloadBlock> list, int i) {
+                syncService(download, false);
+            }
+
+            @Override
+            public void onPaused(@NotNull Download download) {
                 CurrentSoftwareUpdate.setOtaState(INSTANCE, SoftwareUpdate.OTA_INSTALL_STATE_PAUSED);
 
                 // Save current progress to db
                 CurrentSoftwareUpdate.setOtaDownloadProgress(INSTANCE, download.getProgress());
                 CurrentSoftwareUpdate.setOtaDownloadEta(INSTANCE, download.getEtaInMilliSeconds());
 
-                updateNotification(groupId, download, fetchGroup, false);
+                syncService(download, false);
             }
         };
 
         fetch.addListener(fetchListener);
     }
 
-    private void updateNotification(int groupId, Download download, FetchGroup fetchGroup, boolean waitingNetwork) {
+    @SuppressLint("SetWorldReadable")
+    public void verifyUpdate() {
+        CurrentSoftwareUpdate.setOtaState(this, SoftwareUpdate.OTA_INSTALL_STATE_VERIFYING);
+
+        File file = UpdateUtils.getUpdatePackageFile();
+
+        int state = 0;
+
+        if (!file.exists())
+            state = SoftwareUpdate.OTA_INSTALL_STATE_FAILED_VERIFICATION;
+
+        SystemClock.sleep(4500);
+
+        if (state != SoftwareUpdate.OTA_INSTALL_STATE_FAILED_VERIFICATION) {
+            if (UpdateUtils.verifyPackage(this))
+                state = SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED;
+            else
+                state = SoftwareUpdate.OTA_INSTALL_STATE_FAILED_VERIFICATION;
+        }
+
+        CurrentSoftwareUpdate.setOtaState(this, state);
+        if (state == SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED) {
+            //noinspection ResultOfMethodCallIgnored
+            file.setReadable(true, false);
+            UpdateNotifications.showPreUpdateNotification(this);
+        } else {
+            UpdateNotifications.showFailedVerificationNotification(this);
+        }
+    }
+
+    private void syncService(Download download, boolean waitingNetwork) {
+        int groupId = download.getId();
         final Status status = download.getStatus();
         final SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(this);
-
-        if (status == Status.COMPLETED && fetchGroup.getGroupDownloadProgress() < 100)
-            return;
 
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(this, UpdateNotifications.NOTIFICATION_ONGOING_CHANNEL_ID);
 
@@ -162,6 +224,26 @@ public class UpdateDownloadService extends Service {
         builder.setWhen(download.getCreated());
         builder.setContentIntent(getAvailableActivity());
         builder.setAutoCancel(false);
+
+        final NotificationCompat.BigTextStyle progressBigText = new NotificationCompat.BigTextStyle();
+
+        if (status == Status.COMPLETED) {
+            builder.setProgress(100, 0, true);
+            builder.setContentTitle(getString(R.string.fresh_ota_main_title));
+            builder.setOngoing(true);
+            builder.setStyle(progressBigText);
+            progressBigText.bigText(getString(R.string.fresh_ota_verifying_update));
+            notificationManager.notify(UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID, builder.build());
+
+            if (CurrentSoftwareUpdate.getOtaState(this) == SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING) {
+                verifyUpdate();
+                notificationManager.cancel(UpdateNotifications.NOTIFICATION_DOWNLOADING_UPDATE_ID);
+            }
+            return;
+        }
+
+        if (CurrentSoftwareUpdate.getOtaState(this) == SoftwareUpdate.OTA_INSTALL_STATE_VERIFYING)
+            return;
 
         switch (status) {
             case PAUSED:
@@ -176,11 +258,10 @@ public class UpdateDownloadService extends Service {
                 builder.setContentText(getString(R.string.fresh_ota_notification_download_cancelled));
                 builder.setOngoing(false);
                 break;
-            case COMPLETED:
-                if (fetchGroup.getGroupDownloadProgress() == 100) {
-                    builder.setOngoing(false);
-                    return;
-                }
+            case QUEUED:
+                builder.setContentTitle(getString(R.string.fresh_ota_main_title));
+                builder.setContentText(waitingNetwork ? getString(R.string.fresh_ota_changelog_appbar_waiting) : getString(R.string.fresh_ota_changelog_appbar_downloading));
+                builder.setOngoing(true);
                 break;
             default:
                 builder.setContentText(waitingNetwork ? getString(R.string.fresh_ota_changelog_appbar_waiting) : getString(R.string.fresh_ota_changelog_appbar_downloading));
@@ -189,7 +270,6 @@ public class UpdateDownloadService extends Service {
         }
 
         final int progress = download.getProgress();
-        final NotificationCompat.BigTextStyle progressBigText = new NotificationCompat.BigTextStyle();
 
         // Set Notification data
         switch (status) {
@@ -232,14 +312,6 @@ public class UpdateDownloadService extends Service {
                         getString(R.string.fresh_ota_changelog_btn_resume),
                         getResumeIntent(groupId)).build());
                 break;
-
-            case COMPLETED:
-                if (fetchGroup.getGroupDownloadProgress() == 100) {
-                    builder.setAutoCancel(true);
-                    UpdateNotifications.showPreUpdateNotification(this);
-                    return;
-                }
-                break;
         }
 
         switch (status) {
@@ -264,27 +336,6 @@ public class UpdateDownloadService extends Service {
             UpdateUtils.deleteUpdatePackageFile();
             UpdateDownload.tryStopService(this);
         }
-    }
-
-    @SuppressLint("SetWorldReadable")
-    private void verifyUpdate() {
-        UpdateNotifications.showOngoingVerificationNotification(INSTANCE);
-        File file = UpdateUtils.getUpdatePackageFile();
-        Handler handler = new Handler(Looper.getMainLooper());
-
-        handler.postDelayed(() -> {
-            if (file.exists() && UpdateUtils.verifyPackage(this)) {
-                //noinspection ResultOfMethodCallIgnored
-                file.setReadable(true, false);
-                CurrentSoftwareUpdate.setOtaState(this, SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED);
-                UpdateNotifications.showPreUpdateNotification(this);
-            } else {
-                CurrentSoftwareUpdate.setOtaState(this, SoftwareUpdate.OTA_INSTALL_STATE_FAILED_VERIFICATION);
-                UpdateNotifications.showFailedVerificationNotification(this);
-            }
-
-            UpdateNotifications.cancelOngoingVerificationNotification(this);
-        }, 7000);
     }
 
     private PendingIntent getPauseIntent(int groupId) {
