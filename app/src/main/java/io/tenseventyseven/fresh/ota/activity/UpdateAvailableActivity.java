@@ -435,6 +435,10 @@ public class UpdateAvailableActivity extends AppCompatActivity {
                 mBtnDownload.setText(R.string.fresh_ota_changelog_btn_download);
                 mBtnDownload.setOnClickListener(v -> downloadUpdateWithWarning());
                 mBtnCancel.setOnClickListener(v -> cancelUpdateExit());
+
+                if (state == SoftwareUpdate.OTA_INSTALL_STATE_NOT_STARTED && UpdateUtils.isDeviceOnline(this)
+                    && UpdateUtils.isConnectionUnmetered(this) && UpdateUtils.isWlanAutoDownload(this))
+                    downloadUpdate();
                 break;
             case SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING:
                 mAppBarTitle.setText(R.string.fresh_ota_changelog_appbar_downloading);
