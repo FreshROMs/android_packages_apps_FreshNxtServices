@@ -26,10 +26,11 @@
     </style>
 
     <style name="Fresh.OTA.Button" parent="@style/ButtonStyle">
-        <item name="android:paddingHorizontal">84dp</item>
-        <item name="android:paddingVertical">12dp</item>
+        <item name="android:paddingVertical">14dp</item>
         <item name="android:layout_margin">4dp</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:minWidth">240dp</item>
+        <item name="android:maxWidth">240dp</item>
     </style>
     <style name="Fresh.OTA.Button.Colored" parent="@style/Fresh.OTA.Button">
         <item name="android:backgroundTint">@color/sesl_btn_color_state</item>

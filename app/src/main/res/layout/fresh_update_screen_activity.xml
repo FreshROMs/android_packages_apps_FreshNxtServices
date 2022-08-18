@@ -273,11 +273,12 @@
             android:layout_gravity="bottom"
             android:layout_marginTop="12.0dp"
             android:layout_marginBottom="12.0dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingHorizontal="84dp">
 
             <LinearLayout
                 android:id="@+id/fresh_ota_btnbar_download"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
@@ -299,7 +300,7 @@
 
             <LinearLayout
                 android:id="@+id/fresh_ota_btnbar_install"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
