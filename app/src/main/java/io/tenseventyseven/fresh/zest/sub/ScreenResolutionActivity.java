@@ -1,13 +1,16 @@
 package io.tenseventyseven.fresh.zest.sub;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +20,7 @@ import androidx.preference.PreferenceManager;
 
 import com.google.android.material.button.MaterialButton;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -29,10 +33,14 @@ import de.dlyt.yanndroid.oneui.preference.HorizontalRadioPreference;
 import de.dlyt.yanndroid.oneui.preference.Preference;
 import io.tenseventyseven.fresh.R;
 import io.tenseventyseven.fresh.utils.Experience;
+import io.tenseventyseven.fresh.utils.Preferences;
 
 public class ScreenResolutionActivity extends AppCompatActivity {
     public static String SCREEN_RESOLUTION = "device_screen_resolution_int";
     private static ExecutorService mExecutor;
+
+    private static Context mContext;
+    private static Activity mActivity;
 
     @BindView(R.id.toolbar_layout)
     ToolbarLayout toolbar;
@@ -49,6 +57,9 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         mExecutor = Executors.newSingleThreadExecutor();
         setContentView(R.layout.zest_activity_screen_resolution);
         ButterKnife.bind(this);
+
+        mContext = this;
+        mActivity = this;
 
         toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
@@ -85,23 +96,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         String wmSize = valueScan.next();
         String wmDensity = valueScan.next();
 
-        if (wmSize.equals("reset")) {
-            Class.forName("android.view.IWindowManager")
-                    .getMethod("clearForcedDisplaySize", int.class)
-                    .invoke(getWindowManagerService(), Display.DEFAULT_DISPLAY);
-        } else {
-            Scanner scanner = new Scanner(wmSize);
-            scanner.useDelimiter("x");
-
-            int height = scanner.nextInt();
-            int width = scanner.nextInt();
-
-            scanner.close();
-
-            Class.forName("android.view.IWindowManager")
-                    .getMethod("setForcedDisplaySize", int.class, int.class, int.class)
-                    .invoke(getWindowManagerService(), Display.DEFAULT_DISPLAY, width, height);
-        }
+        setResolutionAndRatio(mContext, wmSize, Preferences.getCurrentAspectRatio(mContext, mActivity));
 
         if (wmDensity.equals("reset")) {
             Class.forName("android.view.IWindowManager")
@@ -113,6 +108,52 @@ public class ScreenResolutionActivity extends AppCompatActivity {
             Class.forName("android.view.IWindowManager")
                     .getMethod("setForcedDisplayDensityForUser", int.class, int.class, int.class)
                     .invoke(getWindowManagerService(), Display.DEFAULT_DISPLAY, density, USER_CURRENT_OR_SELF);
+        }
+    }
+
+    @SuppressLint("PrivateApi")
+    public static void setResolutionAndRatio(Context context, String wmSize, String newRatio) {
+        try {
+            int sWidth, sHeight;
+
+            if (wmSize == null) {
+                int resIndex = Settings.System.getInt(context.getContentResolver(), ScreenResolutionActivity.SCREEN_RESOLUTION, 2);
+                String resolution = context.getResources().getStringArray(R.array.zest_screen_resolution_setting_values)[resIndex];
+                Scanner resScanner = new Scanner(resolution);
+                resScanner.useDelimiter(":");
+                wmSize = resScanner.next();
+            }
+
+            if (wmSize.equals("reset")) {
+                if (newRatio.equals("reset")) {
+                    Class.forName("android.view.IWindowManager")
+                            .getMethod("clearForcedDisplaySize", int.class)
+                            .invoke(getWindowManagerService(), Display.DEFAULT_DISPLAY);
+                    return;
+                }
+
+                // HACK: Calculate actual, physical screen size here
+                // Do NOT use getRealSize(). It doesn't work on resolution change.
+                sWidth = 1080;
+                sHeight = 2340;
+            } else {
+                Scanner scanner = new Scanner(wmSize);
+                scanner.useDelimiter("x");
+                sHeight = scanner.nextInt();
+                sWidth = scanner.nextInt();
+            }
+
+            if (!newRatio.equals("reset")) {
+                Scanner scanner = new Scanner(newRatio);
+                scanner.useDelimiter(":");
+                sHeight = sWidth * scanner.nextInt() / scanner.nextInt();
+            }
+
+            Class.forName("android.view.IWindowManager")
+                    .getMethod("setForcedDisplaySize", int.class, int.class, int.class)
+                    .invoke(getWindowManagerService(), Display.DEFAULT_DISPLAY, sWidth, sHeight);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -160,7 +201,6 @@ public class ScreenResolutionActivity extends AppCompatActivity {
             mApplyButton.setEnabled(false);
 
             mApplyButton.setOnClickListener(v -> {
-                PreferenceManager.getDefaultSharedPreferences(mContext).edit().putString("fs_device_screen_ratio", "reset").apply();
                 Settings.System.putInt(mContext.getContentResolver(), SCREEN_RESOLUTION, mResolution);
                 mApplyButton.setEnabled(false);
                 mSetResolution = mResolution;

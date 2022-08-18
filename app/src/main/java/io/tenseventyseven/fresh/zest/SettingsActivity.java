@@ -256,51 +256,10 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 case "fs_device_screen_ratio":
                     Preferences.setCurrentAspectRatio(mContext, newValue.toString());
-                    handleRatioChange(newValue.toString());
+                    ScreenResolutionActivity.setResolutionAndRatio(mContext, null, newValue.toString());
                     return true;
             }
             return false;
-        }
-
-        private void handleRatioChange(String newValue) {
-            try {
-                Object wms = Class.forName("android.view.WindowManagerGlobal").getMethod("getWindowManagerService").invoke(null);
-                Class<?> iwm = Class.forName("android.view.IWindowManager");
-
-                int sWidth, sHeight;
-                int resIndex = Settings.System.getInt(mContext.getContentResolver(), ScreenResolutionActivity.SCREEN_RESOLUTION, 2);
-                String resolution = mContext.getResources().getStringArray(R.array.zest_screen_resolution_setting_values)[resIndex];
-                Scanner resScanner = new Scanner(resolution);
-                resScanner.useDelimiter(":");
-                String wmSize = resScanner.next();
-
-                if (wmSize.equals("reset")) {
-                    if (newValue.equals("reset")) {
-                        iwm.getMethod("clearForcedDisplaySize", int.class).invoke(wms, Display.DEFAULT_DISPLAY);
-                        return;
-                    }
-                    Point size = new Point();
-                    ((WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealSize(size);
-                    sWidth = Math.min(size.x, size.y);
-                    sHeight = Math.max(size.x, size.y);
-                } else {
-                    Scanner scanner = new Scanner(wmSize);
-                    scanner.useDelimiter("x");
-                    sHeight = scanner.nextInt();
-                    sWidth = scanner.nextInt();
-                }
-
-                if (!newValue.equals("reset")) {
-                    Scanner scanner = new Scanner(newValue);
-                    scanner.useDelimiter(":");
-                    sHeight = sWidth * scanner.nextInt() / scanner.nextInt();
-                }
-
-                iwm.getMethod("setForcedDisplaySize", int.class, int.class, int.class)
-                        .invoke(wms, Display.DEFAULT_DISPLAY, sWidth, sHeight);
-            } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException e) {
-                e.printStackTrace();
-            }
         }
 
         @Override
