@@ -56,7 +56,7 @@ import io.tenseventyseven.fresh.R;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
 
-    private static final int sensorPositionY = 2065;
+    private static final double sensorPositionYCoeff = 0.8824;
     private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
     @BindView(R.id.zest_fingerprint_style_toolbar)
@@ -119,6 +119,8 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         Point size = new Point();
         ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealSize(size);
         double screenRatio = (double) size.x / (double) size.y;
+        int height = Math.max(size.x, size.y);
+        int sensorPositionY = (int) (height * sensorPositionYCoeff);
 
         mPreviewFrame.post(() -> {
             mPreviewFrame.setLayoutParams(new LinearLayout.LayoutParams((int) (mPreviewFrame.getHeight() * screenRatio), ViewGroup.LayoutParams.MATCH_PARENT, 1));
