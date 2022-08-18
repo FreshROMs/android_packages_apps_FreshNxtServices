@@ -248,11 +248,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>-->
-        <activity
+        <!--<activity
             android:name=".zest.store.FreshUpdatesActivity"
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
-            android:label="@string/zest_fresh_updates_title" />
+            android:label="@string/zest_fresh_updates_title" />-->
 
         <service
             android:name=".services.RestartTileService"
