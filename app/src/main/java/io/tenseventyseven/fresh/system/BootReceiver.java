@@ -147,6 +147,12 @@ public class BootReceiver extends BroadcastReceiver {
             LastSoftwareUpdate.setSoftwareUpdate(context, current);
             LastSoftwareUpdate.setSoftwareUpdateResponse(context, true);
         }
+
+        File magiskDisabled = new File(Experience.getFreshDir(), "update-disabled-magisk-module");
+        if (magiskDisabled.exists()) {
+            UpdateNotifications.showMagiskDisabledNotification(context);
+            magiskDisabled.delete();
+        }
     }
 
     private void setPerformanceOnBoot(Context context) {

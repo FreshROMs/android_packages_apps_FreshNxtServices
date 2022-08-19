@@ -100,6 +100,23 @@ public class UpdateNotifications {
         notificationManager.notify(NOTIFICATION_AVAILABLE_UPDATE_ID, notification);
     }
 
+    public static void showMagiskDisabledNotification(Context context) {
+        NotificationManager notificationManager = Notifications.getNotificationManager(context);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, null);
+
+        String notificationTitle = context.getString(R.string.fresh_ota_post_update_magisk_title);
+        String notificationContent = context.getString(R.string.fresh_ota_post_update_magisk_description);
+
+        Notification notification = builder.setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setColor(context.getResources().getColor(R.color.fresh_ic_launcher_background))
+                .setSmallIcon(R.drawable.ic_notification_software_update)
+                .setContentTitle(notificationTitle)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
+                .build();
+
+        notificationManager.notify(NOTIFICATION_AVAILABLE_UPDATE_ID, notification);
+    }
+
     public static void showPreUpdateNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
         NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);

@@ -128,6 +128,9 @@ Continue installing this update?"</string>
     <string name="fresh_ota_toast_failed_download_server">"A server error occurred. Try again later."</string>
     <string name="fresh_ota_toast_failed_no_space">"To install this update, you need more free space in your phone's internal storage. Free up some space by uninstalling apps or deleting files, then try again."</string>
 
+    <string name="fresh_ota_post_update_magisk_title">"Some Magisk modules disabled"</string>
+    <string name="fresh_ota_post_update_magisk_description">"To allow your device to update, some Magisk modules have been disabled. These can be re-enabled after the device has finished updating."</string>
+
     <!-- Addon management settings -->
     <string name="zest_addon_management_title">"Manage addons"</string>
     <string name="zest_addon_management_subtitle_none">"No addons installed"</string>
