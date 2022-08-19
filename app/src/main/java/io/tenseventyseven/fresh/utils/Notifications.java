@@ -19,19 +19,22 @@ public class Notifications {
     public static NotificationCompat.Builder getNotificationBuilder(Context context, String channelId, Class<?> cls) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId);
 
-        Intent resultIntent = new Intent(context, cls);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-
-        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
-        stackBuilder.addParentStack(cls);
-        stackBuilder.addNextIntent(resultIntent);
-
-        builder.setContentIntent(pendingIntent)
-                .setAutoCancel(true)
-                .setShowWhen(false)
+        builder.setShowWhen(false)
                 .setDefaults(NotificationCompat.DEFAULT_LIGHTS)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setCategory(NotificationCompat.CATEGORY_SYSTEM);
+
+        if (cls != null) {
+            Intent resultIntent = new Intent(context, cls);
+
+            TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+            stackBuilder.addParentStack(cls);
+            stackBuilder.addNextIntent(resultIntent);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
+
+            builder.setContentIntent(pendingIntent)
+                    .setAutoCancel(true);
+        }
 
         return builder;
     }
