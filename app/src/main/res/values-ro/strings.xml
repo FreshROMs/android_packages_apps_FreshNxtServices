@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="app_name">"Servicii sistem Fresh"</string>
     <string name="zest_relative_link_advanced">"Setari Avansate"</string>
     <string name="zest_relative_link_wallpaper">"fundal acasa si blocare ecran"</string>
     <string name="zest_relative_link_themes">"Teme Samsung"</string>
     <string name="zest_data_connection_icon_default">"Normal (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
-    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
-    <string name="zest_data_connection_icon_next">"NOU(5G)"</string>
     <string name="zest_wlan_connection_icon_default">"Normal"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_app_version">"Despre Zest"</string>
     <string name="zest_setting_default_summary">"Necunoscut"</string>
     <string name="zest_setting_default_error">"Ceva nu a functionat corect"</string>
-    <!-- System settings plugin/Information Architecture -->
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
-
-Do NOT use 'Fresh Settings' as translation. -->
-    <string name="zest_system_settings_plugin_title">"Zest"</string>
     <string name="zest_system_settings_plugin_summary">"Rezolutie ecran"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Actulizare Sistem"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Still iconita Data"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Stil iconita WI-FI"</string>
-    <!-- Software update settings -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_firmware_version">"Versiunea Fresh"</string>
     <string name="fresh_ota_main_title">"Actualizare sistem"</string>
     <string name="fresh_ota_check_for_updates_title">"Descarca si instaleaza"</string>
     <string name="fresh_ota_check_for_updates_summary">"Descărcarea prin rețelele mobile poate duce la taxe suplimentare. Dacă este posibil, descărcați prin intermediul unei rețele Wi-Fi."</string>
@@ -45,15 +31,9 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_check_frequency_720min">"Fiecare 12 ore"</string>
     <string name="fresh_ota_check_frequency_1440min">"Fiecare zi"</string>
     <string name="fresh_ota_changelog_header_title">"Ce mai e nou"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_ota_changelog_header_subtitle">"Aflați ce este inclus în această actualizare Fresh."</string>
     <string name="fresh_ota_changelog_detail_version">"Versiune"</string>
     <string name="fresh_ota_changelog_detail_size">"Marime"</string>
     <string name="fresh_ota_changelog_detail_security_patch_level">"Nivel de corecție de securitate:"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s este gata de instalare"</string>
     <string name="fresh_ota_changelog_appbar_downloading">"Se descarcă actualizarea..."</string>
     <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Timp ramas"</string>
     <string name="fresh_ota_changelog_appbar_detail">"Actualizați-vă telefonul și obțineți noi funcții"</string>
@@ -62,14 +42,8 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="zest_addon_management_title">"Gestionați addons"</string>
     <string name="zest_addon_management_subtitle_none">"Nu exista addons instalate"</string>
     <string name="zest_addon_management_subtitle_singular">"1 addon instalat"</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d addons instalate"</string>
     <string name="zest_addon_management_detail_uninstall">"Dezinstalare"</string>
     <string name="zest_addon_management_detail_cancel">"Anulare"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"Sunteți sigur că doriți să dezinstalați %1$s ?"</string>
     <string name="zest_addon_management_detail_size">"Marime"</string>
     <string name="zest_addon_management_detail_version">"Versiune"</string>
     <string name="zest_addon_management_detail_developer">"Developer"</string>
@@ -109,24 +83,9 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_darq_service_sync_success">"Modificări sincronizate cu serviciul"</string>
     <string name="zest_darq_service_powered_by">"Cu sprijinul"</string>
     <string name="zest_darq_service_detail_warning">"Activarea modului întunecat îmbunătățit pentru unele aplicații poate cauza probleme de aspect. Este posibil ca unele aplicații să nu fie acceptate."</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_title">"Bun venit la Zest+!"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
-
-Use "Magisk" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_summary">"Zest+ îi permite lui Fresh să fie mai puternic, cu funcții suplimentare și multe altele. Cu toate acestea, acest lucru necesită ca Zest să aibă acces deplin la sistem folosind Magisk.
-
-Datele dvs. sunt importante. Vă promit că nu sunt accesate date și nu sunt trimise și că datele dvs. importante rămân private.
-
-Doriți să activați Zest+?"</string>
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Protejați bateria"</string>
     <string name="zest_protect_battery_summary">"Pentru a prelungi durata de viață a bateriei, limitați încărcarea maximă la 85%."</string>
-    <!-- Recovery reboot QS tile -->
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Reporniți la recuperare"</string>
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Doriți să reporniți în modul de recuperare?"</string>
     <string name="qs_dialog_ok">"O.K"</string>
     <string name="qs_dialog_cancel">"Anulare"</string>
     <!-- About Page -->

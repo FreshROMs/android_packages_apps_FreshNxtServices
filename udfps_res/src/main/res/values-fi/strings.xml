@@ -4,15 +4,15 @@
     <string name="zest_fod_animation_alpenglow">"Alpenglow"</string>
     <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
     <string name="zest_fod_animation_aurora">"Aurora"</string>
-    <string name="zest_fod_animation_bloom">"kukinta"</string>
+    <string name="zest_fod_animation_bloom">"Kukinta"</string>
     <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
-    <string name="zest_fod_animation_cyberpunk">"kyberpunk"</string>
+    <string name="zest_fod_animation_cyberpunk">"Kyberpunk"</string>
     <string name="zest_fod_animation_default">"Oletus"</string>
     <string name="zest_fod_animation_dna">"DNA"</string>
     <string name="zest_fod_animation_electronic">"Elektroninen"</string>
     <string name="zest_fod_animation_energy">"Energia"</string>
-    <string name="zest_fod_animation_futuristic">"futuristinen"</string>
-    <string name="zest_fod_animation_halo_ring">"Halo sormus"</string>
+    <string name="zest_fod_animation_futuristic">"Futuristinen"</string>
+    <string name="zest_fod_animation_halo_ring">"Halo Sormus"</string>
     <string name="zest_fod_animation_magic">"Taika"</string>
     <string name="zest_fod_animation_mclaren">"Mclaren"</string>
     <string name="zest_fod_animation_molecular">"Molekyylinen"</string>

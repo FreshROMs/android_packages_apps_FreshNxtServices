@@ -10,14 +10,12 @@
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
     <string name="zest_setting_default_summary">"Tidak diketahui"</string>
     <string name="zest_setting_default_error">"Ada yang salah"</string>
-    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"Kustomisasi  •  Resolusi layar"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Resolusi layar  • Pembaruan perangkat lunak"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Gaya ikon koneksi data"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Gaya ikon sinyal Wi-Fi"</string>
-    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"Pembaruan perangkat lunak"</string>
     <string name="fresh_ota_check_for_updates_title">"Unduhan dan pasang"</string>
     <string name="fresh_ota_check_for_updates_summary">"Mengunduh melalui jaringan seluler dapat dikenakan biaya tambahan.  Jika memungkinkan, unduh melalui jaringan Wi-Fi"</string>
@@ -88,7 +86,6 @@
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Lindungi baterai"</string>
     <string name="zest_protect_battery_summary">"Untuk memperpanjang umur baterai Anda, batasi pengisian daya ke 85%."</string>
-    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Batal"</string>
     <!-- About Page -->
@@ -110,9 +107,6 @@ Do NOT use 'Fresh Settings' as translation. -->
     <!-- Software update settings
 If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
     <string name="fresh_firmware_version">"Versi Fresh"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
-    <string name="fresh_ota_changelog_header_subtitle">"Cari tahu apa yang termasuk dalam pembaruan Fresh ini"</string>
     <string name="fresh_ota_changelog_app_header">"Informasi pembaruan app"</string>
     <string name="fresh_ota_changelog_app_subheader">"Aplikasi di bawah ini dapat diperbarui ke versi terbaru setelah pembaruan perangkat lunak."</string>
     <string name="fresh_ota_changelog_detail_header">"Informasi pembaruan perangkat lunak"</string>
@@ -125,16 +119,7 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_checking_for_updates">"Memeriksa pembaruan..."</string>
     <string name="fresh_ota_verifying_update">"Memverifikasi pembaruan..."</string>
     <string name="fresh_permissions_storage_title">"Izin penyimpanan tidak diberikan"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
-    <string name="fresh_permissions_storage_description">"Layanan Sistem Fresh memerlukan izin penyimpanan untuk dapat menerima pembaruan perangkat lunak dan aplikasi."</string>
     <string name="fresh_permissions_fp_storage_description">"Layanan Sistem Fresh memerlukan izin penyimpanan untuk dapat menyesuaikan animasi sidik jari."</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s siap untuk dipasang"</string>
     <string name="fresh_ota_changelog_appbar_install_summary">"Anda tidak akan dapat menggunakan ponsel Anda selama pembaruan, bahkan untuk panggilan darurat."</string>
     <string name="fresh_ota_changelog_appbar_waiting">"Menunggu jaringan"</string>
     <string name="fresh_ota_changelog_appbar_paused">"Unduhan dijeda"</string>
@@ -158,15 +143,7 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_notification_verification_failed_description">"Verifikasi pembaruan perangkat lunak gagal. Coba lagi nanti."</string>
     <string name="fresh_ota_notification_download_failed_title">"Gagal mengunduh perangkat lunak"</string>
     <string name="fresh_ota_notification_update_failed_title">"Gagal memperbarui perangkat lunak"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
-    <string name="fresh_ota_notification_update_failed_description">"Pemasangan %1$s Baru telah gagal. Coba unduh pembaruan langsung dari situs web FreshROMs atau dapatkan dukungan."</string>
     <string name="fresh_ota_notification_update_success_title">"Perangkat Anda telah diperbarui"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
-    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s telah sukses terpasang. Nikmati perangkat yang lebih segar!"</string>
     <string name="fresh_ota_download_block_dialog_title">"Peringatan data seluler"</string>
     <string name="fresh_ota_download_block_dialog_description">"Mengunduh melalui jaringan seluler dapat dikenakan biaya tambahan. Jika memungkinkan, unduh melalui jaringan Wi-Fi. 
 
@@ -177,25 +154,11 @@ Lanjutkan mengunduh pembaruan ini?"</string>
 
 Lanjutkan menginstal pembaruan ini?"</string>
     <string name="fresh_ota_install_dialog_continue">"Pasang sekarang"</string>
-    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
-    <string name="fresh_ota_install_later_toast">"Pembaruan akan dipasang secara otomatis di %1$s pada %2$s."</string>
     <string name="fresh_ota_network_lost_dialog_description">"Telepon Anda terputus dari jaringan sebelum pengunduhan selesai. Pengunduhan akan dilanjutkan saat ponsel Anda tersambung kembali ke jaringan."</string>
     <string name="fresh_ota_toast_failed_download_generic">"Tidak dapat memperbarui perangkat lunak. Terjadi kesalahan jaringan atau server. Coba lagi nanti."</string>
     <string name="fresh_ota_toast_failed_download_network">"Terjadi kesalahan jaringan. Coba lagi nanti."</string>
     <string name="fresh_ota_toast_failed_download_server">"Terjadi kesalahan server. Coba lagi nanti."</string>
     <string name="fresh_ota_toast_failed_no_space">"Untuk menginstal pembaruan ini, Anda memerlukan lebih banyak ruang kosong di penyimpanan internal ponsel Anda. Kosongkan sebagian ruang dengan mencopot pemasangan aplikasi atau menghapus file, lalu coba lagi."</string>
-    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
-    <string name="fresh_ota_post_update_magisk_title">"Beberapa modul Magisk dinonaktifkan"</string>
-    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
-    <string name="fresh_ota_post_update_magisk_description">"Agar perangkat Anda dapat diperbarui, beberapa modul Magisk telah dinonaktifkan. Ini dapat diaktifkan kembali setelah perangkat selesai diperbarui."</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d tambahan dipasang"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"Anda yakin ingin menghapus %1$s?"</string>
     <!-- Screen Ratio settings -->
     <string name="zest_screen_ratio_setting_title">"Rasio aspek"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
@@ -248,6 +211,4 @@ Mengaktifkan redup ekstra dapat merusak beberapa aplikasi, menghasilkan layar hi
     <string name="zest_plus_fod_animation_style_toast_failed">"Gagal menerapkan gaya baru."</string>
     <string name="zest_plus_location_indicators_title">"Gunakan indikator lokasi baru"</string>
     <string name="zest_plus_location_indicators_summary">"Gunakan indikator lokasi bilah status baru yang digunakan oleh kamera dan mikrofon."</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_fresh_updates_title">"Pembaruan Fresh"</string>
 </resources>

@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="app_name">"Fresh Sistem Hizmetleri"</string>
     <string name="zest_relative_link_advanced">"Gelişmiş ayarlar"</string>
     <string name="zest_relative_link_wallpaper">"Ana ve kilit ekranı duvar kağıdı"</string>
     <string name="zest_relative_link_themes">"Samsung Temaları"</string>
     <string name="zest_data_connection_icon_default">"Varsayılan (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
-    <!-- Sonraki -->
-    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
-    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
     <string name="zest_wlan_connection_icon_default">"Varsayılan"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_app_version">"Zest Hakkında"</string>
     <string name="zest_setting_default_summary">"Bilinmeyen"</string>
     <string name="zest_setting_default_error">"Bir şeyler yanlış gitti"</string>
-    <!-- System settings plugin/Information Architecture -->
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
-
-Do NOT use 'Fresh Settings' as translation. -->
-    <string name="zest_system_settings_plugin_title">"Zest"</string>
     <string name="zest_system_settings_plugin_summary">"Özelleştirme • Ekran çözünürlüğü"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Ekran çözünürlüğü • Yazılım güncellemeleri"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Ağ bağlantısı simgesi"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Wi-Fi bağlantısı simgesi"</string>
-    <!-- Software update settings -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_firmware_version">"Fresh sürümü"</string>
     <string name="fresh_ota_main_title">"Yazılım güncelleme"</string>
     <string name="fresh_ota_check_for_updates_title">"İndir ve kur"</string>
     <string name="fresh_ota_check_for_updates_summary">"Mobil ağlar üzerinden indirme yapmak ek ücretlere neden olabilir. Mümkünse, bunun yerine bir Wi-Fi ağı üzerinden indirin."</string>
@@ -46,15 +31,9 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_check_frequency_720min">"Her 12 saatte bir"</string>
     <string name="fresh_ota_check_frequency_1440min">"Her gün"</string>
     <string name="fresh_ota_changelog_header_title">"Neler Yeni"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_ota_changelog_header_subtitle">"Bu yeni güncellemeye nelerin dahil olduğunu öğrenin."</string>
     <string name="fresh_ota_changelog_detail_version">"Sürüm:"</string>
     <string name="fresh_ota_changelog_detail_size">"Boyut:"</string>
     <string name="fresh_ota_changelog_detail_security_patch_level">"Güvenlik yaması düzeyi:"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s yüklenmeye hazır"</string>
     <string name="fresh_ota_changelog_appbar_downloading">"Güncelleme indiriliyor…"</string>
     <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Kalan Zaman: %s"</string>
     <string name="fresh_ota_changelog_appbar_detail">"Yeni özellikler için telefonunuzu güncelleyin."</string>
@@ -63,14 +42,8 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="zest_addon_management_title">"Eklentileri yönet"</string>
     <string name="zest_addon_management_subtitle_none">"Yüklü eklenti yok"</string>
     <string name="zest_addon_management_subtitle_singular">"1 eklenti yüklendi"</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d eklenti yüklendi"</string>
     <string name="zest_addon_management_detail_uninstall">"Kaldır"</string>
     <string name="zest_addon_management_detail_cancel">"İptal et"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"%1$s'yi kaldırmak istediğinizden emin misiniz?"</string>
     <string name="zest_addon_management_detail_size">"Boyut"</string>
     <string name="zest_addon_management_detail_version">"Sürüm"</string>
     <string name="zest_addon_management_detail_developer">"Geliştirici"</string>
@@ -111,24 +84,9 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_darq_service_sync_success">"Hizmetle senkronize edilen değişiklikler"</string>
     <string name="zest_darq_service_powered_by">"Tarafından desteklenmektedir"</string>
     <string name="zest_darq_service_detail_warning">"Bazı uygulamalar için gelişmiş karanlık modu etkinleştirmek, düzen sorunlarına neden olabilir. Bazı uygulamalar desteklenmeyebilir."</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_title">"Zest Ailesine hoş geldiniz!"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
-
-Use "Magisk" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_summary">"Zest+, Fresh'in ek özellikler ve daha fazlasıyla daha güçlü olmasını sağlar. Ancak bu, Zest'in Magisk kullanarak sisteme tam erişime sahip olmasını gerektirir.
-
-Verileriniz önemlidir. Hiçbir veriye erişilmeyeceğine ve gönderilmeyeceğine ve önemli verilerinizin gizli kalacağına söz veriyorum.
-
-Zest+'ı etkinleştirmek ister misiniz?"</string>
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Pili koruyun"</string>
     <string name="zest_protect_battery_summary">"Pilinizin ömrünü uzatmak için maksimum şarjı %85 ile sınırlayın."</string>
-    <!-- Recovery reboot QS tile -->
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Kurtarma (recovery) yeniden başlat"</string>
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Kurtarma Moduna yeniden başlatmak ister misiniz?"</string>
     <string name="qs_dialog_ok">"Tamam"</string>
     <string name="qs_dialog_cancel">"İptal"</string>
     <!-- About Page -->
@@ -152,9 +110,6 @@ Do NOT use 'Fresh Settings' as translation. -->
     <!-- Software update settings
 If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
     <string name="fresh_firmware_version">"Fresh sürümü"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
-    <string name="fresh_ota_changelog_header_subtitle">"Bu yeni güncellemeye nelerin dahil olduğunu öğren."</string>
     <string name="fresh_ota_changelog_app_header">"Uygulama güncelleme bilgileri"</string>
     <string name="fresh_ota_changelog_app_subheader">"Aşağıdaki uygulamalar, yazılım güncellemesinden sonra en son sürüme güncellenebilir."</string>
     <string name="fresh_ota_changelog_detail_header">"Yazılım güncellemesi bilgileri"</string>
@@ -167,16 +122,7 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_checking_for_updates">"Güncellemeler denetleniyor..."</string>
     <string name="fresh_ota_verifying_update">"Güncelleme doğrulanıyor…"</string>
     <string name="fresh_permissions_storage_title">"Depolama izni verilmedi"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
-    <string name="fresh_permissions_storage_description">"Fresh Sistem Hizmetleri, yazılım ve uygulama güncellemelerini alabilmek için depolama izinlerine ihtiyaç duyar."</string>
     <string name="fresh_permissions_fp_storage_description">"Fresh Sistem Hizmetleri, parmak izi animasyonunu özelleştirebilmek için depolama izinlerine ihtiyaç duyar."</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s kurulmaya hazır"</string>
     <string name="fresh_ota_changelog_appbar_install_summary">"Güncelleme sırasında telefonunuzu kullanamayacaksınız, acil aramalar dahil."</string>
     <string name="fresh_ota_changelog_appbar_waiting">"Bağlantı bekleniyor"</string>
     <string name="fresh_ota_changelog_appbar_paused">"İndirme duraklatıldı"</string>
@@ -185,8 +131,6 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_changelog_appbar_downloading_time_left">"Şu Kadar Kaldı:"</string>
     <string name="fresh_ota_changelog_appbar_detail_no_updates">"Cihazınız güncel"</string>
     <string name="fresh_ota_changelog_appbar_detail_success">"Son başarılı güncelleme"</string>
-    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
-    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s, %2$s saatinde"</string>
     <string name="fresh_ota_toast_check_failed_generic">"Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyin."</string>
     <string name="fresh_ota_toast_check_failed_offline">"Ağ mevcut değil. Daha sonra tekrar deneyin."</string>
     <string name="fresh_ota_notification_group_name">"Yazılım güncellemeleri"</string>
@@ -203,15 +147,7 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_notification_verification_failed_description">"Yazılım güncellemesi doğrulaması başarısız oldu. Daha sonra tekrar deneyin"</string>
     <string name="fresh_ota_notification_download_failed_title">"Yazılım indirilemedi"</string>
     <string name="fresh_ota_notification_update_failed_title">"Yazılım güncellenemedi"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
-    <string name="fresh_ota_notification_update_failed_description">"Fresh %1$s yüklemesi başarısız oldu. Güncellemeleri doğrudan FreshROMs web sitesinden indirmeyi deneyin veya destek alın."</string>
     <string name="fresh_ota_notification_update_success_title">"Cihazınız güncellendi"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
-    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s başarılı biçimde kuruldu. Yenilenmiş cihazınızın keyfini çıkarın!"</string>
     <string name="fresh_ota_download_block_dialog_title">"Mobil veri uyarısı"</string>
     <string name="fresh_ota_download_block_dialog_description">"Bir mobil ağ üzerinden indirme yapmak ek ücretlere neden olabilir. Mümkünse, bir Wi-Fi ağı üzerinden indirin.
 
@@ -222,25 +158,11 @@ Güncellemenin indirilmesine devam edilsin mi?"</string>
 
 Güncellemeyi kurmaya devam etmek istiyor musunuz?"</string>
     <string name="fresh_ota_install_dialog_continue">"Şimdi kur"</string>
-    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
-    <string name="fresh_ota_install_later_toast">"Güncelleme, %2$s tarihinde %1$s'de otomatik olarak kurulacak."</string>
     <string name="fresh_ota_network_lost_dialog_description">"İndirme tamamlanmadan telefonunuzun ağ bağlantısı kesildi. Telefonunuz bir ağa yeniden bağlandığında indirme işlemi devam edecektir."</string>
     <string name="fresh_ota_toast_failed_download_generic">"Yazılım güncellenemiyor. Bir ağ veya sunucu hatası oluştu. Daha sonra tekrar deneyin."</string>
     <string name="fresh_ota_toast_failed_download_network">"Bir ağ hatası oluştu. Daha sonra tekrar deneyin"</string>
     <string name="fresh_ota_toast_failed_download_server">"Bir sunucu hatası oluştu. Daha sonra tekrar deneyin."</string>
     <string name="fresh_ota_toast_failed_no_space">"Bu güncellemeyi kurmak için telefonunuzun dahili depolama alanında daha fazla boş alan olması gerekir. Uygulamaları kaldırarak veya dosyaları silerek biraz alan açın, ardından tekrar deneyin."</string>
-    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
-    <string name="fresh_ota_post_update_magisk_title">"Bazı Magisk modülleri devre dışı bırakıldı"</string>
-    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
-    <string name="fresh_ota_post_update_magisk_description">"Cihazınızın güncellenebilmesi için bazı Magisk modülleri devre dışı bırakıldı. Bunlar cihaz güncellendikten sonra yeniden etkinleştirilebilir."</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d eklenti yüklendi"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"%1$s uygulamasını kaldırmak istediğinizden emin misiniz?"</string>
     <!-- Screen Ratio settings -->
     <string name="zest_screen_ratio_setting_title">"En boy oranı"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
@@ -298,18 +220,8 @@ Ekstra loş özelliğini etkinleştirmek bazı uygulamaları bozabilir ve bu da 
     <string name="zest_customization_reboot_required_description">"Simge stili değişikliklerini tam olarak uygulamak için telefonunuzun yeniden başlatılması gerekir."</string>
     <string name="zest_customization_reboot_required_btn_ok">"Şimdi yeniden başlat"</string>
     <string name="zest_customization_reboot_required_btn_cancel">"Sonra yeniden başlat"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
-    <string name="zest_experience_framework_version">"Fresh Deneyim Framework %s"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
-    <string name="zest_performance_kit_version">"Fresh Performans Kiti %s"</string>
     <string name="zest_plus_fod_animation_style_title">"Parmak izi animasyon tarzı"</string>
     <string name="zest_plus_fod_animation_style_toast_failed">"Yeni tarz uygulanamadı."</string>
     <string name="zest_plus_location_indicators_title">"Yeni konum göstergesi kullan"</string>
     <string name="zest_plus_location_indicators_summary">"Kamera ve mikrofon tarafından kullanılan yeni durum çubuğu konum göstergesini kullanın."</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_fresh_updates_title">"Fresh Güncellemeleri"</string>
 </resources>

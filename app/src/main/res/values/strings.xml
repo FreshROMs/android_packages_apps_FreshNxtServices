@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="app_name">"Fresh System Services"</string>
     <string name="zest_relative_link_advanced">"Advanced settings"</string>
     <string name="zest_relative_link_wallpaper">"Home and lock screen wallpaper"</string>
     <string name="zest_relative_link_themes">"Samsung Themes"</string>
     <string name="zest_data_connection_icon_default">"Default (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
-    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
-    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
     <string name="zest_wlan_connection_icon_default">"Default"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_app_version">"About Zest"</string>
     <string name="zest_setting_default_summary">"Unknown"</string>
     <string name="zest_setting_default_error">"Something went wrong"</string>
     <!-- System settings plugin/Information Architecture -->
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
-
-Do NOT use 'Fresh Settings' as translation. -->
-    <string name="zest_system_settings_plugin_title">"Zest"</string>
     <string name="zest_system_settings_plugin_summary">"Customization  •  Screen resolution"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Screen resolution  •  Software updates"</string>
     <!-- Data connection icon settings -->
@@ -28,8 +18,6 @@ Do NOT use 'Fresh Settings' as translation. -->
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Wi-Fi signal icon style"</string>
     <!-- Software update settings -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_firmware_version">"Fresh version"</string>
     <string name="fresh_ota_main_title">"Software update"</string>
     <string name="fresh_ota_check_for_updates_title">"Download and install"</string>
     <string name="fresh_ota_check_for_updates_summary">"Downloading via mobile networks may result in additional charges. If possible, download via a Wi-Fi network instead."</string>
@@ -45,15 +33,9 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_check_frequency_720min">"Every 12 hours"</string>
     <string name="fresh_ota_check_frequency_1440min">"Every day"</string>
     <string name="fresh_ota_changelog_header_title">"What's New"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_ota_changelog_header_subtitle">"Find out what's included in this Fresh update."</string>
     <string name="fresh_ota_changelog_detail_version">"Version:"</string>
     <string name="fresh_ota_changelog_detail_size">"Size:"</string>
     <string name="fresh_ota_changelog_detail_security_patch_level">"Security patch level:"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s is ready to install"</string>
     <string name="fresh_ota_changelog_appbar_downloading">"Downloading update…"</string>
     <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Time Left: %s"</string>
     <string name="fresh_ota_changelog_appbar_detail">"Update your phone and get new features"</string>
@@ -62,14 +44,8 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="zest_addon_management_title">"Manage addons"</string>
     <string name="zest_addon_management_subtitle_none">"No addons installed"</string>
     <string name="zest_addon_management_subtitle_singular">"1 addon installed"</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d addons installed"</string>
     <string name="zest_addon_management_detail_uninstall">"Uninstall"</string>
     <string name="zest_addon_management_detail_cancel">"Cancel"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"Are you sure you want to uninstall %1$s?"</string>
     <string name="zest_addon_management_detail_size">"Size"</string>
     <string name="zest_addon_management_detail_version">"Version"</string>
     <string name="zest_addon_management_detail_developer">"Developer"</string>
@@ -109,24 +85,10 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_darq_service_sync_success">"Changes synced with service"</string>
     <string name="zest_darq_service_powered_by">"Powered by"</string>
     <string name="zest_darq_service_detail_warning">"Enabling enhanced dark mode for some apps may cause layout issues. Some apps may not be supported."</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_title">"Welcome to Zest+!"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
-
-Use "Magisk" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_summary">"Zest+ enables Fresh to be more powerful with additional features and more. However, this requires Zest to have full access to the system using Magisk.
-
-Your data is important. I promise that no data is being accessed and is sent over, and that your important data remains private.
-
-Would you like to enable Zest+?"</string>
-    <!-- Protect Battery -->
+        <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Protect battery"</string>
     <string name="zest_protect_battery_summary">"To extend the lifespan of your battery, limit the maximum charge to 85%."</string>
     <!-- Recovery reboot QS tile -->
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Reboot to Recovery"</string>
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Would you like to reboot to Recovery Mode?"</string>
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Cancel"</string>
     <!-- About Page -->

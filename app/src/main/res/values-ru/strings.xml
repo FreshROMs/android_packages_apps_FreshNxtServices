@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="app_name">"Системные службы Fresh"</string>
     <string name="zest_relative_link_advanced">"Дополнительные настройки"</string>
     <string name="zest_relative_link_wallpaper">"Обои рабочего стола и экрана блокировки"</string>
     <string name="zest_relative_link_themes">"Темы Samsung"</string>
     <string name="zest_data_connection_icon_default">"По умолчанию (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
-    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
-    <string name="zest_data_connection_icon_next">"Следующее поколение (5G)"</string>
     <string name="zest_wlan_connection_icon_default">"По умолчанию"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_app_version">"Об Изюминке"</string>
     <string name="zest_setting_default_summary">"Неизвесно"</string>
     <string name="zest_setting_default_error">"Что-то пошло не так"</string>
-    <!-- System settings plugin/Information Architecture -->
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
-
-Do NOT use 'Fresh Settings' as translation. -->
-    <string name="zest_system_settings_plugin_title">"Изюминка"</string>
     <string name="zest_system_settings_plugin_summary">"Разрешение экрана"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Обновление ПО"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Стиль иконки сети"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Стиль иконки сигнала WiFi"</string>
-    <!-- Software update settings -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_firmware_version">"Версия Fresh"</string>
     <string name="fresh_ota_main_title">"Обновление ПО"</string>
     <string name="fresh_ota_check_for_updates_title">"Загрузка и Установка"</string>
     <string name="fresh_ota_check_for_updates_summary">"Загрузка через мобильные сети может привести к дополнительным расходам. Если возможно, используйте вместо этого сеть Wi-Fi."</string>
@@ -45,15 +31,9 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_check_frequency_720min">"Каждые 12 часов"</string>
     <string name="fresh_ota_check_frequency_1440min">"Каждый день"</string>
     <string name="fresh_ota_changelog_header_title">"Что нового"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_ota_changelog_header_subtitle">"Узнайте, что включено в этом обновлении Fresh"</string>
     <string name="fresh_ota_changelog_detail_version">"Версия:"</string>
     <string name="fresh_ota_changelog_detail_size">"Размер"</string>
     <string name="fresh_ota_changelog_detail_security_patch_level">"Уровень исправления безопасности"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s готов к установке"</string>
     <string name="fresh_ota_changelog_appbar_downloading">"Загрузка обновления…"</string>
     <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Осталось времени: %s"</string>
     <string name="fresh_ota_changelog_appbar_detail">"Обновите свой телефон и получите новые возможности"</string>
@@ -62,14 +42,8 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="zest_addon_management_title">"Управление дополнениями"</string>
     <string name="zest_addon_management_subtitle_none">"Дополнения не установлены"</string>
     <string name="zest_addon_management_subtitle_singular">"Установлено 1 дополнение"</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <string name="zest_addon_management_subtitle_multiple">"Установлено %1$d дополнений"</string>
     <string name="zest_addon_management_detail_uninstall">"Удалить"</string>
     <string name="zest_addon_management_detail_cancel">"Отмена"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"Вы уверены что хотите удалить %1$s?"</string>
     <string name="zest_addon_management_detail_size">"Размер"</string>
     <string name="zest_addon_management_detail_version">"Версия"</string>
     <string name="zest_addon_management_detail_developer">"Разработчик"</string>
@@ -109,24 +83,9 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_darq_service_sync_success">"Изменения синхронизированы с сервисом"</string>
     <string name="zest_darq_service_powered_by">"Powered by"</string>
     <string name="zest_darq_service_detail_warning">"Включение улучшенного темного режима может вызвать проблемы с интерфейсом. Некоторые приложения могут не поддерживаться"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_title">"Добро пожаловать в Zest+!"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
-
-Use "Magisk" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_summary">"Zest+ позволяет Fresh быть более производительным. Для этого требуется полный доступ к системе с помощью Magisk.
-
-Ваши данные очень важны. Мы обещаем что ваши данные останутся приватными и не будут переданы никуда.
-
-Хотите включить Zest+?"</string>
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Защита аккумулятора"</string>
     <string name="zest_protect_battery_summary">"Чтобы увеличить жизненный цикл батареи вашего смартфона лимит зарядки будет установлен на 85%."</string>
-    <!-- Recovery reboot QS tile -->
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Перезагрузиться в Recovery"</string>
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Вы действительно хотите перезагрузиться в Recovery?"</string>
     <string name="qs_dialog_ok">"Ок"</string>
     <string name="qs_dialog_cancel">"Отмена"</string>
     <!-- About Page -->
@@ -150,9 +109,6 @@ Do NOT use 'Fresh Settings' as translation. -->
     <!-- Software update settings
 If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
     <string name="fresh_firmware_version">"Версия Fresh"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
-    <string name="fresh_ota_changelog_header_subtitle">"Посмотрите что нового в этой версии Fresh"</string>
     <string name="fresh_ota_changelog_app_header">"Информация об обновлении приложения"</string>
     <string name="fresh_ota_changelog_app_subheader">"Перечисленные ниже приложения могут быть обновлены до последней версии после обновления программного обеспечения."</string>
     <string name="fresh_ota_changelog_detail_header">"Информация об обновлении ПО"</string>
@@ -165,16 +121,7 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_checking_for_updates">"Проверка наличия обновлений..."</string>
     <string name="fresh_ota_verifying_update">"Проверка обновления..."</string>
     <string name="fresh_permissions_storage_title">"Доступ к памяти запрещён"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
-    <string name="fresh_permissions_storage_description">"Системные сервисы Fresh требуют доступа к памяти чтобы получать обновления ПО и приложений."</string>
     <string name="fresh_permissions_fp_storage_description">"Системные сервисы Fresh требуют доступа к памяти чтобы изменять анимацию сканера отпечатков пальцев."</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1s %2$s готов к установке"</string>
     <string name="fresh_ota_changelog_appbar_install_summary">"Вы не сможете использовать ваш телефон во время обновления, даже для экстренных вызовов."</string>
     <string name="fresh_ota_changelog_appbar_waiting">"Ожидание сети"</string>
     <string name="fresh_ota_changelog_appbar_paused">"Загрузка приостановлена"</string>
@@ -183,8 +130,6 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_changelog_appbar_downloading_time_left">"Оставшееся время:"</string>
     <string name="fresh_ota_changelog_appbar_detail_no_updates">"Последние обновления уже установлены"</string>
     <string name="fresh_ota_changelog_appbar_detail_success">"Последнее успешное обновление"</string>
-    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
-    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s в %2$s"</string>
     <string name="fresh_ota_toast_check_failed_generic">"Неизвестная ошибка. Повторите попытку позже."</string>
     <string name="fresh_ota_toast_check_failed_offline">"Сеть не доступна. Повторите попытку позже."</string>
     <string name="fresh_ota_notification_group_name">"Обновление ПО"</string>
@@ -200,15 +145,7 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="fresh_ota_notification_verification_failed_description">"Не удалось проверить файл обновления. Повторите попытку позже."</string>
     <string name="fresh_ota_notification_download_failed_title">"Не удалось загрузить обновление ПО"</string>
     <string name="fresh_ota_notification_update_failed_title">"Не удалось обновить ПО"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
-    <string name="fresh_ota_notification_update_failed_description">"Не удалось установить Fresh %1$s. Попробуйте скачать обновление напрямую с сайта FreshROMs или обратитесь за помощью."</string>
     <string name="fresh_ota_notification_update_success_title">"Выше устройство было обновлено"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
-    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s успешно установлен. Наслаждайтесь более свежим устройством!"</string>
     <string name="fresh_ota_download_block_dialog_title">"Предупреждение о мобильных данных"</string>
     <string name="fresh_ota_download_block_dialog_description">"Скачивание через мобильную сеть может привести к дополнительной доплате. Если возможно, то скачивайте через сеть Wi-Fi.
 
@@ -219,25 +156,11 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
 
 Продолжить установку обновления?"</string>
     <string name="fresh_ota_install_dialog_continue">"Установить сейчас"</string>
-    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
-    <string name="fresh_ota_install_later_toast">"Обновление ПО будет установлено автоматически %1$s в %2$s."</string>
     <string name="fresh_ota_network_lost_dialog_description">"Ваш телефон отсоединился от сети перед тем, как скачивание было завершено. Скачивание продолжится, когда Ваш телефон переподключится к сети."</string>
     <string name="fresh_ota_toast_failed_download_generic">"Ошибка сети или сервера. Невозможно установить ПО. Повторите попытку позже."</string>
     <string name="fresh_ota_toast_failed_download_network">"Ошибка сети. Повторите попытку позже."</string>
     <string name="fresh_ota_toast_failed_download_server">"Ошибка сервера. Повторите попытку позже."</string>
     <string name="fresh_ota_toast_failed_no_space">"Для установки этого обновления нужно больше свободного места во внутренней памяти телефона. Освободите немного места, например удалите программы или файлы, и попробуйте снова."</string>
-    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
-    <string name="fresh_ota_post_update_magisk_title">"Некоторые модули Magisk отключены"</string>
-    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
-    <string name="fresh_ota_post_update_magisk_description">"Что-бы Ваш телефон обновился, нам пришлось отключить пару модулей Magisk. Они могут быть снова включени после того, как телефон обновится."</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
-    <string name="zest_addon_management_subtitle_multiple">"Установлено %1$d аддонов"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"Вы точно хотите удалить %1$s?"</string>
     <!-- Screen Ratio settings -->
     <string name="zest_screen_ratio_setting_title">"Соотношение сторон"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
@@ -293,18 +216,8 @@ Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_customization_reboot_required_description">"Чтобы полностью применить изменения стиля значков, необходимо перезагрузить телефон."</string>
     <string name="zest_customization_reboot_required_btn_ok">"Перезагрузить сейчас"</string>
     <string name="zest_customization_reboot_required_btn_cancel">"Перезагрузить позже"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
-    <string name="zest_experience_framework_version">"Структура Fresh %s"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
-    <string name="zest_performance_kit_version">"Платформа Производительности Fresh %s"</string>
     <string name="zest_plus_fod_animation_style_title">"Стиль анимации отпечатков"</string>
     <string name="zest_plus_fod_animation_style_toast_failed">"Не удалось применить новый стиль."</string>
     <string name="zest_plus_location_indicators_title">"Использовать новый индикатор местоположения"</string>
     <string name="zest_plus_location_indicators_summary">"Используйте новый индикатор местоположения строки состояния, используемый камерой и микрофоном."</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_fresh_updates_title">"Обновление Fresh"</string>
 </resources>

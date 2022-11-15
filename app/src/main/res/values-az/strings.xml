@@ -1,26 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="app_name">"Fresh Sistem Xidmətləri"</string>
     <string name="zest_relative_link_advanced">"Qabaqcıl parametrlər"</string>
     <string name="zest_relative_link_wallpaper">"Ev və kilid ekranı divar kağızı"</string>
     <string name="zest_relative_link_themes">"Samsung Mövzuları"</string>
     <string name="zest_data_connection_icon_default">"Defolt (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
     <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
-    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
     <string name="zest_wlan_connection_icon_default">"Defolt"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_app_version">"Zest haqqında"</string>
     <string name="zest_setting_default_summary">"Naməlum"</string>
     <string name="zest_setting_default_error">"Nəsə xəta baş verdi"</string>
     <!-- System settings plugin/Information Architecture -->
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
-
-Do NOT use 'Fresh Settings' as translation. -->
-    <string name="zest_system_settings_plugin_title">"Zest"</string>
     <string name="zest_system_settings_plugin_summary">"Fərdiləşdirmə • Ekran ayırdetmə qabiliyyəti"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Ekran ayırdetmə qabiliyyəti • Proqram yeniləmələri"</string>
     <!-- Data connection icon settings -->
@@ -28,8 +20,6 @@ Do NOT use 'Fresh Settings' as translation. -->
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Wi-Fi siqnal ikona stili"</string>
     <!-- Software update settings -->
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_firmware_version">"Təzə versiya"</string>
     <string name="fresh_ota_main_title">"Proqram təminatı yenilənməsi"</string>
     <string name="fresh_ota_check_for_updates_title">"Yükləyin və quraşdırın"</string>
     <string name="fresh_ota_check_for_updates_summary">"Mobil şəbəkələr vasitəsilə yükləmə əlavə ödənişlərə səbəb ola bilər. Mümkünsə, əvəzinə Wi-Fi şəbəkəsi vasitəsilə endirin."</string>
@@ -46,14 +36,9 @@ Do NOT use 'Fresh Settings' as translation. -->
     <string name="fresh_ota_check_frequency_1440min">"hər gün"</string>
     <string name="fresh_ota_changelog_header_title">"Yeniliklər"</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="fresh_ota_changelog_header_subtitle">"Bu təzə yeniləməyə nələrin daxil olduğunu öyrənin."</string>
     <string name="fresh_ota_changelog_detail_version">"Versiya:"</string>
     <string name="fresh_ota_changelog_detail_size">"Ölçü:"</string>
     <string name="fresh_ota_changelog_detail_security_patch_level">"Təhlükəsizlik yamaq səviyyəsi:"</string>
-    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
-
-Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
-    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s quraşdırmaya hazırdır"</string>
     <string name="fresh_ota_changelog_appbar_downloading">"Güncəlləmə endirilir..."</string>
     <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Qalan Vaxt: %s"</string>
     <string name="fresh_ota_changelog_appbar_detail">"Telefonunuzu yeniləyin və yeni funksiyalar əldə edin"</string>
@@ -62,14 +47,8 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="zest_addon_management_title">"Əlavələri idarə edin"</string>
     <string name="zest_addon_management_subtitle_none">"Əlavələr quraşdırılmayıb"</string>
     <string name="zest_addon_management_subtitle_singular">"1 əlavə quraşdırılıb"</string>
-    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d əlavə quraşdırılıb"</string>
     <string name="zest_addon_management_detail_uninstall">"silin"</string>
     <string name="zest_addon_management_detail_cancel">"Ləğv et"</string>
-    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
-
-i.e. Are you sure you want to uninstall 'Bixby'? -->
-    <string name="zest_addon_management_detail_uninstall_confirmation">"%1$s-ı silmək istədiyinizə əminsiniz?"</string>
     <string name="zest_addon_management_detail_size">"Ölçü"</string>
     <string name="zest_addon_management_detail_version">"Versiya"</string>
     <string name="zest_addon_management_detail_developer">"inkişaf etdirici"</string>
@@ -109,24 +88,10 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_darq_service_sync_success">"Dəyişikliklər xidmətlə sinxronlaşdırılır"</string>
     <string name="zest_darq_service_powered_by">"Tərəfindən dəstəklənmişdir"</string>
     <string name="zest_darq_service_detail_warning">"Bəzi tətbiqlər üçün təkmilləşdirilmiş qaranlıq rejimin aktivləşdirilməsi tərtibat problemlərinə səbəb ola bilər. Bəzi proqramlar dəstəklənməyə bilər."</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_title">"Zest+-a xoş gəlmisiniz!"</string>
-    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
-
-Use "Magisk" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_summary">"Zest+ əlavə funksiyalar və daha çoxu ilə Fresh-ə daha güclü olmağa imkan verir. Bununla belə, bu, Zest-in Magisk istifadə edərək sistemə tam giriş əldə etməsini tələb edir.
-
-Məlumatlarınız vacibdir. Söz verirəm ki, heç bir məlumat əldə edilmir və göndərilmir və vacib məlumatlarınız məxfi olaraq qalır.
-
-Zest+-ı aktivləşdirmək istərdinizmi?"</string>
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Batareyanı qoruyun"</string>
     <string name="zest_protect_battery_summary">"Batareyanın ömrünü uzatmaq üçün maksimum şarjı 85%-ə qədər məhdudlaşdırın."</string>
     <!-- Recovery reboot QS tile -->
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Bərpa üçün yenidən başladın"</string>
-    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Bərpa Rejiminə yenidən yükləmək istərdinizmi?"</string>
     <string name="qs_dialog_ok">"tamam"</string>
     <string name="qs_dialog_cancel">"ləğv etmək"</string>
     <!-- About Page -->

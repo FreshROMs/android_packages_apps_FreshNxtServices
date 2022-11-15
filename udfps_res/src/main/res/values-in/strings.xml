@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Alpenglow"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Aurora"</string>
+    <string name="zest_fod_animation_bloom">"Bunga"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>
+    <string name="zest_fod_animation_default">"Bawaan"</string>
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <string name="zest_fod_animation_electronic">"Elektronik"</string>
+    <string name="zest_fod_animation_energy">"Energi"</string>
+    <string name="zest_fod_animation_futuristic">"Futuristik"</string>
+    <string name="zest_fod_animation_halo_ring">"Cincin Halo"</string>
+    <string name="zest_fod_animation_magic">"Sihir"</string>
+    <string name="zest_fod_animation_mclaren">"McLaren"</string>
+    <string name="zest_fod_animation_molecular">"Molekuler"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsar"</string>
+    <string name="zest_fod_animation_pulse">"Detak"</string>
+    <string name="zest_fod_animation_rhythm">"Irama"</string>
+    <string name="zest_fod_animation_ripple">"Riak"</string>
+    <string name="zest_fod_animation_star">"Bintang"</string>
+    <string name="zest_fod_animation_stripe">"Garis"</string>
+    <string name="zest_fod_animation_supernova">"Supernova"</string>
+    <string name="zest_fod_animation_water">"Air"</string>
+    <string name="zest_fod_animation_wave">"Gelombang"</string>
+</resources>
