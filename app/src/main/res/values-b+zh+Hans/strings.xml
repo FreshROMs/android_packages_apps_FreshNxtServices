@@ -133,4 +133,180 @@ Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_about_page_open_source">"开源许可证"</string>
     <string name="zest_about_page_source_code">"源代码"</string>
     <string name="zest_about_page_translations">"本地化"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Fresh系统服务"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"壁纸和风格"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"Six"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"Six Advanced"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"关于Zest"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Fresh版本"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"了解Fresh更新中包含的内容。"</string>
+    <string name="fresh_ota_changelog_app_header">"应用更新信息"</string>
+    <string name="fresh_ota_changelog_app_subheader">"以下应用程序可能会在软件更新后更新到最新版本。"</string>
+    <string name="fresh_ota_changelog_detail_header">"软件更新信息"</string>
+    <string name="fresh_ota_changelog_btn_download">"下载"</string>
+    <string name="fresh_ota_changelog_btn_pause">"暂停"</string>
+    <string name="fresh_ota_changelog_btn_resume">"恢复"</string>
+    <string name="fresh_ota_changelog_btn_install">"安装"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"取消"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"稍后安装"</string>
+    <string name="fresh_ota_checking_for_updates">"查询更新中…"</string>
+    <string name="fresh_ota_verifying_update">"正在验证更新..."</string>
+    <string name="fresh_permissions_storage_title">"未授予存储权限"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Fresh System Services 需要存储权限才能接收软件和应用程序更新。"</string>
+    <string name="fresh_permissions_fp_storage_description">"Fresh System Services 需要存储权限才能自定义指纹动画。"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s 已准备好安装"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"更新期间您将无法使用手机，紧急呼叫也无法使用。"</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"等待网络"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"下载已暂停"</string>
+    <string name="fresh_ota_notification_download_cancelled">"下载已取消"</string>
+    <string name="fresh_ota_notification_update_cancelled">"更新已取消"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"剩余时间："</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"您的设备已经是最新的"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"更新成功"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s %2$s"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"出现未知错误，请稍后再试。"</string>
+    <string name="fresh_ota_toast_check_failed_offline">"网络不可用，请稍后再试。"</string>
+    <string name="fresh_ota_notification_group_name">"软件更新"</string>
+    <string name="fresh_ota_notification_channel_name">"固件更新"</string>
+    <string name="fresh_ota_notification_channel_description">"此通知渠道允许应用程序通知您有关设备可用的固件更新"</string>
+    <string name="fresh_app_notification_channel_name">"应用更新"</string>
+    <string name="fresh_app_notification_channel_description">"此通知渠道用于通知您有关系统应用程序更新的信息。"</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"正在进行的通知"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"此通知通道用于持续更新和通知。"</string>
+    <string name="fresh_ota_notification_update_install_title">"软件更新准备安装"</string>
+    <string name="fresh_ota_notification_update_available_title">"可用的软件更新"</string>
+    <string name="fresh_ota_notification_update_available_description">"新版本的 Fresh 可用于您的设备。"</string>
+    <string name="fresh_ota_notification_verification_failed_description">"软件更新验证失败。 稍后再试。"</string>
+    <string name="fresh_ota_notification_download_failed_title">"下载软件失败"</string>
+    <string name="fresh_ota_notification_update_failed_title">"更新软件失败"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Fresh %1$s 安装失败。 尝试直接从 FreshROMs 网站下载更新或获得支持。"</string>
+    <string name="fresh_ota_notification_update_success_title">"您的设备已更新"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s 已成功安装。 享受更fresh的设备！"</string>
+    <string name="fresh_ota_download_block_dialog_title">"移动数据警告"</string>
+    <string name="fresh_ota_download_block_dialog_description">"通过移动网络下载可能会产生额外费用。 如果可能，请通过 Wi-Fi 网络下载。
+
+继续下载此更新？"</string>
+    <string name="fresh_ota_download_block_dialog_download">"继续"</string>
+    <string name="fresh_ota_download_block_dialog_later">"稍后下载"</string>
+    <string name="fresh_ota_install_dialog_description">"此更新不应影响您的个人数据，但最好备份您的数据以防万一。
+
+继续安装此更新？"</string>
+    <string name="fresh_ota_install_dialog_continue">"现在安装"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"更新将在 %2$s 的 %1$s 自动安装。"</string>
+    <string name="fresh_ota_network_lost_dialog_description">"在下载完成之前，您的手机已断开网络连接。 当您的手机重新连接到网络时，下载将继续。"</string>
+    <string name="fresh_ota_toast_failed_download_generic">"无法更新软件。 发生网络或服务器错误。 稍后再试。"</string>
+    <string name="fresh_ota_toast_failed_download_network">"发生网络错误。 稍后再试。"</string>
+    <string name="fresh_ota_toast_failed_download_server">"服务器发生错误。 稍后再试。"</string>
+    <string name="fresh_ota_toast_failed_no_space">"要安装此更新，您的手机内部存储空间需要更多可用空间。 通过卸载应用程序或删除文件释放一些空间，然后重试。"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"一些 Magisk 模块被禁用"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"为了让您的设备能够更新，一些 Magisk 模块已被禁用。 这些可以在设备完成更新后重新启用。"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
+    <string name="zest_addon_management_subtitle_multiple">"已安装 %1$d 个插件"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"您确定要卸载 %1$s 吗?
+"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"纵横比"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"欢迎来到Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ 使 Fresh 能够通过附加功能和更多功能变得更强大。 但是，这需要 Zest 拥有使用 Magisk 对系统的完全访问权限。
+
+您的数据很重要。 我保证不会访问和发送任何数据，并且您的重要数据保持私密。
+
+您想启用 Zest+ 吗？"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"重启到恢复模式"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"您想重新启动到恢复模式吗？"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"超级暗"</string>
+    <string name="zest_extra_dim_setting_summary_main">"将屏幕调暗至超过最低亮度设置。"</string>
+    <string name="zest_extra_dim_setting_summary">"将屏幕调暗至超过最低亮度设置，以获得更舒适的观看体验。
+
+启用额外的暗淡可能会破坏某些应用程序，从而导致黑屏。 这是只有 OEM 才能解决的问题。"</string>
+    <string name="zest_extra_dim_setting_intensity">"强度"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"重启后关闭"</string>
+    <string name="zest_volte_icon_title">"LTE 语音图标样式"</string>
+    <string name="zest_volte_icon_telcel">"Telcel"</string>
+    <string name="zest_volte_icon_dcm">"Docomo"</string>
+    <string name="zest_volte_icon_telenor">"Telenor"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"
+U.S. Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verizon"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_data_connection_icon_next_outline">"Next Outline"</string>
+    <string name="zest_data_connection_icon_next_alt">"Next Alt"</string>
+    <string name="zest_data_connection_icon_next_att">"Next AT&amp;T"</string>
+    <string name="zest_performance_setting_option_default">"均衡"</string>
+    <string name="zest_performance_setting_option_gaming">"游戏"</string>
+    <string name="zest_performance_setting_option_multitasking">"多任务处理"</string>
+    <string name="zest_performance_mode_title">"性能模式"</string>
+    <string name="zest_performance_mode_summary">"选择最适合您工作的性能模式。"</string>
+    <string name="zest_performance_setting_option_gaming_summary">"提升性能并优化内存管理以增强游戏体验。"</string>
+    <string name="zest_performance_setting_option_default_summary">"平衡性能和电池寿命，打造适合所有人的体验。"</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"增强性能和内存管理以允许更多应用程序在后台运行。"</string>
+    <string name="zest_video_brightness_summary_normal">"使用手机的正常屏幕亮度和颜色设置播放视频。"</string>
+    <string name="zest_video_brightness_summary_bright">"观看视频时暂时增加屏幕亮度并使色彩更加鲜艳。"</string>
+    <string name="zest_video_brightness_setting_normal">"普通"</string>
+    <string name="zest_video_brightness_setting_bright">"明亮"</string>
+    <string name="zest_video_brightness_supported_apps_header">"支持的应用"</string>
+    <string name="zest_system_settings_plugin_summary_four">"图标风格 • 性能 • 屏幕分辨率"</string>
+    <string name="zest_customization_reboot_required_title">"重启手机？"</string>
+    <string name="zest_customization_reboot_required_description">"要完全应用图标样式更改，您的手机需要重新启动。"</string>
+    <string name="zest_customization_reboot_required_btn_ok">"现在重启"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"稍后重启"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh 体验框架 %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Fresh 性能套件 %s"</string>
+    <string name="zest_plus_fod_animation_style_title">"指纹动画风格"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"未能应用新样式。"</string>
+    <string name="zest_plus_location_indicators_title">"使用新的位置指示器"</string>
+    <string name="zest_plus_location_indicators_summary">"使用摄像头和麦克风使用的新状态栏位置指示器。"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_fresh_updates_title">"Fresh更新"</string>
 </resources>
