@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Servizi di sistema Fresh"</string>
+    <string name="zest_relative_link_advanced">"Funzioni avanzate"</string>
+    <string name="zest_relative_link_wallpaper">"Sfondo schermata iniziale e blocco"</string>
+    <string name="zest_relative_link_themes">"Galaxy Themes"</string>
+    <string name="zest_data_connection_icon_default">"Predefinito (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"Predefinito"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Informazioni su Zest"</string>
+    <string name="zest_setting_default_summary">"Sconosciuto"</string>
+    <string name="zest_setting_default_error">"Si è verificato un problema"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"Personalizzazione • Risoluzione schermo"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"Risoluzione schermo  •  Aggiornamenti software"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"Stile icona connessione dati"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Stile icona segnale Wi-Fi"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Versione di Fresh"</string>
+    <string name="fresh_ota_main_title">"Aggiornamenti software"</string>
+    <string name="fresh_ota_check_for_updates_title">"Scarica e installa"</string>
+    <string name="fresh_ota_check_for_updates_summary">"Il download con reti mobili può comportare l'addebito di spese aggiuntive. Se possibile, effettuate il download con una rete Wi-Fi."</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Download automatico su Wi-Fi"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"Scarica automaticamente gli aggiornamenti software mentre siete connessi a una rete Wi-Fi."</string>
+    <string name="fresh_ota_last_successful_update_title">"Ultimo aggiornamento"</string>
+    <string name="fresh_ota_last_successful_update_summary">"Nessuna informazione su questo aggiornamento."</string>
+    <string name="fresh_ota_check_frequency_title">"Frequenza controllo aggiornamenti"</string>
+    <string name="fresh_ota_check_frequency_60min">"Ogni ora"</string>
+    <string name="fresh_ota_check_frequency_120min">"Ogni 2 ore"</string>
+    <string name="fresh_ota_check_frequency_180min">"Ogni 3 ore"</string>
+    <string name="fresh_ota_check_frequency_360min">"Ogni 6 ore"</string>
+    <string name="fresh_ota_check_frequency_720min">"Ogni 12 ore"</string>
+    <string name="fresh_ota_check_frequency_1440min">"Ogni giorno"</string>
+    <string name="fresh_ota_changelog_header_title">"Novità"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Scopri cosa include questo aggiornamento di Fresh."</string>
+    <string name="fresh_ota_changelog_detail_version">"Versione:"</string>
+    <string name="fresh_ota_changelog_detail_size">"Dimensione:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"Livello patch di sicurezza:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s pronta per l’installazione"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"Download dell’aggiornamento in corso…"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Tempo residuo: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"Aggiorna dispositivo e ottieni nuove funzioni"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"L’uso della connessione dati per eseguire il download può comportare costi aggiuntivi. È consigliabile usare il Wi-Fi."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"Gestione addons"</string>
+    <string name="zest_addon_management_subtitle_none">"Nessun addon installato"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 addon installato"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d addons installati"</string>
+    <string name="zest_addon_management_detail_uninstall">"Disinstalla"</string>
+    <string name="zest_addon_management_detail_cancel">"Annulla"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Vuoi disinstallare %1$s?"</string>
+    <string name="zest_addon_management_detail_size">"Dimensione"</string>
+    <string name="zest_addon_management_detail_version">"Versione"</string>
+    <string name="zest_addon_management_detail_developer">"Sviluppatore"</string>
+    <string name="zest_addon_management_detail_last_updated">"Ultimo aggiornamento"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"Tema personalizzato"</string>
+    <string name="zest_renoir_settings_summary">"Personalizza l'IU applicando un tema che usa i colori dello sfondo attuale."</string>
+    <string name="zest_renoir_notification_channel_title">"Notifiche in corso"</string>
+    <string name="zest_renoir_notification_channel_description">"Questa categoria di notifiche permette all'app di eseguire le operazioni necessarie in background."</string>
+    <string name="zest_renoir_notification_description">"Applicazione del tema in corso…"</string>
+    <string name="zest_renoir_settings_unavailable">"Tema personalizzato non è disponibile perché è già stato applicato un altro tema."</string>
+    <string name="zest_renoir_settings_lock_screen">"Usa colori dalla schermata di blocco"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"Utilizza i colori presi dallo sfondo della schermata di blocco."</string>
+    <string name="zest_renoir_settings_custom_colors">"Usa colori personali"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"Utilizza i colori selezionati nel selettore colori."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"Risoluzione schermo"</string>
+    <string name="zest_screen_resolution_setting_summary">"Se modificate la risoluzione, alcune applicazioni potrebbero chiudersi."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"Grafica più nitida, consumo batteria massimo"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Grafica migliorata, consumo batteria moderato"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Grafica di base, consumo batteria minimo"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"Applica"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"Luminosità video"</string>
+    <string name="zest_hdr_effect_setting_summary">"Aumenta la luminosità dello schermo e rende i colori più vivaci quando guardate video."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"App disponibili"</string>
+    <string name="zest_maverick_security_setting_title">"Protezione USB"</string>
+    <string name="zest_maverick_security_setting_summary">"Proteggi il tuo dispositivo da periferiche USB malevoli."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"Proteggi il tuo dispositivo da periferiche USB malevoli bloccandone l'accesso a dispositivo bloccato."</string>
+    <string name="zest_maverick_security_setting_option_title">"Limita le periferiche USB"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"A schermo spento"</string>
+    <string name="zest_maverick_security_setting_option_always">"Sempre"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"Modalità notte migliorata"</string>
+    <string name="zest_darq_setting_summary">"Abilita la modalità notte per ogni applicazione."</string>
+    <string name="zest_darq_service_connecting">"Connessione al servizio in corso…"</string>
+    <string name="zest_darq_service_sync_success">"Modifiche sincronizzate col servizio"</string>
+    <string name="zest_darq_service_powered_by">"Powered by"</string>
+    <string name="zest_darq_service_detail_warning">"Alcune app potrebbero non funzionare correttamente con la modalità notte migliorata attiva."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Benvenuto su Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ permette a Fresh l'attivazione di funzionalità aggiuntive e molto altro. L'attivazione richiede però che Zest abbia accesso completo al sistema tramite Magisk.
+
+La tua privacy è importante per noi, pertanto non vi sarà accesso a file o dati personali.
+
+Vuoi abilitare Zest+?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"Protezione batteria"</string>
+    <string name="zest_protect_battery_summary">"Per prolungare la durata della batteria, limita la carica massima all'85%."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Riavvia in Recovery"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Vuoi riavviare il dispositivo in modalità recovery?"</string>
+    <string name="qs_dialog_ok">"OK"</string>
+    <string name="qs_dialog_cancel">"Annulla"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"Licenze open source"</string>
+    <string name="zest_about_page_source_code">"Codice sorgente"</string>
+    <string name="zest_about_page_translations">"Traduzioni"</string>
+</resources>

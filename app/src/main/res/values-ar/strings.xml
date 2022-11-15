@@ -133,4 +133,7 @@ Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_about_page_open_source">"التراخيص مفتوحة المصدر"</string>
     <string name="zest_about_page_source_code">"الرمز المصدري"</string>
     <string name="zest_about_page_translations">"الموقع"</string>
+    <string name="zest_customization_reboot_required_description">"لتطبيق التغيرات على الايقونات ,يحتاج الهاتف لإعادة التشغيل "</string>
+    <string name="zest_customization_reboot_required_btn_ok">"إعادة التشغيل الآن "</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"إعادة التشغيل لاحقا "</string>
 </resources>

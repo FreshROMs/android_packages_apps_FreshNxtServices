@@ -8,7 +8,7 @@
     <string name="zest_data_connection_icon_default">"Domyślnie (4G)"</string>
     <string name="zest_data_connection_icon_lte">"LTE"</string>
     <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
-    <string name="zest_data_connection_icon_next">"Przyszły (5G)"</string>
+    <string name="zest_data_connection_icon_next">"5G"</string>
     <string name="zest_wlan_connection_icon_default">"Domyślny"</string>
     <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
@@ -63,7 +63,7 @@ Please keep %1$s %2$s present and intact. This is used as placeholder for versio
     <string name="zest_addon_management_subtitle_none">"Brak zainstalowanych dodatków"</string>
     <string name="zest_addon_management_subtitle_singular">"1 dodatek jest zainstalowany"</string>
     <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
-    <string name="zest_addon_management_subtitle_multiple">"%1$d dodatki są zainstalowane"</string>
+    <string name="zest_addon_management_subtitle_multiple">"Zainstalowane dodatki: %1$d"</string>
     <string name="zest_addon_management_detail_uninstall">"Odinstaluj"</string>
     <string name="zest_addon_management_detail_cancel">"Anuluj"</string>
     <!-- Please keep %1$s intact. This is used as a placeholder for a name.
@@ -124,13 +124,42 @@ Czy chcesz włączyć Zest+?"</string>
     <string name="zest_protect_battery_summary">"Aby przedłużyć żywotność baterii, ogranicz maksymalne ładowanie do 85%."</string>
     <!-- Recovery reboot QS tile -->
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Uruchom ponownie do Recovery"</string>
+    <string name="qs_dialog_title">"Restart do recovery"</string>
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Czy chcesz ponownie uruchomić w trybie odzyskiwania (Recovery)?"</string>
+    <string name="qs_dialog_confirmation">"Czy chcesz ponownie uruchomić w trybie recovery?"</string>
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Anuluj"</string>
     <!-- About Page -->
     <string name="zest_about_page_open_source">"Licencje open source"</string>
     <string name="zest_about_page_source_code">"Kod źródłowy"</string>
     <string name="zest_about_page_translations">"Tłumaczenia"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Usługi systemowe Fresh"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Tapeta i styl"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"5G"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"O Zest"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Wersja Fresh"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"Dowiedz się, co zawiera ta nowa aktualizacja."</string>
+    <string name="fresh_ota_changelog_app_header">"Informacje o aktualizacji aplikacji"</string>
+    <string name="fresh_ota_changelog_app_subheader">"Poniższe aplikacje mogą zostać zaktualizowane do najnowszej wersji po aktualizacji oprogramowania."</string>
+    <string name="fresh_ota_changelog_detail_header">"Informacje o aktualizacji oprogramowania"</string>
+    <string name="fresh_ota_changelog_btn_download">"Pobierz"</string>
+    <string name="fresh_ota_changelog_btn_pause">"Pauza"</string>
+    <string name="fresh_ota_changelog_btn_resume">"Wznów"</string>
+    <string name="fresh_ota_changelog_btn_install">"Instaluj"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"Anuluj"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"Zainstaluj później"</string>
+    <string name="fresh_ota_checking_for_updates">"Sprawdzanie aktualizacji…"</string>
+    <string name="fresh_ota_verifying_update">"Weryfikuję aktualizację…"</string>
 </resources>

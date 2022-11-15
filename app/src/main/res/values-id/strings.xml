@@ -91,7 +91,7 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_screen_resolution_setting_high_summary">"Kecerahan tinggi, menggunakan sebagian besar baterai"</string>
     <string name="zest_screen_resolution_setting_medium_summary">"Kecerahan sedang, menggunakan lebih banyak baterai"</string>
     <string name="zest_screen_resolution_setting_low_summary">"Kecerahan rendah, menggunakan baterai lebih sedikit"</string>
-    <string name="zest_screen_resolution_setting_btn_apply">"Menerapkan"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"Terapkan"</string>
     <!-- Video brightness/HDR effect settings -->
     <string name="zest_hdr_effect_setting_title">"Kecerahan video"</string>
     <string name="zest_hdr_effect_setting_summary">"Tingkatkan kualitas gambar video Anda untuk menikmati warna yang lebih cerah dan lebih hidup."</string>
@@ -133,4 +133,159 @@ Apakah Anda ingin mengaktifkan Zest+?"</string>
     <string name="zest_about_page_open_source">"Lisensi sumber terbuka"</string>
     <string name="zest_about_page_source_code">"Kode sumber"</string>
     <string name="zest_about_page_translations">"Lokalisasi"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Layanan Sistem Fresh"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Wallpaper dan gaya"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Tentang Zest"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Versi Fresh"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"Cari tahu apa yang termasuk dalam pembaruan Fresh ini"</string>
+    <string name="fresh_ota_changelog_app_header">"Informasi pembaruan app"</string>
+    <string name="fresh_ota_changelog_app_subheader">"Aplikasi di bawah ini dapat diperbarui ke versi terbaru setelah pembaruan perangkat lunak."</string>
+    <string name="fresh_ota_changelog_detail_header">"Informasi pembaruan perangkat lunak"</string>
+    <string name="fresh_ota_changelog_btn_download">"Unduh"</string>
+    <string name="fresh_ota_changelog_btn_pause">"Berhenti"</string>
+    <string name="fresh_ota_changelog_btn_resume">"Lanjutkan"</string>
+    <string name="fresh_ota_changelog_btn_install">"Pasang"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"Batal"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"Pasang nanti"</string>
+    <string name="fresh_ota_checking_for_updates">"Memeriksa pembaruan..."</string>
+    <string name="fresh_ota_verifying_update">"Memverifikasi pembaruan..."</string>
+    <string name="fresh_permissions_storage_title">"Izin penyimpanan tidak diberikan"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Layanan Sistem Fresh memerlukan izin penyimpanan untuk dapat menerima pembaruan perangkat lunak dan aplikasi."</string>
+    <string name="fresh_permissions_fp_storage_description">"Layanan Sistem Fresh memerlukan izin penyimpanan untuk dapat menyesuaikan animasi sidik jari."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s siap untuk dipasang"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"Anda tidak akan dapat menggunakan ponsel Anda selama pembaruan, bahkan untuk panggilan darurat."</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"Menunggu jaringan"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"Unduhan dijeda"</string>
+    <string name="fresh_ota_notification_download_cancelled">"Unduhan dibatalkan"</string>
+    <string name="fresh_ota_notification_update_cancelled">"Pembaruan dibatalkan"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"Waktu tersisa:"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Perangkat Anda mutakhir"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"Pembaruan terakhir yang berhasil"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"Terjadi kesalahan yang tidak diketahui. Coba lagi nanti."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"Jaringan tidak tersedia. Coba lagi nanti."</string>
+    <string name="fresh_ota_notification_group_name">"Pembaruan perangkat lunak"</string>
+    <string name="fresh_ota_notification_channel_name">"Pembaharuan Firmware"</string>
+    <string name="fresh_ota_notification_channel_description">"Saluran notifikasi ini memungkinkan aplikasi untuk memberi tahu Anda tentang pembaruan firmware yang tersedia untuk perangkat Anda"</string>
+    <string name="fresh_app_notification_channel_name">"Pembaruan aplikasi"</string>
+    <string name="fresh_app_notification_channel_description">"Saluran notifikasi ini digunakan untuk memberi tahu Anda tentang pembaruan aplikasi sistem."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"Pemberitahuan yang sedang berlangsung"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"Saluran notifikasi ini digunakan untuk pembaruan dan notifikasi yang sedang berlangsung."</string>
+    <string name="fresh_ota_notification_update_install_title">"Pembaruan perangkat lunak siap dipasang"</string>
+    <string name="fresh_ota_notification_update_available_title">"Pembaruan perangkat lunak tersedia"</string>
+    <string name="fresh_ota_notification_update_available_description">"Versi baru dari Fresh tersedia untuk perangkat Anda."</string>
+    <string name="fresh_ota_notification_verification_failed_description">"Verifikasi pembaruan perangkat lunak gagal. Coba lagi nanti."</string>
+    <string name="fresh_ota_notification_download_failed_title">"Gagal mengunduh perangkat lunak"</string>
+    <string name="fresh_ota_notification_update_failed_title">"Gagal memperbarui perangkat lunak"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Pemasangan %1$s Baru telah gagal. Coba unduh pembaruan langsung dari situs web FreshROMs atau dapatkan dukungan."</string>
+    <string name="fresh_ota_notification_update_success_title">"Perangkat Anda telah diperbarui"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s telah sukses terpasang. Nikmati perangkat yang lebih segar!"</string>
+    <string name="fresh_ota_download_block_dialog_title">"Peringatan data seluler"</string>
+    <string name="fresh_ota_download_block_dialog_description">"Mengunduh melalui jaringan seluler dapat dikenakan biaya tambahan. Jika memungkinkan, unduh melalui jaringan Wi-Fi. 
+
+Lanjutkan mengunduh pembaruan ini?"</string>
+    <string name="fresh_ota_download_block_dialog_download">"Lanjutkan"</string>
+    <string name="fresh_ota_download_block_dialog_later">"Unduh nanti"</string>
+    <string name="fresh_ota_install_dialog_description">"Pembaruan ini seharusnya tidak memengaruhi data pribadi Anda, tetapi selalu merupakan ide bagus untuk mencadangkan data Anda untuk berjaga-jaga. 
+
+Lanjutkan menginstal pembaruan ini?"</string>
+    <string name="fresh_ota_install_dialog_continue">"Pasang sekarang"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Pembaruan akan dipasang secara otomatis di %1$s pada %2$s."</string>
+    <string name="fresh_ota_network_lost_dialog_description">"Telepon Anda terputus dari jaringan sebelum pengunduhan selesai. Pengunduhan akan dilanjutkan saat ponsel Anda tersambung kembali ke jaringan."</string>
+    <string name="fresh_ota_toast_failed_download_generic">"Tidak dapat memperbarui perangkat lunak. Terjadi kesalahan jaringan atau server. Coba lagi nanti."</string>
+    <string name="fresh_ota_toast_failed_download_network">"Terjadi kesalahan jaringan. Coba lagi nanti."</string>
+    <string name="fresh_ota_toast_failed_download_server">"Terjadi kesalahan server. Coba lagi nanti."</string>
+    <string name="fresh_ota_toast_failed_no_space">"Untuk menginstal pembaruan ini, Anda memerlukan lebih banyak ruang kosong di penyimpanan internal ponsel Anda. Kosongkan sebagian ruang dengan mencopot pemasangan aplikasi atau menghapus file, lalu coba lagi."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Beberapa modul Magisk dinonaktifkan"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Agar perangkat Anda dapat diperbarui, beberapa modul Magisk telah dinonaktifkan. Ini dapat diaktifkan kembali setelah perangkat selesai diperbarui."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d tambahan dipasang"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Anda yakin ingin menghapus %1$s?"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"Rasio aspek"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Selamat datang di Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ memungkinkan Fresh menjadi lebih kuat dengan fitur tambahan dan banyak lagi. Namun, ini membutuhkan Zest untuk memiliki akses penuh ke sistem menggunakan Magisk. 
+
+Data Anda penting. Saya berjanji bahwa tidak ada data yang sedang diakses dan dikirim, dan bahwa data penting Anda tetap pribadi. 
+
+Apakah Anda ingin mengaktifkan Zest+?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Mulai ulang ke Recovery"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Apakah Anda ingin mem-boot ulang ke Mode Pemulihan?"</string>
+    <string name="zest_extra_dim_setting_summary_main">"Redupkan layar di luar pengaturan kecerahan minimum."</string>
+    <string name="zest_extra_dim_setting_summary">"Redupkan layar di luar pengaturan kecerahan minimum untuk tampilan yang lebih nyaman. 
+
+Mengaktifkan redup ekstra dapat merusak beberapa aplikasi, menghasilkan layar hitam. Ini adalah masalah yang hanya dapat diperbaiki oleh OEM."</string>
+    <string name="zest_extra_dim_setting_intensity">"Intensitas"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"Matikan setelah restart"</string>
+    <string name="zest_volte_icon_title">"Gaya ikon Voice-over-LTE"</string>
+    <string name="zest_volte_icon_telcel">"Telcel"</string>
+    <string name="zest_volte_icon_dcm">"Docomo"</string>
+    <string name="zest_volte_icon_telenor">"Telenor"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"U.S Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verizon"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_performance_setting_option_default">"Seimbang"</string>
+    <string name="zest_performance_mode_title">"Mode peforma"</string>
+    <string name="zest_performance_mode_summary">"Pilih mode kinerja yang paling sesuai dengan apa yang Anda lakukan."</string>
+    <string name="zest_performance_setting_option_gaming_summary">"Tingkatkan kinerja dan optimalkan manajemen memori untuk meningkatkan pengalaman bermain game."</string>
+    <string name="zest_performance_setting_option_default_summary">"Performa dan masa pakai baterai yang seimbang untuk pengalaman yang sesuai untuk semua orang."</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"Tingkatkan kinerja dan manajemen memori untuk memungkinkan lebih banyak aplikasi berjalan di latar belakang."</string>
+    <string name="zest_video_brightness_summary_normal">"Putar video menggunakan kecerahan layar dan pengaturan warna normal ponsel Anda."</string>
+    <string name="zest_video_brightness_summary_bright">"Tingkatkan kecerahan layar untuk sementara dan buat warna lebih hidup saat Anda menonton video."</string>
+    <string name="zest_video_brightness_setting_normal">"Normal"</string>
+    <string name="zest_video_brightness_setting_bright">"Cerah"</string>
+    <string name="zest_video_brightness_supported_apps_header">"Aplikasi yang didukung"</string>
+    <string name="zest_system_settings_plugin_summary_four">"Gaya ikon • Peforma • Resolusi layar"</string>
+    <string name="zest_customization_reboot_required_title">"Mulai Ulang Perangkat?"</string>
+    <string name="zest_customization_reboot_required_description">"Untuk menerapkan perubahan gaya ikon sepenuhnya, ponsel Anda perlu dihidupkan ulang."</string>
+    <string name="zest_customization_reboot_required_btn_ok">"Mulai ulang sekarang"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Mulai ulang nanti"</string>
+    <string name="zest_plus_fod_animation_style_title">"Gaya animasi sidik jari"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"Gagal menerapkan gaya baru."</string>
+    <string name="zest_plus_location_indicators_title">"Gunakan indikator lokasi baru"</string>
+    <string name="zest_plus_location_indicators_summary">"Gunakan indikator lokasi bilah status baru yang digunakan oleh kamera dan mikrofon."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_fresh_updates_title">"Pembaruan Fresh"</string>
 </resources>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Fresh සිස්ටම් සෙවා"</string>
+    <string name="zest_relative_link_advanced">"වැඩි සැකසුම්"</string>
+    <string name="zest_relative_link_wallpaper">"ලොක් සහ මුල් තිර වොල්පෙපර්"</string>
+    <string name="zest_relative_link_themes">"සැම්සුන්ග් තීම්ස්"</string>
+    <string name="zest_data_connection_icon_default">"ඩිෆොල්ට් (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"මිලග (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"ඩිෆොල්ට්"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Zest ගැන"</string>
+    <string name="zest_setting_default_summary">"නොදන්නා"</string>
+    <string name="zest_setting_default_error">"මොකක්හරි වැරැද්දක් වෙලා"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"හැඩගැන්වීම්  •  තිරයෙ ප්‍රමාණ"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"තිරයෙ ප්‍රමාණ • Software යාවත්කාලීන"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"දත්ත සම්බන්ධතා පෙනුමෙ විලාසය"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Wi-Fi සංඥා පෙනුමෙ විලාසය"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Fresh අනුවාදය"</string>
+    <string name="fresh_ota_main_title">"සොෆ්ට්වෙයා යාවත්කාලීන"</string>
+    <string name="fresh_ota_check_for_updates_title">"ඩවුන්ලොඩ් සහ ඉන්ස්ට්‍රෝල්"</string>
+    <string name="fresh_ota_check_for_updates_summary">"මොබයිල් ඩේටා හරහා බාගත කිරීමෙදි වැඩි ඩෙටා ප්‍රමාණයක් භාවිතා වේ. පුලුවන් නම්, ඒ වෙනුවට Wi-Fi  හරහා ඩවුන්ලොඩ් කර ගන්න."</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Wi-Fi හරහා ස්වයංක්‍රීය බාගැනීම"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"Wi-Fi ජාලයකට සම්බන්ධ වූ විට මෘදුකාංග යාවත්කාලීන ස්වයංක්‍රීයව බාගන්න."</string>
+    <string name="fresh_ota_last_successful_update_title">"අවසාන යාවත්කාලීනය"</string>
+    <string name="fresh_ota_last_successful_update_summary">"මෙම යාවත්කාලීනය පිළිබඳ තොරතුරු නොමැත."</string>
+    <string name="fresh_ota_check_frequency_title">"යාවත්කාලීන වාර ගණන පරීක්ෂා කරන්න"</string>
+    <string name="fresh_ota_check_frequency_60min">"සෑම පැයකට වරක්"</string>
+    <string name="fresh_ota_check_frequency_120min">"සෑම පැය දෙකකට වරක්"</string>
+    <string name="fresh_ota_check_frequency_180min">"සෑම පැය තුනකට වරක්"</string>
+    <string name="fresh_ota_check_frequency_360min">"සෑම පැය හයකට වරක්"</string>
+    <string name="fresh_ota_check_frequency_720min">"සෑම පැය දොලහකටම වරක්"</string>
+    <string name="fresh_ota_check_frequency_1440min">"සෑම දිනම"</string>
+    <string name="fresh_ota_changelog_header_title">"අලුත් දේවල් මොනවද"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"මෙම Fresh යාවත්කාලීනයේ අඩංගු දේ සොයා බලන්න."</string>
+    <string name="fresh_ota_changelog_detail_version">"පිටපත:"</string>
+    <string name="fresh_ota_changelog_detail_size">"ප්‍රමාණය:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"ආරක්ෂක වැසුම් මට්ටම:"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s ස්ථාපනය කිරීමට සූදානම්"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"යාවත්කාලීනය බාගනිමින්…"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"ඉතිරි කාලය: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"ඔබගේ දුරකථනය යාවත්කාලීන කර නව විශේෂාංග ලබා ගන්න"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"බාගත කිරීම සඳහා වැඩිපුර ජංගම දත්ත භාවිතා වන බැවින් එය අමතර ගාස්තුවලට හේතු විය හැක. එමනිසා Wi-Fi භාවිතා කිරීම නිර්දේශ කෙරේ."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"Addons කළමනාකරණය"</string>
+    <string name="zest_addon_management_subtitle_none">"addons ස්ථාපනය කර නැත"</string>
+    <string name="zest_addon_management_subtitle_singular">"addons 1ක් ස්ථාපනය කර ඇත"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"addons %1$dක් ස්ථාපනය කර ඇත"</string>
+    <string name="zest_addon_management_detail_uninstall">"අස්ථාපනය කරන්න"</string>
+    <string name="zest_addon_management_detail_cancel">"අවලන්ගුය"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"ඔබට %1$s අස්ථාපනය කිරීමට අවශ්‍ය බව විශ්වාසද?"</string>
+    <string name="zest_addon_management_detail_size">"ප්රමාණය"</string>
+    <string name="zest_addon_management_detail_version">"පිටපත"</string>
+    <string name="zest_addon_management_detail_developer">"සංවර්ධකයා"</string>
+    <string name="zest_addon_management_detail_last_updated">"අවසන් යාවත්කාලීන කරෙ"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"වර්ණ තේමාව"</string>
+    <string name="zest_renoir_settings_summary">"දැනට පවතින wallpaper එකට ගැලපෙන පරිදි One UI තෙමා සකසන්න."</string>
+    <string name="zest_renoir_notification_channel_title">"අඛණ්ඩ දැනුම්දීම්"</string>
+    <string name="zest_renoir_notification_channel_description">"මෙම දැනුම්දීම් නාලිකාව පසුබිමේ අවශ්‍ය මෙහෙයුම් ක්‍රියාත්මක කිරීමට යෙදුමට ඉඩ දෙයි."</string>
+    <string name="zest_renoir_notification_description">"බිතුපත මත පදනම්ව උපාංග තේමාව වෙනස් කරමින්..."</string>
+    <string name="zest_renoir_settings_unavailable">"තෙවන පාර්ශ්ව තේමාවක් යොදන නිසා, වර්ණ ගැළපෙන තේමාව ක්‍රියා නොකරනු ඇත."</string>
+    <string name="zest_renoir_settings_lock_screen">"අගුළු තිර වර්ණ භාවිතා කරන්න"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"උපාංග තේමාව තෝරාගැනීමේදී ඔබේ අගුළු තිරයෙ බිතුපතෙන් වර්ණ භාවිත කරන්න."</string>
+    <string name="zest_renoir_settings_custom_colors">"වෙනත් වර්ණ භාවිතා කරන්න"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"උපාංග තේමාව සඳහා වර්ණ පිකර් වෙතින් වර්ණ භාවිත කරන්න."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"තිර විභේදනය (resolution)"</string>
+    <string name="zest_screen_resolution_setting_summary">"ඔබ තිර විභේදනය (resolution) වෙනස් කරන විට සමහර යෙදුම් වැසී යා හැක."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"තියුණු දර්ශන, වැඩිපුර බැටරි භාවිතා වේ"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"වැඩිදියුණු කළ දර්ශන, මධ්‍යස්ථ බැටරි භාවිතය"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"දර්ශන කැත වෙ, අඩුම බැටරි භාවිතය"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"යොදන්න"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"වීඩියෝ දීප්තිය"</string>
+    <string name="zest_hdr_effect_setting_summary">"දීප්තිමත් සහ වඩාත් විචිත්‍රවත් වර්ණ භුක්ති විඳීමට ඔබේ වීඩියෝවල රූප ගුණය වැඩි දියුණු කරන්න."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"පවතින යෙදුම්"</string>
+    <string name="zest_maverick_security_setting_title">"USB ආරක්ෂාව"</string>
+    <string name="zest_maverick_security_setting_summary">"ඔබගේ උපාංගය අනාරක්ෂිත USB උපාංග වලින් ආරක්ෂා කරන්න."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"ඔබගේ උපාංගය අනිෂ්ට USB උපාංග වලින් ආරක්ෂා කරන්න."</string>
+    <string name="zest_maverick_security_setting_option_title">"USB උපාංග සීමා කරන්න"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"තිරය ​​අක්‍රියව තිබියදී"</string>
+    <string name="zest_maverick_security_setting_option_always">"සැමවිටම"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"වැඩිදියුණු කළ අඳුරු මාදිලිය"</string>
+    <string name="zest_darq_setting_summary">"සියලුම යෙදුම් සඳහා අඳුරු මාදිලිය සබල කරන්න."</string>
+    <string name="zest_darq_service_connecting">"සේවාව වෙත සම්බන්ධ වෙමින්..."</string>
+    <string name="zest_darq_service_sync_success">"සේවාව සමඟ සමමුහුර්ත කළ වෙනස්කම්"</string>
+    <string name="zest_darq_service_powered_by">"බල ගැන්වුයේ"</string>
+    <string name="zest_darq_service_detail_warning">"සමහර යෙදුම් සඳහා වැඩිදියුණු කළ අඳුරු මාදිලිය සබල කිරීම පිරිසැලසුම් ගැටළු ඇති කළ හැක. සමහර යෙදුම් සහාය නොදක්වයි."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Zest+ වෙත සාදරයෙන් පිළිගනිමු!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ අමතර විශේෂාංග සහ තවත් දේ සමඟින් Fresh වඩාත් බලවත් වීමට සබල කරයි. කෙසේ වෙතත්, මේ සඳහා Zest හට Magisk භාවිතයෙන් පද්ධතියට සම්පූර්ණ ප්‍රවේශය අවශ්‍ය වේ.
+
+ඔබගේ දත්ත වැදගත් වේ. නමුත් කිසිදු දත්තයක් වෙත ප්‍රවේශ නොවන බවටත්, කිසිදු දත්තයක් ලබා නොගන්නා බවටත්, ඔබගේ වැදගත් දත්ත පුද්ගලිකව පවතින බවටත් මම පොරොන්දු වෙමි.
+
+ඔබ Zest+ සබල කිරීමට කැමතිද?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"බැටරිය ආරක්ෂා කරන්න"</string>
+    <string name="zest_protect_battery_summary">"ඔබේ බැටරියේ ආයු කාලය දීර්ඝ කිරීමට, උපරිම ආරෝපණය 85% දක්වා සීමා කරන්න."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Recovery වෙත ගෙනයන්න"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"ඔබ Recovery Mode වෙත නැවත යාමට කැමතිද?"</string>
+    <string name="qs_dialog_ok">"හා"</string>
+    <string name="qs_dialog_cancel">"අවලංගු කරන්න"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"විවෘත මූලාශ්‍ර බලපත්‍ර"</string>
+    <string name="zest_about_page_source_code">"Source කේතය"</string>
+    <string name="zest_about_page_translations">"ප්රාදේශීයකරණය"</string>
+</resources>
