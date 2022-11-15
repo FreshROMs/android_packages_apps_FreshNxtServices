@@ -133,4 +133,178 @@ Haluatko ottaa Zest+:n käyttöön?"</string>
     <string name="zest_about_page_open_source">"Avoimen lähdekoodin lisenssit"</string>
     <string name="zest_about_page_source_code">"Lähdekoodi"</string>
     <string name="zest_about_page_translations">"Lokalisointi"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Fresh System Services"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Tapetti ja tyyli"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next (5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"Six"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"Six Advanced"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Tietoja Zestistä"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Fresh versio"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"Ota selvää, mitä tämä Fresh-päivitys sisältää."</string>
+    <string name="fresh_ota_changelog_app_header">"Sovelluksen päivitystiedot"</string>
+    <string name="fresh_ota_changelog_app_subheader">"Alla olevat sovellukset voidaan päivittää uusimpaan versioon ohjelmistopäivityksen jälkeen."</string>
+    <string name="fresh_ota_changelog_detail_header">"Ohjelmiston päivitystiedot"</string>
+    <string name="fresh_ota_changelog_btn_download">"Lataa"</string>
+    <string name="fresh_ota_changelog_btn_pause">"Tauko"</string>
+    <string name="fresh_ota_changelog_btn_resume">"Jatkaa"</string>
+    <string name="fresh_ota_changelog_btn_install">"Asentaa"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"Peruuttaa"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"Asenna myöhemmin"</string>
+    <string name="fresh_ota_checking_for_updates">"Tarkistetaan päivityksiä…"</string>
+    <string name="fresh_ota_verifying_update">"Vahvistetaan päivitystä…"</string>
+    <string name="fresh_permissions_storage_title">"Tallennuslupaa ei myönnetty"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Fresh System Services vaatii tallennuslupia voidakseen vastaanottaa ohjelmisto- ja sovelluspäivityksiä."</string>
+    <string name="fresh_permissions_fp_storage_description">"Fresh System Services vaatii tallennuslupia voidakseen mukauttaa sormenjälkianimaatioita."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s on valmis asennettavaksi"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"Et voi käyttää puhelintasi päivityksen aikana edes hätäpuheluihin."</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"Odotetaan verkkoa"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"Lataus keskeytetty"</string>
+    <string name="fresh_ota_notification_download_cancelled">"Lataus peruutettu"</string>
+    <string name="fresh_ota_notification_update_cancelled">"Päivitys peruttu"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"Aikaa jäljellä:"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Laitteesi on ajan tasalla"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"Viimeisin onnistunut päivitys"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s %2$s"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"Tuntematon virhe on tapahtunut. Yritä myöhemmin uudelleen."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"Verkko ei ole käytettävissä. Yritä myöhemmin uudelleen."</string>
+    <string name="fresh_ota_notification_group_name">"Ohjelmistopäivitykset"</string>
+    <string name="fresh_ota_notification_channel_name">"Laiteohjelmistopäivitykset"</string>
+    <string name="fresh_ota_notification_channel_description">"Tämän ilmoituskanavan avulla sovellus voi ilmoittaa sinulle laitteellesi saatavilla olevista laiteohjelmistopäivityksistä"</string>
+    <string name="fresh_app_notification_channel_name">"Sovelluspäivitykset"</string>
+    <string name="fresh_app_notification_channel_description">"Tätä ilmoituskanavaa käytetään ilmoittamaan sinulle järjestelmäsovelluspäivityksistä."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"Jatkuvat ilmoitukset"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"Tätä ilmoituskanavaa käytetään jatkuviin päivityksiin ja ilmoituksiin."</string>
+    <string name="fresh_ota_notification_update_install_title">"Ohjelmistopäivitys valmis asennettavaksi"</string>
+    <string name="fresh_ota_notification_update_available_title">"Ohjelmistopäivitys saatavilla"</string>
+    <string name="fresh_ota_notification_update_available_description">"Laitteellesi on saatavilla uusi Fresh-versio."</string>
+    <string name="fresh_ota_notification_verification_failed_description">"Ohjelmistopäivityksen vahvistus epäonnistui. Yritä myöhemmin uudelleen."</string>
+    <string name="fresh_ota_notification_download_failed_title">"Ohjelmiston lataaminen epäonnistui"</string>
+    <string name="fresh_ota_notification_update_failed_title">"Ohjelmiston päivittäminen epäonnistui"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Fresh %1$s:n asennus epäonnistui. Yritä ladata päivityksiä suoraan FreshROMin verkkosivustolta tai pyydä tukea."</string>
+    <string name="fresh_ota_notification_update_success_title">"Laitteesi on päivitetty"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s on asennettu onnistuneesti. Nauti tuoreemmasta laitteesta!"</string>
+    <string name="fresh_ota_download_block_dialog_title">"Mobiilidatan varoitus"</string>
+    <string name="fresh_ota_download_block_dialog_description">"Lataaminen mobiiliverkon kautta voi aiheuttaa lisämaksuja. Jos mahdollista, lataa Wi-Fi-verkon kautta.
+
+Jatketaanko tämän päivityksen lataamista?"</string>
+    <string name="fresh_ota_download_block_dialog_download">"Jatkaa"</string>
+    <string name="fresh_ota_download_block_dialog_later">"Lataa myöhemmin"</string>
+    <string name="fresh_ota_install_dialog_description">"Tämän päivityksen ei pitäisi vaikuttaa henkilötietoihisi, mutta on aina hyvä idea varmuuskopioida tietosi varmuuden vuoksi.
+
+Jatketaanko tämän päivityksen asentamista?"</string>
+    <string name="fresh_ota_install_dialog_continue">"Asenna nyt"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Päivitys asennetaan automaattisesti %1$s, %2$s."</string>
+    <string name="fresh_ota_network_lost_dialog_description">"Puhelimesi yhteys verkkoon katkaistiin ennen kuin lataus oli valmis. Lataus jatkuu, kun puhelin muodostaa yhteyden uudelleen verkkoon."</string>
+    <string name="fresh_ota_toast_failed_download_generic">"Ohjelmistoa ei voi päivittää. Tapahtui verkko- tai palvelinvirhe. Yritä myöhemmin uudelleen."</string>
+    <string name="fresh_ota_toast_failed_download_network">"Tapahtui verkkovirhe. Yritä myöhemmin uudelleen."</string>
+    <string name="fresh_ota_toast_failed_download_server">"Tapahtui palvelinvirhe. Yritä myöhemmin uudelleen."</string>
+    <string name="fresh_ota_toast_failed_no_space">"Tarvitset lisää vapaata tilaa puhelimesi sisäisessä tallennustilassa, jotta voit asentaa tämän päivityksen. Vapauta tilaa poistamalla sovelluksia tai poistamalla tiedostoja ja yritä sitten uudelleen."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Jotkut Magisk-moduulit on poistettu käytöstä"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Jotkut Magisk-moduulit on poistettu käytöstä, jotta laitteesi voi päivittää. Nämä voidaan ottaa uudelleen käyttöön, kun laitteen päivitys on valmis."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d lisäosaa asennettu"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Haluatko varmasti poistaa sovelluksen %1$s?"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"Kuvasuhde"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Tervetuloa Zest+:aan!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ mahdollistaa Freshistä tehokkaamman lisäominaisuuksien ja muiden kanssa. Tämä edellyttää kuitenkin, että Zestillä on täysi pääsy järjestelmään Magiskin avulla.
+
+Tietosi ovat tärkeitä. Lupaan, että mitään tietoja ei käsitellä eikä niitä lähetetä ja että tärkeät tietosi pysyvät yksityisinä.
+
+Haluatko ottaa Zest+:n käyttöön?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Käynnistä uudelleen Recoveryin"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Haluatko käynnistää uudelleen Recovery Mode?"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"Erittäin hämärä"</string>
+    <string name="zest_extra_dim_setting_summary_main">"Himmentää näyttöä yli minimikirkkausasetuksen."</string>
+    <string name="zest_extra_dim_setting_summary">"Himmennä näyttöä vähimmäiskirkkausasetuksen yläpuolelle, jotta katselu on mukavampaa.
+
+Ylimääräisen himmeyden ottaminen käyttöön voi rikkoa jotkin sovellukset ja aiheuttaa mustan näytön. Tämä on ongelma, jonka vain OEM voi korjata."</string>
+    <string name="zest_extra_dim_setting_intensity">"Intensiteetti"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"Sammuta uudelleenkäynnistyksen jälkeen"</string>
+    <string name="zest_volte_icon_title">"Voice-over-LTE-kuvaketyyli"</string>
+    <string name="zest_volte_icon_telcel">"Telcel"</string>
+    <string name="zest_volte_icon_dcm">"Docomo"</string>
+    <string name="zest_volte_icon_telenor">"Telenor"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"U.S. Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verizon"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_data_connection_icon_next_outline">"Next Outline"</string>
+    <string name="zest_data_connection_icon_next_alt">"Next Alt"</string>
+    <string name="zest_data_connection_icon_next_att">"Next AT&amp;T"</string>
+    <string name="zest_performance_setting_option_default">"Tasapainoinen"</string>
+    <string name="zest_performance_setting_option_gaming">"Pelaaminen"</string>
+    <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
+    <string name="zest_performance_mode_title">"Suorituskykytila"</string>
+    <string name="zest_performance_mode_summary">"Valitse suoritustila, joka toimii parhaiten toiminnallesi."</string>
+    <string name="zest_performance_setting_option_gaming_summary">"Paranna suorituskykyä ja optimoi muistinhallinta parantaaksesi pelikokemusta."</string>
+    <string name="zest_performance_setting_option_default_summary">"Tasapainottaa suorituskyvyn ja akun käyttöiän, jotta kokemus sopii kaikille."</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"Paranna suorituskykyä ja muistin hallintaa, jotta enemmän sovelluksia voi toimia taustalla."</string>
+    <string name="zest_video_brightness_summary_normal">"Toista videoita puhelimen normaalilla näytön kirkkaus- ja väriasetuksella."</string>
+    <string name="zest_video_brightness_summary_bright">"Lisää näytön kirkkautta väliaikaisesti ja tee väreistä eloisampia, kun katsot videoita."</string>
+    <string name="zest_video_brightness_setting_normal">"Normaali"</string>
+    <string name="zest_video_brightness_setting_bright">"Kirkas"</string>
+    <string name="zest_video_brightness_supported_apps_header">"Tuetut sovellukset"</string>
+    <string name="zest_system_settings_plugin_summary_four">"Kuvakkeen tyyli • Suorituskyky • Näytön tarkkuus"</string>
+    <string name="zest_customization_reboot_required_title">"Käynnistä puhelin uudelleen?"</string>
+    <string name="zest_customization_reboot_required_description">"Puhelimesi on käynnistettävä uudelleen, jotta voit ottaa kuvakkeen tyylimuutokset käyttöön kokonaan."</string>
+    <string name="zest_customization_reboot_required_btn_ok">"Käynnistä uudelleen nyt"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Käynnistä uudelleen myöhemmin"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Fresh suorituskykypaketti %s"</string>
+    <string name="zest_plus_fod_animation_style_title">"Sormenjälki-animaatiotyyli"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"Uuden tyylin käyttöönotto epäonnistui."</string>
+    <string name="zest_plus_location_indicators_title">"Käytä uutta sijainnin ilmaisinta"</string>
+    <string name="zest_plus_location_indicators_summary">"Käytä uutta tilapalkin sijaintiosoitinta, jota kamera ja mikrofoni käyttävät."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_fresh_updates_title">"Freshin päivitykset"</string>
 </resources>

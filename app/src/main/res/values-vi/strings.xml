@@ -15,7 +15,7 @@
     <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_app_version">"Về Zest"</string>
     <string name="zest_setting_default_summary">"Không rõ"</string>
-    <string name="zest_setting_default_error">"Đã xảy ra lỗi"</string>
+    <string name="zest_setting_default_error">"Đã có lỗi xảy ra"</string>
     <!-- System settings plugin/Information Architecture -->
     <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
 
@@ -75,7 +75,7 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
     <string name="zest_addon_management_detail_developer">"Lập trình viên"</string>
     <string name="zest_addon_management_detail_last_updated">"Lần cuối cập nhật"</string>
     <!-- Color Theme/Fresh Renoir settings -->
-    <string name="zest_renoir_settings_title">"Chủ đề màu sắc"</string>
+    <string name="zest_renoir_settings_title">"Theme hợp màu"</string>
     <string name="zest_renoir_settings_summary">"Tùy chỉnh One UI bằng cách điều chỉnh chủ đề với hình nền hiện tại của bạn."</string>
     <string name="zest_renoir_notification_channel_title">"Thông báo đang diễn ra"</string>
     <string name="zest_renoir_notification_channel_description">"Kênh thông báo này cho phép ứng dụng thực thi các hoạt động cần thiết trong nền."</string>
@@ -116,12 +116,12 @@ i.e. Are you sure you want to uninstall 'Bixby'? -->
 Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_plus_permission_summary">"Zest+ cho phép Fresh trở nên mạnh mẽ hơn với các tính năng bổ sung và hơn thế nữa. Tuy nhiên, điều này đòi hỏi Zest phải có toàn quyền truy cập vào hệ thống bằng Magisk.
 
-Dữ liệu của bạn là quan trọng. Tôi cam kết rằng không có dữ liệu nào đang bị truy cập và được gửi đi, và dữ liệu quan trọng của bạn vẫn ở chế độ riêng tư.
+Dữ liệu của bạn là quan trọng. Tôi cam kết rằng không có dữ liệu nào sẽ bị truy cập và được gửi đi, và dữ liệu quan trọng của bạn vẫn là của riêng bạn.
 
 Bạn có muốn bật Zest+ không?"</string>
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Bảo vệ pin"</string>
-    <string name="zest_protect_battery_summary">"Để kéo dài tuổi thọ của pin, hãy giới hạn mức sạc tối đa ở 85%."</string>
+    <string name="zest_protect_battery_summary">"Giới hạn mức sạc ở 85% để bảo vệ pin của bạn."</string>
     <!-- Recovery reboot QS tile -->
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
     <string name="qs_dialog_title">"Khởi động vào Recovery"</string>
@@ -132,5 +132,179 @@ Bạn có muốn bật Zest+ không?"</string>
     <!-- About Page -->
     <string name="zest_about_page_open_source">"Giấy phép nguồn mở"</string>
     <string name="zest_about_page_source_code">"Mã nguồn"</string>
-    <string name="zest_about_page_translations">"Localization"</string>
+    <string name="zest_about_page_translations">"Bản địa hóa"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Dịch vụ hệ thống Fresh"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Kiểu và hình nền"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Mới (5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"Wifi-6"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"Wifi-6E"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Về Zest"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Phiên bản Fresh"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"Tìm hiểu có gì được bao gồm trong bản cập nhật Fresh này."</string>
+    <string name="fresh_ota_changelog_app_header">"Thông tin cập nhật ứng dụng"</string>
+    <string name="fresh_ota_changelog_app_subheader">"Các ứng dụng bên dưới có thể được cập nhật lên phiên bản mới nhất sau khi cập nhật phần mềm."</string>
+    <string name="fresh_ota_changelog_detail_header">"Thông tin cập nhật phần mềm"</string>
+    <string name="fresh_ota_changelog_btn_download">"Tải xuống"</string>
+    <string name="fresh_ota_changelog_btn_pause">"Dừng"</string>
+    <string name="fresh_ota_changelog_btn_resume">"Tiếp tục"</string>
+    <string name="fresh_ota_changelog_btn_install">"Cài đặt"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"Hủy"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"Cài sau"</string>
+    <string name="fresh_ota_checking_for_updates">"Đang kiểm tra cập nhật…"</string>
+    <string name="fresh_ota_verifying_update">"Đang xác minh…"</string>
+    <string name="fresh_permissions_storage_title">"Chưa cấp quyền bộ nhớ"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Dịch vụ hệ thống Fresh cần quyền lưu trữ để có thể nhận các bản cập nhật phần mềm và ứng dụng."</string>
+    <string name="fresh_permissions_fp_storage_description">"Dịch vụ hệ thống Fresh cần quyền lưu trữ để có thể tùy chỉnh hoạt ảnh vân tay."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s đã sẵn sàng để cài đặt"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"Bạn sẽ không thể sử dụng điện thoại của mình trong khi cập nhật, ngay cả việc thực hiện các cuộc gọi khẩn cấp."</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"Đang đợi mạng"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"Đã tạm dừng tải xuống"</string>
+    <string name="fresh_ota_notification_download_cancelled">"Đã hủy tải xuống"</string>
+    <string name="fresh_ota_notification_update_cancelled">"Đã hủy cập nhật"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"Thời gian còn lại:"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Bạn đang sử dụng phiên bản mới nhất"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"Lần cập nhật thành công cuối"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s lúc %2$s"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"Một lỗi không rõ đã xảy ra. Thử lại sau."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"Không có mạng. Thử lại sau."</string>
+    <string name="fresh_ota_notification_group_name">"Cập nhật phần mềm"</string>
+    <string name="fresh_ota_notification_channel_name">"Cập nhật chương trình cơ sở"</string>
+    <string name="fresh_ota_notification_channel_description">"Kênh thông báo này cho phép ứng dụng thông báo cho bạn về các bản cập nhật chương trình cơ sở có sẵn cho thiết bị của bạn"</string>
+    <string name="fresh_app_notification_channel_name">"Cập nhật ứng dụng"</string>
+    <string name="fresh_app_notification_channel_description">"Kênh thông báo này được sử dụng để thông báo cho bạn về các bản cập nhật ứng dụng hệ thống."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"Thông báo đang diễn ra"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"Kênh thông báo này được sử dụng cho các bản cập nhật và thông báo liên tục."</string>
+    <string name="fresh_ota_notification_update_install_title">"Bản cập nhật phần mềm đã sẵn sàng để cài đặt"</string>
+    <string name="fresh_ota_notification_update_available_title">"Bản cập nhật phần mềm có sẵn"</string>
+    <string name="fresh_ota_notification_update_available_description">"Đã có phiên bản Fresh mới cho thiết bị của bạn."</string>
+    <string name="fresh_ota_notification_verification_failed_description">"Xác minh cập nhật phần mềm không thành công. Thử lại sau."</string>
+    <string name="fresh_ota_notification_download_failed_title">"Tải xuống phần mềm thất bại"</string>
+    <string name="fresh_ota_notification_update_failed_title">"Cập nhật phần mềm thất bại"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Đã xảy ra lỗi khi cài đặt Fresh %1$s .Hãy thử tải xuống trực tiếp từ website FreshROMs hoặc nhận trợ giúp."</string>
+    <string name="fresh_ota_notification_update_success_title">"Thiết bị của bạn đã được cập nhật"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s đã được cài đặt thành công. Hãy tận hưởng một thiết bị mới hơn!"</string>
+    <string name="fresh_ota_download_block_dialog_title">"Cảnh báo sử dụng dữ liệu"</string>
+    <string name="fresh_ota_download_block_dialog_description">"Tải xuống qua mạng di động có thể phát sinh thêm phí. Nếu có thể, hãy tải xuống qua mạng Wi-Fi.
+
+Tiếp tục tải xuống bản cập nhật này?"</string>
+    <string name="fresh_ota_download_block_dialog_download">"Tiếp tục"</string>
+    <string name="fresh_ota_download_block_dialog_later">"Tải sau"</string>
+    <string name="fresh_ota_install_dialog_description">"Bản cập nhật này sẽ không làm ảnh hưởng đến dữ liệu cá nhân của bạn, nhưng bạn nên sao lưu dữ liệu của mình đề phòng trường hợp xấu xảy ra.
+
+Tiếp tục cài đặt bản cập nhật này?"</string>
+    <string name="fresh_ota_install_dialog_continue">"Cài đặt ngay"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Bản cập nhật sẽ được tự động cài đặt vào %1$s lúc %2$s."</string>
+    <string name="fresh_ota_network_lost_dialog_description">"Điện thoại của bạn đã bị ngắt kết nối khỏi mạng trong quá trình tải xuống. Quá trình tải xuống sẽ tiếp tục khi điện thoại của bạn kết nối lại với mạng."</string>
+    <string name="fresh_ota_toast_failed_download_generic">"Không thể cập nhật phần mềm. Đã xảy ra lỗi mạng hoặc máy chủ. Thử lại sau."</string>
+    <string name="fresh_ota_toast_failed_download_network">"Đã xảy ra lỗi mạng. Thử lại sau."</string>
+    <string name="fresh_ota_toast_failed_download_server">"Đã xảy ra lỗi máy chủ. Thử lại sau."</string>
+    <string name="fresh_ota_toast_failed_no_space">"Để cài đặt bản cập nhật này, bạn cần thêm dung lượng trống trong bộ nhớ trong của điện thoại. Giải phóng dung lượng bằng cách gỡ cài đặt ứng dụng hoặc xóa tệp, sau đó thử lại."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Một số mô-đun Magisk đã bị vô hiệu hóa"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Để cho phép thiết bị của bạn cập nhật, một số mô-đun Magisk đã bị tắt. Chúng có thể được bật lại sau khi thiết bị cập nhật xong."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
+    <string name="zest_addon_management_subtitle_multiple">"Đã cài đặt addon %1$d"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Bạn có chắc chắn muốn gỡ cài đặt %1$s không?"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"Tỉ lệ khung hình"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Chào mừng đến với Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ cho phép Fresh trở nên mạnh mẽ hơn với các tính năng bổ sung và hơn thế nữa. Tuy nhiên, điều này đòi hỏi Zest phải có toàn quyền truy cập vào hệ thống bằng Magisk.
+
+Dữ liệu của bạn là quan trọng. Tôi cam kết rằng không có dữ liệu nào sẽ bị truy cập và gửi đi.
+
+Bạn có muốn bật Zest + không?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Khởi động vào Recovery"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Bạn có muốn khởi động lại vào Chế độ khôi phục không?"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"Siêu tối"</string>
+    <string name="zest_extra_dim_setting_summary_main">"Làm tối màn hình vượt quá cài đặt độ sáng tối thiểu."</string>
+    <string name="zest_extra_dim_setting_summary">"Giảm độ sáng màn hình vượt quá cài đặt độ sáng tối thiểu để xem thoải mái hơn.
+
+Việc bật chế độ Siêu tối có thể làm hỏng một số ứng dụng, dẫn đến màn hình đen. Đây là vấn đề chỉ OEM mới có thể khắc phục."</string>
+    <string name="zest_extra_dim_setting_intensity">"Cường độ"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"Tắt sau khi khởi động lại"</string>
+    <string name="zest_volte_icon_title">"Kiểu biểu tượng VoLTE"</string>
+    <string name="zest_volte_icon_telcel">"Telcel"</string>
+    <string name="zest_volte_icon_dcm">"Docomo"</string>
+    <string name="zest_volte_icon_telenor">"Telenor"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"U.S. Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verizon"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_data_connection_icon_next_outline">"5G Viền"</string>
+    <string name="zest_data_connection_icon_next_alt">"5G Khác"</string>
+    <string name="zest_data_connection_icon_next_att">"5G AT&amp;T"</string>
+    <string name="zest_performance_setting_option_default">"Cân bằng"</string>
+    <string name="zest_performance_setting_option_gaming">"Chơi game"</string>
+    <string name="zest_performance_setting_option_multitasking">"Đa nhiệm"</string>
+    <string name="zest_performance_mode_title">"Chế độ hiệu năng"</string>
+    <string name="zest_performance_mode_summary">"Chọn chế độ hiệu năng phù hợp nhất với những gì bạn làm."</string>
+    <string name="zest_performance_setting_option_gaming_summary">"Tăng hiệu suất và tối ưu hóa quản lý bộ nhớ để nâng cao trải nghiệm chơi game."</string>
+    <string name="zest_performance_setting_option_default_summary">"Cân bằng giữa hiệu suất và thời lượng pin để có trải nghiệm phù hợp với mọi người."</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"Nâng cao hiệu suất và quản lý bộ nhớ để cho phép nhiều ứng dụng hơn chạy trong nền."</string>
+    <string name="zest_video_brightness_summary_normal">"Phát video bằng cài đặt độ sáng và màu màn hình thông thường của điện thoại."</string>
+    <string name="zest_video_brightness_summary_bright">"Tạm thời tăng độ sáng màn hình và làm cho màu sắc rực rỡ hơn khi bạn xem video."</string>
+    <string name="zest_video_brightness_setting_normal">"Bình thường"</string>
+    <string name="zest_video_brightness_setting_bright">"Sáng"</string>
+    <string name="zest_video_brightness_supported_apps_header">"Ứng dụng được hỗ trợ"</string>
+    <string name="zest_system_settings_plugin_summary_four">"Kiểu biểu tượng • Hiệu năng • Độ phân giải màn hình"</string>
+    <string name="zest_customization_reboot_required_title">"Khởi động lại?"</string>
+    <string name="zest_customization_reboot_required_description">"Để thay đổi kiểu biểu tượng đầy đủ, điện thoại của bạn cần khởi động lại."</string>
+    <string name="zest_customization_reboot_required_btn_ok">"Khởi động lại"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Để sau"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Bộ công cụ hiệu năng Fresh %s"</string>
+    <string name="zest_plus_fod_animation_style_title">"Kiểu hoạt ảnh vân tay"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"Áp dụng kiểu mới thất bại."</string>
+    <string name="zest_plus_location_indicators_title">"Sử dụng biểu tượng chỉ báo vị trí mới"</string>
+    <string name="zest_plus_location_indicators_summary">"Sử dụng chỉ báo vị trí trên thanh trạng thái mới được sử dụng bởi máy ảnh và micrô."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_fresh_updates_title">"Cập nhật Fresh"</string>
 </resources>

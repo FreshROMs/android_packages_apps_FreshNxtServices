@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Fresh System Services"</string>
+    <!-- Fuzzy -->
+    <string name="zest_relative_link_advanced">"Speciális beállítások"</string>
+    <string name="zest_relative_link_wallpaper">"Kezdő és zárolt képernyő háttér"</string>
+    <string name="zest_relative_link_themes">"Samsung Témák"</string>
+    <string name="zest_data_connection_icon_default">"Alap (4G)"</string>
+    <string name="zest_data_connection_icon_lte">"LTE"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Új (5G)"</string>
+    <string name="zest_wlan_connection_icon_default">"Alap"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"KT"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"A Zest névjegye"</string>
+    <string name="zest_setting_default_summary">"Ismeretlen"</string>
+    <string name="zest_setting_default_error">"Valmi hiba történt"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <string name="zest_system_settings_plugin_summary">"Testreszabás  •  Képernyőfelbontás"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"Képernyőfelbontás  •  Szoftverfrissítés"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"Adatkapcsolat ikon stílus"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"Wi-Fi jel ikon stílus"</string>
+    <!-- Software update settings -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Fresh verzió"</string>
+    <string name="fresh_ota_main_title">"Szoftverfrissítés"</string>
+    <string name="fresh_ota_check_for_updates_title">"Letöltés és telepítés"</string>
+    <string name="fresh_ota_check_for_updates_summary">"A mobilhálózaton keresztül történő letöltés további költséggel járhat. Ha lehetséges, Wi-Fi-hálózaton végezze a letöltést."</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Automatikus letöltés WiFi-n"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"A szoftverfrissítések automatikus letöltése, amikor az eszköz WiFi-hálózatra csatlakozik."</string>
+    <string name="fresh_ota_last_successful_update_title">"Legutolsó frissítés"</string>
+    <string name="fresh_ota_last_successful_update_summary">"Nincsen információ erről a frissítésről."</string>
+    <string name="fresh_ota_check_frequency_title">"Frissítés ellenőrzés gyakorisága"</string>
+    <string name="fresh_ota_check_frequency_60min">"Minden órában"</string>
+    <string name="fresh_ota_check_frequency_120min">"2 óránként"</string>
+    <string name="fresh_ota_check_frequency_180min">"3 óránként"</string>
+    <string name="fresh_ota_check_frequency_360min">"6 óránkért"</string>
+    <string name="fresh_ota_check_frequency_720min">"12 óránként"</string>
+    <string name="fresh_ota_check_frequency_1440min">"Naponta"</string>
+    <string name="fresh_ota_changelog_header_title">"Újdonságok"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Tudja meg mit tartalmaz ez a Fresh frissítés."</string>
+    <string name="fresh_ota_changelog_detail_version">"Verzió:"</string>
+    <string name="fresh_ota_changelog_detail_size">"Méret:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"Biztonsági javítás szintje"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s telepítésre kész"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"Frissítés letöltése…"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"Hátralévő idő:"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"Frissítse a telefonját és szerezzen be új funkciókat"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"A mobilhálózaton keresztül töténő letöltés további költséggel járhat. Ha lehetséges, Wi-Fi-hálózaton végezze a letöltést."</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"Bővítmények kezelése"</string>
+    <string name="zest_addon_management_subtitle_none">"Nincs bővítmény telepítve"</string>
+    <string name="zest_addon_management_subtitle_singular">"1 bővítmény telepítve"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d bővítmény telepítve"</string>
+    <string name="zest_addon_management_detail_uninstall">"Eltávolítás"</string>
+    <string name="zest_addon_management_detail_cancel">"Mégse"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Biztos benne, hogy eltávolítja a(z) %1$s bővítményt?"</string>
+    <string name="zest_addon_management_detail_size">"Méret"</string>
+    <string name="zest_addon_management_detail_version">"Verzió"</string>
+    <string name="zest_addon_management_detail_developer">"Fejlesztő"</string>
+    <string name="zest_addon_management_detail_last_updated">"Legújabb frissítés"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"Színtéma"</string>
+    <string name="zest_renoir_settings_summary">"Testreszabhatja a One UI témát a jelenlegi háttérképhez igazítva."</string>
+    <string name="zest_renoir_notification_channel_title">"Folyamatos értesítések"</string>
+    <string name="zest_renoir_notification_channel_description">"Ez az értesítési csatorna lehetővé teszi az alkalmazás számára, hogy a háttérben végrehajtsa a szükséges műveleteket."</string>
+    <string name="zest_renoir_notification_description">"Eszköz témájának megváltoztatása a háttérkép alapján..."</string>
+    <string name="zest_renoir_settings_unavailable">"A színegyeztető téma nem érhető el, mert harmadik féltől származó téma van alkalmazva."</string>
+    <string name="zest_renoir_settings_lock_screen">"Zárolt képernyő színeinek használata"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"A készülék témájának kiválasztásához használja a lezárási képernyő háttérképének színeit."</string>
+    <string name="zest_renoir_settings_custom_colors">"Egyedi színek használata"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"Használja a színválasztó színeit az eszköztémához."</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"Képernyőfelbontás"</string>
+    <string name="zest_screen_resolution_setting_summary">"A felbontás módosításakor egyes alkalmazások bezárulhatnak."</string>
+    <string name="zest_screen_resolution_setting_high_summary">"Legszebb látvány, legtöbb akkumulátorhasználat"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Javított látvány, kevesebb akkumulátorhasználat"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Csúnya látvány, kevés akkumulátorhasználat"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"Alkalmaz"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"Videó fényerő"</string>
+    <string name="zest_hdr_effect_setting_summary">"Javítsa videói képminőségét, hogy világosabb és élénkebb színeket élvezhessen."</string>
+    <string name="zest_hdr_effect_setting_available_apps">"Elérhető alkalmazások"</string>
+    <string name="zest_maverick_security_setting_title">"USB biztonság"</string>
+    <string name="zest_maverick_security_setting_summary">"Védje készülékét a rosszindulatú USB-eszközöktől."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"Védje eszközét a rosszindulatú USB-eszközöktől a hozzáférés blokkolásával, amíg az eszköz zárolva van."</string>
+    <string name="zest_maverick_security_setting_option_title">"Korlátozza az USB-eszközöket"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"Amíg a képernyő ki van kapcsolva"</string>
+    <string name="zest_maverick_security_setting_option_always">"Mindig"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"Továbbfejlesztett sötét mód"</string>
+    <string name="zest_darq_setting_summary">"Engedélyezze a sötét módot az összes alkalmazásnak."</string>
+    <string name="zest_darq_service_connecting">"Csatlakozás a szolgáltatáshoz…"</string>
+    <string name="zest_darq_service_sync_success">"A változtatások szinkronizálva a szolgáltatással"</string>
+    <string name="zest_darq_service_powered_by">"Powered by"</string>
+    <string name="zest_darq_service_detail_warning">"A továbbfejlesztett sötét mód engedélyezése egyes alkalmazásoknál elrendezési problémákat okozhat. Előfordulhat, hogy egyes alkalmazások nem támogatottak."</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Üdvözli Önt a Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"A Zest+ lehetővé teszi, hogy a Fresh további funkciókkal és még sok mással gazdagabb legyen. Ehhez azonban a Zestnek teljes hozzáféréssel kell rendelkeznie a rendszerhez a Magisk használatával.
+
+Az Ön adatai fontosak. Ígérjük, hogy semmilyen adathoz nem férünk hozzá, és azokat nem küldjük tovább, és hogy fontos adatai privátok maradnak.
+
+Szeretné engedélyezni a Zest+ szolgáltatást?"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"Akkumulátor védelem"</string>
+    <string name="zest_protect_battery_summary">"Az akkumulátor élettartamának meghosszabbítása érdekében korlátozza a maximális töltöttséget 85%-ra."</string>
+    <!-- Recovery reboot QS tile -->
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Újraindítás Recovery módban"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Biztosan újra szeretné indítani Recovery módban?"</string>
+    <string name="qs_dialog_ok">"OK"</string>
+    <string name="qs_dialog_cancel">"Mégse"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"Nyilt forráskódú licenszek"</string>
+    <string name="zest_about_page_source_code">"Forráskód"</string>
+    <string name="zest_about_page_translations">"Lokalizálás"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Fresh System Services"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Háttérkép és stílus"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Új (5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"Hat"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"Hat fejlettebb"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"A Zest névjegye"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Fresh verziója"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"Tudja meg mit tartalmaz ez a Fresh frissítés."</string>
+    <string name="fresh_ota_changelog_app_header">"Alkalmazás frissítési információ"</string>
+    <string name="fresh_ota_changelog_app_subheader">"Ezek az alkalmazások frissítve lesznek a legújabb verzióra a rendszerfrissítés után."</string>
+    <string name="fresh_ota_changelog_detail_header">"Szoftverfrissítés információi"</string>
+    <string name="fresh_ota_changelog_btn_download">"Letöltés"</string>
+    <string name="fresh_ota_changelog_btn_pause">"Szünet"</string>
+    <string name="fresh_ota_changelog_btn_resume">"Folytatás"</string>
+    <string name="fresh_ota_changelog_btn_install">"Telepítés"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"Mégse"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"Telepítés később"</string>
+    <string name="fresh_ota_checking_for_updates">"Frissítések keresése folyamatban..."</string>
+    <string name="fresh_ota_verifying_update">"Frissítés ellenőrzése"</string>
+    <string name="fresh_permissions_storage_title">"Tárhely hozzáférés nincs megadva"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"A Fresh System Services tárhelyengedélyeket igényel a szoftver- és alkalmazásfrissítések fogadásához."</string>
+    <string name="fresh_permissions_fp_storage_description">"A Fresh System Services tárhelyengedélyeket igényel az ujjlenyomat-animáció testreszabásához."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s készen áll a telepítésre"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"A frissítés közben nem fogja tudni használni a telefonját, még segélyhívásra sem."</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"Várakozás hálozatra"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"Letöltés függőben"</string>
+    <string name="fresh_ota_notification_download_cancelled">"Letöltés elhalasztva"</string>
+    <string name="fresh_ota_notification_update_cancelled">"Frissítés elhalasztva"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"Hátralévő idő"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Az eszköz naprakész"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"Legutolsó sikeres frissítés"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s a %2&amp;s nál"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"Egy ismeretlen hiba történt. Próbáld újra később."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"Hálózat nem elérhető. Próbáld újra később."</string>
+    <string name="fresh_ota_notification_group_name">"Rendszerfrissítések"</string>
+    <string name="fresh_ota_notification_channel_name">"Hardver frissítések"</string>
+    <string name="fresh_ota_notification_channel_description">"Ez az értesítési csatorna lehetővé teszi az alkalmazás számára, hogy a háttérben végrehajtsa a szükséges műveleteket."</string>
+    <string name="fresh_app_notification_channel_name">"Alkalmazás frissítések"</string>
+    <string name="fresh_app_notification_channel_description">"Ez az értesítési csatorna arra szolgál, hogy értesítse Önt a rendszeralkalmazás-frissítésekről."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"Folyamatos értestések"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"Ez az értesítési csatorna a folyamatos frissítésekhez és értesítésekhez használatos."</string>
+    <string name="fresh_ota_notification_update_install_title">"A szoftverfrissítész készen áll a telepítésre"</string>
+    <string name="fresh_ota_notification_update_available_title">"Szoftverfrissítés érhető el"</string>
+    <string name="fresh_ota_notification_update_available_description">"A Fresh új verziója elérhető az Ön eszközére"</string>
+    <string name="fresh_ota_notification_verification_failed_description">"Szoftverfrissítés hitelesítése sikertelen volt. Próbálja újra később."</string>
+    <string name="fresh_ota_notification_download_failed_title">"A szoftver letöltése sikertelen"</string>
+    <string name="fresh_ota_notification_update_failed_title">"A szoftver frissítése sikertelen"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"A Fresh %1$s telepítése sikertelen volt. Próbálja meg letölteni a frissítést közvetlenül vagy kérjen segítséget."</string>
+    <string name="fresh_ota_notification_update_success_title">"A készülék frissítve lett"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"A Fresh %1$s sikeresn telepítve lett. Élvezze a friss készülékét!"</string>
+    <string name="fresh_ota_download_block_dialog_title">"Mobiladat-használat figyelmeztetés"</string>
+    <string name="fresh_ota_download_block_dialog_description">"A mobilhálózaton keresztül történő letöltés további költséggel járhat. Ha lehetséges, Wi-Fi-hálózaton végezze a letöltést.
+
+Folytatja a frissítés letöltését?"</string>
+    <string name="fresh_ota_download_block_dialog_download">"Folytatás"</string>
+    <string name="fresh_ota_download_block_dialog_later">"Letöltés később"</string>
+    <string name="fresh_ota_install_dialog_description">"Ez a frissítés nem érinti személyes adatait, de minden esetben érdemes biztonsági másolatot készíteni adatairól.
+
+Folytatja a frissítés telepítését?"</string>
+    <string name="fresh_ota_install_dialog_continue">"Telepítés most"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"A frissítés automatikusan telepítva lesz ekkor:  %1$s , %2$s"</string>
+    <string name="fresh_ota_network_lost_dialog_description">"Az internetkapcsolat megszakadt mielőtt a letöltés befejeződött volna. A letöltés folytatódik amint helyreáll az internetkapcsolat."</string>
+    <string name="fresh_ota_toast_failed_download_generic">"Nem lehet frissíteni a szoftvert. Hálózati vagy szerverhiba történt. Próbálja újra később."</string>
+    <string name="fresh_ota_toast_failed_download_network">"Hálózati hiba történt. Próbálja újra később."</string>
+    <string name="fresh_ota_toast_failed_download_server">"Szerverhiba történt. Próbálja újra később."</string>
+    <string name="fresh_ota_toast_failed_no_space">"A frissítés telepítéséhez több szabad tárhelyre van szüksége a telefon belső tárhelyén. Alkalmazások eltávolításával vagy fájlok törlésével szabadítson fel helyet, majd próbálkozzon újra."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Néhány Magisk modul le van tiltva"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Az eszköz frissítésének lehetővé tétele érdekében néhány Magisk modul le van tiltva. Ezek az eszköz frissítésének befejezése után újra engedélyezhetők."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d bővítmény telepítve"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Bíztos benne hogy telepíteni kívánja a(z) %1$d -t?"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"Képarány"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Üdvözli Önt a Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"A Zest+ lehetővé teszi, hogy a Fresh további funkciókkal és még sok mással gazdagabb legyen. Ehhez azonban a Zestnek teljes hozzáféréssel kell rendelkeznie a rendszerhez a Magisk használatával.
+
+Az Ön adatai fontosak. Ígérjük, hogy semmilyen adathoz nem férünk hozzá, és azokat nem küldjük tovább, és hogy fontos adatai privátok maradnak.
+
+Szeretné engedélyezni a Zest+ szolgáltatást?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Újraindítás Recovery módban"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Biztosan újra szeretné indítani Recovery módban?"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"Extra elsötétítés"</string>
+    <string name="zest_extra_dim_setting_summary_main">"Sötétítse el a képernyőt a minimum fényerő beállítás alá."</string>
+    <string name="zest_extra_dim_setting_summary">"A kényelmesebb megtekintés érdekében sötétítse el a képernyőt a minimális fényerő beállítása falá.
+
+Az extra sötétítés engedélyezése egyes alkalmazások működését megsértheti, és fekete képernyőt eredményezhet. Ezt a problémát csak az OEM tudja megoldani."</string>
+    <string name="zest_extra_dim_setting_intensity">"Intenzitás"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"Kikapcsolás újraindítás után"</string>
+    <string name="zest_volte_icon_title">"Voice-over-LTE ikon stílus"</string>
+    <string name="zest_volte_icon_telcel">"Telcel"</string>
+    <string name="zest_volte_icon_dcm">"Docomo"</string>
+    <string name="zest_volte_icon_telenor">"Telenor"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"U.S. Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verzion"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_data_connection_icon_next_outline">"Next Outline"</string>
+    <string name="zest_data_connection_icon_next_alt">"Next Alt"</string>
+    <string name="zest_data_connection_icon_next_att">"Next AT&amp;T"</string>
+    <string name="zest_performance_setting_option_default">"kiegyensúlyozott"</string>
+    <string name="zest_performance_setting_option_gaming">"Játék"</string>
+    <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
+    <string name="zest_performance_mode_title">"Teljesítménymód"</string>
+    <string name="zest_performance_mode_summary">"Válassza ki azt a teljesítménymódot, amely a legjobban megfelel az Ön tevékenységének."</string>
+    <string name="zest_performance_setting_option_gaming_summary">"Növelje a teljesítményt és optimalizálja a memóriakezelést a játékélmény javítása érdekében."</string>
+    <string name="zest_performance_setting_option_default_summary">"Kiegyensúlyozza a teljesítményt és az akkumulátor élettartamát, hogy mindenki számára megfelelő élmény legyen."</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"Növelje a teljesítményt és a memóriakezelést, hogy több alkalmazás futhasson a háttérben."</string>
+    <string name="zest_video_brightness_summary_normal">"Játsszon le videókat telefonja normál képernyő-fényerő- és színbeállításaival."</string>
+    <string name="zest_video_brightness_summary_bright">"Ideiglenesen növelje a képernyő fényerejét, és tegye élénkebbé a színeket videók megtekintése közben."</string>
+    <string name="zest_video_brightness_setting_normal">"Normál"</string>
+    <string name="zest_video_brightness_setting_bright">"Fényes"</string>
+    <string name="zest_video_brightness_supported_apps_header">"Támogatott alkalmazások"</string>
+    <string name="zest_system_settings_plugin_summary_four">"Ikon stílus  •  Teljesítméní  •  Képernyőfelbontás"</string>
+    <string name="zest_customization_reboot_required_title">"Ujraindítja a telefont?"</string>
+    <string name="zest_customization_reboot_required_description">"Az ikonstílus-módosítások teljes körű alkalmazásához a telefont újra kell indítani."</string>
+    <string name="zest_customization_reboot_required_btn_ok">"Ujraindítás most"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Ujraindtás később"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Fresh Performance Kit %s"</string>
+    <string name="zest_plus_fod_animation_style_title">"Ujjlenyomat animáció stílus"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"Az új stílus alkalmazása sikertelen volt"</string>
+    <string name="zest_plus_location_indicators_title">"Használjon új helyjelzőt"</string>
+    <string name="zest_plus_location_indicators_summary">"Használja a kamera és a mikrofon által használt új állapotsor-helyjelzőt."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_fresh_updates_title">"Fresh frissítések"</string>
+</resources>

@@ -131,4 +131,172 @@ Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_about_page_open_source">"ఓపెన్ సోర్స్ లైసెన్స్‌లు"</string>
     <string name="zest_about_page_source_code">"సోర్స్ కోడ్"</string>
     <string name="zest_about_page_translations">"స్థానికీకరణ"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"ఫ్రెష్సి స్టమ్ సేవలు"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"వాల్‌పేపర్ మరియు శైలి"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"తదుపరి (5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"ఆరు"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"ఆరు అడ్వాన్స్డ్"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"జెస్ట్ గురించి"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"జెస్ట్"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"ఫ్రెష్  సంస్కరణ"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_ota_changelog_header_subtitle">"ఈ తాజా అప్‌డేట్‌లో ఏమి చేర్చబడిందో తెలుసుకోండి."</string>
+    <string name="fresh_ota_changelog_app_header">"యాప్ అప్‌డేట్ సమాచారం"</string>
+    <string name="fresh_ota_changelog_app_subheader">"సాఫ్ట్‌వేర్ అప్‌డేట్ తర్వాత దిగువన ఉన్న యాప్‌లు తాజా వెర్షన్‌కి అప్‌డేట్ చేయబడవచ్చు."</string>
+    <string name="fresh_ota_changelog_detail_header">"సాఫ్ట్‌వేర్ నవీకరణ సమాచారం"</string>
+    <string name="fresh_ota_changelog_btn_download">"డౌన్‌లోడ్"</string>
+    <string name="fresh_ota_changelog_btn_pause">"విరామం"</string>
+    <string name="fresh_ota_changelog_btn_resume">"పునఃప్రారంభం"</string>
+    <string name="fresh_ota_changelog_btn_install">"ఇన్‌స్టాల్"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"రద్దు చేయండి"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"తర్వాత ఇన్స్టాల్ చేయండి"</string>
+    <string name="fresh_ota_checking_for_updates">"అప్‌డేట్‌ల కోసం తనిఖీ చేస్తోంది…"</string>
+    <string name="fresh_ota_verifying_update">"నవీకరణను ధృవీకరిస్తోంది…"</string>
+    <string name="fresh_permissions_storage_title">"నిల్వ అనుమతి మంజూరు కాలేదు"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"సాఫ్ట్‌వేర్ మరియు యాప్ అప్‌డేట్‌లను స్వీకరించడానికి తాజా సిస్టమ్ సేవలకు నిల్వ అనుమతులు అవసరం."</string>
+    <string name="fresh_permissions_fp_storage_description">"ఫింగర్‌ప్రింట్ యానిమేషన్‌ను అనుకూలీకరించడానికి తాజా సిస్టమ్ సేవలకు నిల్వ అనుమతులు అవసరం."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable) -->
+    <string name="fresh_ota_changelog_appbar_install">"తాజా %1$s %2$s ఇన్‌స్టాల్ చేయడానికి సిద్ధంగా ఉంది"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"అప్‌డేట్ సమయంలో అత్యవసర కాల్‌ల కోసం కూడా మీరు మీ ఫోన్‌ని ఉపయోగించలేరు."</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"నెట్‌వర్క్ కోసం వేచి ఉంది"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"డౌన్‌లోడ్ పాజ్ చేయబడింది"</string>
+    <string name="fresh_ota_notification_download_cancelled">"డౌన్‌లోడ్ రద్దు చేయబడింది"</string>
+    <string name="fresh_ota_notification_update_cancelled">"నవీకరణ రద్దు చేయబడింది"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"మిగిలి వున్న సమయం:"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"మీ పరికరం తాజాగా ఉంది"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"చివరి విజయవంతమైన నవీకరణ"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%2$s వద్ద %1$s"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"తెలియని లోపం ఏర్పడింది. తరువాత మళ్ళీ ప్రయత్నించండి."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"నెట్‌వర్క్ అందుబాటులో లేదు. తరువాత మళ్ళీ ప్రయత్నించండి."</string>
+    <string name="fresh_ota_notification_group_name">"సాఫ్ట్‌వేర్ నవీకరణలు"</string>
+    <string name="fresh_ota_notification_channel_name">"ఫర్మ్‌వేర్ నవీకరణలు"</string>
+    <string name="fresh_ota_notification_channel_description">"ఈ నోటిఫికేషన్ ఛానెల్ మీ పరికరం కోసం అందుబాటులో ఉన్న ఫర్మ్‌వేర్ అప్‌డేట్‌ల గురించి మీకు తెలియజేయడానికి యాప్‌ని అనుమతిస్తుంది"</string>
+    <string name="fresh_app_notification_channel_name">"యాప్ అప్‌డేట్‌లు"</string>
+    <string name="fresh_app_notification_channel_description">"సిస్టమ్ యాప్ అప్‌డేట్‌ల గురించి మీకు తెలియజేయడానికి ఈ నోటిఫికేషన్ ఛానెల్ ఉపయోగించబడుతుంది."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"కొనసాగుతున్న నోటిఫికేషన్‌లు"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"ఈ నోటిఫికేషన్ ఛానెల్ కొనసాగుతున్న అప్‌డేట్‌లు మరియు నోటిఫికేషన్‌ల కోసం ఉపయోగించబడుతుంది."</string>
+    <string name="fresh_ota_notification_update_install_title">"సాఫ్ట్‌వేర్ అప్‌డేట్ ఇన్‌స్టాల్ చేయడానికి సిద్ధంగా ఉంది"</string>
+    <string name="fresh_ota_notification_update_available_title">"సాఫ్ట్‌వేర్ అప్‌డేట్ అందుబాటులో ఉంది"</string>
+    <string name="fresh_ota_notification_update_available_description">"మీ పరికరం కోసం తాజా వెర్షన్ అందుబాటులో ఉంది."</string>
+    <string name="fresh_ota_notification_verification_failed_description">"సాఫ్ట్‌వేర్ నవీకరణ ధృవీకరణ విఫలమైంది. తరువాత మళ్ళీ ప్రయత్నించండి."</string>
+    <string name="fresh_ota_notification_download_failed_title">"సాఫ్ట్‌వేర్‌ని డౌన్‌లోడ్ చేయడంలో విఫలమైంది"</string>
+    <string name="fresh_ota_notification_update_failed_title">"సాఫ్ట్‌వేర్‌ను అప్‌డేట్ చేయడంలో విఫలమైంది"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"తాజా %1$s యొక్క ఇన్‌స్టాలేషన్ విఫలమైంది. FreshROMs వెబ్‌సైట్ నుండి నేరుగా అప్‌డేట్‌లను డౌన్‌లోడ్ చేయడానికి ప్రయత్నించండి లేదా మద్దతు పొందండి."</string>
+    <string name="fresh_ota_notification_update_success_title">"మీ పరికరం నవీకరించబడింది"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"తాజా %1$s విజయవంతంగా ఇన్‌స్టాల్ చేయబడింది. తాజా పరికరాన్ని ఆస్వాదించండి!"</string>
+    <string name="fresh_ota_download_block_dialog_title">"మొబైల్ డేటా హెచ్చరిక"</string>
+    <string name="fresh_ota_download_block_dialog_description">"మొబైల్ నెట్‌వర్క్ ద్వారా డౌన్‌లోడ్ చేయడం వలన అదనపు ఛార్జీలు విధించబడవచ్చు. వీలైతే, Wi-Fi నెట్‌వర్క్ ద్వారా డౌన్‌లోడ్ చేసుకోండి."</string>
+    <string name="fresh_ota_download_block_dialog_download">"కొనసాగించు"</string>
+    <string name="fresh_ota_download_block_dialog_later">"తర్వాత డౌన్‌లోడ్ చేసుకోండి"</string>
+    <string name="fresh_ota_install_dialog_description">"ఈ అప్‌డేట్ మీ వ్యక్తిగత డేటాను ప్రభావితం చేయకూడదు, అయితే మీ డేటాను బ్యాకప్ చేయడం ఎల్లప్పుడూ మంచిది."</string>
+    <string name="fresh_ota_install_dialog_continue">"ఇప్పుడే ఇన్‌స్టాల్ చేయండి"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"%2$sలో %1$s వద్ద అప్‌డేట్ స్వయంచాలకంగా ఇన్‌స్టాల్ చేయబడుతుంది."</string>
+    <string name="fresh_ota_network_lost_dialog_description">"డౌన్‌లోడ్ పూర్తయ్యేలోపు మీ ఫోన్ నెట్‌వర్క్ నుండి డిస్‌కనెక్ట్ చేయబడింది. మీ ఫోన్ నెట్‌వర్క్‌కి మళ్లీ కనెక్ట్ అయినప్పుడు డౌన్‌లోడ్ కొనసాగుతుంది."</string>
+    <string name="fresh_ota_toast_failed_download_generic">"సాఫ్ట్‌వేర్‌ను అప్‌డేట్ చేయడం సాధ్యపడలేదు. నెట్‌వర్క్ లేదా సర్వర్ లోపం సంభవించింది. తరువాత మళ్ళీ ప్రయత్నించండి."</string>
+    <string name="fresh_ota_toast_failed_download_network">"నెట్‌వర్క్ లోపం సంభవించింది. తరువాత మళ్ళీ ప్రయత్నించండి."</string>
+    <string name="fresh_ota_toast_failed_download_server">"సర్వర్ లోపం సంభవించింది. తరువాత మళ్ళీ ప్రయత్నించండి."</string>
+    <string name="fresh_ota_toast_failed_no_space">"ఈ అప్‌డేట్‌ను ఇన్‌స్టాల్ చేయడానికి, మీ ఫోన్ అంతర్గత నిల్వలో మీకు మరింత ఖాళీ స్థలం అవసరం. యాప్‌లను అన్‌ఇన్‌స్టాల్ చేయడం లేదా ఫైల్‌లను తొలగించడం ద్వారా కొంత స్థలాన్ని ఖాళీ చేయండి, ఆపై మళ్లీ ప్రయత్నించండి."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"కొన్ని మ్యాజిస్క్ మాడ్యూల్స్ నిలిపివేయబడ్డాయి"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"మీ పరికరాన్ని అప్‌డేట్ చేయడానికి అనుమతించడానికి, కొన్ని మ్యాజిస్క్ మాడ్యూల్స్ డిజేబుల్ చేయబడ్డాయి. పరికరం అప్‌డేట్ చేయడం పూర్తయిన తర్వాత వీటిని మళ్లీ ప్రారంభించవచ్చు."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <!-- Please keep %1$d present and intact. This is used as placeholder for number of addons installed (i.e. 2 addons installed). -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d యాడ్ఆన్‌లు ఇన్‌స్టాల్ చేయబడ్డాయి"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <!-- Please keep %1$s present and intact. This is used as placeholder for addon names (i.e. Are you sure you want to uninstall Bixby?). -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"మీరు ఖచ్చితంగా %1$sని అన్‌ఇన్‌స్టాల్ చేయాలనుకుంటున్నారా?"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"కారక నిష్పత్తి"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"జెస్ట్+కి స్వాగతం!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"జెస్ట్+ అదనపు ఫీచర్లు మరియు మరిన్నింటితో మరింత శక్తివంతంగా ఉండటానికి ఫ్రెష్‌ని అనుమతిస్తుంది. అయితే, దీనికి జెస్ట్ మాజిస్క్ని ఉపయోగించి సిస్టమ్‌కు పూర్తి ప్రాప్యతను కలిగి ఉండాలి. మీ డేటా ముఖ్యం.
+
+ డేటా ఏదీ యాక్సెస్ చేయబడదని మరియు పంపబడదని మరియు మీ ముఖ్యమైన డేటా ప్రైవేట్‌గా ఉంటుందని నేను వాగ్దానం చేస్తున్నాను.
+
+ మీరు జెస్ట్+ ని ప్రారంభించాలనుకుంటున్నారా?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"రికవరీకి రీబూట్ చేయండి"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"మీరు రికవరీ మోడ్‌కి రీబూట్ చేయాలనుకుంటున్నారా?"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"అదనపు మసక"</string>
+    <string name="zest_extra_dim_setting_summary_main">"కనీస ప్రకాశం సెట్టింగ్‌కు మించి స్క్రీన్‌ను మసకబారండి."</string>
+    <string name="zest_extra_dim_setting_summary">"మరింత సౌకర్యవంతమైన వీక్షణ కోసం స్క్రీన్‌ను కనీస ప్రకాశం సెట్టింగ్‌కు మించి డిమ్ చేయండి. అదనపు డిమ్‌ని ప్రారంభించడం వలన కొన్ని యాప్‌లు విరిగిపోవచ్చు, ఫలితంగా బ్లాక్ స్క్రీన్ వస్తుంది. ఇది ఒఈ ఎం మాత్రమే పరిష్కరించగల సమస్య."</string>
+    <string name="zest_extra_dim_setting_intensity">"తీవ్రత"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"పునఃప్రారంభించిన తర్వాత ఆఫ్ చేయండి"</string>
+    <string name="zest_volte_icon_title">"వాయిస్ ఓవర్ ఎల్టిఈ చిహ్నం శైలి"</string>
+    <string name="zest_volte_icon_telcel">"టెల్సెల్"</string>
+    <string name="zest_volte_icon_dcm">"డొకొమొ"</string>
+    <string name="zest_volte_icon_telenor">"టెలెనార్"</string>
+    <string name="zest_volte_icon_voz">"వోజ్"</string>
+    <string name="zest_data_connection_icon_usc">"యు.యస్.సెల్యులార్"</string>
+    <string name="zest_data_connection_icon_att">"ఎటి అన్డ్ టి"</string>
+    <string name="zest_data_connection_icon_vzw">"వెరిజోన్"</string>
+    <string name="zest_data_connection_icon_tmo">"టి-మొబైల్"</string>
+    <string name="zest_data_connection_icon_next_outline">"నెక్స్ట్ రూపురేఖలు"</string>
+    <string name="zest_data_connection_icon_next_alt">"నెక్స్ట్ ఆల్ట్"</string>
+    <string name="zest_data_connection_icon_next_att">"నెక్స్ట్  ఎటి అండ్ టి"</string>
+    <string name="zest_performance_setting_option_default">"సమతుల్య"</string>
+    <string name="zest_performance_setting_option_gaming">"గేమింగ్"</string>
+    <string name="zest_performance_setting_option_multitasking">"బహువిధి"</string>
+    <string name="zest_performance_mode_title">"పనితీరు మోడ్"</string>
+    <string name="zest_performance_mode_summary">"మీరు చేసే పనికి ఉత్తమంగా పనిచేసే పనితీరు మోడ్‌ను ఎంచుకోండి."</string>
+    <string name="zest_performance_setting_option_gaming_summary">"గేమింగ్ అనుభవాన్ని మెరుగుపరచడానికి పనితీరును పెంచండి మరియు మెమరీ నిర్వహణను ఆప్టిమైజ్ చేయండి."</string>
+    <string name="zest_performance_setting_option_default_summary">"ప్రతి ఒక్కరికీ పని చేసే అనుభవం కోసం పనితీరు మరియు బ్యాటరీ జీవితాన్ని బ్యాలెన్స్ చేస్తుంది."</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"బ్యాక్‌గ్రౌండ్‌లో మరిన్ని యాప్‌లను రన్ చేయడానికి అనుమతించడానికి పనితీరు మరియు మెమరీ నిర్వహణను మెరుగుపరచండి."</string>
+    <string name="zest_video_brightness_summary_normal">"మీ ఫోన్ యొక్క సాధారణ స్క్రీన్ ప్రకాశం మరియు రంగు సెట్టింగ్‌లను ఉపయోగించి వీడియోలను ప్లే చేయండి."</string>
+    <string name="zest_video_brightness_summary_bright">"మీరు వీడియోలను చూసేటప్పుడు తాత్కాలికంగా స్క్రీన్ బ్రైట్‌నెస్‌ని పెంచండి మరియు రంగులను మరింత ప్రకాశవంతంగా మార్చండి."</string>
+    <string name="zest_video_brightness_setting_normal">"సాధారణ"</string>
+    <string name="zest_video_brightness_setting_bright">"ప్రకాశం"</string>
+    <string name="zest_video_brightness_supported_apps_header">"మద్దతు ఉన్న యాప్‌లు"</string>
+    <string name="zest_system_settings_plugin_summary_four">"చిహ్నం శైలి • పనితీరు • స్క్రీన్ రిజల్యూషన్"</string>
+    <string name="zest_customization_reboot_required_title">"ఫోన్‌ని రీస్టార్ట్ చేయాలా?"</string>
+    <string name="zest_customization_reboot_required_description">"చిహ్న శైలి మార్పులను పూర్తిగా వర్తింపజేయడానికి, మీ ఫోన్ రీస్టార్ట్ చేయాలి."</string>
+    <string name="zest_customization_reboot_required_btn_ok">"ఇప్పుడే పునఃప్రారంభించండి"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"తర్వాత పునఃప్రారంభించండి"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"తాజా అనుభవ ఫ్రేమ్‌వర్క్ %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"తాజా పనితీరు కిట్ %s"</string>
+    <string name="zest_plus_fod_animation_style_title">"వేలిముద్ర యానిమేషన్ శైలి"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"కొత్త శైలిని వర్తింపజేయడంలో విఫలమైంది."</string>
+    <string name="zest_plus_location_indicators_title">"కొత్త స్థాన సూచికను ఉపయోగించండి"</string>
+    <string name="zest_plus_location_indicators_summary">"కెమెరా మరియు మైక్రోఫోన్ ఉపయోగించే కొత్త స్టేటస్ బార్ లొకేషన్ ఇండికేటర్‌ని ఉపయోగించండి."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_fresh_updates_title">"ఫ్రెష్ నవీకరణలు"</string>
 </resources>
