@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"阿尔卑斯"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"极光"</string>
+    <string name="zest_fod_animation_bloom">"高光"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"赛博朋克"</string>
+    <string name="zest_fod_animation_default">"默认"</string>
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <string name="zest_fod_animation_electronic">"电子"</string>
+    <string name="zest_fod_animation_energy">"活力"</string>
+    <string name="zest_fod_animation_futuristic">"未来"</string>
+    <string name="zest_fod_animation_halo_ring">"光环"</string>
+    <string name="zest_fod_animation_magic">"魔法"</string>
+    <string name="zest_fod_animation_mclaren">"迈凯轮"</string>
+    <string name="zest_fod_animation_molecular">"分子"</string>
+    <string name="zest_fod_animation_pop">"流行"</string>
+    <string name="zest_fod_animation_pulsar">"脉冲"</string>
+    <string name="zest_fod_animation_pulse">"心跳"</string>
+    <string name="zest_fod_animation_rhythm">"旋律"</string>
+    <string name="zest_fod_animation_ripple">"波纹"</string>
+    <string name="zest_fod_animation_star">"星星"</string>
+    <string name="zest_fod_animation_stripe">"条纹"</string>
+    <string name="zest_fod_animation_supernova">"超新星"</string>
+    <string name="zest_fod_animation_water">"水滴"</string>
+    <string name="zest_fod_animation_wave">"波浪"</string>
+</resources>

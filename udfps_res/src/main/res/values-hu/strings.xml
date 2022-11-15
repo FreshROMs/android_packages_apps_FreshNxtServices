@@ -4,8 +4,7 @@
     <string name="zest_fod_animation_alpenglow">"Alpesi fény"</string>
     <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
     <string name="zest_fod_animation_aurora">"Hajnalfény"</string>
-    <string name="zest_fod_animation_bloom">"Virág
-"</string>
+    <string name="zest_fod_animation_bloom">"Virág"</string>
     <!-- I don't think there is a Hungarian word for it -->
     <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
     <string name="zest_fod_animation_cyberpunk">"Cyberpunk"</string>

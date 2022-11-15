@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_alpenglow">"ඇල්පෙන්ග්ලෝ"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_aurora">"අරොරා"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_bloom">"බ්ලූම්"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_cyberpunk">"සයිබර්පන්ක්"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_default">"සම්මත"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_electronic">"ඉලෙක්ට්රොනික්"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_energy">"ජවසම්පන්න"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_futuristic">"අනාගතවාදී"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_halo_ring">"Halo Ring"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_magic">"මායා"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_mclaren">"මැක්ලරන්"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_molecular">"අනුක"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_pop">"පොප්"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_pulsar">"පල්සර්"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_pulse">"ස්පන්දන"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_rhythm">"රිත්ම"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_ripple">"Ripple"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_star">"තරු"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_stripe">"ඉරි"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_supernova">"සුපර්නොවා"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_water">"වතුර"</string>
+    <!-- Fuzzy -->
+    <string name="zest_fod_animation_wave">"රැල්ල"</string>
+</resources>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
-    <string name="zest_fod_animation_alpenglow">"Alpenglühen"</string>
+    <string name="zest_fod_animation_alpenglow">"Alpenglühen
+"</string>
     <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
     <string name="zest_fod_animation_aurora">"Aurora"</string>
     <string name="zest_fod_animation_bloom">"Blühen"</string>
