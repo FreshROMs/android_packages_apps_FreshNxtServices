@@ -2,19 +2,34 @@
 <de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Arabic">
         <Preference android:title="BasharSYR"/>
+        <Preference android:title="Sajith"/>
+        <Preference android:title="Youssef Mansour"/>
+        <Preference android:title="Ziad"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Arabic (LB)">
-        <Preference android:title="Gary"/>
+        <Preference android:title="Garry"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Arabic (SY)">
+        <Preference android:title="Garry"/>
         <Preference android:title="Louay Mohamad"/>
-        <Preference android:title="Gary"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Azerbaijani">
+        <Preference android:title="İbrahi̇m Hali̇l Gündüz"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Bengali">
+        <Preference android:title="Shahria Iltimas"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Chinese (Simplified)">
         <Preference android:title="Songyuan Wei"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dutch">
+        <Preference android:title="Alain Deroy"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Filipino">
@@ -22,39 +37,82 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Finnish">
+        <Preference android:title="Roope"/>
         <Preference android:title="Songyuan Wei"/>
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="French">
+        <Preference android:title="Aaron210987"/>
+        <Preference android:title="Hooklans"/>
+        <Preference android:title="LeSteakDeBoeuf"/>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="German">
-        <Preference android:title="Lucy"/>
+        <Preference android:title="Ali"/>
+        <Preference android:title="Lijukay"/>
+        <Preference android:title="Luporion"/>
+        <Preference android:title="The Boringkid"/>
         <Preference android:title="Yanndroid"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Hindi">
+        <Preference android:title="Ashish"/>
+        <Preference android:title="Jones Prosé"/>
         <Preference android:title="Sharath Mane"/>
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="Hungarian">
+        <Preference android:title="Ákos Pető"/>
+        <Preference android:title="Koncz Ferdinánd"/>
+    </PreferenceCategory>
+
     <PreferenceCategory android:title="Indonesian">
+        <Preference android:title="Anan Lazuardy Kalimasada"/>
+        <Preference android:title="imrosyd"/>
+        <Preference android:title="Randy Dimas"/>
         <Preference android:title="repinger"/>
+        <Preference android:title="santoso21k"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Italian">
+        <Preference android:title="Ali"/>
+        <Preference android:title="BlackMesa123"/>
+        <Preference android:title="sgond"/>
+        <Preference android:title="명"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Javanese">
         <Preference android:title="imrosyd"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Javanese">=
-        <Preference android:title="imrosyd"/>
+    <PreferenceCategory android:title="Korean">
+        <Preference android:title="명"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Mayalayam">
+        <Preference android:title="Amalonium"/>
+        <Preference android:title="Vivek"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Persian">
-        <Preference android:title="Navid"/>
         <Preference android:title="Mohuva"/>
+        <Preference android:title="Navid"/>
+        <Preference android:title="رضا بهرام نژاد"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Polish">
+        <Preference android:title="hexa"/>
         <Preference android:title="Smuger"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Portuguese (BR)">
+    <PreferenceCategory android:title="Portuguese">
+        <Preference android:title="Power Punch"/>
         <Preference android:title="Wellington Silva"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Portuguese (BR)">
         <Preference android:title="Alexsander Gouveia"/>
+        <Preference android:title="Wellington Silva"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Romanian">
@@ -63,7 +121,21 @@
 
     <PreferenceCategory android:title="Russian">
         <Preference android:title="Denis"/>
+        <Preference android:title="Lux Darkus"/>
         <Preference android:title="Muzaffar"/>
+        <Preference android:title="redoverflow"/>
+        <Preference android:title="Reidin"/>
+        <Preference android:title="trigger337"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Sinhalese">
+        <Preference android:title="Sajith"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Spanish">
+        <Preference android:title="Andry Candelario"/>
+        <Preference android:title="Nashin"/>
+        <Preference android:title="Rui"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Telugu">
@@ -71,15 +143,25 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Turkish">
+        <Preference android:title="Alper"/>
+        <Preference android:title="Eray"/>
+        <Preference android:title="Eray"/>
+        <Preference android:title="Emre Yavuz"/>
+        <Preference android:title="İbrahi̇m Hali̇l Gündüz"/>
+        <Preference android:title="Mert"/>
+        <Preference android:title="Sacrosanct"/>
         <Preference android:title="turancen"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Ukrainian">
+        <Preference android:title="Lux Darkus"/>
         <Preference android:title="Олександр"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Vietnamese">
         <Preference android:title="Đức Anh Mai"/>
+        <Preference android:title="Hạo"/>
+        <Preference android:title="Khánh"/>
     </PreferenceCategory>
 
     <PreferenceCategory
