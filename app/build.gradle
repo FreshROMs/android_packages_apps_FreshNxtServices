@@ -12,7 +12,7 @@ android {
         //noinspection ExpiredTargetSdkVersion
         targetSdk 28
         versionCode 22081901
-        versionName "4.2.0.1"
+        versionName "4.3.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
