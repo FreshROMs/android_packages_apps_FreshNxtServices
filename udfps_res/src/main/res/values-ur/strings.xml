@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"الپینگلو"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"ارورہ"</string>
+    <string name="zest_fod_animation_bloom">"کھلنا"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"سائبرپنک"</string>
+    <string name="zest_fod_animation_default">"طے شدہ"</string>
+    <string name="zest_fod_animation_dna">"دی ان ای"</string>
+    <string name="zest_fod_animation_electronic">"الکترونیک"</string>
+    <string name="zest_fod_animation_energy">"ا"</string>
+</resources>
