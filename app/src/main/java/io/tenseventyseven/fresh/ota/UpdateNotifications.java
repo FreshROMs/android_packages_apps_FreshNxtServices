@@ -85,7 +85,7 @@ public class UpdateNotifications {
 
     public static void showNewUpdateNotification(Context context) {
         NotificationManager notificationManager = Notifications.getNotificationManager(context);
-        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, UpdateAvailableActivity.class);
+        NotificationCompat.Builder builder = Notifications.getNotificationBuilder(context, NOTIFICATION_CHANNEL_ID, UpdateCheckActivity.class);
 
         String notificationTitle = context.getString(R.string.fresh_ota_notification_update_available_title);
         String notificationContent = context.getString(R.string.fresh_ota_notification_update_available_description);

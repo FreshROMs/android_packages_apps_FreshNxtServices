@@ -222,7 +222,9 @@ public class UpdateCheckActivity extends AppCompatActivity {
                 return;
             }
 
-            if (CurrentSoftwareUpdate.getOtaState(context) == SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED) {
+            int currentState = CurrentSoftwareUpdate.getOtaState(context);
+
+            if (currentState == SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADED) {
                 UpdateNotifications.showPreUpdateNotification(context);
                 UpdateCheckJobService.setupCheckJob(context);
 
@@ -235,8 +237,11 @@ public class UpdateCheckActivity extends AppCompatActivity {
                 return;
             }
 
-            if (UpdateCheck.getUpdateAvailability(context)) {
-                UpdateNotifications.showNewUpdateNotification(context);
+            // Show update dialog if update is currently being downloaded
+            if (UpdateCheck.getUpdateAvailability(context) && currentState != SoftwareUpdate.OTA_INSTALL_STATE_NOT_STARTED) {
+                if (currentState != SoftwareUpdate.OTA_INSTALL_STATE_DOWNLOADING)
+                    UpdateNotifications.showNewUpdateNotification(context);
+
                 UpdateCheckJobService.setupCheckJob(context);
 
                 handler.post(() -> {
