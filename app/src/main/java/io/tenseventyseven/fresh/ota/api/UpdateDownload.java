@@ -78,6 +78,10 @@ public class UpdateDownload {
     public static void downloadUpdate(Context context, Func<Request> success, Func<Error> error) {
         SoftwareUpdate update = CurrentSoftwareUpdate.getSoftwareUpdate(context);
         Fetch fetch = getFetchInstance(context);
+
+        // Delete all past instances to avoid re-downloading old, failed or pending downloads.
+        fetch.deleteAll();
+
         UpdateUtils.deleteUpdatePackageFile();
         final Request request = new Request(update.getFileUrl(), UpdateUtils.getUpdatePackageFile().getPath());
 

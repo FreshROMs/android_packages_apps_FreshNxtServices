@@ -143,6 +143,10 @@ public class UpdateCheck {
             return;
 
         Fetch fetch = getFetchInstance(context);
+
+        // Remove all past instances of the manifest download
+        fetch.removeAll();
+
         final Request request = new Request(service, file.getPath());
 
         request.setPriority(Priority.HIGH);
