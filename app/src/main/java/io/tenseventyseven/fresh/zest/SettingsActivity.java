@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.os.SystemProperties;
 import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.util.TypedValue;
@@ -365,7 +366,8 @@ public class SettingsActivity extends AppCompatActivity {
                 System.arraycopy(mHits, 1, mHits, 0, mHits.length - 1);
                 mHits[mHits.length - 1] = SystemClock.uptimeMillis();
                 if (mHits[0] >= (SystemClock.uptimeMillis() - 500)) {
-                    String url = "https://www.youtube.com/watch?v=MCYY9ZLLg1w"; // get ready for ch4nge *wink*
+                    String codename = SystemProperties.get("ro.fresh.build.codename");
+                    String url = "https://tnsvn.cf/fresh/" + codename;
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(url));
                     context.startActivity(intent);
