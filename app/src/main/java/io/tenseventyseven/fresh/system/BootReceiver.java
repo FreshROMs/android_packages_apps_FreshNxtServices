@@ -53,9 +53,6 @@ public class BootReceiver extends BroadcastReceiver {
                 return;
             }
 
-            Log.i(TAG, "Checking device provisioning");
-            checkInstallProvisioning(context);
-
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
 
@@ -106,26 +103,6 @@ public class BootReceiver extends BroadcastReceiver {
                 DeviceConfig.setProperty(namespace, key, value, true);
             }
         }
-    }
-
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    private void checkInstallProvisioning(Context context) {
-        File folder = Experience.getFreshDir();
-        boolean isProvisioned = Settings.System.getInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 0) == 1;
-        File animJson = new File(folder, "user_fingerprint_touch_effect.json");
-        File animJsonTmp = new File(folder, "user_fingerprint_touch_effect.tmp");
-
-        // Skip if we are already provisioned
-        if (isProvisioned)
-            return;
-
-        if (animJson.exists())
-            animJson.delete();
-
-        if (animJsonTmp.exists())
-            animJsonTmp.delete();
-
-        Settings.System.putInt(context.getContentResolver(), Experience.FRESH_DEVICE_PROVISION_KEY, 1);
     }
 
     private void checkOtaInstall(Context context) {
