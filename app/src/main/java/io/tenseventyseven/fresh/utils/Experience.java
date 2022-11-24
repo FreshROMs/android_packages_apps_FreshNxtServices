@@ -156,21 +156,17 @@ public class Experience {
         String romPropBranch = SystemProperties.get("ro.fresh.build.branch");
         String romPropBuildDate = SystemProperties.get("ro.fresh.build.date");
 
-        String romVersionBranch = "";
-        String buildDate = SystemProperties.get("ro.system.build.date");
+        if (romPropVersion.isEmpty() || romPropBuild.isEmpty() || romPropBranch.isEmpty())
+            return "";
 
-        if (!romPropBuildDate.equals("")) {
-            buildDate = SystemProperties.get("ro.fresh.build.date");
-        }
+        String buildDate = !romPropBuildDate.equals("") ? romPropBuildDate : SystemProperties.get("ro.system.build.date");
+        String romVersion;
+        if (romPropBranch.equalsIgnoreCase("release"))
+            romVersion = String.format("%s (%s)", romPropVersion, romPropBuild);
+        else
+            romVersion = String.format("%s %s (%s)", romPropVersion, Tools.capitalizeString(romPropBranch), romPropBuild);
 
-        if (!romPropBranch.isEmpty()) {
-            romVersionBranch = romPropBranch.substring(0, 1).toUpperCase() +
-                    romPropBranch.substring(1).toLowerCase();
-        }
-
-        String romVersion = romPropVersion + " " + romVersionBranch + " " + "(" + romPropBuild + ")";
-
-        return romVersion + "\n" + buildDate;
+        return String.format("%s\n%s", romVersion, buildDate);
     }
 
     public static String getAppVersion(Context context) {

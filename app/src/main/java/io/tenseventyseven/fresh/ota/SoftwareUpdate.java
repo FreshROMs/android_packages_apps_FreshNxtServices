@@ -135,11 +135,17 @@ public class SoftwareUpdate {
     }
 
     public String getFormattedVersion() {
-        return String.format("%s %s", versionName, getFormattedReleaseType());
+        if (releaseType.equalsIgnoreCase("release"))
+            return String.format("%s", versionName);
+        else
+            return String.format("%s %s", versionName, getFormattedReleaseType());
     }
 
     public String getReleaseName() {
-        return String.format("%s %s %s", "Fresh", versionName, getFormattedReleaseType());
+        if (releaseType.equalsIgnoreCase("release"))
+            return String.format("%s %s", "Fresh", versionName);
+        else
+            return String.format("%s %s %s", "Fresh", versionName, getFormattedReleaseType());
     }
 
     @SuppressLint("SimpleDateFormat")
