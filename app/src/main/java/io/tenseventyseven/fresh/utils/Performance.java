@@ -17,6 +17,11 @@ public class Performance {
 
     private static boolean queryPerformanceModes(Context context) {
         Cursor cursor;
+        String customMode = Settings.System.getString(context.getContentResolver(), "zest_system_performance_mode"); // Custom mode set by Zest
+
+        if (customMode == null)
+            customMode = "Default";
+
         try {
             cursor = context.getContentResolver().query(perfContentProvider, null, null, null, null);
         } catch (Exception unused) {
@@ -32,10 +37,18 @@ public class Performance {
         }
 
         mPerformanceMode = cursor.getString(cursor.getColumnIndexOrThrow("CURRENT_MODE"));
+
         cursor.close();
         if (!cursor.isClosed()) {
             cursor.close();
         }
+
+        // If system and FreshServices disagree, prefer Zest's
+        if (!mPerformanceMode.equalsIgnoreCase(customMode)) {
+            mPerformanceMode = customMode;
+            setPerformanceMode(context, customMode);
+        }
+
         return true;
     }
 
@@ -64,6 +77,7 @@ public class Performance {
             values.put("MODE", str);
             context.getContentResolver().update(perfContentProvider, values, null, null);
             Settings.System.putString(context.getContentResolver(), "zest_system_performance_mode", str);
+            mPerformanceMode = str;
         } catch (Exception unused) {
             // Unused
         }
