@@ -10,12 +10,14 @@
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
     <string name="zest_setting_default_summary">"Bilinmeyen"</string>
     <string name="zest_setting_default_error">"Bir şeyler yanlış gitti"</string>
+    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"Özelleştirme • Ekran çözünürlüğü"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Ekran çözünürlüğü • Yazılım güncellemeleri"</string>
     <!-- Data connection icon settings -->
-    <string name="zest_data_connection_icon_title">"Ağ bağlantısı simgesi"</string>
+    <string name="zest_data_connection_icon_title">"Veri bağlantısı ikon stili"</string>
     <!-- Wi-Fi/WLAN icon settings -->
-    <string name="zest_wlan_connection_icon_title">"Wi-Fi bağlantısı simgesi"</string>
+    <string name="zest_wlan_connection_icon_title">"Wi-Fi bağlantısı ikon stili"</string>
+    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"Yazılım güncelleme"</string>
     <string name="fresh_ota_check_for_updates_title">"İndir ve kur"</string>
     <string name="fresh_ota_check_for_updates_summary">"Mobil ağlar üzerinden indirme yapmak ek ücretlere neden olabilir. Mümkünse, bunun yerine bir Wi-Fi ağı üzerinden indirin."</string>
@@ -54,13 +56,13 @@
     <string name="zest_renoir_notification_channel_title">"Devam eden bildirimler"</string>
     <string name="zest_renoir_notification_channel_description">"Bu bildirim kanalı, uygulamanın arka planda ihtiyaç duyduğu işlemleri yürütmesini sağlar."</string>
     <string name="zest_renoir_notification_description">"Duvar kağıdı baz alınarak cihaz teması değiştiriliyor…"</string>
-    <string name="zest_renoir_settings_unavailable">"Bir üçüncü taraf teması uygulandığı için renk uyumlu tema kullanılamıyor."</string>
+    <string name="zest_renoir_settings_unavailable">"Bir üçüncü taraf teması uygulandığı için Renk Eşleştirme Teması kullanılamıyor."</string>
     <string name="zest_renoir_settings_lock_screen">"Kilit ekranı renklerini kullan"</string>
     <string name="zest_renoir_settings_lock_screen_description">"Cihaz temasını seçerken kilit ekranı duvar kağıdınızdaki renkleri kullanın."</string>
     <string name="zest_renoir_settings_custom_colors">"Özel renkler kullan"</string>
     <string name="zest_renoir_settings_custom_colors_desc">"Cihaz teması için renk seçiciden renkler seçin."</string>
     <!-- Screen Resolution settings -->
-    <string name="zest_screen_resolution_setting_title">"Ekran çözünürlüğü"</string>
+    <string name="zest_screen_resolution_setting_title">"Ekran Çözünürlüğü"</string>
     <string name="zest_screen_resolution_setting_summary">"Çözünürlüğü değiştirdiğinizde bazı uygulamalar kapanabilir."</string>
     <string name="zest_screen_resolution_setting_high_summary">"Keskin görseller, fazla pil kullanımı
 "</string>
@@ -87,6 +89,7 @@
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Pili koruyun"</string>
     <string name="zest_protect_battery_summary">"Pilinizin ömrünü uzatmak için maksimum şarjı %85 ile sınırlayın."</string>
+    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"Tamam"</string>
     <string name="qs_dialog_cancel">"İptal"</string>
     <!-- About Page -->
@@ -94,7 +97,7 @@
     <string name="zest_about_page_source_code">"Kaynak kodu"</string>
     <string name="zest_about_page_translations">"Yerelleştirme"</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
-    <string name="app_name">"Fresh Sistem Servisleri"</string>
+    <string name="app_name">"Fresh Sistem Hizmetleri"</string>
     <string name="zest_relative_link_wallpaper_twelve">"Duvar Kağıdı ve Stil"</string>
     <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
     <string name="zest_data_connection_icon_next">"(5G)"</string>
@@ -135,7 +138,7 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_toast_check_failed_offline">"Ağ mevcut değil. Daha sonra tekrar deneyin."</string>
     <string name="fresh_ota_notification_group_name">"Yazılım güncellemeleri"</string>
     <!-- Firmware doesn't have an exact translation. Because of that I used "Device software" instead of directly "Software". It looks like the best translation to me. -->
-    <string name="fresh_ota_notification_channel_name">"Cihaz yazılım güncellemeleri"</string>
+    <string name="fresh_ota_notification_channel_name">"Ürün yazılımı güncellemeleri"</string>
     <string name="fresh_ota_notification_channel_description">"Bu bildirim kanalı, uygulamanın, cihazınız için mevcut olan cihaz yazılımı güncellemelerini size bildirebilmesini sağlar."</string>
     <string name="fresh_app_notification_channel_name">"Uygulama güncellemeleri"</string>
     <string name="fresh_app_notification_channel_description">"Bu bildirim kanalı, sizin sistem uygulaması güncellemeleri hakkında bilgilendirilmeniz için kullanılır."</string>
@@ -166,7 +169,7 @@ Güncellemeyi kurmaya devam etmek istiyor musunuz?"</string>
     <!-- Screen Ratio settings -->
     <string name="zest_screen_ratio_setting_title">"En boy oranı"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_title">"Zest+'e hoş geldiniz!"</string>
+    <string name="zest_plus_permission_title">"Zest+'a hoş geldiniz!"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
 
 Use "Magisk" as if it is a brand (like Samsung or One UI). -->
@@ -177,7 +180,7 @@ Verileriniz önemlidir. Hiçbir veriye erişilmediğine, gönderilmediğine ve �
 Zest+'ı etkinleştirmek ister misiniz?"</string>
     <!-- Recovery reboot QS tile
 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_title">"Kurtarma Menüsü'ne yeniden başlat"</string>
+    <string name="qs_dialog_title">"Kurtarma için Yeniden Başlat"</string>
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
     <string name="qs_dialog_confirmation">"Kurtarma Modu'na yeniden başlatmak ister misiniz?"</string>
     <!-- Extra Dim -->
@@ -189,7 +192,7 @@ Ekstra loş özelliğini etkinleştirmek bazı uygulamaları bozabilir ve bu da 
     <string name="zest_extra_dim_setting_intensity">"Yoğunluk"</string>
     <string name="zest_extra_dim_setting_turn_off_reboot">"Yeniden başlattıktan sonra kapat
 "</string>
-    <string name="zest_volte_icon_title">"Voice-over-LTE simge tarzı"</string>
+    <string name="zest_volte_icon_title">"Voice-over-LTE ikon stili"</string>
     <string name="zest_volte_icon_telcel">"Telcel"</string>
     <string name="zest_volte_icon_dcm">"Docomo"</string>
     <string name="zest_volte_icon_telenor">"Telenor"</string>
@@ -214,14 +217,59 @@ Ekstra loş özelliğini etkinleştirmek bazı uygulamaları bozabilir ve bu da 
     <string name="zest_video_brightness_setting_normal">"Normal"</string>
     <string name="zest_video_brightness_setting_bright">"Parlak"</string>
     <string name="zest_video_brightness_supported_apps_header">"Desteklenen uygulamalar"</string>
-    <string name="zest_system_settings_plugin_summary_four">"Simge tarzı • Performans • Ekran çözünürlüğü"</string>
-    <string name="zest_customization_reboot_required_title">"Telefon yeniden başlatılsın mı?
-"</string>
+    <string name="zest_system_settings_plugin_summary_four">"Simge stili• Performans • Ekran çözünürlüğü"</string>
+    <string name="zest_customization_reboot_required_title">"Telefon yeniden başlatılsın mı?"</string>
     <string name="zest_customization_reboot_required_description">"Simge stili değişikliklerini tam olarak uygulamak için telefonunuzun yeniden başlatılması gerekir."</string>
-    <string name="zest_customization_reboot_required_btn_ok">"Şimdi yeniden başlat"</string>
-    <string name="zest_customization_reboot_required_btn_cancel">"Sonra yeniden başlat"</string>
-    <string name="zest_plus_fod_animation_style_title">"Parmak izi animasyon tarzı"</string>
+    <string name="zest_customization_reboot_required_btn_ok">"Şimdi Yeniden Başlat"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Sonra Yeniden Başlat"</string>
+    <string name="zest_plus_fod_animation_style_title">"Parmak izi animasyon stili"</string>
     <string name="zest_plus_fod_animation_style_toast_failed">"Yeni tarz uygulanamadı."</string>
     <string name="zest_plus_location_indicators_title">"Yeni konum göstergesi kullan"</string>
-    <string name="zest_plus_location_indicators_summary">"Kamera ve mikrofon tarafından kullanılan yeni durum çubuğu konum göstergesini kullanın."</string>
+    <string name="zest_plus_location_indicators_summary">"kamera ve mikrofon tarafından kullanılan yeni durum çubuğu konum göstergesini kullanın."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Bu Fresh güncellemesinin neler içerdiğini öğrenin."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Fresh  Sistem Hizmetleri, yazılım ve uygulama güncellemelerini alabilmesi için depolama izinleri gerekir."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s yüklenmeye hazır"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s'den %2$s'a"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"%1$s Fresh kurulumu başarısız oldu. Güncellemeleri doğrudan FreshROM'lardan indirmeyi deneyin."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s  başarıyla yüklendi. Daha fresh bir cihazın keyfini çıkarın!
+"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Güncelleme %1$s saatinde %2$s tarihinde otomatik olarak yüklenecek."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Bazı Magisk modülleri devre dışı"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Cihazınızın güncellenmesine izin vermek için bazı Magisk modülleri devre dışı bırakılmıştır.Bunlar, cihaz güncelleştirmeyi tamamladıktan sonra yeniden etkinleştirilebilir."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"
+%1$d eklentileri yüklü"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"%1$s'yi kaldırmak istediğinizden emin misiniz?"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh Deneyim Yapısı %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Fresh Performans Kiti %s"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"Fresh Güncellemeleri"</string>
 </resources>

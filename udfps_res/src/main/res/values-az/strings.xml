@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Alpenqlou"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Şafak"</string>
+    <string name="zest_fod_animation_bloom">"Çiçəklə"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Kiberpunk"</string>
+    <string name="zest_fod_animation_default">"Ön qurğulu"</string>
+    <string name="zest_fod_animation_dna">"DNA"</string>
+    <string name="zest_fod_animation_electronic">"Elektron"</string>
+    <string name="zest_fod_animation_energy">"Enerji"</string>
+    <string name="zest_fod_animation_futuristic">"Futuristik"</string>
+    <string name="zest_fod_animation_halo_ring">"Halo Halqası"</string>
+    <string name="zest_fod_animation_magic">"Sehirbazlıq"</string>
+    <string name="zest_fod_animation_mclaren">"Maklaren"</string>
+    <string name="zest_fod_animation_molecular">"Molekulyar"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsar"</string>
+    <string name="zest_fod_animation_pulse">"Nəbz"</string>
+    <string name="zest_fod_animation_rhythm">"Ritm"</string>
+    <string name="zest_fod_animation_ripple">"Dalğalanma"</string>
+    <string name="zest_fod_animation_star">"Ulduz"</string>
+    <string name="zest_fod_animation_stripe">"Zolaq"</string>
+    <string name="zest_fod_animation_supernova">"Supernova"</string>
+    <string name="zest_fod_animation_water">"Su"</string>
+    <string name="zest_fod_animation_wave">"Dalğa"</string>
+</resources>

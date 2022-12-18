@@ -10,12 +10,14 @@
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
     <string name="zest_setting_default_summary">"Không rõ"</string>
     <string name="zest_setting_default_error">"Đã có lỗi xảy ra"</string>
+    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"Tùy biến  •  Độ phân giải"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Độ phân giải  •  Cập nhật phần mềm"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Kiểu biểu tượng kết nối dữ liệu"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Kiểu biểu tượng kết nối Wi-Fi"</string>
+    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"Cập nhật phần mềm"</string>
     <string name="fresh_ota_check_for_updates_title">"Tải về và cài đặt"</string>
     <string name="fresh_ota_check_for_updates_summary">"Tải xuống qua mạng di động có thể phát sinh thêm phí. Nếu có thể, hãy tải xuống qua mạng Wi-Fi."</string>
@@ -86,6 +88,7 @@
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Bảo vệ pin"</string>
     <string name="zest_protect_battery_summary">"Giới hạn mức sạc ở 85% để bảo vệ pin của bạn."</string>
+    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Hủy"</string>
     <!-- About Page -->
@@ -220,4 +223,48 @@ Việc bật chế độ Siêu tối có thể làm hỏng một số ứng dụ
     <string name="zest_plus_fod_animation_style_toast_failed">"Áp dụng kiểu mới thất bại."</string>
     <string name="zest_plus_location_indicators_title">"Sử dụng biểu tượng chỉ báo vị trí mới"</string>
     <string name="zest_plus_location_indicators_summary">"Sử dụng chỉ báo vị trí trên thanh trạng thái mới được sử dụng bởi máy ảnh và micrô."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Tìm hiểu những gì bản cập nhật Fresh này đem đến."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Dịch vụ hệ thống Fresh yêu cầu quyền lưu trữ để có thể nhận các bản cập nhật ứng dụng và phần mềm."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s đã sẵn sàng để cài đặt"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s lúc %2$s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Cài đặt Fresh %1$s không thành công. Hãy thử tải xuống các bản cập nhật trực tiếp từ trang web FreshROMs hoặc nhận hỗ trợ."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s đã được cài đặt. Hãy tận hưởng một thiết bị tươi mới hơn!"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Bản cập nhật sẽ được tự động cài đặt vào %1$s lúc %2$s"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Một số mô-đun Magisk đã bị vô hiệu hóa"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Để cho phép thiết bị của bạn cập nhật, một số mô-đun Magisk đã bị tắt. Chúng có thể được kích hoạt lại sau khi thiết bị cập nhật xong."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"Đã cài đặt %1$d addons"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Bạn có chắc chắn muốn gỡ cài đặt %1$s?"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Khung trải nghiệm Fresh %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Bộ công cụ hiệu năng Fresh %s"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"Cập nhật Fresh"</string>
 </resources>

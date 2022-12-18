@@ -23,7 +23,7 @@
     <string name="zest_fod_animation_ripple">"Su Halkası"</string>
     <string name="zest_fod_animation_star">"Yıldız"</string>
     <string name="zest_fod_animation_stripe">"Şerit"</string>
-    <string name="zest_fod_animation_supernova">"Patlama"</string>
+    <string name="zest_fod_animation_supernova">"süpernova"</string>
     <string name="zest_fod_animation_water">"Su"</string>
     <string name="zest_fod_animation_wave">"Dalga"</string>
 </resources>

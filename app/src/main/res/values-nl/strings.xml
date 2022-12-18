@@ -10,12 +10,14 @@
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
     <string name="zest_setting_default_summary">"Onbekend"</string>
     <string name="zest_setting_default_error">"Er is iets fout gegaan"</string>
+    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"Aanpassing • Schermresolutie"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Schermresolutie • Software-updates"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Pictogramstijl gegevensverbinding"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Pictogramstijl wifi-signaal"</string>
+    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"Software-update"</string>
     <string name="fresh_ota_check_for_updates_title">"Download en installeer"</string>
     <string name="fresh_ota_check_for_updates_summary">"Downloaden via mobiele netwerken kan tot extra kosten leiden. Download indien mogelijk in plaats daarvan via een Wi-Fi-netwerk."</string>
@@ -23,7 +25,7 @@
     <string name="fresh_ota_auto_download_wlan_summary">"Software-updates automatisch downloaden bij verbinding met een Wi-Fi-netwerk."</string>
     <string name="fresh_ota_last_successful_update_title">"Laatste update"</string>
     <string name="fresh_ota_last_successful_update_summary">"Er is geen informatie over deze update."</string>
-    <string name="fresh_ota_check_frequency_title">"Update controle frequentie"</string>
+    <string name="fresh_ota_check_frequency_title">"Frequentie Updatecontrole"</string>
     <string name="fresh_ota_check_frequency_60min">"Elk uur"</string>
     <string name="fresh_ota_check_frequency_120min">"Elke 2 uur"</string>
     <string name="fresh_ota_check_frequency_180min">"Elke 3 uur"</string>
@@ -50,29 +52,29 @@
     <string name="zest_addon_management_detail_last_updated">"Laatst bijgewerkt"</string>
     <!-- Color Theme/Fresh Renoir settings -->
     <string name="zest_renoir_settings_title">"Kleurenthema"</string>
-    <string name="zest_renoir_settings_summary">"Pas One UI aan door het thema aan te passen aan uw huidige achtergrond."</string>
+    <string name="zest_renoir_settings_summary">"Pas One UI aan door het thema aan te passen aan je huidige achtergrond."</string>
     <string name="zest_renoir_notification_channel_title">"Lopende meldingen"</string>
     <string name="zest_renoir_notification_channel_description">"Met dit meldingskanaal kan de app bewerkingen uitvoeren die op de achtergrond nodig zijn."</string>
     <string name="zest_renoir_notification_description">"Apparaatthema wijzigen op basis van achtergrond..."</string>
     <string name="zest_renoir_settings_unavailable">"Kleurafstemmingsthema is niet beschikbaar omdat een thema van derden is toegepast."</string>
     <string name="zest_renoir_settings_lock_screen">"Kleuren van het vergrendelscherm gebruiken"</string>
-    <string name="zest_renoir_settings_lock_screen_description">"Gebruik kleuren van uw achtergrond op het vergrendelscherm bij het kiezen van het apparaatthema."</string>
+    <string name="zest_renoir_settings_lock_screen_description">"Gebruik kleuren van je achtergrond op het vergrendelscherm bij het kiezen van het apparaatthema."</string>
     <string name="zest_renoir_settings_custom_colors">"Gebruik aangepaste kleuren"</string>
     <string name="zest_renoir_settings_custom_colors_desc">"Gebruik kleuren uit de kleurenkiezer voor het apparaatthema."</string>
     <!-- Screen Resolution settings -->
     <string name="zest_screen_resolution_setting_title">"Schermresolutie"</string>
-    <string name="zest_screen_resolution_setting_summary">"Sommige apps kunnen afgesloten worden wanneer u de resolutie wijzigt."</string>
+    <string name="zest_screen_resolution_setting_summary">"Sommige apps kunnen afgesloten worden wanneer je de resolutie wijzigt."</string>
     <string name="zest_screen_resolution_setting_high_summary">"Scherpste resolutie, meeste batterijgebruik"</string>
     <string name="zest_screen_resolution_setting_medium_summary">"Verbeterde resolutie, gemiddeld batterijgebruik"</string>
     <string name="zest_screen_resolution_setting_low_summary">"Lage resolutie, laagste batterijverbruik"</string>
     <string name="zest_screen_resolution_setting_btn_apply">"Toepassen"</string>
     <!-- Video brightness/HDR effect settings -->
     <string name="zest_hdr_effect_setting_title">"Helderheid Scherm"</string>
-    <string name="zest_hdr_effect_setting_summary">"Verbeter de beeldkwaliteit van uw video's om te genieten van helderdere en levendigere kleuren."</string>
+    <string name="zest_hdr_effect_setting_summary">"Verbeter de beeldkwaliteit van je video's om te genieten van helderdere en levendigere kleuren."</string>
     <string name="zest_hdr_effect_setting_available_apps">"Beschikbare apps"</string>
     <string name="zest_maverick_security_setting_title">"USB-beveiliging"</string>
-    <string name="zest_maverick_security_setting_summary">"Bescherm uw apparaat tegen schadelijke USB-apparaten."</string>
-    <string name="zest_maverick_security_setting_activity_summary">"Bescherm uw apparaat tegen schadelijke USB-apparaten door de toegang te blokkeren terwijl het apparaat is vergrendeld."</string>
+    <string name="zest_maverick_security_setting_summary">"Bescherm je apparaat tegen schadelijke USB-apparaten."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"Bescherm je apparaat tegen schadelijke USB-apparaten door de toegang te blokkeren terwijl het apparaat is vergrendeld."</string>
     <string name="zest_maverick_security_setting_option_title">"USB-apparaten beperken"</string>
     <string name="zest_maverick_security_setting_option_on_lock">"Terwijl het scherm is uitgeschakeld"</string>
     <string name="zest_maverick_security_setting_option_always">"Altijd"</string>
@@ -85,11 +87,12 @@
     <string name="zest_darq_service_detail_warning">"Het inschakelen van de verbeterde donkere modus voor sommige apps kan lay-outproblemen veroorzaken. Sommige apps worden mogelijk niet ondersteund."</string>
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Batterijbescherming"</string>
-    <string name="zest_protect_battery_summary">"Om de levensduur van je batterij te verlengen, beperk je de maximale lading tot 85%."</string>
+    <string name="zest_protect_battery_summary">"Om de levensduur van je batterij te verlengen kan je de maximale lading tot 85% beperken."</string>
+    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Annuleren"</string>
     <!-- About Page -->
-    <string name="zest_about_page_open_source">"Open source-licenties"</string>
+    <string name="zest_about_page_open_source">"Open-source licenties"</string>
     <string name="zest_about_page_source_code">"Broncode"</string>
     <string name="zest_about_page_translations">"Lokalisatie"</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
@@ -122,21 +125,21 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_verifying_update">"Update verifiëren…"</string>
     <string name="fresh_permissions_storage_title">"Opslagrechten niet verleend"</string>
     <string name="fresh_permissions_fp_storage_description">"Fresh Systeem Services vereist opslagmachtigingen om vingerafdrukanimaties aan te passen."</string>
-    <string name="fresh_ota_changelog_appbar_install_summary">"U kunt uw telefoon tijdens de update niet gebruiken, zelfs niet voor noodoproepen."</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"Je kan je telefoon tijdens de update niet gebruiken, zelfs niet voor noodoproepen."</string>
     <string name="fresh_ota_changelog_appbar_waiting">"Wachten op netwerk"</string>
     <string name="fresh_ota_changelog_appbar_paused">"Download onderbroken"</string>
     <string name="fresh_ota_notification_download_cancelled">"Download geannuleerd"</string>
     <string name="fresh_ota_notification_update_cancelled">"Update geannuleerd"</string>
     <string name="fresh_ota_changelog_appbar_downloading_time_left">"Tijd resterend:"</string>
-    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Uw apparaat is up-to-date"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Je apparaat is up-to-date"</string>
     <string name="fresh_ota_changelog_appbar_detail_success">"Laatste succesvolle update"</string>
     <string name="fresh_ota_toast_check_failed_generic">"Er is een onbekende fout opgetreden. Probeer het later opnieuw."</string>
     <string name="fresh_ota_toast_check_failed_offline">"Netwerk niet beschikbaar. Probeer het later opnieuw."</string>
     <string name="fresh_ota_notification_group_name">"Software updates"</string>
     <string name="fresh_ota_notification_channel_name">"Firmware updates"</string>
-    <string name="fresh_ota_notification_channel_description">"Met dit meldingskanaal kan de app u informeren over firmware-updates die beschikbaar zijn voor uw apparaat"</string>
+    <string name="fresh_ota_notification_channel_description">"Met dit meldingskanaal kan de app je informeren over firmware-updates die beschikbaar zijn voor je apparaat"</string>
     <string name="fresh_app_notification_channel_name">"App updates"</string>
-    <string name="fresh_app_notification_channel_description">"Dit meldingskanaal wordt gebruikt om u op de hoogte te stellen van systeemapp-updates."</string>
+    <string name="fresh_app_notification_channel_description">"Dit meldingskanaal wordt gebruikt om je op de hoogte te stellen van systeemapp-updates."</string>
     <string name="fresh_ota_ongoing_notification_channel_name">"Lopende meldingen"</string>
     <string name="fresh_ota_ongoing_notification_channel_description">"Dit meldingskanaal wordt gebruikt voor doorlopende updates en meldingen."</string>
     <string name="fresh_ota_notification_update_install_title">"Software-update is klaar om te installeren"</string>
@@ -145,22 +148,22 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_notification_verification_failed_description">"Verificatie van software-update mislukt. Probeer het later opnieuw."</string>
     <string name="fresh_ota_notification_download_failed_title">"Kan software niet downloaden"</string>
     <string name="fresh_ota_notification_update_failed_title">"Kan software niet updaten"</string>
-    <string name="fresh_ota_notification_update_success_title">"Uw apparaat is bijgewerkt"</string>
+    <string name="fresh_ota_notification_update_success_title">"Je apparaat is bijgewerkt"</string>
     <string name="fresh_ota_download_block_dialog_title">"Waarschuwing voor mobiele data"</string>
     <string name="fresh_ota_download_block_dialog_description">"Downloaden via een mobiel netwerk kan tot extra kosten leiden. Download indien mogelijk via een wifi-netwerk.
 
 Doorgaan met het downloaden van deze update?"</string>
     <string name="fresh_ota_download_block_dialog_download">"Doorgaan"</string>
     <string name="fresh_ota_download_block_dialog_later">"Download uitstellen"</string>
-    <string name="fresh_ota_install_dialog_description">"Deze update heeft geen invloed op uw persoonlijke gegevens, maar het is altijd een goed idee om een back-up van uw gegevens te maken voor het geval dat.
+    <string name="fresh_ota_install_dialog_description">"Deze update heeft geen invloed op je persoonlijke gegevens maar het is altijd een goed idee om vooraf een backup te maken.
 
 Doorgaan met het installeren van deze update?"</string>
     <string name="fresh_ota_install_dialog_continue">"Installeer nu"</string>
-    <string name="fresh_ota_network_lost_dialog_description">"Uw telefoon was losgekoppeld van het netwerk voordat het downloaden was voltooid. Het downloaden gaat verder wanneer uw telefoon opnieuw verbinding maakt met een netwerk."</string>
+    <string name="fresh_ota_network_lost_dialog_description">"Je telefoon was losgekoppeld van het netwerk voordat het downloaden was voltooid. Het downloaden gaat verder wanneer je telefoon opnieuw verbinding maakt met een netwerk."</string>
     <string name="fresh_ota_toast_failed_download_generic">"Kan de software niet updaten. Er is een netwerk- of serverfout opgetreden. Probeer het later opnieuw."</string>
     <string name="fresh_ota_toast_failed_download_network">"Er is een netwerkfout opgetreden. Probeer het later opnieuw."</string>
     <string name="fresh_ota_toast_failed_download_server">"Er is een serverfout opgetreden. Probeer het later opnieuw."</string>
-    <string name="fresh_ota_toast_failed_no_space">"Om deze update te installeren, heb je meer vrije ruimte nodig in de interne opslag van je telefoon. Maak wat ruimte vrij door apps te verwijderen of bestanden te verwijderen en probeer het opnieuw."</string>
+    <string name="fresh_ota_toast_failed_no_space">"Om deze update te installeren, heb je meer vrije ruimte nodig in de interne opslag van je telefoon. Maak wat ruimte vrij door apps of bestanden te verwijderen en probeer het opnieuw."</string>
     <!-- Screen Ratio settings -->
     <string name="zest_screen_ratio_setting_title">"Beeldverhouding"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
@@ -168,16 +171,16 @@ Doorgaan met het installeren van deze update?"</string>
     <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
 
 Use "Magisk" as if it is a brand (like Samsung or One UI). -->
-    <string name="zest_plus_permission_summary">"Met Zest+ kan Fresh uitgebreid worden met extra functies en meer. Dit vereist echter dat Zest volledige toegang tot het systeem heeft via Magisk.
+    <string name="zest_plus_permission_summary">"Met Zest+ wordt Fresh uitgebreid met extra functies en meer. Dit vereist echter dat Zest volledige toegang tot het systeem heeft via Magisk.
 
-Uw gegevens zijn belangrijk. Ik beloof dat er geen toegang tot gegevens wordt verkregen en wordt verzonden, en dat uw belangrijke gegevens privé blijven.
+Je gegevens zijn belangrijk. Ik beloof dat er geen toegang tot gegevens wordt verkregen en/of verzonden en dat uw belangrijke gegevens privé blijven.
 
 Wil je Zest+ inschakelen?"</string>
     <!-- Recovery reboot QS tile
 'Restart' can be used as an alternative to 'reboot'. -->
     <string name="qs_dialog_title">"Opnieuw opstarten naar herstel (Recovery)"</string>
     <!-- 'Restart' can be used as an alternative to 'reboot'. -->
-    <string name="qs_dialog_confirmation">"Wilt u opnieuw opstarten naar de herstelmodus? (Recovery)"</string>
+    <string name="qs_dialog_confirmation">"Wil je opnieuw opstarten naar de herstelmodus? (Recovery)"</string>
     <!-- Extra Dim -->
     <string name="zest_extra_dim_setting_title">"Extra dimmen"</string>
     <string name="zest_extra_dim_setting_summary_main">"Dim het scherm boven de minimale helderheidsinstelling."</string>
@@ -204,10 +207,10 @@ Als u extra dimmen inschakelt werken sommige apps mogelijk niet meer wat resulte
     <string name="zest_performance_mode_title">"Hoge Prestatiemodus"</string>
     <string name="zest_performance_mode_summary">"Kies de prestatiemodus die het beste werkt voor wat u doet."</string>
     <string name="zest_performance_setting_option_gaming_summary">"Verbeter de prestaties en optimaliseer het geheugenbeheer om de game-ervaring te verbeteren."</string>
-    <string name="zest_performance_setting_option_default_summary">"Brengt prestaties en batterijduur in evenwicht voor een ervaring die voor iedereen werkt."</string>
+    <string name="zest_performance_setting_option_default_summary">"Prestaties en batterijduur worden geoptimalizeerd voor een ervaring die voor iedereen werkt."</string>
     <string name="zest_performance_setting_option_multitasking_summary">"Verbeter het prestatie- en geheugenbeheer zodat meer apps op de achtergrond kunnen worden uitgevoerd."</string>
-    <string name="zest_video_brightness_summary_normal">"Speel video's af met de normale schermhelderheid en kleurinstellingen van uw telefoon."</string>
-    <string name="zest_video_brightness_summary_bright">"Verhoog tijdelijk de helderheid van het scherm en maak kleuren levendiger wanneer u video's bekijkt."</string>
+    <string name="zest_video_brightness_summary_normal">"Speel video's af met de normale schermhelderheid en kleurinstellingen van je telefoon."</string>
+    <string name="zest_video_brightness_summary_bright">"Verhoog tijdelijk de helderheid van het scherm en maak kleuren levendiger wanneer je video's bekijkt."</string>
     <string name="zest_video_brightness_setting_normal">"Normaal"</string>
     <string name="zest_video_brightness_setting_bright">"Helder"</string>
     <string name="zest_video_brightness_supported_apps_header">"Ondersteunde apps"</string>
@@ -220,4 +223,48 @@ Als u extra dimmen inschakelt werken sommige apps mogelijk niet meer wat resulte
     <string name="zest_plus_fod_animation_style_toast_failed">"Kan nieuwe stijl niet toepassen."</string>
     <string name="zest_plus_location_indicators_title">"Nieuwe locatie-indicator gebruiken"</string>
     <string name="zest_plus_location_indicators_summary">"Gebruik de nieuwe locatie-indicator op de statusbalk die wordt gebruikt door de camera en microfoon."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Ontdek wat er in deze Fresh-update zit."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Fresh System Services heeft opslagmachtigingen nodig om software- en app-updates te kunnen ontvangen."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Verse %1$s %2$s is klaar om te installeren"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s bij %2$s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Installatie van Fresh %1$s is mislukt. Probeer updates rechtstreeks van de FreshROMs-website te downloaden of krijg ondersteuning."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Verse %1$s is met succes geïnstalleerd. Geniet van een frisser apparaat!"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Update wordt automatisch geïnstalleerd op %1$s op %2$s."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Sommige Magisk-modules zijn uitgeschakeld"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Om je apparaat te kunnen updaten zijn sommige Magisk-modules uitgeschakeld. Deze kunnen opnieuw worden ingeschakeld nadat het apparaat is bijgewerkt."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d add-ons geïnstalleerd"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Weet je zeker dat je %1$s wilt verwijderen?"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Fresh Performance Kit %s"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"Nieuwe updates"</string>
 </resources>

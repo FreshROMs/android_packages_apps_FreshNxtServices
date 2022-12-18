@@ -8,8 +8,8 @@
     <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
     <string name="zest_fod_animation_cyberpunk">"سایبرپانک"</string>
     <string name="zest_fod_animation_default">"پیش‌‌فرض"</string>
-    <string name="zest_fod_animation_dna">"دی‌ ان‌ ای"</string>
-    <string name="zest_fod_animation_electronic">"برق"</string>
+    <string name="zest_fod_animation_dna">"دی‌‌ان‌ای"</string>
+    <string name="zest_fod_animation_electronic">"برقی"</string>
     <string name="zest_fod_animation_energy">"نیرو"</string>
     <string name="zest_fod_animation_futuristic">"مثل آینده"</string>
     <string name="zest_fod_animation_halo_ring">"حلقه‌ی هاله"</string>

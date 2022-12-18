@@ -10,12 +10,14 @@
     <string name="zest_wlan_connection_icon_kt">"केटि"</string>
     <string name="zest_setting_default_summary">"अनजान"</string>
     <string name="zest_setting_default_error">"कुछ गलत हो गया"</string>
+    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"अनुकूलन • स्क्रीन संकल्प"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"स्क्रीन संकल्प • सॉफ्टवेयर अद्यतन"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"डेटा संयोजन आइकन शैली"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"वाई-फाई संयोजन आइकन शैली"</string>
+    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"सॉफ्टवेयरअद्यतन"</string>
     <string name="fresh_ota_check_for_updates_title">"डाउनलोड करो और स्थापित करें"</string>
     <string name="fresh_ota_check_for_updates_summary">"मोबाइल नेटवर्क के माध्यम से डाउनलोड करने पर अतिरिक्त शुल्क लग सकते हैं। यदि संभव हो, तो इसके बजाय वाई-फाई नेटवर्क के माध्यम से डाउनलोड करें।"</string>
@@ -86,6 +88,7 @@
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"बैटरी को सुरक्षित रखें"</string>
     <string name="zest_protect_battery_summary">"अपनी बैटरी के जीवनकाल को बढ़ाने के लिए, अधिकतम चार्ज को 85% तक सीमित करें।"</string>
+    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"ठीक है"</string>
     <string name="qs_dialog_cancel">"रद्द करना"</string>
     <!-- About Page -->
@@ -218,4 +221,48 @@ Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_plus_fod_animation_style_toast_failed">"नई शैली लागू करने में विफल."</string>
     <string name="zest_plus_location_indicators_title">"नए स्थान संकेतक का उपयोग करें"</string>
     <string name="zest_plus_location_indicators_summary">"कैमरा और माइक्रोफ़ोन द्वारा उपयोग किए जाने वाले नए स्टेटस बार लोकेशन इंडिकेटर का उपयोग करें।"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"फ्रेश_ओटा चेंजलॉग_हेडर_उपशीर्षक"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"फ्रेश _अनुमतियाँ_भंडारण_विवरण"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"फ्रेश _ओटिए_चेंजलॉग_ऐपबार_इंस्टॉल"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"फ्रेश _ओटिए_चेंजलॉग_ऐपबार_विवरण_सफलता_उपशीर्षक"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"फ्रेश _ओटिए_अधिसूचना_अपडेट_असफल_विवरण"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"फ्रेश _ओटिए_अधिसूचना_अपडेट_सफलता_विवरण"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"फ्रेश _ओटिए_बाद में_टोस्ट_स्थापित करें"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"फ्रेश _ओटिए_पोस्ट_अपडेट_मैजिक_शीर्षक"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"फ्रेश _ओटिए_पोस्ट_अपडेट_मैजिक_विवरण"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"ज़ेस्ट_ऐडऑन_मैनेजमेंट_सबटाइटल_मल्टीपल"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"ज़ेस्ट_ऐडऑन_मैनेजमेंट_विवरण_अनइंस्टॉल_पुष्टिकरण"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"ज़ेस्ट_अनुभव_फ्रेमवर्क_संस्करण"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"ज़ेस्ट_प्रदर्शन_किट_संस्करण"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"ज़ेस्ट_फ्रेश_ अपडेट_टाइटल"</string>
 </resources>
