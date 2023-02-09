@@ -140,7 +140,7 @@
 
         <activity
             android:name=".ota.activity.UpdateCheckActivity"
-            android:exported="false"
+            android:exported="true"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="cf.tenseventyseven.fresh.ota.activity.UpdateCheckActivity" />
