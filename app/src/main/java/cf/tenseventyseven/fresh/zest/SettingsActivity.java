@@ -277,7 +277,7 @@ public class SettingsActivity extends AppCompatActivity {
             if (!fodAnimProvisioned || fodAnimationId == null || fodAnimationId.isEmpty())
                 fodAnimationId = "default";
 
-            findPreference("fs_plus_fod_animation_style").setSummary(FingerprintStyleActivity.getAnimString(mContext, fodAnimationId));
+            // findPreference("fs_plus_fod_animation_style").setSummary(FingerprintStyleActivity.getAnimString(mContext, fodAnimationId));
 
             // Performance mode
             findPreference("fs_plus_performance_mode").setSummary(Performance.getPerformanceModeString(mContext));
@@ -290,11 +290,11 @@ public class SettingsActivity extends AppCompatActivity {
             // Disable these settings if app is opened in Samsung DeX
             if (Experience.isDesktopMode(mContext)) {
                 findPreference("fs_video_brightness").setEnabled(false);
-                findPreference("sb_icon_style_data").setEnabled(false);
-                findPreference("sb_icon_style_wifi").setEnabled(false);
-                findPreference("sb_icon_style_volte").setEnabled(false);
+                // findPreference("sb_icon_style_data").setEnabled(false);
+                // findPreference("sb_icon_style_wifi").setEnabled(false);
+                // findPreference("sb_icon_style_volte").setEnabled(false);
                 findPreference("fs_device_resolution").setEnabled(false);
-                findPreference("fs_plus_fod_animation_style").setEnabled(false);
+                // findPreference("fs_plus_fod_animation_style").setEnabled(false);
             }
         }
 
