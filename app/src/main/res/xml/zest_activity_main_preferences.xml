@@ -26,8 +26,6 @@
         android:entryValues="@array/volte_signal_icon_packages"
         app:useSimpleSummaryProvider="true" />
     -->
-
-    <PreferenceCategory>
         <!--
         <Preference
             android:key="fs_plus_fod_animation_style"
@@ -43,7 +41,6 @@
             android:key="fs_plus_location_indicator"
             android:title="@string/zest_plus_location_indicators_title"
             android:summary="@string/zest_plus_location_indicators_summary" />
-    </PreferenceCategory>
 
     <PreferenceCategory android:key="fs_plus_options">
         <Preference
