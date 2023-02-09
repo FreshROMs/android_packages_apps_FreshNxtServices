@@ -1,5 +1,6 @@
 package io.tenseventyseven.fresh.zest;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -25,6 +26,7 @@ public class AboutActivity extends AppCompatActivity {
     AboutPage aboutPage;
 
     @Override
+    @SuppressLint("StringFormatInvalid")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
