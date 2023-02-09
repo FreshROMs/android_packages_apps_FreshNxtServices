@@ -28,6 +28,7 @@
     -->
 
     <PreferenceCategory>
+        <!--
         <Preference
             android:key="fs_plus_fod_animation_style"
             android:title="@string/zest_plus_fod_animation_style_title"
@@ -36,6 +37,7 @@
                 android:targetClass="cf.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity"
                 android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
+        -->
 
         <SwitchPreference
             android:key="fs_plus_location_indicator"
