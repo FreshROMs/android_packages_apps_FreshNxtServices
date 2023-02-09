@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ThemeMetaData FormatVersion="1.3" GuideVersion="1.8">
+    <AppMetaData Name="Fresh Android Services" TargetApi="31" TargetPackageName="cf.tenseventyseven.fresh" VersionCode="1" VersionName="1.0">
+        <Include RefName="SESL" />
+        <Property Comment="Main: Background color" DefaultValue="#fff2f2f2" DestAttribName="background_color" DestQualifiers="" UID="154-3-1" ValueRef="1-1-1" ValueType="BgColor" />
+        <Property Comment="Action bar: Background color" DefaultValue="#fff2f2f2" DestAttribName="sesl4_action_bar_background_color" DestQualifiers="" UID="154-3-2" ValueRef="1-1-1" ValueType="BgColor" />
+        <Property Comment="Round: Background color" DefaultValue="#fff2f2f2" DestAttribName="sesl4_round_and_bgcolor" DestQualifiers="" UID="154-3-3" ValueRef="1-1-1" ValueType="BgColor" />
+        <Property Comment="Splash: Background color" DefaultValue="#fff2f2f2" DestAttribName="splash_background" DestQualifiers="" UID="154-3-4" ValueRef="1-1-1" ValueType="BgColor" />
+        <Property Comment="Common Primary color" DefaultValue="#ff0074d4" DestAttribName="primary_color" UID="154-3-5" ValueRef="1-A" ValueType="Color" />
+        <Property Comment="Common Primary dark color" DefaultValue="#ff0072de" DestAttribName="primary_dark_color" UID="154-3-6" ValueRef="1-10-11" ValueType="Color" />
+        <Property Comment="Common Secondary color" DefaultValue="#ff0074d4" DestAttribName="secondary_color" UID="154-3-7" ValueRef="1-A" ValueType="Color" />
+        <Property Comment="Color1: Progress circle color 1" DefaultValue="#ff3fc51e" DestAttribName="sesl_loading_progress_color1" UID="154-3-8" ValueRef="1-A" ValueType="Color" />
+        <Property Comment="Color2: Progress circle color 2" DefaultValue="#ff01adcd" DestAttribName="sesl_loading_progress_color2" Opacity="60" UID="154-3-9" ValueRef="1-A" ValueType="Color" />
+
+        <!-- For One UI 5 -->
+        <Property Comment="Change Text Color Of Action Bar" DefaultValue="#ff252525" DestAttribName="sesl4_action_bar_text_color_title" POption="Mandatory" UID="154-3-10" ValueRef="1-1-3" ValueType="TextColor" />
+        <Property Comment="Sub Text Color Of Action Bar" DefaultValue="#b3252525" DestAttribName="sesl4_action_bar_text_color_subtitle,sesl4_action_bar_text_color_menu" UID="154-3-11" ValueRef="1-1-4" ValueType="TextColor" />
+        <Property Comment="Content area: Background color" DefaultValue="#fffafafa" DestAttribName="sesl_background_floating" POption="FixedOpacity|AlwaysOverriden" UID="154-3-12" ValueRef="1-18-1" ValueType="BgColor" />
+    </AppMetaData>
+</ThemeMetaData>

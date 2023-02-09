@@ -96,6 +96,11 @@
         android:roundIcon="@mipmap/fresh_ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Zest">
+
+        <meta-data
+            android:name="theming-meta-xml"
+            android:value="@xml/meta_theme_fresh_services" />
+
         <service
             android:name=".ota.api.UpdateInstallService"
             android:enabled="true"
