@@ -199,7 +199,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
 
     private void populateAppList() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        String resPackage = "io.tensevntysevn.fresh.framework";
+        String resPackage = "cf.tenseventyseven.fresh.framework";
         Resources resArray;
 
         PackageManager pm = getPackageManager();
