@@ -31,8 +31,8 @@
             android:title="@string/zest_plus_fod_animation_style_title"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
 
         <SwitchPreference
@@ -48,16 +48,16 @@
             android:title="@string/zest_performance_mode_title"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.PerformanceModeActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.PerformanceModeActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
         <!--<Preference
             android:defaultValue="Default"
             android:key="fs_plus_face_widgets"
             android:title="@string/zest_face_widget_title">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.FaceWidgetActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.FaceWidgetActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>-->
         <!--
             <SwitchPreferenceScreen
@@ -65,8 +65,8 @@
                 android:title="@string/zest_darq_setting_title"
                 android:summary="@string/zest_darq_setting_summary">
                 <intent
-                    android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
-                    android:targetPackage="io.tenseventyseven.fresh" />
+                    android:targetClass="cf.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                    android:targetPackage="cf.tenseventyseven.fresh" />
             </SwitchPreferenceScreen>
         -->
     </PreferenceCategory>
@@ -76,8 +76,8 @@
             android:key="fs_fresh_updates"
             android:title="@string/zest_fresh_updates_title">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.store.FreshUpdatesActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.store.FreshUpdatesActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
     </PreferenceCategory>-->
 
@@ -87,8 +87,8 @@
             android:title="@string/zest_screen_resolution_setting_title"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
 
         <DropDownPreference
@@ -104,8 +104,8 @@
             android:title="@string/zest_hdr_effect_setting_title"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
 
         <SwitchPreferenceScreen
@@ -113,8 +113,8 @@
             android:title="@string/zest_extra_dim_setting_title"
             android:summary="@string/zest_extra_dim_setting_summary_main">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </SwitchPreferenceScreen>
     </PreferenceCategory>
 
@@ -128,8 +128,8 @@
             android:title="@string/zest_app_version"
             android:summary="@string/zest_setting_default_summary">
             <intent
-                android:targetClass="io.tenseventyseven.fresh.zest.AboutActivity"
-                android:targetPackage="io.tenseventyseven.fresh" />
+                android:targetClass="cf.tenseventyseven.fresh.zest.AboutActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
     </de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
 
