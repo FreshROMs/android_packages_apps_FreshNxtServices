@@ -134,7 +134,7 @@
             android:exported="false"
             android:noHistory="true">
             <intent-filter>
-                <action android:name="io.tenseventyseven.fresh.ota.activity.UpdateCheckActivity" />
+                <action android:name="cf.tenseventyseven.fresh.ota.activity.UpdateCheckActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -172,7 +172,7 @@
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings">
             <intent-filter>
-                <action android:name="io.tenseventyseven.fresh.ota.activity.LastUpdateActivity" />
+                <action android:name="cf.tenseventyseven.fresh.ota.activity.LastUpdateActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
