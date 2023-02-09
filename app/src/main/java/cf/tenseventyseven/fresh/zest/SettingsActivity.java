@@ -128,14 +128,14 @@ public class SettingsActivity extends AppCompatActivity {
         public void onStart() {
             super.onStart();
 
-            DropDownPreference mDataPreference = findPreference("sb_icon_style_data");
-            DropDownPreference mWifiPreference = findPreference("sb_icon_style_wifi");
-            DropDownPreference mVoltePreference = findPreference("sb_icon_style_volte");
+            // DropDownPreference mDataPreference = findPreference("sb_icon_style_data");
+            // DropDownPreference mWifiPreference = findPreference("sb_icon_style_wifi");
+            // DropDownPreference mVoltePreference = findPreference("sb_icon_style_volte");
             Preference mPerformancePreference = findPreference("fs_plus_performance_mode");
             Preference mDeviceResolution = findPreference("fs_device_resolution");
             ListPreference mDeviceScreenRatio = findPreference("fs_device_screen_ratio");
             Preference mVideoBrightness = findPreference("fs_video_brightness");
-            Preference mFingerprintAnimation = findPreference("fs_plus_fod_animation_style");
+            // Preference mFingerprintAnimation = findPreference("fs_plus_fod_animation_style");
 
             // Get activated color from attr, so it changes based on the app's theme
             TypedValue typedValue = new TypedValue();
@@ -143,26 +143,28 @@ public class SettingsActivity extends AppCompatActivity {
             theme.resolveAttribute(R.attr.colorControlActivated, typedValue, true);
             @ColorInt int summaryColor = typedValue.data;
 
-            mDataPreference.seslSetSummaryColor(summaryColor);
-            mWifiPreference.seslSetSummaryColor(summaryColor);
-            mVoltePreference.seslSetSummaryColor(summaryColor);
+            // mDataPreference.seslSetSummaryColor(summaryColor);
+            // mWifiPreference.seslSetSummaryColor(summaryColor);
+            // mVoltePreference.seslSetSummaryColor(summaryColor);
             mPerformancePreference.seslSetSummaryColor(summaryColor);
             mDeviceResolution.seslSetSummaryColor(summaryColor);
             mDeviceScreenRatio.seslSetSummaryColor(summaryColor);
             mVideoBrightness.seslSetSummaryColor(summaryColor);
-            mFingerprintAnimation.seslSetSummaryColor(summaryColor);
+            // mFingerprintAnimation.seslSetSummaryColor(summaryColor);
 
             String setResolution = ScreenResolutionActivity.getResolution(mContext);
             String romVersion = Experience.getRomVersion();
             String appVersion = Experience.getAppVersion(mContext);
 
             // System UI icons
+            /*
             mDataPreference.setValue(Preferences.getDataConnectionIconPackage(mContext));
             mWifiPreference.setValue(Preferences.getWlanConnectionIconPackage(mContext));
             mVoltePreference.setValue(Preferences.getVolteConnectionIconPackage(mContext));
             mDataPreference.setOnPreferenceChangeListener(this);
             mWifiPreference.setOnPreferenceChangeListener(this);
             mVoltePreference.setOnPreferenceChangeListener(this);
+             */
 
             // Extra Dim
             ((SwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
