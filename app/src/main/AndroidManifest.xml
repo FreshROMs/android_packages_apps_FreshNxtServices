@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.tenseventyseven.fresh">
+    package="cf.tenseventyseven.fresh">
 
     <uses-permission
         android:name="android.permission.CONTROL_DISPLAY_COLOR_TRANSFORMS"
@@ -124,7 +124,7 @@
 
         <provider
             android:name=".ota.SoftwareUpdateProvider"
-            android:authorities="io.tenseventyseven.fresh.ota.SoftwareUpdateProvider"
+            android:authorities="cf.tenseventyseven.fresh.ota.SoftwareUpdateProvider"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedContentProvider" />
@@ -244,7 +244,7 @@
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_face_widget_title">
             <intent-filter>
-                <action android:name="io.tenseventyseven.fresh.SELECT_FACE_WIDGET" />
+                <action android:name="cf.tenseventyseven.fresh.SELECT_FACE_WIDGET" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>-->

@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "io.tenseventyseven.fresh.udfps.res"
+        applicationId "cf.tenseventyseven.fresh.udfps.res"
         minSdk 31
         targetSdk 31
         versionCode 22122301
