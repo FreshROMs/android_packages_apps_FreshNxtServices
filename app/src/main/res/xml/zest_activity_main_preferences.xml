@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--
     <DropDownPreference
         android:key="sb_icon_style_data"
         android:defaultValue="io.tns.fresh.data.4g"
@@ -24,6 +25,7 @@
         android:entries="@array/volte_signal_icon_entries"
         android:entryValues="@array/volte_signal_icon_packages"
         app:useSimpleSummaryProvider="true" />
+    -->
 
     <PreferenceCategory>
         <Preference
