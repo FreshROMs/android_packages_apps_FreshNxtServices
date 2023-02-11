@@ -18,6 +18,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 
 public class Experience {
+    public static final String FRAMEWORK_PACKAGE = "cf.tenseventyseven.fresh.framework";
     public static String PREF_NAME = "fresh_system_settings";
     public static String RESTRICTED_API = "device_restricted_api";
     public static String FRESH_DEVICE_PROVISION_KEY = "fresh_device_provisioned";

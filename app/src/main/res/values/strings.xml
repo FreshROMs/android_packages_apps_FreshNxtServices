@@ -112,6 +112,8 @@ Do NOT use 'Fresh Settings' as translation. -->
     <!-- Software update settings
 If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
     <string name="fresh_firmware_version">"Fresh version"</string>
+    <string name="fresh_experience_version">"Fresh Experience version"</string>
+    <string name="fresh_perfkit_version">"Fresh Performance Kit version"</string>
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
     <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
     <string name="fresh_ota_changelog_header_subtitle">"Find out what's included in this Fresh update."</string>
