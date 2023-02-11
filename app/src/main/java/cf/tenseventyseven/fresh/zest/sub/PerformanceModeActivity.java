@@ -55,11 +55,11 @@ public class PerformanceModeActivity extends AppCompatActivity {
         mHandler = new Handler(Looper.getMainLooper());
         mSettingsObserver = new PerformanceModeSettingsObserver(mHandler);
 
-        refreshRadioButtons(Performance.getPerformanceMode(this));
+        refreshRadioButtons(Performance.getPerformanceMode());
 
-        mPerformanceGaming.setOnClickListener(onTapOption(this, "Aggressive"));
-        mPerformanceDefault.setOnClickListener(onTapOption(this, "Default"));
-        mPerformanceMultitasking.setOnClickListener(onTapOption(this, "Conservative"));
+        mPerformanceGaming.setOnClickListener(onTapOption(this, Performance.PerformanceProfile.GAMING));
+        mPerformanceDefault.setOnClickListener(onTapOption(this, Performance.PerformanceProfile.BALANCED));
+        mPerformanceMultitasking.setOnClickListener(onTapOption(this, Performance.PerformanceProfile.MULTITASKING));
     }
 
     @Override
@@ -80,14 +80,14 @@ public class PerformanceModeActivity extends AppCompatActivity {
         super.onPause();
     }
 
-    private void refreshRadioButtons(String mode) {
+    private void refreshRadioButtons(int mode) {
         switch (mode) {
-            case "Aggressive":
+            case Performance.PerformanceProfile.GAMING:
                 mPerformanceRadioGaming.setChecked(true);
                 mPerformanceRadioDefault.setChecked(false);
                 mPerformanceRadioMultitasking.setChecked(false);
                 break;
-            case "Conservative":
+            case Performance.PerformanceProfile.MULTITASKING:
                 mPerformanceRadioGaming.setChecked(false);
                 mPerformanceRadioDefault.setChecked(false);
                 mPerformanceRadioMultitasking.setChecked(true);
@@ -100,7 +100,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
         }
     }
 
-    private View.OnClickListener onTapOption(Context context, String mode) {
+    private View.OnClickListener onTapOption(Context context, int mode) {
         return v -> {
             refreshRadioButtons(mode);
             Performance.setPerformanceMode(context, mode);
@@ -119,7 +119,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
             String mode = Settings.System.getString(getContentResolver(), "zest_system_performance_mode");
             if (mode == null || mode.isEmpty())
                 mode = "Default";
-            refreshRadioButtons(mode);
+            refreshRadioButtons(Integer.parseInt(mode));
         }
 
         public void setListening(boolean z) {
