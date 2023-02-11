@@ -133,17 +133,7 @@ public class BootReceiver extends BroadcastReceiver {
     }
 
     private void setPerformanceOnBoot(Context context) {
-        String perfMode = Settings.System.getString(context.getContentResolver(), "zest_system_performance_mode");
-        String tempMode = "Aggressive";
-
-        if (perfMode == null) // If null, it's default
-            perfMode = "Default";
-
-        if (perfMode.equals("Aggressive")) // Set to default if we're already on aggressive
-            tempMode = "Default";
-
-        Performance.setPerformanceMode(context, tempMode);
-        SystemClock.sleep(500);
+        int perfMode = Settings.System.getInt(context.getContentResolver(), "zest_system_performance_mode", Performance.PerformanceProfile.BALANCED);
         Performance.setPerformanceMode(context, perfMode);
     }
 }

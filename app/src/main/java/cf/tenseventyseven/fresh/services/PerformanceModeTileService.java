@@ -10,16 +10,13 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import android.widget.RemoteViews;
 
-import java.util.Objects;
-
 import cf.tenseventyseven.fresh.utils.Performance;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.zest.sub.PerformanceModeActivity;
 
 public class PerformanceModeTileService extends TileService {
-    int mPerformanceModeInt = 1;
+    int mCurrentMode = Performance.PerformanceProfile.BALANCED;
     private BroadcastReceiver mBroadcastReceiver = null;
-    int[] mPerformanceModesInt = {1, 2, 0};
     String QS_TILE_PERF_MODE_CHANGE_INTENT = "cf.tenseventyseven.fresh.qs.performance_mode_changed";
 
     @Override // android.app.Service
@@ -34,7 +31,7 @@ public class PerformanceModeTileService extends TileService {
         super.onStartListening();
 
         if (getQsTile() != null) {
-            setTileState(this, Performance.getPerformanceMode(this));
+            setTileState(this, Performance.getPerformanceMode());
         }
 
         if (mBroadcastReceiver != null) {
@@ -55,56 +52,42 @@ public class PerformanceModeTileService extends TileService {
 
     @Override
     public void onClick() {
-        String[] mPerformanceModes = getResources().getStringArray(R.array.zest_performance_setting_values);
-        int newMode;
-        switch (mPerformanceModeInt) {
-            case 1:
-                newMode = 2;
-                break;
-            case 2:
-                newMode = 0;
-                break;
-            default:
-                newMode = 1;
-                break;
-        }
-
-        Performance.setPerformanceMode(this, mPerformanceModes[newMode]);
-        setTileState(this, mPerformanceModes[newMode]);
+        int newMode = (mCurrentMode + 1) % Performance.PerformanceProfile.TOTAL_PROFILES;
+        Performance.setPerformanceMode(this, newMode);
+        setTileState(this, newMode);
     }
 
     public RemoteViews semGetDetailView() {
         RemoteViews view = new RemoteViews(getPackageName(), R.layout.zest_qs_detail_performance_mode);
         setPerformanceModeOnClick(view);
-        refreshRadioButtons(view, Performance.getPerformanceMode(this));
+        refreshRadioButtons(view, Performance.getPerformanceMode());
 
         return view;
     }
 
     public Intent semGetSettingsIntent() {
-        Intent intent = new Intent(this, PerformanceModeActivity.class);
-        return intent;
+        return new Intent(this, PerformanceModeActivity.class);
     }
 
     private void setPerformanceModeOnClick(RemoteViews view) {
         Intent gamingIntent = new Intent(QS_TILE_PERF_MODE_CHANGE_INTENT);
         Intent defaultIntent = new Intent(QS_TILE_PERF_MODE_CHANGE_INTENT);
         Intent multitaskingIntent = new Intent(QS_TILE_PERF_MODE_CHANGE_INTENT);
-        gamingIntent.putExtra("newPerfMode", 0);
-        defaultIntent.putExtra("newPerfMode", 1);
-        multitaskingIntent.putExtra("newPerfMode", 2);
+        gamingIntent.putExtra("newPerfMode", Performance.PerformanceProfile.GAMING);
+        defaultIntent.putExtra("newPerfMode", Performance.PerformanceProfile.BALANCED);
+        multitaskingIntent.putExtra("newPerfMode", Performance.PerformanceProfile.MULTITASKING);
 
         view.setOnClickPendingIntent(R.id.zest_qs_detail_performance_gaming, PendingIntent.getBroadcast(this, 0, gamingIntent, PendingIntent.FLAG_UPDATE_CURRENT));
         view.setOnClickPendingIntent(R.id.zest_qs_detail_performance_default, PendingIntent.getBroadcast(this, 1, defaultIntent, PendingIntent.FLAG_UPDATE_CURRENT));
         view.setOnClickPendingIntent(R.id.zest_qs_detail_performance_multitasking, PendingIntent.getBroadcast(this, 2, multitaskingIntent, PendingIntent.FLAG_UPDATE_CURRENT));
     }
 
-    private void refreshRadioButtons(RemoteViews view, String mode)  {
+    private void refreshRadioButtons(RemoteViews view, int mode)  {
         switch (mode) {
-            case "Aggressive":
+            case Performance.PerformanceProfile.GAMING:
                 view.setRadioGroupChecked(R.id.zest_qs_detail_performance_group, R.id.zest_qs_detail_performance_gaming);
                 break;
-            case "Conservative":
+            case Performance.PerformanceProfile.MULTITASKING:
                 view.setRadioGroupChecked(R.id.zest_qs_detail_performance_group, R.id.zest_qs_detail_performance_multitasking);
                 break;
             default:
@@ -129,32 +112,31 @@ public class PerformanceModeTileService extends TileService {
         return false;
     }
 
-    private void setTileState(Context context, String mode) {
+    private void setTileState(Context context, int mode) {
         Tile tile = getQsTile();
-        int tileState;
         String modeName;
         int modeIcon;
+        int tileState;
 
-        switch (Objects.requireNonNull(mode)) {
-            case "Aggressive":
+        switch (mode) {
+            case Performance.PerformanceProfile.GAMING:
                 modeName = context.getString(R.string.zest_performance_setting_option_gaming);
                 modeIcon = R.drawable.ic_qs_tile_gaming;
                 tileState = Tile.STATE_ACTIVE;
-                mPerformanceModeInt = 0;
                 break;
-            case "Conservative":
+            case Performance.PerformanceProfile.MULTITASKING:
                 modeName = context.getString(R.string.zest_performance_setting_option_multitasking);
                 modeIcon = R.drawable.ic_qs_tile_multitasking;
                 tileState = Tile.STATE_ACTIVE;
-                mPerformanceModeInt = 2;
                 break;
             default:
                 modeName = context.getString(R.string.zest_performance_setting_option_default);
                 modeIcon = R.drawable.ic_qs_tile_performance_default;
                 tileState = Tile.STATE_INACTIVE;
-                mPerformanceModeInt = 1;
                 break;
         }
+
+        mCurrentMode = mode;
 
         tile.setLabel(modeName);
         tile.setIcon(Icon.createWithResource(this, modeIcon));
@@ -168,24 +150,12 @@ public class PerformanceModeTileService extends TileService {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (context != null || intent != null) {
+            if (context != null && intent != null) {
                 String action = intent.getAction();
                 if (action.equals(QS_TILE_PERF_MODE_CHANGE_INTENT)) {
-                    String mode;
-                    int newMode = intent.getIntExtra("newPerfMode", 1);
-                    switch (newMode) {
-                        case 0:
-                            mode = "Aggressive";
-                            break;
-                        case 2:
-                            mode = "Conservative";
-                            break;
-                        default:
-                            mode = "Default";
-                            break;
-                    }
-                    Performance.setPerformanceMode(context, mode);
-                    setTileState(context, mode);
+                    int newMode = intent.getIntExtra("newPerfMode", Performance.PerformanceProfile.BALANCED);
+                    Performance.setPerformanceMode(context, newMode);
+                    setTileState(context, newMode);
                 }
             }
         }
