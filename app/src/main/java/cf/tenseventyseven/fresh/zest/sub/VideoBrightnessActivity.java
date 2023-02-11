@@ -36,6 +36,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cf.tenseventyseven.fresh.utils.Experience;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import de.dlyt.yanndroid.oneui.widget.Switch;
 import cf.tenseventyseven.fresh.R;
@@ -199,7 +200,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
 
     private void populateAppList() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
-        String resPackage = "cf.tenseventyseven.fresh.framework";
+        String resPackage = Experience.FRAMEWORK_PACKAGE;
         Resources resArray;
 
         PackageManager pm = getPackageManager();

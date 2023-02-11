@@ -125,6 +125,15 @@
             android:title="@string/fresh_firmware_version"
             android:summary="@string/zest_setting_default_summary" />
         <Preference
+            android:key="zs_fresh_experience_version"
+            android:title="@string/fresh_experience_version"
+            android:summary="@string/zest_setting_default_summary" />
+        <Preference
+            android:key="zs_fresh_perfkit_version"
+            android:title="@string/fresh_perfkit_version"
+            android:summary="@string/zest_setting_default_summary" />
+
+        <Preference
             android:key="zs_about_fresh_services"
             android:title="@string/zest_app_version"
             android:summary="@string/zest_setting_default_summary">

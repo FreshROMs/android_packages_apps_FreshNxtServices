@@ -1,10 +1,14 @@
 package cf.tenseventyseven.fresh.zest;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -119,6 +123,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         @Override
+        @SuppressLint("StringFormatInvalid")
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.zest_activity_main_preferences, rootKey);
         }
@@ -178,6 +183,23 @@ public class SettingsActivity extends AppCompatActivity {
             mDeviceScreenRatio.setOnPreferenceChangeListener(this);
 
             // Fresh and Fresh Services versions
+            try {
+                PackageManager pm = mContext.getPackageManager();
+                PackageInfo packageInfoExp = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? pm.getPackageInfo(Experience.FRAMEWORK_PACKAGE, PackageManager.PackageInfoFlags.of(0)) : pm.getPackageInfo(Experience.FRAMEWORK_PACKAGE, 0);
+                findPreference("zs_fresh_experience_version").setSummary(packageInfoExp.versionName);
+            } catch (PackageManager.NameNotFoundException ignored) {
+                findPreference("zs_fresh_experience_version").setVisible(false);
+            }
+
+            // Fresh PerfKit
+            String perfKitVersion = SystemProperties.get("persist.sys.zest.perf_version");
+            String perfKitBuild = SystemProperties.get("persist.sys.zest.perf_build");
+
+            if (!perfKitVersion.isEmpty() && !perfKitBuild.isEmpty())
+                findPreference("zs_fresh_perfkit_version").setSummary(String.format("%s (%s)", perfKitVersion, perfKitBuild));
+            else
+                findPreference("zs_fresh_perfkit_version").setVisible(false);
+
             findPreference("zs_fresh_version").setSummary(romVersion);
             findPreference("zs_fresh_version").setOnPreferenceClickListener(getVersionEgg(mContext));
             findPreference("zs_about_fresh_services").setSummary(appVersion);
