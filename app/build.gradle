@@ -11,8 +11,8 @@ android {
         minSdk 31
         //noinspection ExpiredTargetSdkVersion
         targetSdk 28
-        versionCode 23021108
-        versionName "5.0.0.8"
+        versionCode 23021201
+        versionName "5.0.0.9"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
