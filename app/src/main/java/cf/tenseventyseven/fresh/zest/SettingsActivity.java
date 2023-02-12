@@ -28,6 +28,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cf.tenseventyseven.fresh.utils.Maverick;
 import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
 import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
 import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
@@ -115,6 +116,10 @@ public class SettingsActivity extends AppCompatActivity {
         private static boolean mBackground = false;
         private static Handler mHandler;
 
+        // Get activated color from attr, so it changes based on the app's theme
+        @ColorInt int summaryColorNormal;
+        @ColorInt int summaryColorActivated;
+
         @Override
         public void onAttach(@NonNull Context context) {
             super.onAttach(context);
@@ -143,19 +148,25 @@ public class SettingsActivity extends AppCompatActivity {
             Preference mFingerprintAnimation = findPreference("fs_plus_fod_animation_style");
 
             // Get activated color from attr, so it changes based on the app's theme
-            TypedValue typedValue = new TypedValue();
-            Resources.Theme theme = mContext.getTheme();
-            theme.resolveAttribute(R.attr.colorControlActivated, typedValue, true);
-            @ColorInt int summaryColor = typedValue.data;
+            TypedValue typedValueNormal = new TypedValue();
+            TypedValue typedValueActivated = new TypedValue();
 
-            mDataPreference.seslSetSummaryColor(summaryColor);
-            mWifiPreference.seslSetSummaryColor(summaryColor);
-            mVoltePreference.seslSetSummaryColor(summaryColor);
-            mPerformancePreference.seslSetSummaryColor(summaryColor);
-            mDeviceResolution.seslSetSummaryColor(summaryColor);
-            mDeviceScreenRatio.seslSetSummaryColor(summaryColor);
-            mVideoBrightness.seslSetSummaryColor(summaryColor);
-            mFingerprintAnimation.seslSetSummaryColor(summaryColor);
+            Resources.Theme themeActivated = mContext.getTheme();
+            Resources.Theme themeNormal = mContext.getTheme();
+            themeNormal.resolveAttribute(android.R.attr.textColorSecondary, typedValueNormal, true);
+            themeActivated.resolveAttribute(R.attr.colorControlActivated, typedValueActivated, true);
+
+            summaryColorNormal = typedValueNormal.data;
+            summaryColorActivated = typedValueActivated.data;
+
+            mDataPreference.seslSetSummaryColor(summaryColorActivated);
+            mWifiPreference.seslSetSummaryColor(summaryColorActivated);
+            mVoltePreference.seslSetSummaryColor(summaryColorActivated);
+            mPerformancePreference.seslSetSummaryColor(summaryColorActivated);
+            mDeviceResolution.seslSetSummaryColor(summaryColorActivated);
+            mDeviceScreenRatio.seslSetSummaryColor(summaryColorActivated);
+            mVideoBrightness.seslSetSummaryColor(summaryColorActivated);
+            mFingerprintAnimation.seslSetSummaryColor(summaryColorActivated);
 
             String setResolution = ScreenResolutionActivity.getResolution(mContext);
             String romVersion = Experience.getRomVersion();
@@ -172,6 +183,10 @@ public class SettingsActivity extends AppCompatActivity {
             // Extra Dim
             ((SwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
             findPreference("fs_extra_dim").setOnPreferenceChangeListener(this);
+
+            // USB security
+            ((SwitchPreferenceScreen) findPreference("fs_usb_security")).setChecked(Maverick.isMaverickEnabled());
+            findPreference("fs_usb_security").setOnPreferenceChangeListener(this);
 
             // Screen resolution
             mDeviceResolution.setSummary(setResolution);
@@ -267,6 +282,9 @@ public class SettingsActivity extends AppCompatActivity {
                     return true;
                 case "fs_extra_dim":
                     ExtraDimSettingsActivity.setExtraDimState(mContext, (boolean) newValue);
+                    return true;
+                case "fs_usb_security":
+                    Maverick.setMaverickState(mContext, (boolean) newValue ? Maverick.MaverickState.WHEN_LOCKED : Maverick.MaverickState.OFF);
                     return true;
                 case "fs_plus_location_indicator":
                     DeviceConfig.setProperty(DeviceConfig.NAMESPACE_PRIVACY,
