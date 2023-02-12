@@ -119,6 +119,18 @@
         </SwitchPreferenceScreen>
     </PreferenceCategory>
 
+
+    <PreferenceCategory>
+        <SwitchPreferenceScreen
+            android:key="fs_usb_security"
+            android:title="@string/zest_maverick_security_setting_title"
+            android:summary="@string/zest_maverick_security_setting_summary_five">
+            <intent
+                android:targetClass="cf.tenseventyseven.fresh.zest.sub.UsbSecuritySettingsActivity"
+                android:targetPackage="cf.tenseventyseven.fresh" />
+        </SwitchPreferenceScreen>
+    </PreferenceCategory>
+
     <de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
         <Preference
             android:key="zs_fresh_version"

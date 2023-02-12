@@ -60,7 +60,8 @@
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
-    <uses-permission android:name="android.permission.DELETE_PACKAGES"
+    <uses-permission
+        android:name="android.permission.DELETE_PACKAGES"
         tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.INSTALL_PACKAGES"
@@ -100,7 +101,6 @@
         <meta-data
             android:name="theming-meta"
             android:value="meta_theme_fresh_services" />
-
         <meta-data
             android:name="theming-meta-xml"
             android:value="@xml/meta_theme_fresh_services" />
@@ -236,6 +236,11 @@
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_extra_dim_setting_title" />
         <activity
+            android:name=".zest.sub.UsbSecuritySettingsActivity"
+            android:exported="true"
+            android:icon="@mipmap/fresh_ic_launcher_settings"
+            android:label="@string/zest_maverick_security_setting_title" />
+        <activity
             android:name=".zest.sub.PerformanceModeActivity"
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
@@ -247,7 +252,8 @@
             android:label="@string/zest_plus_fod_animation_style_title"
             android:screenOrientation="portrait"
             android:theme="@style/OneUI3Theme" />
-        <!--<activity
+        <!--
+<activity
             android:name=".zest.sub.FaceWidgetActivity"
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
@@ -256,13 +262,15 @@
                 <action android:name="cf.tenseventyseven.fresh.SELECT_FACE_WIDGET" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>-->
-        <!--<activity
+        </activity>
+        -->
+        <!--
+<activity
             android:name=".zest.store.FreshUpdatesActivity"
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
-            android:label="@string/zest_fresh_updates_title" />-->
-
+            android:label="@string/zest_fresh_updates_title" />
+        -->
         <service
             android:name=".services.RestartTileService"
             android:exported="true"

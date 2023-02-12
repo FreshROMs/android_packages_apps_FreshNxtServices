@@ -75,9 +75,12 @@
     <string name="zest_maverick_security_setting_title">"USB security"</string>
     <string name="zest_maverick_security_setting_summary">"Protect your device from malicious USB devices."</string>
     <string name="zest_maverick_security_setting_activity_summary">"Protect your device from malicious USB devices by blocking access while the device is locked."</string>
+    <string name="zest_maverick_security_setting_summary_five">"Protect your device from malicious USB On-The-Go devices."</string>
+    <string name="zest_maverick_security_setting_activity_summary_five">"Protect your device from malicious USB On-The-Go devices by blocking access while the device is locked."</string>
     <string name="zest_maverick_security_setting_option_title">"Restrict USB devices"</string>
     <string name="zest_maverick_security_setting_option_on_lock">"While screen is off"</string>
     <string name="zest_maverick_security_setting_option_always">"Always"</string>
+    <string name="zest_maverick_security_setting_always">"Always disallow access"</string>
     <!-- Enhanced dark mode (DarQ) settings -->
     <string name="zest_darq_setting_title">"Enhanced dark mode"</string>
     <string name="zest_darq_setting_summary">"Enable dark mode for all applications."</string>
@@ -85,7 +88,7 @@
     <string name="zest_darq_service_sync_success">"Changes synced with service"</string>
     <string name="zest_darq_service_powered_by">"Powered by"</string>
     <string name="zest_darq_service_detail_warning">"Enabling enhanced dark mode for some apps may cause layout issues. Some apps may not be supported."</string>
-        <!-- Protect Battery -->
+    <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Protect battery"</string>
     <string name="zest_protect_battery_summary">"To extend the lifespan of your battery, limit the maximum charge to 85%."</string>
     <!-- Recovery reboot QS tile -->
