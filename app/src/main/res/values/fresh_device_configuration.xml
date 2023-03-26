@@ -68,10 +68,6 @@
     <string-array name="configs_base_soft">
         <!-- Use new privacy indicators for location -->
         <item>privacy/location_indicators_enabled=false</item>
-
-        <!-- Maverick: Default to 'when locked'
-        <item>configuration/fresh_maverick_state=1</item>
-         -->
     </string-array>
 
     <!-- Device-specific configuration -->
