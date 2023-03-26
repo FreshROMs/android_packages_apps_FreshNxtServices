@@ -198,7 +198,7 @@ public class SettingsActivity extends AppCompatActivity {
             // Fresh and Fresh Services versions
             try {
                 PackageManager pm = mContext.getPackageManager();
-                PackageInfo packageInfoExp = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? pm.getPackageInfo(Experience.FRAMEWORK_PACKAGE, PackageManager.PackageInfoFlags.of(0)) : pm.getPackageInfo(Experience.FRAMEWORK_PACKAGE, 0);
+                PackageInfo packageInfoExp = pm.getPackageInfo(Experience.FRAMEWORK_PACKAGE, 0);
                 findPreference("zs_fresh_experience_version").setSummary(packageInfoExp.versionName);
             } catch (PackageManager.NameNotFoundException ignored) {
                 findPreference("zs_fresh_experience_version").setVisible(false);
