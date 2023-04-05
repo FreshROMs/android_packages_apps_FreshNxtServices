@@ -20,7 +20,6 @@ package cf.tenseventyseven.fresh.system;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.provider.DeviceConfig;
 import android.provider.Settings;
@@ -133,7 +132,6 @@ public class BootReceiver extends BroadcastReceiver {
     }
 
     private void setPerformanceOnBoot(Context context) {
-        int perfMode = Settings.System.getInt(context.getContentResolver(), "zest_system_performance_mode", Performance.PerformanceProfile.BALANCED);
-        Performance.setPerformanceMode(context, perfMode);
+        Performance.setPerformanceMode(Performance.getPerformanceMode());
     }
 }
