@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
-    <string name="zest_fod_animation_alpenglow">"توهج ألبن"</string>
+    <string name="zest_fod_animation_alpenglow">"شعاع الألب"</string>
     <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
-    <string name="zest_fod_animation_aurora">"اورورا"</string>
-    <string name="zest_fod_animation_bloom">"ازدهار"</string>
+    <string name="zest_fod_animation_aurora">"ارورا"</string>
+    <string name="zest_fod_animation_bloom">"إزدهار"</string>
     <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
     <string name="zest_fod_animation_cyberpunk">"سايبربانك"</string>
-    <string name="zest_fod_animation_default">"افتراضي"</string>
+    <string name="zest_fod_animation_default">"إفتراضي"</string>
     <string name="zest_fod_animation_dna">"الحمض النووي"</string>
     <string name="zest_fod_animation_electronic">"كهربائي"</string>
     <string name="zest_fod_animation_energy">"طاقة"</string>
     <string name="zest_fod_animation_futuristic">"مستقبلي"</string>
-    <string name="zest_fod_animation_halo_ring">"خاتم هالو"</string>
-    <string name="zest_fod_animation_magic">"سحري"</string>
+    <string name="zest_fod_animation_halo_ring">"خاتم هالة"</string>
+    <string name="zest_fod_animation_magic">"سحر"</string>
     <string name="zest_fod_animation_mclaren">"مكلارين"</string>
-    <string name="zest_fod_animation_molecular">"جزيئي"</string>
-    <string name="zest_fod_animation_pop">"فرقعة"</string>
-    <string name="zest_fod_animation_pulsar">"نبضي"</string>
+    <string name="zest_fod_animation_molecular">"جزيء"</string>
+    <string name="zest_fod_animation_pop">"بوب"</string>
+    <string name="zest_fod_animation_pulsar">"نابض"</string>
     <string name="zest_fod_animation_pulse">"نبض"</string>
-    <string name="zest_fod_animation_rhythm">"إيقاعي"</string>
-    <string name="zest_fod_animation_ripple">"تموجي"</string>
-    <string name="zest_fod_animation_star">"نجمي"</string>
-    <string name="zest_fod_animation_stripe">"شريطي"</string>
-    <string name="zest_fod_animation_supernova">"سوبرنوفا"</string>
-    <string name="zest_fod_animation_water">"مائي"</string>
-    <string name="zest_fod_animation_wave">"مموج"</string>
+    <string name="zest_fod_animation_rhythm">"إيقاع"</string>
+    <string name="zest_fod_animation_ripple">"تموج"</string>
+    <string name="zest_fod_animation_star">"نجم"</string>
+    <string name="zest_fod_animation_stripe">"شريط"</string>
+    <string name="zest_fod_animation_supernova">"نجم خارق"</string>
+    <string name="zest_fod_animation_water">"ماء"</string>
+    <string name="zest_fod_animation_wave">"موجة"</string>
 </resources>

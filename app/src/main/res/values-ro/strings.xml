@@ -10,12 +10,14 @@
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
     <string name="zest_setting_default_summary">"Necunoscut"</string>
     <string name="zest_setting_default_error">"Ceva nu a functionat corect"</string>
+    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"Rezolutie ecran"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Actulizare Sistem"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Still iconita Data"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Stil iconita WI-FI"</string>
+    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"Actualizare sistem"</string>
     <string name="fresh_ota_check_for_updates_title">"Descarca si instaleaza"</string>
     <string name="fresh_ota_check_for_updates_summary">"Descărcarea prin rețelele mobile poate duce la taxe suplimentare. Dacă este posibil, descărcați prin intermediul unei rețele Wi-Fi."</string>
@@ -65,7 +67,7 @@
     <string name="zest_screen_resolution_setting_high_summary">"Cele mai clare imagini, cea mai mare utilizare a bateriei"</string>
     <string name="zest_screen_resolution_setting_medium_summary">"Imagini îmbunătățite, utilizare moderată a bateriei"</string>
     <string name="zest_screen_resolution_setting_low_summary">"Imagini urâte, cea mai redusă utilizare a bateriei"</string>
-    <string name="zest_screen_resolution_setting_btn_apply">"aplica"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"aplică"</string>
     <!-- Video brightness/HDR effect settings -->
     <string name="zest_hdr_effect_setting_title">"Luminozitatea video"</string>
     <string name="zest_hdr_effect_setting_summary">"Îmbunătățiți calitatea imaginii videoclipurilor dvs. pentru a vă bucura de culori mai luminoase și mai vii."</string>
@@ -86,10 +88,188 @@
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Protejați bateria"</string>
     <string name="zest_protect_battery_summary">"Pentru a prelungi durata de viață a bateriei, limitați încărcarea maximă la 85%."</string>
+    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"O.K"</string>
     <string name="qs_dialog_cancel">"Anulare"</string>
     <!-- About Page -->
     <string name="zest_about_page_open_source">"Licențe open-source"</string>
-    <string name="zest_about_page_source_code">"Cod sursa"</string>
+    <string name="zest_about_page_source_code">"Cod sursă"</string>
     <string name="zest_about_page_translations">"Localizare"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"Serviciile de sistem Fresh"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"Imagine de fundal și stil"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"Next(5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"Wi-Fi 6"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"Wi-Fi 6e"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"Despre Zest"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"Zest"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"Versiune Fresh"</string>
+    <string name="fresh_ota_changelog_app_header">"Informații despre actualizarea aplicației"</string>
+    <string name="fresh_ota_changelog_app_subheader">"Aplicațiile de mai jos vor fi actualizate la ultima versiune după această actualizare software"</string>
+    <string name="fresh_ota_changelog_detail_header">"Informații despre această actualizare software"</string>
+    <string name="fresh_ota_changelog_btn_download">"Descarcă"</string>
+    <string name="fresh_ota_changelog_btn_pause">"Pauză"</string>
+    <string name="fresh_ota_changelog_btn_resume">"Reluare"</string>
+    <string name="fresh_ota_changelog_btn_install">"Instalează"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"Anulează"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"Instalează mai târziu"</string>
+    <string name="fresh_ota_checking_for_updates">"Se caută actualizări"</string>
+    <string name="fresh_ota_verifying_update">"Se verifică actualizarea"</string>
+    <string name="fresh_permissions_storage_title">"Permisiunea pentru stocare nu a fost accordată"</string>
+    <string name="fresh_permissions_fp_storage_description">"Serviciile de sistem Fresh au nevoie de permisiunile de stocare pentru a putea personaliza animația senzorului de amprentă."</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"Nu vei putea folosi telefonul tău în timpul actualizării, nici pentru apeluri de urgență."</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"În așteptarea rețelei"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"Descărcarea a fost pusă pe pauză"</string>
+    <string name="fresh_ota_notification_download_cancelled">"Descărcarea a fost anulată"</string>
+    <string name="fresh_ota_notification_update_cancelled">"Actualizarea a fost anulată"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"Timp rămas:"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"Dispozitivul dumneavoastră este la zi"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"Ultima actualizare reușită"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"A apărut o eroare necunoscută. Încercați din nou mai târziu."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"Rețeaua este indisponibila. Încercați din nou mai târziu."</string>
+    <string name="fresh_ota_notification_group_name">"Actualizări software"</string>
+    <string name="fresh_ota_notification_channel_name">"Actualizări fimware"</string>
+    <string name="fresh_ota_notification_channel_description">"Acest canal de notificare îi permite aplicației sa vă notifice despre actualizările de firmware disponibile pentru dispozitivul tău"</string>
+    <string name="fresh_app_notification_channel_name">"Actualizări aplicații"</string>
+    <string name="fresh_app_notification_channel_description">"Acest canal este folosit pentru a vă notifica despre actualizările aplicațiilor de sistem."</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"Notificări în curs"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"Acest canal de notificare este folosit pentru actualizările în curs și notificări."</string>
+    <string name="fresh_ota_notification_update_install_title">"Actualizarea software este gata de instalare"</string>
+    <string name="fresh_ota_notification_update_available_title">"Actualizare software disponibilă"</string>
+    <string name="fresh_ota_notification_update_available_description">"O nouă versiune de Fresh este disponibilă pentru dispozitivul vostru."</string>
+    <string name="fresh_ota_notification_verification_failed_description">"Verificarea actualizării software a dat greș. Încercați din nou mai târziu."</string>
+    <string name="fresh_ota_notification_download_failed_title">"Nu s-a putut descărca actualizarea software"</string>
+    <string name="fresh_ota_notification_update_failed_title">"Nu s-a putut actualiza softwareul"</string>
+    <string name="fresh_ota_notification_update_success_title">"Dispozitivul vostru a fost actualizat"</string>
+    <string name="fresh_ota_download_block_dialog_title">"Avertisment date mobile"</string>
+    <string name="fresh_ota_download_block_dialog_description">"Descărcarea prin date mobile poate rezulta taxe suplimentare. Dacă este posibil, descărcați folosind o rețea Wi-Fi.
+
+Continuați descărcarea acestei actualizări?"</string>
+    <string name="fresh_ota_download_block_dialog_download">"Continuă"</string>
+    <string name="fresh_ota_download_block_dialog_later">"Descarcă mai târziu"</string>
+    <string name="fresh_ota_install_dialog_description">"Această actualizare nu ar trebui să afecteze datele tale personale, dar mereu este o idee bună să faci un back up datelor tale în orice caz. 
+
+Continuă instalarea actualizării?"</string>
+    <string name="fresh_ota_install_dialog_continue">"Instalează acum"</string>
+    <string name="fresh_ota_network_lost_dialog_description">"Telefonul tău a fost deconectat de la rețea înainte ca descărcarea să fie completă. Descărcarea va continua când telefonul se va reconecta la o rețea."</string>
+    <string name="fresh_ota_toast_failed_download_generic">"Nu s-a putut actualiza softwareul. S-a întâmpinat o eroare de rețea sau server. Încearcă din nou mai târziu."</string>
+    <string name="fresh_ota_toast_failed_download_network">"S-a întâmpinat o eroare de rețea. Încercați din nou mai târziu."</string>
+    <string name="fresh_ota_toast_failed_download_server">"S-a întâmpinat o eroare la server. Încercați din nou mai târziu."</string>
+    <string name="fresh_ota_toast_failed_no_space">"Pentru a instala această actualizare, aveți nevoie de mai mult spațiu de stocare liber. Eliberați niște spațiu ștergând aplicații sau ștergând fișiere, apoi încercați din nou."</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"Aspect Ratio"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Bun venit la Zest+!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ permite ca Fresh să fie mai puternic adăugând funcții noi și mai multe. Dar, acest lucru cere ca Zest să aibă acces la tot sistemul folosind Magisk.
+
+Datele tale sunt importante. Promit că datele nu vor fi accesate sau trimise mai departe și că este important ca datele tale să fie private.
+
+Doriți să activați Zest+?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"Repornire în modul de recuperare"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"Doriți să reporniți în modul de recuperare?"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"Luminozitate extra scăzuta"</string>
+    <string name="zest_extra_dim_setting_summary_main">"Scade luminozitatea ecranului peste limita minima de luminozitate."</string>
+    <string name="zest_extra_dim_setting_summary">"Scăderea luminozității ecranului peste limita minimă este mult mai comfortabilă pentru vedere. 
+
+Activând sădera luminozitații extra ar putea strica niște aplicații, rezultând un ecran negru. Acesta este un defect pe care numai producătorul îl poate repara."</string>
+    <string name="zest_extra_dim_setting_intensity">"Intensitate"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"Închide după repornire"</string>
+    <string name="zest_volte_icon_title">"Stil Voice-over-LTE"</string>
+    <string name="zest_volte_icon_telcel">"Telcel"</string>
+    <string name="zest_volte_icon_dcm">"Docomo"</string>
+    <string name="zest_volte_icon_telenor">"Telenor"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"U.S. Cellular"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"Verizon"</string>
+    <string name="zest_data_connection_icon_tmo">"T-Mobile"</string>
+    <string name="zest_data_connection_icon_next_outline">"Next Outline"</string>
+    <string name="zest_data_connection_icon_next_alt">"Next Alt"</string>
+    <string name="zest_data_connection_icon_next_att">"Next AT&amp;T"</string>
+    <string name="zest_performance_setting_option_default">"Balansat"</string>
+    <string name="zest_performance_setting_option_gaming">"Gaming"</string>
+    <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
+    <string name="zest_performance_mode_title">"Mod pentru performanță"</string>
+    <string name="zest_performance_mode_summary">"Alege modul de performanță care funcționează cel mai bine pentru tine."</string>
+    <string name="zest_performance_setting_option_gaming_summary">"Sporește performanța și optimizează management-ul de memorie pentru o experiență de gaming mai bună."</string>
+    <string name="zest_performance_setting_option_default_summary">"Balansează performanța și durata de viață a bateriei pentru o experiență care funcționează pentru toată lumea."</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"Îmbunătățeste performanța și management-ul memoriei pentru a putea rula mai multe aplicații în fundal."</string>
+    <string name="zest_video_brightness_summary_normal">"Afișează videoclipuri folosind luminozitatea și setările de culoare normale ale telefonului tău."</string>
+    <string name="zest_video_brightness_summary_bright">"Mărește luminozitatea ecranului și face culorile mai vibrante când urmărești un videoclip."</string>
+    <string name="zest_video_brightness_setting_normal">"Nromal"</string>
+    <string name="zest_video_brightness_setting_bright">"Luminos"</string>
+    <string name="zest_video_brightness_supported_apps_header">"Aplicații suportate"</string>
+    <string name="zest_system_settings_plugin_summary_four">"Stil iconiță • Performanță • Rezoluție ecran"</string>
+    <string name="zest_customization_reboot_required_title">"Repornești telefonul?"</string>
+    <string name="zest_customization_reboot_required_description">"Pentru a aplica stilul nou pentru iconițe, telefonul tău trebuie repornit."</string>
+    <string name="zest_customization_reboot_required_btn_ok">"Repornești acum"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"Repornește mai târziu"</string>
+    <string name="zest_plus_fod_animation_style_title">"Animații pentru senzorul de amprentă"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"Aplicarea noului stil a eșuat."</string>
+    <string name="zest_plus_location_indicators_title">"Folosește noul indicator pentru locație"</string>
+    <string name="zest_plus_location_indicators_summary">"Folosește noul indicator pentru bara de status folosit pentru cameră și microfon."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Află ce este inclus în această actualizare Fresh."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Serviciile de sistem Fresh au nevoie de permisiunile de stocare pentru a putea primi actualizări de software și aplicații."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s este gata de instalare"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s la %2$s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"Instalarea Fresh %1$s a dat greș. Încearcă să descarci actualizările direct de pe website-ul FreshROMs sau cere suport."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s a fost instalat cu succes. Bucură-te de un dispozitiv mai proaspăt!"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"Actualizarea va fi instalată automat la %1$s pe %2$s."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Unele module Magisk au fost dezactivate"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Pentru a putea actualiza dispozitivul tău, unele module Magisk au fost dezactivate. Acestea pot fi re activate după ce dispozitivul a terminat actualizarea."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d au fost instalate"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Ești sigur că vrei să dezinstalezi %1$s?"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Versiune Framework de experiență Fresh %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Versiune kit de performanță Fresh %s"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"Actualizări Fresh"</string>
+    <string name="zest_maverick_security_setting_summary_five">"Protejează dispozitivul tău de dispozitive “USB On-The-Go” malițioase."</string>
+    <string name="zest_maverick_security_setting_activity_summary_five">"Protejează dispozitivul tău de dispozitive “USB On-The-Go” malițioase blocând accesul cât timp dispozitivul este blocat."</string>
+    <string name="zest_maverick_security_setting_always">"Mereu nu acorda acces"</string>
+    <string name="fresh_experience_version">"Versiune Experiență Fresh"</string>
+    <string name="fresh_perfkit_version">"Versiune Kit de performanță Fresh"</string>
 </resources>

@@ -1,2 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources/>
+<resources>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_alpenglow">"Orizont"</string>
+    <!-- Alpenglow and Aurora are *different styles*. Please make sure to differentiate them. -->
+    <string name="zest_fod_animation_aurora">"Aurora"</string>
+    <string name="zest_fod_animation_bloom">"Inflorind"</string>
+    <!-- Not as "CyberPunk 2077", just "cyberpunk". -->
+    <string name="zest_fod_animation_cyberpunk">"Rebel"</string>
+    <string name="zest_fod_animation_default">"Prestabilit"</string>
+    <string name="zest_fod_animation_dna">"ADN"</string>
+    <string name="zest_fod_animation_electronic">"Electric"</string>
+    <string name="zest_fod_animation_energy">"Energie"</string>
+    <string name="zest_fod_animation_futuristic">"Futuristic"</string>
+    <string name="zest_fod_animation_halo_ring">"Inger"</string>
+    <string name="zest_fod_animation_magic">"Magic"</string>
+    <string name="zest_fod_animation_mclaren">"McLaren"</string>
+    <string name="zest_fod_animation_molecular">"Molecular"</string>
+    <string name="zest_fod_animation_pop">"Pop"</string>
+    <string name="zest_fod_animation_pulsar">"Pulsand"</string>
+    <string name="zest_fod_animation_pulse">"Puls"</string>
+    <string name="zest_fod_animation_rhythm">"Ritm"</string>
+    <string name="zest_fod_animation_ripple">"Valuri"</string>
+    <string name="zest_fod_animation_star">"Stea"</string>
+    <string name="zest_fod_animation_stripe">"Dungi"</string>
+    <string name="zest_fod_animation_supernova">"Explozie Stelara"</string>
+    <string name="zest_fod_animation_water">"Apa"</string>
+    <string name="zest_fod_animation_wave">"Val"</string>
+</resources>

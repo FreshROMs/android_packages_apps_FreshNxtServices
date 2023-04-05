@@ -65,8 +65,8 @@
     <string name="zest_screen_resolution_setting_title">"Розширення екрану"</string>
     <string name="zest_screen_resolution_setting_summary">"Деякі програми можуть закритися, коли ви зміните роздільну здатність."</string>
     <string name="zest_screen_resolution_setting_high_summary">"Найчіткіше зображення, найбільше використання акумулятора"</string>
-    <string name="zest_screen_resolution_setting_medium_summary">"Покращений візуальний ефект, помірне використання акумулятора"</string>
-    <string name="zest_screen_resolution_setting_low_summary">"Потворне зображення, найнижче використання акумулятора"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"Середня чіткість зображення, помірне використання акумулятора"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"Нечітке зображення, найнижче використання акумулятора"</string>
     <string name="zest_screen_resolution_setting_btn_apply">"Застосувати"</string>
     <!-- Video brightness/HDR effect settings -->
     <string name="zest_hdr_effect_setting_title">"Яскравість відео"</string>
@@ -121,7 +121,7 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_ota_changelog_btn_install">"Встановити"</string>
     <string name="fresh_ota_changelog_btn_cancel">"Відмінити"</string>
     <string name="fresh_ota_changelog_btn_install_later">"Встановити пізніше"</string>
-    <string name="fresh_ota_checking_for_updates">"Шукати оновлення..."</string>
+    <string name="fresh_ota_checking_for_updates">"Пошук оновлення..."</string>
     <string name="fresh_ota_verifying_update">"Верифікація оновлення..."</string>
     <string name="fresh_permissions_storage_title">"Дозвіл на зберігання не надано"</string>
     <string name="fresh_permissions_fp_storage_description">"Fresh System Services вимагає дозволів на зберігання, щоб мати можливість налаштувати анімацію відбитків пальців."</string>
@@ -142,10 +142,10 @@ If there is *no direct translation* for the word 'fresh', use "Fresh" as if it i
     <string name="fresh_app_notification_channel_description">"Цей канал сповіщень використовується для сповіщення про оновлення системних програм."</string>
     <string name="fresh_ota_ongoing_notification_channel_name">"Поточні сповіщення"</string>
     <string name="fresh_ota_ongoing_notification_channel_description">"Цей канал сповіщень використовується для поточних оновлень і сповіщень."</string>
-    <string name="fresh_ota_notification_update_install_title">"Оновлення програмного забезпечення готове до встановлення"</string>
-    <string name="fresh_ota_notification_update_available_title">"Доступне оновлення програмного забезпечення"</string>
+    <string name="fresh_ota_notification_update_install_title">"Оновлення ПЗ готове до встановлення"</string>
+    <string name="fresh_ota_notification_update_available_title">"Доступне оновлення ПЗ"</string>
     <string name="fresh_ota_notification_update_available_description">"Для вашого пристрою доступна нова версія Fresh."</string>
-    <string name="fresh_ota_notification_verification_failed_description">"Не вдалося перевірити оновлення програмного забезпечення. Спробуйте ще раз пізніше."</string>
+    <string name="fresh_ota_notification_verification_failed_description">"Не вдалося перевірити оновлення ПЗ. Спробуйте ще раз пізніше."</string>
     <string name="fresh_ota_notification_download_failed_title">"ПЗ не завантажилось"</string>
     <string name="fresh_ota_notification_update_failed_title">"Помилка оновлення ПЗ"</string>
     <string name="fresh_ota_notification_update_success_title">"Ваш пристрій оновлено"</string>
@@ -201,8 +201,8 @@ Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_performance_setting_option_multitasking_summary">"Покращити продуктивність і керування пам’яттю, щоб дозволити більшій кількості програм працювати у фоновому режимі."</string>
     <string name="zest_video_brightness_summary_normal">"Відтворюйте відео за допомогою звичайних налаштувань яскравості та кольору екрана телефону."</string>
     <string name="zest_video_brightness_summary_bright">"Тимчасово збільшити яскравість екрана та зробити кольори більш яскравими під час перегляду відео."</string>
-    <string name="zest_video_brightness_setting_normal">"Звичайний"</string>
-    <string name="zest_video_brightness_setting_bright">"Яскравий"</string>
+    <string name="zest_video_brightness_setting_normal">"Звичайна"</string>
+    <string name="zest_video_brightness_setting_bright">"Яскраво"</string>
     <string name="zest_video_brightness_supported_apps_header">"Підтримувані програми"</string>
     <string name="zest_system_settings_plugin_summary_four">"Стиль значків • Продуктивність • Роздільна здатність екрана"</string>
     <string name="zest_customization_reboot_required_title">"Перезавантажити телефон?"</string>
@@ -257,4 +257,9 @@ Please keep %s present and intact. This is used as placeholder for versioning (i
     <string name="zest_face_widget_title">Lockscreen Widgets</string>
 Fresh Updates -->
     <string name="zest_fresh_updates_title">"Оновлення Fresh"</string>
+    <string name="zest_maverick_security_setting_summary_five">"Захистіть свій пристрій від шкідливих пристроїв USB On-The-Go."</string>
+    <string name="zest_maverick_security_setting_activity_summary_five">"Захистіть свій пристрій від шкідливих пристроїв USB On-The-Go, заблокувавши доступ, при заблокованому пристрої."</string>
+    <string name="zest_maverick_security_setting_always">"Завжди заборонити доступ"</string>
+    <string name="fresh_experience_version">"Версія Fresh Experience"</string>
+    <string name="fresh_perfkit_version">"Версія Fresh Performance Kit"</string>
 </resources>

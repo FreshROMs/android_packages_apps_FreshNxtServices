@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zest_relative_link_advanced">"উন্নত সেটিংস"</string>
+    <string name="zest_relative_link_wallpaper">"হোম এবং লক স্ক্রিন ওয়ালপেপার"</string>
+    <string name="zest_relative_link_themes">"স্যামসাং থিম"</string>
+    <string name="zest_data_connection_icon_default">"ডিফল্ট(4G)"</string>
+    <string name="zest_data_connection_icon_lte">"এলটিই"</string>
+    <string name="zest_wlan_connection_icon_default">"ডিফল্ট"</string>
+    <string name="zest_wlan_connection_icon_uplus">"LG U+"</string>
+    <string name="zest_wlan_connection_icon_kt">"ক ট"</string>
+    <string name="zest_setting_default_summary">"অজানা"</string>
+    <string name="zest_setting_default_error">"কিছু ভুল হয়েছে"</string>
+    <!-- System settings plugin/Information Architecture -->
+    <string name="zest_system_settings_plugin_summary">"কাস্টমাইজেশন • স্ক্রীন রেজোলিউশন"</string>
+    <string name="zest_system_settings_plugin_summary_snowcone">"স্ক্রীন রেজোলিউশন • সফ্টওয়্যার আপডেট"</string>
+    <!-- Data connection icon settings -->
+    <string name="zest_data_connection_icon_title">"ডেটা সংযোগ আইকন শৈলী"</string>
+    <!-- Wi-Fi/WLAN icon settings -->
+    <string name="zest_wlan_connection_icon_title">"ওয়াই-ফাই সিগন্যাল আইকন শৈলী"</string>
+    <!-- Software update settings -->
+    <string name="fresh_ota_main_title">"সফ্টওয়্যার আপডেট"</string>
+    <string name="fresh_ota_check_for_updates_title">"ডাউনলোড এবং ইন্সটল"</string>
+    <string name="fresh_ota_check_for_updates_summary">"মোবাইল নেটওয়ার্কের মাধ্যমে ডাউনলোড করার ফলে অতিরিক্ত চার্জ হতে পারে। সম্ভব হলে, পরিবর্তে একটি Wi-Fi নেটওয়ার্কের মাধ্যমে ডাউনলোড করুন৷"</string>
+    <string name="fresh_ota_auto_download_wlan_title">"Wi-Fi এর মাধ্যমে স্বয়ংক্রিয়ভাবে ডাউনলোড করুন"</string>
+    <string name="fresh_ota_auto_download_wlan_summary">"একটি Wi-Fi নেটওয়ার্কের সাথে সংযুক্ত থাকাকালীন সফ্টওয়্যার আপডেটগুলি স্বয়ংক্রিয়ভাবে ডাউনলোড করুন৷"</string>
+    <string name="fresh_ota_last_successful_update_title">"সর্বশেষ আপডেট"</string>
+    <string name="fresh_ota_last_successful_update_summary">"এই আপডেট সম্পর্কে কোন তথ্য নেই."</string>
+    <string name="fresh_ota_check_frequency_title">"চেক ফ্রিকোয়েন্সি আপডেট করুন"</string>
+    <string name="fresh_ota_check_frequency_60min">"প্রতি ঘন্টা"</string>
+    <string name="fresh_ota_check_frequency_120min">"প্রতি 2 ঘন্টা"</string>
+    <string name="fresh_ota_check_frequency_180min">"প্রতি 3 ঘন্টা"</string>
+    <string name="fresh_ota_check_frequency_360min">"প্রতি 6 ঘন্টা"</string>
+    <string name="fresh_ota_check_frequency_720min">"প্রতি 12 ঘন্টা"</string>
+    <string name="fresh_ota_check_frequency_1440min">"প্রতিদিন"</string>
+    <string name="fresh_ota_changelog_header_title">"নতুন কি"</string>
+    <string name="fresh_ota_changelog_detail_version">"সংস্করণ:"</string>
+    <string name="fresh_ota_changelog_detail_size">"আকার:"</string>
+    <string name="fresh_ota_changelog_detail_security_patch_level">"নিরাপত্তা প্যাচ স্তর:"</string>
+    <string name="fresh_ota_changelog_appbar_downloading">"আপডেট ডাউনলোড হচ্ছে..."</string>
+    <string name="fresh_ota_changelog_appbar_downloading_subtitle">"বাকি সময়: %s"</string>
+    <string name="fresh_ota_changelog_appbar_detail">"আপনার ফোন আপডেট করুন এবং নতুন বৈশিষ্ট্য পান"</string>
+    <string name="fresh_ota_changelog_appbar_detail_subtitle">"ডাউনলোড করতে মোবাইল ডেটা ব্যবহার করলে অতিরিক্ত চার্জ লাগতে পারে। ওয়াই-ফাই ব্যবহার করা বাঞ্ছনীয়।"</string>
+    <!-- Addon management settings -->
+    <string name="zest_addon_management_title">"অ্যাড - অন পরিচালনা"</string>
+    <string name="zest_addon_management_subtitle_none">"কোন অ্যাডঅন ইনস্টল করা নেই"</string>
+    <string name="zest_addon_management_subtitle_singular">"1টি অ্যাডন ইনস্টল করা হয়েছে"</string>
+    <string name="zest_addon_management_detail_uninstall">"আনইনস্টল করুন"</string>
+    <string name="zest_addon_management_detail_cancel">"বাতিল করুন"</string>
+    <string name="zest_addon_management_detail_size">"আকার"</string>
+    <string name="zest_addon_management_detail_version">"সংস্করণ"</string>
+    <string name="zest_addon_management_detail_developer">"বিকাশকারী"</string>
+    <string name="zest_addon_management_detail_last_updated">"সর্বশেষ সংষ্করণ"</string>
+    <!-- Color Theme/Fresh Renoir settings -->
+    <string name="zest_renoir_settings_title">"রঙ থিম"</string>
+    <string name="zest_renoir_settings_summary">"আপনার বর্তমান ওয়ালপেপারের সাথে থিম মানিয়ে এক UI কাস্টমাইজ করুন।"</string>
+    <string name="zest_renoir_notification_channel_title">"চলমান বিজ্ঞপ্তি"</string>
+    <string name="zest_renoir_notification_channel_description">"এই বিজ্ঞপ্তি চ্যানেল অ্যাপটিকে ব্যাকগ্রাউন্ডে প্রয়োজনীয় ক্রিয়াকলাপ চালানোর অনুমতি দেয়।"</string>
+    <string name="zest_renoir_notification_description">"ওয়ালপেপারের উপর ভিত্তি করে ডিভাইসের থিম পরিবর্তন করা হচ্ছে..."</string>
+    <string name="zest_renoir_settings_unavailable">"একটি তৃতীয় পক্ষের থিম প্রয়োগ করা হয়েছে বলে রঙ-ম্যাচিং থিম উপলব্ধ নয়৷"</string>
+    <string name="zest_renoir_settings_lock_screen">"লক স্ক্রিনের রং ব্যবহার করুন"</string>
+    <string name="zest_renoir_settings_lock_screen_description">"ডিভাইস থিম বাছাই আপনার লক স্ক্রীন ওয়ালপেপার থেকে রং ব্যবহার করুন."</string>
+    <string name="zest_renoir_settings_custom_colors">"কাস্টম রং ব্যবহার করুন"</string>
+    <string name="zest_renoir_settings_custom_colors_desc">"ডিভাইস থিমের জন্য কালার পিকার থেকে রং ব্যবহার করুন।"</string>
+    <!-- Screen Resolution settings -->
+    <string name="zest_screen_resolution_setting_title">"পর্দা রেজল্যুশন"</string>
+    <string name="zest_screen_resolution_setting_summary">"আপনি রেজোলিউশন পরিবর্তন করলে কিছু অ্যাপ বন্ধ হয়ে যেতে পারে।"</string>
+    <string name="zest_screen_resolution_setting_high_summary">"তীক্ষ্ণ ভিজ্যুয়াল, সর্বাধিক ব্যাটারি ব্যবহার"</string>
+    <string name="zest_screen_resolution_setting_medium_summary">"উন্নত ভিজ্যুয়াল, মাঝারি ব্যাটারি ব্যবহার"</string>
+    <string name="zest_screen_resolution_setting_low_summary">"কুৎসিত ভিজ্যুয়াল, সর্বনিম্ন ব্যাটারি ব্যবহার"</string>
+    <string name="zest_screen_resolution_setting_btn_apply">"আবেদন করুন"</string>
+    <!-- Video brightness/HDR effect settings -->
+    <string name="zest_hdr_effect_setting_title">"ভিডিও উজ্জ্বলতা"</string>
+    <string name="zest_hdr_effect_setting_summary">"উজ্জ্বল এবং আরও প্রাণবন্ত রং উপভোগ করতে আপনার ভিডিওর ছবির গুণমান উন্নত করুন।"</string>
+    <string name="zest_hdr_effect_setting_available_apps">"উপলব্ধ অ্যাপস"</string>
+    <string name="zest_maverick_security_setting_title">"ইউএসবি নিরাপত্তা"</string>
+    <string name="zest_maverick_security_setting_summary">"ক্ষতিকারক USB ডিভাইস থেকে আপনার ডিভাইস রক্ষা করুন."</string>
+    <string name="zest_maverick_security_setting_activity_summary">"ডিভাইসটি লক থাকা অবস্থায় অ্যাক্সেস ব্লক করে আপনার ডিভাইসটিকে ক্ষতিকারক USB ডিভাইস থেকে রক্ষা করুন।"</string>
+    <string name="zest_maverick_security_setting_option_title">"ইউএসবি ডিভাইস সীমাবদ্ধ করুন"</string>
+    <string name="zest_maverick_security_setting_option_on_lock">"যখন স্ক্রিন বন্ধ থাকে"</string>
+    <string name="zest_maverick_security_setting_option_always">"সর্বদা"</string>
+    <!-- Enhanced dark mode (DarQ) settings -->
+    <string name="zest_darq_setting_title">"উন্নত ডার্ক মোড"</string>
+    <string name="zest_darq_setting_summary">"সমস্ত অ্যাপ্লিকেশনের জন্য অন্ধকার মোড সক্ষম করুন।"</string>
+    <string name="zest_darq_service_connecting">"পরিষেবার সাথে সংযুক্ত হচ্ছে..."</string>
+    <string name="zest_darq_service_sync_success">"পরিবর্তনগুলি পরিষেবার সাথে সিঙ্ক করা হয়েছে৷"</string>
+    <string name="zest_darq_service_powered_by">"দ্বারা চালিত"</string>
+    <string name="zest_darq_service_detail_warning">"কিছু অ্যাপের জন্য উন্নত ডার্ক মোড সক্ষম করলে লেআউট সমস্যা হতে পারে। কিছু অ্যাপ সমর্থিত নাও হতে পারে।"</string>
+    <!-- Protect Battery -->
+    <string name="zest_protect_battery_title">"ব্যাটারি রক্ষা করুন"</string>
+    <string name="zest_protect_battery_summary">"আপনার ব্যাটারির আয়ু বাড়ানোর জন্য, সর্বোচ্চ চার্জ 85% এ সীমাবদ্ধ করুন।"</string>
+    <!-- Recovery reboot QS tile -->
+    <string name="qs_dialog_ok">"ঠিক আছে"</string>
+    <string name="qs_dialog_cancel">"বাতিল করুন"</string>
+    <!-- About Page -->
+    <string name="zest_about_page_open_source">"ওপেন সোর্স লাইসেন্স"</string>
+    <string name="zest_about_page_source_code">"সোর্স কোড"</string>
+    <string name="zest_about_page_translations">"স্থানীয়করণ"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="app_name">"ফ্রেশ সিস্টেম পরিষেবা"</string>
+    <string name="zest_relative_link_wallpaper_twelve">"ওয়ালপেপার এবং শৈলী"</string>
+    <!-- You can use 'Next', 'Future', and 'New' as alternatives. -->
+    <string name="zest_data_connection_icon_next">"পরবর্তী (5G)"</string>
+    <string name="zest_wlan_connection_icon_wifi6">"ছয়"</string>
+    <string name="zest_wlan_connection_icon_wifi6e">"ছয়টি উন্নত"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_app_version">"জেস্ট সম্পর্কে"</string>
+    <!-- System settings plugin/Information Architecture
+If there is *no direct translation* for the word 'zest', use "Zest" as if it is a brand (like Samsung or One UI).
+
+Do NOT use 'Fresh Settings' as translation. -->
+    <string name="zest_system_settings_plugin_title">"জেস্ট"</string>
+    <!-- Software update settings
+If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_firmware_version">"তাজা সংস্করণ"</string>
+    <string name="fresh_ota_changelog_app_header">"অ্যাপ আপডেট তথ্য"</string>
+    <string name="fresh_ota_changelog_app_subheader">"নীচের অ্যাপগুলি সফ্টওয়্যার আপডেটের পরে সর্বশেষ সংস্করণে আপডেট হতে পারে।"</string>
+    <string name="fresh_ota_changelog_detail_header">"সফ্টওয়্যার আপডেট তথ্য"</string>
+    <string name="fresh_ota_changelog_btn_download">"ডাউনলোড করুন"</string>
+    <string name="fresh_ota_changelog_btn_pause">"বিরতি"</string>
+    <string name="fresh_ota_changelog_btn_resume">"জীবনবৃত্তান্ত"</string>
+    <string name="fresh_ota_changelog_btn_install">"ইনস্টল করুন"</string>
+    <string name="fresh_ota_changelog_btn_cancel">"বাতিল করুন"</string>
+    <string name="fresh_ota_changelog_btn_install_later">"পরে ইনস্টল"</string>
+    <string name="fresh_ota_checking_for_updates">"আপডেটের জন্য পরীক্ষা করা হচ্ছে..."</string>
+    <string name="fresh_ota_verifying_update">"আপডেট যাচাই করা হচ্ছে..."</string>
+    <string name="fresh_permissions_storage_title">"স্টোরেজ অনুমতি দেওয়া হয়নি"</string>
+    <string name="fresh_permissions_fp_storage_description">"ফিঙ্গারপ্রিন্ট অ্যানিমেশন কাস্টমাইজ করতে সক্ষম হতে ফ্রেশ সিস্টেম পরিষেবাগুলির স্টোরেজ অনুমতির প্রয়োজন।"</string>
+    <string name="fresh_ota_changelog_appbar_install_summary">"আপনি আপডেটের সময় আপনার ফোন ব্যবহার করতে পারবেন না, এমনকি জরুরী কলের জন্যও।"</string>
+    <string name="fresh_ota_changelog_appbar_waiting">"নেটওয়ার্কের জন্য অপেক্ষা"</string>
+    <string name="fresh_ota_changelog_appbar_paused">"ডাউনলোড বিরাম দেওয়া হয়েছে৷"</string>
+    <string name="fresh_ota_notification_download_cancelled">"ডাউনলোড বাতিল করা হয়েছে"</string>
+    <string name="fresh_ota_notification_update_cancelled">"আপডেট বাতিল করা হয়েছে"</string>
+    <string name="fresh_ota_changelog_appbar_downloading_time_left">"বাকি সময়:"</string>
+    <string name="fresh_ota_changelog_appbar_detail_no_updates">"আপনার ডিভাইস আপ টু ডেট"</string>
+    <string name="fresh_ota_changelog_appbar_detail_success">"শেষ সফল আপডেট"</string>
+    <string name="fresh_ota_toast_check_failed_generic">"একটি অজানা ত্রুটি ঘটেছে। পরে আবার চেষ্টা করুন."</string>
+    <string name="fresh_ota_toast_check_failed_offline">"নেটওয়ার্ক পাওয়া যায় না. পরে আবার চেষ্টা করুন."</string>
+    <string name="fresh_ota_notification_group_name">"সফটওয়্যার আপডেট"</string>
+    <string name="fresh_ota_notification_channel_name">"ফার্মওয়্যার আপডেট"</string>
+    <string name="fresh_ota_notification_channel_description">"এই বিজ্ঞপ্তি চ্যানেল অ্যাপটিকে আপনার ডিভাইসের জন্য উপলব্ধ ফার্মওয়্যার আপডেট সম্পর্কে আপনাকে অবহিত করার অনুমতি দেয়৷"</string>
+    <string name="fresh_app_notification_channel_name">"অ্যাপ আপডেট"</string>
+    <string name="fresh_app_notification_channel_description">"এই বিজ্ঞপ্তি চ্যানেলটি সিস্টেম অ্যাপ আপডেট সম্পর্কে আপনাকে অবহিত করতে ব্যবহৃত হয়।"</string>
+    <string name="fresh_ota_ongoing_notification_channel_name">"চলমান বিজ্ঞপ্তি"</string>
+    <string name="fresh_ota_ongoing_notification_channel_description">"এই বিজ্ঞপ্তি চ্যানেলটি চলমান আপডেট এবং বিজ্ঞপ্তির জন্য ব্যবহার করা হয়।"</string>
+    <string name="fresh_ota_notification_update_install_title">"সফ্টওয়্যার আপডেট ইনস্টল করার জন্য প্রস্তুত"</string>
+    <string name="fresh_ota_notification_update_available_title">"সফ্টওয়্যার আপডেট উপলব্ধ"</string>
+    <string name="fresh_ota_notification_update_available_description">"আপনার ডিভাইসের জন্য ফ্রেশের একটি নতুন সংস্করণ উপলব্ধ।"</string>
+    <string name="fresh_ota_notification_verification_failed_description">"সফ্টওয়্যার আপডেট যাচাইকরণ ব্যর্থ হয়েছে৷ পরে আবার চেষ্টা করুন."</string>
+    <string name="fresh_ota_notification_download_failed_title">"সফ্টওয়্যার ডাউনলোড করতে ব্যর্থ হয়েছে"</string>
+    <string name="fresh_ota_notification_update_failed_title">"সফ্টওয়্যার আপডেট করতে ব্যর্থ হয়েছে"</string>
+    <string name="fresh_ota_notification_update_success_title">"আপনার ডিভাইস আপডেট করা হয়েছে"</string>
+    <string name="fresh_ota_download_block_dialog_title">"মোবাইল ডেটা সতর্কতা"</string>
+    <string name="fresh_ota_download_block_dialog_description">"একটি মোবাইল নেটওয়ার্কের মাধ্যমে ডাউনলোড করার ফলে অতিরিক্ত চার্জ হতে পারে৷ সম্ভব হলে, একটি Wi-Fi নেটওয়ার্কের মাধ্যমে ডাউনলোড করুন।
+
+এই আপডেটটি ডাউনলোড করা চালিয়ে যেতে চান?"</string>
+    <string name="fresh_ota_download_block_dialog_download">"চালিয়ে যান"</string>
+    <string name="fresh_ota_download_block_dialog_later">"পরে ডাউনলোড"</string>
+    <string name="fresh_ota_install_dialog_description">"এই আপডেটটি আপনার ব্যক্তিগত ডেটাকে প্রভাবিত করবে না, তবে শুধুমাত্র ক্ষেত্রে আপনার ডেটা ব্যাক আপ করা সর্বদা একটি ভাল ধারণা।
+
+এই আপডেটটি ইনস্টল করা চালিয়ে যেতে চান?"</string>
+    <string name="fresh_ota_install_dialog_continue">"এখন ইন্সটল করুন"</string>
+    <string name="fresh_ota_network_lost_dialog_description">"ডাউনলোড সম্পূর্ণ হওয়ার আগেই আপনার ফোন নেটওয়ার্ক থেকে সংযোগ বিচ্ছিন্ন হয়ে গেছে। আপনার ফোন কোনো নেটওয়ার্কে পুনরায় সংযোগ করলে ডাউনলোড চলতে থাকবে।"</string>
+    <string name="fresh_ota_toast_failed_download_generic">"সফ্টওয়্যার আপডেট করতে অক্ষম. একটি নেটওয়ার্ক বা সার্ভার ত্রুটি ঘটেছে. পরে আবার চেষ্টা করুন."</string>
+    <string name="fresh_ota_toast_failed_download_network">"একটি নেটওয়ার্ক ত্রুটি ঘটেছে৷ পরে আবার চেষ্টা করুন."</string>
+    <string name="fresh_ota_toast_failed_download_server">"একটি সার্ভার ত্রুটি ঘটেছে. পরে আবার চেষ্টা করুন."</string>
+    <string name="fresh_ota_toast_failed_no_space">"এই আপডেটটি ইনস্টল করার জন্য, আপনার ফোনের অভ্যন্তরীণ সঞ্চয়স্থানে আরও খালি জায়গা প্রয়োজন৷ অ্যাপ আনইনস্টল করে বা ফাইল মুছে কিছু জায়গা খালি করুন, তারপর আবার চেষ্টা করুন।"</string>
+    <!-- Screen Ratio settings -->
+    <string name="zest_screen_ratio_setting_title">"আনুমানিক অনুপাত"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_title">"Zest+ এ স্বাগতম!"</string>
+    <!-- If there is *no direct translation* for the word 'zest', use "Zest+" as if it is a brand (like Samsung or One UI).
+
+Use "Magisk" as if it is a brand (like Samsung or One UI). -->
+    <string name="zest_plus_permission_summary">"Zest+ অতিরিক্ত বৈশিষ্ট্য এবং আরও অনেক কিছু সহ ফ্রেশকে আরও শক্তিশালী হতে সক্ষম করে। যাইহোক, এর জন্য ম্যাজিস্ক ব্যবহার করে সিস্টেমে Zest-এর সম্পূর্ণ অ্যাক্সেস থাকা প্রয়োজন।
+
+আপনার তথ্য গুরুত্বপূর্ণ. আমি প্রতিশ্রুতি দিচ্ছি যে কোনও ডেটা অ্যাক্সেস করা হচ্ছে না এবং পাঠানো হবে এবং আপনার গুরুত্বপূর্ণ ডেটা ব্যক্তিগত থাকবে।
+
+আপনি কি Zest+ সক্ষম করতে চান?"</string>
+    <!-- Recovery reboot QS tile
+'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_title">"রিকভারিতে রিবুট করুন"</string>
+    <!-- 'Restart' can be used as an alternative to 'reboot'. -->
+    <string name="qs_dialog_confirmation">"আপনি কি রিকভারি মোডে রিবুট করতে চান?"</string>
+    <!-- Extra Dim -->
+    <string name="zest_extra_dim_setting_title">"অতিরিক্ত আবছা"</string>
+    <string name="zest_extra_dim_setting_summary_main">"ন্যূনতম উজ্জ্বলতার সেটিং ছাড়িয়ে স্ক্রীনটিকে ম্লান করুন।"</string>
+    <string name="zest_extra_dim_setting_summary">"আরও আরামদায়ক দেখার জন্য ন্যূনতম উজ্জ্বলতার সেটিং ছাড়িয়ে স্ক্রীনটিকে ম্লান করুন৷
+
+অতিরিক্ত অনুজ্জ্বল সক্ষম করা কিছু অ্যাপ ভেঙে ফেলতে পারে, যার ফলে একটি কালো স্ক্রীন হতে পারে। এটি একটি সমস্যা যা শুধুমাত্র OEM ঠিক করতে পারে।"</string>
+    <string name="zest_extra_dim_setting_intensity">"তীব্রতা"</string>
+    <string name="zest_extra_dim_setting_turn_off_reboot">"পুনরায় চালু করার পরে বন্ধ করুন"</string>
+    <string name="zest_volte_icon_title">"ভয়েস-ওভার-এলটিই আইকন শৈলী"</string>
+    <string name="zest_volte_icon_telcel">"টেলসেল"</string>
+    <string name="zest_volte_icon_dcm">"ডোকোমো"</string>
+    <string name="zest_volte_icon_telenor">"টেলিনর"</string>
+    <string name="zest_volte_icon_voz">"Voz"</string>
+    <string name="zest_data_connection_icon_usc">"মার্কিন সেলুলার"</string>
+    <string name="zest_data_connection_icon_att">"AT&amp;T"</string>
+    <string name="zest_data_connection_icon_vzw">"ভেরিজন"</string>
+    <string name="zest_data_connection_icon_tmo">"টি মোবাইল"</string>
+    <string name="zest_data_connection_icon_next_outline">"পরবর্তী রূপরেখা"</string>
+    <string name="zest_data_connection_icon_next_alt">"পরবর্তী Alt"</string>
+    <string name="zest_data_connection_icon_next_att">"পরবর্তী AT&amp;T"</string>
+    <string name="zest_performance_setting_option_default">"সুষম"</string>
+    <string name="zest_performance_setting_option_gaming">"গেমিং"</string>
+    <string name="zest_performance_setting_option_multitasking">"মাল্টিটাস্কিং"</string>
+    <string name="zest_performance_mode_title">"কর্মক্ষমতা মোড"</string>
+    <string name="zest_performance_mode_summary">"পারফরম্যান্স মোড বেছে নিন যা আপনি যা করেন তার জন্য সবচেয়ে ভালো কাজ করে।"</string>
+    <string name="zest_performance_setting_option_gaming_summary">"পারফরম্যান্স বুস্ট করুন এবং গেমিং অভিজ্ঞতা উন্নত করতে মেমরি ম্যানেজমেন্ট অপ্টিমাইজ করুন।"</string>
+    <string name="zest_performance_setting_option_default_summary">"প্রত্যেকের জন্য কাজ করে এমন একটি অভিজ্ঞতার জন্য কর্মক্ষমতা এবং ব্যাটারির ভারসাম্য বজায় রাখে।"</string>
+    <string name="zest_performance_setting_option_multitasking_summary">"ব্যাকগ্রাউন্ডে আরও অ্যাপ চালানোর অনুমতি দিতে পারফরম্যান্স এবং মেমরি ম্যানেজমেন্ট উন্নত করুন।"</string>
+    <string name="zest_video_brightness_summary_normal">"আপনার ফোনের স্বাভাবিক স্ক্রিনের উজ্জ্বলতা এবং রঙের সেটিংস ব্যবহার করে ভিডিও চালান।"</string>
+    <string name="zest_video_brightness_summary_bright">"অস্থায়ীভাবে স্ক্রীনের উজ্জ্বলতা বাড়ান এবং আপনি যখন ভিডিওগুলি দেখেন তখন রঙগুলিকে আরও প্রাণবন্ত করে তুলুন৷"</string>
+    <string name="zest_video_brightness_setting_normal">"স্বাভাবিক"</string>
+    <string name="zest_video_brightness_setting_bright">"উজ্জ্বল"</string>
+    <string name="zest_video_brightness_supported_apps_header">"সমর্থিত অ্যাপস"</string>
+    <string name="zest_system_settings_plugin_summary_four">"আইকন শৈলী • কর্মক্ষমতা • স্ক্রীন রেজোলিউশন"</string>
+    <string name="zest_customization_reboot_required_title">"ফোন রিস্টার্ট করবেন?"</string>
+    <string name="zest_customization_reboot_required_description">"আইকন শৈলী পরিবর্তন সম্পূর্ণরূপে প্রয়োগ করতে, আপনার ফোন পুনরায় চালু করতে হবে।"</string>
+    <string name="zest_customization_reboot_required_btn_ok">"এখন আবার চালু করুন"</string>
+    <string name="zest_customization_reboot_required_btn_cancel">"পরে পুনরায় আরম্ভ করুন"</string>
+    <string name="zest_plus_fod_animation_style_title">"ফিঙ্গারপ্রিন্ট অ্যানিমেশন শৈলী"</string>
+    <string name="zest_plus_fod_animation_style_toast_failed">"নতুন শৈলী প্রয়োগ করতে ব্যর্থ হয়েছে."</string>
+    <string name="zest_plus_location_indicators_title">"নতুন অবস্থান নির্দেশক ব্যবহার করুন"</string>
+    <string name="zest_plus_location_indicators_summary">"ক্যামেরা এবং মাইক্রোফোন দ্বারা ব্যবহৃত নতুন স্ট্যাটাস বার অবস্থান নির্দেশক ব্যবহার করুন।"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"এই নতুন আপডেটে কী অন্তর্ভুক্ত রয়েছে তা খুঁজে বের করুন৷"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"সফ্টওয়্যার এবং অ্যাপ আপডেটগুলি পেতে সক্ষম হতে ফ্রেশ সিস্টেম পরিষেবাগুলির স্টোরেজ অনুমতির প্রয়োজন৷"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"নতুন %1$s %2$s ইনস্টল করার জন্য প্রস্তুত৷"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%2$s এ %1$s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"নতুন %1$s এর ইনস্টলেশন ব্যর্থ হয়েছে৷ FreshROMs ওয়েবসাইট থেকে সরাসরি আপডেট ডাউনলোড করার চেষ্টা করুন বা সমর্থন পান।"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"নতুন %1$s সফলভাবে ইনস্টল করা হয়েছে৷ একটি নতুন ডিভাইস উপভোগ করুন!"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"আপডেটটি %2$s-এ %1$s-এ স্বয়ংক্রিয়ভাবে ইনস্টল হবে।"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"কিছু Magisk মডিউল নিষ্ক্রিয়"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"আপনার ডিভাইস আপডেট করার অনুমতি দিতে, কিছু Magisk মডিউল নিষ্ক্রিয় করা হয়েছে। ডিভাইসটি আপডেট করা শেষ হওয়ার পরে এগুলি পুনরায় সক্ষম করা যেতে পারে৷"</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$dটি অ্যাডঅন ইনস্টল করা হয়েছে"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"আপনি কি %1$s আনইনস্টল করার বিষয়ে নিশ্চিত?"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"ফ্রেশ এক্সপেরিয়েন্স ফ্রেমওয়ার্ক %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"ফ্রেশ পারফরম্যান্স কিট %s"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"তাজা আপডেট"</string>
+    <string name="zest_maverick_security_setting_summary_five">"দূষিত USB অন-দ্য-গো ডিভাইস থেকে আপনার ডিভাইস রক্ষা করুন."</string>
+    <string name="zest_maverick_security_setting_activity_summary_five">"ডিভাইসটি লক থাকা অবস্থায় অ্যাক্সেস ব্লক করে আপনার ডিভাইসটিকে ক্ষতিকারক USB অন-দ্য-গো ডিভাইস থেকে রক্ষা করুন।"</string>
+    <string name="zest_maverick_security_setting_always">"সর্বদা প্রবেশ নিষেধ"</string>
+    <string name="fresh_experience_version">"নতুন অভিজ্ঞতা সংস্করণ"</string>
+    <string name="fresh_perfkit_version">"তাজা পারফরম্যান্স কিট সংস্করণ"</string>
+</resources>

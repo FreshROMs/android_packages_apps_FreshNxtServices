@@ -173,7 +173,7 @@ Doorgaan met het installeren van deze update?"</string>
 Use "Magisk" as if it is a brand (like Samsung or One UI). -->
     <string name="zest_plus_permission_summary">"Met Zest+ wordt Fresh uitgebreid met extra functies en meer. Dit vereist echter dat Zest volledige toegang tot het systeem heeft via Magisk.
 
-Je gegevens zijn belangrijk. Ik beloof dat er geen toegang tot gegevens wordt verkregen en/of verzonden en dat uw belangrijke gegevens privé blijven.
+Je gegevens zijn belangrijk. Ik beloof dat er geen toegang tot gegevens wordt verkregen en/of verzonden en dat je belangrijke gegevens privé blijven.
 
 Wil je Zest+ inschakelen?"</string>
     <!-- Recovery reboot QS tile
@@ -205,7 +205,7 @@ Als u extra dimmen inschakelt werken sommige apps mogelijk niet meer wat resulte
     <string name="zest_performance_setting_option_gaming">"Gamen"</string>
     <string name="zest_performance_setting_option_multitasking">"Multitasking"</string>
     <string name="zest_performance_mode_title">"Hoge Prestatiemodus"</string>
-    <string name="zest_performance_mode_summary">"Kies de prestatiemodus die het beste werkt voor wat u doet."</string>
+    <string name="zest_performance_mode_summary">"Kies de prestatiemodus die het beste werkt voor wat je doet."</string>
     <string name="zest_performance_setting_option_gaming_summary">"Verbeter de prestaties en optimaliseer het geheugenbeheer om de game-ervaring te verbeteren."</string>
     <string name="zest_performance_setting_option_default_summary">"Prestaties en batterijduur worden geoptimalizeerd voor een ervaring die voor iedereen werkt."</string>
     <string name="zest_performance_setting_option_multitasking_summary">"Verbeter het prestatie- en geheugenbeheer zodat meer apps op de achtergrond kunnen worden uitgevoerd."</string>
@@ -267,4 +267,9 @@ Please keep %s present and intact. This is used as placeholder for versioning (i
     <string name="zest_face_widget_title">Lockscreen Widgets</string>
 Fresh Updates -->
     <string name="zest_fresh_updates_title">"Nieuwe updates"</string>
+    <string name="zest_maverick_security_setting_summary_five">"Bescherm je apparaat tegen schadelijke USB On-The-Go-apparaten."</string>
+    <string name="zest_maverick_security_setting_activity_summary_five">"Bescherm je apparaat tegen schadelijke USB On-The-Go-apparaten door de toegang te blokkeren terwijl het apparaat is vergrendeld."</string>
+    <string name="zest_maverick_security_setting_always">"Toegang altijd weigeren"</string>
+    <string name="fresh_experience_version">"Fresh Experience versie"</string>
+    <string name="fresh_perfkit_version">"Fresh Performance Kit versie"</string>
 </resources>

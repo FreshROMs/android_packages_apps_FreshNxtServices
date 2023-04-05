@@ -10,12 +10,14 @@
     <string name="zest_wlan_connection_icon_kt">"KT"</string>
     <string name="zest_setting_default_summary">"Inconnu"</string>
     <string name="zest_setting_default_error">"Quelque chose s'est mal passé"</string>
+    <!-- System settings plugin/Information Architecture -->
     <string name="zest_system_settings_plugin_summary">"Personnalisation • Résolution de l'écran"</string>
     <string name="zest_system_settings_plugin_summary_snowcone">"Résolution d'écran"</string>
     <!-- Data connection icon settings -->
     <string name="zest_data_connection_icon_title">"Style d'icône de connexion"</string>
     <!-- Wi-Fi/WLAN icon settings -->
     <string name="zest_wlan_connection_icon_title">"Icône du signal Wi-Fi"</string>
+    <!-- Software update settings -->
     <string name="fresh_ota_main_title">"Mise à jour système"</string>
     <string name="fresh_ota_check_for_updates_title">"Télécharger et installer"</string>
     <string name="fresh_ota_check_for_updates_summary">"Télécharger avec les données mobiles pourrait engendrer des coûts supplémentaires. Si possible, téléchargez via un réseau Wi-Fi."</string>
@@ -87,6 +89,7 @@
     <!-- Protect Battery -->
     <string name="zest_protect_battery_title">"Protéger la batterie"</string>
     <string name="zest_protect_battery_summary">"Pour prolonger la durée de vie de votre batterie, limitez la charge maximale à 85%."</string>
+    <!-- Recovery reboot QS tile -->
     <string name="qs_dialog_ok">"OK"</string>
     <string name="qs_dialog_cancel">"Annuler"</string>
     <!-- About Page -->
@@ -221,4 +224,53 @@ L'activation d'extra dim peut poser des problèmes avec certaines applications, 
     <string name="zest_plus_fod_animation_style_toast_failed">"Le nouveau style n'a pas pu être appliqué."</string>
     <string name="zest_plus_location_indicators_title">"Utiliser le nouvel indicateur de localisation"</string>
     <string name="zest_plus_location_indicators_summary">"Utiliser le nouvel indicateur de localisation utilisé par la caméra et le microphone dans la barre d'état."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI). -->
+    <string name="fresh_ota_changelog_header_subtitle">"Découvrez ce qui est inclus dans cette mise à jour de Fresh."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI) -->
+    <string name="fresh_permissions_storage_description">"Fresh System Services nécessite des autorisations de stockage pour pouvoir recevoir des mises à jour de logiciels et d'applications."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. Fresh 4.0 Stable). -->
+    <string name="fresh_ota_changelog_appbar_install">"Fresh %1$s %2$s est prêt à être installé"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (10/26/2022 at 7:00 AM). -->
+    <string name="fresh_ota_changelog_appbar_detail_success_subtitle">"%1$s à %2$s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_failed_description">"L'installation de Fresh %1$s à échoué. Essayez de télécharger les mises a jour depuis le site internet de FreshROM ou demandez de l'aide."</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %1$s %2$s present and intact. This is used as placeholder for versioning (i.e. 4.0 Stable). -->
+    <string name="fresh_ota_notification_update_success_description">"Fresh %1$s a été installé avec succès. Profitez d'un appareil plus frais !"</string>
+    <!-- Please keep %1$s %2$s present and intact. This is used as placeholder for date and time (i.e. 10/26/2022 on 7:00 AM). -->
+    <string name="fresh_ota_install_later_toast">"La mise à jour va être automatiquement installée à %1$s le %2$s."</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_title">"Certains modules Magisk sont désactivés"</string>
+    <!-- Use "Magisk" as if it is a brand, as it usually doesn't have a direct translation. -->
+    <string name="fresh_ota_post_update_magisk_description">"Pour permettre à votre appareil de se mettre à jour, certains modules Magisk ont été désactivés. Ceux-ci peuvent être réactivés une fois la mise à jour de l'appareil terminée."</string>
+    <!-- Please keep %1$d intact. This is used as a placeholder for a number. (i.e. 2 addons installed) -->
+    <string name="zest_addon_management_subtitle_multiple">"%1$d extensions installées"</string>
+    <!-- Please keep %1$s intact. This is used as a placeholder for a name.
+
+i.e. Are you sure you want to uninstall 'Bixby'? -->
+    <string name="zest_addon_management_detail_uninstall_confirmation">"Voulez-vous vraiment désinstaller %1$s ?"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_experience_framework_version">"Fresh Experience Framework %s"</string>
+    <!-- If there is *no direct translation* for the word 'fresh', use "Fresh" as if it is a brand (like Samsung or One UI).
+
+Please keep %s present and intact. This is used as placeholder for versioning (i.e. 13.1.0.3). -->
+    <string name="zest_performance_kit_version">"Fresh Performance Kit %s"</string>
+    <!-- Face Widgets
+<string name="zest_face_widget">Zest Widget</string>
+    <string name="zest_face_widget_default_message">No Widget selected</string>
+    <string name="zest_face_widget_title">Lockscreen Widgets</string>
+Fresh Updates -->
+    <string name="zest_fresh_updates_title">"Mises à jours Fresh"</string>
+    <string name="zest_maverick_security_setting_summary_five">"Protégez votre appareil des appareils USB On-The-Go malveillants."</string>
+    <string name="zest_maverick_security_setting_activity_summary_five">"Protégez votre appareil contre les appareils USB On-The-Go malveillants en bloquant l'accès lorsque l'appareil est verrouillé."</string>
+    <string name="zest_maverick_security_setting_always">"Toujours interdire l'accès"</string>
+    <string name="fresh_experience_version">"Version de Fresh Expérience"</string>
+    <string name="fresh_perfkit_version">"Version de Fresh Performance Kit"</string>
 </resources>

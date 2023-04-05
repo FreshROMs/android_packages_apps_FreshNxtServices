@@ -21,6 +21,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Bengali">
+        <Preference android:title="Anik"/>
         <Preference android:title="Shahria Iltimas"/>
     </PreferenceCategory>
 
@@ -39,12 +40,13 @@
     <PreferenceCategory android:title="Finnish">
         <Preference android:title="Roope"/>
         <Preference android:title="Songyuan Wei"/>
+        <Preference android:title="Nick"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="French">
+        <Preference android:title="LeSteakDeBoeuf"/>
         <Preference android:title="Aaron210987"/>
         <Preference android:title="Hooklans"/>
-        <Preference android:title="LeSteakDeBoeuf"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="German">
@@ -62,8 +64,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Hungarian">
-        <Preference android:title="Ákos Pető"/>
         <Preference android:title="Koncz Ferdinánd"/>
+        <Preference android:title="Ákos Pető"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Indonesian">
@@ -79,6 +81,8 @@
         <Preference android:title="BlackMesa123"/>
         <Preference android:title="sgond"/>
         <Preference android:title="명"/>
+        <Preference android:title="Ste"/>
+        <Preference android:title="Skizzy"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Javanese">
@@ -108,6 +112,7 @@
     <PreferenceCategory android:title="Portuguese">
         <Preference android:title="Power Punch"/>
         <Preference android:title="Wellington Silva"/>
+        <Preference android:title="CN"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Portuguese (BR)">
@@ -117,6 +122,7 @@
 
     <PreferenceCategory android:title="Romanian">
         <Preference android:title="Cristea Florian Victor"/>
+        <Preference android:title="Mihnea Octavian Oprea"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Russian">
@@ -126,6 +132,7 @@
         <Preference android:title="redoverflow"/>
         <Preference android:title="Reidin"/>
         <Preference android:title="trigger337"/>
+        <Preference android:title="Egor Dubina"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Sinhalese">
@@ -151,6 +158,8 @@
         <Preference android:title="Mert"/>
         <Preference android:title="Sacrosanct"/>
         <Preference android:title="turancen"/>
+        <Preference android:title="Emre Yavuz"/>
+        <Preference android:title="Stunt snake1814"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Ukrainian">
@@ -162,6 +171,7 @@
         <Preference android:title="Đức Anh Mai"/>
         <Preference android:title="Hạo"/>
         <Preference android:title="Khánh"/>
+        <Preference android:title="Anh Le"/>
     </PreferenceCategory>
 
     <PreferenceCategory
