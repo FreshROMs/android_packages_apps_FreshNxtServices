@@ -61,6 +61,20 @@
                 android:action="android.intent.action.VIEW"
                 android:data="https://github.com/ProtonAOSP/android_packages_apps_SimpleDeviceConfig" />
         </Preference>
+        <Preference
+            android:title="Themed App Icons (Pixel Experience)"
+            android:summary="Henrique Silva (jhenrique09)">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/PixelExperience/packages_overlays_ThemeIcons/tree/thirteen-plus" />
+        </Preference>
+        <Preference
+            android:title="Fingerprint Animations (Evolution X)"
+            android:summary="Joey Huab (Stallix)">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Evolution-X/vendor_evolution/tree/tiramisu/themes/icons/UdfpsResources" />
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory>
