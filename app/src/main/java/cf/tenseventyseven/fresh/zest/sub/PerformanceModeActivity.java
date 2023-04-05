@@ -103,7 +103,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
     private View.OnClickListener onTapOption(Context context, int mode) {
         return v -> {
             refreshRadioButtons(mode);
-            Performance.setPerformanceMode(mode);
+            Performance.setPerformanceMode(context, mode);
         };
     }
 

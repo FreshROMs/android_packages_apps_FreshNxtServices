@@ -65,6 +65,9 @@ public class BootReceiver extends BroadcastReceiver {
             Log.i(TAG, "Setting up software update jobs");
             UpdateCheckJobService.setupCheckJob(context);
 
+            Log.i(TAG, "Setting performance mode on boot");
+            setPerformanceOnBoot(context);
+
             // Set current boot time
             Settings.System.putLong(context.getContentResolver(), "fresh_device_boot_time", bootTime);
 
@@ -127,5 +130,10 @@ public class BootReceiver extends BroadcastReceiver {
             UpdateNotifications.showMagiskDisabledNotification(context);
             magiskDisabled.delete();
         }
+    }
+
+    private void setPerformanceOnBoot(Context context) {
+        int perfMode = Settings.System.getInt(context.getContentResolver(), "zest_system_performance_mode", Performance.PerformanceProfile.BALANCED);
+        Performance.setPerformanceMode(context, perfMode);
     }
 }

@@ -53,7 +53,7 @@ public class PerformanceModeTileService extends TileService {
     @Override
     public void onClick() {
         int newMode = (mCurrentMode + 1) % Performance.PerformanceProfile.TOTAL_PROFILES;
-        Performance.setPerformanceMode(newMode);
+        Performance.setPerformanceMode(this, newMode);
         setTileState(this, newMode);
     }
 
@@ -154,7 +154,7 @@ public class PerformanceModeTileService extends TileService {
                 String action = intent.getAction();
                 if (action.equals(QS_TILE_PERF_MODE_CHANGE_INTENT)) {
                     int newMode = intent.getIntExtra("newPerfMode", Performance.PerformanceProfile.BALANCED);
-                    Performance.setPerformanceMode(newMode);
+                    Performance.setPerformanceMode(context, newMode);
                     setTileState(context, newMode);
                 }
             }

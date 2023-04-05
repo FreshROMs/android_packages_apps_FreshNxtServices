@@ -1,7 +1,13 @@
 package cf.tenseventyseven.fresh.utils;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.provider.DeviceConfig;
+import android.provider.Settings;
+
+import java.util.Objects;
 
 import cf.tenseventyseven.fresh.R;
 
@@ -30,7 +36,8 @@ public class Performance {
         }
     }
 
-    public static void setPerformanceMode(int newMode) {
+    public static void setPerformanceMode(Context context, int newMode) {
         DeviceConfig.setProperty(DeviceConfig.NAMESPACE_CONFIGURATION, FRESH_PERFORMANCE_MODE, Integer.toString(newMode), true);
+        Settings.System.putString(context.getContentResolver(), "zest_system_performance_mode", Integer.toString(newMode));
     }
 }
