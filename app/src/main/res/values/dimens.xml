@@ -6,4 +6,5 @@
     <dimen name="zest_screen_resolution_setting_header_margin">20.0dip</dimen>
     <dimen name="zest_screen_resolution_setting_text_padding">24.0dip</dimen>
     <dimen name="zest_screen_resolution_setting_margin_land">200dp</dimen>
+    <dimen name="tns_ota_drawable_header_height">132.0dip</dimen>
 </resources>

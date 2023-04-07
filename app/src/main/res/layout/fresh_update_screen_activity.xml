@@ -93,56 +93,19 @@
                             android:orientation="vertical">
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/fresh_update_header_card_background"
                                 android:baselineAligned="false"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal">
-
-                                <LinearLayout
+                                <ImageView
                                     android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginVertical="24.0dip"
-                                    android:layout_marginStart="26.0dip"
-                                    android:layout_weight="2.0"
-                                    android:orientation="vertical">
-
-                                    <com.google.android.material.textview.MaterialTextView
-                                        style="@style/TextAppearance.AppCompat.Body1"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:fontFamily="sans-serif-medium"
-                                        android:text="@string/fresh_ota_changelog_header_title"
-                                        android:textAlignment="viewStart"
-                                        android:textColor="@color/sesl4_primary_text_color"
-                                        android:textFontWeight="500"
-                                        android:textSize="24.0sp" />
-
-                                    <com.google.android.material.textview.MaterialTextView
-                                        style="?textAppearanceBody1"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/fresh_ota_changelog_header_subtitle"
-                                        android:textAlignment="viewStart"
-                                        android:textColor="@color/sesl_secondary_text_color"
-                                        android:textSize="13.0sp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="fill_parent"
-                                    android:layout_marginEnd="12.0dip"
-                                    android:layout_weight="3.0"
-                                    android:gravity="end">
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="fill_parent"
-                                        android:adjustViewBounds="true"
-                                        android:src="@drawable/tns_ota_drawable_feature"
-                                        tools:ignore="ContentDescription" />
-                                </LinearLayout>
+                                    android:layout_height="@dimen/tns_ota_drawable_header_height"
+                                    android:adjustViewBounds="true"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/tns_ota_drawable_header"
+                                    tools:ignore="ContentDescription" />
                             </LinearLayout>
 
                             <com.google.android.material.textview.MaterialTextView
