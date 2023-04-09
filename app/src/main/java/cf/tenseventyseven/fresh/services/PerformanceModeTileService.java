@@ -31,7 +31,7 @@ public class PerformanceModeTileService extends TileService {
         super.onStartListening();
 
         if (getQsTile() != null) {
-            setTileState(this, Performance.getPerformanceMode());
+            setTileState(this, Performance.getPerformanceMode(this));
         }
 
         if (mBroadcastReceiver != null) {
@@ -53,14 +53,14 @@ public class PerformanceModeTileService extends TileService {
     @Override
     public void onClick() {
         int newMode = (mCurrentMode + 1) % Performance.PerformanceProfile.TOTAL_PROFILES;
-        Performance.setPerformanceMode(newMode);
+        Performance.setPerformanceMode(this, newMode);
         setTileState(this, newMode);
     }
 
     public RemoteViews semGetDetailView() {
         RemoteViews view = new RemoteViews(getPackageName(), R.layout.zest_qs_detail_performance_mode);
         setPerformanceModeOnClick(view);
-        refreshRadioButtons(view, Performance.getPerformanceMode());
+        refreshRadioButtons(view, Performance.getPerformanceMode(this));
 
         return view;
     }
@@ -154,7 +154,7 @@ public class PerformanceModeTileService extends TileService {
                 String action = intent.getAction();
                 if (action.equals(QS_TILE_PERF_MODE_CHANGE_INTENT)) {
                     int newMode = intent.getIntExtra("newPerfMode", Performance.PerformanceProfile.BALANCED);
-                    Performance.setPerformanceMode(newMode);
+                    Performance.setPerformanceMode(context, newMode);
                     setTileState(context, newMode);
                 }
             }

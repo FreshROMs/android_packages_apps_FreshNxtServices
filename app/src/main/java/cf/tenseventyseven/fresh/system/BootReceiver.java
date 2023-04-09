@@ -132,6 +132,6 @@ public class BootReceiver extends BroadcastReceiver {
     }
 
     private void setPerformanceOnBoot(Context context) {
-        Performance.setPerformanceMode(Performance.getPerformanceMode());
+        Performance.setPerformanceMode(context, Performance.getPerformanceMode(context));
     }
 }

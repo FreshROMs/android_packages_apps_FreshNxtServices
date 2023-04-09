@@ -55,7 +55,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
         mHandler = new Handler(Looper.getMainLooper());
         mSettingsObserver = new PerformanceModeSettingsObserver(mHandler);
 
-        refreshRadioButtons(Performance.getPerformanceMode());
+        refreshRadioButtons(Performance.getPerformanceMode(this));
 
         mPerformanceGaming.setOnClickListener(onTapOption(this, Performance.PerformanceProfile.GAMING));
         mPerformanceDefault.setOnClickListener(onTapOption(this, Performance.PerformanceProfile.BALANCED));
@@ -103,12 +103,12 @@ public class PerformanceModeActivity extends AppCompatActivity {
     private View.OnClickListener onTapOption(Context context, int mode) {
         return v -> {
             refreshRadioButtons(mode);
-            Performance.setPerformanceMode(mode);
+            Performance.setPerformanceMode(context, mode);
         };
     }
 
     private final class PerformanceModeSettingsObserver extends ContentObserver {
-        private final Uri SETTING_URI = Settings.System.getUriFor("zest_system_performance_mode");
+        private final Uri SETTING_URI = Settings.System.getUriFor("fresh_system_performance_mode");
 
         public PerformanceModeSettingsObserver(Handler handler) {
             super(handler);
@@ -116,7 +116,7 @@ public class PerformanceModeActivity extends AppCompatActivity {
 
         @Override
         public void onChange(boolean z, Uri uri) {
-            String mode = Settings.System.getString(getContentResolver(), "zest_system_performance_mode");
+            String mode = Settings.System.getString(getContentResolver(), "fresh_system_performance_mode");
             if (mode == null || mode.isEmpty())
                 mode = "Default";
             refreshRadioButtons(Integer.parseInt(mode));
