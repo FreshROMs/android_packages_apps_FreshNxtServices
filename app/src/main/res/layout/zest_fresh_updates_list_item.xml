@@ -28,7 +28,7 @@
                 android:background="@drawable/zest_fresh_updates_icon_shape"
                 android:scaleType="fitXY" />
 
-            <de.dlyt.yanndroid.oneui.widget.ProgressBar
+            <ProgressBar
                 android:id="@+id/fresh_update_loading"
                 style="?android:progressBarStyleSmall"
                 android:layout_width="wrap_content"
@@ -91,14 +91,14 @@
                 android:layout_height="30dp"
                 android:layout_marginVertical="2dp"
                 android:background="@drawable/zest_fresh_updates_btn_bg"
-                android:backgroundTint="@color/button_background_color"
+                android:backgroundTint="@color/oui_appinfolayout_button_bg_color"
                 android:clickable="true"
                 android:focusable="true"
                 android:paddingHorizontal="18dp"
                 android:paddingVertical="3dp"
-                android:src="@drawable/ic_oui_play"
+                android:src="@drawable/ic_oui_control_play"
                 android:visibility="gone"
-                app:tint="@color/item_color"
+                app:tint="@color/oui_primary_icon_color"
                 tools:visibility="visible" />
 
             <ImageView
@@ -107,14 +107,14 @@
                 android:layout_height="30dp"
                 android:layout_marginVertical="2dp"
                 android:background="@drawable/zest_fresh_updates_btn_bg"
-                android:backgroundTint="@color/button_background_color"
+                android:backgroundTint="@color/oui_appinfolayout_button_bg_color"
                 android:clickable="true"
                 android:focusable="true"
                 android:paddingHorizontal="18dp"
                 android:paddingVertical="3dp"
                 android:src="@drawable/ic_oui_download"
                 android:visibility="gone"
-                app:tint="@color/item_color"
+                app:tint="@color/oui_primary_icon_color"
                 tools:visibility="visible" />
 
             <ImageView
@@ -123,14 +123,14 @@
                 android:layout_height="30dp"
                 android:layout_marginVertical="2dp"
                 android:background="@drawable/zest_fresh_updates_btn_bg"
-                android:backgroundTint="@color/button_background_color"
+                android:backgroundTint="@color/oui_appinfolayout_button_bg_color"
                 android:clickable="true"
                 android:focusable="true"
                 android:paddingHorizontal="18dp"
                 android:paddingVertical="3dp"
-                android:src="@drawable/ic_oui4_delete"
+                android:src="@drawable/ic_oui_delete"
                 android:visibility="gone"
-                app:tint="@color/item_color"
+                app:tint="@color/oui_primary_icon_color"
                 tools:visibility="visible" />
 
         </LinearLayout>
@@ -189,9 +189,9 @@
         android:visibility="gone"
         tools:visibility="visible">
 
-        <de.dlyt.yanndroid.oneui.widget.ProgressBar
+        <ProgressBar
             android:id="@+id/fresh_update_progress_bar"
-            style="@style/ProgressBarStyle.Horizontal"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

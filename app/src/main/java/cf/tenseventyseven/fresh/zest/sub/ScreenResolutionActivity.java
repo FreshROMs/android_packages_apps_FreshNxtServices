@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -23,13 +25,11 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.preference.HorizontalRadioPreference;
-import de.dlyt.yanndroid.oneui.preference.Preference;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.utils.Experience;
 import cf.tenseventyseven.fresh.utils.Preferences;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.preference.HorizontalRadioPreference;
 
 public class ScreenResolutionActivity extends AppCompatActivity {
     public static String SCREEN_RESOLUTION = "device_screen_resolution_int";
@@ -57,9 +57,9 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         mContext = this;
         mActivity = this;
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbar.getToolbar());
+//        setSupportActionBar(toolbar.getToolbar());
 
         Experience.checkDefaultApiSetting(this);
         Experience.getRealScreenWidth(this, Experience.getActivity(this));
@@ -153,7 +153,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         }
     }
 
-    public static class ScreenResolutionFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
+    public static class ScreenResolutionFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
         private Context mContext;
 
         TextView mResolutionSummary;

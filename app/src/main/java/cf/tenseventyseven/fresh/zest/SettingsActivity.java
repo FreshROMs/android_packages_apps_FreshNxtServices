@@ -1,6 +1,7 @@
 package cf.tenseventyseven.fresh.zest;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -17,26 +18,23 @@ import android.provider.DeviceConfig;
 import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.DropDownPreference;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SeslSwitchPreferenceScreen;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.preference.DropDownPreference;
-import de.dlyt.yanndroid.oneui.preference.ListPreference;
-import de.dlyt.yanndroid.oneui.preference.Preference;
-import de.dlyt.yanndroid.oneui.preference.SwitchPreference;
-import de.dlyt.yanndroid.oneui.preference.SwitchPreferenceScreen;
-import de.dlyt.yanndroid.oneui.preference.internal.PreferencesRelatedCard;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.services.OverlayService;
 import cf.tenseventyseven.fresh.utils.Experience;
@@ -47,6 +45,9 @@ import cf.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity;
 import cf.tenseventyseven.fresh.zest.sub.FingerprintStyleActivity;
 import cf.tenseventyseven.fresh.zest.sub.ScreenResolutionActivity;
 import cf.tenseventyseven.fresh.zest.sub.VideoBrightnessActivity;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.preference.internal.PreferenceRelatedCard;
+import dev.oneuiproject.oneui.utils.PreferenceUtils;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -61,9 +62,9 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_main);
         ButterKnife.bind(this);
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbar.getToolbar());
+//        setSupportActionBar(toolbar.getToolbar());
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
@@ -92,12 +93,12 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        toolbar.inflateToolbarMenu(R.menu.settings_search);
-        toolbar.setOnToolbarMenuItemClickListener(this::onOptionsItemSelected);
+//        toolbar.inflateToolbarMenu(R.menu.settings_search);
+//        toolbar.setOnToolbarMenuItemClickListener(this::onOptionsItemSelected);
         return true;
     }
 
-    private boolean onOptionsItemSelected(de.dlyt.yanndroid.oneui.menu.MenuItem menuItem) {
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.zest_settings_shortcut) {
             ComponentName cn = new ComponentName("com.android.settings.intelligence", "com.android.settings.intelligence.search.SearchActivity");
             Intent intent = new Intent();
@@ -107,10 +108,10 @@ public class SettingsActivity extends AppCompatActivity {
         return true;
     }
 
-    public static class ZestMainFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
+    public static class ZestMainFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
         private Context mContext;
         private static ExecutorService mExecutor;
-        private PreferencesRelatedCard mRelatedCard;
+        private PreferenceRelatedCard mRelatedCard;
 
         private static boolean mBackground = false;
         private static Handler mHandler;
@@ -170,7 +171,7 @@ public class SettingsActivity extends AppCompatActivity {
             mVoltePreference.setOnPreferenceChangeListener(this);
 
             // Extra Dim
-            ((SwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
+            ((SeslSwitchPreferenceScreen) findPreference("fs_extra_dim")).setChecked(ExtraDimSettingsActivity.getExtraDimState(mContext));
             findPreference("fs_extra_dim").setOnPreferenceChangeListener(this);
 
             // Screen resolution
@@ -321,7 +322,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            getView().setBackgroundColor(getResources().getColor(R.color.item_background_color, mContext.getTheme()));
+            getView().setBackgroundColor(getResources().getColor(R.color.sesl_fragment_fgcolor, mContext.getTheme()));
         }
 
         private void showRebootDialog(Context context) {
@@ -363,7 +364,7 @@ public class SettingsActivity extends AppCompatActivity {
             };
 
             if (mRelatedCard == null) {
-                mRelatedCard = createRelatedCard(context);
+                mRelatedCard = PreferenceUtils.createRelatedCard(context);
                 mRelatedCard.addButton(advancedTitle, advancedIntent)
                         .addButton(dressroomTitle, dressroomIntent);
 

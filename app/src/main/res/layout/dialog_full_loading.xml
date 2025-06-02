@@ -17,7 +17,6 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_margin="6dp"
-                android:background="@drawable/oui_progress_circle_dialog_bg"
                 android:elevation="4dp"
                 android:padding="5dp" />
         </LinearLayout>

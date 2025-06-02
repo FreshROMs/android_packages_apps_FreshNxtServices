@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +14,10 @@ import com.google.android.material.card.MaterialCardView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.widget.ProgressBar;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.ota.SoftwareUpdate;
 import cf.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class DeviceUpdatedActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_toolbar_layout)
@@ -77,9 +77,9 @@ public class DeviceUpdatedActivity extends AppCompatActivity {
         mContext = this;
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbarLayout.getToolbar());
+//        setSupportActionBar(toolbarLayout.getToolbar());
 
         mButtonBar.setVisibility(View.GONE);
         mCardChangelog.setVisibility(View.GONE);

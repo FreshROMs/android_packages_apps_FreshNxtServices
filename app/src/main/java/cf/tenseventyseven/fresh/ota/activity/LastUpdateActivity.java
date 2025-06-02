@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +19,7 @@ import org.json.JSONException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.widget.ProgressBar;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import io.noties.markwon.Markwon;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -82,9 +82,9 @@ public class LastUpdateActivity extends AppCompatActivity {
         final Markwon markwon = Markwon.create(mContext);
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbarLayout.getToolbar());
+//        setSupportActionBar(toolbarLayout.getToolbar());
 
         mButtonBar.setVisibility(View.GONE);
 

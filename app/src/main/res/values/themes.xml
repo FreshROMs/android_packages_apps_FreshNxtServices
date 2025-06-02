@@ -12,7 +12,7 @@
         <item name="android:minHeight">46.5dip</item>
     </style>
     <style name="RadioButtonListDivider">
-        <item name="android:background">@color/sesl_list_divider_color</item>
+        <item name="android:background">@color/oui_list_divider_color</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">2.0px</item>
         <item name="android:layout_marginStart">68.0dip</item>
@@ -25,7 +25,7 @@
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
-    <style name="Fresh.OTA.Button" parent="@style/ButtonStyle">
+    <style name="Fresh.OTA.Button" parent="@style/OneUI.ButtonStyleColored">
         <item name="android:paddingVertical">14dp</item>
         <item name="android:layout_margin">4dp</item>
         <item name="android:textSize">16sp</item>
@@ -33,8 +33,8 @@
         <item name="android:maxWidth">240dp</item>
     </style>
     <style name="Fresh.OTA.Button.Colored" parent="@style/Fresh.OTA.Button">
-        <item name="android:backgroundTint">@color/sesl_btn_color_state</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/oui_btn_colored_background</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="LargeProgressDialog">
@@ -46,5 +46,20 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="OneUI.ContainedButton" parent="">
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:focusable">true</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="OneUI.ContainedButtonTheme" parent="@style/Widget.AppCompat.Button.Custom">
+        <item name="android:textSize">17sp</item>
+        <item name="buttonCornerRadius">26dp</item>
     </style>
 </resources>

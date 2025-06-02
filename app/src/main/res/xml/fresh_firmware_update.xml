@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
@@ -11,7 +11,7 @@
             android:targetPackage="cf.tenseventyseven.fresh" />
     </Preference>
 
-    <SwitchPreferenceCompat
+    <SwitchPreference
         android:key="ota_auto_download_wifi"
         android:title="@string/fresh_ota_auto_download_wlan_title"
         android:summary="@string/fresh_ota_auto_download_wlan_summary" />
@@ -29,4 +29,4 @@
 
     <PreferenceCategory />
 
-</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>
+</PreferenceScreen>

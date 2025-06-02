@@ -1,4 +1,4 @@
-<de.dlyt.yanndroid.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<dev.oneuiproject.oneui.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/zest_main_toolbar"
     android:layout_width="match_parent"
@@ -10,4 +10,4 @@
         android:id="@+id/zest_localization_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-</de.dlyt.yanndroid.oneui.layout.ToolbarLayout>
+</dev.oneuiproject.oneui.layout.ToolbarLayout>

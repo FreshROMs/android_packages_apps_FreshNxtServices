@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.reflect.SeslBaseReflector;
@@ -37,9 +38,8 @@ import java.util.concurrent.Executors;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cf.tenseventyseven.fresh.utils.Experience;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.widget.Switch;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class VideoBrightnessActivity extends AppCompatActivity {
 
@@ -90,9 +90,9 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         mContext = this;
 
         toolbar.setExpanded(false, false);
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbar.getToolbar());
+//        setSupportActionBar(toolbar.getToolbar());
 
         refreshRadioButtons(getVideoBrightnessState(mContext));
 
@@ -135,20 +135,20 @@ public class VideoBrightnessActivity extends AppCompatActivity {
     private void refreshRadioButtons(boolean state) {
         if (state) {
             mRadioBright.setChecked(true);
-            mTextViewBright.setTextColor(getColor(R.color.primary_color));
+            mTextViewBright.setTextColor(getColor(R.color.oui_primary_text_color));
             mTextViewBright.setTypeface(Typeface.DEFAULT_BOLD);
 
             mRadioNormal.setChecked(false);
-            mTextViewNormal.setTextColor(getColor(R.color.sesl4_primary_text));
+            mTextViewNormal.setTextColor(getColor(R.color.oui_primary_text_color));
             mTextViewNormal.setTypeface(Typeface.DEFAULT);
             mTextViewSummary.setText(R.string.zest_video_brightness_summary_bright);
         } else {
             mRadioNormal.setChecked(true);
-            mTextViewNormal.setTextColor(getColor(R.color.primary_color));
+            mTextViewNormal.setTextColor(getColor(R.color.oui_primary_text_color));
             mTextViewNormal.setTypeface(Typeface.DEFAULT_BOLD);
 
             mRadioBright.setChecked(false);
-            mTextViewBright.setTextColor(getColor(R.color.sesl4_primary_text));
+            mTextViewBright.setTextColor(getColor(R.color.oui_primary_text_color));
             mTextViewBright.setTypeface(Typeface.DEFAULT);
             mTextViewSummary.setText(R.string.zest_video_brightness_summary_normal);
         }
@@ -260,7 +260,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         }, !justLaunched && mFinishedPopulating ? 0 : 2000);
     }
 
-    @SuppressLint({"PrivateApi", "WrongConstant"})
+    @SuppressLint({"PrivateApi", "WrongConstant", "RestrictedApi"})
     private static void setAppEnabled(Context context, String appName, Boolean state) throws Exception {
         Method method = SeslBaseReflector.getDeclaredMethod(
                 "com.samsung.android.displaysolution.SemDisplaySolutionManager",
@@ -274,6 +274,7 @@ public class VideoBrightnessActivity extends AppCompatActivity {
         SeslBaseReflector.invoke(context.getSystemService("DisplaySolution"), method, appName, state ? 1 : 0);
     }
 
+    @SuppressLint({"PrivateApi", "WrongConstant", "RestrictedApi"})
     private static boolean getAppEnabled(Context context, String appName) {
         Method method = SeslBaseReflector.getDeclaredMethod(
                 "com.samsung.android.displaysolution.SemDisplaySolutionManager",

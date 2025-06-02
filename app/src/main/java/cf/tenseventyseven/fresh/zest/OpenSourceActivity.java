@@ -6,13 +6,13 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.PreferenceFragment;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.preference.Preference;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class OpenSourceActivity extends AppCompatActivity {
 
@@ -25,9 +25,9 @@ public class OpenSourceActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_about_open_source);
         ButterKnife.bind(this);
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbar.getToolbar());
+//        setSupportActionBar(toolbar.getToolbar());
 
         if (savedInstanceState == null) {
             getSupportFragmentManager()
@@ -37,7 +37,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         }
     }
 
-    public static class OpenSourceFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener {
+    public static class OpenSourceFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener {
         private Context mContext;
 
         @Override
@@ -54,7 +54,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            getView().setBackgroundColor(getResources().getColor(R.color.item_background_color, mContext.getTheme()));
+            getView().setBackgroundColor(getResources().getColor(R.color.sesl_fragment_fgcolor, mContext.getTheme()));
         }
 
         @Override

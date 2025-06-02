@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<de.dlyt.yanndroid.oneui.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <DropDownPreference
         android:key="sb_icon_style_data"
@@ -108,17 +108,17 @@
                 android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
 
-        <SwitchPreferenceScreen
+        <SeslSwitchPreferenceScreen
             android:key="fs_extra_dim"
             android:title="@string/zest_extra_dim_setting_title"
             android:summary="@string/zest_extra_dim_setting_summary_main">
             <intent
                 android:targetClass="cf.tenseventyseven.fresh.zest.sub.ExtraDimSettingsActivity"
                 android:targetPackage="cf.tenseventyseven.fresh" />
-        </SwitchPreferenceScreen>
+        </SeslSwitchPreferenceScreen>
     </PreferenceCategory>
 
-    <de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
+    <PreferenceCategory>
         <Preference
             android:key="zs_fresh_version"
             android:title="@string/fresh_firmware_version"
@@ -140,6 +140,6 @@
                 android:targetClass="cf.tenseventyseven.fresh.zest.AboutActivity"
                 android:targetPackage="cf.tenseventyseven.fresh" />
         </Preference>
-    </de.dlyt.yanndroid.oneui.preference.PreferenceCategory>
+    </PreferenceCategory>
 
-</de.dlyt.yanndroid.oneui.preference.PreferenceScreen>
+</PreferenceScreen>

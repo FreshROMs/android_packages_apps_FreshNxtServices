@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,9 +45,7 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.widget.ProgressBar;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 import io.noties.markwon.Markwon;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.ota.SoftwareUpdate;
@@ -194,9 +194,9 @@ public class UpdateAvailableActivity extends AppCompatActivity {
         final Markwon markwon = Markwon.create(mContext);
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbarLayout.getToolbar());
+//        setSupportActionBar(toolbarLayout.getToolbar());
 
         mButtonBarInstall.setVisibility(View.GONE);
 
@@ -301,7 +301,7 @@ public class UpdateAvailableActivity extends AppCompatActivity {
 
     private void downloadUpdateWithWarning() {
         if (!UpdateUtils.isDeviceOnline(mContext)) {
-            Toast.makeText(mContext, R.string.network_connect_is_not_stable, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, R.string.fresh_ota_toast_failed_download_network, Toast.LENGTH_SHORT).show();
             return;
         }
 

@@ -1,5 +1,6 @@
 package cf.tenseventyseven.fresh.zest.store;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -10,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -24,12 +28,9 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.ProgressDialog;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.sesl.recyclerview.LinearLayoutManager;
-import de.dlyt.yanndroid.oneui.view.RecyclerView;
-import de.dlyt.yanndroid.oneui.widget.ProgressBar;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.dialog.ProgressDialog;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class FreshUpdatesActivity extends AppCompatActivity {
 
@@ -47,9 +48,9 @@ public class FreshUpdatesActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_fresh_updates);
         ButterKnife.bind(this);
 
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbar.getToolbar());
+//        setSupportActionBar(toolbar.getToolbar());
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_CIRCLE);
@@ -106,7 +107,7 @@ public class FreshUpdatesActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(UpdatesAdapter.ViewHolder holder, final int position) {
+        public void onBindViewHolder(UpdatesAdapter.ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
             final FreshUpdates.Update update = mList.get(position);
 
             holder.uIcon.setClipToOutline(true);
@@ -252,7 +253,7 @@ public class FreshUpdatesActivity extends AppCompatActivity {
         private final Drawable mDivider;
 
         public ItemDecoration(@NonNull Context context) {
-            mDivider = context.getDrawable(R.drawable.sesl_list_divider);
+            mDivider = context.getDrawable(R.drawable.oui_divider_vertical);
         }
 
         @Override

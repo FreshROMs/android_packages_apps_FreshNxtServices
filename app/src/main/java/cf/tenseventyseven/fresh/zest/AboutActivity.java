@@ -18,15 +18,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cf.tenseventyseven.fresh.utils.Experience;
-import de.dlyt.yanndroid.oneui.layout.AboutPage;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.layout.AppInfoLayout;
 
 public class AboutActivity extends AppCompatActivity {
 
     Context mContext;
 
     @BindView(R.id.zest_about_header)
-    AboutPage aboutPage;
+    AppInfoLayout aboutPage;
 
     @Override
     @SuppressLint("StringFormatInvalid")
@@ -36,8 +36,8 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_about);
         ButterKnife.bind(this);
 
-        aboutPage.setToolbarExpandable(true);
-        aboutPage.setOptionalText(" ");
+//        aboutPage.setToolbarExpandable(true);
+//        aboutPage.setOptionalText(" ");
     }
 
     public void onTapSourceCode(View v) {

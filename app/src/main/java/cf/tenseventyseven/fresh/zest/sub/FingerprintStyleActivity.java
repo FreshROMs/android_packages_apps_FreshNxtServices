@@ -4,6 +4,7 @@ import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -26,6 +27,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,11 +49,9 @@ import java.io.OutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.view.Toast;
 import cf.tenseventyseven.fresh.utils.Experience;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class FingerprintStyleActivity extends AppCompatActivity {
 
@@ -111,9 +111,9 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         mSelectedAnim = Settings.System.getInt(getContentResolver(), "zest_fod_animation_selected", 0);
 
         toolbar.setExpanded(false, false);
-        toolbar.setNavigationButtonVisible(false);
-        toolbar.setBackgroundResource(R.drawable.sesl4_action_bar_background);
-        setSupportActionBar(toolbar.getToolbar());
+//        toolbar.setNavigationButtonVisible(false);
+//        toolbar.setBackgroundResource(R.drawable.sesl4_action_bar_background);
+//        setSupportActionBar(toolbar.getToolbar());
 
         Point size = new Point();
         ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRealSize(size);

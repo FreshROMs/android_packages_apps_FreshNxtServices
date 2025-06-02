@@ -1,6 +1,7 @@
 package cf.tenseventyseven.fresh.zest.sub;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SeslSwitchBar;
 
 import android.content.Context;
 import android.database.ContentObserver;
@@ -11,15 +12,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.SwitchBarLayout;
-import de.dlyt.yanndroid.oneui.widget.SeekBar;
-import de.dlyt.yanndroid.oneui.widget.Switch;
-import de.dlyt.yanndroid.oneui.widget.SwitchBar;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.layout.SwitchBarLayout;
 
 public class ExtraDimSettingsActivity extends AppCompatActivity {
     private Context mContext;
@@ -57,14 +57,14 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
         mColorDisplayManager = getSystemService(ColorDisplayManager.class);
 
         sbLayout.setExpanded(false, false);
-        sbLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        sbLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         sbLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(sbLayout.getToolbar());
+//        setSupportActionBar(sbLayout.getToolbar());
 
         mHandler = new Handler(Looper.getMainLooper());
         mSettingsObserver = new ExtraDimSettingsObserver(mHandler);
 
-        SwitchBar mExtraDimSwitch = sbLayout.getSwitchBar();
+        SeslSwitchBar mExtraDimSwitch = sbLayout.getSwitchBar();
         boolean mExtraDimEnabled = getExtraDimState(mContext);
 
         mExtraDimSwitch.setChecked(mExtraDimEnabled);
@@ -99,7 +99,7 @@ public class ExtraDimSettingsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        skExtraDim.setSeamless(true);
+//        skExtraDim.setSeamless(true);
         skExtraDim.setProgress(INVERSE_PERCENTAGE_BASE
                 - mColorDisplayManager.getReduceBrightColorsStrength());
         skExtraDim.setMax(INVERSE_PERCENTAGE_BASE

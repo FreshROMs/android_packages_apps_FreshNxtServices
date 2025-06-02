@@ -15,9 +15,9 @@ import android.widget.RadioButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
 import cf.tenseventyseven.fresh.utils.Performance;
 import cf.tenseventyseven.fresh.R;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class PerformanceModeActivity extends AppCompatActivity {
 
@@ -48,9 +48,9 @@ public class PerformanceModeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         toolbar.setExpanded(false, false);
-        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbar.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbar.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbar.getToolbar());
+//        setSupportActionBar(toolbar.getToolbar());
 
         mHandler = new Handler(Looper.getMainLooper());
         mSettingsObserver = new PerformanceModeSettingsObserver(mHandler);

@@ -11,6 +11,8 @@
     <uses-permission
         android:name="android.permission.READ_DEVICE_CONFIG"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_WALLPAPER_INTERNAL"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.WRITE_DEVICE_CONFIG"
         tools:ignore="ProtectedPermissions" />
@@ -208,8 +210,7 @@
         </activity>
         <activity
             android:name=".zest.AboutActivity"
-            android:exported="true"
-            android:theme="@style/OneUI4AboutTheme" />
+            android:exported="true" />
         <activity
             android:name=".zest.sub.ScreenResolutionActivity"
             android:exported="true"
@@ -235,8 +236,7 @@
             android:exported="true"
             android:icon="@mipmap/fresh_ic_launcher_settings"
             android:label="@string/zest_plus_fod_animation_style_title"
-            android:screenOrientation="portrait"
-            android:theme="@style/OneUI3Theme" />
+            android:screenOrientation="portrait" />
         <!--<activity
             android:name=".zest.sub.FaceWidgetActivity"
             android:exported="true"

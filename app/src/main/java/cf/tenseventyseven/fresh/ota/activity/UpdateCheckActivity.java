@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.ContextThemeWrapper;
+import android.widget.Toast;
 
 import com.tonyodev.fetch2.Download;
 import com.tonyodev.fetch2.Error;
@@ -32,15 +34,13 @@ import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-import de.dlyt.yanndroid.oneui.layout.ToolbarLayout;
-import de.dlyt.yanndroid.oneui.view.Toast;
 import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.ota.SoftwareUpdate;
 import cf.tenseventyseven.fresh.ota.UpdateNotifications;
 import cf.tenseventyseven.fresh.ota.api.UpdateCheck;
 import cf.tenseventyseven.fresh.ota.api.UpdateCheckJobService;
 import cf.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
+import dev.oneuiproject.oneui.layout.ToolbarLayout;
 
 public class UpdateCheckActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_check_toolbar_layout)
@@ -150,9 +150,9 @@ public class UpdateCheckActivity extends AppCompatActivity {
         mContext = this;
 
         toolbarLayout.setExpanded(false);
-        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
+//        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_navigate_up));
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
-        setSupportActionBar(toolbarLayout.getToolbar());
+//        setSupportActionBar(toolbarLayout.getToolbar());
 
         // But check permissions first - download will be started in the callback
         int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
