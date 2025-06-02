@@ -1,0 +1,172 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sesl.androidx.picker",
+    "module": "picker-basic",
+    "version": "1.0.17+1.0.17-sesl6+rev2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7-rc-1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.7.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "androidx.dynamicanimation",
+          "module": "dynamicanimation",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "sesl.androidx.viewpager",
+          "module": "viewpager",
+          "version": {
+            "requires": "1.1.0-rc01+1.0.0-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "picker-basic-1.0.17+1.0.17-sesl6+rev2.aar",
+          "url": "picker-basic-1.0.17+1.0.17-sesl6+rev2.aar",
+          "size": 462660,
+          "sha512": "d4179ad3fdd273fd1190a291e7314499b2b3cc7ef689a3ea3f9e7ac2a18c9c42c2516410f2daedd3d4b0b29177c91db5e7ea16fdec53267caa8e7049cc193a25",
+          "sha256": "5c76a5c2b652bb84dab4ec705abdfb2d7e0a7541a7fc8d2766513c5355a14418",
+          "sha1": "779717fe8bba4e985ef6196bf1d666d36edbd497",
+          "md5": "3d1260fca1683c2b65886f61c69969ef"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "sesl.androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0+1.0.34-sesl6+rev8"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.1"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.7.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "androidx.dynamicanimation",
+          "module": "dynamicanimation",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "sesl.androidx.viewpager",
+          "module": "viewpager",
+          "version": {
+            "requires": "1.1.0-rc01+1.0.0-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "picker-basic-1.0.17+1.0.17-sesl6+rev2.aar",
+          "url": "picker-basic-1.0.17+1.0.17-sesl6+rev2.aar",
+          "size": 462660,
+          "sha512": "d4179ad3fdd273fd1190a291e7314499b2b3cc7ef689a3ea3f9e7ac2a18c9c42c2516410f2daedd3d4b0b29177c91db5e7ea16fdec53267caa8e7049cc193a25",
+          "sha256": "5c76a5c2b652bb84dab4ec705abdfb2d7e0a7541a7fc8d2766513c5355a14418",
+          "sha1": "779717fe8bba4e985ef6196bf1d666d36edbd497",
+          "md5": "3d1260fca1683c2b65886f61c69969ef"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "picker-basic-1.0.17+1.0.17-sesl6+rev2-sources.jar",
+          "url": "picker-basic-1.0.17+1.0.17-sesl6+rev2-sources.jar",
+          "size": 141215,
+          "sha512": "403e5f909099769af12f49f422b40891135d9af2a44e1aa0d65298b2afca3a692017c909f911cc37636a5d48de71995e0a0b3943d203c1b7024fbcc270fa8095",
+          "sha256": "dacd820642db690338a2b9c913a7e6f6e0b98172ef4cfc96780e838daef2a15c",
+          "sha1": "e9bc9464b74e48088c9f69c81b7e9a2ac0353f37",
+          "md5": "63fc75a077c5ab492335d27b48850da3"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "picker-basic-1.0.17+1.0.17-sesl6+rev2-javadoc.jar",
+          "url": "picker-basic-1.0.17+1.0.17-sesl6+rev2-javadoc.jar",
+          "size": 515967,
+          "sha512": "2ee30cbff7c74a666691fcb8fed2758650a3740fff0b2276ae06fefc0e1a2c81e6fd520d7582e4bbf453909a192225e3300117deef28823f612b7dbc47c9db17",
+          "sha256": "81ffda760157a47ef59c8ab07ddbc0dff8dc478cefed912f8728a7469544a903",
+          "sha1": "054d19c213d3a430e3fcccb8a136d9f7767cc023",
+          "md5": "59ad1de34e473c65c40718524d9d9dcd"
+        }
+      ]
+    }
+  ]
+}

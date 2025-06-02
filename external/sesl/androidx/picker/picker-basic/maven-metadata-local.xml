@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>sesl.androidx.picker</groupId>
+  <artifactId>picker-basic</artifactId>
+  <versioning>
+    <latest>1.0.17+1.0.17-sesl6+rev2</latest>
+    <release>1.0.17+1.0.17-sesl6+rev2</release>
+    <versions>
+      <version>1.0.17+1.0.17-sesl6+rev2</version>
+    </versions>
+    <lastUpdated>20250531113454</lastUpdated>
+  </versioning>
+</metadata>

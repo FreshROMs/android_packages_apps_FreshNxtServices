@@ -1,0 +1,190 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sesl.androidx.recyclerview",
+    "module": "recyclerview",
+    "version": "1.4.0+1.0.21-sesl6+rev0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7-rc-1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "sesl.androidx.customview",
+          "module": "customview",
+          "version": {
+            "requires": "1.2.0-alpha02+1.0.1-sesl6+rev0"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "sesl.androidx.viewpager2",
+          "module": "viewpager2",
+          "version": {
+            "requires": "1.1.0+1.0.0-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "recyclerview-1.4.0+1.0.21-sesl6+rev0.aar",
+          "url": "recyclerview-1.4.0+1.0.21-sesl6+rev0.aar",
+          "size": 551758,
+          "sha512": "a4299e1094d5261d8681230cb31296d2c315417c47c7076217b0e1e886752231afd56109f697fad88d9c2a3b73da6a6df66a340342462998c656abc931463731",
+          "sha256": "8104e250cef45a683120087451e90cab9a3d98fd83bb3450c36371f28b2e7df3",
+          "sha1": "1dee6d1530030142e279546aeb546ef62e0bed22",
+          "md5": "cb11a5da52d6c404cea6be268a2af685"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.collection",
+          "module": "collection",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "androidx.customview",
+          "module": "customview-poolingcontainer",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.profileinstaller",
+          "module": "profileinstaller",
+          "version": {
+            "requires": "1.4.0"
+          }
+        },
+        {
+          "group": "sesl.androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0+1.0.34-sesl6+rev8"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "sesl.androidx.customview",
+          "module": "customview",
+          "version": {
+            "requires": "1.2.0-alpha02+1.0.1-sesl6+rev0"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "sesl.androidx.viewpager2",
+          "module": "viewpager2",
+          "version": {
+            "requires": "1.1.0+1.0.0-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "recyclerview-1.4.0+1.0.21-sesl6+rev0.aar",
+          "url": "recyclerview-1.4.0+1.0.21-sesl6+rev0.aar",
+          "size": 551758,
+          "sha512": "a4299e1094d5261d8681230cb31296d2c315417c47c7076217b0e1e886752231afd56109f697fad88d9c2a3b73da6a6df66a340342462998c656abc931463731",
+          "sha256": "8104e250cef45a683120087451e90cab9a3d98fd83bb3450c36371f28b2e7df3",
+          "sha1": "1dee6d1530030142e279546aeb546ef62e0bed22",
+          "md5": "cb11a5da52d6c404cea6be268a2af685"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "recyclerview-1.4.0+1.0.21-sesl6+rev0-sources.jar",
+          "url": "recyclerview-1.4.0+1.0.21-sesl6+rev0-sources.jar",
+          "size": 380322,
+          "sha512": "d64bb6ba8c3201d977af6f894759c8fec629e77e9a96d68b425571169a5352b90cbfbe7b60fb22cb1ecce0c7a74b3279db2d55755a4d14946d03edb43ee9c7be",
+          "sha256": "db80ed0941ca4cab6599263a2170bff690039c8f6920c58afc2d9b915c4c1930",
+          "sha1": "c4aef433018db455a44c07474bee3a4f6f02a238",
+          "md5": "de0cf1a0606281e347925e8c18ba5160"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "recyclerview-1.4.0+1.0.21-sesl6+rev0-javadoc.jar",
+          "url": "recyclerview-1.4.0+1.0.21-sesl6+rev0-javadoc.jar",
+          "size": 846042,
+          "sha512": "5a4ca063a12e35d0b5be52a373d88e8cd46416a92497905f65b9926845eee95392e434ed5fe14d4cee54174c1a3751e0848af52dab3887325881361216aecabc",
+          "sha256": "ca246dfcfaeed8383b6b01e8339e70b41f8ed1b248ee46910e4ec0d129b51792",
+          "sha1": "087f985e9bbf2e900b6df0a899c46f20b3c63624",
+          "md5": "ca8b713e736f2bff4b44cf472cbc5930"
+        }
+      ]
+    }
+  ]
+}

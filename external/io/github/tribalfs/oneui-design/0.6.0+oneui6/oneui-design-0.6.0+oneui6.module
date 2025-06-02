@@ -1,0 +1,1402 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.tribalfs",
+    "module": "oneui-design",
+    "version": "0.6.0+oneui6",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.10.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.9.1"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "oneui-design-0.6.0+oneui6.aar",
+          "url": "oneui-design-0.6.0+oneui6.aar",
+          "size": 1173295,
+          "sha512": "06d280722f27e0a38f25e60fb2205ac134525f7f075e52139ca5d9f25bfda84a6bbc67b433d2fc88a1628423bb18395e22eab7a097b1786a07f5c219c73de9f0",
+          "sha256": "34291ab2f49f243acfd513821533870cf9d0b3c2f1301b82e5c859f7139abf3f",
+          "sha1": "73359de0c51ead5d17d92678f59864f74c68a127",
+          "md5": "294b4bc22eb165f16d661462fe11576c"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-parcelize-runtime",
+          "version": {
+            "requires": "2.1.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0+1.0.34-sesl6+rev8"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.indexscroll",
+          "module": "indexscroll",
+          "version": {
+            "requires": "1.0.3+1.0.3-sesl6+rev5"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.picker",
+          "module": "picker-color",
+          "version": {
+            "requires": "1.0.6+1.0.6-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.picker",
+          "module": "picker-basic",
+          "version": {
+            "requires": "1.0.17+1.0.17-sesl6+rev2"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.preference",
+          "module": "preference",
+          "version": {
+            "requires": "1.2.1+1.0.4-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.12.0+1.0.23-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.apppickerview",
+          "module": "apppickerview",
+          "version": {
+            "requires": "1.0.1+1.0.1-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.drawerlayout",
+          "module": "drawerlayout",
+          "version": {
+            "requires": "1.2.0+1.0.1-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.slidingpanelayout",
+          "module": "slidingpanelayout",
+          "version": {
+            "requires": "1.2.0+1.0.2-sesl6+rev7"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "com.google.zxing",
+          "module": "core",
+          "version": {
+            "requires": "3.5.3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "com.airbnb.android",
+          "module": "lottie",
+          "version": {
+            "requires": "6.6.2"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "dev.rikka.tools.refine",
+          "module": "runtime",
+          "version": {
+            "requires": "4.4.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-runtime-ktx",
+          "version": {
+            "requires": "2.8.7"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-fragment-ktx",
+          "version": {
+            "requires": "2.8.7"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "androidx.navigation",
+          "module": "navigation-ui-ktx",
+          "version": {
+            "requires": "2.8.7"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.9.1"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            },
+            {
+              "group": "androidx.drawerlayout",
+              "module": "drawerlayout"
+            },
+            {
+              "group": "androidx.viewpager2",
+              "module": "viewpager2"
+            },
+            {
+              "group": "androidx.viewpager",
+              "module": "viewpager"
+            },
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.preference",
+              "module": "preference"
+            },
+            {
+              "group": "androidx.recyclerview",
+              "module": "recyclerview"
+            },
+            {
+              "group": "androidx.slidingpanelayout",
+              "module": "slidingpanelayout"
+            },
+            {
+              "group": "androidx.swiperefreshlayout",
+              "module": "swiperefreshlayout"
+            },
+            {
+              "group": "com.google.android.material",
+              "module": "material"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "oneui-design-0.6.0+oneui6.aar",
+          "url": "oneui-design-0.6.0+oneui6.aar",
+          "size": 1173295,
+          "sha512": "06d280722f27e0a38f25e60fb2205ac134525f7f075e52139ca5d9f25bfda84a6bbc67b433d2fc88a1628423bb18395e22eab7a097b1786a07f5c219c73de9f0",
+          "sha256": "34291ab2f49f243acfd513821533870cf9d0b3c2f1301b82e5c859f7139abf3f",
+          "sha1": "73359de0c51ead5d17d92678f59864f74c68a127",
+          "md5": "294b4bc22eb165f16d661462fe11576c"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "oneui-design-0.6.0+oneui6-sources.jar",
+          "url": "oneui-design-0.6.0+oneui6-sources.jar",
+          "size": 225284,
+          "sha512": "4a73b592c4d9d99d3a8bf4b92c7d04ad100e074524fee1655b9bbd41cfb9e7b14baf24b35382e66a689ce73388fdbbcce2791f97a899209f28bf7dc19565baf4",
+          "sha256": "8fa47d5975e393c17682513d5648f90d2ea488b74e138e4fcb165ba08fe18aa5",
+          "sha1": "1b96b061115411363ea207e685cdedbaebf93783",
+          "md5": "ef6781290042eb7b7cd72b34ae10299b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "oneui-design-0.6.0+oneui6-javadoc.jar",
+          "url": "oneui-design-0.6.0+oneui6-javadoc.jar",
+          "size": 1697414,
+          "sha512": "04304cfc01a6aa332b8866d9d7d5730b78da28bf10d25b75707ca810b8e90130121c4442ca87815f1994ce5b913ccabd8d2f29865acbef7a6b9c0fcac21cb6b8",
+          "sha256": "c234cda301b5d5ec981e09789ca5ea9febd940bd142c970bf3f43e74f78601f4",
+          "sha1": "e959810185ed535613b5541b63d1327433c21292",
+          "md5": "200dce3d3ef268d4565a07a0fdd3600c"
+        }
+      ]
+    }
+  ]
+}

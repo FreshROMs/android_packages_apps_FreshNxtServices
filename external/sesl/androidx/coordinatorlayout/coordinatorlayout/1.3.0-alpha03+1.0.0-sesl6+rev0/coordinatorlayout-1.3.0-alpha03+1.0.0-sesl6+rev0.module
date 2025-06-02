@@ -1,0 +1,165 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sesl.androidx.coordinatorlayout",
+    "module": "coordinatorlayout",
+    "version": "1.3.0-alpha03+1.0.0-sesl6+rev0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7-rc-1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jspecify",
+          "module": "jspecify",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "sesl.androidx.customview",
+          "module": "customview",
+          "version": {
+            "requires": "1.2.0-alpha02+1.0.1-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0.aar",
+          "url": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0.aar",
+          "size": 46011,
+          "sha512": "61f0d1ec9f33549c081aed2f676d1d20ff75dff6bc299fb936369ecefb8bba75a994fa55f462aa1c321d9ca3415d424f30ddb2615a83d718d52714d8ecb3f027",
+          "sha256": "73f1776e5dbc09c931990f9ff12609703a04f67ecd2398c1598db15bdde57a83",
+          "sha1": "486b76811c1daaaef9144388f8ee466f6b839d5a",
+          "md5": "47db4b7de9b1e70d8a15da573aa54643"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.collection",
+          "module": "collection",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "org.jspecify",
+          "module": "jspecify",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "sesl.androidx.customview",
+          "module": "customview",
+          "version": {
+            "requires": "1.2.0-alpha02+1.0.1-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0.aar",
+          "url": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0.aar",
+          "size": 46011,
+          "sha512": "61f0d1ec9f33549c081aed2f676d1d20ff75dff6bc299fb936369ecefb8bba75a994fa55f462aa1c321d9ca3415d424f30ddb2615a83d718d52714d8ecb3f027",
+          "sha256": "73f1776e5dbc09c931990f9ff12609703a04f67ecd2398c1598db15bdde57a83",
+          "sha1": "486b76811c1daaaef9144388f8ee466f6b839d5a",
+          "md5": "47db4b7de9b1e70d8a15da573aa54643"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0-sources.jar",
+          "url": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0-sources.jar",
+          "size": 32820,
+          "sha512": "e96c97545cba0d782879359c6848c2a981b63b8c5bb1fc06c2177055da3a7c2c7b3d0c2f75a7a2cc8771596dcf991686660cb9cac00063c9d66b87243229debb",
+          "sha256": "97c20bfe5a9fef6cf14953bb0405198e522453e4956f2ee9acc8aea061a75acd",
+          "sha1": "5733a0da49ce36522c22750a88fa702025a93ff8",
+          "md5": "1576558ec0ae7d738d9b7b475c7179f7"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0-javadoc.jar",
+          "url": "coordinatorlayout-1.3.0-alpha03+1.0.0-sesl6+rev0-javadoc.jar",
+          "size": 362146,
+          "sha512": "96f7ba9b12e8ab4129f642cc5c0adbc19f250b1c52540493737e612488e89ed4ff863dba9079abaab16b099e569cee7fc0cba21703590652e9ff1c3cae6163d8",
+          "sha256": "e54a6531fdf0c496e729fad3117d1872426f5dd0c6fee5a1346ed2bc0f068ffd",
+          "sha1": "9d4c18bd848f351459429ff9f9d1b02374c8db0c",
+          "md5": "d8237782b21eb31e3631f20992b2ba7d"
+        }
+      ]
+    }
+  ]
+}

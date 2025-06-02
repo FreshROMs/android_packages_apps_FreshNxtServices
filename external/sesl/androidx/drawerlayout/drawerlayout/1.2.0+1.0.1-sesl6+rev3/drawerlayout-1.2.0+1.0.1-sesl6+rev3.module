@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sesl.androidx.drawerlayout",
+    "module": "drawerlayout",
+    "version": "1.2.0+1.0.1-sesl6+rev3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7-rc-1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "sesl.androidx.customview",
+          "module": "customview",
+          "version": {
+            "requires": "1.2.0-alpha02+1.0.1-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "drawerlayout-1.2.0+1.0.1-sesl6+rev3.aar",
+          "url": "drawerlayout-1.2.0+1.0.1-sesl6+rev3.aar",
+          "size": 33934,
+          "sha512": "cbf5b733b8053d3dbadaf83a974a7592e7e1fd6c15a2cd7cfc218d14bded3ee2fef3d267ed249ae31772212eed982224b2313c0689f8f6e815c82e5b97ea9593",
+          "sha256": "f7d66d026d92755fd0d492b530cc881bd00474ea9943e57e5bca1035468ffdba",
+          "sha1": "d6f69c69e4a34fb4a37ad427de55e077fe519ab3",
+          "md5": "681f1c9322dfba3512e8d8c7cc036d58"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        },
+        {
+          "group": "sesl.androidx.customview",
+          "module": "customview",
+          "version": {
+            "requires": "1.2.0-alpha02+1.0.1-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "drawerlayout-1.2.0+1.0.1-sesl6+rev3.aar",
+          "url": "drawerlayout-1.2.0+1.0.1-sesl6+rev3.aar",
+          "size": 33934,
+          "sha512": "cbf5b733b8053d3dbadaf83a974a7592e7e1fd6c15a2cd7cfc218d14bded3ee2fef3d267ed249ae31772212eed982224b2313c0689f8f6e815c82e5b97ea9593",
+          "sha256": "f7d66d026d92755fd0d492b530cc881bd00474ea9943e57e5bca1035468ffdba",
+          "sha1": "d6f69c69e4a34fb4a37ad427de55e077fe519ab3",
+          "md5": "681f1c9322dfba3512e8d8c7cc036d58"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "drawerlayout-1.2.0+1.0.1-sesl6+rev3-sources.jar",
+          "url": "drawerlayout-1.2.0+1.0.1-sesl6+rev3-sources.jar",
+          "size": 21650,
+          "sha512": "eeb50b71b9397cb864849e2f24f57319b06bd29908061fbbb4f293d264c798412515bb66503c89683532b3e72c80e3b1867b63ad42e0c9591399e17ea9faf6d6",
+          "sha256": "6c1a9b3eab8e6fe223b4f011a9fc6cd7edb949cefed6bdd884d545f2387c56f8",
+          "sha1": "300dc94f1e72e19e9ce66db267b4d7b03c6e9e07",
+          "md5": "b21994a1bdab9d57a46f0b5d80e3bd52"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "drawerlayout-1.2.0+1.0.1-sesl6+rev3-javadoc.jar",
+          "url": "drawerlayout-1.2.0+1.0.1-sesl6+rev3-javadoc.jar",
+          "size": 335000,
+          "sha512": "04ae413539a92a4ade7626d7483e0975f930ead748cd9d6220c0dbda0aa62f2128f48c16808ee58ab24556361c385237e0b989804a7cb6f0c094cab33b4f4fd3",
+          "sha256": "015e54803a622df7ceece7c5f2373c1b0c4b01300a67e9a44bc9aea1f93b46da",
+          "sha1": "b392b11c5e3e19a14c567798dbc7b736db7f78ef",
+          "md5": "ddacfce640c2666d7c08e8e41cb3dc3e"
+        }
+      ]
+    }
+  ]
+}

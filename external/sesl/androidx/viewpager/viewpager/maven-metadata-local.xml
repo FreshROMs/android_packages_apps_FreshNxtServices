@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>sesl.androidx.viewpager</groupId>
+  <artifactId>viewpager</artifactId>
+  <versioning>
+    <latest>1.1.0-rc01+1.0.0-sesl6+rev0</latest>
+    <release>1.1.0-rc01+1.0.0-sesl6+rev0</release>
+    <versions>
+      <version>1.1.0-rc01+1.0.0-sesl6+rev0</version>
+    </versions>
+    <lastUpdated>20250531113521</lastUpdated>
+  </versioning>
+</metadata>

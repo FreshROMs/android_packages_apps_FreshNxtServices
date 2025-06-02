@@ -1,0 +1,1294 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sesl.com.google.android.material",
+    "module": "material",
+    "version": "1.12.0+1.0.23-sesl6+rev3",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.activity",
+          "module": "activity",
+          "version": {
+            "requires": "1.8.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.2.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0+1.0.34-sesl6+rev8"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.cardview",
+          "module": "cardview",
+          "version": {
+            "requires": "1.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.coordinatorlayout",
+          "module": "coordinatorlayout",
+          "version": {
+            "requires": "1.3.0-alpha03+1.0.0-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.1"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.drawerlayout",
+          "module": "drawerlayout",
+          "version": {
+            "requires": "1.2.0+1.0.1-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.dynamicanimation",
+          "module": "dynamicanimation",
+          "version": {
+            "requires": "1.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation-experimental",
+          "version": {
+            "requires": "1.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.fragment",
+          "module": "fragment",
+          "version": {
+            "requires": "1.8.6+1.0.0-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime",
+          "version": {
+            "requires": "2.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.4.0-rc01+1.0.21-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.resourceinspection",
+          "module": "resourceinspection-annotation",
+          "version": {
+            "requires": "1.0.1"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.transition",
+          "module": "transition",
+          "version": {
+            "requires": "1.5.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.vectordrawable",
+          "module": "vectordrawable",
+          "version": {
+            "requires": "1.1.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.viewpager2",
+          "module": "viewpager2",
+          "version": {
+            "requires": "1.1.0+1.0.0-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "material-1.12.0+1.0.23-sesl6+rev3.aar",
+          "url": "material-1.12.0+1.0.23-sesl6+rev3.aar",
+          "size": 2551495,
+          "sha512": "90ad057789c073afc973dd1cb2defcd86871780862a16317b61bb860ed9f9bfb7f3876966a20a327b3dad6f969914ca53dc81820838d32a981474050576d4857",
+          "sha256": "e03e02b8a8709f8d9336d7e8318999f3db1436df0ee8a72adad420e6fc7fbecb",
+          "sha1": "e42d437a80b19d5056f00274fbeeeea637f02272",
+          "md5": "e25896edc6d52eae8abac4d03e54a487"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-bom",
+          "version": {
+            "requires": "1.9.22"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ],
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "com.google.errorprone",
+          "module": "error_prone_annotations",
+          "version": {
+            "requires": "2.15.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity",
+          "version": {
+            "requires": "1.8.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.2.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0+1.0.34-sesl6+rev8"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.cardview",
+          "module": "cardview",
+          "version": {
+            "requires": "1.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.coordinatorlayout",
+          "module": "coordinatorlayout",
+          "version": {
+            "requires": "1.3.0-alpha03+1.0.0-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.1"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.drawerlayout",
+          "module": "drawerlayout",
+          "version": {
+            "requires": "1.2.0+1.0.1-sesl6+rev3"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.dynamicanimation",
+          "module": "dynamicanimation",
+          "version": {
+            "requires": "1.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation-experimental",
+          "version": {
+            "requires": "1.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.fragment",
+          "module": "fragment",
+          "version": {
+            "requires": "1.8.6+1.0.0-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime",
+          "version": {
+            "requires": "2.0.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.4.0-rc01+1.0.21-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.resourceinspection",
+          "module": "resourceinspection-annotation",
+          "version": {
+            "requires": "1.0.1"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.transition",
+          "module": "transition",
+          "version": {
+            "requires": "1.5.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "androidx.vectordrawable",
+          "module": "vectordrawable",
+          "version": {
+            "requires": "1.1.0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        },
+        {
+          "group": "sesl.androidx.viewpager2",
+          "module": "viewpager2",
+          "version": {
+            "requires": "1.1.0+1.0.0-sesl6+rev0"
+          },
+          "excludes": [
+            {
+              "group": "androidx.appcompat",
+              "module": "appcompat"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core"
+            },
+            {
+              "group": "androidx.core",
+              "module": "core-ktx"
+            },
+            {
+              "group": "androidx.customview",
+              "module": "customview"
+            },
+            {
+              "group": "androidx.fragment",
+              "module": "fragment"
+            },
+            {
+              "group": "androidx.coordinatorlayout",
+              "module": "coordinatorlayout"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "material-1.12.0+1.0.23-sesl6+rev3.aar",
+          "url": "material-1.12.0+1.0.23-sesl6+rev3.aar",
+          "size": 2551495,
+          "sha512": "90ad057789c073afc973dd1cb2defcd86871780862a16317b61bb860ed9f9bfb7f3876966a20a327b3dad6f969914ca53dc81820838d32a981474050576d4857",
+          "sha256": "e03e02b8a8709f8d9336d7e8318999f3db1436df0ee8a72adad420e6fc7fbecb",
+          "sha1": "e42d437a80b19d5056f00274fbeeeea637f02272",
+          "md5": "e25896edc6d52eae8abac4d03e54a487"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "material-1.12.0+1.0.23-sesl6+rev3-sources.jar",
+          "url": "material-1.12.0+1.0.23-sesl6+rev3-sources.jar",
+          "size": 1486162,
+          "sha512": "03de9b92e59264356309d1a33e65d1c44c2247a9b1d56d2c5300e7767fa95b150d53bf8d93a9a60c6f899204ef64e84d3787f22be5315165f70159b3105a494b",
+          "sha256": "ec81fad3d543d0ede7047882572741b2e0e562ee70939906b9e56e184fd5b320",
+          "sha1": "1160b2ffc75cb2d57e4b2876da590654794f4433",
+          "md5": "aedf740c705ebc1330d7a70444395a41"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "material-1.12.0+1.0.23-sesl6+rev3-javadoc.jar",
+          "url": "material-1.12.0+1.0.23-sesl6+rev3-javadoc.jar",
+          "size": 3683557,
+          "sha512": "480163427f7604c18ce9781d5450999426543650ec0292e16fdbba7cd83bf7e313754388a0bc40147a2bc009c1c931165da3facfb22fc7e0df631adac10fd7b8",
+          "sha256": "0629086e64cc42b915f25e67a520fdf908e2b2fc4a262f946c6faf58b285daca",
+          "sha1": "366fe5ef6ecdb5577dcd00c0d10334ff77f44bf8",
+          "md5": "f29275a1af0dfd3509db52d195a30f7f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "sesl.androidx.customview",
+    "module": "customview",
+    "version": "1.2.0-alpha02+1.0.1-sesl6+rev0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7-rc-1"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0.aar",
+          "url": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0.aar",
+          "size": 33484,
+          "sha512": "f18753eaa69025197de26417b56f92429a56bb6b2b9e829639fcd89ad3964eafe818a40aec176eab37449c2f25f3fb4aac2fa38d881f054b9db6669cb7261dbd",
+          "sha256": "35f2644d83a80effcb6b284ab8c310078e348d9106a59489c7abbcb751e78d19",
+          "sha1": "5f6c0d960589a699f540411e9c6cb51e14d0e736",
+          "md5": "8664228bfc6b29f8e515b5fe6f51afae"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.collection",
+          "module": "collection",
+          "version": {
+            "requires": "1.4.2"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.1"
+          }
+        },
+        {
+          "group": "sesl.androidx.core",
+          "module": "core",
+          "version": {
+            "requires": "1.15.0+1.0.11-sesl6+rev0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0.aar",
+          "url": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0.aar",
+          "size": 33484,
+          "sha512": "f18753eaa69025197de26417b56f92429a56bb6b2b9e829639fcd89ad3964eafe818a40aec176eab37449c2f25f3fb4aac2fa38d881f054b9db6669cb7261dbd",
+          "sha256": "35f2644d83a80effcb6b284ab8c310078e348d9106a59489c7abbcb751e78d19",
+          "sha1": "5f6c0d960589a699f540411e9c6cb51e14d0e736",
+          "md5": "8664228bfc6b29f8e515b5fe6f51afae"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0-sources.jar",
+          "url": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0-sources.jar",
+          "size": 31172,
+          "sha512": "d02c025aff246916ab8d566777c2dcb7447f813ee2f448353c6f25e71de0780a10448ac1a11a9e181ef0ff1161ca1d07332fa3d02f8d8d6e3fda6ddade8d1fbd",
+          "sha256": "67c4b5aee5790f9b682e3c74261d254097ee8aff3a0c97a2500aede69e3b1ea8",
+          "sha1": "5ef8513f0c2872c6fc9dc2aa99aa86cd73a71de5",
+          "md5": "4670348bb251c2a0ba12f967ad8036b8"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0-javadoc.jar",
+          "url": "customview-1.2.0-alpha02+1.0.1-sesl6+rev0-javadoc.jar",
+          "size": 313453,
+          "sha512": "0ca237ae9fcd5e669abd388e60f9f5a003b4eeecc1af0965ca376ba1bf419bd8142bcc9de5779dd45d793b0051569896eb8cfdfc3c170e3154d0939886605f3b",
+          "sha256": "74736be1b5b7aeb3f32fd5e6e21fa2a0bec3ac2a6a2ea7dbb985c8369753ae3e",
+          "sha1": "fa506e234f69c9c061196d22ce5eff78fa02e4c1",
+          "md5": "6a2e20c9d985c429ad7dcc64c0226ff1"
+        }
+      ]
+    }
+  ]
+}

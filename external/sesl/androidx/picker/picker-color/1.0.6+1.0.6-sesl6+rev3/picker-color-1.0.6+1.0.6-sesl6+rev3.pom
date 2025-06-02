@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- This module was also published with a richer model, Gradle metadata,  -->
+  <!-- which should be used instead. Do not delete the following line which  -->
+  <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+  <!-- that they should prefer consuming it instead. -->
+  <!-- do_not_remove: published-with-gradle-metadata -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>sesl.androidx.picker</groupId>
+  <artifactId>picker-color</artifactId>
+  <version>1.0.6+1.0.6-sesl6+rev3</version>
+  <packaging>aar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>sesl.androidx.core</groupId>
+      <artifactId>core</artifactId>
+      <version>1.15.0+1.0.11-sesl6+rev0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>sesl.androidx.fragment</groupId>
+      <artifactId>fragment</artifactId>
+      <version>1.8.6+1.0.0-sesl6+rev0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>sesl.androidx.appcompat</groupId>
+      <artifactId>appcompat</artifactId>
+      <version>1.7.0+1.0.34-sesl6+rev8</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>sesl.com.google.android.material</groupId>
+      <artifactId>material</artifactId>
+      <version>1.12.0+1.0.23-sesl6+rev3</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
