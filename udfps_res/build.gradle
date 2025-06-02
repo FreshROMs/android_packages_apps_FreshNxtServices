@@ -30,4 +30,6 @@ android {
 }
 
 // POEditor Config
-apply from: '../../udfps.gradle'
+if (file('../../udfps.gradle').exists()) {
+    apply from: '../../udfps.gradle'
+}

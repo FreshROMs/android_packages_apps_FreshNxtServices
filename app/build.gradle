@@ -32,8 +32,10 @@ android {
     namespace 'cf.tenseventyseven.fresh'
 }
 
-// POEditor Config
-apply from: '../../poeditor.gradle'
+// POEditor Config - only import when file exists
+if (file('../../poeditor.gradle').exists()) {
+    apply from: '../../poeditor.gradle'
+}
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
