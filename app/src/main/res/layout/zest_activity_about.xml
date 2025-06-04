@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/zest_about_header"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:update_state="not_updateable">
+    android:layout_height="match_parent">
     <com.google.android.material.button.MaterialButton
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
