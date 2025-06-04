@@ -1,7 +1,6 @@
 package cf.tenseventyseven.fresh.services;
 
-import de.dlyt.yanndroid.oneui.dialog.AlertDialog;
-
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.service.quicksettings.TileService;
