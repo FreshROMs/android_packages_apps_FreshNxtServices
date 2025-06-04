@@ -29,6 +29,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SeslSwitchPreferenceScreen;
+import androidx.preference.SwitchPreference;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
