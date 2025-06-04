@@ -4,17 +4,18 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "io.tenseventyseven.fresh.udfps.res",
+  "applicationId": "cf.tenseventyseven.fresh.udfps.res",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 22122301,
-      "versionName": "13.4.1.1",
+      "versionCode": 25060401,
+      "versionName": "15.0.0.0",
       "outputFile": "udfps_res-release.apk"
     }
   ],
-  "elementType": "File"
+  "elementType": "File",
+  "minSdkVersionForDexing": 34
 }
