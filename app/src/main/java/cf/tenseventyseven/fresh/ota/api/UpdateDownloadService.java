@@ -285,11 +285,11 @@ public class UpdateDownloadService extends Service {
                 progressBigText.bigText(String.format("%s \u2022 %s", timeLeft, speedString));
                 builder.setStyle(progressBigText);
 
-                builder.addAction(new NotificationCompat.Action.Builder(R.drawable.ic_oui_pause,
+                builder.addAction(new NotificationCompat.Action.Builder(R.drawable.fetch_notification_pause,
                         getString(R.string.fresh_ota_changelog_btn_pause),
                         getPauseIntent(groupId)).build());
 
-                builder.addAction(new NotificationCompat.Action.Builder(R.drawable.oui_tips_card_view_cancel_button,
+                builder.addAction(new NotificationCompat.Action.Builder(R.drawable.fetch_notification_cancel,
                         getString(R.string.fresh_ota_changelog_btn_cancel),
                         getCancelIntent(groupId)).build());
 
