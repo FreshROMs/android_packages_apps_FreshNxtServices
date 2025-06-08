@@ -54,24 +54,6 @@ public class BootReceiver extends BroadcastReceiver {
 
             Log.i(TAG, "Updating device config at boot");
             updateDefaultConfigs(context);
-
-            Log.i(TAG, "Setting up notification channels for services");
-            UpdateNotifications.setupNotificationChannels(context);
-
-            Log.i(TAG, "Checking if proceeding update is successful");
-            checkOtaInstall(context);
-
-            Log.i(TAG, "Setting up software update jobs");
-            UpdateCheckJobService.setupCheckJob(context);
-
-            Log.i(TAG, "Setting performance mode on boot");
-            setPerformanceOnBoot(context);
-
-            // Set current boot time
-            Settings.System.putLong(context.getContentResolver(), "fresh_device_boot_time", bootTime);
-
-            Log.i(TAG, "Successfully booted. Welcome to FreshROMs!");
-            UpdateUtils.deleteUpdatePackageFile();
         }).start();
     }
 
@@ -102,36 +84,5 @@ public class BootReceiver extends BroadcastReceiver {
                 DeviceConfig.setProperty(namespace, key, value, true);
             }
         }
-    }
-
-    private void checkOtaInstall(Context context) {
-        int state = CurrentSoftwareUpdate.getOtaState(context);
-
-        // Finish immediately if we're not installing an update
-        if (state != SoftwareUpdate.OTA_INSTALL_STATE_INSTALLING)
-            return;
-
-        SoftwareUpdate current = CurrentSoftwareUpdate.getSoftwareUpdate(context);
-        String systemVersion = UpdateUtils.getCurrentVersion();
-        String currentUpdate = current.getFullVersion();
-        boolean isSuccessful = systemVersion.equalsIgnoreCase(currentUpdate);
-
-        CurrentSoftwareUpdate.setOtaState(context, isSuccessful ? SoftwareUpdate.OTA_INSTALL_STATE_SUCCESS : SoftwareUpdate.OTA_INSTALL_STATE_FAILED);
-        UpdateNotifications.showPostUpdateNotification(context, isSuccessful);
-        if (isSuccessful) {
-            UpdateUtils.setSettingAppBadge(context, false);
-            LastSoftwareUpdate.setSoftwareUpdate(context, current);
-            LastSoftwareUpdate.setSoftwareUpdateResponse(context, true);
-        }
-
-        File magiskDisabled = new File(Experience.getFreshDir(), "update-disabled-magisk-module");
-        if (magiskDisabled.exists()) {
-            UpdateNotifications.showMagiskDisabledNotification(context);
-            magiskDisabled.delete();
-        }
-    }
-
-    private void setPerformanceOnBoot(Context context) {
-        Performance.setPerformanceMode(context, Performance.getPerformanceMode(context));
     }
 }
