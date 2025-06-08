@@ -82,8 +82,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <dev.oneuiproject.oneui.widget.RoundedLinearLayout
                         android:id="@+id/fresh_ota_changelog_card"
+                        android:background="@color/background_color"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -121,10 +122,11 @@
                                 android:textAlignment="viewStart"
                                 android:textSize="14sp" />
                         </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                    </dev.oneuiproject.oneui.widget.RoundedLinearLayout>
 
-                    <com.google.android.material.card.MaterialCardView
+                    <dev.oneuiproject.oneui.widget.RoundedLinearLayout
                         android:id="@+id/fresh_ota_app_updates"
+                        android:background="@color/background_color"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp">
@@ -169,11 +171,12 @@
                                 android:textSize="14sp" />
                         </LinearLayout>
 
-                    </com.google.android.material.card.MaterialCardView>
+                    </dev.oneuiproject.oneui.widget.RoundedLinearLayout>
 
-                    <com.google.android.material.card.MaterialCardView
+                    <dev.oneuiproject.oneui.widget.RoundedLinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/background_color"
                         android:layout_marginTop="12dp"
                         android:layout_marginBottom="8dp">
 
@@ -224,7 +227,7 @@
                                 android:textSize="14sp" />
                         </LinearLayout>
 
-                    </com.google.android.material.card.MaterialCardView>
+                    </dev.oneuiproject.oneui.widget.RoundedLinearLayout>
                 </LinearLayout>
             </androidx.core.widget.NestedScrollView>
         </dev.oneuiproject.oneui.widget.RoundedLinearLayout>

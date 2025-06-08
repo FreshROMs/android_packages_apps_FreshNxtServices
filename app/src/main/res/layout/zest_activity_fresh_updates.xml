@@ -12,6 +12,6 @@
         android:id="@+id/zest_fresh_updates_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/sesl_fragment_fgcolor" />
+        android:background="@color/background_color" />
 
 </dev.oneuiproject.oneui.layout.ToolbarLayout>

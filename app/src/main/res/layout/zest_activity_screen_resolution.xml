@@ -18,7 +18,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <dev.oneuiproject.oneui.widget.RoundedLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -80,7 +80,7 @@
 
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </dev.oneuiproject.oneui.widget.RoundedLinearLayout>
 
             <TextView
                 style="?android:textAppearanceListItem"
@@ -96,17 +96,18 @@
                 android:textColor="@color/oui_primary_text_color"
                 android:textSize="14.0sp" />
 
-            <com.google.android.material.card.MaterialCardView
+            <dev.oneuiproject.oneui.widget.RoundedLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="8dp"
-                android:paddingVertical="12dp">
+                android:paddingVertical="12dp"
+                android:background="@color/background_color">
                 <FrameLayout
                     android:id="@+id/zest_screen_resolution_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </com.google.android.material.card.MaterialCardView>
+            </dev.oneuiproject.oneui.widget.RoundedLinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"

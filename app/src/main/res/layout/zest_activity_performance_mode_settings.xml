@@ -38,9 +38,10 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
+            <dev.oneuiproject.oneui.widget.RoundedLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/background_color"
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="12dp">
@@ -182,7 +183,7 @@
 
 
                 </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            </dev.oneuiproject.oneui.widget.RoundedLinearLayout>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
