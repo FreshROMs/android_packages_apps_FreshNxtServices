@@ -5,5 +5,5 @@
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
     <color name="sesl_list_divider_color">@color/oui_list_divider_color</color>
-    <color name="background_color">@color/sesl_fragment_bgcolor</color>
+    <color name="background_color">@color/sesl_background_floating_light</color>
 </resources>

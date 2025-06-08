@@ -54,7 +54,7 @@ public class OpenSourceActivity extends AppCompatActivity {
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            getView().setBackgroundColor(getResources().getColor(R.color.sesl_fragment_fgcolor, mContext.getTheme()));
+            getView().setBackgroundColor(getResources().getColor(R.color.background_color, mContext.getTheme()));
         }
 
         @Override

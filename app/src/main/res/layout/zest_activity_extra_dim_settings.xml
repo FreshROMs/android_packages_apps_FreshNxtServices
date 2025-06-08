@@ -31,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:background="@color/sesl_fragment_bgcolor">
+                    android:background="@color/background_color">
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/zest_extra_dim_banner_animation"
                         android:layout_width="412dp"
