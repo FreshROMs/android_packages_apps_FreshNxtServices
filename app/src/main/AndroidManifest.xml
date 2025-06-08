@@ -151,6 +151,12 @@
         <uses-library
             android:name="fresh_republic_city_library"
             android:required="true" /> <!-- FreshROMs4 - RepublicCity -->
+        <uses-library
+            android:name="fresh_x"
+            android:required="true" /> <!-- FreshROMs5 - X -->
+        <uses-library
+            android:name="fresh_universe"
+            android:required="true" /> <!-- FreshROMs6 - Universe -->
         <activity
             android:name=".zest.QsTileHandler"
             android:enabled="true"
