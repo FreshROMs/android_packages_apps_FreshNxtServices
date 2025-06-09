@@ -5,16 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
         android:onClick="onTapSourceCode"
         android:text="@string/zest_about_page_source_code" />
     <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
         android:onClick="onTapLocalization"
         android:text="@string/zest_about_page_translations" />
     <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
         android:onClick="onTapOpenSource"
