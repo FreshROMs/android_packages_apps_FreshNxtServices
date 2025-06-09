@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.card.MaterialCardView;
+import android.widget.Button;
+import dev.oneuiproject.oneui.widget.RoundedLinearLayout;
 
 import org.commonmark.node.Node;
 import org.json.JSONArray;
@@ -39,9 +39,9 @@ public class LastUpdateActivity extends AppCompatActivity {
     TextView mAppBarTimeRemaining;
 
     @BindView(R.id.fresh_ota_changelog_card)
-    MaterialCardView mCardChangelog;
+    RoundedLinearLayout mCardChangelog;
     @BindView(R.id.fresh_ota_app_updates)
-    MaterialCardView mCardAppUpdates;
+    RoundedLinearLayout mCardAppUpdates;
 
     @BindView(R.id.fresh_ota_changelog)
     TextView mDetailChangelog;
@@ -62,13 +62,13 @@ public class LastUpdateActivity extends AppCompatActivity {
     LinearLayout mButtonBarInstall;
 
     @BindView(R.id.fresh_ota_btn_download)
-    MaterialButton mBtnDownload;
+    Button mBtnDownload;
     @BindView(R.id.fresh_ota_btn_cancel)
-    MaterialButton mBtnCancel;
+    Button mBtnCancel;
     @BindView(R.id.fresh_ota_btn_install)
-    MaterialButton mBtnInstall;
+    Button mBtnInstall;
     @BindView(R.id.fresh_ota_btn_install_later)
-    MaterialButton mBtnLater;
+    Button mBtnLater;
 
     Context mContext;
 

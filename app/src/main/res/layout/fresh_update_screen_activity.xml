@@ -249,14 +249,14 @@
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/fresh_ota_btn_download"
                     style="@style/Fresh.OTA.Button.Colored"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fresh_ota_changelog_btn_download" />
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/fresh_ota_btn_cancel"
                     style="@style/Fresh.OTA.Button"
                     android:layout_width="match_parent"
@@ -271,14 +271,14 @@
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/fresh_ota_btn_install"
                     style="@style/Fresh.OTA.Button.Colored"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/fresh_ota_changelog_btn_install" />
 
-                <com.google.android.material.button.MaterialButton
+                <Button
                     android:id="@+id/fresh_ota_btn_install_later"
                     style="@style/Fresh.OTA.Button"
                     android:layout_width="match_parent"

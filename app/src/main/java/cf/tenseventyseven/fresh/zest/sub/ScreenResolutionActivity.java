@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.google.android.material.button.MaterialButton;
+import android.widget.Button;
 
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
@@ -157,7 +157,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         private Context mContext;
 
         TextView mResolutionSummary;
-        MaterialButton mApplyButton;
+        Button mApplyButton;
         static String[] mResolutionValues;
         static int mSetResolution;
         static int mResolution;

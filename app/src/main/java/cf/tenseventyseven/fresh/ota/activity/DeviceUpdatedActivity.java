@@ -9,8 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.card.MaterialCardView;
+import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +17,7 @@ import cf.tenseventyseven.fresh.R;
 import cf.tenseventyseven.fresh.ota.SoftwareUpdate;
 import cf.tenseventyseven.fresh.ota.db.CurrentSoftwareUpdate;
 import dev.oneuiproject.oneui.layout.ToolbarLayout;
+import dev.oneuiproject.oneui.widget.RoundedLinearLayout;
 
 public class DeviceUpdatedActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_toolbar_layout)
@@ -33,9 +33,9 @@ public class DeviceUpdatedActivity extends AppCompatActivity {
     TextView mAppBarTimeRemaining;
 
     @BindView(R.id.fresh_ota_changelog_card)
-    MaterialCardView mCardChangelog;
+    RoundedLinearLayout mCardChangelog;
     @BindView(R.id.fresh_ota_app_updates)
-    MaterialCardView mCardAppUpdates;
+    RoundedLinearLayout mCardAppUpdates;
 
     @BindView(R.id.fresh_ota_changelog)
     TextView mDetailChangelog;
@@ -56,13 +56,13 @@ public class DeviceUpdatedActivity extends AppCompatActivity {
     LinearLayout mButtonBarInstall;
 
     @BindView(R.id.fresh_ota_btn_download)
-    MaterialButton mBtnDownload;
+    Button mBtnDownload;
     @BindView(R.id.fresh_ota_btn_cancel)
-    MaterialButton mBtnCancel;
+    Button mBtnCancel;
     @BindView(R.id.fresh_ota_btn_install)
-    MaterialButton mBtnInstall;
+    Button mBtnInstall;
     @BindView(R.id.fresh_ota_btn_install_later)
-    MaterialButton mBtnLater;
+    Button mBtnLater;
 
     Context mContext;
 

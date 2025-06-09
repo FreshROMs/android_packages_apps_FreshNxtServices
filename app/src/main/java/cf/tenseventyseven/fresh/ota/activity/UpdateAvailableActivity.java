@@ -21,8 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.card.MaterialCardView;
+import android.widget.Button;
+import dev.oneuiproject.oneui.widget.RoundedLinearLayout;
 import com.tonyodev.fetch2.Download;
 import com.tonyodev.fetch2.Error;
 import com.tonyodev.fetch2.Fetch;
@@ -69,9 +69,9 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     TextView mAppBarTimeRemaining;
 
     @BindView(R.id.fresh_ota_changelog_card)
-    MaterialCardView mCardChangelog;
+    RoundedLinearLayout mCardChangelog;
     @BindView(R.id.fresh_ota_app_updates)
-    MaterialCardView mCardAppUpdates;
+    RoundedLinearLayout mCardAppUpdates;
 
     @BindView(R.id.fresh_ota_changelog)
     TextView mDetailChangelog;
@@ -92,13 +92,13 @@ public class UpdateAvailableActivity extends AppCompatActivity {
     LinearLayout mButtonBarInstall;
 
     @BindView(R.id.fresh_ota_btn_download)
-    MaterialButton mBtnDownload;
+    Button mBtnDownload;
     @BindView(R.id.fresh_ota_btn_cancel)
-    MaterialButton mBtnCancel;
+    Button mBtnCancel;
     @BindView(R.id.fresh_ota_btn_install)
-    MaterialButton mBtnInstall;
+    Button mBtnInstall;
     @BindView(R.id.fresh_ota_btn_install_later)
-    MaterialButton mBtnLater;
+    Button mBtnLater;
 
     private static Context mContext;
     private static SoftwareUpdate mUpdate;

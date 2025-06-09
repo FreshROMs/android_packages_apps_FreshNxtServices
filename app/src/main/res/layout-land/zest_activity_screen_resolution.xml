@@ -148,7 +148,7 @@
                             android:textSize="14sp" />
                     </LinearLayout>
 
-                    <com.google.android.material.button.MaterialButton
+                    <Button
                         android:id="@+id/resolution_apply"
                         style="@style/OneUI.ButtonStyleColored"
                         android:layout_width="260dp"

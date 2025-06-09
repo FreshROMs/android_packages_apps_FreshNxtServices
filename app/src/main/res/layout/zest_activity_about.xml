@@ -4,17 +4,17 @@
     android:id="@+id/zest_about_header"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
         android:onClick="onTapSourceCode"
         android:text="@string/zest_about_page_source_code" />
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
         android:onClick="onTapLocalization"
         android:text="@string/zest_about_page_translations" />
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:theme="@style/OneUI.ContainedButtonTheme"
         style="@style/OneUI.ContainedButton"
         android:onClick="onTapOpenSource"
