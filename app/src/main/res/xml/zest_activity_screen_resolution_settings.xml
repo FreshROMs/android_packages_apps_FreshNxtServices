@@ -5,7 +5,7 @@
         android:key="fs_screen_resolution_radio"
         app:entries="@array/zest_screen_resolution_setting_options"
         app:entriesSubtitle="@array/zest_screen_resolution_setting_options_subtitle"
-        android:defaultValue="2340 x 1080"
+        app:defaultValue="reset:reset"
         app:entryValues="@array/zest_screen_resolution_setting_values"
         app:viewType="noImage" />
 </PreferenceScreen>

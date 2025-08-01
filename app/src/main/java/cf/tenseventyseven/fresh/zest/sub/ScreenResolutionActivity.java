@@ -190,7 +190,10 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
             String setResolution = getResolution();
+            preference = findPreference("fs_screen_resolution_radio");
             preference.setValue(setResolution);
+            preference.setTouchEffectEnabled(true);
+
             mResolutionSummary = getActivity().findViewById(R.id.resolution_summary);
             mApplyButton = getActivity().findViewById(R.id.resolution_apply);
             setResolutionSummary(preference.getValue());
@@ -221,7 +224,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.zest_activity_screen_resolution_settings, rootKey);
-            preference = ((HorizontalRadioPreference) findPreference("fs_screen_resolution_radio"));
+            preference = findPreference("fs_screen_resolution_radio");
             preference.setDividerEnabled(true);
             preference.setOnPreferenceChangeListener(this);
         }
@@ -231,6 +234,7 @@ public class ScreenResolutionActivity extends AppCompatActivity {
             String prefKey = preference.getKey();
             if ("fs_screen_resolution_radio".equals(prefKey)) {
                 setResolutionSummary(newValue.toString());
+                return true;
             }
             return false;
         }
