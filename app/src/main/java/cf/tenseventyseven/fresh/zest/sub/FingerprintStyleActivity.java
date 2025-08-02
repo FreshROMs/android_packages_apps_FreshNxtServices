@@ -56,7 +56,6 @@ import dev.oneuiproject.oneui.layout.ToolbarLayout;
 public class FingerprintStyleActivity extends AppCompatActivity {
 
     private static final double sensorPositionYCoeff = 0.8824;
-    private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
 
     @BindView(R.id.zest_fingerprint_style_toolbar)
     ToolbarLayout toolbar;
@@ -96,14 +95,6 @@ public class FingerprintStyleActivity extends AppCompatActivity {
         setContentView(R.layout.zest_activity_fod_animation_style_settings);
         ButterKnife.bind(this);
         mContext = this;
-
-        int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
-        }
 
         if (!getAnimations())
             finish();
@@ -170,35 +161,6 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             mPreviewLottieAnim.setAnimation(getLottieJson(mContext, mFodAnimationIdentifiers[mSelectedAnim]), null);
             mPreviewLottieAnim.playAnimation();
         }
-    }
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE && (grantResults.length <= 0
-                || grantResults[0] != PackageManager.PERMISSION_GRANTED)) {
-            showPermissionDialog();
-        }
-
-        if (requestCode == PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE && (grantResults.length <= 0
-                || grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-            // Reload
-            mPreviewLockBG.setImageBitmap(getWallpaper(false));
-            mPreviewLockFG.setImageBitmap(getPreview(false));
-
-            mPreviewHomeBG.setImageBitmap(getWallpaper(true));
-            mPreviewHomeFG.setImageBitmap(getPreview(true));
-        }
-    }
-
-    private void showPermissionDialog() {
-        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.OneUITheme))
-                .setTitle(R.string.fresh_permissions_storage_title)
-                .setMessage(R.string.fresh_permissions_fp_storage_description)
-                .setPositiveButton(R.string.qs_dialog_ok, (dialog, which) -> FingerprintStyleActivity.this.finish())
-                .create()
-                .show();
     }
 
     public void onTapCancel(View v) {
@@ -363,5 +325,4 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             }
         }
     }
-
 }
