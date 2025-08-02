@@ -46,8 +46,6 @@ public class UpdateCheckActivity extends AppCompatActivity {
     @BindView(R.id.fresh_ota_check_toolbar_layout)
     ToolbarLayout toolbarLayout;
 
-    private static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
-
     private Context mContext;
     private Fetch mFetch;
     private final FetchListener mFetchListener = new FetchListener() {
@@ -154,15 +152,6 @@ public class UpdateCheckActivity extends AppCompatActivity {
         toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
 //        setSupportActionBar(toolbarLayout.getToolbar());
 
-        // But check permissions first - download will be started in the callback
-        int permissionCheck = ContextCompat.checkSelfPermission(getApplicationContext(),
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
-        }
-
         UpdateNotifications.setupNotificationChannels(this);
 
         // Check for permissions before initiating update task.
@@ -187,16 +176,6 @@ public class UpdateCheckActivity extends AppCompatActivity {
             mFetch.removeListener(mFetchListener);
 
         UpdateCheck.tryStopService(this);
-    }
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE && (grantResults.length <= 0
-                || grantResults[0] != PackageManager.PERMISSION_GRANTED)) {
-            showPermissionDialog();
-        }
     }
 
     private void checkForUpdates(Context context) {
@@ -264,15 +243,6 @@ public class UpdateCheckActivity extends AppCompatActivity {
             });
 
         });
-    }
-
-    private void showPermissionDialog() {
-        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.OneUITheme))
-                .setTitle(R.string.fresh_permissions_storage_title)
-                .setMessage(R.string.fresh_permissions_storage_description)
-                .setPositiveButton(R.string.qs_dialog_ok, (dialog, which) -> UpdateCheckActivity.this.finish())
-                .create()
-                .show();
     }
 
     private static void showErrorToast(Context context, boolean noConnection) {
