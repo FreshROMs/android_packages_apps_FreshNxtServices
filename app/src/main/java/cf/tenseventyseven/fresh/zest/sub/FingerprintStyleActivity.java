@@ -274,7 +274,13 @@ public class FingerprintStyleActivity extends AppCompatActivity {
             return null;
 
         ParcelFileDescriptor wallpaperFile = WallpaperManager.getInstance(this).getWallpaperFile(isHomeScreen ? WallpaperManager.FLAG_SYSTEM : WallpaperManager.FLAG_LOCK);
-        if (wallpaperFile == null) return null;
+        if (wallpaperFile == null) {
+            if (isHomeScreen) {
+                return null;
+            }
+            wallpaperFile = WallpaperManager.getInstance(this).getWallpaperFile(WallpaperManager.FLAG_SYSTEM);
+            if (wallpaperFile == null) return null;
+        }
         return BitmapFactory.decodeFileDescriptor(wallpaperFile.getFileDescriptor());
     }
 
